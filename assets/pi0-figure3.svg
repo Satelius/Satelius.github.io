@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1660 680" role="img" aria-labelledby="title desc">
+  <title id="title">pi0 framework overview</title>
+  <desc id="desc">A clean redraw of the supplied pi0 framework screenshot: data and internet pretraining feed a PaliGemma VLM and action expert, producing action chunks for multiple robot embodiments.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f7f3ea"/><stop offset="1" stop-color="#e8e1d4"/></linearGradient>
+    <linearGradient id="vlm" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#22a7d6"/><stop offset="1" stop-color="#14759b"/></linearGradient>
+    <linearGradient id="expert" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#9fd580"/><stop offset="1" stop-color="#4f9754"/></linearGradient>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#24323a"/></marker>
+    <style>
+      .serif{font-family:Georgia,'Times New Roman',serif;fill:#1f2930}.sans{font-family:'Segoe UI','Microsoft YaHei',sans-serif;fill:#1f2930}.mono{font-family:Consolas,monospace;fill:#1f2930}.small{font-size:18px}.label{font-size:25px;font-weight:600}.tiny{font-size:14px}.box{stroke:#42515a;stroke-width:2}.wire{stroke:#24323a;stroke-width:2.5;fill:none;marker-end:url(#arrow)}
+    </style>
+  </defs>
+  <rect width="1660" height="680" fill="url(#bg)"/>
+  <rect x="35" y="30" width="310" height="190" rx="18" fill="#f4ead6" class="box"/>
+  <text x="190" y="68" text-anchor="middle" class="mono label">pi dataset</text>
+  <g transform="translate(70 88)">
+    <rect width="70" height="54" rx="8" fill="#d2b48c"/><circle cx="25" cy="20" r="13" fill="#6d8c5f"/><path d="M38 40L56 14L67 43Z" fill="#54768c"/>
+    <rect x="90" width="70" height="54" rx="8" fill="#d2b48c"/><circle cx="25" cy="20" r="13" fill="#ce7b6b"/><path d="M38 40L56 14L67 43Z" fill="#54768c"/>
+    <rect x="180" width="70" height="54" rx="8" fill="#d2b48c"/><circle cx="25" cy="20" r="13" fill="#849fcb"/><path d="M38 40L56 14L67 43Z" fill="#54768c"/>
+    <rect y="70" width="70" height="54" rx="8" fill="#d2b48c"/><circle cx="25" cy="20" r="13" fill="#d59c5e"/><path d="M38 40L56 14L67 43Z" fill="#54768c"/>
+    <rect x="90" y="70" width="70" height="54" rx="8" fill="#d2b48c"/><circle cx="25" cy="20" r="13" fill="#8ebba1"/><path d="M38 40L56 14L67 43Z" fill="#54768c"/>
+    <rect x="180" y="70" width="70" height="54" rx="8" fill="#d2b48c"/><circle cx="25" cy="20" r="13" fill="#bb8bc1"/><path d="M38 40L56 14L67 43Z" fill="#54768c"/>
+  </g>
+  <rect x="35" y="240" width="145" height="150" rx="14" fill="#e8f0f5" class="box"/>
+  <text x="107" y="280" text-anchor="middle" class="mono small">Internet</text><text x="107" y="306" text-anchor="middle" class="mono small">pre-training</text><circle cx="107" cy="350" r="25" fill="none" stroke="#4a9fc4" stroke-width="5"/><path d="M82 350h50M107 325v50" stroke="#4a9fc4" stroke-width="3"/>
+  <rect x="190" y="240" width="155" height="150" rx="14" fill="#e8f0f5" class="box"/>
+  <text x="267" y="285" text-anchor="middle" class="mono label">OXE</text><circle cx="267" cy="338" r="35" fill="#4ca3ca"/><path d="M239 338h56M267 310v56" stroke="#f6c24f" stroke-width="7"/>
+  <path d="M345 150H380M345 315H380" class="wire"/>
+  <rect x="390" y="135" width="650" height="190" rx="18" fill="#fff" class="box"/>
+  <g opacity=".42" fill="url(#vlm)"><rect x="420" y="85" width="105" height="85" rx="16"/><rect x="550" y="85" width="105" height="85" rx="16"/><rect x="680" y="85" width="105" height="85" rx="16"/><rect x="810" y="85" width="105" height="85" rx="16"/><rect x="940" y="85" width="70" height="85" rx="16"/></g>
+  <text x="715" y="205" text-anchor="middle" class="mono label">pre-trained VLM</text><text x="715" y="242" text-anchor="middle" class="mono" font-size="22" fill="#66757e">SigLIP (400M) + Gemma (2.6B)</text>
+  <g class="sans" font-size="17"><rect x="475" y="350" width="120" height="68" rx="14" fill="#9ed3e3" class="box"/><text x="535" y="390" text-anchor="middle">ViT</text><rect x="650" y="350" width="120" height="68" rx="14" fill="#9ed3e3" class="box"/><text x="710" y="390" text-anchor="middle">ViT</text><rect x="825" y="350" width="120" height="68" rx="14" fill="#9ed3e3" class="box"/><text x="885" y="390" text-anchor="middle">ViT</text></g>
+  <g transform="translate(470 450)"><rect width="125" height="72" rx="12" fill="#b9a7d9"/><rect x="140" width="125" height="72" rx="12" fill="#e0a78b"/><rect x="280" width="125" height="72" rx="12" fill="#d88b9e"/><text x="203" y="105" text-anchor="middle" class="sans" font-size="21">images and instruction</text></g>
+  <path d="M730 325V350" class="wire"/><path d="M985 325V350" class="wire"/>
+  <rect x="1065" y="135" width="360" height="190" rx="18" fill="#fff" class="box"/>
+  <g opacity=".55" fill="url(#expert)"><rect x="1090" y="85" width="80" height="85" rx="16"/><rect x="1190" y="85" width="80" height="85" rx="16"/><rect x="1290" y="85" width="80" height="85" rx="16"/></g>
+  <text x="1245" y="205" text-anchor="middle" class="mono label">action expert</text><text x="1245" y="242" text-anchor="middle" class="mono" font-size="22" fill="#66757e">300M</text>
+  <text x="1078" y="370" class="mono small">q_t</text><path d="M1110 355V325" class="wire"/><text x="1260" y="370" class="mono small">noise</text><path d="M1265 355V325" class="wire"/>
+  <path d="M1425 230H1470" class="wire"/>
+  <rect x="1490" y="45" width="145" height="125" rx="14" fill="#f4ead6" class="box"/><text x="1510" y="80" class="mono small">14 DoF</text><text x="1510" y="106" class="mono small">Bimanual</text><text x="1510" y="132" class="mono small">Manipulators</text><path d="M1600 150l20 -58 18 58" stroke="#283c45" stroke-width="5" fill="none"/>
+  <rect x="1490" y="190" width="145" height="125" rx="14" fill="#f4ead6" class="box"/><text x="1510" y="225" class="mono small">18 DoF</text><text x="1510" y="251" class="mono small">Mobile</text><text x="1510" y="277" class="mono small">Manipulators</text><path d="M1600 292l20 -58 18 58M1590 300h55" stroke="#283c45" stroke-width="5" fill="none"/>
+  <rect x="1490" y="335" width="145" height="125" rx="14" fill="#f4ead6" class="box"/><text x="1510" y="370" class="mono small">7 / 8 DoF</text><text x="1510" y="396" class="mono small">Single Arm</text><text x="1510" y="422" class="mono small">Manipulators</text><path d="M1605 438l22 -56 18 56" stroke="#283c45" stroke-width="5" fill="none"/>
+  <path d="M1425 230c30 0 30 -120 60 -120M1425 230c30 0 30 22 60 22M1425 230c30 0 30 170 60 170" stroke="#24323a" stroke-width="2" fill="none"/>
+  <rect x="750" y="550" width="410" height="60" rx="18" fill="#26363d"/><text x="955" y="588" text-anchor="middle" class="sans" font-size="22" fill="#fff">Figure 3 · 原图意图重绘</text>
+</svg>
