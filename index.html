@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SATELIUS — 个人网页档案索引</title>
+  <meta name="description" content="SATELIUS 的个人网页档案索引：实验、笔记、项目与散落在网络上的坐标。">
+  <meta name="author" content="SATELIUS">
+  <meta name="theme-color" content="#111111">
+  <meta name="color-scheme" content="light">
+  <link rel="canonical" href="https://satelius.github.io/">
+  <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./assets/styles.css">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:site_name" content="SATELIUS">
+  <meta property="og:title" content="SATELIUS — 个人网页档案索引">
+  <meta property="og:description" content="实验、笔记、项目与散落在网络上的坐标。">
+  <meta property="og:url" content="https://satelius.github.io/">
+  <meta name="twitter:card" content="summary">
+  <script src="./assets/pages-data.js" defer></script>
+  <script src="./assets/site.js" defer></script>
+</head>
+<body class="home-page">
+  <a class="skip-link" href="#archive">跳到网页索引</a>
+
+  <div class="topline" aria-hidden="true">
+    <span>PERSONAL WEB ARCHIVE</span>
+    <span>STATIC / NO BUILD</span>
+    <span>EST. 2026</span>
+  </div>
+
+  <header class="site-header">
+    <a class="wordmark" href="./" aria-label="SATELIUS 首页">SATELIUS</a>
+    <div class="header-register">
+      <span>独立网页索引</span>
+      <span>ISSUE 00 · VOL. 01</span>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-kicker">
+        <span class="issue-chip">INDEX / 00</span>
+        <span>一些作品，一些笔记，一些仍在生长的东西。</span>
+      </div>
+
+      <h1 id="hero-title">
+        <span>个人网页</span>
+        <span>档案索引</span>
+      </h1>
+
+      <div class="hero-note">
+        <p class="hero-lead">这里不是动态消息流。</p>
+        <p>它是一张长期维护的网络地图，收录独立页面、公开实验和外部坐标。条目少而明确，顺序由人决定。</p>
+        <a class="underlined-link" href="#archive">浏览全部条目 <span aria-hidden="true">↓</span></a>
+      </div>
+
+      <div class="hero-coordinate" aria-hidden="true">
+        <span>PLAIN FILES</span>
+        <span>ZERO BUILD</span>
+        <span>WWW / OPEN</span>
+      </div>
+    </section>
+
+    <section class="archive" id="archive" aria-labelledby="archive-title">
+      <header class="section-heading">
+        <div>
+          <p class="section-label">DIRECTORY / 目录</p>
+          <h2 id="archive-title">已收录页面</h2>
+        </div>
+        <p class="entry-total"><strong id="entry-count">02</strong> ENTRIES<br>AND COUNTING</p>
+      </header>
+
+      <div class="archive-layout">
+        <aside class="index-controls js-only" aria-label="索引筛选">
+          <div class="control-block">
+            <label for="index-search">检索标题、标签或说明</label>
+            <input id="index-search" type="search" placeholder="输入关键词" autocomplete="off" spellcheck="false">
+          </div>
+
+          <div class="control-block">
+            <p class="control-label">按类型查看</p>
+            <div class="filter-list" id="index-filters" role="group" aria-label="按页面类型筛选"></div>
+          </div>
+
+          <dl class="index-key">
+            <div>
+              <dt>LOCAL</dt>
+              <dd>站内独立页面</dd>
+            </div>
+            <div>
+              <dt>EXT.</dt>
+              <dd>外部网络坐标</dd>
+            </div>
+            <div>
+              <dt>ORDER</dt>
+              <dd>人工编排顺序</dd>
+            </div>
+          </dl>
+        </aside>
+
+        <div class="index-results">
+          <p class="result-status js-only" id="result-status" aria-live="polite"></p>
+          <div class="archive-list" id="page-index"></div>
+
+          <noscript>
+            <section class="no-script-panel" aria-labelledby="no-script-title">
+              <p class="section-label">STATIC ACCESS / 无脚本入口</p>
+              <h3 id="no-script-title">核心内容仍然开放。</h3>
+              <p>筛选功能需要 JavaScript，但独立页面不需要。你可以直接进入站点使用说明，或访问外部 GitHub 档案。</p>
+              <div class="no-script-links">
+                <a href="./pages/field-notes/">001 / 建立你的第一条档案 <span aria-hidden="true">→</span></a>
+                <a href="https://github.com/Satelius">002 / GitHub 公开档案 <span aria-hidden="true">↗</span></a>
+              </div>
+            </section>
+          </noscript>
+        </div>
+      </div>
+    </section>
+
+    <section class="manifesto" aria-labelledby="manifesto-title">
+      <p class="manifesto-index">NOTE<br>000</p>
+      <div>
+        <p class="section-label section-label--light">EDITORIAL NOTE / 编者按</p>
+        <h2 id="manifesto-title">网页应该有自己的门牌，<br>而不只是平台里的一个帖子。</h2>
+      </div>
+      <p class="manifesto-copy">这个索引刻意保持简单：纯文件、清楚路径、没有构建流程。内容可以被复制、被保存，也可以在脚本失效时继续阅读。</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <a class="footer-mark" href="./">SATELIUS</a>
+    <p>个人网页档案 · 保持独立，保持可读。</p>
+    <p><a href="https://github.com/Satelius">GITHUB <span aria-hidden="true">↗</span></a> · <time datetime="2026">2026</time></p>
+  </footer>
+</body>
+</html>
