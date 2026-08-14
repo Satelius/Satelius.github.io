@@ -26,7 +26,9 @@ personal_web/
 │   ├── site.js
 │   └── styles.css
 └── pages/
-    └── field-notes/
+    ├── field-notes/
+    │   └── index.html
+    └── vla-privileged-loop/
         └── index.html
 ```
 

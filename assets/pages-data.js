@@ -14,8 +14,22 @@ window.SATELIUS_PAGES = [
     accent: "#ff4b00"
   },
   {
-    id: "github",
+    id: "vla-privileged-loop",
     number: "002",
+    label: "READING SHARE 002",
+    title: "从 OpenVLA、π0、π0.5 到特权训练闭环",
+    href: "./pages/vla-privileged-loop/",
+    external: false,
+    category: "分享",
+    year: "2026",
+    date: "2026-08-14",
+    summary: "一次关于三篇 VLA 论文的分享会幻灯片：动作 token、连续 action chunk、异构监督，结尾记录三个关键开放问题。",
+    tags: ["OpenVLA", "π0", "π0.5", "幻灯片"],
+    accent: "#c97430"
+  },
+  {
+    id: "github",
+    number: "003",
     label: "EXTERNAL LOG 002",
     title: "GitHub 公开档案",
     href: "https://github.com/Satelius",

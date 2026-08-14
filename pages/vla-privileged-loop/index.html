@@ -1,0 +1,358 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>从 OpenVLA、π0、π0.5 到双臂 PiPER 特权训练闭环</title>
+  <meta name="description" content="一次关于 OpenVLA、π0、π0.5 三篇 VLA 论文的分享会幻灯片：动作 token、连续 action chunk、异构监督，以及结尾记录的三个关键问题。">
+  <meta name="theme-color" content="#191f22">
+  <link rel="canonical" href="https://satelius.github.io/pages/vla-privileged-loop/">
+  <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+  <style>
+    :root {
+      --ink: #18252c;
+      --muted: #68757a;
+      --paper: #f3eee4;
+      --card: #fffdf8;
+      --line: #d6cdbd;
+      --blue: #16718f;
+      --cyan: #8bd0df;
+      --green: #4d8b55;
+      --green-soft: #dceccd;
+      --orange: #c97430;
+      --orange-soft: #f5dfc4;
+      --purple: #8064b1;
+      --red: #a84936;
+      --shadow: 0 16px 50px rgba(43, 39, 31, .14);
+    }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body { margin: 0; color: var(--ink); background: #191f22; font-family: "Segoe UI", "Microsoft YaHei", sans-serif; overflow: hidden; }
+    button, input { font: inherit; }
+    button { cursor: pointer; }
+    .deck { position: relative; width: 100vw; height: 100vh; }
+    .slide {
+      display: none; position: absolute; inset: 0; overflow: auto; padding: clamp(26px, 4vw, 72px) clamp(28px, 7vw, 124px) 76px;
+      background: var(--paper);
+    }
+    .slide.active { display: block; animation: rise .28s ease-out; }
+    @keyframes rise { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+    .slide::before { content: attr(data-page); position: absolute; top: 24px; right: 38px; color: #9c968b; font: 700 13px Consolas, monospace; letter-spacing: .12em; }
+    .kicker { color: var(--orange); font: 700 13px Consolas, monospace; letter-spacing: .16em; text-transform: uppercase; }
+    h1, h2, h3, p { max-width: 1120px; }
+    h1 { margin: 12px 0 20px; font-size: clamp(36px, 5.4vw, 88px); line-height: .98; letter-spacing: -.055em; }
+    h2 { margin: 0 0 18px; font-size: clamp(30px, 4vw, 60px); line-height: 1.02; letter-spacing: -.04em; }
+    h3 { margin: 0 0 10px; font-size: 20px; }
+    p { margin: 10px 0; font-size: clamp(16px, 1.55vw, 23px); line-height: 1.52; }
+    .subtitle { max-width: 850px; color: var(--muted); font-size: clamp(18px, 2vw, 30px); }
+    .rule { height: 5px; width: 94px; margin: 24px 0; background: var(--orange); }
+    .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+    .grid.three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .card { padding: 22px; background: var(--card); border: 1px solid var(--line); border-radius: 18px; box-shadow: 0 5px 18px rgba(50,40,25,.05); }
+    .card.blue { border-top: 6px solid var(--blue); }
+    .card.green { border-top: 6px solid var(--green); }
+    .card.orange { border-top: 6px solid var(--orange); }
+    .card.purple { border-top: 6px solid var(--purple); }
+    .card.red { border-top: 6px solid var(--red); }
+    .callout { padding: 20px 24px; margin: 20px 0; background: var(--orange-soft); border: 1px solid #ddb486; border-radius: 16px; font-size: clamp(18px, 1.8vw, 28px); line-height: 1.45; }
+    .callout.dark { color: #f9f4e9; background: #26363d; border-color: #26363d; }
+    .callout.green { background: var(--green-soft); border-color: #acd18c; }
+    .tag { display: inline-block; padding: 5px 10px; margin: 3px; border-radius: 999px; color: #fff; background: var(--blue); font: 700 12px Consolas, monospace; }
+    .tag.orange { background: var(--orange); }
+    .tag.green { background: var(--green); }
+    .tag.purple { background: var(--purple); }
+    .tag.red { background: var(--red); }
+    .flow { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin: 22px 0; }
+    .node { min-width: 125px; padding: 15px 18px; text-align: center; background: var(--card); border: 2px solid var(--line); border-radius: 14px; font-weight: 700; }
+    .node.blue { border-color: var(--blue); background: #e3f2f6; }
+    .node.green { border-color: var(--green); background: var(--green-soft); }
+    .node.orange { border-color: var(--orange); background: var(--orange-soft); }
+    .node.purple { border-color: var(--purple); background: #ece7f6; }
+    .arrow { color: var(--orange); font-size: 30px; font-weight: 800; }
+    table { width: 100%; margin: 18px 0; border-collapse: collapse; overflow: hidden; background: var(--card); border: 1px solid var(--line); border-radius: 14px; font-size: clamp(13px, 1.15vw, 18px); }
+    th, td { padding: 12px 14px; text-align: left; vertical-align: top; border-bottom: 1px solid var(--line); }
+    th { color: #fff; background: #26363d; }
+    tr:last-child td { border-bottom: 0; }
+    .small { color: var(--muted); font-size: .82em; }
+    .evidence { display: inline-block; padding: 4px 9px; color: #fff; border-radius: 999px; font: 700 11px Consolas, monospace; }
+    .reported { background: var(--green); }
+    .not-proven { background: var(--red); }
+    .proposal { background: var(--purple); }
+    .figure { width: 100%; max-height: 52vh; object-fit: contain; background: #fffdf8; border: 1px solid var(--line); border-radius: 16px; }
+    .figure-missing { display: flex; align-items: center; justify-content: center; min-height: 220px; padding: 20px; color: var(--muted); font: 700 14px Consolas, monospace; letter-spacing: .06em; text-align: center; }
+    .caption { margin: 8px 0 0; color: var(--muted); font-size: 13px; line-height: 1.45; }
+    .caption strong { color: var(--ink); }
+    .two-col { display: grid; grid-template-columns: 1.15fr .85fr; gap: 25px; align-items: start; }
+    .three-col { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .big-number { font-size: clamp(42px, 7vw, 100px); line-height: .9; color: var(--orange); font-weight: 800; letter-spacing: -.07em; }
+    .metric { padding: 18px; background: var(--card); border: 1px solid var(--line); border-radius: 16px; }
+    .metric b { display: block; font-size: 30px; }
+    .metric span { color: var(--muted); font-size: 14px; }
+    .swimlane { display: grid; grid-template-columns: 116px 1fr; gap: 0; margin: 18px 0; border: 1px solid var(--line); border-radius: 16px; overflow: hidden; }
+    .swimlane > b { padding: 18px 12px; color: #fff; background: #26363d; writing-mode: vertical-rl; text-align: center; }
+    .swimlane > div { padding: 18px; background: var(--card); }
+    .legend { display: flex; gap: 8px; flex-wrap: wrap; margin: 10px 0; }
+    .interactive { padding: 22px; background: #fffdf8; border: 1px solid var(--line); border-radius: 18px; }
+    .interactive h3 { color: var(--blue); }
+    .control-row { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin: 12px 0; }
+    input[type="range"] { accent-color: var(--orange); width: min(360px, 70vw); }
+    select { padding: 8px 12px; border: 1px solid var(--line); border-radius: 9px; background: #fff; }
+    .demo-output { min-height: 86px; padding: 14px; margin-top: 12px; background: #26363d; color: #f8f4eb; border-radius: 12px; font: 14px/1.6 Consolas, monospace; white-space: pre-wrap; }
+    canvas { display: block; width: 100%; height: 270px; background: #f7f1e6; border: 1px solid var(--line); border-radius: 12px; }
+    .check-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+    .check-grid label { display: flex; gap: 8px; align-items: center; padding: 10px; background: #f5efe5; border: 1px solid var(--line); border-radius: 9px; font-size: 13px; }
+    .status { margin-top: 12px; padding: 13px; border-radius: 12px; font-weight: 700; }
+    .status.good { color: #285b31; background: var(--green-soft); }
+    .status.bad { color: #7b2d22; background: #f2d6ce; }
+    .mini-bar { height: 18px; overflow: hidden; border-radius: 99px; background: #e1d8c9; }
+    .mini-bar i { display: block; height: 100%; background: var(--blue); border-radius: inherit; }
+    .quote { padding-left: 20px; border-left: 5px solid var(--orange); font-size: clamp(21px, 2.2vw, 34px); line-height: 1.35; }
+    .footer-controls { position: fixed; z-index: 20; right: 20px; bottom: 16px; left: 20px; display: flex; align-items: center; justify-content: space-between; pointer-events: none; }
+    .footer-controls > * { pointer-events: auto; }
+    .nav { display: flex; gap: 8px; }
+    .nav button, .utility button, .utility a { width: 42px; height: 36px; color: #fff; background: rgba(24,37,44,.9); border: 0; border-radius: 9px; }
+    .utility a { display: inline-flex; align-items: center; justify-content: center; text-decoration: none; }
+    .progress { width: min(360px, 45vw); height: 5px; overflow: hidden; background: rgba(255,255,255,.25); border-radius: 9px; }
+    .progress i { display: block; height: 100%; background: var(--orange); transition: width .25s; }
+    .notes {
+      display: none; position: fixed; z-index: 30; right: 0; top: 0; width: min(470px, 92vw); height: 100vh; padding: 26px; overflow: auto; color: #f7f1e6; background: #1e292d; box-shadow: -12px 0 30px rgba(0,0,0,.3);
+    }
+    .notes.open { display: block; }
+    .notes h3 { color: #f4c28b; }
+    .notes p, .notes li { font-size: 15px; line-height: 1.65; }
+    .close-notes { float: right; padding: 6px 10px; color: #fff; background: transparent; border: 1px solid #77858a; border-radius: 8px; }
+    .cover-grid { display: grid; grid-template-columns: 1.2fr .8fr; gap: 30px; align-items: center; min-height: 72vh; }
+    .cover-mark { padding: 28px; background: #26363d; border-radius: 26px; color: #f7f1e6; box-shadow: var(--shadow); }
+    .cover-mark .chain { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; font: 700 17px Consolas, monospace; }
+    .cover-mark .chain span { padding: 12px 14px; border-radius: 12px; background: #3b5660; }
+    .cover-mark .chain span:last-child { background: var(--orange); }
+    @media (max-width: 800px) {
+      body { overflow: auto; }
+      .slide { padding: 28px 20px 90px; }
+      .grid, .grid.three, .two-col, .three-col, .cover-grid { grid-template-columns: 1fr; }
+      .check-grid { grid-template-columns: repeat(2, 1fr); }
+      .figure { max-height: none; }
+      .swimlane { grid-template-columns: 70px 1fr; }
+      .swimlane > b { writing-mode: horizontal-tb; }
+    }
+    @media print {
+      body { overflow: visible; background: white; }
+      .slide { display: block !important; position: relative; min-height: 100vh; page-break-after: always; }
+      .footer-controls, .notes { display: none !important; }
+    }
+  </style>
+</head>
+<body>
+<main class="deck" id="deck">
+  <section class="slide active" data-page="01 / 19">
+    <div class="cover-grid">
+      <div>
+        <div class="kicker">LV Robotics Lab · Reading Share</div>
+        <h1>从 OpenVLA、π0、π0.5 到<br><span style="color:var(--orange)">双臂 PiPER 特权训练闭环</span></h1>
+        <div class="rule"></div>
+        <p class="subtitle">三篇 VLA 论文不是三个成品，而是三段路线：动作接口、连续控制、异构监督。真正的闭环，需要在 RoboDojo 里自己完成。</p>
+        <p><span class="evidence proposal">本项目提案</span> 今天不预先宣布哪个模型更强，只问：训练时多看特权信息，部署时完全移除后，性能是否可归因地提升？</p>
+      </div>
+      <div class="cover-mark">
+        <div class="kicker" style="color:#f4c28b">One question</div>
+        <p style="font-size:26px;margin-top:18px">Can privileged simulation knowledge train a visible-only bimanual policy?</p>
+        <div class="chain"><span>action token</span><b>→</b><span>action chunk</span><b>→</b><span>heterogeneous supervision</span><b>→</b><span>privileged loop?</span></div>
+        <p style="color:#bdc9cc;font-size:15px;margin-top:22px">OpenVLA · π0 · π0.5</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" data-page="02 / 19">
+    <div class="kicker">01 · Project Target</div><h2>真正的问题：训练能看更多，部署不能作弊</h2>
+    <div class="callout">训练期使用仿真全状态，训练出一个只依赖可部署观测的学生；然后在闭环任务里证明，提升不是因为测试时偷偷多接了一根“真值线”。</div>
+    <div class="flow"><div class="node blue">RoboDojo<br><small>o<sub>t</sub> + z<sub>t</sub></small></div><div class="arrow">→</div><div class="node orange">教师 / 辅助标签</div><div class="arrow">→</div><div class="node green">visible-only<br>student</div><div class="arrow">→</div><div class="node purple">无特权执行</div></div>
+    <div class="grid"><div class="card blue"><h3>部署允许</h3><p>多相机 RGB、双臂本体状态、任务指令，以及经审计的可部署历史。</p></div><div class="card red"><h3>训练独有</h3><p>物体真值位姿、接触、抓取标志、任务阶段、碰撞距离、奖励和进度。</p></div></div>
+    <p class="small">第一阶段不复刻数十亿参数模型。先固定学生结构，证明信息使用方式。</p>
+  </section>
+
+  <section class="slide" data-page="03 / 19">
+    <div class="kicker">02 · Definition</div><h2>严格定义：什么才叫特权信息？</h2>
+    <div class="swimlane"><b>训练</b><div><div class="flow"><div class="node blue">o<sub>t</sub></div><div class="node red">z<sub>t</sub><br><small>全状态</small></div><div class="arrow">→</div><div class="node orange">教师 / 辅助目标</div><div class="arrow">→</div><div class="node green">学生训练</div></div></div></div>
+    <div class="swimlane"><b>部署执行</b><div><div class="flow"><div class="node blue">o<sub>t</sub><br><small>可见观测</small></div><div class="arrow">→</div><div class="node green">策略 + 固定控制器</div><div class="arrow">→</div><div class="node purple">动作</div><span class="tag red">z_t 禁止进入决策链</span></div></div></div>
+    <div class="swimlane"><b>独立评测</b><div><div class="flow"><div class="node red">z<sub>t</sub></div><div class="arrow">→</div><div class="node orange">成功 / 碰撞 / 阶段 / 恢复日志</div><span class="tag green">只记录，不反馈</span></div></div></div>
+    <p><span class="evidence proposal">本项目协议</span> 除独立评测器外，任何会改变动作、重规划、裁剪、终止或恢复的组件都不能读取特权真值。</p>
+  </section>
+
+  <section class="slide" data-page="04 / 19">
+    <div class="kicker">03 · Common Coordinate System</div><h2>用同一把尺读三篇论文</h2>
+    <table><thead><tr><th>维度</th><th>OpenVLA</th><th>π0</th><th>π0.5</th></tr></thead><tbody>
+      <tr><td>部署输入</td><td>单图像 + 指令</td><td>多图像 + 指令 + 本体状态</td><td>多图像 + 状态 + 总任务</td></tr>
+      <tr><td>动作对象</td><td>单步 7D 动作 token</td><td>连续 action chunk</td><td>子任务文本 + 连续 action chunk</td></tr>
+      <tr><td>训练重点</td><td>动作 token 交叉熵</td><td>flow matching + pre/post-training</td><td>异构共同训练 + 高层监督</td></tr>
+      <tr><td>项目价值</td><td>开放工程参照</td><td>连续动作接口</td><td>监督组织灵感</td></tr>
+    </tbody></table>
+    <div class="callout dark">比较时固定：学生骨干 · 动作维度 · 坐标系 · chunk 长度 · 执行步数 · 控制器 · 训练预算 · 测试初始化。</div>
+    <div class="legend"><span class="tag">蓝：部署观测</span><span class="tag green">绿：动作生成</span><span class="tag orange">橙：训练目标</span><span class="tag purple">紫：项目提案</span></div>
+  </section>
+
+  <section class="slide" data-page="05 / 19">
+    <div class="kicker">04 · OpenVLA</div><h2>把机器人动作塞进语言模型接口</h2>
+    <div class="two-col"><div><img class="figure" src="../../assets/openvla-overview.svg" alt="OpenVLA architecture redraw"><p class="caption"><strong>结构重绘：</strong>原文 Figure 2 的中文讲解版。图像和语言进入视觉语言骨干，最后生成动作 token 并反离散化。</p></div><div><div class="card blue"><h3>背景问题</h3><p>既有通用 VLA 多为闭源，机器人动作如何接入预训练 VLM 并支持下游适配？</p></div><div class="card green"><h3>输入 → 输出</h3><p>一张当前 RGB 图像 + 语言指令 → 当前控制时刻的 7 维单臂末端动作。</p></div><div class="card orange"><h3>核心选择</h3><p>连续动作不直接回归，而是逐维离散为 action token，让 Llama 2 继续做 next-token prediction。</p></div></div></div>
+  </section>
+
+  <section class="slide" data-page="06 / 19">
+    <div class="kicker">05 · OpenVLA</div><h2>动作 token：收益与代价</h2>
+    <div class="two-col"><div class="interactive"><h3>交互 1 · 动作分箱</h3><div class="control-row"><label>bins <select id="binSelect"><option>16</option><option>64</option><option selected>256</option></select></label><label>动作值 <input id="actionSlider" type="range" min="-1" max="1" step="0.001" value="0.233"></label><b id="actionValue">0.233</b></div><canvas id="binCanvas" width="780" height="270"></canvas><div id="binOutput" class="demo-output"></div><button id="binReset" style="margin-top:10px">重置</button></div><div><div class="flow"><div class="node orange">连续值</div><div class="arrow">→</div><div class="node blue">256 bins</div><div class="arrow">→</div><div class="node purple">action token</div><div class="arrow">→</div><div class="node green">反离散化</div></div><div class="card"><h3>为什么有效？</h3><p>复用有限词表概率、交叉熵和自回归生成。</p><h3>付出什么？</h3><p>量化误差；普通交叉熵不认识“相邻 bin 更近”；单步 token 不保证时间平滑。</p></div></div></div>
+  </section>
+
+  <section class="slide" data-page="07 / 19">
+    <div class="kicker">06 · OpenVLA</div><h2>baseline 为什么这样选？</h2>
+    <div class="grid"><div class="card blue"><h3>RT-1-X / Octo</h3><p>通用机器人策略参照：大规模 VLA 预训练是否有价值？</p></div><div class="card purple"><h3>RT-2-X</h3><p>当时强大的闭源 VLA：开源 7B 模型能否竞争？</p></div><div class="card green"><h3>Diffusion Policy</h3><p>连续 action chunk 的任务专家：窄任务中谁更平滑、更精确？</p></div><div class="card orange"><h3>OpenVLA scratch</h3><p>去掉 OpenX 机器人预训练：大规模机器人数据是否关键？</p></div></div>
+    <div class="callout"><span class="evidence reported">论文报告</span> OpenVLA 在多维泛化和多指令下游适配上有优势；<span class="evidence not-proven">论文未证明</span> action token 本身优于 diffusion/flow，也没验证双臂 PiPER。</div>
+    <div class="three-col"><div class="metric"><b>70.6%</b><span>WidowX 平均成功率</span></div><div class="metric"><b>63.8%</b><span>Franka 下游汇总</span></div><div class="metric"><b>~6 Hz</b><span>原版推理参照</span></div></div>
+    <p class="small">原版边界：单图、单臂 7D、无 proprioception、无历史、无 action chunk。</p>
+  </section>
+
+  <section class="slide" data-page="08 / 19">
+    <div class="kicker">07 · π0</div><h2>输出不再是七个词，而是一段未来轨迹</h2>
+    <div class="two-col"><div><img class="figure" src="../../assets/pi0-figure3.svg" alt="pi0 framework redraw"><p class="caption"><strong>π0 Figure 3 意图重绘：</strong>论文原图展示数据混合、PaliGemma VLM、action expert 和多种机器人 embodiment。你提供的截图原意已保留，中文演示版重新排版。</p></div><div><div class="callout green">一次输出：<strong>[H, D]</strong> 连续 action chunk，而不是当前一步的 7 个 token。</div><div class="flow"><div class="node blue">多路图像</div><div class="node blue">语言</div><div class="node blue">本体状态</div><div class="arrow">→</div><div class="node green">连续动作块</div></div><p>VLM 提供视觉语言条件，action expert 处理带噪动作块和生成进度。action chunk 提高短时轨迹一致性，但执行一段后要重新观察。</p></div></div>
+  </section>
+
+  <section class="slide" data-page="09 / 19">
+    <div class="kicker">08 · π0</div><h2>Flow matching：每个样本给风场一支箭头</h2>
+    <div class="two-col"><div class="interactive"><h3>交互 2 · 条件向量场（二维玩具示意）</h3><div class="control-row"><label>观察条件 <select id="fieldMode"><option value="cup">杯子在右边 · 抓杯子</option><option value="drawer">抽屉在左边 · 打开抽屉</option></select></label><button id="fieldStep">前进一步</button><button id="fieldReset">重置</button></div><canvas id="fieldCanvas" width="780" height="360"></canvas><div id="fieldOutput" class="demo-output"></div><p class="caption">这是二维概念切片，不是论文真实的 50×D 高维动作空间。</p></div><div><div class="flow"><div class="node orange">随机动作块 X<sub>0</sub></div><div class="arrow">→</div><div class="node blue">局部箭头</div><div class="arrow">→</div><div class="node green">连续 action chunk</div></div><div class="card"><h3>训练</h3><p>已知专家动作 A、噪声 ε 和 τ，构造中间块并监督变化率。</p><h3>推理</h3><p>只采样一次初始噪声，之后根据当前块、观察和 τ 更新十次。</p><h3>不要混淆</h3><p>机器人时间 t ≠ 生成进度 τ；50 Hz ≠ 每秒重算 50 个 chunk。</p></div></div></div>
+  </section>
+
+  <section class="slide" data-page="10 / 19">
+    <div class="kicker">09 · π0</div><h2>证据与迁移：整套配方有效，不等于单组件胜出</h2>
+    <table><thead><tr><th>对照</th><th>为什么选</th><th>证据边界</th></tr></thead><tbody>
+      <tr><td>OpenVLA</td><td>离散自回归、无 chunk</td><td>检验单步 token 接口在高频任务上的限制</td></tr>
+      <tr><td>Octo</td><td>action chunk + diffusion，但更小</td><td>动作生成和容量同时变化</td></tr>
+      <tr><td>π0-small</td><td>去掉 VLM 初始化</td><td>检验视觉语言先验，但参数量/结构也变化</td></tr>
+      <tr><td>compute-parity π0</td><td>限制更新步数</td><td>部分排除训练时间差异</td></tr>
+    </tbody></table>
+    <div class="grid"><div class="card green"><h3>可借鉴</h3><p>多相机 + proprioception；连续 action chunk；广泛数据后高质量精修。</p></div><div class="card red"><h3>暂不照搬</h3><p>3.3B 完整复刻、万小时预训练、18D 跨具身接口、同时做 sim-to-real。</p></div></div>
+    <div class="callout"><span class="evidence not-proven">论文未证明</span> flow matching 是全部性能提升的唯一原因；接口、数据规模、VLM 初始化和后训练同时影响结果。</div>
+  </section>
+
+  <section class="slide" data-page="11 / 19">
+    <div class="kicker">10 · π0.5</div><h2>感性理解：不同老师教同一个学生</h2>
+    <div class="two-col"><div><img class="figure" src="../../assets/pi05-overview.svg" alt="pi0.5 heterogeneous training redraw"><p class="caption"><strong>π0.5 方法重绘：</strong>机器人动作、网页视觉、子任务、目标定位和专家语言共同进入训练；部署时先预测子任务，再生成低层动作。</p></div><div><div class="callout orange">机器人轨迹教“怎么动”；网页和目标线索教“是什么、在哪里”；子任务与专家语言教“下一步做什么”。</div><div class="flow"><div class="node orange">总任务</div><div class="arrow">→</div><div class="node purple">当前子任务</div><div class="arrow">→</div><div class="node green">连续动作块</div></div><p>π0.5 主要考察已有技能在未见家庭环境、布局和有限新物体中的泛化，不应讲成自动获得任意新技能。</p></div></div>
+  </section>
+
+  <section class="slide" data-page="12 / 19">
+    <div class="kicker">11 · π0.5</div><h2>它接近特权监督，但不是严格特权学习</h2>
+    <div class="grid three"><div class="card blue"><h3>MM / ME / CE</h3><p>多机器人动作与环境经验：扩大操作覆盖。</p></div><div class="card orange"><h3>HL / WD</h3><p>子任务、目标框、网页视觉语义：扩大可解释的中间监督。</p></div><div class="card purple"><h3>VI</h3><p>专家用语言示范任务分解：教高层如何选择下一步。</p></div></div>
+    <div class="callout"><span class="evidence reported">论文报告</span> 异构数据和高层监督在其设置中有帮助。<br><span class="evidence not-proven">论文未证明</span> 这不是仿真全状态教师、经典 LUPI、特权蒸馏或自主数据聚合闭环。</div>
+    <table><thead><tr><th>项目可借鉴</th><th>项目必须自己验证</th></tr></thead><tbody><tr><td>把 RoboDojo 真值转成阶段、几何、接触、双臂角色标签</td><td>学生只看普通观测时能否可靠预测这些标签，以及它们是否带来闭环提升</td></tr></tbody></table>
+  </section>
+
+  <section class="slide" data-page="13 / 19">
+    <div class="kicker">12 · Decision</div><h2>采用、改造、暂不采用</h2>
+    <table><thead><tr><th>论文</th><th style="color:#285b31">Adopt</th><th style="color:#7b4b15">Adapt</th><th style="color:#7b2d22">Reject for now</th></tr></thead><tbody>
+      <tr><td>OpenVLA</td><td>VLM 初始化、数据清洗、LoRA、开放工程参照</td><td>token baseline 或语义编码器</td><td>原版单图 7D 作为最终双臂策略</td></tr>
+      <tr><td>π0</td><td>多相机、本体状态、连续 chunk、pre/post 分工</td><td>PiPER 动作维度；10-20步 chunk；接触阶段重规划</td><td>3.3B 完整复刻、万小时预训练</td></tr>
+      <tr><td>π0.5</td><td>阶段、几何、接触、双臂角色监督</td><td>仿真自动标签；短任务先用阶段 ID</td><td>开放世界导航与全模型复杂度</td></tr>
+    </tbody></table>
+    <div class="callout dark">第一版最值得复用的是 <strong>数据和动作接口思想</strong>，不一定是模型规模。</div>
+  </section>
+
+  <section class="slide" data-page="14 / 19">
+    <div class="kicker">13 · Gap</div><h2>研究缺口：三篇都没回答我们的因果问题</h2>
+    <div class="three-col"><div class="card blue"><h3>OpenVLA</h3><p>没有特权训练机制。</p></div><div class="card green"><h3>π0</h3><p>没有全状态教师或 asymmetric learning。</p></div><div class="card purple"><h3>π0.5</h3><p>有额外语义监督，但没有严格训练/部署信息不对称实验。</p></div></div>
+    <div class="callout">真正的空缺：<strong>z<sub>t</sub> only during training → visible-only student → fair closed-loop evaluation</strong></div>
+    <p>另一个前置问题是可观测性：如果“已经抓稳”和“尚未抓稳”在允许观测中完全不可区分，学生不能靠更大模型恢复不存在的信息。</p>
+  </section>
+
+  <section class="slide" data-page="15 / 19">
+    <div class="kicker">14 · RoboDojo Protocol</div><h2>训练、部署、评测：三条信息流</h2>
+    <div class="swimlane"><b>训练</b><div><div class="flow"><div class="node blue">o<sub>t</sub></div><div class="node red">z<sub>t</sub></div><div class="arrow">→</div><div class="node orange">教师 / 标签</div><div class="arrow">→</div><div class="node green">student</div><div class="arrow">→</div><div class="node purple">A<sub>t</sub></div></div></div></div>
+    <div class="swimlane"><b>部署执行</b><div><div class="flow"><div class="node blue">RGB + q + instruction</div><div class="arrow">→</div><div class="node green">student + fixed controller</div><div class="arrow">→</div><div class="node purple">A<sub>t</sub></div><span class="tag red">z_t 断开</span></div></div></div>
+    <div class="swimlane"><b>独立评测</b><div><div class="flow"><div class="node red">z<sub>t</sub></div><div class="arrow">→</div><div class="node orange">success / collision / phase / recovery log</div><span class="tag green">只记录，不反馈</span></div></div></div>
+    <p class="small">审计范围包括策略输入、归一化、checkpoint 选择、后处理、安全过滤、终止逻辑和恢复逻辑。</p>
+  </section>
+
+  <section class="slide" data-page="16 / 19">
+    <div class="kicker">15 · Fair Experiment</div><h2>交互 3：一次只改变一个变量</h2>
+    <div class="two-col"><div class="interactive"><h3>公平性检查器</h3><p class="small">关闭所有未改变的开关；只要额外改变了多个因素，结论就不能归因。</p><div class="check-grid" id="fairChecks"></div><div id="fairStatus" class="status good">当前：可归因对照</div><button id="fairReset" style="margin-top:12px">重置为公平</button></div><div><div class="card blue"><h3>A1 Plain BC vs A2 Privileged Auxiliary</h3><p>同轨迹、同动作标签、同学生；唯一增加训练期阶段/几何/接触辅助损失，部署时删除辅助头。</p></div><div class="card purple"><h3>B1 Expert distribution vs B2 Student distribution</h3><p>同教师、同查询规则、同有效标签预算；只改变新增状态来自教师还是学生访问分布。</p></div></div></div>
+  </section>
+
+  <section class="slide" data-page="17 / 19">
+    <div class="kicker">16 · Evaluation</div><h2>指标和风险：失败必须能定位</h2>
+    <div class="three-col"><div class="metric"><b>主指标</b><span>完整任务成功率 + 训练种子层面的不确定性</span></div><div class="metric"><b>过程指标</b><span>阶段完成、双臂协调、时间、动作长度</span></div><div class="metric"><b>安全指标</b><span>碰撞、掉落、无效静止、恢复成功</span></div></div>
+    <div class="grid" style="margin-top:18px"><div class="card red"><h3>可观测性不足</h3><p>当前帧无法区分真实状态 → 需要统一历史/记忆。</p></div><div class="card orange"><h3>特权泄漏</h3><p>控制器、过滤器、终止逻辑偷看真值 → 结果无效。</p></div><div class="card purple"><h3>教师覆盖不足</h3><p>学生访问状态教师拒答或不可恢复 → 先记录，不能假装有标签。</p></div><div class="card blue"><h3>接口变化</h3><p>坐标系、chunk、频率、PD 变化 → 性能无法归因。</p></div></div>
+    <div class="callout dark">名义测试与单因素扰动分开；正式结论目标至少 5 个训练种子，3 个种子只能标为探索性。</div>
+  </section>
+
+  <section class="slide" data-page="18 / 19">
+    <div class="kicker">17 · Milestones</div><h2>两周目标：先证明特权监督是否值得继续</h2>
+    <div class="flow"><div class="node blue">Day 1-3<br><small>冻结任务、观测、动作接口</small></div><div class="arrow">→</div><div class="node orange">Day 4-6<br><small>核对 z_t 并生成标签</small></div><div class="arrow">→</div><div class="node green">Day 7-10<br><small>A1 / A2 / shuffled control</small></div><div class="arrow">→</div><div class="node purple">Day 11-14<br><small>配对评测与失败分类</small></div></div>
+    <div class="grid"><div class="card green"><h3>今天需要拍板</h3><p>第一阶段任务是否真正需要双臂？部署允许哪些相机、状态和历史？RoboDojo 哪些特权字段稳定？教师用脚本、规划器还是 state-based RL？学生先用 ACT、Diffusion Policy 还是小型 flow policy？</p></div><div class="card orange"><h3>Go / No-Go</h3><p>Go：提升跨训练种子、配对初始化和基本扰动，并确认无泄漏。No-Go：不稳定、可观测性不足或标签质量差，就先诊断，不扩大模型。</p></div></div>
+    <p class="quote">OpenVLA 告诉我们动作如何接入 VLM；π0 告诉我们如何生成连续动作块；π0.5 提示异构监督可能有帮助；真正的特权闭环，要由公平实验给出。</p>
+  </section>
+
+  <section class="slide" data-page="19 / 19">
+    <div class="kicker">18 · Open Questions</div><h2>三个关键问题：先记录，不急着回答</h2>
+    <p class="subtitle">分享结束时留存的问题。目前没有论文级证据，留作后续阅读、讨论与实验设计的入口。</p>
+    <div class="grid three" style="margin-top:26px">
+      <div class="card blue"><h3>Q1 · variant 的适用边界</h3><p>flat、human、vlm 这几个 variant，对 non high-level task 有没有帮助？</p></div>
+      <div class="card orange"><h3>Q2 · 谁在做推理</h3><p>π0 需要 VLM 先做推理再预测 action，是不是因为 action expert 自身的 reasoning 能力不够，必须依靠 VLM 进行 reasoning？</p></div>
+      <div class="card purple"><h3>Q3 · 低层任务的价值</h3><p>π0.5 的预训练任务里面，low-level task 真的有用吗？</p></div>
+    </div>
+    <div class="callout dark" style="margin-top:26px">没有答案也是一种结论。欢迎带着消融实验、失败案例或反例，回到这三个问题上。</div>
+  </section>
+</main>
+
+<div class="footer-controls"><div class="nav"><button id="prev" aria-label="上一页">←</button><button id="next" aria-label="下一页">→</button></div><div class="progress"><i id="progressBar"></i></div><div class="utility"><a href="../../#archive" title="首页" aria-label="返回站点首页">⌂</a><button id="notesBtn" title="讲稿">N</button><button id="fullscreenBtn" title="全屏">⛶</button></div></div>
+<aside class="notes" id="notes"><button class="close-notes" id="closeNotes">关闭</button><h3 id="notesTitle">讲稿</h3><div id="notesBody"></div></aside>
+
+<script>
+  const slides = [...document.querySelectorAll('.slide')];
+  let index = 0;
+  const notes = [
+    ['标题', '今天我不先回答哪个模型更强，而是想回答一个更具体的问题：仿真中的特权信息，能不能只在训练期帮助双臂 PiPER，而在部署时完全消失。OpenVLA提供动作token参照，π0提供连续action chunk，π0.5提供异构监督灵感。三篇都没有直接完成我们的特权闭环。'],
+    ['项目目标', '项目目标可以压缩成一句话：训练时看得更多，部署时不能看得更多，但性能提升必须能够归因。第一阶段固定学生结构，不复刻数十亿参数模型。'],
+    ['特权定义', '特权不是更聪明的信息，而是训练时允许使用、部署时拿不到的信息。评测器可以读真值记录指标，但任何会改变动作、重规划、裁剪、终止或恢复的组件都不能读。'],
+    ['共同坐标系', '比较三篇论文时固定六件事：输入、动作、训练目标、数据、部署和证据边界。尤其固定动作维度、坐标系、控制频率、chunk和控制器，否则比较的是整个系统差异。'],
+    ['OpenVLA接口', 'OpenVLA回答的是标准视觉语言模型能否通过动作token变成通用机器人策略。输入是一张图像和语言，输出当前控制时刻的7维单臂动作。'],
+    ['动作token', '示范连续动作按每个维度分箱为256个bin，模型用动作token交叉熵做行为克隆，推理后反离散化。收益是复用LLM接口，代价是量化误差和数值距离缺失。现场拖动滑块展示这一点。'],
+    ['OpenVLA证据', 'OpenVLA是开放工程参照，不是双臂特权学习答案。它的单图、单臂7D、无本体历史和无chunk限制，正是我们不能直接照搬的原因。'],
+    ['π0接口', 'π0把动作对象从七个token换成未来一段连续动作块。VLM提供条件，action expert生成连续动作。50步是预测长度，不是必须一次执行完的长期计划。'],
+    ['Flow直觉', '训练时已知专家动作、噪声和tau，生成中间块并监督变化率。推理时一次采样初始噪声，沿条件向量场更新。二维画布只是概念切片，不是论文真实高维空间。'],
+    ['π0证据', 'π0支持整套连续动作与pre/post-training配方可行，但不能把结果只归因于flow。项目借鉴接口和数据组织，不复制3.3B和万小时规模。'],
+    ['π0.5直觉', 'π0.5可以理解成不同老师教同一个学生：动作数据教怎么动，网页和目标线索教是什么，子任务和专家语言教下一步做什么。它主要研究已有技能在新环境中的泛化。'],
+    ['π0.5边界', '有训练期额外语义监督，不等于经典特权学习。我们可以用RoboDojo真值生成阶段、几何、接触和双臂角色标签，但必须自己验证部署时预测和闭环提升。'],
+    ['决策', '三篇论文分别采用不同组件。第一版采用数据和动作接口思想，改造成PiPER真实接口，暂不复刻大模型和开放世界复杂度。'],
+    ['缺口', '三篇都没有在相同学生、相同部署输入、相同动作接口下，只改变训练期是否使用仿真特权信息。中央空缺就是我们的研究问题。'],
+    ['信息流', '训练流可以分叉，部署流必须只有一条可部署路径。评测器可读真值，但只能记录。要审计归一化、checkpoint、后处理和终止逻辑，防止隐性泄漏。'],
+    ['公平实验', 'A1/A2只改变辅助监督；B1/B2只改变新增状态分布。其余学生、动作、预算、教师、查询规则和测试初始化都冻结。'],
+    ['指标风险', '完整成功率是主指标，阶段和安全是诊断指标。名义和扰动测试分开，保留失败类型和训练种子差异，不能用训练损失或单个视频代替闭环证据。'],
+    ['里程碑', '两周先交付visible-only baseline、privileged auxiliary和shuffled-label control。只有提升跨种子、配对初始化和基本扰动且无泄漏，才增加教师纠错、数据聚合或更大模型。'],
+    ['关键问题', '最后记录三个开放问题：flat、human、vlm 这几个 variant 对 non high-level task 有没有帮助；π0 需要 VLM 先推理再预测 action，是不是因为 action expert 自身 reasoning 能力不够；π0.5 预训练任务里的 low-level task 是否真的有用。']
+  ];
+  function render() { slides.forEach((s,i)=>s.classList.toggle('active',i===index)); document.getElementById('progressBar').style.width=((index+1)/slides.length*100)+'%'; document.getElementById('notesTitle').textContent=(index+1)+'. '+notes[index][0]; document.getElementById('notesBody').innerHTML='<p>'+notes[index][1]+'</p><p class="small">键盘：←/→ 翻页，N 打开讲稿，F 全屏。</p>'; history.replaceState(null,'','#'+(index+1)); }
+  function go(n) { index=Math.max(0,Math.min(slides.length-1,n)); render(); }
+  document.getElementById('prev').onclick=()=>go(index-1); document.getElementById('next').onclick=()=>go(index+1);
+  document.addEventListener('keydown',e=>{ if(e.key==='ArrowRight'||e.key===' ') go(index+1); if(e.key==='ArrowLeft') go(index-1); if(e.key.toLowerCase()==='n') document.getElementById('notes').classList.toggle('open'); if(e.key.toLowerCase()==='f') toggleFull(); });
+  document.getElementById('notesBtn').onclick=()=>document.getElementById('notes').classList.add('open'); document.getElementById('closeNotes').onclick=()=>document.getElementById('notes').classList.remove('open');
+  function toggleFull(){ if(!document.fullscreenElement) document.documentElement.requestFullscreen?.(); else document.exitFullscreen?.(); } document.getElementById('fullscreenBtn').onclick=toggleFull;
+  if(location.hash){ const n=Number(location.hash.slice(1)); if(n>=1&&n<=slides.length) index=n-1; }
+
+  const actionSlider=document.getElementById('actionSlider'), binSelect=document.getElementById('binSelect'), binCanvas=document.getElementById('binCanvas'), binCtx=binCanvas?.getContext('2d');
+  function drawBins(){ if(!binCtx)return; const bins=Number(binSelect.value), value=Number(actionSlider.value), w=binCanvas.width,h=binCanvas.height; binCtx.clearRect(0,0,w,h); binCtx.fillStyle='#f7f1e6'; binCtx.fillRect(0,0,w,h); const left=46,right=w-34,y=150,span=right-left; binCtx.strokeStyle='#26363d';binCtx.lineWidth=2;binCtx.beginPath();binCtx.moveTo(left,y);binCtx.lineTo(right,y);binCtx.stroke(); for(let i=0;i<=bins;i++){const x=left+i/bins*span;binCtx.strokeStyle=i%Math.max(1,Math.floor(bins/8))===0?'#9c9487':'#ddd6c9';binCtx.beginPath();binCtx.moveTo(x,y-22);binCtx.lineTo(x,y+22);binCtx.stroke();} const norm=(value+1)/2, bin=Math.min(bins-1,Math.floor(norm*bins)), center=-1+((bin+.5)/bins)*2, x=left+(bin+.5)/bins*span;binCtx.fillStyle='#c97430';binCtx.beginPath();binCtx.arc(x,y,13,0,Math.PI*2);binCtx.fill();binCtx.fillStyle='#18252c';binCtx.font='18px Consolas';binCtx.fillText('bin '+bin,x-28,y-38);binCtx.fillStyle='#68757a';binCtx.font='15px Segoe UI';binCtx.fillText('-1',left-9,y+56);binCtx.fillText('0',w/2-5,y+56);binCtx.fillText('+1',right-10,y+56); document.getElementById('actionValue').textContent=value.toFixed(3); document.getElementById('binOutput').textContent=`连续动作值: ${value.toFixed(3)}\n${bins} bins -> bin ${bin}\n反离散化代表值: ${center.toFixed(3)}\n量化误差: ${(center-value).toFixed(3)}\n\n注意：普通交叉熵只看正确 token 的概率，不编码 bin 的数值距离。`; }
+  actionSlider?.addEventListener('input',drawBins);binSelect?.addEventListener('change',drawBins);document.getElementById('binReset')?.addEventListener('click',()=>{actionSlider.value=.233;binSelect.value=256;drawBins();});
+
+  const fieldCanvas=document.getElementById('fieldCanvas'), fieldCtx=fieldCanvas?.getContext('2d'), fieldMode=document.getElementById('fieldMode'); let particle={x:.18,y:.78,step:0};
+  function vector(x,y,mode){ if(mode==='cup') return {x:.18+.18*(1-y),y:-.12-.17*x}; return {x:.1+.16*y,y:.16*(1-x)}; }
+  function drawField(){ if(!fieldCtx)return; const w=fieldCanvas.width,h=fieldCanvas.height;fieldCtx.clearRect(0,0,w,h);fieldCtx.fillStyle='#f7f1e6';fieldCtx.fillRect(0,0,w,h);fieldCtx.strokeStyle='#ddd6c9';fieldCtx.lineWidth=1;for(let i=1;i<10;i++){fieldCtx.beginPath();fieldCtx.moveTo(i*w/10,0);fieldCtx.lineTo(i*w/10,h);fieldCtx.stroke();fieldCtx.beginPath();fieldCtx.moveTo(0,i*h/10);fieldCtx.lineTo(w,i*h/10);fieldCtx.stroke();}for(let gx=.12;gx<1;gx+=.18)for(let gy=.16;gy<.95;gy+=.2){const v=vector(gx,gy,fieldMode.value), scale=48,x=gx*w,y=gy*h;fieldCtx.strokeStyle=fieldMode.value==='cup'?'#16718f':'#8064b1';fieldCtx.lineWidth=2;fieldCtx.beginPath();fieldCtx.moveTo(x,y);fieldCtx.lineTo(x+v.x*scale,y+v.y*scale);fieldCtx.stroke();fieldCtx.fillStyle=fieldCtx.strokeStyle;fieldCtx.beginPath();fieldCtx.arc(x+v.x*scale,y+v.y*scale,3,0,Math.PI*2);fieldCtx.fill();}fieldCtx.strokeStyle='#c97430';fieldCtx.lineWidth=4;fieldCtx.beginPath();fieldCtx.moveTo(.18*w,.78*h);const points=[{...particle}];for(let i=0;i<particle.step;i++){const v=vector(particle.x,particle.y,fieldMode.value);particle.x=Math.max(.04,Math.min(.96,particle.x+.08*v.x));particle.y=Math.max(.04,Math.min(.96,particle.y+.08*v.y));points.push({...particle});}for(const p of points)fieldCtx.lineTo(p.x*w,p.y*h);fieldCtx.stroke();fieldCtx.fillStyle='#c97430';fieldCtx.beginPath();fieldCtx.arc(particle.x*w,particle.y*h,9,0,Math.PI*2);fieldCtx.fill();document.getElementById('fieldOutput').textContent=`条件: ${fieldMode.value==='cup'?'杯子在右边 · 抓杯子':'抽屉在左边 · 打开抽屉'}\n当前 tau step: ${particle.step}/10\n这张图只表达：同一个当前位置，在不同 observation 条件下，局部箭头可以不同。`;} document.getElementById('fieldStep')?.addEventListener('click',()=>{particle.step=Math.min(10,particle.step+1);drawField();});document.getElementById('fieldReset')?.addEventListener('click',()=>{particle={x:.18,y:.78,step:0};drawField();});fieldMode?.addEventListener('change',()=>{particle={x:.18,y:.78,step:0};drawField();});
+
+  const checks=[['学生骨干相同',true],['部署相机相同',true],['观测历史相同',true],['动作接口相同',true],['chunk / 频率相同',true],['固定控制器相同',true],['训练轨迹相同',true],['动作标签相同',true],['训练更新数相同',true],['特权只在辅助目标',true],['测试初始化配对',true],['部署特权端口关闭',true]];const fairChecks=document.getElementById('fairChecks'); if(fairChecks){fairChecks.innerHTML=checks.map((c,i)=>`<label><input type="checkbox" data-fair="${i}" ${c[1]?'checked':''}>${c[0]}</label>`).join('');fairChecks.addEventListener('change',()=>{const all=[...fairChecks.querySelectorAll('input')].every(x=>x.checked);const leak=![...fairChecks.querySelectorAll('input')].find(x=>x.dataset.fair==='11')?.checked;const status=document.getElementById('fairStatus');if(all&&!leak){status.className='status good';status.textContent='当前：可归因对照，允许比较 A1/A2';}else{status.className='status bad';status.textContent='当前：不可归因或存在信息泄漏，请先修正红色变量';}});document.getElementById('fairReset').onclick=()=>{fairChecks.querySelectorAll('input').forEach(x=>x.checked=true);fairChecks.dispatchEvent(new Event('change'));};}
+  document.querySelectorAll('img.figure').forEach((img) => {
+    const markMissing = () => {
+      const placeholder = document.createElement('div');
+      placeholder.className = 'figure figure-missing';
+      placeholder.textContent = '示意图文件暂缺 · ' + img.getAttribute('src').split('/').pop();
+      img.replaceWith(placeholder);
+    };
+    if (img.complete && img.naturalWidth === 0) markMissing();
+    else img.addEventListener('error', markMissing, { once: true });
+  });
+  render();drawBins();drawField();
+</script>
+</body>
+</html>
