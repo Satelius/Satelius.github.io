@@ -30,7 +30,7 @@ window.SATELIUS_PAGES = [
   {
     id: "github",
     number: "003",
-    label: "EXTERNAL LOG 002",
+    label: "EXTERNAL LOG 003",
     title: "GitHub 公开档案",
     href: "https://github.com/Satelius",
     external: true,
