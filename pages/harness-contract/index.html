@@ -1,0 +1,863 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Harness MVP 契约 v1 的结构化、可视化提案网站。">
+  <title>Harness MVP 契约 v1 | 从场景生成到可审计发布</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="reading-progress" aria-hidden="true"><span id="readingProgress"></span></div>
+
+  <header class="site-header" id="top">
+    <a class="brand" href="#top" aria-label="返回页面顶部">
+      <span class="brand-mark" aria-hidden="true">
+        <span></span><span></span><span></span>
+      </span>
+      <span>
+        <strong>ROBOT HARNESS</strong>
+        <small>CONTRACT PROPOSAL / 01</small>
+      </span>
+    </a>
+    <button class="nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="siteNav">
+      <span></span><span></span>
+      <span class="sr-only">展开导航</span>
+    </button>
+    <nav class="site-nav" id="siteNav" aria-label="页面导航">
+      <a href="#journey">现有路径</a>
+      <a href="#contract">契约图景</a>
+      <a href="#authority">权责边界</a>
+      <a href="#asset-ledger">资产契约</a>
+      <a href="#identity">身份与审计</a>
+      <a href="#publish">发布资格</a>
+    </nav>
+    <a class="repo-link" href="https://github.com/LV-Robotics-Lab/robot-harness-gen-env/tree/worktree/bingsheng" target="_blank" rel="noreferrer">
+      查看项目 <span aria-hidden="true">↗</span>
+    </a>
+  </header>
+
+  <main>
+    <section class="hero section-shell" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <div class="status-line reveal">
+          <span class="status-pill"><i></i> 状态：提议中</span>
+          <span>契约版本 1.0.0</span>
+          <span>Text2Env · RoboTwin · SAPIEN</span>
+        </div>
+        <p class="eyebrow reveal">HARNESS MVP CONTRACT V1</p>
+        <h1 id="hero-title" class="reveal">让一句场景请求，<br><em>走完一条可信的路。</em></h1>
+        <p class="hero-lead reveal">
+          这个项目已经能够把一句受限的自然语言请求，编译成 RoboTwin 可以加载的场景包，并在 SAPIEN 中检查物体是否真的稳定、接触正确且清晰可见。Harness 契约不重写这条生成路径；它在路径外层增加统一的 Skill 身份、精确版本、调用记录、失败解释和发布资格。
+        </p>
+        <div class="hero-actions reveal">
+          <a class="button button-primary" href="#journey">从项目原貌开始</a>
+          <a class="button button-text" href="#thesis">先看核心结论 <span>↓</span></a>
+        </div>
+      </div>
+
+      <div class="hero-visual reveal" aria-label="从文本请求到物理验证的示意图">
+        <div class="hero-grid" aria-hidden="true"></div>
+        <div class="prompt-chip">
+          <span class="chip-index">INPUT / 01</span>
+          <p>“Place a can on top of a plate.”</p>
+          <span class="chip-seed">seed · 42</span>
+        </div>
+        <svg class="robot-scene" viewBox="0 0 620 520" role="img" aria-label="机械臂、罐子与盘子的抽象线稿">
+          <defs>
+            <linearGradient id="orangeFill" x1="0" x2="1">
+              <stop offset="0" stop-color="#ff6b35"/>
+              <stop offset="1" stop-color="#ff955f"/>
+            </linearGradient>
+            <filter id="softShadow" x="-40%" y="-40%" width="180%" height="180%">
+              <feDropShadow dx="0" dy="16" stdDeviation="18" flood-color="#17211d" flood-opacity=".12"/>
+            </filter>
+          </defs>
+          <path class="scene-axis" d="M75 395H551M120 430 532 286M120 430V183"/>
+          <path class="table-edge" d="M91 385 369 316 554 365 274 448Z"/>
+          <path class="table-face" d="M91 385v24l184 61 279-80v-25L274 448Z"/>
+          <ellipse class="plate-shadow" cx="350" cy="363" rx="88" ry="25"/>
+          <ellipse class="plate" cx="350" cy="348" rx="84" ry="27"/>
+          <ellipse class="plate-inner" cx="350" cy="347" rx="52" ry="15"/>
+          <g class="can" filter="url(#softShadow)">
+            <path d="M325 247v92c0 12 50 12 50 0v-92Z" fill="url(#orangeFill)"/>
+            <ellipse cx="350" cy="247" rx="25" ry="8" fill="#ff9b70"/>
+            <ellipse cx="350" cy="338" rx="25" ry="8" fill="#d84e1e"/>
+            <path d="M330 264h40M330 319h40" stroke="#fff4ea" stroke-opacity=".6"/>
+          </g>
+          <g class="arm">
+            <circle cx="147" cy="336" r="42"/>
+            <path d="m151 303 51-86 48 22-44 93"/>
+            <circle cx="207" cy="222" r="27"/>
+            <path d="m225 208 67-65 34 36-77 66"/>
+            <circle cx="310" cy="161" r="23"/>
+            <path d="m326 171 67 49-22 35-76-55"/>
+            <circle cx="388" cy="236" r="18"/>
+            <path d="m397 249 4 40M384 251l-15 34"/>
+            <path d="m400 287 23 12M369 284l-24 3"/>
+          </g>
+          <g class="measurement">
+            <path d="M295 350h110"/>
+            <path d="m295 344v12m110-12v12"/>
+            <text x="316" y="376">stable surface · 100 mm</text>
+          </g>
+          <g class="evidence-card">
+            <rect x="405" y="63" width="162" height="99" rx="3"/>
+            <text x="421" y="88" class="evidence-label">RUNTIME EVIDENCE</text>
+            <text x="421" y="116" class="evidence-value">1.0</text>
+            <text x="476" y="116" class="evidence-unit">contact fraction</text>
+            <path d="M421 137h129"/>
+            <circle cx="538" cy="137" r="5"/>
+          </g>
+        </svg>
+        <div class="hero-proof">
+          <span>SHA-256 BOUND</span>
+          <strong>resolved_scene</strong>
+          <code>8ba15e84…b4c5dbe</code>
+        </div>
+        <div class="orbit-label orbit-one">typed</div>
+        <div class="orbit-label orbit-two">replayed</div>
+        <div class="orbit-label orbit-three">audited</div>
+      </div>
+    </section>
+
+    <section class="thesis-strip" id="thesis" aria-label="契约核心结论">
+      <div class="section-shell thesis-grid">
+        <p class="section-number">00 / 核心结论</p>
+        <blockquote>
+          Harness 不是第四个仿真器，也不是第二套场景格式。Harness 是一层<strong>执行治理契约</strong>：它明确谁能被调用、调用的是哪个版本、使用了哪些依赖、产生了哪些证据，以及这次结果是否具备发布资格。
+        </blockquote>
+        <div class="thesis-note">
+          <span>一句话辨认边界</span>
+          <p><b>scene_gen</b> 回答“场景是什么、物理是否通过”。</p>
+          <p><b>Harness</b> 回答“谁在何种条件下产生了这个结果”。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section section-shell" id="journey" aria-labelledby="journey-title">
+      <header class="section-heading reveal">
+        <div>
+          <p class="section-number">01 / 先认识现有项目</p>
+          <h2 id="journey-title">在 Harness 出现以前，<br>项目已经走通了什么？</h2>
+        </div>
+        <p class="section-intro">
+          如果读者第一次接触这个项目，最先需要建立的认识是：系统不是直接把文本交给仿真器。系统先逐层缩小不确定性，直到一句语言请求变成可以复查、可以重放、可以验证的物理场景。
+        </p>
+      </header>
+
+      <div class="journey-layout">
+        <div class="stage-rail reveal" role="tablist" aria-label="Text2Env Stage 0 到 5">
+          <button class="stage-tab active" type="button" data-stage="0" role="tab" aria-selected="true">
+            <span>STAGE 0</span><strong>收紧文本边界</strong><i></i>
+          </button>
+          <button class="stage-tab" type="button" data-stage="1" role="tab" aria-selected="false">
+            <span>STAGE 1</span><strong>锁定语义契约</strong><i></i>
+          </button>
+          <button class="stage-tab" type="button" data-stage="2" role="tab" aria-selected="false">
+            <span>STAGE 2</span><strong>找到真实资产</strong><i></i>
+          </button>
+          <button class="stage-tab" type="button" data-stage="3" role="tab" aria-selected="false">
+            <span>STAGE 3</span><strong>求解并封装场景</strong><i></i>
+          </button>
+          <button class="stage-tab" type="button" data-stage="4" role="tab" aria-selected="false">
+            <span>STAGE 4</span><strong>在物理世界回放</strong><i></i>
+          </button>
+          <button class="stage-tab" type="button" data-stage="5" role="tab" aria-selected="false">
+            <span>STAGE 5</span><strong>做最终门控判断</strong><i></i>
+          </button>
+        </div>
+
+        <div class="stage-display reveal" id="stageDisplay" aria-live="polite">
+          <div class="stage-display-head">
+            <span id="stageKicker">STAGE 0 · BOUNDED INPUT</span>
+            <span class="stage-index" id="stageIndex">00</span>
+          </div>
+          <h3 id="stageTitle">系统先决定哪些话可以被理解。</h3>
+          <p id="stageBody">受限解析器只接受桌面物体、颜色、材质、区域和少量空间关系。路径、资产编号、坐标、四元数和可执行代码都会在进入场景语义之前被拒绝，因此用户只能表达“想要什么”，不能偷渡“后端怎样实现”。</p>
+          <div class="stage-art" id="stageArt" aria-hidden="true">
+            <div class="boundary-card allowed"><span>允许</span><b>can on plate</b></div>
+            <div class="boundary-line"></div>
+            <div class="boundary-card denied"><span>拒绝</span><b>asset_id / pose</b></div>
+          </div>
+          <div class="stage-facts">
+            <div><span>这一阶段接收</span><strong id="stageInput">原始 request + seed</strong></div>
+            <div><span>这一阶段交出</span><strong id="stageOutput">有界的语义意图</strong></div>
+            <div><span>失败意味着</span><strong id="stageFailure">请求没有越过信任边界</strong></div>
+          </div>
+        </div>
+      </div>
+      <p class="mapping-note reveal">说明：这里的 Stage 0-5 名称是根据当前仓库执行链做出的解释性对齐。契约正式注册的接口不是六个 Stage，而是下面三个更稳定的 Skill。</p>
+    </section>
+
+    <section class="content-section contract-section" id="contract" aria-labelledby="contract-title">
+      <div class="section-shell">
+        <header class="section-heading light reveal">
+          <div>
+            <p class="section-number">02 / 契约提出的改变</p>
+            <h2 id="contract-title">六个内部阶段，<br>收拢成三个公开 Skill。</h2>
+          </div>
+          <p class="section-intro">
+            外部调用方不需要理解解析器、求解器和 builder 的每个内部函数。调用方只需要面对三个职责稳定的接口：先编译场景，再回放物理过程，最后判断是否具备发布资格。
+          </p>
+        </header>
+
+        <div class="skill-map reveal">
+          <div class="legacy-track">
+            <span>现有内部路径</span>
+            <div class="legacy-stages">
+              <i>0</i><i>1</i><i>2</i><i>3</i><i>4</i><i>5</i>
+            </div>
+          </div>
+          <div class="skill-track">
+            <button class="skill-tab active" type="button" data-skill="compile">
+              <small>STAGE 0—3</small>
+              <strong>compile</strong>
+              <code>@1.0.0</code>
+            </button>
+            <button class="skill-tab" type="button" data-skill="replay">
+              <small>STAGE 4</small>
+              <strong>replay</strong>
+              <code>@1.0.0</code>
+            </button>
+            <button class="skill-tab" type="button" data-skill="validate">
+              <small>STAGE 5</small>
+              <strong>validate</strong>
+              <code>@1.0.0</code>
+            </button>
+          </div>
+        </div>
+
+        <div class="skill-detail reveal" id="skillDetail">
+          <div class="skill-detail-main">
+            <p class="skill-ref" id="skillRef">text2env.compile@1.0.0</p>
+            <h3 id="skillTitle">把语义请求变成不可变的场景包引用。</h3>
+            <p id="skillDescription">compile 复用项目现有的受限解析、资产 grounding、受限求解、builder 和静态 validator。Harness 只为这组既有行为补上稳定的输入、输出、版本和审计边界。</p>
+            <div class="skill-rule" id="skillRule">
+              <span>最容易误解的一点</span>
+              <p>compile 的 RunState 可以是 <b>succeeded</b>，同时静态验证报告仍是 <b>incomplete</b>。前者表示编译接口正常产出了类型化结果；后者表示真实物理证据还没有产生。</p>
+            </div>
+          </div>
+          <div class="io-panel">
+            <div>
+              <span>严格输入</span>
+              <ul id="skillInputs">
+                <li>request · 原始语义文本</li>
+                <li>seed · 0 到 2,147,483,647</li>
+                <li>asset_catalog · 内容可验证的 ArtifactRef</li>
+                <li>generate_missing_assets · 默认 false</li>
+              </ul>
+            </div>
+            <div>
+              <span>类型化输出</span>
+              <ul id="skillOutputs">
+                <li>scene_spec</li>
+                <li>resolved_scene</li>
+                <li>environment_package</li>
+                <li>static_validation</li>
+              </ul>
+            </div>
+            <div class="attempt-row">
+              <span>固定最大尝试次数</span>
+              <strong id="skillAttempts">1</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section section-shell" id="states" aria-labelledby="states-title">
+      <header class="section-heading reveal">
+        <div>
+          <p class="section-number">03 / 先拆开四个词</p>
+          <h2 id="states-title">“成功”不是一个<br>可以包办一切的状态。</h2>
+        </div>
+        <p class="section-intro">
+          读者需要同时观察执行、验证和发布三个层面。只看一个绿色的 “PASS” 会隐藏真正的问题，因此契约刻意把这些概念分开记录。
+        </p>
+      </header>
+
+      <div class="truth-lab reveal">
+        <div class="truth-options" role="tablist" aria-label="典型结果场景">
+          <button class="truth-option active" type="button" data-scenario="compile">
+            <span>场景 A</span><strong>刚刚完成编译</strong>
+          </button>
+          <button class="truth-option" type="button" data-scenario="validation-fail">
+            <span>场景 B</span><strong>验证正常执行，但检查失败</strong>
+          </button>
+          <button class="truth-option" type="button" data-scenario="qualification-missing">
+            <span>场景 C</span><strong>物理通过，但资格证据缺失</strong>
+          </button>
+          <button class="truth-option" type="button" data-scenario="publishable">
+            <span>场景 D</span><strong>全部发布条件成立</strong>
+          </button>
+        </div>
+        <div class="truth-board" aria-live="polite">
+          <div class="truth-board-head">
+            <span id="scenarioLabel">场景 A · 编译刚结束</span>
+            <p id="scenarioExplain">编译接口已经完整返回，但运行时回放尚未开始，所以系统还没有物理证据。</p>
+          </div>
+          <div class="truth-metrics">
+            <div class="truth-metric" data-metric="run">
+              <span>RunState.status</span><strong id="runValue" class="value-good">succeeded</strong>
+              <small>接口是否正常产生结果</small>
+            </div>
+            <div class="truth-metric" data-metric="validation">
+              <span>validation_status</span><strong id="validationValue" class="value-warn">incomplete</strong>
+              <small>物理与门控检查的结论</small>
+            </div>
+            <div class="truth-metric" data-metric="publish">
+              <span>publishable</span><strong id="publishValue" class="value-bad">false</strong>
+              <small>是否满足全部发布前置条件</small>
+            </div>
+            <div class="truth-metric muted" data-metric="published">
+              <span>published</span><strong id="publishedValue">未定义</strong>
+              <small>契约不执行外部发布副作用</small>
+            </div>
+          </div>
+          <div class="truth-conclusion" id="scenarioConclusion">因此，“编译成功”只能证明场景包被正确生成，不能证明场景已经通过物理验证。</div>
+        </div>
+      </div>
+
+      <div class="state-machine reveal">
+        <div class="state-copy">
+          <span>RunState 只记录执行生命周期</span>
+          <h3>预期拒绝与意外故障，被刻意分开。</h3>
+          <p><b>blocked</b> 表示输入、依赖、资产、求解或门控按规则拒绝了这次请求。<b>failed</b> 表示 Registry、适配器或 handler 出现了契约之外的意外缺陷。</p>
+        </div>
+        <div class="state-diagram" aria-label="RunState 状态转换图">
+          <div class="state-node null-state">null</div>
+          <div class="state-arrow"><span></span></div>
+          <div class="state-node running-state">running<small>attempt 1..N</small></div>
+          <div class="state-fork">
+            <span></span><span></span><span></span>
+          </div>
+          <div class="terminal-states">
+            <div class="state-node success-state">succeeded<small>blocker = null</small></div>
+            <div class="state-node blocked-state">blocked<small>预期拒绝</small></div>
+            <div class="state-node failed-state">failed<small>意外缺陷</small></div>
+          </div>
+          <div class="retry-loop">只有 retryable=true，才在 running 内增加 attempt</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section authority-section" id="authority" aria-labelledby="authority-title">
+      <div class="section-shell">
+        <header class="section-heading reveal">
+          <div>
+            <p class="section-number">04 / 权责边界</p>
+            <h2 id="authority-title">Registry 做决定。<br>MCP 只做翻译。</h2>
+          </div>
+          <p class="section-intro">
+            MCP 是模型与工具之间的协议入口。为了避免同一次调用因为入口不同而得到不同结果，MCP 不保存业务状态，也不拥有 Harness 的版本、默认值、重试和发布规则。
+          </p>
+        </header>
+
+        <div class="authority-visual reveal">
+          <div class="actor-card client-card">
+            <span>01</span><strong>调用方</strong><small>提交工具名与 JSON 参数</small>
+          </div>
+          <div class="flow-line"><i></i><b>tools/call</b></div>
+          <div class="actor-card mcp-card">
+            <span>02</span><strong>MCP Adapter</strong><small>机械映射协议名称</small>
+          </div>
+          <div class="flow-line"><i></i><b>exact skill ref</b></div>
+          <div class="actor-card registry-card">
+            <span>03</span><strong>SkillRegistry</strong><small>执行、类型、版本与审计权威</small>
+          </div>
+          <div class="flow-line"><i></i><b>typed invocation</b></div>
+          <div class="actor-card handler-card">
+            <span>04</span><strong>Text2Env Handler</strong><small>适配现有函数与 CLI</small>
+          </div>
+        </div>
+
+        <div class="ownership-grid reveal">
+          <div class="ownership-head"><span>能力</span><span>Registry</span><span>MCP</span></div>
+          <div><span>解析精确 Skill 版本</span><b class="yes">唯一权威</b><b class="no">不得选择</b></div>
+          <div><span>验证 schema 并展开默认值</span><b class="yes">负责</b><b class="no">不得添加</b></div>
+          <div><span>解析依赖并计算调用摘要</span><b class="yes">负责</b><b class="no">原样转交</b></div>
+          <div><span>执行 retryable 重试策略</span><b class="yes">负责</b><b class="no">不得重试</b></div>
+          <div><span>决定 publishable</span><b class="yes">经 validate 输出</b><b class="no">不得决定</b></div>
+          <div><span>生成 tools/list 与协议响应</span><b class="soft">提供描述符</b><b class="yes">机械适配</b></div>
+        </div>
+
+        <aside class="authority-callout reveal">
+          <span class="callout-icon">=</span>
+          <p>同一组精确参数，无论通过进程内 API 还是 MCP 到达 Registry，都必须得到相同的类型化输出、RunState、制品和 blocker。</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="content-section ledger-section" id="asset-ledger" aria-labelledby="ledger-title">
+      <div class="section-shell">
+        <header class="section-heading light reveal">
+          <div>
+            <p class="section-number">05 / 相邻的资产契约</p>
+            <h2 id="ledger-title">在调用 Skill 以前，<br>系统还要先认识资产。</h2>
+          </div>
+          <p class="section-intro">
+            Harness 负责记录一次工作怎样被执行，但它不会凭空知道“这个杯子是什么颜色、应该怎样立在桌上”。这些资产事实来自另一份契约：<code>asset_ledger.v3</code>。下面用三页把它讲清楚。
+          </p>
+        </header>
+
+        <div class="ledger-book reveal">
+          <div class="ledger-page-tabs" role="tablist" aria-label="Asset Ledger 三页说明">
+            <button class="ledger-page-tab active" type="button" data-ledger-page="one" role="tab" aria-selected="true">
+              <span>PAGE 01</span><strong>先认识 ledger</strong><small>它记录什么？</small>
+            </button>
+            <button class="ledger-page-tab" type="button" data-ledger-page="two" role="tab" aria-selected="false">
+              <span>PAGE 02</span><strong>再区分两份契约</strong><small>谁对什么负责？</small>
+            </button>
+            <button class="ledger-page-tab" type="button" data-ledger-page="three" role="tab" aria-selected="false">
+              <span>PAGE 03</span><strong>最后约定开发规则</strong><small>接下来怎么做？</small>
+            </button>
+          </div>
+
+          <div class="ledger-pages">
+            <article class="ledger-page active" data-ledger-panel="one" role="tabpanel">
+              <div class="ledger-page-copy">
+                <p class="ledger-kicker">PAGE 01 · WHAT IS AN ASSET LEDGER?</p>
+                <h3>先把它理解成一份<br>“资产档案”。</h3>
+                <p>机器人看见的“杯子”，在仿真器里其实是一组文件和测量结果。系统需要知道它叫什么、哪个模型是红色、怎样放才稳、有没有内腔、SAPIEN 应加载哪个文件，以及这个文件是否真的通过过检查。</p>
+                <p><code>ledger.json</code> 把这些事实放在同一份记录里。每个资产一份 ledger；同一资产可以包含多个 model，每个 model 又可以有 SAPIEN、Isaac 等不同后端表示。</p>
+                <div class="ledger-plain-rule"><span>最重要的理解</span><b>ledger 记录“资产本身的事实”，不是记录一次场景运行。</b></div>
+              </div>
+              <div class="ledger-file" aria-label="资产账本结构示意">
+                <div class="ledger-file-head"><span>ledger.json</span><code>asset_ledger.v3</code></div>
+                <div class="ledger-asset-id"><small>ASSET</small><strong>external_302_bowl</strong><span>bowl · rigid</span></div>
+                <div class="ledger-folders">
+                  <div><i>01</i><span><b>身份与别名</b><small>bowl / dish · 身份由谁确认</small></span></div>
+                  <div><i>02</i><span><b>每个 model 的外观</b><small>四视角实测：brown 79.1%</small></span></div>
+                  <div><i>03</i><span><b>物理放置事实</b><small>稳定姿态 · 内腔 · 支撑面</small></span></div>
+                  <div><i>04</i><span><b>后端文件表示</b><small>SAPIEN GLB · Isaac USD · 各自坐标系</small></span></div>
+                  <div><i>05</i><span><b>来源、许可与验证</b><small>从哪里来 · 哪个摘要通过了什么检查</small></span></div>
+                </div>
+                <div class="measured-stamp"><span>实测数字必须说明</span><b>measured_against</b><small>在哪个后端、哪次运行中测得</small></div>
+              </div>
+            </article>
+
+            <article class="ledger-page" data-ledger-panel="two" role="tabpanel" hidden>
+              <div class="ledger-page-copy">
+                <p class="ledger-kicker">PAGE 02 · TWO CONTRACTS, TWO QUESTIONS</p>
+                <h3>Ledger 管资产。<br>Harness 管执行。</h3>
+                <p>两份契约都在追求“可信”，但它们验证的对象不同。ledger 证明一个具体资产有哪些可信事实；Harness 证明一个具体 Skill 版本在什么输入和依赖下完成了什么工作。</p>
+                <p>Text2Env 不直接翻阅所有 ledger。资产管线先把已经筛选过的事实投影成 <code>asset_catalog.json</code>，compile 再把这份 catalog 当作不可变依赖使用。</p>
+                <div class="ledger-plain-rule"><span>不会冲突的原因</span><b>两边的“唯一权威”各有范围：一个管资产事实，一个管调用事实。</b></div>
+              </div>
+              <div class="contract-relay" aria-label="Asset Ledger、Asset Catalog 与 Harness 的关系">
+                <div class="relay-card ledger-authority">
+                  <span>资产事实权威</span><strong>Asset Ledger</strong><p>这个碗是什么、怎样放、哪些文件在哪个后端通过检查。</p><code>asset_ledger.v3</code>
+                </div>
+                <div class="relay-arrow"><b>验证并投影</b><i></i></div>
+                <div class="relay-card catalog-view">
+                  <span>编译只读视图</span><strong>Asset Catalog</strong><p>本次 Text2Env 可以选择哪些资产和 model。</p><code>robotwin.asset_catalog.*</code>
+                </div>
+                <div class="relay-arrow"><b>ArtifactRef + SHA-256</b><i></i></div>
+                <div class="relay-card harness-authority">
+                  <span>执行审计权威</span><strong>Harness</strong><p>哪个 Skill 版本使用了哪份 catalog，产生了什么包和证据。</p><code>Invocation / RunState</code>
+                </div>
+              </div>
+              <div class="verification-trio">
+                <div><span>资产验证</span><b>这个碗在 SAPIEN 能否稳定落下？</b><small>ledger.verification[]</small></div>
+                <div><span>Skill 资格</span><b>compile 实现是否确定且通过回归？</b><small>qualification_artifact</small></div>
+                <div><span>场景验证</span><b>这次“罐子在盘子上”是否物理通过？</b><small>validation_report</small></div>
+              </div>
+            </article>
+
+            <article class="ledger-page" data-ledger-panel="three" role="tabpanel" hidden>
+              <div class="ledger-page-copy compact-copy">
+                <p class="ledger-kicker">PAGE 03 · DEVELOPMENT RULES</p>
+                <h3>接下来开发时，<br>守住五条边界。</h3>
+                <p>真正需要合作的地方，不是让 Harness 复制 ledger 字段，而是让两者之间的投影过程可复现、可验证。下面五条规则优先级高于新增更多字段。</p>
+                <div class="ledger-plain-rule"><span>共同目标</span><b>从资产事实到场景结果，中间不能出现一段没人能解释的“黑箱投影”。</b></div>
+              </div>
+              <div class="dev-rules">
+                <article><span>01</span><div><strong>compile 消费 catalog 快照，不直接读可变 ledger</strong><p>同一次调用必须固定同一份资产视图；ledger 更新后应生成新的 catalog 内容身份。</p></div><code>snapshot</code></article>
+                <article><span>02</span><div><strong>把投影来源一起哈希绑定</strong><p>记录 ledger 集合、投影代码、SAPIEN 准入策略、撤销记录和最终 catalog 摘要。</p></div><code>projection manifest</code></article>
+                <article><span>03</span><div><strong>新字段进入 catalog，就要升级 schema</strong><p>模型级颜色已经改变公开形状；不能新增 <code>model.colors</code> 后仍假装 schema 没有变化。</p></div><code>v1 → v2</code></article>
+                <article><span>04</span><div><strong>临时代理和正式入库必须分开</strong><p>compile 可以生成包内确定性 proxy，但不能静默改写共享 ledger；正式复用资产要走 upsert、校验和重新投影。</p></div><code>no hidden write</code></article>
+                <article><span>05</span><div><strong>明确 publishable 是否包含许可</strong><p>当前 MVP 更适合把它定义为技术发布资格；如果要表示可对外分发，license 必须成为故障关闭门控。</p></div><code>technical ≠ legal</code></article>
+              </div>
+              <div class="ledger-handoff">
+                <span>推荐的最小交接物</span>
+                <div><code>asset_catalog.json</code><i>+</i><code>asset_catalog_projection.json</code></div>
+                <p>前者告诉 compile “可以用什么”，后者告诉 Harness “这份视图是怎样从 ledger 得到的”。</p>
+              </div>
+            </article>
+          </div>
+
+          <div class="ledger-book-footer">
+            <span id="ledgerPageCount">01 / 03</span>
+            <p id="ledgerPageSummary">先建立基础认识：Asset Ledger 是每个资产的权威档案。</p>
+            <div class="ledger-book-actions">
+              <button id="ledgerPrev" type="button" disabled aria-label="上一页">←</button>
+              <button id="ledgerNext" type="button" aria-label="下一页">→</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section section-shell" id="identity" aria-labelledby="identity-title">
+      <header class="section-heading reveal">
+        <div>
+          <p class="section-number">06 / 身份与版本</p>
+          <h2 id="identity-title">每一次调用，<br>都必须说清“具体是谁”。</h2>
+        </div>
+        <p class="section-intro">
+          “调用最新版本”看似方便，却会让昨天可复现的结果在今天悄悄改变。契约因此禁止版本范围、隐式 latest 和静默回退，每次调用都必须给出精确的 SemVer。
+        </p>
+      </header>
+
+      <div class="identity-card reveal">
+        <div class="identity-formula">
+          <span>规范身份</span>
+          <strong>( skill_id, version )</strong>
+          <code>text2env.compile@1.0.0</code>
+        </div>
+        <div class="mechanical-arrow">
+          <span>机械派生 MCP 名称</span><i></i>
+        </div>
+        <div class="identity-formula mcp-name">
+          <span>协议工具名称</span>
+          <strong>dot → underscore</strong>
+          <code>text2env_compile_v1_0_0</code>
+        </div>
+      </div>
+
+      <div class="version-grid reveal">
+        <article>
+          <span class="version-badge major">MAJOR</span>
+          <h3>旧消费者必须重新理解</h3>
+          <p>删除或重命名字段、增加必填字段或输出字段、收紧输入、改变默认值、状态含义、确定性或发布门控，都必须提升主版本。</p>
+        </article>
+        <article>
+          <span class="version-badge minor">MINOR</span>
+          <h3>旧消费者可以故障关闭</h3>
+          <p>增加不改变默认行为的可选输入、扩大输入范围、加入现有制品集合，或新增故障关闭 blocker 代码，需要提升次版本。</p>
+        </article>
+        <article>
+          <span class="version-badge patch">PATCH</span>
+          <h3>公共形状与语义保持不变</h3>
+          <p>实现缺陷得到修复，但公共 schema、状态含义和声明语义都没有变化时，只提升修订版本。</p>
+        </article>
+      </div>
+
+      <div class="version-axes reveal">
+        <div class="axes-intro">
+          <span>不要把五条版本轴混成一条</span>
+          <h3>同一个结果，需要同时记录多个独立身份。</h3>
+        </div>
+        <div class="axis-list">
+          <div><b>Skill SemVer</b><span>公开调用语义</span><code>1.0.0</code></div>
+          <div><b>Harness schema</b><span>记录的 JSON 形状</span><code>harness.*.v1</code></div>
+          <div><b>scene_gen schema</b><span>场景载荷形状</span><code>robotwin.*.v1</code></div>
+          <div><b>compiler_version</b><span>求解实现身份</span><code>stage5_solver.v3</code></div>
+          <div><b>包清单版本</b><span>哈希绑定包形状</span><code>generated_scene_package.v1</code></div>
+        </div>
+      </div>
+
+      <div class="hash-section reveal">
+        <div class="hash-copy">
+          <p class="mini-kicker">INVOCATION DIGEST LAB</p>
+          <h3>什么改变调用身份，什么只改变存放位置？</h3>
+          <p>Registry 会把默认值展开，把依赖按名称排序，并把制品 URI 替换为内容身份。这样，文件换了目录不会伪装成新内容，而请求文本、seed、依赖摘要或 Skill 版本的变化一定会留下新的调用摘要。</p>
+          <div class="hash-controls" id="hashControls">
+            <button type="button" data-hash-change="runId"><span></span>更换 run_id</button>
+            <button type="button" data-hash-change="uri"><span></span>移动制品 URI</button>
+            <button type="button" data-hash-change="seed"><span></span>seed: 42 → 43</button>
+            <button type="button" data-hash-change="space"><span></span>请求末尾增加空格</button>
+            <button type="button" data-hash-change="dependency"><span></span>更新 catalog 摘要</button>
+          </div>
+        </div>
+        <div class="digest-console">
+          <div class="console-head"><span>canonical invocation</span><i></i><i></i><i></i></div>
+          <pre id="digestPayload">{
+  "skill_id": "text2env.compile",
+  "skill_version": "1.0.0",
+  "request": "Place a can on top of a plate.",
+  "seed": 42,
+  "artifact_identity": "application/json|null|8ba15e...",
+  "dependency_sha256": "8ba15e84...",
+  "max_attempts": 1
+}</pre>
+          <div class="digest-result">
+            <span>SHA-256</span>
+            <code id="digestValue">计算中...</code>
+            <b id="digestStatus">基准调用身份</b>
+          </div>
+          <p id="digestReason">run_id、时间戳、事件、输出目录和 URI 不进入 invocation_digest。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section chain-section" aria-labelledby="chain-title">
+      <div class="section-shell">
+        <header class="section-heading light reveal">
+          <div>
+            <p class="section-number">07 / 内容身份链</p>
+            <h2 id="chain-title">路径告诉你去哪里。<br>哈希告诉你拿到的是什么。</h2>
+          </div>
+          <p class="section-intro">
+            `run_id` 只是审计编号，`ArtifactRef.uri` 只是定位符。消费者不能因为文件来自熟悉的目录就信任它；消费者必须重新计算 SHA-256，并核对每一段上下游绑定。
+          </p>
+        </header>
+
+        <div class="hash-chain reveal">
+          <div class="chain-node">
+            <span>01</span><small>原始意图</small><strong>request + seed</strong><code>文本原样参与摘要</code>
+          </div>
+          <div class="chain-link"><i></i><b>typed</b></div>
+          <div class="chain-node">
+            <span>02</span><small>语义根</small><strong>SceneSpec</strong><code>source_scene_spec_sha256</code>
+          </div>
+          <div class="chain-link"><i></i><b>grounded</b></div>
+          <div class="chain-node accent-node">
+            <span>03</span><small>场景身份</small><strong>ResolvedScene</strong><code>package_id = resolved sha256</code>
+          </div>
+          <div class="chain-link"><i></i><b>replayed</b></div>
+          <div class="chain-node">
+            <span>04</span><small>物理证据</small><strong>Runtime Evidence</strong><code>绑定 resolved sha256</code>
+          </div>
+          <div class="chain-link"><i></i><b>gated</b></div>
+          <div class="chain-node final-node">
+            <span>05</span><small>门控结论</small><strong>Validation</strong><code>pass / incomplete / fail</code>
+          </div>
+        </div>
+
+        <div class="package-explainer reveal">
+          <div class="package-visual" aria-hidden="true">
+            <div class="package-layer layer-back">request.txt</div>
+            <div class="package-layer layer-mid">scene_spec.json</div>
+            <div class="package-layer layer-front">resolved_scene.json</div>
+            <div class="manifest-sheet">
+              <span>PACKAGE MANIFEST</span>
+              <i></i><i></i><i></i><i></i>
+              <b>SHA-256 × every file</b>
+            </div>
+          </div>
+          <div class="package-copy">
+            <span>EnvironmentPackage 是什么？</span>
+            <h3>它是现有场景包的不可变引用，不是第二套包格式。</h3>
+            <p>这个引用把 `package_id`、生产 Skill、seed、SceneSpec 摘要、ResolvedScene 摘要、资产目录引用和包清单引用放在同一条严格记录中。Harness 由此能够验证“这次回放使用的包”确实是“那次编译产生的包”。</p>
+            <div class="package-invariant">
+              <code>package_id</code><span>=</span><code>resolved_scene_sha256</code>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section section-shell" id="publish" aria-labelledby="publish-title">
+      <header class="section-heading reveal">
+        <div>
+          <p class="section-number">08 / 发布资格</p>
+          <h2 id="publish-title">只有 validate，<br>能够说出 publishable。</h2>
+        </div>
+        <p class="section-intro">
+          compile 负责产生包，replay 负责产生连续物理证据，validate 才负责把包、证据、物理门控和 Skill 资格放在一起判断。任何一个前置条件缺失，发布资格都必须故障关闭为 false。
+        </p>
+      </header>
+
+      <div class="gate-lab reveal">
+        <div class="gate-stack" id="gateStack">
+          <button class="gate active" type="button" data-gate="runs" aria-pressed="true">
+            <span>01</span><i></i><div><strong>三个 Skill 精确版本均成功</strong><small>compile、replay、validate 都由 Registry 解析并执行</small></div><b>PASS</b>
+          </button>
+          <button class="gate active" type="button" data-gate="package" aria-pressed="true">
+            <span>02</span><i></i><div><strong>包与每个制品摘要匹配</strong><small>verify_package 通过，URI 之外的内容身份得到复核</small></div><b>PASS</b>
+          </button>
+          <button class="gate active" type="button" data-gate="evidence" aria-pressed="true">
+            <span>03</span><i></i><div><strong>运行证据绑定到场景摘要</strong><small>runtime evidence 指向同一个 resolved_scene_sha256</small></div><b>PASS</b>
+          </button>
+          <button class="gate active" type="button" data-gate="physics" aria-pressed="true">
+            <span>04</span><i></i><div><strong>全部物理与可见性检查通过</strong><small>接触、碰撞、稳定性、包含、可见性和视频均为 pass</small></div><b>PASS</b>
+          </button>
+          <button class="gate active" type="button" data-gate="qualification" aria-pressed="true">
+            <span>05</span><i></i><div><strong>Skill 具有通过的资格制品</strong><small>确定性用例与回归命令都有可核验报告</small></div><b>PASS</b>
+          </button>
+          <button class="gate active" type="button" data-gate="provenance" aria-pressed="true">
+            <span>06</span><i></i><div><strong>来源与求解 trace 完整</strong><small>request 来源、版本、seed、依赖摘要和 solver trace 均存在</small></div><b>PASS</b>
+          </button>
+        </div>
+        <div class="publish-meter">
+          <div class="meter-orbit"><span id="gateCount">6 / 6</span></div>
+          <span>validate output</span>
+          <h3 id="publishableValue">publishable = true</h3>
+          <p id="publishableReason">六项发布前置条件全部成立，因此本次结果具备发布资格。</p>
+          <small>点击左侧任意门控，观察故障关闭策略。</small>
+        </div>
+      </div>
+
+      <div class="validation-gates reveal">
+        <div class="validation-intro">
+          <span>物理检查不是一句“看起来没问题”</span>
+          <h3>每一个 pass 都来自可度量的证据。</h3>
+        </div>
+        <div class="validation-grid">
+          <article><i class="icon-contact"></i><strong>持续接触</strong><p>嵌套物体在最终采样窗口中，至少 80% 的步骤接触声明的支撑目标。</p><b>≥ 0.80</b></article>
+          <article><i class="icon-margin"></i><strong>稳定余量</strong><p>物体完整 footprint 必须落在目标的实测稳定面内，而不是仅落在外层 AABB 内。</p><b>8 mm</b></article>
+          <article><i class="icon-settle"></i><strong>真正静止</strong><p>回放等待 900 个仿真步，因为当前 apple-in-basket 在 300 步时仍有可测运动。</p><b>900 steps</b></article>
+          <article><i class="icon-video"></i><strong>视频有效</strong><p>120 帧视频至少包含 30 个不同帧，避免用重复画面伪装连续证据。</p><b>120 frames</b></article>
+          <article><i class="icon-eye"></i><strong>清晰可见</strong><p>头部相机中的每个目标物体必须达到最低可见像素阈值。</p><b>≥ 64 px</b></article>
+          <article><i class="icon-collision"></i><strong>没有错误接触</strong><p>嵌套物体不能同时接触未声明的桌面或其他支撑目标。</p><b>0.0 fraction</b></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section blocker-section" aria-labelledby="blocker-title">
+      <div class="section-shell">
+        <header class="section-heading light reveal">
+          <div>
+            <p class="section-number">09 / 可解释拒绝</p>
+            <h2 id="blocker-title">错误文本用于诊断。<br>结构化代码用于决策。</h2>
+          </div>
+          <p class="section-intro">
+            异常文本可能随实现变化，因此它不能成为自动化策略的依据。契约把可恢复性、发生阶段、未知信息和相关制品放入 Blocker，让消费者能够稳定地故障关闭。
+          </p>
+        </header>
+
+        <div class="blocker-browser reveal">
+          <div class="blocker-groups">
+            <div>
+              <span>HARNESS PRECHECK</span>
+              <button type="button" class="blocker-code active" data-code="HARN_INPUT_INVALID">HARN_INPUT_INVALID</button>
+              <button type="button" class="blocker-code" data-code="HARN_VERSION_UNSUPPORTED">HARN_VERSION_UNSUPPORTED</button>
+              <button type="button" class="blocker-code" data-code="HARN_DEPENDENCY_UNAVAILABLE">HARN_DEPENDENCY_UNAVAILABLE</button>
+            </div>
+            <div>
+              <span>TEXT2ENV DOMAIN</span>
+              <button type="button" class="blocker-code" data-code="T2E_REQUEST_REJECTED">T2E_REQUEST_REJECTED</button>
+              <button type="button" class="blocker-code" data-code="T2E_SOLVER_EXHAUSTED">T2E_SOLVER_EXHAUSTED</button>
+              <button type="button" class="blocker-code" data-code="T2E_REPLAY_FAILED">T2E_REPLAY_FAILED</button>
+              <button type="button" class="blocker-code" data-code="T2E_VALIDATION_FAILED">T2E_VALIDATION_FAILED</button>
+            </div>
+          </div>
+          <div class="blocker-detail" id="blockerDetail">
+            <span id="blockerStage">PRECHECK · RUN BLOCKER</span>
+            <h3 id="blockerCode">HARN_INPUT_INVALID</h3>
+            <p id="blockerMessage">调用参数没有通过严格 schema 验证。Registry 不会猜测缺失的必填值，也不会忽略未知字段。</p>
+            <div class="blocker-meta">
+              <div><span>RunState</span><strong id="blockerStatus">blocked</strong></div>
+              <div><span>retryable</span><strong id="blockerRetry">false</strong></div>
+              <div><span>invocation_digest</span><strong id="blockerDigest">null</strong></div>
+            </div>
+            <div class="blocker-json">
+              <code>unknowns[]</code>
+              <span>field</span><span>reason</span><span>source</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="evidence-section" aria-labelledby="evidence-title">
+      <div class="section-shell">
+        <header class="evidence-heading reveal">
+          <p class="section-number">10 / 当前项目证据</p>
+          <h2 id="evidence-title">这份契约建立在一条<br>已经被真实回放检验的路径上。</h2>
+          <p>下面的数字来自目标分支中 2026-07-19 的 prompt matrix 记录。它们证明当前有界 Text2Env 路径在声明范围内通过了测试，但它们不代表 Harness 契约已经被接受，也不代表系统支持任意语言、任意资产或任意仿真器。</p>
+        </header>
+        <div class="evidence-numbers reveal">
+          <div><strong>33<small>/33</small></strong><span>预期编译结果</span><p>包含正向场景与预期求解拒绝</p></div>
+          <div><strong>10<small>/10</small></strong><span>真实 SAPIEN 回放</span><p>正向用例全部通过物理门控</p></div>
+          <div><strong>100<small>+</small></strong><span>每条视频的不同帧</span><p>十条最终视频均达到至少 100 帧</p></div>
+          <div><strong>0.597<small>×</small></strong><span>受限代理缩放</span><p>仅用于已经过真实回放资格验证的 block 路径</p></div>
+        </div>
+        <div class="evidence-story reveal">
+          <div class="plate-diagram" aria-hidden="true">
+            <div class="outer-plate"><span>外层 AABB<br>约 230 mm</span></div>
+            <div class="stable-plate"><span>实测稳定面<br>100 mm</span></div>
+            <div class="proxy-block"><span>0.597×</span></div>
+            <i class="margin-ring"></i>
+          </div>
+          <div>
+            <span>一个具体例子，比“稳定”二字更有解释力</span>
+            <h3>方块看似能放上盘子，真实稳定面却不接受它。</h3>
+            <p>目录中的 `004_fluted-block` 原始尺寸约为 92.275 × 90.626 mm。盘子的外层包围盒看起来足够大，但盘子经过测量的稳定支撑面只有 100 × 100 mm，并且还要求 8 mm 安全余量。</p>
+            <p>编译器没有忽略这条物理约束。编译器只在已经通过真实回放资格验证的 block/cube 路径中，生成 0.597 倍的确定性 primitive proxy，并把来源资产、模型编号、缩放系数和文件哈希写进 lineage。</p>
+            <div class="story-result"><span>真实回放结果</span><b>接触率 1.0</b><b>支撑余量 8.861 mm</b><b>穿透 0</b></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section section-shell boundary-section" aria-labelledby="boundary-title">
+      <header class="section-heading reveal">
+        <div>
+          <p class="section-number">11 / MVP 边界</p>
+          <h2 id="boundary-title">一份可信的契约，<br>也要明确自己不做什么。</h2>
+        </div>
+        <p class="section-intro">
+          这份 MVP 只治理当前已经存在且可以验证的 Text2Env 路径。把未实现能力提前写入统一接口，会让调用方误以为系统拥有并不存在的保证。
+        </p>
+      </header>
+      <div class="boundary-grid reveal">
+        <div class="in-scope">
+          <span>IN SCOPE · 本契约负责</span>
+          <ul>
+            <li><i></i>受限自然语言到场景包的编译</li>
+            <li><i></i>RoboTwin / SAPIEN 物理回放</li>
+            <li><i></i>包、哈希、物理和视频验证</li>
+            <li><i></i>Skill 注册、精确版本与审计记录</li>
+            <li><i></i>发布资格判断，但不执行发布</li>
+          </ul>
+        </div>
+        <div class="out-scope">
+          <span>OUT OF SCOPE · 本契约不承诺</span>
+          <div class="scope-tags">
+            <b>Anchor2Env</b><b>网络资产搜索</b><b>第二仿真器</b><b>Transfer</b><b>插件热加载</b><b>分布式调度</b><b>策略执行</b><b>数据采集</b><b>训练</b><b>评估</b>
+          </div>
+          <p>这些能力以后可以形成新的 Skill 或新的契约，但不能绕过当前 `scene_gen` 的哈希绑定与物理验收边界。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="acceptance-section" aria-labelledby="acceptance-title">
+      <div class="section-shell acceptance-grid">
+        <div class="acceptance-copy reveal">
+          <p class="section-number">12 / 从提议走向接受</p>
+          <h2 id="acceptance-title">契约何时不再只是提议？</h2>
+          <p>项目所有者需要确认字段、名称、状态转换、错误码、版本规则和 MCP 映射。仓库测试必须全部通过，RFC 头部还必须记录 `Status: Accepted`、批准人和批准日期。</p>
+          <a class="button button-primary" href="https://github.com/LV-Robotics-Lab/robot-harness-gen-env/tree/worktree/bingsheng" target="_blank" rel="noreferrer">打开目标分支 <span>↗</span></a>
+        </div>
+        <div class="acceptance-checklist reveal">
+          <div><span>01</span><p>精确字段与严格 schema 获得确认</p><i></i></div>
+          <div><span>02</span><p>状态、blocker 与重试语义获得确认</p><i></i></div>
+          <div><span>03</span><p>Skill SemVer 与 MCP 映射获得确认</p><i></i></div>
+          <div><span>04</span><p>全部仓库测试通过</p><i></i></div>
+          <div><span>05</span><p>RFC 记录批准人和批准日期</p><i></i></div>
+          <div class="pending-stamp"><span>STATUS</span><strong>PROPOSED</strong><small>等待项目所有者验收</small></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="section-shell footer-grid">
+      <div>
+        <a class="brand footer-brand" href="#top">
+          <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span>
+          <span><strong>ROBOT HARNESS</strong><small>CONTRACT PROPOSAL / 01</small></span>
+        </a>
+        <p>面向 Text2Env 编译、RoboTwin/SAPIEN 回放与验证的 Harness MVP 契约可视化提案。</p>
+      </div>
+      <div class="source-list">
+        <span>主要依据</span>
+        <a href="https://github.com/LV-Robotics-Lab/robot-harness-gen-env/blob/worktree/bingsheng/scene_gen/schema.py" target="_blank" rel="noreferrer">scene_gen/schema.py</a>
+        <a href="https://github.com/LV-Robotics-Lab/robot-harness-gen-env/blob/worktree/bingsheng/scene_gen/builder.py" target="_blank" rel="noreferrer">scene_gen/builder.py</a>
+        <a href="https://github.com/LV-Robotics-Lab/robot-harness-gen-env/blob/worktree/bingsheng/scene_gen/solver.py" target="_blank" rel="noreferrer">scene_gen/solver.py</a>
+        <a href="https://github.com/LV-Robotics-Lab/robot-harness-gen-env/blob/worktree/bingsheng/repo-docs/walkthroughs/one-real-run.md" target="_blank" rel="noreferrer">one-real-run.md</a>
+        <a href="https://github.com/LV-Robotics-Lab/robot-harness-gen-env/blob/worktree/hyx/self_improving/asset_pipeline/active/1_asset_reuse/lib/ledger.py" target="_blank" rel="noreferrer">asset_ledger.v3 / ledger.py</a>
+      </div>
+      <div class="footer-meta">
+        <span>契约版本</span><strong>1.0.0</strong>
+        <span>页面状态</span><strong>Proposal</strong>
+        <a href="#top">回到顶部 ↑</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
