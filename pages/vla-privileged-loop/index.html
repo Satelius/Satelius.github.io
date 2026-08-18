@@ -1,10 +1,10 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="zh-CN">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>从 OpenVLA、π0、π0.5 到双臂 PiPER 特权训练闭环</title>
-  <meta name="description" content="一次关于 OpenVLA、π0、π0.5 三篇 VLA 论文的分享会幻灯片：动作 token、连续 action chunk、异构监督，以及结尾记录的三个关键问题。">
+  <meta name="description" content="一次关于 OpenVLA、π0、π0.5 的分享会与证据整理：动作 token、连续 action chunk、异构监督，以及三个关键问题的原文依据。">
   <meta name="theme-color" content="#191f22">
   <link rel="canonical" href="https://satelius.github.io/pages/vla-privileged-loop/">
   <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
@@ -78,6 +78,12 @@
     .reported { background: var(--green); }
     .not-proven { background: var(--red); }
     .proposal { background: var(--purple); }
+    .evidence-cards { align-items: start; }
+    .evidence-toggle { margin-top: 10px; padding: 8px 12px; color: #fff; background: var(--ink); border: 0; border-radius: 8px; font-size: 13px; }
+    .evidence-detail { display: none; margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--line); }
+    .evidence-detail.open { display: block; }
+    .evidence-detail p { font-size: 14px; line-height: 1.55; }
+    .source-unavailable { color: var(--muted); }
     .figure { width: 100%; max-height: 52vh; object-fit: contain; background: #fffdf8; border: 1px solid var(--line); border-radius: 16px; }
     .figure-missing { display: flex; align-items: center; justify-content: center; min-height: 220px; padding: 20px; color: var(--muted); font: 700 14px Consolas, monospace; letter-spacing: .06em; text-align: center; }
     .caption { margin: 8px 0 0; color: var(--muted); font-size: 13px; line-height: 1.45; }
@@ -144,7 +150,7 @@
 </head>
 <body>
 <main class="deck" id="deck">
-  <section class="slide active" data-page="01 / 19">
+  <section class="slide active" data-page="01 / 20">
     <div class="cover-grid">
       <div>
         <div class="kicker">LV Robotics Lab · Reading Share</div>
@@ -162,7 +168,7 @@
     </div>
   </section>
 
-  <section class="slide" data-page="02 / 19">
+  <section class="slide" data-page="02 / 20">
     <div class="kicker">01 · Project Target</div><h2>真正的问题：训练能看更多，部署不能作弊</h2>
     <div class="callout">训练期使用仿真全状态，训练出一个只依赖可部署观测的学生；然后在闭环任务里证明，提升不是因为测试时偷偷多接了一根“真值线”。</div>
     <div class="flow"><div class="node blue">RoboDojo<br><small>o<sub>t</sub> + z<sub>t</sub></small></div><div class="arrow">→</div><div class="node orange">教师 / 辅助标签</div><div class="arrow">→</div><div class="node green">visible-only<br>student</div><div class="arrow">→</div><div class="node purple">无特权执行</div></div>
@@ -170,7 +176,7 @@
     <p class="small">第一阶段不复刻数十亿参数模型。先固定学生结构，证明信息使用方式。</p>
   </section>
 
-  <section class="slide" data-page="03 / 19">
+  <section class="slide" data-page="03 / 20">
     <div class="kicker">02 · Definition</div><h2>严格定义：什么才叫特权信息？</h2>
     <div class="swimlane"><b>训练</b><div><div class="flow"><div class="node blue">o<sub>t</sub></div><div class="node red">z<sub>t</sub><br><small>全状态</small></div><div class="arrow">→</div><div class="node orange">教师 / 辅助目标</div><div class="arrow">→</div><div class="node green">学生训练</div></div></div></div>
     <div class="swimlane"><b>部署执行</b><div><div class="flow"><div class="node blue">o<sub>t</sub><br><small>可见观测</small></div><div class="arrow">→</div><div class="node green">策略 + 固定控制器</div><div class="arrow">→</div><div class="node purple">动作</div><span class="tag red">z_t 禁止进入决策链</span></div></div></div>
@@ -178,7 +184,7 @@
     <p><span class="evidence proposal">本项目协议</span> 除独立评测器外，任何会改变动作、重规划、裁剪、终止或恢复的组件都不能读取特权真值。</p>
   </section>
 
-  <section class="slide" data-page="04 / 19">
+  <section class="slide" data-page="04 / 20">
     <div class="kicker">03 · Common Coordinate System</div><h2>用同一把尺读三篇论文</h2>
     <table><thead><tr><th>维度</th><th>OpenVLA</th><th>π0</th><th>π0.5</th></tr></thead><tbody>
       <tr><td>部署输入</td><td>单图像 + 指令</td><td>多图像 + 指令 + 本体状态</td><td>多图像 + 状态 + 总任务</td></tr>
@@ -190,17 +196,17 @@
     <div class="legend"><span class="tag">蓝：部署观测</span><span class="tag green">绿：动作生成</span><span class="tag orange">橙：训练目标</span><span class="tag purple">紫：项目提案</span></div>
   </section>
 
-  <section class="slide" data-page="05 / 19">
+  <section class="slide" data-page="05 / 20">
     <div class="kicker">04 · OpenVLA</div><h2>把机器人动作塞进语言模型接口</h2>
     <div class="two-col"><div><img class="figure" src="../../assets/openvla-overview.svg" alt="OpenVLA architecture redraw"><p class="caption"><strong>结构重绘：</strong>原文 Figure 2 的中文讲解版。图像和语言进入视觉语言骨干，最后生成动作 token 并反离散化。</p></div><div><div class="card blue"><h3>背景问题</h3><p>既有通用 VLA 多为闭源，机器人动作如何接入预训练 VLM 并支持下游适配？</p></div><div class="card green"><h3>输入 → 输出</h3><p>一张当前 RGB 图像 + 语言指令 → 当前控制时刻的 7 维单臂末端动作。</p></div><div class="card orange"><h3>核心选择</h3><p>连续动作不直接回归，而是逐维离散为 action token，让 Llama 2 继续做 next-token prediction。</p></div></div></div>
   </section>
 
-  <section class="slide" data-page="06 / 19">
+  <section class="slide" data-page="06 / 20">
     <div class="kicker">05 · OpenVLA</div><h2>动作 token：收益与代价</h2>
     <div class="two-col"><div class="interactive"><h3>交互 1 · 动作分箱</h3><div class="control-row"><label>bins <select id="binSelect"><option>16</option><option>64</option><option selected>256</option></select></label><label>动作值 <input id="actionSlider" type="range" min="-1" max="1" step="0.001" value="0.233"></label><b id="actionValue">0.233</b></div><canvas id="binCanvas" width="780" height="270"></canvas><div id="binOutput" class="demo-output"></div><button id="binReset" style="margin-top:10px">重置</button></div><div><div class="flow"><div class="node orange">连续值</div><div class="arrow">→</div><div class="node blue">256 bins</div><div class="arrow">→</div><div class="node purple">action token</div><div class="arrow">→</div><div class="node green">反离散化</div></div><div class="card"><h3>为什么有效？</h3><p>复用有限词表概率、交叉熵和自回归生成。</p><h3>付出什么？</h3><p>量化误差；普通交叉熵不认识“相邻 bin 更近”；单步 token 不保证时间平滑。</p></div></div></div>
   </section>
 
-  <section class="slide" data-page="07 / 19">
+  <section class="slide" data-page="07 / 20">
     <div class="kicker">06 · OpenVLA</div><h2>baseline 为什么这样选？</h2>
     <div class="grid"><div class="card blue"><h3>RT-1-X / Octo</h3><p>通用机器人策略参照：大规模 VLA 预训练是否有价值？</p></div><div class="card purple"><h3>RT-2-X</h3><p>当时强大的闭源 VLA：开源 7B 模型能否竞争？</p></div><div class="card green"><h3>Diffusion Policy</h3><p>连续 action chunk 的任务专家：窄任务中谁更平滑、更精确？</p></div><div class="card orange"><h3>OpenVLA scratch</h3><p>去掉 OpenX 机器人预训练：大规模机器人数据是否关键？</p></div></div>
     <div class="callout"><span class="evidence reported">论文报告</span> OpenVLA 在多维泛化和多指令下游适配上有优势；<span class="evidence not-proven">论文未证明</span> action token 本身优于 diffusion/flow，也没验证双臂 PiPER。</div>
@@ -208,17 +214,17 @@
     <p class="small">原版边界：单图、单臂 7D、无 proprioception、无历史、无 action chunk。</p>
   </section>
 
-  <section class="slide" data-page="08 / 19">
+  <section class="slide" data-page="08 / 20">
     <div class="kicker">07 · π0</div><h2>输出不再是七个词，而是一段未来轨迹</h2>
     <div class="two-col"><div><img class="figure" src="../../assets/pi0-figure3.svg" alt="pi0 framework redraw"><p class="caption"><strong>π0 Figure 3 意图重绘：</strong>论文原图展示数据混合、PaliGemma VLM、action expert 和多种机器人 embodiment。你提供的截图原意已保留，中文演示版重新排版。</p></div><div><div class="callout green">一次输出：<strong>[H, D]</strong> 连续 action chunk，而不是当前一步的 7 个 token。</div><div class="flow"><div class="node blue">多路图像</div><div class="node blue">语言</div><div class="node blue">本体状态</div><div class="arrow">→</div><div class="node green">连续动作块</div></div><p>VLM 提供视觉语言条件，action expert 处理带噪动作块和生成进度。action chunk 提高短时轨迹一致性，但执行一段后要重新观察。</p></div></div>
   </section>
 
-  <section class="slide" data-page="09 / 19">
+  <section class="slide" data-page="09 / 20">
     <div class="kicker">08 · π0</div><h2>Flow matching：每个样本给风场一支箭头</h2>
     <div class="two-col"><div class="interactive"><h3>交互 2 · 条件向量场（二维玩具示意）</h3><div class="control-row"><label>观察条件 <select id="fieldMode"><option value="cup">杯子在右边 · 抓杯子</option><option value="drawer">抽屉在左边 · 打开抽屉</option></select></label><button id="fieldStep">前进一步</button><button id="fieldReset">重置</button></div><canvas id="fieldCanvas" width="780" height="360"></canvas><div id="fieldOutput" class="demo-output"></div><p class="caption">这是二维概念切片，不是论文真实的 50×D 高维动作空间。</p></div><div><div class="flow"><div class="node orange">随机动作块 X<sub>0</sub></div><div class="arrow">→</div><div class="node blue">局部箭头</div><div class="arrow">→</div><div class="node green">连续 action chunk</div></div><div class="card"><h3>训练</h3><p>已知专家动作 A、噪声 ε 和 τ，构造中间块并监督变化率。</p><h3>推理</h3><p>只采样一次初始噪声，之后根据当前块、观察和 τ 更新十次。</p><h3>不要混淆</h3><p>机器人时间 t ≠ 生成进度 τ；50 Hz ≠ 每秒重算 50 个 chunk。</p></div></div></div>
   </section>
 
-  <section class="slide" data-page="10 / 19">
+  <section class="slide" data-page="10 / 20">
     <div class="kicker">09 · π0</div><h2>证据与迁移：整套配方有效，不等于单组件胜出</h2>
     <table><thead><tr><th>对照</th><th>为什么选</th><th>证据边界</th></tr></thead><tbody>
       <tr><td>OpenVLA</td><td>离散自回归、无 chunk</td><td>检验单步 token 接口在高频任务上的限制</td></tr>
@@ -230,19 +236,19 @@
     <div class="callout"><span class="evidence not-proven">论文未证明</span> flow matching 是全部性能提升的唯一原因；接口、数据规模、VLM 初始化和后训练同时影响结果。</div>
   </section>
 
-  <section class="slide" data-page="11 / 19">
+  <section class="slide" data-page="11 / 20">
     <div class="kicker">10 · π0.5</div><h2>感性理解：不同老师教同一个学生</h2>
     <div class="two-col"><div><img class="figure" src="../../assets/pi05-overview.svg" alt="pi0.5 heterogeneous training redraw"><p class="caption"><strong>π0.5 方法重绘：</strong>机器人动作、网页视觉、子任务、目标定位和专家语言共同进入训练；部署时先预测子任务，再生成低层动作。</p></div><div><div class="callout orange">机器人轨迹教“怎么动”；网页和目标线索教“是什么、在哪里”；子任务与专家语言教“下一步做什么”。</div><div class="flow"><div class="node orange">总任务</div><div class="arrow">→</div><div class="node purple">当前子任务</div><div class="arrow">→</div><div class="node green">连续动作块</div></div><p>π0.5 主要考察已有技能在未见家庭环境、布局和有限新物体中的泛化，不应讲成自动获得任意新技能。</p></div></div>
   </section>
 
-  <section class="slide" data-page="12 / 19">
+  <section class="slide" data-page="12 / 20">
     <div class="kicker">11 · π0.5</div><h2>它接近特权监督，但不是严格特权学习</h2>
     <div class="grid three"><div class="card blue"><h3>MM / ME / CE</h3><p>多机器人动作与环境经验：扩大操作覆盖。</p></div><div class="card orange"><h3>HL / WD</h3><p>子任务、目标框、网页视觉语义：扩大可解释的中间监督。</p></div><div class="card purple"><h3>VI</h3><p>专家用语言示范任务分解：教高层如何选择下一步。</p></div></div>
     <div class="callout"><span class="evidence reported">论文报告</span> 异构数据和高层监督在其设置中有帮助。<br><span class="evidence not-proven">论文未证明</span> 这不是仿真全状态教师、经典 LUPI、特权蒸馏或自主数据聚合闭环。</div>
     <table><thead><tr><th>项目可借鉴</th><th>项目必须自己验证</th></tr></thead><tbody><tr><td>把 RoboDojo 真值转成阶段、几何、接触、双臂角色标签</td><td>学生只看普通观测时能否可靠预测这些标签，以及它们是否带来闭环提升</td></tr></tbody></table>
   </section>
 
-  <section class="slide" data-page="13 / 19">
+  <section class="slide" data-page="13 / 20">
     <div class="kicker">12 · Decision</div><h2>采用、改造、暂不采用</h2>
     <table><thead><tr><th>论文</th><th style="color:#285b31">Adopt</th><th style="color:#7b4b15">Adapt</th><th style="color:#7b2d22">Reject for now</th></tr></thead><tbody>
       <tr><td>OpenVLA</td><td>VLM 初始化、数据清洗、LoRA、开放工程参照</td><td>token baseline 或语义编码器</td><td>原版单图 7D 作为最终双臂策略</td></tr>
@@ -252,14 +258,14 @@
     <div class="callout dark">第一版最值得复用的是 <strong>数据和动作接口思想</strong>，不一定是模型规模。</div>
   </section>
 
-  <section class="slide" data-page="14 / 19">
+  <section class="slide" data-page="14 / 20">
     <div class="kicker">13 · Gap</div><h2>研究缺口：三篇都没回答我们的因果问题</h2>
     <div class="three-col"><div class="card blue"><h3>OpenVLA</h3><p>没有特权训练机制。</p></div><div class="card green"><h3>π0</h3><p>没有全状态教师或 asymmetric learning。</p></div><div class="card purple"><h3>π0.5</h3><p>有额外语义监督，但没有严格训练/部署信息不对称实验。</p></div></div>
     <div class="callout">真正的空缺：<strong>z<sub>t</sub> only during training → visible-only student → fair closed-loop evaluation</strong></div>
     <p>另一个前置问题是可观测性：如果“已经抓稳”和“尚未抓稳”在允许观测中完全不可区分，学生不能靠更大模型恢复不存在的信息。</p>
   </section>
 
-  <section class="slide" data-page="15 / 19">
+  <section class="slide" data-page="15 / 20">
     <div class="kicker">14 · RoboDojo Protocol</div><h2>训练、部署、评测：三条信息流</h2>
     <div class="swimlane"><b>训练</b><div><div class="flow"><div class="node blue">o<sub>t</sub></div><div class="node red">z<sub>t</sub></div><div class="arrow">→</div><div class="node orange">教师 / 标签</div><div class="arrow">→</div><div class="node green">student</div><div class="arrow">→</div><div class="node purple">A<sub>t</sub></div></div></div></div>
     <div class="swimlane"><b>部署执行</b><div><div class="flow"><div class="node blue">RGB + q + instruction</div><div class="arrow">→</div><div class="node green">student + fixed controller</div><div class="arrow">→</div><div class="node purple">A<sub>t</sub></div><span class="tag red">z_t 断开</span></div></div></div>
@@ -267,34 +273,58 @@
     <p class="small">审计范围包括策略输入、归一化、checkpoint 选择、后处理、安全过滤、终止逻辑和恢复逻辑。</p>
   </section>
 
-  <section class="slide" data-page="16 / 19">
+  <section class="slide" data-page="16 / 20">
     <div class="kicker">15 · Fair Experiment</div><h2>交互 3：一次只改变一个变量</h2>
     <div class="two-col"><div class="interactive"><h3>公平性检查器</h3><p class="small">关闭所有未改变的开关；只要额外改变了多个因素，结论就不能归因。</p><div class="check-grid" id="fairChecks"></div><div id="fairStatus" class="status good">当前：可归因对照</div><button id="fairReset" style="margin-top:12px">重置为公平</button></div><div><div class="card blue"><h3>A1 Plain BC vs A2 Privileged Auxiliary</h3><p>同轨迹、同动作标签、同学生；唯一增加训练期阶段/几何/接触辅助损失，部署时删除辅助头。</p></div><div class="card purple"><h3>B1 Expert distribution vs B2 Student distribution</h3><p>同教师、同查询规则、同有效标签预算；只改变新增状态来自教师还是学生访问分布。</p></div></div></div>
   </section>
 
-  <section class="slide" data-page="17 / 19">
+  <section class="slide" data-page="17 / 20">
     <div class="kicker">16 · Evaluation</div><h2>指标和风险：失败必须能定位</h2>
     <div class="three-col"><div class="metric"><b>主指标</b><span>完整任务成功率 + 训练种子层面的不确定性</span></div><div class="metric"><b>过程指标</b><span>阶段完成、双臂协调、时间、动作长度</span></div><div class="metric"><b>安全指标</b><span>碰撞、掉落、无效静止、恢复成功</span></div></div>
     <div class="grid" style="margin-top:18px"><div class="card red"><h3>可观测性不足</h3><p>当前帧无法区分真实状态 → 需要统一历史/记忆。</p></div><div class="card orange"><h3>特权泄漏</h3><p>控制器、过滤器、终止逻辑偷看真值 → 结果无效。</p></div><div class="card purple"><h3>教师覆盖不足</h3><p>学生访问状态教师拒答或不可恢复 → 先记录，不能假装有标签。</p></div><div class="card blue"><h3>接口变化</h3><p>坐标系、chunk、频率、PD 变化 → 性能无法归因。</p></div></div>
     <div class="callout dark">名义测试与单因素扰动分开；正式结论目标至少 5 个训练种子，3 个种子只能标为探索性。</div>
   </section>
 
-  <section class="slide" data-page="18 / 19">
+  <section class="slide" data-page="18 / 20">
     <div class="kicker">17 · Milestones</div><h2>两周目标：先证明特权监督是否值得继续</h2>
     <div class="flow"><div class="node blue">Day 1-3<br><small>冻结任务、观测、动作接口</small></div><div class="arrow">→</div><div class="node orange">Day 4-6<br><small>核对 z_t 并生成标签</small></div><div class="arrow">→</div><div class="node green">Day 7-10<br><small>A1 / A2 / shuffled control</small></div><div class="arrow">→</div><div class="node purple">Day 11-14<br><small>配对评测与失败分类</small></div></div>
     <div class="grid"><div class="card green"><h3>今天需要拍板</h3><p>第一阶段任务是否真正需要双臂？部署允许哪些相机、状态和历史？RoboDojo 哪些特权字段稳定？教师用脚本、规划器还是 state-based RL？学生先用 ACT、Diffusion Policy 还是小型 flow policy？</p></div><div class="card orange"><h3>Go / No-Go</h3><p>Go：提升跨训练种子、配对初始化和基本扰动，并确认无泄漏。No-Go：不稳定、可观测性不足或标签质量差，就先诊断，不扩大模型。</p></div></div>
     <p class="quote">OpenVLA 告诉我们动作如何接入 VLM；π0 告诉我们如何生成连续动作块；π0.5 提示异构监督可能有帮助；真正的特权闭环，要由公平实验给出。</p>
   </section>
 
-  <section class="slide" data-page="19 / 19">
-    <div class="kicker">18 · Open Questions</div><h2>三个关键问题：先记录，不急着回答</h2>
-    <p class="subtitle">分享结束时留存的问题。目前没有论文级证据，留作后续阅读、讨论与实验设计的入口。</p>
-    <div class="grid three" style="margin-top:26px">
-      <div class="card blue"><h3>Q1 · variant 的适用边界</h3><p>flat、human、vlm 这几个 variant，对 non high-level task 有没有帮助？</p></div>
-      <div class="card orange"><h3>Q2 · 谁在做推理</h3><p>π0 需要 VLM 先做推理再预测 action，是不是因为 action expert 自身的 reasoning 能力不够，必须依靠 VLM 进行 reasoning？</p></div>
-      <div class="card purple"><h3>Q3 · 低层任务的价值</h3><p>π0.5 的预训练任务里面，low-level task 真的有用吗？</p></div>
+  <section class="slide" data-page="19 / 20">
+    <div class="kicker">Appendix · Evidence Answers</div><h2>三个问题的原文依据</h2>
+    <p class="subtitle">先看结论，再展开证据。页码按本地 PDF 阅读器的物理页码标注。</p>
+    <div class="grid three evidence-cards">
+      <article class="card blue"><h3>Q1 · flat / human / HL</h3><p><strong>结论：</strong>论文没有直接证明 human 或 HL 对真正单阶段 non-high-level task 有帮助；Figure 9 测的是多物体、多步骤语言任务。</p><button class="evidence-toggle" data-target="evidence-q1">展开依据</button><div class="evidence-detail" id="evidence-q1"><p><strong>定义：</strong><code>π0-flat</code> 只给总体任务；<code>π0-human</code> 接收人类中间语言命令；<code>π0-HL</code> 接收外部 high-level VLM 的中间命令。</p><p><strong>原文位置：</strong>π0.pdf, Section VI-B, PDF pp.8-9；Figure 9, PDF p.9。</p><p><strong>任务范围：</strong>Bussing、Grocery Bagging、Table Setting，都需要多个中间语言步骤。论文没有设置“单物体、单阶段、不需要任务分解”的成对 benchmark。</p><p><strong>图中现象：</strong><code>π0-human</code> 三项均高于 flat；<code>π0-HL</code> 在 Bussing/Table Setting 有帮助，但 Grocery Bagging 略低于 flat。因此不能说 HL 对所有任务都有益。</p><p class="small"><span class="source-unavailable">原文 PDF 未随本站提供</span>：查 Section VI-B 与 Figure 9。</p></div></article>
+      <article class="card green"><h3>Q2 · 谁在做推理</h3><p><strong>结论：</strong>π0 需要内部 VLM 提供视觉语言条件，但不需要 VLM 先生成显式 reasoning 文本；外部 HL VLM 只是可选的长任务分解器。</p><button class="evidence-toggle" data-target="evidence-q2">展开依据</button><div class="evidence-detail" id="evidence-q2"><p><strong>内部 PaliGemma：</strong>图像和语言形成条件上下文；action expert 接收状态、带噪动作块和 flow 时间，输出连续向量场。</p><p><strong>外部 high-level VLM：</strong>只在 <code>π0-HL</code> 中提供子任务命令；<code>π0-flat</code> 明确绕过外部 HL VLM，但仍使用内部 PaliGemma。</p><p><strong>原文位置：</strong>π0.pdf, Figure 3/PDF p.4；Section IV/PDF pp.4-5；Appendix B/PDF p.15；Section V-B/PDF p.6；Section VI-B/PDF pp.8-9。</p><p><strong>证据边界：</strong>论文没有做“action expert 有无 reasoning 模块”的因果消融，也没有报告 chain-of-thought。因此不能说 action expert 因 reasoning 不足而必须依靠 VLM。</p><p class="small"><span class="source-unavailable">原文 PDF 未随本站提供</span>：查 Figure 3、Section IV、Appendix B。</p></div></article>
+      <article class="card orange"><h3>Q3 · low-level task 有用吗</h3><p><strong>结论：</strong>机器人动作数据参与的整体共同训练配方有用；但论文没有证明 low-level action loss 本身独立于数据量、架构和高层监督有用。</p><button class="evidence-toggle" data-target="evidence-q3">展开依据</button><div class="evidence-detail" id="evidence-q3"><p><strong>直接证据：</strong>去掉 ME 或 CE 后，操作性能显著下降；增加 MM 训练环境数量，在固定 unique sample 设置下，新环境泛化总体提升。</p><p><strong>原文位置：</strong>π0.5.pdf, Section IV-C/D, PDF pp.6-7；Figure 8/PDF p.9；Figure 10/PDF p.10；Figure 11/PDF p.10；Figure 12/PDF p.10；Figure 13/PDF p.11。</p><p><strong>不能过度解读：</strong>ME/CE 同时改变了动作轨迹、机器人 embodiment、环境、任务、高层标注和数据量；π0-FAST+Flow 仍保留机器人动作数据，只能说明加入 HL/WD/高层组织后整体更强。</p><p><strong>项目含义：</strong>应做正交消融：是否有 low-level action loss × 是否有 HL 监督，保持架构、样本量、训练步数和运行时条件一致。</p><p class="small"><span class="source-unavailable">原文 PDF 未随本站提供</span>：查 Sections IV-V 与 Figures 8-13。</p></div></article>
     </div>
-    <div class="callout dark" style="margin-top:26px">没有答案也是一种结论。欢迎带着消融实验、失败案例或反例，回到这三个问题上。</div>
+    <div class="callout dark"><strong>共同结论：</strong>三篇论文提供的是相邻证据，不是我们的特权闭环答案。Q1 要先按任务复杂度分层，Q2 要分清语义条件与显式推理，Q3 要用正交实验隔离低层动作监督。</div>
+  </section>
+
+  <section class="slide" data-page="20 / 20">
+    <div class="kicker">Appendix · Three Answers</div>
+    <h2>三个问题：结论、依据与边界</h2>
+    <div class="card blue" style="margin-bottom:14px">
+      <h3>Q1 · flat / human / HL 对 non-high-level task 有帮助吗？</h3>
+      <p><strong>结论：</strong>论文没有直接证明。Figure 9 的 Bussing、Grocery Bagging、Table Setting 都需要多个物体、多步顺序和中间语言命令。</p>
+      <p><strong>依据：</strong><code>π0.pdf</code> Section VI-B，PDF pp.8-9；Figure 9，PDF p.9。<code>π0-flat</code> 只接收总体任务；<code>π0-human</code> 接收人类中间指令；<code>π0-HL</code> 接收外部 high-level VLM 的中间指令。</p>
+      <p><strong>边界：</strong>论文没有设置真正单阶段、无需任务分解的 benchmark。可以说中间语言指导可能帮助长时程语义任务，不能说 HL 对所有任务都有帮助；Grocery Bagging 中 HL 还略低于 flat。</p>
+    </div>
+    <div class="card green" style="margin-bottom:14px">
+      <h3>Q2 · π0 是不是必须 VLM 先 reasoning，再由 action expert 预测动作？</h3>
+      <p><strong>结论：</strong>不是。内部 PaliGemma 提供视觉语言条件表示；action expert 根据视觉语言条件、机器人状态、带噪动作块和 flow 时间生成连续动作。外部 high-level VLM 只在 HL 模式中可选地做长任务分解。</p>
+      <p><strong>依据：</strong><code>π0.pdf</code> Figure 3，PDF p.4；Section IV，PDF pp.4-5；Appendix B，PDF p.15；Section V-B，PDF p.6；Section VI-B，PDF pp.8-9。</p>
+      <p><strong>边界：</strong><code>π0-flat</code> 绕过外部 high-level VLM，但仍使用内部 PaliGemma。论文没有做 action expert 有无 reasoning 模块的消融，因此不能说 action expert 因 reasoning 不足而必须依靠 VLM。</p>
+    </div>
+    <div class="card orange">
+      <h3>Q3 · π0.5 预训练中的 low-level task 真的有用吗？</h3>
+      <p><strong>结论：</strong>机器人动作数据参与的整体共同训练配方有用；但 low-level action loss 的独立因果贡献没有被隔离证明。</p>
+      <p><strong>依据：</strong><code>π0.5.pdf</code> Section IV-C/D，PDF pp.6-7；Figures 8-13，PDF pp.9-11。Figure 8 支持环境多样性有价值；Figure 10 支持 ME/CE 数据源有用；Figure 11 显示 ME/CE 影响操作与目标选择、WD 特别影响 OOD 物体；Figure 12 的 π0-FAST+Flow 仍保留机器人动作数据。</p>
+      <p><strong>边界：</strong>去掉 ME/CE 同时改变动作轨迹、机器人 embodiment、环境、任务、高层标注和数据量。因此不能说 low-level action loss 独立优于 HL、WD、VI 或其他训练信号。</p>
+    </div>
+    <div class="callout dark"><strong>最终判断：</strong>三篇论文给出相邻证据；我们的研究仍需要在固定学生、固定部署输入和固定动作接口下，单独检验训练期特权监督是否带来可归因闭环提升。</div>
   </section>
 </main>
 
@@ -323,13 +353,15 @@
     ['公平实验', 'A1/A2只改变辅助监督；B1/B2只改变新增状态分布。其余学生、动作、预算、教师、查询规则和测试初始化都冻结。'],
     ['指标风险', '完整成功率是主指标，阶段和安全是诊断指标。名义和扰动测试分开，保留失败类型和训练种子差异，不能用训练损失或单个视频代替闭环证据。'],
     ['里程碑', '两周先交付visible-only baseline、privileged auxiliary和shuffled-label control。只有提升跨种子、配对初始化和基本扰动且无泄漏，才增加教师纠错、数据聚合或更大模型。'],
-    ['关键问题', '最后记录三个开放问题：flat、human、vlm 这几个 variant 对 non high-level task 有没有帮助；π0 需要 VLM 先推理再预测 action，是不是因为 action expert 自身 reasoning 能力不够；π0.5 预训练任务里的 low-level task 是否真的有用。']
+    ['三个问题的原文依据', 'Q1：论文正式比较的是 π0-flat、π0-human、π0-HL，且 Figure 9 的任务都需要多步中间语言命令，没有真正单阶段 non-high-level benchmark。Q2：内部 PaliGemma 提供视觉语言条件，外部 high-level VLM 只在 HL 模式做可选任务分解；论文没有证明 action expert 因 reasoning 不足而需要外部 VLM。Q3：π0.5 证明机器人动作数据参与的整体共同训练有用，但没有隔离 low-level action loss 相对数据量、架构和 HL 监督的独立贡献。点击每张卡展开 Section、Figure 和 PDF 页码依据。'],
+    ['三个问题：结论、依据与边界', '第20页是投屏版集中解答。Q1依据：π0 Section VI-B、Figure 9，任务都是多阶段语言任务，不能外推到真正单阶段任务。Q2依据：π0 Figure 3、Section IV、Appendix B、Section V-B/VI-B，内部 VLM提供条件，外部 HL VLM可选分解，论文未证明 action expert reasoning不足。Q3依据：π0.5 Figures 8-13，机器人动作数据整体有用，但 low-level action loss的独立贡献未被隔离。']
   ];
   function render() { slides.forEach((s,i)=>s.classList.toggle('active',i===index)); document.getElementById('progressBar').style.width=((index+1)/slides.length*100)+'%'; document.getElementById('notesTitle').textContent=(index+1)+'. '+notes[index][0]; document.getElementById('notesBody').innerHTML='<p>'+notes[index][1]+'</p><p class="small">键盘：←/→ 翻页，N 打开讲稿，F 全屏。</p>'; history.replaceState(null,'','#'+(index+1)); }
   function go(n) { index=Math.max(0,Math.min(slides.length-1,n)); render(); }
   document.getElementById('prev').onclick=()=>go(index-1); document.getElementById('next').onclick=()=>go(index+1);
   document.addEventListener('keydown',e=>{ if(e.key==='ArrowRight'||e.key===' ') go(index+1); if(e.key==='ArrowLeft') go(index-1); if(e.key.toLowerCase()==='n') document.getElementById('notes').classList.toggle('open'); if(e.key.toLowerCase()==='f') toggleFull(); });
   document.getElementById('notesBtn').onclick=()=>document.getElementById('notes').classList.add('open'); document.getElementById('closeNotes').onclick=()=>document.getElementById('notes').classList.remove('open');
+  document.querySelectorAll('.evidence-toggle').forEach(button=>button.addEventListener('click',()=>{const detail=document.getElementById(button.dataset.target);const open=detail.classList.toggle('open');button.textContent=open?'收起依据':'展开依据';}));
   function toggleFull(){ if(!document.fullscreenElement) document.documentElement.requestFullscreen?.(); else document.exitFullscreen?.(); } document.getElementById('fullscreenBtn').onclick=toggleFull;
   if(location.hash){ const n=Number(location.hash.slice(1)); if(n>=1&&n<=slides.length) index=n-1; }
 
