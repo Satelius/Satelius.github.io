@@ -28,6 +28,14 @@ personal_web/
 └── pages/
     ├── field-notes/
     │   └── index.html
+    ├── harness-contract/
+    │   ├── index.html
+    │   ├── script.js
+    │   └── styles.css
+    ├── project-progress/
+    │   ├── index.html
+    │   ├── script.js
+    │   └── styles.css
     └── vla-privileged-loop/
         └── index.html
 ```

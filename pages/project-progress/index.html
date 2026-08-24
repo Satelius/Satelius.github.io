@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="description" content="SATELIUS 的项目工作进展入口。">
+  <meta name="theme-color" content="#101412">
+  <link rel="canonical" href="https://satelius.github.io/pages/project-progress/">
+  <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+  <title>项目工作进展 | SATELIUS</title>
+</head>
+<body>
+  <header class="progress-header">
+    <a class="wordmark" href="../../" aria-label="返回 SATELIUS 首页">SATELIUS</a>
+    <div class="header-meta">
+      <span>PROJECT WORK LOG</span>
+      <span>GATED / SESSION PIN</span>
+    </div>
+  </header>
+
+  <main>
+    <section class="gate-shell" id="gateShell" aria-labelledby="gate-title">
+      <div class="gate-index">ACCESS / LOCKED</div>
+      <div class="gate-copy">
+        <p class="eyebrow">PROJECT PROGRESS / 项目进展</p>
+        <h1 id="gate-title">正在整理中的工作，<br><em>不放在公开索引里。</em></h1>
+        <p class="lead">这里记录仍在推进的项目，不是对外展示的成品页面。输入三位数 PIN 后，本次浏览器会话才能查看内容。</p>
+      </div>
+      <form class="pin-form" id="pinForm">
+        <label for="pinInput">输入访问 PIN</label>
+        <div class="pin-row">
+          <input id="pinInput" name="pin" type="password" inputmode="numeric" pattern="[0-9]{3}" maxlength="3" autocomplete="one-time-code" aria-describedby="pinStatus" required>
+          <button type="submit">进入 <span aria-hidden="true">→</span></button>
+        </div>
+        <p class="pin-status" id="pinStatus" role="status" aria-live="polite"></p>
+      </form>
+      <p class="gate-note">STATIC SITE NOTICE / PIN 只阻止普通误入，不能保护 GitHub 上的公开源码。</p>
+    </section>
+
+    <section class="project-content" id="projectContent" hidden aria-labelledby="projects-title">
+      <header class="content-heading">
+        <div>
+          <p class="eyebrow">UNLOCKED / 工作记录</p>
+          <h2 id="projects-title">两条正在生长的线。</h2>
+        </div>
+        <button class="lock-button" id="lockButton" type="button">锁定页面</button>
+      </header>
+
+      <div class="project-columns">
+        <section class="project-block project-block--self" aria-labelledby="self-title">
+          <div class="block-marker">01</div>
+          <div class="block-content">
+            <p class="block-label">SELF-IMPROVING</p>
+            <h3 id="self-title">让系统从失败里变得更可靠。</h3>
+            <p class="block-intro">围绕 Harness、验证闸门、失败分析与课程化改进，记录如何把一次失败转成下一轮系统能力。</p>
+            <article class="project-entry">
+              <div class="entry-status"><span></span> IN PROGRESS</div>
+              <h4>Harness MVP Contract v1</h4>
+              <p>从 Text2Env、RoboTwin 和 SAPIEN 的现有路径出发，补上 Skill 身份、精确版本、调用记录、证据绑定、失败解释与发布资格。</p>
+              <div class="entry-tags"><span>verification</span><span>audit</span><span>self-improvement</span></div>
+              <a class="entry-link" href="../harness-contract/">打开 Harness 契约页面 <span aria-hidden="true">↗</span></a>
+            </article>
+          </div>
+        </section>
+
+        <section class="project-block project-block--r4r" aria-labelledby="r4r-title">
+          <div class="block-marker">02</div>
+          <div class="block-content">
+            <p class="block-label">ROBOT 4 ROBOT</p>
+            <h3 id="r4r-title">让机器人学习拥有更大的回路。</h3>
+            <p class="block-intro">记录多机器人协作、环境生成、世界模型与失败驱动课程之间的连接，暂时从一个空的目录开始。</p>
+            <div class="empty-project">
+              <span class="empty-code">NEXT ENTRY / 001</span>
+              <strong>等待下一条工作记录。</strong>
+              <p>后续可以在这里加入研究假设、实验日志、阶段里程碑或公开版本。</p>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <footer class="progress-footer">
+        <span>SESSION ACCESS GRANTED</span>
+        <a href="../../">返回 SATELIUS 首页 <span aria-hidden="true">↗</span></a>
+      </footer>
+    </section>
+  </main>
+</body>
+</html>

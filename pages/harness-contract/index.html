@@ -3,8 +3,14 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
   <meta name="description" content="Harness MVP 契约 v1 的结构化、可视化提案网站。">
   <title>Harness MVP 契约 v1 | 从场景生成到可审计发布</title>
+  <script>
+    if (sessionStorage.getItem("satelius-project-progress-access") !== "granted") {
+      location.replace("../project-progress/?redirect=harness-contract");
+    }
+  </script>
   <link rel="stylesheet" href="styles.css">
   <script src="script.js" defer></script>
 </head>
@@ -26,6 +32,7 @@
       <span class="sr-only">展开导航</span>
     </button>
     <nav class="site-nav" id="siteNav" aria-label="页面导航">
+      <a href="../project-progress/">工作进展</a>
       <a href="#journey">现有路径</a>
       <a href="#contract">契约图景</a>
       <a href="#authority">权责边界</a>

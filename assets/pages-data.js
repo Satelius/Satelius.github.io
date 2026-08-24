@@ -28,9 +28,23 @@ window.SATELIUS_PAGES = [
     accent: "#c97430"
   },
   {
-    id: "github",
+    id: "project-progress",
     number: "003",
-    label: "EXTERNAL LOG 003",
+    label: "PROJECT LOG 003",
+    title: "项目工作进展",
+    href: "./pages/project-progress/",
+    external: false,
+    category: "项目进展",
+    year: "NOW",
+    date: "2026-08-24",
+    summary: "Self-Improving 与 Robot 4 Robot 的持续工作记录。进入项目内容需要 PIN。",
+    tags: ["Self-Improving", "Robot 4 Robot", "工作进展"],
+    accent: "#dfff00"
+  },
+  {
+    id: "github",
+    number: "004",
+    label: "EXTERNAL LOG 004",
     title: "GitHub 公开档案",
     href: "https://github.com/Satelius",
     external: true,
