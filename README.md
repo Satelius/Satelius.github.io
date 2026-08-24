@@ -36,9 +36,15 @@ personal_web/
     │   ├── index.html
     │   ├── script.js
     │   └── styles.css
+    ├── harness-skill-walkthrough/
+    │   ├── index.html
+    │   ├── favicon.svg
+    │   └── assets/
     └── vla-privileged-loop/
         └── index.html
 ```
+
+`pages/harness-skill-walkthrough/` 是 GitHub Pages 使用的静态 React 构建产物。
 
 ## 本地预览
 

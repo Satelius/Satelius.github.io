@@ -140,6 +140,8 @@ h1 em { color: var(--ink); background: var(--acid); font-style: normal; }
 
 .project-entry { padding: 1.25rem; color: var(--paper); background: var(--ink); }
 
+.project-entry + .project-entry { margin-top: 1rem; }
+
 .entry-status { color: var(--acid); }
 
 .entry-status span { display: inline-block; width: .55rem; height: .55rem; margin-right: .35rem; border-radius: 50%; background: var(--acid); }

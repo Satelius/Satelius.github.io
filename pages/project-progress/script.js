@@ -8,12 +8,16 @@
   const pinStatus = document.querySelector("#pinStatus");
   const lockButton = document.querySelector("#lockButton");
   const redirect = new URLSearchParams(window.location.search).get("redirect");
+  const redirectTargets = {
+    "harness-contract": "../harness-contract/",
+    "harness-skill-walkthrough": "../harness-skill-walkthrough/",
+  };
 
   const showProjects = () => {
     gateShell.hidden = true;
     projectContent.hidden = false;
-    if (redirect === "harness-contract") {
-      window.location.replace("../harness-contract/");
+    if (redirect && redirectTargets[redirect]) {
+      window.location.replace(redirectTargets[redirect]);
       return;
     }
     document.querySelector("#projects-title").focus?.();
