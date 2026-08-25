@@ -11,6 +11,7 @@
   const redirectTargets = {
     "harness-contract": "../harness-contract/",
     "harness-skill-walkthrough": "../harness-skill-walkthrough/",
+    "stack-bowls-pi05": "../stack-bowls-pi05/",
   };
 
   const showProjects = () => {

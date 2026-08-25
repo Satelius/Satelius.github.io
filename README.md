@@ -36,6 +36,10 @@ personal_web/
     │   ├── index.html
     │   ├── script.js
     │   └── styles.css
+    ├── stack-bowls-pi05/
+    │   ├── index.html
+    │   └── videos/
+    │       └── *.mp4
     ├── harness-skill-walkthrough/
     │   ├── index.html
     │   ├── favicon.svg
