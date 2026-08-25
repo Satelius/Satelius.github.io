@@ -38,8 +38,12 @@ personal_web/
     │   └── styles.css
     ├── stack-bowls-pi05/
     │   ├── index.html
-    │   └── videos/
-    │       └── *.mp4
+    │   └── assets/
+    │       ├── stack_bowls/
+    │       ├── cover_blocks/
+    │       ├── insert_tubes/
+    │       ├── fill_pen_holder/
+    │       └── general_pickup/
     ├── harness-skill-walkthrough/
     │   ├── index.html
     │   ├── favicon.svg

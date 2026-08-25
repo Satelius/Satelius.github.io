@@ -152,6 +152,36 @@
     .video-tab.active { border-color: var(--lime); box-shadow: inset 0 0 0 1px var(--lime); }
     .video-tab video { width: 100%; display: block; aspect-ratio: 16 / 9; object-fit: cover; background: #050707; pointer-events: none; }
     .video-tab span { display: block; padding: 9px 11px 11px; font-size: 12px; }
+    .task-tabs { display: flex; flex-wrap: wrap; gap: 9px; margin-bottom: 14px; }
+    .task-tab {
+      padding: 10px 14px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--muted);
+      background: var(--panel);
+      font: inherit;
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: border-color .2s, color .2s, background .2s, transform .2s;
+    }
+    .task-tab:hover { color: var(--ink); border-color: var(--cyan); transform: translateY(-2px); }
+    .task-tab.active { color: var(--bg); background: var(--lime); border-color: var(--lime); }
+    .task-tab.failed { border-color: rgba(255, 129, 124, .35); }
+    .task-tab.failed.active { color: var(--bg); background: var(--orange); border-color: var(--orange); }
+    .task-summary { display: flex; justify-content: space-between; gap: 18px; align-items: center; margin: 0 0 16px; padding: 15px 18px; border: 1px solid var(--line); border-radius: 14px; background: var(--panel); }
+    .task-summary h3 { margin: 0 0 3px; font-size: 17px; }
+    .task-summary p { margin: 0; color: var(--muted); font-size: 13px; }
+    .task-score { color: var(--lime); font-size: 20px; font-weight: 700; white-space: nowrap; }
+    .task-score.failed { color: var(--orange); }
+    .result-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; }
+    .result-card { padding: 17px; border: 1px solid var(--line); border-radius: 14px; background: var(--panel); }
+    .result-card h3 { margin: 10px 0 5px; font-size: 14px; }
+    .result-card p { margin: 0; color: var(--muted); font-size: 12px; }
+    .result-card .score { margin-top: 12px; color: var(--lime); font-size: 25px; font-weight: 700; letter-spacing: -.05em; }
+    .result-card.failed .score { color: var(--orange); }
+    .badge { display: inline-flex; padding: 4px 7px; border-radius: 999px; color: var(--lime); background: rgba(183, 243, 107, .1); font-size: 10px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+    .badge.failed { color: var(--orange); background: rgba(255, 184, 107, .1); }
 
     .pipeline { display: grid; grid-template-columns: 1fr auto 1fr auto 1fr; align-items: stretch; gap: 13px; }
     .pipeline-card { min-height: 180px; padding: 20px; border: 1px solid var(--line); border-radius: 16px; background: var(--panel); }
@@ -195,7 +225,9 @@
       .section { padding-bottom: 64px; }
       .section-heading { display: block; }
       .section-note { margin-top: 12px; }
-      .proof-grid, .timeline, .incident { grid-template-columns: 1fr; }
+      .proof-grid, .timeline, .incident, .result-grid { grid-template-columns: 1fr; }
+      .task-summary { display: block; }
+      .task-score { display: block; margin-top: 8px; }
       .video-info { display: block; }
       .video-meta { display: block; margin-top: 8px; }
       .pipeline { grid-template-columns: 1fr; }
@@ -209,14 +241,14 @@
 <body>
   <header class="shell topbar">
     <div class="brand"><span class="brand-mark">π</span><span>R4R / Weekly Lab Update</span></div>
-    <div class="date">2026.08.25 · Gate 11</div>
+    <div class="date">2026.08.25 · Gate 12</div>
   </header>
 
   <main>
     <section class="shell hero">
-      <div class="eyebrow">Smoke test complete</div>
+      <div class="eyebrow">Five-task smoke test complete</div>
       <h1>π0.5<br><em>跑起来了。</em></h1>
-      <p class="hero-copy"><strong>本周结果：</strong>在 RoboDojo 的 Isaac Sim 环境中，完成 π0.5 对 <code>stack_bowls</code> 任务的单任务、单回合端到端验证，并成功生成三路相机视频。</p>
+      <p class="hero-copy"><strong>本周结果：</strong>在 RoboDojo 的 Isaac Sim 环境中，完成 π0.5 对五个代表任务的单任务、单回合 smoke test，全部生成三路相机视频；其中 2 个任务成功完成。</p>
       <div class="hero-actions">
         <a class="button primary" href="#evidence">查看视频证据 <span>↓</span></a>
         <a class="button" href="#pipeline">查看运行链路 <span>→</span></a>
@@ -226,16 +258,30 @@
     <section class="shell section" id="evidence">
       <div class="section-heading">
         <div>
-          <div class="section-label">01 / Evidence</div>
-          <h2>一回合，三路视角。</h2>
+        <div class="section-label">01 / Evidence</div>
+          <h2>五个任务，十五段回放。</h2>
         </div>
-        <p class="section-note">视频来自真实的 Gate 11 运行结果。点击下方缩略图切换主视频，右下角控件可播放、暂停和全屏。</p>
+        <p class="section-note">视频来自真实的 Gate 12 运行结果。先选择任务，再切换 head、left wrist、right wrist 三路视角。</p>
       </div>
 
       <div class="video-stage">
+        <div class="task-tabs" role="tablist" aria-label="任务选择">
+          <button class="task-tab active" type="button" data-task="stack_bowls" role="tab" aria-selected="true">stack_bowls · 成功</button>
+          <button class="task-tab" type="button" data-task="cover_blocks" role="tab" aria-selected="false">cover_blocks · 失败</button>
+          <button class="task-tab" type="button" data-task="insert_tubes" role="tab" aria-selected="false">insert_tubes · 失败</button>
+          <button class="task-tab" type="button" data-task="fill_pen_holder" role="tab" aria-selected="false">fill_pen_holder · 失败</button>
+          <button class="task-tab" type="button" data-task="general_pickup" role="tab" aria-selected="false">general_pickup · 成功</button>
+        </div>
+        <div class="task-summary">
+          <div>
+            <h3 id="task-title">stack_bowls</h3>
+            <p id="task-description">堆叠碗 · 单回合 smoke test · layout 0</p>
+          </div>
+          <div class="task-score" id="task-score">SUCCESS · 100</div>
+        </div>
         <div class="video-main">
           <video id="main-video" controls playsinline preload="metadata">
-             <source src="videos/episode_0000000_cam_head_success.mp4" type="video/mp4">
+            <source src="assets/stack_bowls/episode_0000000_cam_head_success.mp4" type="video/mp4">
             当前浏览器不支持 HTML5 视频播放。
           </video>
         </div>
@@ -244,19 +290,19 @@
             <h3 id="video-title">Head camera · 主视角</h3>
             <p id="video-description">观察整体任务过程与机械臂末端动作。</p>
           </div>
-          <div class="video-meta">277 frames · 640 × 480 · 25 FPS</div>
+          <div class="video-meta">277 frames · 640 × 480 · 25 FPS · episode 0</div>
         </div>
         <div class="video-tabs" role="tablist" aria-label="相机视角">
-           <button class="video-tab active" type="button" data-src="videos/episode_0000000_cam_head_success.mp4" data-title="Head camera · 主视角" data-description="观察整体任务过程与机械臂末端动作。" role="tab" aria-selected="true">
-             <video muted preload="metadata"><source src="videos/episode_0000000_cam_head_success.mp4" type="video/mp4"></video>
+          <button class="video-tab active" type="button" data-camera="head" data-title="Head camera · 主视角" data-description="观察整体任务过程与机械臂末端动作。" role="tab" aria-selected="true">
+            <video muted preload="metadata"><source src="assets/stack_bowls/episode_0000000_cam_head_success.mp4" type="video/mp4"></video>
             <span>Head camera · 主视角</span>
           </button>
-           <button class="video-tab" type="button" data-src="videos/episode_0000000_cam_left_wrist_success.mp4" data-title="Left wrist · 左腕视角" data-description="观察左侧腕部相机看到的局部交互。" role="tab" aria-selected="false">
-             <video muted preload="metadata"><source src="videos/episode_0000000_cam_left_wrist_success.mp4" type="video/mp4"></video>
+          <button class="video-tab" type="button" data-camera="left_wrist" data-title="Left wrist · 左腕视角" data-description="观察左侧腕部相机看到的局部交互。" role="tab" aria-selected="false">
+            <video muted preload="metadata"><source src="assets/stack_bowls/episode_0000000_cam_left_wrist_success.mp4" type="video/mp4"></video>
             <span>Left wrist · 左腕视角</span>
           </button>
-           <button class="video-tab" type="button" data-src="videos/episode_0000000_cam_right_wrist_success.mp4" data-title="Right wrist · 右腕视角" data-description="观察右侧腕部相机看到的局部交互。" role="tab" aria-selected="false">
-             <video muted preload="metadata"><source src="videos/episode_0000000_cam_right_wrist_success.mp4" type="video/mp4"></video>
+          <button class="video-tab" type="button" data-camera="right_wrist" data-title="Right wrist · 右腕视角" data-description="观察右侧腕部相机看到的局部交互。" role="tab" aria-selected="false">
+            <video muted preload="metadata"><source src="assets/stack_bowls/episode_0000000_cam_right_wrist_success.mp4" type="video/mp4"></video>
             <span>Right wrist · 右腕视角</span>
           </button>
         </div>
@@ -269,7 +315,7 @@
           <div class="section-label">02 / Result</div>
           <h2>验证的是闭环，不是刷分。</h2>
         </div>
-        <p class="section-note">Smoke test 的成功率可以是 0；本次结果为 1/1，但重点仍是验证系统链路完整。</p>
+        <p class="section-note">五个任务都完成了环境执行和视频落盘；本次单回合成功率为 2/5。重点仍是验证系统链路完整。</p>
       </div>
       <div class="proof-grid">
         <article class="proof-card">
@@ -280,15 +326,62 @@
         </article>
         <article class="proof-card">
           <span class="status">PASS · Environment</span>
-          <div class="number">1 / 1</div>
-          <h3>单任务单回合</h3>
-          <p><code>stack_bowls</code> 在 Isaac Sim / RoboDojo 中完成一回合执行，退出码为 0。</p>
+          <div class="number">5 / 5</div>
+          <h3>任务执行完成</h3>
+          <p>五个代表任务都在 Isaac Sim / RoboDojo 中完成一回合执行，并写入结果文件。</p>
         </article>
         <article class="proof-card">
-          <span class="status">PASS · Artifact</span>
-          <div class="number">3 × MP4</div>
-          <h3>视频结果写入</h3>
-          <p>Head、left wrist、right wrist 三路相机视频均正常生成，可用于回放和组会展示。</p>
+          <span class="status">PASS · Coverage</span>
+          <div class="number">2 / 5</div>
+          <h3>单回合任务成功</h3>
+          <p><code>stack_bowls</code> 与 <code>general_pickup</code> 成功；其余任务需要进一步调试策略行为。</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="shell section">
+      <div class="section-heading">
+        <div>
+          <div class="section-label">03 / Task Matrix</div>
+          <h2>五个能力维度，一次跑通。</h2>
+        </div>
+        <p class="section-note">这里的 success rate 来自每个任务仅 1 个 episode，只能描述本次 smoke test，不能作为稳定性能估计。</p>
+      </div>
+      <div class="result-grid">
+        <article class="result-card">
+          <span class="badge">Success</span>
+          <h3>stack_bowls</h3>
+          <p>堆叠 / 双臂协同</p>
+          <div class="score">100</div>
+          <p>success rate 1.0</p>
+        </article>
+        <article class="result-card failed">
+          <span class="badge failed">Completed · Fail</span>
+          <h3>cover_blocks</h3>
+          <p>覆盖 / 精细放置</p>
+          <div class="score">5</div>
+          <p>success rate 0.0</p>
+        </article>
+        <article class="result-card failed">
+          <span class="badge failed">Completed · Fail</span>
+          <h3>insert_tubes</h3>
+          <p>插入 / 接触操作</p>
+          <div class="score">20</div>
+          <p>success rate 0.0</p>
+        </article>
+        <article class="result-card failed">
+          <span class="badge failed">Completed · Fail</span>
+          <h3>fill_pen_holder</h3>
+          <p>抓取放置 / 容器操作</p>
+          <div class="score">10</div>
+          <p>success rate 0.0</p>
+        </article>
+        <article class="result-card">
+          <span class="badge">Success</span>
+          <h3>general_pickup</h3>
+          <p>通用抓取</p>
+          <div class="score">100</div>
+          <p>success rate 1.0</p>
         </article>
       </div>
     </section>
@@ -296,7 +389,7 @@
     <section class="shell section" id="pipeline">
       <div class="section-heading">
         <div>
-          <div class="section-label">03 / Pipeline</div>
+          <div class="section-label">04 / Pipeline</div>
           <h2>从观测到动作的完整链路。</h2>
         </div>
         <p class="section-note">这次实验把模型、通信、仿真、动作执行、奖励检查和结果保存串成了一个可复用的最小闭环。</p>
@@ -305,7 +398,7 @@
         <article class="pipeline-card">
           <div class="pipeline-icon">◌</div>
           <h3>RoboDojo Client</h3>
-          <p>Isaac Sim 生成 observation，启动 <code>stack_bowls</code> 场景并接收策略动作。</p>
+          <p>Isaac Sim 生成 observation，依次启动五个代表任务并接收策略动作。</p>
           <span class="mono">action_type = joint</span>
         </article>
         <div class="arrow">→</div>
@@ -328,7 +421,7 @@
     <section class="shell section">
       <div class="section-heading">
         <div>
-          <div class="section-label">04 / Debugging</div>
+          <div class="section-label">05 / Debugging</div>
           <h2>先解决环境，再谈结果。</h2>
         </div>
         <p class="section-note">本周最大的工程工作不是改模型，而是定位依赖环境和显存配置，让实验真正越过启动阶段。</p>
@@ -356,7 +449,7 @@
     <section class="shell section">
       <div class="section-heading">
         <div>
-          <div class="section-label">05 / Gates</div>
+          <div class="section-label">06 / Gates</div>
           <h2>本周 Gate 状态。</h2>
         </div>
       </div>
@@ -379,6 +472,15 @@
             <li>成功 1，失败 0，不稳定 0；本结果不等价于泛化性能结论。</li>
           </ul>
         </article>
+        <article class="timeline-card complete">
+          <h3><span>Gate 12 · Five-task Smoke</span><span class="status">PASS</span></h3>
+          <ul>
+            <li>五个代表任务均完成单回合运行，<code>eval_time = 1</code>。</li>
+            <li>每个任务生成三路 MP4，共 15 段视频成果。</li>
+            <li><code>stack_bowls</code>、<code>general_pickup</code> 本回合成功。</li>
+            <li>另外三个任务运行完成但未达成功判定，保留视频用于失败分析。</li>
+          </ul>
+        </article>
       </div>
     </section>
 
@@ -387,7 +489,7 @@
         <div class="callout-mark">✦</div>
         <div>
           <h3>这周真正拿到的东西</h3>
-          <p><strong>不是“π0.5 已经学会堆碗”。</strong>我们拿到的是一条经过实际故障排查、可以从 observation 走到 action，再走到 Isaac Sim 结果文件的端到端实验链路。下一步才是扩大回合数、核验任务成功判定，并在更严格的设置下评估策略性能。</p>
+          <p><strong>不是“π0.5 已经稳定掌握五类任务”。</strong>我们拿到的是一条经过实际故障排查、可以在五类任务中从 observation 走到 action，再走到 Isaac Sim 结果文件和多视角视频的端到端实验链路。下一步是扩大 seed 与回合数、分析三个失败任务，并在更严格的设置下估计策略性能。</p>
         </div>
       </div>
     </section>
@@ -404,20 +506,62 @@
     const mainVideo = document.querySelector('#main-video');
     const title = document.querySelector('#video-title');
     const description = document.querySelector('#video-description');
+    const taskTitle = document.querySelector('#task-title');
+    const taskDescription = document.querySelector('#task-description');
+    const taskScore = document.querySelector('#task-score');
+    const taskTabs = document.querySelectorAll('.task-tab');
     const tabs = document.querySelectorAll('.video-tab');
+    const taskData = {
+      stack_bowls: { label: 'stack_bowls', description: '堆叠碗 · 单回合 smoke test · layout 0', result: 'SUCCESS · 100', suffix: 'success' },
+      cover_blocks: { label: 'cover_blocks', description: '覆盖方块 · 单回合 smoke test · layout 0', result: 'FAIL · 5', suffix: 'fail' },
+      insert_tubes: { label: 'insert_tubes', description: '插入管件 · 单回合 smoke test · layout 0', result: 'FAIL · 20', suffix: 'fail' },
+      fill_pen_holder: { label: 'fill_pen_holder', description: '填充笔筒 · 单回合 smoke test · layout 0', result: 'FAIL · 10', suffix: 'fail' },
+      general_pickup: { label: 'general_pickup', description: '通用抓取 · 单回合 smoke test · layout 0', result: 'SUCCESS · 100', suffix: 'success' }
+    };
+    let activeTask = 'stack_bowls';
+    let activeCamera = 'head';
 
-    tabs.forEach((tab) => {
+    function getVideoPath(task, camera) {
+      return `assets/${task}/episode_0000000_cam_${camera}_${taskData[task].suffix}.mp4`;
+    }
+
+    function updateVideo() {
+      const data = taskData[activeTask];
+      mainVideo.pause();
+      mainVideo.src = getVideoPath(activeTask, activeCamera);
+      mainVideo.load();
+      taskTitle.textContent = data.label;
+      taskDescription.textContent = data.description;
+      taskScore.textContent = data.result;
+      taskScore.classList.toggle('failed', data.suffix === 'fail');
+      tabs.forEach((tab) => {
+        const active = tab.dataset.camera === activeCamera;
+        tab.classList.toggle('active', active);
+        tab.setAttribute('aria-selected', String(active));
+        const preview = tab.querySelector('source');
+        preview.src = getVideoPath(activeTask, tab.dataset.camera);
+        tab.querySelector('video').load();
+      });
+    }
+
+    taskTabs.forEach((tab) => {
       tab.addEventListener('click', () => {
-        mainVideo.pause();
-        mainVideo.src = tab.dataset.src;
-        mainVideo.load();
-        title.textContent = tab.dataset.title;
-        description.textContent = tab.dataset.description;
-        tabs.forEach((item) => {
+        activeTask = tab.dataset.task;
+        taskTabs.forEach((item) => {
           const active = item === tab;
           item.classList.toggle('active', active);
           item.setAttribute('aria-selected', String(active));
         });
+        updateVideo();
+      });
+    });
+
+    tabs.forEach((tab) => {
+      tab.addEventListener('click', () => {
+        activeCamera = tab.dataset.camera;
+        title.textContent = tab.dataset.title;
+        description.textContent = tab.dataset.description;
+        updateVideo();
       });
     });
   </script>
