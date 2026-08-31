@@ -1,0 +1,686 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta
+      name="description"
+      content="ASPIRE 论文与本项目仿真环境生成研究的组会进展说明。"
+    />
+    <link rel="canonical" href="https://satelius.github.io/pages/project-progress/self-improving/web/" />
+    <script>
+      if (sessionStorage.getItem("satelius-project-progress-access") !== "granted") {
+        location.replace("../../?redirect=self-improving-web");
+      }
+    </script>
+    <title>ASPIRE × 仿真环境生成｜组会进展</title>
+    <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="./app.js" defer></script>
+  </head>
+
+  <body>
+    <div class="scroll-progress" aria-hidden="true"><span></span></div>
+
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="返回顶部">
+        <span class="brand-mark" aria-hidden="true">A</span>
+        <span>
+          <strong>ASPIRE × Gen-Env</strong>
+          <small>研究进展 · 2026.08.31</small>
+        </span>
+      </a>
+
+      <nav class="desktop-nav" aria-label="页面导航">
+        <a href="#background">背景</a>
+        <a href="#method">方法</a>
+        <a href="#progress">研究进展</a>
+        <a href="#evidence">可见证据</a>
+        <a href="#idea">Idea</a>
+      </nav>
+
+      <button class="presenter-toggle" type="button" aria-pressed="false">
+        <span aria-hidden="true">↗</span>
+        投屏模式
+      </button>
+    </header>
+
+    <main id="top">
+      <section class="hero section-shell" aria-labelledby="hero-title">
+        <div class="hero-copy reveal">
+          <p class="eyebrow">组会进展 · Paper study → Reproduction → Local experiments</p>
+          <h1 id="hero-title">让失败不再白费</h1>
+          <p class="hero-lead">
+            ASPIRE 的关键不是“训练一个更大的机器人模型”，而是让 coding agent
+            <strong>写程序、看执行错误、修程序，再把验证过的修复沉淀成可复用技能</strong>。
+          </p>
+          <p class="hero-question">
+            我们的问题：这套方法能不能迁移到<strong>仿真环境生成</strong>，让穿模、重叠、噪点、
+            物理不稳定等失败也逐渐变成可复用经验？
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#background">从背景开始</a>
+            <a class="button button-secondary" href="#evidence">看本地视频</a>
+          </div>
+        </div>
+
+        <div class="hero-visual reveal" aria-label="本次研究的核心循环">
+          <div class="orbit orbit-one" aria-hidden="true"></div>
+          <div class="orbit orbit-two" aria-hidden="true"></div>
+          <div class="loop-card loop-task">
+            <span>01</span>
+            <strong>生成</strong>
+            <small>scene / program</small>
+          </div>
+          <div class="loop-card loop-run">
+            <span>02</span>
+            <strong>执行</strong>
+            <small>simulator</small>
+          </div>
+          <div class="loop-card loop-debug">
+            <span>03</span>
+            <strong>归因</strong>
+            <small>trace / error</small>
+          </div>
+          <div class="loop-card loop-learn">
+            <span>04</span>
+            <strong>沉淀</strong>
+            <small>validated skill</small>
+          </div>
+          <div class="loop-center">
+            <span>失败经验</span>
+            <strong>可复用</strong>
+          </div>
+        </div>
+
+        <div class="hero-metrics" aria-label="研究摘要">
+          <article>
+            <strong>3</strong>
+            <span>ASPIRE 核心组件</span>
+          </article>
+          <article>
+            <strong>20 / 4</strong>
+            <span>上游机制测试通过 / 明确跳过</span>
+          </article>
+          <article>
+            <strong>1.00 vs 0.50</strong>
+            <span>固定合成代理：memory / reactive</span>
+          </article>
+          <article>
+            <strong>1</strong>
+            <span>本项目真实 SAPIEN 回放</span>
+          </article>
+        </div>
+      </section>
+
+      <section id="background" class="section-shell section-block">
+        <div class="section-heading reveal">
+          <p class="eyebrow">01 · 背景</p>
+          <h2>机器人失败，难点往往不是“再试一次”</h2>
+          <p>
+            任务只返回成功或失败时，我们不知道问题出在看错、抓错、规划失败，还是控制执行失败。
+            更麻烦的是，任务结束后这些修复经验通常被丢掉。
+          </p>
+        </div>
+
+        <div class="problem-grid">
+          <article class="plain-card reveal">
+            <span class="card-index">A</span>
+            <h3>反馈太粗</h3>
+            <p>只有最终 0/1，无法定位应修改感知、规划、抓取还是控制。</p>
+          </article>
+          <article class="plain-card reveal">
+            <span class="card-index">B</span>
+            <h3>经验不积累</h3>
+            <p>第 100 个任务仍可能从零调试，之前发现的恢复办法没有留下来。</p>
+          </article>
+          <article class="plain-card reveal">
+            <span class="card-index">C</span>
+            <h3>单路线易卡住</h3>
+            <p>沿着一个错误思路反复微调，容易陷入局部最优。</p>
+          </article>
+        </div>
+
+        <figure class="paper-figure wide-figure reveal">
+          <button
+            class="image-button"
+            type="button"
+            data-lightbox-src="./assets/aspire-system.png"
+            data-lightbox-alt="ASPIRE 系统总览图"
+            aria-label="放大 ASPIRE 系统总览图"
+          >
+            <img
+              src="./assets/aspire-system.png"
+              alt="ASPIRE 系统总览：多个 coding actor 执行机器人任务并由 coordinator 管理技能库"
+            />
+          </button>
+          <figcaption>
+            <strong>论文 Figure 1｜系统总览。</strong>
+            多个 actor 分别解决任务；跨任务知识通过经过审计的 skill library 共享，而不是共享整段对话。
+          </figcaption>
+        </figure>
+      </section>
+
+      <section id="method" class="section-block section-tint">
+        <div class="section-shell">
+          <div class="section-heading reveal">
+            <p class="eyebrow">02 · 方法</p>
+            <h2>ASPIRE 的三个部件，组成一个非梯度闭环</h2>
+            <p>
+              搜索对象是<strong>可执行的 Python 机器人程序</strong>，不是神经网络权重。
+              Agent 负责提出和修改程序，执行器负责真正调用机器人 API，验证结果决定什么能留下。
+            </p>
+          </div>
+
+          <div class="method-grid">
+            <article class="method-card reveal">
+              <span class="method-number">01</span>
+              <div>
+                <h3>Robot Execution Engine</h3>
+                <p>把感知、抓取、规划、控制 API 暴露给程序，并在 primitive 附近记录输入、输出、异常和可用图像。</p>
+                <span class="tag">让错误可定位</span>
+              </div>
+            </article>
+            <article class="method-card reveal">
+              <span class="method-number">02</span>
+              <div>
+                <h3>Skill Library</h3>
+                <p>把验证过的修复压缩成“失败特征 → 何时使用 → 如何修复”，供后续任务检索。</p>
+                <span class="tag">让经验可迁移</span>
+              </div>
+            </article>
+            <article class="method-card reveal">
+              <span class="method-number">03</span>
+              <div>
+                <h3>Evolutionary Search</h3>
+                <p>每轮生成多个机制不同的候选，在同一 debug seeds 上比较，从 Top-3 继续探索。</p>
+                <span class="tag">让搜索更有多样性</span>
+              </div>
+            </article>
+          </div>
+
+          <div class="flow-strip reveal" aria-label="ASPIRE 工作流程">
+            <div><small>输入</small><strong>任务 + Skills</strong></div>
+            <span aria-hidden="true">→</span>
+            <div><small>Agent</small><strong>写程序</strong></div>
+            <span aria-hidden="true">→</span>
+            <div><small>Engine</small><strong>执行 + Trace</strong></div>
+            <span aria-hidden="true">→</span>
+            <div><small>Search</small><strong>多候选修复</strong></div>
+            <span aria-hidden="true">→</span>
+            <div><small>Gate</small><strong>验证后晋升</strong></div>
+          </div>
+
+          <aside class="baseline-note reveal">
+            <div class="note-icon" aria-hidden="true">≠</div>
+            <div>
+              <h3>执行引擎里有 baseline 策略吗？</h3>
+              <p>
+                <strong>没有隐藏的整任务 baseline policy。</strong>
+                引擎提供固定的 IK、关节运动、夹爪和感知 API；任务级动作顺序来自 agent 写的程序。
+                搜索有初始程序 P0，论文也有实验对照，但它们都不是 execution engine 内置的任务策略。
+              </p>
+            </div>
+          </aside>
+
+          <div class="figure-pair">
+            <figure class="paper-figure reveal">
+              <button
+                class="image-button"
+                type="button"
+                data-lightbox-src="./assets/aspire-execution-engine.png"
+                data-lightbox-alt="ASPIRE 执行引擎示意图"
+                aria-label="放大 ASPIRE 执行引擎示意图"
+              >
+                <img
+                  src="./assets/aspire-execution-engine.png"
+                  alt="ASPIRE 执行引擎利用 primitive trace 定位规划失败并修改程序"
+                />
+              </button>
+              <figcaption>
+                <strong>Figure 2｜先归因，再修复。</strong>
+                例子中感知已经成功，真正问题是导航目标落入碰撞区，因此修复的是接近角度，不是感知模型。
+              </figcaption>
+            </figure>
+
+            <figure class="paper-figure reveal">
+              <button
+                class="image-button"
+                type="button"
+                data-lightbox-src="./assets/aspire-skill-library.png"
+                data-lightbox-alt="ASPIRE 技能库更新示意图"
+                aria-label="放大 ASPIRE 技能库更新示意图"
+              >
+                <img
+                  src="./assets/aspire-skill-library.png"
+                  alt="ASPIRE 将任务修复经过协调器审计后写入共享技能库"
+                />
+              </button>
+              <figcaption>
+                <strong>Figure 3｜技能不是自动收录。</strong>
+                Actor 提交发现；coordinator 审计可复用性、API 合规和验证证据后，再串行更新共享库。
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section id="paper-results" class="section-shell section-block">
+        <div class="section-heading reveal">
+          <p class="eyebrow">03 · 论文结论</p>
+          <h2>作者报告：执行反馈贡献最大，搜索补难题</h2>
+          <p>
+            下面是论文作者报告的数据，用来理解方法潜力；<strong>不是我们本地重跑得到的结果</strong>。
+          </p>
+        </div>
+
+        <div class="result-grid">
+          <article class="result-card reveal">
+            <strong>+76.5<small>pp</small></strong>
+            <h3>LIBERO-Pro Object</h3>
+            <p>两轴平均 96.5%，对 CaP-Agent0 的 20.0%；摘要写作“up to 77%”。</p>
+          </article>
+          <article class="result-card reveal">
+            <strong>20 → 92<small>%</small></strong>
+            <h3>双臂交接</h3>
+            <p>Robosuite two-arm handover 的作者报告成功率。</p>
+          </article>
+          <article class="result-card reveal">
+            <strong>31 vs 4<small>%</small></strong>
+            <h3>长时序零样本</h3>
+            <p>ASPIRE skill library 与 CaP-Agent0 的作者报告对比。</p>
+          </article>
+        </div>
+
+        <div class="ablation reveal">
+          <div class="ablation-copy">
+            <h3>LIBERO-Pro 消融的直观读法</h3>
+            <p>
+              Base 约 14.5% → 加 execution-engine repair 与 skill library 后约 61.5%
+              → 再加 evolutionary search / final selection 后约 72%。
+            </p>
+            <p class="muted">说明 dense trace + 修复闭环是主体增益；多候选搜索继续处理剩余 hard tasks。</p>
+          </div>
+          <div class="bar-chart" aria-label="论文消融结果：base 14.5%，engine 与 skill 61.5%，完整方法 72%">
+            <div>
+              <span>Base</span>
+              <i style="--bar: 14.5%"><b>14.5%</b></i>
+            </div>
+            <div>
+              <span>+ Engine / Skill</span>
+              <i style="--bar: 61.5%"><b>61.5%</b></i>
+            </div>
+            <div>
+              <span>+ Evo / Selection</span>
+              <i style="--bar: 72%"><b>72%</b></i>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="progress" class="section-block section-dark">
+        <div class="section-shell">
+          <div class="section-heading reveal">
+            <p class="eyebrow">04 · 我们做了什么</p>
+            <h2>从读论文，到复现机制，再到本项目实验</h2>
+            <p>每一步都留下文档、代码或结果回执；失败和无法复现的部分也保留。</p>
+          </div>
+
+          <ol class="timeline">
+            <li class="reveal">
+              <span class="timeline-dot">1</span>
+              <div>
+                <small>理解与冻结</small>
+                <h3>论文、项目页、源码对齐</h3>
+                <p>源码固定到官方 public-release commit；区分论文事实、源码观察、我们的推论与未知。</p>
+                <div class="artifact-list">
+                  <span>paper_and_official_sources.md</span>
+                  <span>upstream_source_audit.md</span>
+                  <span>source_receipt.json</span>
+                </div>
+              </div>
+            </li>
+            <li class="reveal">
+              <span class="timeline-dot">2</span>
+              <div>
+                <small>复现边界</small>
+                <h3>先检查机器和依赖，再决定能跑什么</h3>
+                <p>本机只有 1 张 RTX 5090，缺论文全量所需的多 GPU、服务、权重凭据和完整环境身份，所以没有冒充论文规模复现。</p>
+                <div class="artifact-list">
+                  <span>preflight.md</span>
+                  <span>reproduction_report.md</span>
+                  <span>20 passed / 4 skipped</span>
+                </div>
+              </div>
+            </li>
+            <li class="reveal">
+              <span class="timeline-dot">3</span>
+              <div>
+                <small>本项目基线</small>
+                <h3>先确认静态编译已经没有明显 headroom</h3>
+                <p>真实 catalog 127 条、当前可用 15 条；33/33 prompts 静态编译通过，两个场景各 100/100 静态求解。</p>
+                <div class="artifact-list">
+                  <span>real_catalog/</span>
+                  <span>prompt_matrix_*</span>
+                  <span>acceptance_100_*</span>
+                </div>
+              </div>
+            </li>
+            <li class="reveal">
+              <span class="timeline-dot">4</span>
+              <div>
+                <small>本地契约实验</small>
+                <h3>从真实审计缺口做 before / after 攻击探针</h3>
+                <p>补了运行证据声明身份检查，并修复 pending、static-only 被误写成 final/pass 的状态语义。</p>
+                <div class="artifact-list">
+                  <span>E1: 0.20 → 1.00</span>
+                  <span>E1b/c/d: state integrity</span>
+                  <span>同一正向 control 保持通过</span>
+                </div>
+              </div>
+            </li>
+            <li class="reveal">
+              <span class="timeline-dot">5</span>
+              <div>
+                <small>Memory 机制代理实验</small>
+                <h3>同预算比较：不修、只看当前错误、读取已验证经验</h3>
+                <p>在 120 个固定合成 fault cases 上，mHRC 为 0.00 / 0.50 / 1.00，三臂 unsafe publish 都为 0。</p>
+                <div class="artifact-list">
+                  <span>heldout_harness_benchmark.json</span>
+                  <span>8 tests passed</span>
+                  <span>结果 byte-identical</span>
+                </div>
+              </div>
+            </li>
+          </ol>
+
+          <aside class="boundary-card reveal">
+            <span class="boundary-label">证据边界</span>
+            <h3>这些结果还没有证明什么？</h3>
+            <ul>
+              <li>没有完成论文规模的 LIBERO / Robosuite agent rollout。</li>
+              <li>没有证明 memory 能提高真实仿真物理成功率或分布外泛化。</li>
+              <li>没有训练或更新 policy / LLM 权重。</li>
+              <li>E2 是固定合成 contract proxy，不是物理 benchmark。</li>
+            </ul>
+          </aside>
+        </div>
+      </section>
+
+      <section id="evidence" class="section-shell section-block">
+        <div class="section-heading reveal">
+          <p class="eyebrow">05 · 可见资产</p>
+          <h2>一次真实 SAPIEN 物理门控回放</h2>
+          <p>
+            本项目的 can-on-plate seed 7 回放通过物理 gate。它验证一次本地运行证据消费路径，
+            <strong>不是 ASPIRE agent 完成机器人任务的视频</strong>，也没有 memory / no-memory 对照。
+          </p>
+        </div>
+
+        <div class="video-layout">
+          <div class="video-frame reveal">
+            <video controls preload="metadata" poster="./assets/replay-rgb.png">
+              <source src="./assets/replay-observer.mp4" type="video/mp4" />
+              你的浏览器不支持视频播放。
+            </video>
+            <div class="video-caption">
+              <span class="status-dot" aria-hidden="true"></span>
+              <strong>Runtime validation: PASS</strong>
+              <span>10 秒 · 12 fps · 120 帧</span>
+            </div>
+          </div>
+
+          <div class="evidence-metrics reveal">
+            <article>
+              <small>视频完整性</small>
+              <strong>120 / 100</strong>
+              <span>总帧 / 唯一帧</span>
+            </article>
+            <article>
+              <small>目标接触</small>
+              <strong>1.00</strong>
+              <span>can → plate contact fraction</span>
+            </article>
+            <article>
+              <small>支撑余量</small>
+              <strong>9.69 mm</strong>
+              <span>阈值 ≥ 8 mm</span>
+            </article>
+            <article>
+              <small>物理判据</small>
+              <strong>0 / 0</strong>
+              <span>fail / not-run</span>
+            </article>
+          </div>
+        </div>
+
+        <div class="media-grid">
+          <figure class="media-card reveal">
+            <button
+              class="image-button"
+              type="button"
+              data-lightbox-src="./assets/replay-rgb.png"
+              data-lightbox-alt="can-on-plate 头部相机 RGB 图"
+              aria-label="放大 RGB 图"
+            >
+              <img src="./assets/replay-rgb.png" alt="头部相机看到罐子竖直放在盘子中" />
+            </button>
+            <figcaption><strong>RGB 观察</strong><span>罐子在盘内保持直立。</span></figcaption>
+          </figure>
+          <figure class="media-card reveal">
+            <button
+              class="image-button"
+              type="button"
+              data-lightbox-src="./assets/replay-segmentation.png"
+              data-lightbox-alt="can-on-plate 分割预览图"
+              aria-label="放大分割图"
+            >
+              <img src="./assets/replay-segmentation.png" alt="罐子和盘子的分割颜色预览" />
+            </button>
+            <figcaption><strong>分割预览</strong><span>用于核对源物体和目标物体。</span></figcaption>
+          </figure>
+          <figure class="media-card reveal">
+            <button
+              class="image-button"
+              type="button"
+              data-lightbox-src="./assets/replay-world.png"
+              data-lightbox-alt="can-on-plate 世界相机视图"
+              aria-label="放大世界视图"
+            >
+              <img src="./assets/replay-world.png" alt="世界相机中两台机械臂和桌面上的罐子与盘子" />
+            </button>
+            <figcaption><strong>世界视图</strong><span>用于查看场景整体关系。</span></figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section id="idea" class="section-block idea-section">
+        <div class="section-shell">
+          <div class="section-heading reveal">
+            <p class="eyebrow">06 · Insight / Idea</p>
+            <h2>把“环境生成失败”也变成 Skill</h2>
+            <p>
+              ASPIRE 沉淀的是机器人程序的修复模式。对应到我们的项目，可以沉淀
+              <strong>环境错误的条件化修复模式</strong>：不是记住某个场景答案，而是记住“遇到什么现象，
+              在什么条件下，哪类有限修复经过了什么验证”。
+            </p>
+          </div>
+
+          <div class="idea-schema reveal">
+            <div>
+              <small>失败长什么样</small>
+              <strong>failure signature</strong>
+              <span>错误码、对象关系、局部几何、trace</span>
+            </div>
+            <span aria-hidden="true">+</span>
+            <div>
+              <small>什么时候适用</small>
+              <strong>context</strong>
+              <span>资产类型、任务、版本、阈值</span>
+            </div>
+            <span aria-hidden="true">+</span>
+            <div>
+              <small>可以怎么修</small>
+              <strong>bounded repair</strong>
+              <span>小而明确的参数或结构变换</span>
+            </div>
+            <span aria-hidden="true">+</span>
+            <div>
+              <small>为什么可信</small>
+              <strong>validation receipt</strong>
+              <span>debug seeds、clean controls、反例</span>
+            </div>
+          </div>
+
+          <div class="failure-grid">
+            <article class="failure-card reveal">
+              <span class="failure-icon noise" aria-hidden="true"></span>
+              <div>
+                <h3>环境噪点 / 碎片</h3>
+                <p>积累“什么噪声模式 → 哪种滤波、网格清理或重建参数”，同时保留误删反例。</p>
+              </div>
+            </article>
+            <article class="failure-card reveal">
+              <span class="failure-icon overlap" aria-hidden="true"></span>
+              <div>
+                <h3>穿模 / 重叠</h3>
+                <p>积累目标局部坐标下的重求解、碰撞余量和最小位移策略，避免写死绝对坐标。</p>
+              </div>
+            </article>
+            <article class="failure-card reveal">
+              <span class="failure-icon physics" aria-hidden="true"></span>
+              <div>
+                <h3>接触 / 支撑不稳定</h3>
+                <p>积累足迹、支撑余量、settle 后漂移与替代资产的条件化修复。</p>
+              </div>
+            </article>
+            <article class="failure-card reveal">
+              <span class="failure-icon provenance" aria-hidden="true"></span>
+              <div>
+                <h3>资产 / 证据不完整</h3>
+                <p>积累缺失资产恢复、版本约束、内容哈希与 package → run → media 绑定检查。</p>
+              </div>
+            </article>
+          </div>
+
+          <div class="evo-panel reveal">
+            <div class="evo-copy">
+              <p class="eyebrow">环境版 evolutionary search</p>
+              <h3>不要只沿一个修复方向反复微调</h3>
+              <p>
+                对同一失败生成 K 个<strong>机制不同、幅度受限</strong>的候选；先过确定性静态门，
+                再在相同 debug seeds 上执行，保留 Top-3，最后只用 held-out 物理验证决定是否晋升。
+              </p>
+            </div>
+            <div class="evo-flow" aria-label="环境修复的进化搜索流程">
+              <div class="evo-start"><small>失败场景</small><strong>P0</strong></div>
+              <span aria-hidden="true">→</span>
+              <div class="candidate-stack">
+                <i>几何修复 A</i>
+                <i>资产替换 B</i>
+                <i>约束重求解 C</i>
+                <i>参数修复 D</i>
+              </div>
+              <span aria-hidden="true">→</span>
+              <div class="evo-gate"><small>同预算验证</small><strong>Top-3</strong></div>
+              <span aria-hidden="true">→</span>
+              <div class="evo-skill"><small>held-out 通过</small><strong>Skill</strong></div>
+            </div>
+          </div>
+
+          <div class="guardrail-grid reveal">
+            <div>
+              <span>01</span>
+              <p><strong>Agent 只提案，validator 才裁决。</strong>不能让语言模型覆盖确定性物理门。</p>
+            </div>
+            <div>
+              <span>02</span>
+              <p><strong>先过多 seed + clean controls。</strong>一次成功不能晋升为技能。</p>
+            </div>
+            <div>
+              <span>03</span>
+              <p><strong>Held-out 期间只读。</strong>不能边看测试答案边改技能库。</p>
+            </div>
+            <div>
+              <span>04</span>
+              <p><strong>技能要有版本、反例和退役机制。</strong>旧经验可能过时或过度特化。</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="next" class="section-shell section-block next-section">
+        <div class="section-heading reveal">
+          <p class="eyebrow">07 · 下一步</p>
+          <h2>下一轮要回答：它是否真的改善物理生成？</h2>
+          <p>从“合成机制可行”推进到“真实仿真有效”，需要一组预算一致、证据独立的实验。</p>
+        </div>
+
+        <div class="next-grid">
+          <article class="next-card reveal">
+            <span>01</span>
+            <h3>失败样本结构化</h3>
+            <p>定义 FailureEpisode：输入身份、错误签名、候选修复、验证回执、反例和生命周期。</p>
+          </article>
+          <article class="next-card reveal">
+            <span>02</span>
+            <h3>受限修复接口</h3>
+            <p>先开放少量可审计动作，如重定位、调整余量、换资产、局部网格修复。</p>
+          </article>
+          <article class="next-card reveal">
+            <span>03</span>
+            <h3>真实 SAPIEN 三臂 A/B</h3>
+            <p>同一预算比较 frozen、当前 trace repair、validated memory + search。</p>
+          </article>
+          <article class="next-card reveal">
+            <span>04</span>
+            <h3>晋升与退役</h3>
+            <p>只有 held-out 物理成功提升、unsafe publish 为 0、clean regression 为 0 才保留。</p>
+          </article>
+        </div>
+
+        <div class="success-bar reveal">
+          <span>Keep rule</span>
+          <strong>held-out 物理完成率 ↑</strong>
+          <i aria-hidden="true">·</i>
+          <strong>unsafe publish = 0</strong>
+          <i aria-hidden="true">·</i>
+          <strong>clean regression = 0</strong>
+          <i aria-hidden="true">·</i>
+          <strong>预算有界</strong>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="section-shell footer-grid">
+        <div>
+          <p class="eyebrow">ASPIRE × Gen-Env</p>
+          <h2>一句话带走</h2>
+          <p>
+            先把失败变成可归因的证据，再把经过独立验证的修复变成技能；
+            搜索可以更大胆，但发布门必须更严格。
+          </p>
+        </div>
+        <div class="source-links">
+          <a href="../../">返回项目进展</a>
+          <strong>一手资料</strong>
+          <a href="https://arxiv.org/abs/2607.00272" target="_blank" rel="noreferrer">论文</a>
+          <a href="https://research.nvidia.com/labs/gear/aspire/" target="_blank" rel="noreferrer">NVIDIA 项目页</a>
+          <a href="https://github.com/NVlabs/ASPIRE" target="_blank" rel="noreferrer">官方源码</a>
+        </div>
+      </div>
+      <div class="section-shell footer-note">
+        <span>论文图片来自 ASPIRE 论文（CC BY 4.0），仅用于研究汇报。</span>
+        <a href="#top">回到顶部 ↑</a>
+      </div>
+    </footer>
+
+    <dialog class="lightbox" aria-label="图片预览">
+      <button class="lightbox-close" type="button" aria-label="关闭图片预览">×</button>
+      <img src="./assets/aspire-system.png" alt="" />
+      <p></p>
+    </dialog>
+  </body>
+</html>

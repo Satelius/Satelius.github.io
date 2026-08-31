@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="description" content="Self-Improving Physical-AI Harness 当前进展组会汇报">
+  <link rel="canonical" href="https://satelius.github.io/pages/project-progress/self-improving/web-2/">
+  <script>
+    if (sessionStorage.getItem("satelius-project-progress-access") !== "granted") {
+      location.replace("../../?redirect=self-improving-web-2");
+    }
+  </script>
+  <title>Self-Improving Harness · 进展快照</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#top" aria-label="返回顶部">
+      <span class="brand-mark">H</span>
+      <span>Harness 进展快照</span>
+    </a>
+    <nav aria-label="页面导航">
+      <a href="#progress">进度</a>
+      <a href="#evidence">证据</a>
+      <a href="#gaps">下一步</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero section-shell">
+      <div class="hero-copy">
+        <div class="eyebrow-row">
+          <span class="eyebrow">2026-08-31 快照</span>
+          <span class="branch">worktree/bingsheng</span>
+        </div>
+        <h1>核心底座已经成形，<br><span>端到端闭环还在路上。</span></h1>
+        <p class="hero-lede">当前工作已经把可信 compile、资产入库、replay 底座和 System 2 的关键接口接起来；真正的 VLM 提升实验、生产 replay 资格化、发布门禁和前端工作台还没有完成。</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#progress">看功能进度</a>
+          <a class="button secondary" href="#evidence">看真实证据</a>
+        </div>
+      </div>
+
+      <aside class="score-card" aria-label="总体完成度估算">
+        <div class="score-ring" style="--score:52">
+          <div><strong>约 52%</strong><span>保守估算</span></div>
+        </div>
+        <p>按原目标拆成 7 个功能包等权评估，不按代码行数计算。</p>
+        <div class="score-legend">
+          <span><i class="dot done"></i>已形成可信能力</span>
+          <span><i class="dot doing"></i>候选 / 进行中</span>
+          <span><i class="dot todo"></i>尚未闭环</span>
+        </div>
+      </aside>
+    </section>
+
+    <section class="fact-strip section-shell" aria-label="关键数字">
+      <article><strong>74</strong><span>领先远端的逐功能提交</span></article>
+      <article><strong>1,802</strong><span>本次整仓测试通过</span></article>
+      <article><strong>95 / 18</strong><span>本次失败 / 跳过</span></article>
+      <article><strong>0 次</strong><span>当前 VLM A/B 正式推理</span></article>
+    </section>
+
+    <section class="section section-shell" id="progress">
+      <div class="section-heading">
+        <div>
+          <span class="kicker">功能进度</span>
+          <h2>已经做到哪一步</h2>
+        </div>
+        <p>“完成”只表示有实现、测试和可核查证据；只有研究设计或工作区代码的项目不会被算成完成。</p>
+      </div>
+
+      <div class="progress-grid">
+        <article class="progress-card featured">
+          <div class="card-head"><span class="status done">基本成形</span><strong>90%</strong></div>
+          <h3>真实 compile + 资产入库</h3>
+          <p>自然语言可以走进真实编译器；缺资产时生成并写入 v3 ledger，后续运行会复用同一资产。三次独立进程均成功并可恢复。</p>
+          <div class="meter"><i style="width:90%"></i></div>
+          <a href="references/docs/evidence/compile-production-qualification-20260831.md">查看 compile 证据 →</a>
+        </article>
+
+        <article class="progress-card">
+          <div class="card-head"><span class="status doing">进行中</span><strong>65%</strong></div>
+          <h3>资产与证据完整性</h3>
+          <p>新写入入口已按完整文件闭包严格检查；但旧的 162 份 ledger 全部仍有数据债，共发现 4,082 条缺口，不能批量“猜着修”。</p>
+          <div class="meter"><i style="width:65%"></i></div>
+          <a href="references/docs/evidence/asset-ledger-v3-integrity-20260831.md">查看完整性审计 →</a>
+        </article>
+
+        <article class="progress-card">
+          <div class="card-head"><span class="status doing">候选竖切</span><strong>65%</strong></div>
+          <h3>可播放、可验证 replay</h3>
+          <p>隔离执行、事件协议、资产快照和真实媒体解码已经接通。生产资格生成器正在工作区开发，但还没有当前版本的 900/120 正式资格回放。</p>
+          <div class="meter"><i style="width:65%"></i></div>
+          <a href="references/docs/evidence/replay-handler-integration-20260831.md">查看 replay 边界 →</a>
+        </article>
+
+        <article class="progress-card">
+          <div class="card-head"><span class="status doing">候选闭环</span><strong>55%</strong></div>
+          <h3>LLM / System 2 中枢</h3>
+          <p>受信世界状态、上下文、规划收据、ToolResult、状态增量和 compile dispatcher 已实现。本地 Qwen 能给出合法调用，但尚未带真实 catalog 跑完整生产 compile。</p>
+          <div class="meter"><i style="width:55%"></i></div>
+          <a href="references/docs/evidence/system2-qwen-planner-smoke-20260831.md">查看 Qwen 实跑 →</a>
+        </article>
+
+        <article class="progress-card">
+          <div class="card-head"><span class="status todo">实验待跑</span><strong>20%</strong></div>
+          <h3>VLM 校正与 prompt fallback</h3>
+          <p>样本、模型身份、指标和停止规则已预注册，实验 runner 正在工作区开发。日志明确记录：正式 VLM 推理尚未开始，因此还不能声称有量化提升。</p>
+          <div class="meter"><i style="width:20%"></i></div>
+          <a href="references/vlm-study/PREREGISTRATION.md">查看预注册方案 →</a>
+        </article>
+
+        <article class="progress-card">
+          <div class="card-head"><span class="status todo">尚未实现</span><strong>10%</strong></div>
+          <h3>事件强绑定前端工作台</h3>
+          <p>后端已经有可续传 RunEvent 和审计日志，但当前 74 个目标提交里没有 dashboard、拖拽操作台、依赖板或实时回调消费前端。</p>
+          <div class="meter"><i style="width:10%"></i></div>
+          <a href="references/repo-docs/modules/self-improving-platform.md">查看平台边界 →</a>
+        </article>
+
+        <article class="progress-card">
+          <div class="card-head"><span class="status todo">当前全仓红灯</span><strong>55%</strong></div>
+          <h3>测试、文档与逐功能审计</h3>
+          <p>已有大量攻击测试、模块级覆盖率门禁和逐次实施日志；但本次 <code>pytest -q</code> 是 1,802 通过、95 失败、18 跳过，当前快照不能称为全绿。</p>
+          <div class="meter"><i style="width:55%"></i></div>
+          <a href="references/harness/IMPLEMENTATION_LOG.md">查看实施主账 →</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="section section-shell flow-section">
+      <div class="section-heading compact">
+        <div>
+          <span class="kicker">当前主路径</span>
+          <h2>一条请求现在如何流动</h2>
+        </div>
+      </div>
+      <div class="flow" aria-label="当前系统流程">
+        <div class="flow-step active"><span>01</span><strong>自然语言输入</strong><small>受限、可审计</small></div>
+        <i>→</i>
+        <div class="flow-step active"><span>02</span><strong>compile</strong><small>真实核心编译器</small></div>
+        <i>→</i>
+        <div class="flow-step active"><span>03</span><strong>资产复用 / 生成</strong><small>CAS + ledger</small></div>
+        <i>→</i>
+        <div class="flow-step partial"><span>04</span><strong>replay</strong><small>候选生产路径</small></div>
+        <i>→</i>
+        <div class="flow-step partial"><span>05</span><strong>validate / 晋升</strong><small>v2 尚未实现</small></div>
+      </div>
+      <p class="flow-note">关键点：系统会在证据不足时停住，而不是把静态渲染、短回放或测试替身冒充为物理通过。</p>
+    </section>
+
+    <section class="section evidence-section" id="evidence">
+      <div class="section-shell">
+        <div class="section-heading light">
+          <div>
+            <span class="kicker">真实资产佐证</span>
+            <h2>能播放，也能解释边界</h2>
+          </div>
+          <p>下面是仓库已保存的 can-on-plate 900-step / 120-frame 历史真实回放。它证明物理回放基础可用，但不替代当前候选 replay Skill 的正式资格化。</p>
+        </div>
+
+        <div class="media-grid">
+          <figure class="video-card">
+            <video controls muted loop playsinline preload="metadata" poster="assets/replay-end.png">
+              <source src="assets/replay-can-on-plate.mp4" type="video/mp4">
+              浏览器不支持视频播放。
+            </video>
+            <figcaption><strong>真实 SAPIEN 回放</strong><span>900 steps · 120 frames · can on plate</span></figcaption>
+          </figure>
+          <div class="still-pair">
+            <figure><img src="assets/replay-start.png" alt="回放开始画面"><figcaption>开始</figcaption></figure>
+            <figure><img src="assets/replay-end.png" alt="回放结束画面"><figcaption>结束</figcaption></figure>
+          </div>
+        </div>
+
+        <div class="evidence-cards">
+          <article>
+            <span class="number">3 × 18</span>
+            <h3>compile 事件</h3>
+            <p>三次独立进程，每次 18 条真实阶段事件；首轮生成资产，后两轮复用。</p>
+          </article>
+          <article>
+            <span class="number">120 / 114</span>
+            <h3>媒体可验证</h3>
+            <p>历史 MP4 完整解码为 120 帧，其中 114 帧互异，不只检查扩展名。</p>
+          </article>
+          <article class="warning-card">
+            <span class="number">162 / 162</span>
+            <h3>旧 ledger 有债</h3>
+            <p>收紧契约后全部旧账本都有缺口；这也是当前最明确的数据修复工作量。</p>
+          </article>
+          <article>
+            <span class="number">2 / 10</span>
+            <h3>Qwen 规划成功</h3>
+            <p>10 次提示迭代中 2 次得到合法 typed decision；尚未执行真实生产 compile。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-shell" id="gaps">
+      <div class="section-heading">
+        <div>
+          <span class="kicker">剩余关键路径</span>
+          <h2>下一阶段先做什么</h2>
+        </div>
+        <p>不是继续堆功能，而是把现有候选能力逐个过真实门禁。</p>
+      </div>
+
+      <div class="priority-list">
+        <article><span>01</span><div><h3>先拿下 production replay</h3><p>完成固定 qualification bundle，并让当前 handler 真实跑通 900 settle / 120 contact / 120 frames，再由独立 validate 复核。</p></div><b>最高优先</b></article>
+        <article><span>02</span><div><h3>打通 System 2 → 真实 compile</h3><p>刷新漂移后的 compile qualification，用真实非空 catalog 执行规划、Registry、compile、可信回执和状态增量。</p></div><b>端到端关键</b></article>
+        <article><span>03</span><div><h3>执行 VLM A/B，而不是只写协议</h3><p>冻结 prompt 后跑 dev/test，报告 macro F1、unsafe pass、fallback 准确率、成本和失败尝试。</p></div><b>量化提升</b></article>
+        <article><span>04</span><div><h3>实现事件驱动工作台</h3><p>消费真实 RunEvent，补 dashboard、拖拽操作、资产/回放/验证视图、依赖板和源码链接。</p></div><b>尚未开工</b></article>
+        <article><span>05</span><div><h3>清理旧资产数据债</h3><p>只迁移能由已有 bytes 或可信 receipt 证明的字段；缺 stable pose / settle 的资产进入实测队列。</p></div><b>持续工作</b></article>
+      </div>
+    </section>
+
+    <section class="section-shell audit-note">
+      <div>
+        <span class="kicker">审计说明</span>
+        <h2>这份快照没有声称什么</h2>
+      </div>
+      <ul>
+        <li>没有声称已部署真机能力。</li>
+        <li>没有把 2-step smoke 当成长期物理通过。</li>
+        <li>没有把 VLM 预注册当成性能提升结果。</li>
+        <li>没有把未提交工作区代码当成稳定 feature。</li>
+        <li>Dashboard 三个约定入口返回 404，本页以当前分支和仓库证据为准。</li>
+      </ul>
+    </section>
+
+    <section class="section section-shell links-section">
+      <div class="section-heading compact">
+        <div>
+          <span class="kicker">会后查证</span>
+          <h2>关键材料</h2>
+        </div>
+      </div>
+      <div class="link-grid">
+        <a href="references/repo-docs/README.md"><strong>Repo Docs</strong><span>中文仓库导读</span></a>
+        <a href="references/repo-docs/modules/self-improving-platform.md"><strong>平台边界</strong><span>哪些已接、哪些未接</span></a>
+        <a href="references/harness/IMPLEMENTATION_LOG.md"><strong>实施主账</strong><span>A000–A042 逐次记录</span></a>
+        <a href="references/docs/contracts/HARNESS_MVP_CONTRACT_V1.zh-CN.md"><strong>MVP 契约</strong><span>发布与信任规则</span></a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="section-shell">
+      <span>Self-Improving Physical-AI Harness</span>
+      <span>当前分支静态审计快照 · 2026-08-31</span>
+      <a href="../../">返回项目进展</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

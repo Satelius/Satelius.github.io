@@ -35,7 +35,19 @@ personal_web/
     ├── project-progress/
     │   ├── index.html
     │   ├── script.js
-    │   └── styles.css
+    │   ├── styles.css
+    │   └── self-improving/
+    │       ├── web/
+    │       │   ├── index.html
+    │       │   ├── styles.css
+    │       │   ├── app.js
+    │       │   └── assets/
+    │       └── web-2/
+    │           ├── index.html
+    │           ├── styles.css
+    │           ├── script.js
+    │           ├── assets/
+    │           └── references/
     ├── stack-bowls-pi05/
     │   ├── index.html
     │   └── assets/

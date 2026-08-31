@@ -9,6 +9,8 @@
   const lockButton = document.querySelector("#lockButton");
   const redirect = new URLSearchParams(window.location.search).get("redirect");
   const redirectTargets = {
+    "self-improving-web": "./self-improving/web/",
+    "self-improving-web-2": "./self-improving/web-2/",
     "harness-contract": "../harness-contract/",
     "harness-skill-walkthrough": "../harness-skill-walkthrough/",
     "stack-bowls-pi05": "../stack-bowls-pi05/",
