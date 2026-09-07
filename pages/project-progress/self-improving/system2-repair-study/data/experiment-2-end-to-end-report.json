@@ -1,0 +1,2068 @@
+{
+  "cases": [
+    {
+      "attempts": [
+        {
+          "kind": "compile_chain",
+          "status": "fail",
+          "terminal_reason": "repair_duplicate_candidate"
+        }
+      ],
+      "case_result": "local://workspace/bingsheng/system2-agentic-repair-study-20260907/end-to-end/final/original_prompt_repair/seed-101/case_result.json",
+      "compile_fallback_count": 1,
+      "compile_status": "fail",
+      "correction_fallback_count": 1,
+      "deterministic_validation_status": "fail",
+      "format_fallback_count": 0,
+      "manual_intervention_count": 0,
+      "path_id": "original_prompt_repair",
+      "seed": 101,
+      "source_compile_case": "local://workspace/bingsheng/system2-agentic-repair-study-20260907/experiment-11/original_prompt_repair/seed-101/case_result.json",
+      "terminal_reason": "compile_failed",
+      "vlm_advisory_status": "not_run",
+      "vlm_claims_physical_pass": false
+    },
+    {
+      "attempts": [
+        {
+          "kind": "compile_chain",
+          "status": "fail",
+          "terminal_reason": "repair_duplicate_candidate"
+        }
+      ],
+      "case_result": "local://workspace/bingsheng/system2-agentic-repair-study-20260907/end-to-end/final/original_prompt_repair/seed-211/case_result.json",
+      "compile_fallback_count": 1,
+      "compile_status": "fail",
+      "correction_fallback_count": 1,
+      "deterministic_validation_status": "fail",
+      "format_fallback_count": 0,
+      "manual_intervention_count": 0,
+      "path_id": "original_prompt_repair",
+      "seed": 211,
+      "source_compile_case": "local://workspace/bingsheng/system2-agentic-repair-study-20260907/experiment-11/original_prompt_repair/seed-211/case_result.json",
+      "terminal_reason": "compile_failed",
+      "vlm_advisory_status": "not_run",
+      "vlm_claims_physical_pass": false
+    },
+    {
+      "attempts": [
+        {
+          "code": "T2E_COMPILE_SUCCEEDED",
+          "fallback_index": 2,
+          "kind": "compile",
+          "output_dir": "local://workspace/bingsheng/system2-agentic-repair-study-20260907/experiment-11/original_scene_model_repair/seed-101/compile-2/place_a_half_open_cabinet_on_the_table_52adeb2466",
+          "prompt": "Place a half-open cabinet on the table, and place a red can to the left of a plastic basket near the center.",
+          "resolved_scene": "local://workspace/bingsheng/system2-agentic-repair-study-20260907/experiment-11/original_scene_model_repair/seed-101/compile-2/place_a_half_open_cabinet_on_the_table_52adeb2466/resolved_scene.json",
+          "resolved_scene_sha256": "9e6024f9b009e4057918e131e635b7c82a0e4c4b613702f78aa4ce0cfd706ce0",
+          "scene_spec": {
+            "frame": {
+              "handedness": "right_handed",
+              "name": "robotwin_world",
+              "x_axis": "right",
+              "y_axis": "front",
+              "z_axis": "up"
+            },
+            "language": "en",
+            "objects": [
+              {
+                "articulation": {
+                  "joint_selector": "all_movable",
+                  "open_fraction": 0.5,
+                  "state": "partially_open"
+                },
+                "category": "cabinet",
+                "color": null,
+                "material": null,
+                "object_id": "cabinet_1",
+                "region": "left"
+              },
+              {
+                "articulation": null,
+                "category": "can",
+                "color": "red",
+                "material": null,
+                "object_id": "can_1",
+                "region": "left"
+              },
+              {
+                "articulation": null,
+                "category": "basket",
+                "color": null,
+                "material": "plastic",
+                "object_id": "basket_1",
+                "region": "right"
+              }
+            ],
+            "relations": [
+              {
+                "max_distance_m": null,
+                "min_distance_m": null,
+                "relation": "on_table",
+                "source": "cabinet_1",
+                "target": "table"
+              },
+              {
+                "max_distance_m": null,
+                "min_distance_m": null,
+                "relation": "on_table",
+                "source": "can_1",
+                "target": "table"
+              },
+              {
+                "max_distance_m": null,
+                "min_distance_m": null,
+                "relation": "on_table",
+                "source": "basket_1",
+                "target": "table"
+              },
+              {
+                "max_distance_m": null,
+                "min_distance_m": null,
+                "relation": "left_of",
+                "source": "can_1",
+                "target": "basket_1"
+              }
+            ],
+            "request": "Place a half-open cabinet on the table, and place a red can to the left of a plastic basket near the center.",
+            "scene_id": "place_a_half_open_cabinet_on_the_table_52adeb2466",
+            "schema_version": "robotwin.scene_spec.v1",
+            "seed": 101,
+            "unit": "m",
+            "workspace": {
+              "robot_keepout_x_m": [
+                -0.16,
+                0.16
+              ],
+              "robot_keepout_y_m": [
+                -0.2,
+                -0.08
+              ],
+              "support_surface": "table",
+              "table_height_m": 0.741,
+              "x_bounds_m": [
+                -0.35,
+                0.35
+              ],
+              "y_bounds_m": [
+                -0.2,
+                0.3
+              ]
+            }
+          },
+          "semantic_violations": [],
+          "stage": "complete",
+          "status": "pass"
+        },
+        {
+          "artifacts": [
+            {
+              "bytes": 127717,
+              "name": "observer_end.png",
+              "path": "local://workspace/bingsheng/system2-agentic-repair-study-20260907/end-to-end/final/original_scene_model_repair/seed-101/replay-9e6024f9b009/observer_end.png",
+              "sha256": "8cefad2129079f7ad4131adfe338ddaa180673106fbf399cb1397584ad2048b4"
+            },
+            {
+              "bytes": 127673,
+              "name": "observer_mid.png",
+              "path": "local://workspace/bingsheng/system2-agentic-repair-study-20260907/end-to-end/final/original_scene_model_repair/seed-101/replay-9e6024f9b009/observer_mid.png",
+              "sha256": "fcd9e9f8ead50e668c170b20a6250d2e1a44210f8fb5c035c81b87eb3e1b7da4"
+            },
+            {
+              "bytes": 50890,
+              "name": "observer_runtime.mp4",
+              "path": "local://workspace/bingsheng/system2-agentic-repair-study-20260907/end-to-end/final/original_scene_model_repair/seed-101/replay-9e6024f9b009/observer_runtime.mp4",
+              "sha256": "709535656701b59a0610ceb4ec73103cd4d3937de64ec6e80fedc5ecb59522a1"
+            },
+            {
+              "bytes": 127599,
+              "name": "observer_start.png",
+              "path": "local://workspace/bingsheng/system2-agentic-repair-study-20260907/end-to-end/final/original_scene_model_repair/seed-101/replay-9e6024f9b009/observer_start.png",
+              "sha256": "0c0a215d0e38955635dc4cc8700ea8a7f534e2d403bfe6874c5adce7e044da6b"
+            },
+            {
+              "bytes": 164298,
+              "name": "preview_head.png",
+              "path": "local://workspace/bingsheng/system2-agentic-repair-study-20260907/end-to-end/final/original_scene_model_repair/seed-101/replay-9e6024f9b009/preview_head.png",
+              "sha256": "9b2029c6f781f301c88f37304af2b83113d497088b9d77b15e7e6a466e6a5090"
+            },
+            {
+              "bytes": 2362,
+              "name": "preview_segmentation.png",
+              "path": "local://workspace/bingsheng/system2-agentic-repair-study-20260907/end-to-end/final/original_scene_model_repair/seed-101/replay-9e6024f9b009/preview_segmentation.png",
+              "sha256": "5ef8d03deb59ec252637769bf783d809243540560b65ff297712724fdfda7734"
+            },
+            {
+              "bytes": 622032,
+              "name": "preview_world_left.png",
+              "path": "local://workspace/bingsheng/system2-agentic-repair-study-20260907/end-to-end/final/original_scene_model_repair/seed-101/replay-9e6024f9b009/preview_world_left.png",
+              "sha256": "50ff35d47fb29ecc67ccc92c4615a5cfd9fbc62bbd744fdc27927550a3f43aab"
+            },
+            {
+              "bytes": 603112,
+              "name": "preview_world_right.png",
+              "path": "local://workspace/bingsheng/system2-agentic-repair-study-20260907/end-to-end/final/original_scene_model_repair/seed-101/replay-9e6024f9b009/preview_world_right.png",
+              "sha256": "823a7f167e8f3f5ca17680385a7c25877ae2fc1f583cd3f2ea79ccba37de3aab"
+            },
+            {
+              "bytes": 22325,
+              "name": "runtime_evidence.json",
+              "path": "local://workspace/bingsheng/system2-agentic-repair-study-20260907/end-to-end/final/original_scene_model_repair/seed-101/replay-9e6024f9b009/runtime_evidence.json",
+              "sha256": "9f80d952bc244f6f20bfa1c03e59e78e1bce41bcaa28755ce77e2b6f7d54407d"
+            },
+            {
+              "bytes": 14885,
+              "name": "runtime_validation_report.json",
+              "path": "local://workspace/bingsheng/system2-agentic-repair-study-20260907/end-to-end/final/original_scene_model_repair/seed-101/replay-9e6024f9b009/runtime_validation_report.json",
+              "sha256": "fe3e960db380a1751799c2ed04c21445367d4f572206fdead10ca95d4e30d7ba"
+            },
+            {
+              "bytes": 9493,
+              "name": "stderr.log",
+              "path": "local://workspace/bingsheng/system2-agentic-repair-study-20260907/end-to-end/final/original_scene_model_repair/seed-101/replay-9e6024f9b009/stderr.log",
+              "sha256": "cdbcc177d2bbee91efac16ee69fbc533653fbb6aa8e1c05714c489c03eb0d604"
+            },
+            {
+              "bytes": 250,
+              "name": "stdout.log",
+              "path": "local://workspace/bingsheng/system2-agentic-repair-study-20260907/end-to-end/final/original_scene_model_repair/seed-101/replay-9e6024f9b009/stdout.log",
+              "sha256": "1ee54f2d5f9fcd7e3646da8ea8bb44a1b83358171708ad115e8d8ba8d5af8c35"
+            }
+          ],
+          "kind": "replay_validate",
+          "runtime_dir": "local://workspace/bingsheng/system2-agentic-repair-study-20260907/end-to-end/final/original_scene_model_repair/seed-101/replay-9e6024f9b009",
+          "runtime_exit_code": 0,
+          "runtime_validation": {
+            "checks": [
+              {
+                "evidence": {
+                  "aabb": [
+                    0.038309298501935735,
+                    0.31564379349806426,
+                    0.04885317099790171,
+                    0.2946413090020983
+                  ]
+                },
+                "name": "workspace_bounds:basket_1",
+                "status": "pass"
+              },
+              {
+                "evidence": {
+                  "bottom_z_m": 0.741,
+                  "support_relation": "on_table",
+                  "table_height_m": 0.741
+                },
+                "name": "table_support_height:basket_1",
+                "status": "pass"
+              },
+              {
+                "evidence": {
+                  "exists": [
+                    true,
+                    true,
+                    true
+                  ],
+                  "paths": [
+                    "local://workspace/workspace/robot-harness-gen-env/external/RoboTwin/assets/objects/110_basket/collision/base1.glb",
+                    "local://workspace/workspace/robot-harness-gen-env/external/RoboTwin/assets/objects/110_basket/model_data1.json",
+                    "local://workspace/workspace/robot-harness-gen-env/external/RoboTwin/assets/objects/110_basket/visual/base1.glb"
+                  ]
+                },
+                "name": "real_asset_files:basket_1",
+                "status": "pass"
+              },
+              {
+                "evidence": {
+                  "aabb": [
+                    -0.27268491000001194,
+                    -0.029999999999988064,
+                    0.04466450499998745,
+                    0.27533549500001253
+                  ]
+                },
+                "name": "workspace_bounds:cabinet_1",
+                "status": "pass"
+              },
+              {
+                "evidence": {
+                  "bottom_z_m": 0.741,
+                  "support_relation": "on_table",
+                  "table_height_m": 0.741
+                },
+                "name": "table_support_height:cabinet_1",
+                "status": "pass"
+              },
+              {
+                "evidence": {
+                  "exists": [
+                    true,
+                    true
+                  ],
+                  "paths": [
+                    "local://workspace/workspace/robot-harness-gen-env/external/RoboTwin/assets/objects/036_cabinet/46653/mobility.urdf",
+                    "local://workspace/workspace/robot-harness-gen-env/external/RoboTwin/assets/objects/036_cabinet/46653/model_data.json"
+                  ]
+                },
+                "name": "real_asset_files:cabinet_1",
+                "status": "pass"
+              },
+              {
+                "evidence": {
+                  "aabb": [
+                    -0.301910287,
+                    -0.230710287,
+                    -0.070781658,
+                    0.0004183420000000021
+                  ]
+                },
+                "name": "workspace_bounds:can_1",
+                "status": "pass"
+              },
+              {
+                "evidence": {
+                  "bottom_z_m": 0.741,
+                  "support_relation": "on_table",
+                  "table_height_m": 0.741
+                },
+                "name": "table_support_height:can_1",
+                "status": "pass"
+              },
+              {
+                "evidence": {
+                  "exists": [
+                    true,
+                    true,
+                    true
+                  ],
+                  "paths": [
+                    "local://workspace/workspace/robot-harness-gen-env/external/RoboTwin/assets/objects/071_can/collision/base0.glb",
+                    "local://workspace/workspace/robot-harness-gen-env/external/RoboTwin/assets/objects/071_can/model_data0.json",
+                    "local://workspace/workspace/robot-harness-gen-env/external/RoboTwin/assets/objects/071_can/visual/base0.glb"
+                  ]
+                },
+                "name": "real_asset_files:can_1",
+                "status": "pass"
+              },
+              {
+                "evidence": {
+                  "expected_support_pair": false,
+                  "first_aabb_3d": [
+                    0.038309298501935735,
+                    0.31564379349806426,
+                    0.04885317099790171,
+                    0.2946413090020983,
+                    0.741,
+                    0.9177
+                  ],
+                  "second_aabb_3d": [
+                    -0.27268491000001194,
+                    -0.029999999999988064,
+                    0.04466450499998745,
+                    0.27533549500001253,
+                    0.741,
+                    1.17691365
+                  ]
+                },
+                "name": "no_overlap:basket_1:cabinet_1",
+                "status": "pass"
+              },
+              {
+                "evidence": {
+                  "expected_support_pair": false,
+                  "first_aabb_3d": [
+                    0.038309298501935735,
+                    0.31564379349806426,
+                    0.04885317099790171,
+                    0.2946413090020983,
+                    0.741,
+                    0.9177
+                  ],
+                  "second_aabb_3d": [
+                    -0.301910287,
+                    -0.230710287,
+                    -0.070781658,
+                    0.0004183420000000021,
+                    0.741,
+                    0.8375
+                  ]
+                },
+                "name": "no_overlap:basket_1:can_1",
+                "status": "pass"
+              },
+              {
+                "evidence": {
+                  "expected_support_pair": false,
+                  "first_aabb_3d": [
+                    -0.27268491000001194,
+                    -0.029999999999988064,
+                    0.04466450499998745,
+                    0.27533549500001253,
+                    0.741,
+                    1.17691365
+                  ],
+                  "second_aabb_3d": [
+                    -0.301910287,
+                    -0.230710287,
+                    -0.070781658,
+                    0.0004183420000000021,
+                    0.741,
+                    0.8375
+                  ]
+                },
+                "name": "no_overlap:cabinet_1:can_1",
+                "status": "pass"
+              },
+              {
+                "evidence": {
+                  "target": "table"
+                },
+                "name": "relation:on_table:cabinet_1",
+                "status": "pass"
+              },
+              {
+                "evidence": {
+                  "target": "table"
+                },
+                "name": "relation:on_table:can_1",
+                "status": "pass"
+              },
+              {
+                "evidence": {
+                  "target": "table"
+                },
+                "name": "relation:on_table:basket_1",
+                "status": "pass"
+              },
+              {
+                "evidence": {
+                  "center_distance_m": 0.4892062807637125,
+                  "source_aabb": [
+                    -0.301910287,
+                    -0.230710287,
+                    -0.070781658,
+                    0.0004183420000000021
+                  ],
+                  "target_aabb": [
+                    0.038309298501935735,
+                    0.31564379349806426,
+                    0.04885317099790171,
+                    0.2946413090020983
+                  ]
+                },
+                "name": "relation:left_of:can_1:basket_1",
+                "status": "pass"
+              },
+              {
+                "evidence": {
+                  "after": "88a849ff1b7498337cc7e5956f90d0f07842af3b19e61a1e5028da8a3c50d606",
+                  "before": "88a849ff1b7498337cc7e5956f90d0f07842af3b19e61a1e5028da8a3c50d606"
+                },
+                "name": "resolved_only_roundtrip",
+                "status": "pass"
+              },
+              {
+                "evidence": {
+                  "evidence_scene_id": "place_a_half_open_cabinet_on_the_table_52adeb2466",
+                  "expected_scene_id": "place_a_half_open_cabinet_on_the_table_52adeb2466"
+                },
+                "name": "runtime_scene_identity",
+                "status": "pass"
+              },
+              {
+                "evidence": {
+                  "evidence_sha256": "88a849ff1b7498337cc7e5956f90d0f07842af3b19e61a1e5028da8a3c50d606",
+                  "expected_sha256": "88a849ff1b7498337cc7e5956f90d0f07842af3b19e61a1e5028da8a3c50d606"
+                },
+                "name": "runtime_resolved_scene_binding",
+                "status": "pass"
+              },
+              {
+                "evidence": null,
+                "name": "runtime_status",
+                "status": "pass"
+              },
+              {
+                "evidence": 0,
+                "name": "robot_initial_collision",
+                "status": "pass"
+              },
+              {
+                "evidence": {
+                  "base_simulation_step_count": 900,
+                  "final_index_matches_simulation_end": true,
+                  "frame_count_matches_indices": true,
+                  "frames": 120,
+                  "indices_are_integers": true,
+                  "indices_in_simulation_range": true,
+                  "indices_strictly_increasing": true,
+                  "sample_step_indices": [
+                    0,
+                    1,
+                    2,
+                    3,
+                    4,
+                    5,
+                    6,
+                    7,
+                    8,
+                    9,
+                    10,
+                    11,
+                    12,
+                    13,
+                    14,
+                    15,
+                    16,
+                    17,
+                    18,
+                    19,
+                    20,
+                    21,
+                    22,
+                    23,
+                    24,
+                    25,
+                    26,
+                    27,
+                    28,
+                    29,
+                    30,
+                    31,
+                    32,
+                    33,
+                    34,
+                    35,
+                    36,
+                    37,
+                    38,
+                    39,
+                    40,
+                    41,
+                    42,
+                    43,
+                    44,
+                    45,
+                    46,
+                    47,
+                    48,
+                    49,
+                    50,
+                    51,
+                    52,
+                    53,
+                    54,
+                    55,
+                    56,
+                    57,
+                    58,
+                    59,
+                    60,
+                    61,
+                    62,
+                    63,
+                    64,
+                    65,
+                    66,
+                    67,
+                    68,
+                    69,
+                    70,
+                    71,
+                    72,
+                    73,
+                    74,
+                    75,
+                    76,
+                    77,
+                    78,
+                    79,
+                    80,
+                    81,
+                    82,
+                    83,
+                    84,
+                    85,
+                    86,
+                    87,
+                    88,
+                    89,
+                    90,
+                    91,
+                    92,
+                    93,
+                    94,
+                    95,
+                    96,
+                    97,
+                    98,
+                    99,
+                    100,
+                    101,
+                    102,
+                    103,
+                    104,
+                    105,
+                    106,
+                    107,
+                    108,
+                    109,
+                    110,
+                    111,
+                    112,
+                    113,
+                    114,
+                    115,
+                    116,
+                    117,
+                    118,
+                    899
+                  ],
+                  "settle_extra_steps": 0,
+                  "simulation_step_count": 900,
+                  "step_counts_consistent": true
+                },
+                "name": "observer_video_timeline",
+                "status": "pass"
+              },
+              {
+                "evidence": {
+                  "frames": 120,
+                  "minimum": 3
+                },
+                "name": "observer_video_frame_count",
+                "status": "pass"
+              },
+              {
+                "evidence": {
+                  "minimum": 30,
+                  "unique_frames": 100
+                },
+                "name": "observer_video_unique_frames",
+                "status": "pass"
+              },
+              {
+                "evidence": {
+                  "drift_m": 0,
+                  "exact_pose_required": true
+                },
+                "name": "translation_drift:basket_1",
+                "status": "pass"
+              },
+              {
+                "evidence": {
+                  "drift_deg": 0,
+                  "exact_pose_required": true
+                },
+                "name": "rotation_drift:basket_1",
+                "status": "pass"
+              },
+              {
+                "evidence": {
+                  "error_m": 4.253360082974894e-9,
+                  "exact_pose_required": true,
+                  "threshold_m": 0.02
+                },
+                "name": "resolved_translation_error:basket_1",
+                "status": "pass"
+              },
+              {
+                "evidence": {
+                  "error_deg": 0,
+                  "exact_pose_required": true,
+                  "threshold_deg": 5
+                },
+                "name": "resolved_rotation_error:basket_1",
+                "status": "pass"
+              },
+              {
+                "evidence": 0,
+                "name": "penetration:basket_1",
+                "status": "pass"
+              },
+              {
+                "evidence": false,
+                "name": "settled:basket_1",
+                "status": "pass"
+              },
+              {
+                "evidence": {
+                  "contact_fraction": 0,
+                  "expected_target": "table",
+                  "is_static": true,
+                  "minimum_contact_fraction": 0.8,
+                  "mode": "fixed_static_pose",
+                  "observed_target": null,
+                  "raw_contact": false
+                },
+                "name": "support_contact:basket_1",
+                "status": "pass"
+              },
+              {
+                "evidence": false,
+                "name": "not_dropped:basket_1",
+                "status": "pass"
+              },
+              {
+                "evidence": {
+                  "pixels": 6054,
+                  "threshold": 64
+                },
+                "name": "head_visibility:basket_1",
+                "status": "pass"
+              },
+              {
+                "evidence": {
+                  "drift_m": 0,
+                  "exact_pose_required": true
+                },
+                "name": "translation_drift:cabinet_1",
+                "status": "pass"
+              },
+              {
+                "evidence": {
+                  "drift_deg": 0,
+                  "exact_pose_required": true
+                },
+                "name": "rotation_drift:cabinet_1",
+                "status": "pass"
+              },
+              {
+                "evidence": {
+                  "error_m": 0,
+                  "exact_pose_required": true,
+                  "threshold_m": 0.02
+                },
+                "name": "resolved_translation_error:cabinet_1",
+                "status": "pass"
+              },
+              {
+                "evidence": {
+                  "error_deg": 0,
+                  "exact_pose_required": true,
+                  "threshold_deg": 5
+                },
+                "name": "resolved_rotation_error:cabinet_1",
+                "status": "pass"
+              },
+              {
+                "evidence": 0,
+                "name": "penetration:cabinet_1",
+                "status": "pass"
+              },
+              {
+                "evidence": false,
+                "name": "settled:cabinet_1",
+                "status": "pass"
+              },
+              {
+                "evidence": {
+                  "contact_fraction": 0,
+                  "expected_target": "table",
+                  "is_static": true,
+                  "minimum_contact_fraction": 0.8,
+                  "mode": "fixed_static_pose",
+                  "observed_target": null,
+                  "raw_contact": false
+                },
+                "name": "support_contact:cabinet_1",
+                "status": "pass"
+              },
+              {
+                "evidence": false,
+                "name": "not_dropped:cabinet_1",
+                "status": "pass"
+              },
+              {
+                "evidence": {
+                  "pixels": 21725,
+                  "threshold": 64
+                },
+                "name": "head_visibility:cabinet_1",
+                "status": "pass"
+              },
+              {
+                "evidence": {
+                  "max_abs_error": 2.682209010451686e-9,
+                  "target_qpos": [
+                    0.0675,
+                    0.0675,
+                    0.0675
+                  ]
+                },
+                "name": "articulation_qpos:cabinet_1",
+                "status": "pass"
+              },
+              {
+                "evidence": {
+                  "drift_m": 0.0005775697480414367,
+                  "exact_pose_required": false
+                },
+                "name": "translation_drift:can_1",
+                "status": "not_applicable"
+              },
+              {
+                "evidence": {
+                  "drift_deg": 0,
+                  "exact_pose_required": false
+                },
+                "name": "rotation_drift:can_1",
+                "status": "not_applicable"
+              },
+              {
+                "evidence": {
+                  "error_m": 0.0005775731005855158,
+                  "exact_pose_required": false,
+                  "threshold_m": 0.02
+                },
+                "name": "resolved_translation_error:can_1",
+                "status": "not_applicable"
+              },
+              {
+                "evidence": {
+                  "error_deg": 0.020469346676854818,
+                  "exact_pose_required": false,
+                  "threshold_deg": 5
+                },
+                "name": "resolved_rotation_error:can_1",
+                "status": "not_applicable"
+              },
+              {
+                "evidence": 0,
+                "name": "penetration:can_1",
+                "status": "pass"
+              },
+              {
+                "evidence": false,
+                "name": "settled:can_1",
+                "status": "pass"
+              },
+              {
+                "evidence": {
+                  "contact_fraction": 1,
+                  "expected_target": "table",
+                  "is_static": false,
+                  "minimum_contact_fraction": 0.8,
+                  "mode": "on_table_contact",
+                  "observed_target": "table",
+                  "raw_contact": true
+                },
+                "name": "support_contact:can_1",
+                "status": "pass"
+              },
+              {
+                "evidence": false,
+                "name": "not_dropped:can_1",
+                "status": "pass"
+              },
+              {
+                "evidence": {
+                  "pixels": 1119,
+                  "threshold": 64
+                },
+                "name": "head_visibility:can_1",
+                "status": "pass"
+              },
+              {
+                "evidence": {
+                  "center_delta_m": [
+                    -0.44328607618808746,
+                    -0.20692944154143333
+                  ],
+                  "center_distance_m": 0.48920582490285247,
+                  "pass": true,
+                  "relation": "left_of",
+                  "source": "can_1",
+                  "source_half_extent_m": [
+                    0.0356,
+                    0.0356
+                  ],
+                  "target": "basket_1",
+                  "target_half_extent_m": [
+                    0.13866724749806428,
+                    0.12289406900209829
+                  ]
+                },
+                "name": "runtime_relation:left_of:can_1:basket_1",
+                "status": "pass"
+              }
+            ],
+            "fail_count": 0,
+            "not_run_count": 0,
+            "resolved_scene_sha256": "88a849ff1b7498337cc7e5956f90d0f07842af3b19e61a1e5028da8a3c50d606",
+            "scene_id": "place_a_half_open_cabinet_on_the_table_52adeb2466",
+            "schema_version": "robotwin.scene_validation.v1",
+            "status": "pass"
+          },
+          "runtime_validation_report": "local://workspace/bingsheng/system2-agentic-repair-study-20260907/end-to-end/final/original_scene_model_repair/seed-101/replay-9e6024f9b009/runtime_validation_report.json",
+          "status": "pass"
+        },
+        {
+          "advisory_status": "abstain",
+          "assessment": "local://workspace/bingsheng/system2-agentic-repair-study-20260907/end-to-end/final/original_scene_model_repair/seed-101/vlm_assessment.json",
+          "assessment_run_id": "04154580-8b92-5e49-8cef-e10741970a4f",
+          "attempts": [
+            {
+              "advisory_status": "abstain",
+              "attempt": 1,
+              "format_preservation_receipt": null,
+              "parsed_response": {
+                "checks": {
+                  "object_presence": "pass",
+                  "overall_prompt_match": "pass",
+                  "penetration_or_floating": "abstain"
+                },
+                "explanation": "The objects are present in the correct locations as per the request.",
+                "overall": "pass"
+              },
+              "prompt_sha256": "13e3bf81b983a4dd9fe02e79e9cab7390c24e88208fada64164711ed698ec843",
+              "prompt_version": "replay_visible_advisory_v2",
+              "raw_response": "{\n  \"checks\": {\n    \"object_presence\": \"pass\",\n    \"penetration_or_floating\": \"abstain\",\n    \"overall_prompt_match\": \"pass\"\n  },\n  \"overall\": \"pass\",\n  \"explanation\": \"The objects are present in the correct locations as per the request.\"\n}",
+              "raw_response_sha256": "733b1609fb192db43b4e5da57f90f86986c38d4d024664229635fb3674a5f4b4",
+              "repair_of_sha256": null,
+              "resource_receipt": {
+                "compile_attempts": 0,
+                "contact_window_steps": 0,
+                "fresh_physical_replays": 0,
+                "gpu_time_ms": 2430,
+                "input_tokens": 1391,
+                "network_calls": 0,
+                "output_tokens": 66,
+                "peak_vram_mib": 7388,
+                "prompt_rewrites": 0,
+                "remote_paid_calls": 0,
+                "runtime_steps": 0,
+                "visible_vlm_invocations": 1
+              }
+            }
+          ],
+          "claims_physical_pass": false,
+          "images": [
+            {
+              "bytes": 127599,
+              "media_type": "image/png",
+              "name": "observer_start",
+              "path": "local://workspace/bingsheng/system2-agentic-repair-study-20260907/end-to-end/final/original_scene_model_repair/seed-101/replay-9e6024f9b009/observer_start.png",
+              "schema_version": null,
+              "sha256": "0c0a215d0e38955635dc4cc8700ea8a7f534e2d403bfe6874c5adce7e044da6b",
+              "uri": "local://workspace/bingsheng/system2-agentic-repair-study-20260907/end-to-end/final/original_scene_model_repair/seed-101/replay-9e6024f9b009/observer_start.png"
+            },
+            {
+              "bytes": 127673,
+              "media_type": "image/png",
+              "name": "observer_mid",
+              "path": "local://workspace/bingsheng/system2-agentic-repair-study-20260907/end-to-end/final/original_scene_model_repair/seed-101/replay-9e6024f9b009/observer_mid.png",
+              "schema_version": null,
+              "sha256": "fcd9e9f8ead50e668c170b20a6250d2e1a44210f8fb5c035c81b87eb3e1b7da4",
+              "uri": "local://workspace/bingsheng/system2-agentic-repair-study-20260907/end-to-end/final/original_scene_model_repair/seed-101/replay-9e6024f9b009/observer_mid.png"
+            },
+            {
+              "bytes": 127717,
+              "media_type": "image/png",
+              "name": "observer_end",
+              "path": "local://workspace/bingsheng/system2-agentic-repair-study-20260907/end-to-end/final/original_scene_model_repair/seed-101/replay-9e6024f9b009/observer_end.png",
+              "schema_version": null,
+              "sha256": "8cefad2129079f7ad4131adfe338ddaa180673106fbf399cb1397584ad2048b4",
+              "uri": "local://workspace/bingsheng/system2-agentic-repair-study-20260907/end-to-end/final/original_scene_model_repair/seed-101/replay-9e6024f9b009/observer_end.png"
+            },
+            {
+              "bytes": 164298,
+              "media_type": "image/png",
+              "name": "preview_head",
+              "path": "local://workspace/bingsheng/system2-agentic-repair-study-20260907/end-to-end/final/original_scene_model_repair/seed-101/replay-9e6024f9b009/preview_head.png",
+              "schema_version": null,
+              "sha256": "9b2029c6f781f301c88f37304af2b83113d497088b9d77b15e7e6a466e6a5090",
+              "uri": "local://workspace/bingsheng/system2-agentic-repair-study-20260907/end-to-end/final/original_scene_model_repair/seed-101/replay-9e6024f9b009/preview_head.png"
+            }
+          ],
+          "kind": "vlm_review",
+          "model_receipt": {
+            "max_new_tokens": 768,
+            "model_content_manifest_sha256": "dd904e42c13f7a47296e1aff8ce8a78090a86451d24b5ccd0d2807d29e6e4cad",
+            "model_id": "Qwen/Qwen2.5-VL-3B-Instruct",
+            "model_roster_sha256": "e8c79978ae33176974b48eb567f4b3e6986720bb477da7675f2f592c523dc690",
+            "revision": "66285546d2b821cf421d4f5eb2576359d3770cd3",
+            "role": "primary_local_vlm",
+            "snapshot_manifest_sha256": "b0f4cf794ec552f5e23de019107801e5adfec633d3b5c74564cdf6b65e9f1cad"
+          },
+          "provider_receipt": {
+            "implementation_sha256": "0c7c0199af264fefef41d14cb580ceea89f6d8ea5d4d8e382e542202982d44e5",
+            "kind": "local_qwen",
+            "production_eligible": false,
+            "provider_id": "vlm_fallback.local_qwen_visible",
+            "revision": "v1"
+          },
+          "replay_run_id": "e0d1df75-3f7a-5f9a-a6fa-a53453814316",
+          "resource_receipt": {
+            "compile_attempts": 0,
+            "contact_window_steps": 0,
+            "fresh_physical_replays": 0,
+            "gpu_time_ms": 2430,
+            "input_tokens": 1391,
+            "network_calls": 0,
+            "output_tokens": 66,
+            "peak_vram_mib": 7388,
+            "prompt_rewrites": 0,
+            "remote_paid_calls": 0,
+            "runtime_steps": 0,
+            "visible_vlm_invocations": 1
+          },
+          "status": "abstain",
+          "task_context": "Requested scene: Place a half-open cabinet on the table, and place a red can to the left of a plastic basket near the center.\nThe first three images are time-ordered samples from the retained replay MP4; the fourth is the head-camera preview. If the visible prompt match fails, put concrete typed scene-data changes in explanation: object region, relation, articulation state, or minimum clearance only. Your result is advisory only."
+        }
+      ],
+      "case_result": "local://workspace/bingsheng/system2-agentic-repair-study-20260907/end-to-end/final/original_scene_model_repair/seed-101/case_result.json",
+      "compile_fallback_count": 2,
+      "compile_status": "pass",
+      "correction_fallback_count": 2,
+      "deterministic_validation_status": "pass",
+      "format_fallback_count": 0,
+      "manual_intervention_count": 0,
+      "path_id": "original_scene_model_repair",
+      "seed": 101,
+      "source_compile_case": "local://workspace/bingsheng/system2-agentic-repair-study-20260907/experiment-11/original_scene_model_repair/seed-101/case_result.json",
+      "terminal_reason": "replay_completed",
+      "vlm_advisory_status": "abstain",
+      "vlm_claims_physical_pass": false
+    },
+    {
+      "attempts": [
+        {
+          "code": "T2E_COMPILE_SUCCEEDED",
+          "fallback_index": 2,
+          "kind": "compile",
+          "output_dir": "local://workspace/bingsheng/system2-agentic-repair-study-20260907/experiment-11/original_scene_model_repair/seed-211/compile-2/place_a_half_open_cabinet_on_the_table_52adeb2466",
+          "prompt": "Place a half-open cabinet on the table, and place a red can to the left of a plastic basket near the center.",
+          "resolved_scene": "local://workspace/bingsheng/system2-agentic-repair-study-20260907/experiment-11/original_scene_model_repair/seed-211/compile-2/place_a_half_open_cabinet_on_the_table_52adeb2466/resolved_scene.json",
+          "resolved_scene_sha256": "84d2179eef14ebc8f95288b11af0f7ca410a30661c055b6f99db885bbae2dbb7",
+          "scene_spec": {
+            "frame": {
+              "handedness": "right_handed",
+              "name": "robotwin_world",
+              "x_axis": "right",
+              "y_axis": "front",
+              "z_axis": "up"
+            },
+            "language": "en",
+            "objects": [
+              {
+                "articulation": {
+                  "joint_selector": "all_movable",
+                  "open_fraction": 0.5,
+                  "state": "partially_open"
+                },
+                "category": "cabinet",
+                "color": null,
+                "material": null,
+                "object_id": "cabinet_1",
+                "region": "left"
+              },
+              {
+                "articulation": null,
+                "category": "can",
+                "color": "red",
+                "material": null,
+                "object_id": "can_1",
+                "region": "left"
+              },
+              {
+                "articulation": null,
+                "category": "basket",
+                "color": null,
+                "material": "plastic",
+                "object_id": "basket_1",
+                "region": "right"
+              }
+            ],
+            "relations": [
+              {
+                "max_distance_m": null,
+                "min_distance_m": null,
+                "relation": "on_table",
+                "source": "cabinet_1",
+                "target": "table"
+              },
+              {
+                "max_distance_m": null,
+                "min_distance_m": null,
+                "relation": "on_table",
+                "source": "can_1",
+                "target": "table"
+              },
+              {
+                "max_distance_m": null,
+                "min_distance_m": null,
+                "relation": "on_table",
+                "source": "basket_1",
+                "target": "table"
+              },
+              {
+                "max_distance_m": null,
+                "min_distance_m": null,
+                "relation": "left_of",
+                "source": "can_1",
+                "target": "basket_1"
+              }
+            ],
+            "request": "Place a half-open cabinet on the table, and place a red can to the left of a plastic basket near the center.",
+            "scene_id": "place_a_half_open_cabinet_on_the_table_52adeb2466",
+            "schema_version": "robotwin.scene_spec.v1",
+            "seed": 211,
+            "unit": "m",
+            "workspace": {
+              "robot_keepout_x_m": [
+                -0.16,
+                0.16
+              ],
+              "robot_keepout_y_m": [
+                -0.2,
+                -0.08
+              ],
+              "support_surface": "table",
+              "table_height_m": 0.741,
+              "x_bounds_m": [
+                -0.35,
+                0.35
+              ],
+              "y_bounds_m": [
+                -0.2,
+                0.3
+              ]
+            }
+          },
+          "semantic_violations": [],
+          "stage": "complete",
+          "status": "pass"
+        },
+        {
+          "artifacts": [
+            {
+              "bytes": 126973,
+              "name": "observer_end.png",
+              "path": "local://workspace/bingsheng/system2-agentic-repair-study-20260907/end-to-end/final/original_scene_model_repair/seed-211/replay-84d2179eef14/observer_end.png",
+              "sha256": "57b223f3d824811cc993be33b3838120f981f98e693366a4816862214a9dc63b"
+            },
+            {
+              "bytes": 126885,
+              "name": "observer_mid.png",
+              "path": "local://workspace/bingsheng/system2-agentic-repair-study-20260907/end-to-end/final/original_scene_model_repair/seed-211/replay-84d2179eef14/observer_mid.png",
+              "sha256": "0fdd900a162e325dd6df6118a35babde362bc4a1496b3661f6df3529a6e8f298"
+            },
+            {
+              "bytes": 50323,
+              "name": "observer_runtime.mp4",
+              "path": "local://workspace/bingsheng/system2-agentic-repair-study-20260907/end-to-end/final/original_scene_model_repair/seed-211/replay-84d2179eef14/observer_runtime.mp4",
+              "sha256": "30975a3fcb850c9fd00db71f2bcc28c056d992f0d364c803fa5fc8debd94a4c7"
+            },
+            {
+              "bytes": 127010,
+              "name": "observer_start.png",
+              "path": "local://workspace/bingsheng/system2-agentic-repair-study-20260907/end-to-end/final/original_scene_model_repair/seed-211/replay-84d2179eef14/observer_start.png",
+              "sha256": "afdb9820fdbb82481107e9a5ae980da383c43f6eebd8f95b62a2476b9c8c8040"
+            },
+            {
+              "bytes": 164916,
+              "name": "preview_head.png",
+              "path": "local://workspace/bingsheng/system2-agentic-repair-study-20260907/end-to-end/final/original_scene_model_repair/seed-211/replay-84d2179eef14/preview_head.png",
+              "sha256": "b970eec04492c7dbb9ee7a159d61dcccd2d788a7e8443d57be9c9f079787ae95"
+            },
+            {
+              "bytes": 2427,
+              "name": "preview_segmentation.png",
+              "path": "local://workspace/bingsheng/system2-agentic-repair-study-20260907/end-to-end/final/original_scene_model_repair/seed-211/replay-84d2179eef14/preview_segmentation.png",
+              "sha256": "2f90414e62404149bf2febac115aadedea4891fb0eb44bbcc246e2a3f4ecf508"
+            },
+            {
+              "bytes": 622110,
+              "name": "preview_world_left.png",
+              "path": "local://workspace/bingsheng/system2-agentic-repair-study-20260907/end-to-end/final/original_scene_model_repair/seed-211/replay-84d2179eef14/preview_world_left.png",
+              "sha256": "c86bd1916568bba13c8b605213c0bce05034de937102740fa89cd42637207923"
+            },
+            {
+              "bytes": 605527,
+              "name": "preview_world_right.png",
+              "path": "local://workspace/bingsheng/system2-agentic-repair-study-20260907/end-to-end/final/original_scene_model_repair/seed-211/replay-84d2179eef14/preview_world_right.png",
+              "sha256": "631dfb04aecc9b2003e5fd280a80df7004dce6b80c777efe103840ecd481adee"
+            },
+            {
+              "bytes": 25426,
+              "name": "runtime_evidence.json",
+              "path": "local://workspace/bingsheng/system2-agentic-repair-study-20260907/end-to-end/final/original_scene_model_repair/seed-211/replay-84d2179eef14/runtime_evidence.json",
+              "sha256": "736d343eef590f803754c58906c6af237e0eb9ab3d020c1b0511cf01ea8c3f30"
+            },
+            {
+              "bytes": 14892,
+              "name": "runtime_validation_report.json",
+              "path": "local://workspace/bingsheng/system2-agentic-repair-study-20260907/end-to-end/final/original_scene_model_repair/seed-211/replay-84d2179eef14/runtime_validation_report.json",
+              "sha256": "1c91b96447548919321563b611f7aa283659e07ab25d85d7926ae3cdd197c398"
+            },
+            {
+              "bytes": 9493,
+              "name": "stderr.log",
+              "path": "local://workspace/bingsheng/system2-agentic-repair-study-20260907/end-to-end/final/original_scene_model_repair/seed-211/replay-84d2179eef14/stderr.log",
+              "sha256": "ed2415a4814964d5efcf245edf825d25df38bd246c05b2f992b42f2f319a3663"
+            },
+            {
+              "bytes": 250,
+              "name": "stdout.log",
+              "path": "local://workspace/bingsheng/system2-agentic-repair-study-20260907/end-to-end/final/original_scene_model_repair/seed-211/replay-84d2179eef14/stdout.log",
+              "sha256": "1ee54f2d5f9fcd7e3646da8ea8bb44a1b83358171708ad115e8d8ba8d5af8c35"
+            }
+          ],
+          "kind": "replay_validate",
+          "runtime_dir": "local://workspace/bingsheng/system2-agentic-repair-study-20260907/end-to-end/final/original_scene_model_repair/seed-211/replay-84d2179eef14",
+          "runtime_exit_code": 0,
+          "runtime_validation": {
+            "checks": [
+              {
+                "evidence": {
+                  "aabb": [
+                    0.05879627878419616,
+                    0.3332388492158038,
+                    -0.014220667900159231,
+                    0.2542356739001592
+                  ]
+                },
+                "name": "workspace_bounds:basket_1",
+                "status": "pass"
+              },
+              {
+                "evidence": {
+                  "bottom_z_m": 0.741,
+                  "support_relation": "on_table",
+                  "table_height_m": 0.741
+                },
+                "name": "table_support_height:basket_1",
+                "status": "pass"
+              },
+              {
+                "evidence": {
+                  "exists": [
+                    true,
+                    true,
+                    true
+                  ],
+                  "paths": [
+                    "local://workspace/workspace/robot-harness-gen-env/external/RoboTwin/assets/objects/110_basket/collision/base1.glb",
+                    "local://workspace/workspace/robot-harness-gen-env/external/RoboTwin/assets/objects/110_basket/model_data1.json",
+                    "local://workspace/workspace/robot-harness-gen-env/external/RoboTwin/assets/objects/110_basket/visual/base1.glb"
+                  ]
+                },
+                "name": "real_asset_files:basket_1",
+                "status": "pass"
+              },
+              {
+                "evidence": {
+                  "aabb": [
+                    -0.27268491000001194,
+                    -0.029999999999988064,
+                    0.04466450499998745,
+                    0.27533549500001253
+                  ]
+                },
+                "name": "workspace_bounds:cabinet_1",
+                "status": "pass"
+              },
+              {
+                "evidence": {
+                  "bottom_z_m": 0.741,
+                  "support_relation": "on_table",
+                  "table_height_m": 0.741
+                },
+                "name": "table_support_height:cabinet_1",
+                "status": "pass"
+              },
+              {
+                "evidence": {
+                  "exists": [
+                    true,
+                    true
+                  ],
+                  "paths": [
+                    "local://workspace/workspace/robot-harness-gen-env/external/RoboTwin/assets/objects/036_cabinet/46653/mobility.urdf",
+                    "local://workspace/workspace/robot-harness-gen-env/external/RoboTwin/assets/objects/036_cabinet/46653/model_data.json"
+                  ]
+                },
+                "name": "real_asset_files:cabinet_1",
+                "status": "pass"
+              },
+              {
+                "evidence": {
+                  "aabb": [
+                    -0.125629444,
+                    -0.054429444,
+                    -0.057788440999999996,
+                    0.013411559
+                  ]
+                },
+                "name": "workspace_bounds:can_1",
+                "status": "pass"
+              },
+              {
+                "evidence": {
+                  "bottom_z_m": 0.741,
+                  "support_relation": "on_table",
+                  "table_height_m": 0.741
+                },
+                "name": "table_support_height:can_1",
+                "status": "pass"
+              },
+              {
+                "evidence": {
+                  "exists": [
+                    true,
+                    true,
+                    true
+                  ],
+                  "paths": [
+                    "local://workspace/workspace/robot-harness-gen-env/external/RoboTwin/assets/objects/071_can/collision/base0.glb",
+                    "local://workspace/workspace/robot-harness-gen-env/external/RoboTwin/assets/objects/071_can/model_data0.json",
+                    "local://workspace/workspace/robot-harness-gen-env/external/RoboTwin/assets/objects/071_can/visual/base0.glb"
+                  ]
+                },
+                "name": "real_asset_files:can_1",
+                "status": "pass"
+              },
+              {
+                "evidence": {
+                  "expected_support_pair": false,
+                  "first_aabb_3d": [
+                    0.05879627878419616,
+                    0.3332388492158038,
+                    -0.014220667900159231,
+                    0.2542356739001592,
+                    0.741,
+                    0.9177
+                  ],
+                  "second_aabb_3d": [
+                    -0.27268491000001194,
+                    -0.029999999999988064,
+                    0.04466450499998745,
+                    0.27533549500001253,
+                    0.741,
+                    1.17691365
+                  ]
+                },
+                "name": "no_overlap:basket_1:cabinet_1",
+                "status": "pass"
+              },
+              {
+                "evidence": {
+                  "expected_support_pair": false,
+                  "first_aabb_3d": [
+                    0.05879627878419616,
+                    0.3332388492158038,
+                    -0.014220667900159231,
+                    0.2542356739001592,
+                    0.741,
+                    0.9177
+                  ],
+                  "second_aabb_3d": [
+                    -0.125629444,
+                    -0.054429444,
+                    -0.057788440999999996,
+                    0.013411559,
+                    0.741,
+                    0.8375
+                  ]
+                },
+                "name": "no_overlap:basket_1:can_1",
+                "status": "pass"
+              },
+              {
+                "evidence": {
+                  "expected_support_pair": false,
+                  "first_aabb_3d": [
+                    -0.27268491000001194,
+                    -0.029999999999988064,
+                    0.04466450499998745,
+                    0.27533549500001253,
+                    0.741,
+                    1.17691365
+                  ],
+                  "second_aabb_3d": [
+                    -0.125629444,
+                    -0.054429444,
+                    -0.057788440999999996,
+                    0.013411559,
+                    0.741,
+                    0.8375
+                  ]
+                },
+                "name": "no_overlap:cabinet_1:can_1",
+                "status": "pass"
+              },
+              {
+                "evidence": {
+                  "target": "table"
+                },
+                "name": "relation:on_table:cabinet_1",
+                "status": "pass"
+              },
+              {
+                "evidence": {
+                  "target": "table"
+                },
+                "name": "relation:on_table:can_1",
+                "status": "pass"
+              },
+              {
+                "evidence": {
+                  "target": "table"
+                },
+                "name": "relation:on_table:basket_1",
+                "status": "pass"
+              },
+              {
+                "evidence": {
+                  "center_distance_m": 0.3194410388096733,
+                  "source_aabb": [
+                    -0.125629444,
+                    -0.054429444,
+                    -0.057788440999999996,
+                    0.013411559
+                  ],
+                  "target_aabb": [
+                    0.05879627878419616,
+                    0.3332388492158038,
+                    -0.014220667900159231,
+                    0.2542356739001592
+                  ]
+                },
+                "name": "relation:left_of:can_1:basket_1",
+                "status": "pass"
+              },
+              {
+                "evidence": {
+                  "after": "1dbfc4acbad1d0bfd87b1f1d39f0e44a2aea73ffd3842a038b226610247182a5",
+                  "before": "1dbfc4acbad1d0bfd87b1f1d39f0e44a2aea73ffd3842a038b226610247182a5"
+                },
+                "name": "resolved_only_roundtrip",
+                "status": "pass"
+              },
+              {
+                "evidence": {
+                  "evidence_scene_id": "place_a_half_open_cabinet_on_the_table_52adeb2466",
+                  "expected_scene_id": "place_a_half_open_cabinet_on_the_table_52adeb2466"
+                },
+                "name": "runtime_scene_identity",
+                "status": "pass"
+              },
+              {
+                "evidence": {
+                  "evidence_sha256": "1dbfc4acbad1d0bfd87b1f1d39f0e44a2aea73ffd3842a038b226610247182a5",
+                  "expected_sha256": "1dbfc4acbad1d0bfd87b1f1d39f0e44a2aea73ffd3842a038b226610247182a5"
+                },
+                "name": "runtime_resolved_scene_binding",
+                "status": "pass"
+              },
+              {
+                "evidence": null,
+                "name": "runtime_status",
+                "status": "pass"
+              },
+              {
+                "evidence": 0,
+                "name": "robot_initial_collision",
+                "status": "pass"
+              },
+              {
+                "evidence": {
+                  "base_simulation_step_count": 900,
+                  "final_index_matches_simulation_end": true,
+                  "frame_count_matches_indices": true,
+                  "frames": 120,
+                  "indices_are_integers": true,
+                  "indices_in_simulation_range": true,
+                  "indices_strictly_increasing": true,
+                  "sample_step_indices": [
+                    0,
+                    1,
+                    2,
+                    3,
+                    4,
+                    5,
+                    6,
+                    7,
+                    8,
+                    9,
+                    10,
+                    11,
+                    12,
+                    13,
+                    14,
+                    15,
+                    16,
+                    17,
+                    18,
+                    19,
+                    20,
+                    21,
+                    22,
+                    23,
+                    24,
+                    25,
+                    26,
+                    27,
+                    28,
+                    29,
+                    30,
+                    31,
+                    32,
+                    33,
+                    34,
+                    35,
+                    36,
+                    37,
+                    38,
+                    39,
+                    40,
+                    41,
+                    42,
+                    43,
+                    44,
+                    45,
+                    46,
+                    47,
+                    48,
+                    49,
+                    50,
+                    51,
+                    52,
+                    53,
+                    54,
+                    55,
+                    56,
+                    57,
+                    58,
+                    59,
+                    60,
+                    61,
+                    62,
+                    63,
+                    64,
+                    65,
+                    66,
+                    67,
+                    68,
+                    69,
+                    70,
+                    71,
+                    72,
+                    73,
+                    74,
+                    75,
+                    76,
+                    77,
+                    78,
+                    79,
+                    80,
+                    81,
+                    82,
+                    83,
+                    84,
+                    85,
+                    86,
+                    87,
+                    88,
+                    89,
+                    90,
+                    91,
+                    92,
+                    93,
+                    94,
+                    95,
+                    96,
+                    97,
+                    98,
+                    99,
+                    100,
+                    101,
+                    102,
+                    103,
+                    104,
+                    105,
+                    106,
+                    107,
+                    108,
+                    109,
+                    110,
+                    111,
+                    112,
+                    113,
+                    114,
+                    115,
+                    116,
+                    117,
+                    118,
+                    899
+                  ],
+                  "settle_extra_steps": 0,
+                  "simulation_step_count": 900,
+                  "step_counts_consistent": true
+                },
+                "name": "observer_video_timeline",
+                "status": "pass"
+              },
+              {
+                "evidence": {
+                  "frames": 120,
+                  "minimum": 3
+                },
+                "name": "observer_video_frame_count",
+                "status": "pass"
+              },
+              {
+                "evidence": {
+                  "minimum": 30,
+                  "unique_frames": 100
+                },
+                "name": "observer_video_unique_frames",
+                "status": "pass"
+              },
+              {
+                "evidence": {
+                  "drift_m": 0,
+                  "exact_pose_required": true
+                },
+                "name": "translation_drift:basket_1",
+                "status": "pass"
+              },
+              {
+                "evidence": {
+                  "drift_deg": 0,
+                  "exact_pose_required": true
+                },
+                "name": "rotation_drift:basket_1",
+                "status": "pass"
+              },
+              {
+                "evidence": {
+                  "error_m": 4.5012147872091034e-9,
+                  "exact_pose_required": true,
+                  "threshold_m": 0.02
+                },
+                "name": "resolved_translation_error:basket_1",
+                "status": "pass"
+              },
+              {
+                "evidence": {
+                  "error_deg": 0,
+                  "exact_pose_required": true,
+                  "threshold_deg": 5
+                },
+                "name": "resolved_rotation_error:basket_1",
+                "status": "pass"
+              },
+              {
+                "evidence": 0,
+                "name": "penetration:basket_1",
+                "status": "pass"
+              },
+              {
+                "evidence": false,
+                "name": "settled:basket_1",
+                "status": "pass"
+              },
+              {
+                "evidence": {
+                  "contact_fraction": 0,
+                  "expected_target": "table",
+                  "is_static": true,
+                  "minimum_contact_fraction": 0.8,
+                  "mode": "fixed_static_pose",
+                  "observed_target": null,
+                  "raw_contact": false
+                },
+                "name": "support_contact:basket_1",
+                "status": "pass"
+              },
+              {
+                "evidence": false,
+                "name": "not_dropped:basket_1",
+                "status": "pass"
+              },
+              {
+                "evidence": {
+                  "pixels": 7575,
+                  "threshold": 64
+                },
+                "name": "head_visibility:basket_1",
+                "status": "pass"
+              },
+              {
+                "evidence": {
+                  "drift_m": 0,
+                  "exact_pose_required": true
+                },
+                "name": "translation_drift:cabinet_1",
+                "status": "pass"
+              },
+              {
+                "evidence": {
+                  "drift_deg": 0,
+                  "exact_pose_required": true
+                },
+                "name": "rotation_drift:cabinet_1",
+                "status": "pass"
+              },
+              {
+                "evidence": {
+                  "error_m": 0,
+                  "exact_pose_required": true,
+                  "threshold_m": 0.02
+                },
+                "name": "resolved_translation_error:cabinet_1",
+                "status": "pass"
+              },
+              {
+                "evidence": {
+                  "error_deg": 0,
+                  "exact_pose_required": true,
+                  "threshold_deg": 5
+                },
+                "name": "resolved_rotation_error:cabinet_1",
+                "status": "pass"
+              },
+              {
+                "evidence": 0,
+                "name": "penetration:cabinet_1",
+                "status": "pass"
+              },
+              {
+                "evidence": false,
+                "name": "settled:cabinet_1",
+                "status": "pass"
+              },
+              {
+                "evidence": {
+                  "contact_fraction": 0,
+                  "expected_target": "table",
+                  "is_static": true,
+                  "minimum_contact_fraction": 0.8,
+                  "mode": "fixed_static_pose",
+                  "observed_target": null,
+                  "raw_contact": false
+                },
+                "name": "support_contact:cabinet_1",
+                "status": "pass"
+              },
+              {
+                "evidence": false,
+                "name": "not_dropped:cabinet_1",
+                "status": "pass"
+              },
+              {
+                "evidence": {
+                  "pixels": 21725,
+                  "threshold": 64
+                },
+                "name": "head_visibility:cabinet_1",
+                "status": "pass"
+              },
+              {
+                "evidence": {
+                  "max_abs_error": 2.682209010451686e-9,
+                  "target_qpos": [
+                    0.0675,
+                    0.0675,
+                    0.0675
+                  ]
+                },
+                "name": "articulation_qpos:cabinet_1",
+                "status": "pass"
+              },
+              {
+                "evidence": {
+                  "drift_m": 0.000577986432771744,
+                  "exact_pose_required": false
+                },
+                "name": "translation_drift:can_1",
+                "status": "not_applicable"
+              },
+              {
+                "evidence": {
+                  "drift_deg": 0.0653352763928741,
+                  "exact_pose_required": false
+                },
+                "name": "rotation_drift:can_1",
+                "status": "not_applicable"
+              },
+              {
+                "evidence": {
+                  "error_m": 0.0005779897726206337,
+                  "exact_pose_required": false,
+                  "threshold_m": 0.02
+                },
+                "name": "resolved_translation_error:can_1",
+                "status": "not_applicable"
+              },
+              {
+                "evidence": {
+                  "error_deg": 0.06267073890627262,
+                  "exact_pose_required": false,
+                  "threshold_deg": 5
+                },
+                "name": "resolved_rotation_error:can_1",
+                "status": "not_applicable"
+              },
+              {
+                "evidence": 0,
+                "name": "penetration:can_1",
+                "status": "pass"
+              },
+              {
+                "evidence": false,
+                "name": "settled:can_1",
+                "status": "pass"
+              },
+              {
+                "evidence": {
+                  "contact_fraction": 1,
+                  "expected_target": "table",
+                  "is_static": false,
+                  "minimum_contact_fraction": 0.8,
+                  "mode": "on_table_contact",
+                  "observed_target": "table",
+                  "raw_contact": true
+                },
+                "name": "support_contact:can_1",
+                "status": "pass"
+              },
+              {
+                "evidence": false,
+                "name": "not_dropped:can_1",
+                "status": "pass"
+              },
+              {
+                "evidence": {
+                  "pixels": 956,
+                  "threshold": 64
+                },
+                "name": "head_visibility:can_1",
+                "status": "pass"
+              },
+              {
+                "evidence": {
+                  "center_delta_m": [
+                    -0.2860465869307518,
+                    -0.14219572208821774
+                  ],
+                  "center_distance_m": 0.3194405629767795,
+                  "pass": true,
+                  "relation": "left_of",
+                  "source": "can_1",
+                  "source_half_extent_m": [
+                    0.0356,
+                    0.0356
+                  ],
+                  "target": "basket_1",
+                  "target_half_extent_m": [
+                    0.13722128521580385,
+                    0.13422817090015923
+                  ]
+                },
+                "name": "runtime_relation:left_of:can_1:basket_1",
+                "status": "pass"
+              }
+            ],
+            "fail_count": 0,
+            "not_run_count": 0,
+            "resolved_scene_sha256": "1dbfc4acbad1d0bfd87b1f1d39f0e44a2aea73ffd3842a038b226610247182a5",
+            "scene_id": "place_a_half_open_cabinet_on_the_table_52adeb2466",
+            "schema_version": "robotwin.scene_validation.v1",
+            "status": "pass"
+          },
+          "runtime_validation_report": "local://workspace/bingsheng/system2-agentic-repair-study-20260907/end-to-end/final/original_scene_model_repair/seed-211/replay-84d2179eef14/runtime_validation_report.json",
+          "status": "pass"
+        },
+        {
+          "advisory_status": "abstain",
+          "assessment": "local://workspace/bingsheng/system2-agentic-repair-study-20260907/end-to-end/final/original_scene_model_repair/seed-211/vlm_assessment.json",
+          "assessment_run_id": "f4303537-7fa9-5c6a-a902-173212c53169",
+          "attempts": [
+            {
+              "advisory_status": "abstain",
+              "attempt": 1,
+              "format_preservation_receipt": null,
+              "parsed_response": {
+                "checks": {
+                  "object_presence": "pass",
+                  "overall_prompt_match": "abstain",
+                  "penetration_or_floating": "abstain"
+                },
+                "explanation": "The first three images show the robot performing actions consistent with placing a half-open cabinet on the table and a red can to the left of a plastic basket near the center. However, the fourth image shows a different perspective, possibly indicating a change in the robot's position or viewpoint.",
+                "overall": "review_required"
+              },
+              "prompt_sha256": "13e3bf81b983a4dd9fe02e79e9cab7390c24e88208fada64164711ed698ec843",
+              "prompt_version": "replay_visible_advisory_v2",
+              "raw_response": "{\n  \"checks\": {\n    \"object_presence\": \"pass\",\n    \"penetration_or_floating\": \"abstain\",\n    \"overall_prompt_match\": \"abstain\"\n  },\n  \"overall\": \"review_required\",\n  \"explanation\": \"The first three images show the robot performing actions consistent with placing a half-open cabinet on the table and a red can to the left of a plastic basket near the center. However, the fourth image shows a different perspective, possibly indicating a change in the robot's position or viewpoint.\"\n}",
+              "raw_response_sha256": "229b68f2b84ef3f765e6920bb846d65f1d58e62152f2e74a497b41efdaf42776",
+              "repair_of_sha256": null,
+              "resource_receipt": {
+                "compile_attempts": 0,
+                "contact_window_steps": 0,
+                "fresh_physical_replays": 0,
+                "gpu_time_ms": 3002,
+                "input_tokens": 1391,
+                "network_calls": 0,
+                "output_tokens": 112,
+                "peak_vram_mib": 7388,
+                "prompt_rewrites": 0,
+                "remote_paid_calls": 0,
+                "runtime_steps": 0,
+                "visible_vlm_invocations": 1
+              }
+            }
+          ],
+          "claims_physical_pass": false,
+          "images": [
+            {
+              "bytes": 127010,
+              "media_type": "image/png",
+              "name": "observer_start",
+              "path": "local://workspace/bingsheng/system2-agentic-repair-study-20260907/end-to-end/final/original_scene_model_repair/seed-211/replay-84d2179eef14/observer_start.png",
+              "schema_version": null,
+              "sha256": "afdb9820fdbb82481107e9a5ae980da383c43f6eebd8f95b62a2476b9c8c8040",
+              "uri": "local://workspace/bingsheng/system2-agentic-repair-study-20260907/end-to-end/final/original_scene_model_repair/seed-211/replay-84d2179eef14/observer_start.png"
+            },
+            {
+              "bytes": 126885,
+              "media_type": "image/png",
+              "name": "observer_mid",
+              "path": "local://workspace/bingsheng/system2-agentic-repair-study-20260907/end-to-end/final/original_scene_model_repair/seed-211/replay-84d2179eef14/observer_mid.png",
+              "schema_version": null,
+              "sha256": "0fdd900a162e325dd6df6118a35babde362bc4a1496b3661f6df3529a6e8f298",
+              "uri": "local://workspace/bingsheng/system2-agentic-repair-study-20260907/end-to-end/final/original_scene_model_repair/seed-211/replay-84d2179eef14/observer_mid.png"
+            },
+            {
+              "bytes": 126973,
+              "media_type": "image/png",
+              "name": "observer_end",
+              "path": "local://workspace/bingsheng/system2-agentic-repair-study-20260907/end-to-end/final/original_scene_model_repair/seed-211/replay-84d2179eef14/observer_end.png",
+              "schema_version": null,
+              "sha256": "57b223f3d824811cc993be33b3838120f981f98e693366a4816862214a9dc63b",
+              "uri": "local://workspace/bingsheng/system2-agentic-repair-study-20260907/end-to-end/final/original_scene_model_repair/seed-211/replay-84d2179eef14/observer_end.png"
+            },
+            {
+              "bytes": 164916,
+              "media_type": "image/png",
+              "name": "preview_head",
+              "path": "local://workspace/bingsheng/system2-agentic-repair-study-20260907/end-to-end/final/original_scene_model_repair/seed-211/replay-84d2179eef14/preview_head.png",
+              "schema_version": null,
+              "sha256": "b970eec04492c7dbb9ee7a159d61dcccd2d788a7e8443d57be9c9f079787ae95",
+              "uri": "local://workspace/bingsheng/system2-agentic-repair-study-20260907/end-to-end/final/original_scene_model_repair/seed-211/replay-84d2179eef14/preview_head.png"
+            }
+          ],
+          "kind": "vlm_review",
+          "model_receipt": {
+            "max_new_tokens": 768,
+            "model_content_manifest_sha256": "dd904e42c13f7a47296e1aff8ce8a78090a86451d24b5ccd0d2807d29e6e4cad",
+            "model_id": "Qwen/Qwen2.5-VL-3B-Instruct",
+            "model_roster_sha256": "e8c79978ae33176974b48eb567f4b3e6986720bb477da7675f2f592c523dc690",
+            "revision": "66285546d2b821cf421d4f5eb2576359d3770cd3",
+            "role": "primary_local_vlm",
+            "snapshot_manifest_sha256": "b0f4cf794ec552f5e23de019107801e5adfec633d3b5c74564cdf6b65e9f1cad"
+          },
+          "provider_receipt": {
+            "implementation_sha256": "0c7c0199af264fefef41d14cb580ceea89f6d8ea5d4d8e382e542202982d44e5",
+            "kind": "local_qwen",
+            "production_eligible": false,
+            "provider_id": "vlm_fallback.local_qwen_visible",
+            "revision": "v1"
+          },
+          "replay_run_id": "7bc0c2ee-1ffa-59eb-b9ff-d884a6a7d04c",
+          "resource_receipt": {
+            "compile_attempts": 0,
+            "contact_window_steps": 0,
+            "fresh_physical_replays": 0,
+            "gpu_time_ms": 3002,
+            "input_tokens": 1391,
+            "network_calls": 0,
+            "output_tokens": 112,
+            "peak_vram_mib": 7388,
+            "prompt_rewrites": 0,
+            "remote_paid_calls": 0,
+            "runtime_steps": 0,
+            "visible_vlm_invocations": 1
+          },
+          "status": "abstain",
+          "task_context": "Requested scene: Place a half-open cabinet on the table, and place a red can to the left of a plastic basket near the center.\nThe first three images are time-ordered samples from the retained replay MP4; the fourth is the head-camera preview. If the visible prompt match fails, put concrete typed scene-data changes in explanation: object region, relation, articulation state, or minimum clearance only. Your result is advisory only."
+        }
+      ],
+      "case_result": "local://workspace/bingsheng/system2-agentic-repair-study-20260907/end-to-end/final/original_scene_model_repair/seed-211/case_result.json",
+      "compile_fallback_count": 2,
+      "compile_status": "pass",
+      "correction_fallback_count": 2,
+      "deterministic_validation_status": "pass",
+      "format_fallback_count": 0,
+      "manual_intervention_count": 0,
+      "path_id": "original_scene_model_repair",
+      "seed": 211,
+      "source_compile_case": "local://workspace/bingsheng/system2-agentic-repair-study-20260907/experiment-11/original_scene_model_repair/seed-211/case_result.json",
+      "terminal_reason": "replay_completed",
+      "vlm_advisory_status": "abstain",
+      "vlm_claims_physical_pass": false
+    },
+    {
+      "attempts": [
+        {
+          "kind": "compile_chain",
+          "status": "fail",
+          "terminal_reason": "repair_duplicate_candidate"
+        }
+      ],
+      "case_result": "local://workspace/bingsheng/system2-agentic-repair-study-20260907/end-to-end/final/corrected_prompt_repair/seed-101/case_result.json",
+      "compile_fallback_count": 1,
+      "compile_status": "fail",
+      "correction_fallback_count": 1,
+      "deterministic_validation_status": "fail",
+      "format_fallback_count": 0,
+      "manual_intervention_count": 0,
+      "path_id": "corrected_prompt_repair",
+      "seed": 101,
+      "source_compile_case": "local://workspace/bingsheng/system2-agentic-repair-study-20260907/experiment-11/corrected_prompt_repair/seed-101/case_result.json",
+      "terminal_reason": "compile_failed",
+      "vlm_advisory_status": "not_run",
+      "vlm_claims_physical_pass": false
+    },
+    {
+      "attempts": [
+        {
+          "kind": "compile_chain",
+          "status": "fail",
+          "terminal_reason": "repair_duplicate_candidate"
+        }
+      ],
+      "case_result": "local://workspace/bingsheng/system2-agentic-repair-study-20260907/end-to-end/final/corrected_prompt_repair/seed-211/case_result.json",
+      "compile_fallback_count": 1,
+      "compile_status": "fail",
+      "correction_fallback_count": 1,
+      "deterministic_validation_status": "fail",
+      "format_fallback_count": 0,
+      "manual_intervention_count": 0,
+      "path_id": "corrected_prompt_repair",
+      "seed": 211,
+      "source_compile_case": "local://workspace/bingsheng/system2-agentic-repair-study-20260907/experiment-11/corrected_prompt_repair/seed-211/case_result.json",
+      "terminal_reason": "compile_failed",
+      "vlm_advisory_status": "not_run",
+      "vlm_claims_physical_pass": false
+    }
+  ],
+  "compile_report": {
+    "path": "local://workspace/bingsheng/system2-agentic-repair-study-20260907/experiment-11/report.json",
+    "sha256": "b2ca66e46ace376bb931bebd1e1f31bfa934981ed414577062d14c85adc7947e"
+  },
+  "complete": true,
+  "schema_version": "system2.agentic_replay_vlm_report.v1",
+  "spec_path": "local://workspace/bingsheng/robot-harness-gen-env-autoresearch-replay-vlm/self_improving/studies/system2_prompt_repair/end_to_end_spec.json",
+  "spec_sha256": "1a829dfabb9e4fd6c6bd5d3f5c98da0bd7a2afb612e7cd6c2d20457fe7371631",
+  "study_id": "system2-agentic-cabinet-can-basket-e2e-20260907",
+  "summary": {
+    "case_count": 6,
+    "deterministic_validate_pass_count": 2,
+    "deterministic_validate_pass_rate": 0.3333333333333333,
+    "mean_correction_fallback_count": 1.3333333333333333,
+    "primary_score": 31.999999999999996,
+    "total_correction_fallback_count": 8,
+    "total_format_fallback_count": 0
+  }
+}
