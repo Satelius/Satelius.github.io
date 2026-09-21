@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta name="robots" content="noindex, nofollow">
+  <script>
+    if (sessionStorage.getItem("satelius-project-progress-access") !== "granted") {
+      location.replace("../../?redirect=group-meeting-2026-09-21");
+    }
+  </script><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="referrer" content="no-referrer">
+<title>证据与范围 · JEV 研究组会</title>
+<style>
+:root{color-scheme:light;font-family:system-ui,-apple-system,"Noto Sans CJK SC","Microsoft YaHei",sans-serif;color:#18372f;background:#f4f2eb}
+*{box-sizing:border-box}body{max-width:980px;margin:0 auto;padding:40px 28px 80px;font-size:17px;line-height:1.75}a{color:#236653;text-underline-offset:4px}h1{font-size:36px;line-height:1.3}h2{font-size:23px;margin:0 0 12px}section{padding:26px 0;border-top:1px solid #cdd5ce;scroll-margin-top:24px}p{margin:9px 0}.eyebrow{font-size:12px;letter-spacing:.14em}.tag{display:inline-block;font-size:12px;padding:2px 9px;background:#e0e8df;border-radius:3px;margin-bottom:10px}code{font-size:13px;overflow-wrap:anywhere}.source{color:#5c6b63;font-size:14px}nav{display:flex;gap:24px;flex-wrap:wrap}.boundary{border-left:3px solid #b96b38;padding-left:16px}li{margin:6px 0}@media print{body{padding:0;font-size:11pt}section{break-inside:avoid}nav{display:none}}
+</style></head><body>
+<nav><a href="index.html">← 返回展示</a><a href="evidence.json">查看匿名数据与来源哈希</a></nav>
+<p class="eyebrow">RESEARCH SNAPSHOT / 2026.09.21</p>
+<h1>数字来自哪里，能说明什么？</h1>
+<p>本页是组会展示的证据摘要。研究内容快照固定在提交 <code>004c003</code>，包含已准备的审核资格材料；实际资格考核结果仍待提交。所有链接之外的展示资源均在本文件夹内，离线可用。</p>
+<p class="boundary">当前完成的是定位、工程诊断和小规模人工参考集。正式接口质量门槛与机器人闭环收益尚未验证。</p>
+<section id="position"><span class="tag">文献与代码审阅</span><h2>问题已从“组合模块”收窄到“增量信息”</h2>
+<p>审阅范围为 14 项计划来源与 5 项补充来源，共 19 项；其中包含代码仓库，不能称为 19 篇论文。快慢分支、自适应计算、缓存与动作分块已有先例。</p>
+<p>本项目待检验的是：固定策略与预算后，任务候选分布是否比当前视觉、缓存年龄、运动信息和缓存特征提供更多有用信息。</p>
+<p>开头新增的研究背景据此分为三步：频繁重算与陈旧理解之间的矛盾；已有复用、异步执行和计算调度方法；从社区直接评分接口启发，收敛到候选信息增量价值。第三步是项目研究计划的形成过程，不代表已有有效性结论。</p>
+<ul><li>Acting While Understanding：低频语义与高频动作，已审阅版本使用固定语义刷新日程。</li><li>SmolVLA 与 RTC：分别提供异步执行栈、延迟下动作块的接续机制。</li><li>Gated VLA-Cache 与 ElegantVLA：分别利用动作置信度、学习型调度选择重算；机制和输入并不相同。</li></ul>
+<p class="source">项目依据：<code>docs/p0/literature_evidence.md</code>。审阅了相关机制，没有本地复现这些论文的性能数字。</p>
+</section>
+<section id="implementation"><span class="tag">本地工程验证</span><h2>接口与可复现构造已跑通</h2>
+<p>本地接口骨干为 SmolVLM2-500M，BF16，RTX 5090；自由生成、约束生成、独立评分、共享前缀评分四条路径已有实现和诊断。</p>
+<p>task 0 的三初始状态、四种构造分支、两次重复中，345 个数组的最大差为 0。这里证明的是固定条件下的状态构造复现，不是已训练出机器人策略，也不是正式视觉标签。</p>
+<p class="source">依据：<code>configs/p0/runtime-lock.json</code>、<code>configs/p0/task0-progress-corpus-lock-20260919.json</code>。</p>
+</section>
+<section id="profiling"><span class="tag">小规模成本诊断</span><h2>先消除重复图像处理</h2>
+<p>图像处理调用由 6 次减到 1 次；最快结构化路径“约束生成”的端到端 p50 从 1.418 秒降到 0.457 秒，描述性下降 67.8%。输入张量、候选 token 与四条接口输出在固定 GPU 冒烟中保持一致。</p>
+<p>范围：同一锁定输入，每种方法 3 次请求，前后为两次独立运行。没有正式配对统计，也没有视觉判断正确率结论；更不能归因成共享评分的收益。</p>
+<p>优化后，同步方法 CUDA 时间与端到端 p50 的比值约 13.1%，仍低于预设 50% 门槛。这个比值不是 GPU 利用率。预处理／主机开销仍主导该诊断，当前优化仅保留为可选路径。</p>
+<p class="source">依据：<code>configs/p0/task0-component-profile-lock-20260920-a.json</code>、<code>configs/p0/task0-component-profile-roundtrip-lock-20260920-a.json</code>、<code>docs/evidence/task0-component-profile-roundtrip-2026-09-20.md</code>。</p>
+</section>
+<section id="design"><span class="tag">设计复盘</span><h2>保留场景信息，检验局部证据</h2>
+<p>早期全图 4×4 退化几乎破坏全部可辨认信息，这条测试路线已撤回。经用户明确批准，展示包仅复制一张图片用于历史设计复盘，并标注“已撤回”；它不恢复为审核或资格材料。</p>
+<p>页面上的清晰、局部遮挡和同面积对照均是已经退役的开发示例，来源图片按原始字节复制。相机视场从 45° 改为 60°，让目标进入画面；固定覆盖仅占 6.25%，其余像素不变。这是合成传感器遮挡，不是自然机器人遮挡。</p>
+<p>这些示意图不对应下一页人工统计中的同一批题。正式参考图、考核素材、逐题答案和人员信息没有进入展示包。</p>
+<p>另外，历史图像的保存状态重放曾不一致，原因尚未关闭；后续使用独立定义的新同会话渲染比较，不声称历史像素等价。</p>
+<p class="source">依据：<code>docs/evidence/task0-review-redesign-2026-09-21.md</code>、<code>docs/evidence/task0-mixed-reference-round3-2026-09-21.md</code>。</p>
+</section>
+<section id="human"><span class="tag">独立人工参考结果</span><h2>一致判断包含“可以回答”和“证据不足”</h2>
+<p>两名审核者对 12 个不同场景独立判断；候选答案和两个子问题的判断向量均 12/12 一致，无需裁决。A/B/C/D/E 数量为 3/2/3/2/2；E 表示从当前输入无法判断，不是任务失败。</p>
+<ul><li>清晰图：无法判断 0/4。</li><li>局部遮挡：无法判断 2/4。</li><li>同面积无关区域对照：无法判断 0/4。</li></ul>
+<p>十项明确判断通过事后只允许停止的来源一致性检查，两项 E 保留，没有改写人工标签。</p>
+<p class="boundary">每种条件只有 4 项，且使用不同场景。只能描述这批参考集，不能做遮挡的配对因果推断、总体可靠性结论或机器人收益结论。12/12 是人工一致率，不是模型准确率。</p>
+<p class="source">依据：<code>configs/p0/task0-round3-reference-key-lock-20260921-a.json</code>、<code>docs/evidence/task0-round3-human-reference-2026-09-21.md</code>。展示只复制匿名聚合字段。</p>
+</section>
+<section id="api"><span class="tag">文档核查，尚未实测</span><h2>三条来源不能混写</h2>
+<p><strong>社区 jev-visual：</strong>提供共享上下文候选评分的实现启发。</p>
+<p><strong>本地 SmolVLM2：</strong>本项目已执行的接口与耗时诊断。</p>
+<p><strong>官方 Jev：</strong>截至本次文档快照，jev-1.13.0 为文本决策 API；已归档核查 109 页文档并制定接入方案，尚未执行认证请求或真实推理。不能写成“已接入官方视觉 Jev”。</p>
+<p class="source">依据：<code>docs/p0/typesafe_jev_api_notes.md</code>。原始来源：<a href="https://github.com/hr98w/jev-visual" target="_blank" rel="noopener noreferrer">社区仓库</a>、<a href="https://docs.typesafe.ai/models" target="_blank" rel="noopener noreferrer">官方模型文档</a>、<a href="https://docs.typesafe.ai/api" target="_blank" rel="noopener noreferrer">官方 API 文档</a>。外部链接需要联网。</p>
+</section>
+<section id="next"><span class="tag">下一阶段</span><h2>先补正式数据，再检验等预算收益</h2>
+<p>资格流程已预注册，练习与考核材料已准备，实际资格成绩与正式标注仍待完成。随后进行同骨干接口的质量与完整成本比较；只有 P0 门槛通过，才进入固定动作策略的等预算刷新实验。</p>
+<p>主比较必须覆盖周期刷新、视觉变化、无候选学习型刷新，以及加入候选分布的刷新；还需缓存特征强对照。后两者的机器人结果目前不存在。</p>
+<p class="source">依据：<code>docs/p0/task0-primary-qualification-v1.md</code> 及研究计划 P0–P3。展示未包括具体考核题、答案或名单。</p>
+</section>
+</body></html>

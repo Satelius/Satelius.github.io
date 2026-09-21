@@ -1,0 +1,58 @@
+{
+  "id": "run-02",
+  "title": "早期 Luna 单步检查",
+  "group": "早期对照",
+  "note": "早期相机与控制流程下的记录，仅作历史过程展示。",
+  "video": "assets/run-02/replay.mp4",
+  "poster": "assets/run-02/poster.jpg",
+  "source": "rollouts/openrouter_baseline_luna_none/RL-RubiksCubeTask/0920/task_0/08-16-42/rollout_failure.mp4",
+  "sha256": "eea1af0439f1865b94a62d17e21a3c6e446ec881bd3d8c27915f0eeb20e75c93",
+  "summary_sha256": "a3415c1d82ac0a852fbdf31528fc183a97cd19f3fa679479be815b2ac11909ba",
+  "steps": 1,
+  "native_success": false,
+  "end_reason": "max_steps_exceeded",
+  "wall_s": null,
+  "actor_p95_s": null,
+  "duration_s": 0.5,
+  "fps": "4/1",
+  "codec": "h264",
+  "task": "RubiksCubeTask",
+  "seed": 0,
+  "stage_progress": null,
+  "action_counts": null,
+  "limits": null,
+  "bytes": 126784,
+  "trace": {
+    "entries": [
+      {
+        "request": null,
+        "step": {
+          "line": 1,
+          "i": 0,
+          "stage": "-",
+          "act": "MV_LEFT",
+          "eef": [
+            0.306,
+            -0.02,
+            0.437
+          ],
+          "w": 0.08,
+          "grip": "OPEN",
+          "vlm_ms": 2527
+        }
+      }
+    ],
+    "task": "Put the cube in the bowl",
+    "step_rows": 1,
+    "request_rows": 0,
+    "visual_protocol": false,
+    "artifacts": {
+      "steps.jsonl": {
+        "sha256": "a6409120da7b8fdfca76fc2fe26fddb20075504f136bf93a8e277e1eb42ad2bf"
+      }
+    },
+    "stage_events": [],
+    "limits": null,
+    "boundary": "Selected recorded fields. Full serialized requests/responses, planner plan text and internal reasoning were not archived here."
+  }
+}

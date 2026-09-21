@@ -1,0 +1,158 @@
+{
+  "as_of": "2026-09-21",
+  "research_snapshot_commit": "004c0031e05a41af54eff8b6cd51ccaa51b98a71",
+  "stage": "P0_not_complete",
+  "presentation": {
+    "slides": 12,
+    "background_slides": 3,
+    "minutes_approx": 10
+  },
+  "related_sources_audited": 19,
+  "local_model": "SmolVLM2-500M / BF16 / RTX 5090",
+  "profiling": {
+    "scope": "single_input_three_repeats_per_method_separate_runs",
+    "fastest_structured_method": "constrained_generation",
+    "legacy_e2e_p50_us": 1418240.206,
+    "optimized_e2e_p50_us": 456614.21,
+    "processor_calls": [
+      6,
+      1
+    ],
+    "descriptive_reduction_fraction": 0.678041696978939,
+    "method_cuda_to_e2e_p50_ratio": 0.13074683524308514,
+    "shared_scoring_superiority_established": false
+  },
+  "human_reference": {
+    "items": 12,
+    "reviewers": 2,
+    "candidate_agreement": 12,
+    "clause_vector_agreement": 12,
+    "candidate_counts": {
+      "progress_none": 3,
+      "progress_goal_1_only": 2,
+      "progress_goal_2_only": 3,
+      "progress_both": 2,
+      "indeterminate": 2
+    },
+    "condition_summary": {
+      "clear": {
+        "n": 4,
+        "indeterminate": 0,
+        "candidate_agreement": 4,
+        "clause_agreement": 4
+      },
+      "local": {
+        "n": 4,
+        "indeterminate": 2,
+        "candidate_agreement": 4,
+        "clause_agreement": 4
+      },
+      "control": {
+        "n": 4,
+        "indeterminate": 0,
+        "candidate_agreement": 4,
+        "clause_agreement": 4
+      }
+    },
+    "qualification_pass_created": false,
+    "primary_gold_created": false,
+    "scope": "descriptive_reference_set_only_different_bases_per_condition"
+  },
+  "official_jev": {
+    "status": "documentation_only_no_authenticated_inference",
+    "input": "text"
+  },
+  "primary_qualification": "protocol_and_materials_ready_actual_assessments_pending",
+  "robot_closed_loop_results": false,
+  "assets": {
+    "scene-clear.png": {
+      "sha256": "1b0c2b2662d5e7c07a67bf03dc78a7b6de2a70cf145c7165ab0dc004bcff743a",
+      "bytes": 62534,
+      "kind": "retired_development_example_not_reference_question"
+    },
+    "scene-local.png": {
+      "sha256": "1acc75c2d8de6996412d80760bb274906c3dee7088b7b41cfb45f5636191c027",
+      "bytes": 58369,
+      "kind": "retired_development_example_not_reference_question"
+    },
+    "scene-control.png": {
+      "sha256": "7a2580add5a0b30779b475019a6c97aa7b4e1c9fe04502120075e4f4d74b2852",
+      "bytes": 59978,
+      "kind": "retired_development_example_not_reference_question"
+    },
+    "withdrawn-4x4.png": {
+      "sha256": "9e94914c683a985ef61ab6e91d05af19e2428a5e2c77f2c304e599c547a7fccd",
+      "bytes": 660,
+      "kind": "withdrawn_design_illustration_explicit_user_approval_not_for_review"
+    }
+  },
+  "evidence_sources": {
+    "position": [
+      {
+        "project_relative_path": "docs/p0/literature_evidence.md",
+        "snapshot_sha256": "132135198f09f3c2d4c6bc4b16090775f49af181b088f6298b2ff26c49b008a5"
+      }
+    ],
+    "implementation": [
+      {
+        "project_relative_path": "configs/p0/runtime-lock.json",
+        "snapshot_sha256": "417ed14f58ffaae9642f89d2cac629e5b8c9301712a24cda636ba748078f4299"
+      },
+      {
+        "project_relative_path": "configs/p0/task0-progress-corpus-lock-20260919.json",
+        "snapshot_sha256": "7adf4b232696de83790790fcbccabd3589c3b45867700cf645b07ca745f12b7a"
+      }
+    ],
+    "profiling": [
+      {
+        "project_relative_path": "configs/p0/task0-component-profile-lock-20260920-a.json",
+        "snapshot_sha256": "a7b07996752b7e82f869a3ef7d8c4d82b87c1b8a879e4068a1a3be87f308f323"
+      },
+      {
+        "project_relative_path": "configs/p0/task0-component-profile-roundtrip-lock-20260920-a.json",
+        "snapshot_sha256": "6064ccef6870cde46a1781a2f50bcb3d169eac14dc72afcd02deeb7ae695f63b"
+      },
+      {
+        "project_relative_path": "docs/evidence/task0-component-profile-roundtrip-2026-09-20.md",
+        "snapshot_sha256": "f2396972ec6a618f20cafba0c49bee7dc8dd222ac56f06f92deab59d942236cb"
+      }
+    ],
+    "design": [
+      {
+        "project_relative_path": "docs/evidence/task0-review-redesign-2026-09-21.md",
+        "snapshot_sha256": "4b4c932fe567d2850b7612c448af5af4f21569c919be1389b6cdb94b75320a96"
+      },
+      {
+        "project_relative_path": "docs/evidence/task0-mixed-reference-round3-2026-09-21.md",
+        "snapshot_sha256": "d0ef7f8941d04f2fe0fdf0e97bacd2aff44bece150d0bb8c3b5b08ee9a90cef2"
+      }
+    ],
+    "human": [
+      {
+        "project_relative_path": "configs/p0/task0-round3-reference-key-lock-20260921-a.json",
+        "snapshot_sha256": "6dd0371c27ce169e829c98398fac4de0e1d25605ff282ea036f52e904de10686"
+      },
+      {
+        "project_relative_path": "docs/evidence/task0-round3-human-reference-2026-09-21.md",
+        "snapshot_sha256": "9be57617b951a0b48b81ffb0be654c5602d43001eca42db2970d2fbe1c0fdd0e"
+      }
+    ],
+    "api": [
+      {
+        "project_relative_path": "docs/p0/typesafe_jev_api_notes.md",
+        "snapshot_sha256": "f82451cc5b8f37a9e054b2d0bd28a6c118b63a3fad7da65056b72468a5faa8ad"
+      }
+    ],
+    "next": [
+      {
+        "project_relative_path": "docs/p0/task0-primary-qualification-v1.md",
+        "snapshot_sha256": "ad23cdf08aea6d20226dacc4e97e82e847e216e45a6d78e1870c049afd64dda4"
+      },
+      {
+        "project_relative_path": "docs/evidence/task0-primary-qualification-2026-09-21.md",
+        "snapshot_sha256": "0acfec484eff198635ce0875d1a8c9ca14936735b76a10d30d0939d1e7544ddb"
+      }
+    ]
+  },
+  "sharing_boundary": "Retired development images, anonymous aggregates, and one expressly authorized withdrawn-design illustration; no active reference/assessment items, keys, reviewer responses, roster, credentials, or private machine paths."
+}

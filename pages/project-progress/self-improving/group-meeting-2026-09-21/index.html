@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta name="robots" content="noindex, nofollow">
+  <script>
+    if (sessionStorage.getItem("satelius-project-progress-access") !== "granted") {
+      location.replace("../../?redirect=group-meeting-2026-09-21");
+    }
+  </script>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>机器人，什么时候需要重新看懂场景？｜研究组会</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip" href="#slide-1">进入展示内容</a>
+  <main class="deck" aria-label="研究进展，12 页">
+    <section class="slide cover" id="slide-1" aria-labelledby="title-1">
+      <div class="eyebrow">研究进展 · 2026.09.21 <span class="tag">P0 可行性与数据准备</span></div>
+      <div class="cover-grid"><div><p class="kicker">Task-Candidate Scoring for Budgeted Semantic Refresh</p><h1 id="title-1">机器人，什么时候<br>需要重新看懂场景？</h1><p class="subtitle">有限计算预算下的任务候选评分</p><p class="lead">不是每一帧，都值得重新运行昂贵的语义模型。</p></div><figure class="hero"><img src="assets/scene-clear.png" alt="开发场景：桌上的杯子与盘子，展示当前机器人视觉输入"><figcaption>开发场景示意 · 任务关系判断</figcaption></figure></div>
+      <div class="takeaway">目前完成了接口、成本诊断与人工参考集；机器人闭环收益尚未验证。</div>
+      <footer><span>组会简报 · 约 10 分钟</span><a href="sources.html#position">研究定位与证据边界 ↗</a></footer>
+    </section>
+    <section class="slide" id="slide-2" aria-labelledby="title-2">
+      <div class="eyebrow">01 / 研究背景 · 现存问题 <span class="tag">为什么要研究</span></div>
+      <h2 id="title-2">动作要及时，“看懂任务”却有计算成本</h2>
+      <p class="intro">以“把杯子放到盘子上”为例：机器人既要跟上当前画面，也要知道任务进行到哪一步。</p>
+      <div class="three-col">
+        <article class="card"><span class="step">算得太勤</span><h3>重复理解相似画面</h3><p>物体和任务都没变时，反复运行语义模型可能浪费算力。</p></article>
+        <article class="card"><span class="step">算得太少</span><h3>缓存理解可能过时</h3><p>杯子移动或任务阶段改变后，旧判断可能不再适用。</p></article>
+        <article class="card"><span class="step">信号不够准</span><h3>画面变化未必重要</h3><p>背景或光照变了，不一定需要重新判断任务关系。</p></article>
+      </div>
+      <div class="takeaway">难点：在有限预算下，判断哪一次重新理解更值得。</div>
+      <footer><span>问题动机与可能的失效场景；尚非本项目闭环实验结论</span><a href="sources.html#position">背景与来源 ↗</a></footer>
+    </section>
+    <section class="slide" id="slide-3" aria-labelledby="title-3">
+      <div class="eyebrow">02 / 研究背景 · 已有方法 <span class="tag">相关工作</span></div>
+      <h2 id="title-3">已有方法，分别从三个方向减少计算负担</h2>
+      <div class="three-col">
+        <article class="card"><span class="step">复用已有理解</span><h3>快慢分支与语义缓存</h3><p>慢模型低频更新理解，快策略使用缓存生成动作。</p><p class="fine">Acting While Understanding：当前采用固定语义刷新日程。</p></article>
+        <article class="card"><span class="step">减少执行等待</span><h3>动作分块与异步推理</h3><p>执行已有动作时，准备下一段动作，减少停顿。</p><p class="fine">SmolVLA：异步执行栈。RTC：处理延迟下的动作接续。</p></article>
+        <article class="card"><span class="step">选择计算时机</span><h3>置信度或学习型调度</h3><p>根据动作置信度、表征稳定性、运动等信号决定重算。</p><p class="fine">Gated VLA-Cache、ElegantVLA 等已有直接先例。</p></article>
+      </div>
+      <div class="takeaway">因此，“快慢架构”或“学会何时重算”本身都不是我们的新贡献。</div>
+      <footer><span>这里只概括已审阅机制；各方法输入和实现不同，论文性能未在本项目复现</span><a href="sources.html#position">方法与创新边界 ↗</a></footer>
+    </section>
+    <section class="slide" id="slide-4" aria-labelledby="title-4">
+      <div class="eyebrow">03 / 研究背景 · 想法的来源 <span class="tag">形成待验证假设</span></div>
+      <h2 id="title-4">从“给候选打分”，想到“帮助分配计算”</h2>
+      <div class="three-col">
+        <article class="card"><span class="step">起点：接口启发</span><h3>直接比较任务候选</h3><p>社区 jev-visual 展示了共享上下文的候选评分：比较预定义答案，而非先生成一段自由文本。</p></article>
+        <article class="card"><span class="step">修正：文献查重</span><h3>组合模块还不够</h3><p>调研发现快慢分支、缓存和调度已有先例，于是把贡献收窄到“候选信息的额外价值”。</p></article>
+        <article class="card accent"><span class="step">假设：用于刷新</span><h3>任务分数能否帮忙？</h3><p>把缓存候选分布与当前轻量视觉、缓存年龄结合，预测旧判断是否已不适用。</p></article>
+      </div>
+      <p class="annotation">候选分数只来自上次语义计算；不能先运行完整模型，再决定要不要刷新。</p>
+      <div class="takeaway">待证明：加入候选信息后，同样的预算是否换来更好的任务表现？</div>
+      <footer><span>这是研究思路的收敛过程；缓存错误风险与实际刷新收益仍需分别检验</span><a href="sources.html#position">设计依据 ↗</a></footer>
+    </section>
+    <section class="slide" id="slide-5" aria-labelledby="title-5">
+      <div class="eyebrow">04 / 研究问题 <span class="tag">待验证</span></div>
+      <h2 id="title-5">把有限的“理解”，用在有收益的时刻</h2>
+      <p class="intro">快分支持续看当前画面；慢分支隔一段时间更新任务语义。</p>
+      <div class="system" aria-label="拟议系统：当前画面与缓存语义共同驱动动作；候选分布只用于决定何时刷新">
+        <div class="system-box"><span class="small-label">每次动作更新</span><h3>当前画面 + 机器人状态</h3><p>轻量视觉反馈</p></div><div class="system-arrow">→</div><div class="system-box dark"><span class="small-label">固定动作策略</span><h3>生成动作</h3><p>使用当前视觉与缓存语义</p></div>
+        <div class="system-box"><span class="small-label">按需运行</span><h3>慢语义模型</h3><p>更新缓存语义与候选分布</p></div><div class="system-arrow">→</div><div class="system-box"><span class="small-label">研究重点</span><h3>刷新决策</h3><p>候选分布 + 视觉变化 + 缓存年龄</p></div>
+      </div>
+      <p class="annotation">候选分布只进入刷新器；主实验固定动作策略。刷新器发出请求后，慢分支才更新。</p>
+      <div class="takeaway">核心问题：候选评分，是否提供了其他信号没有的信息？</div>
+      <footer><span>“看不清”不一定意味着“立刻重算有用”</span><a href="sources.html#position">方案与假设 ↗</a></footer>
+    </section>
+    <section class="slide" id="slide-6" aria-labelledby="title-6">
+      <div class="eyebrow">05 / 创新边界 <span class="tag">来源审阅</span></div>
+      <h2 id="title-6">架构已有先例，贡献需要靠对照证明</h2>
+      <p class="intro">已审阅 19 项相关来源：计划内 14 项，补充 5 项，含论文与仓库。</p>
+      <div class="two-col"><article class="card"><span class="small-label">已有研究覆盖</span><h3>快慢分支、缓存、异步执行</h3><p>动作分块与 flow、低频语义更新、动态调度，都不能单独作为本项目创新。</p><p class="fine">代表性线索：SmolVLA、RTC，以及相关缓存与调度工作。</p></article><article class="card accent"><span class="small-label">本项目要检验</span><h3>候选评分的额外信息</h3><p>在同一动作策略、同一执行器与相近总计算成本下，比较刷新决策。</p><p class="fine">强对照包括：视觉变化、缓存年龄、运动信息，以及缓存特征。</p></article></div>
+      <div class="takeaway">如果等预算后没有收益，就缩小或停止“候选评分有效”的主张。</div>
+      <footer><span>来源审阅 ≠ 已证明新颖性；P0 尚未通过</span><a href="sources.html#position">文献与定位记录 ↗</a></footer>
+    </section>
+    <section class="slide" id="slide-7" aria-labelledby="title-7">
+      <div class="eyebrow">06 / 已完成基础 <span class="tag">本地验证</span></div>
+      <h2 id="title-7">从设想到可运行、可追溯的实验</h2>
+      <div class="three-col"><article class="card"><span class="step">01</span><h3>轻量模型跑通</h3><p>SmolVLM2-500M<br>BF16 · RTX 5090</p><p class="fine">完成本地推理验证。</p></article><article class="card"><span class="step">02</span><h3>四种接口实现</h3><p>普通生成、约束生成<br>独立评分、共享评分</p><p class="fine">后续进行同骨干质量与成本比较。</p></article><article class="card"><span class="step">03</span><h3>场景构造可复现</h3><p>task-0：3 个 seed<br>每个重复运行 2 次</p><p class="fine">345 个数组逐一比较，差异为 0；仅说明构造复现。</p></article></div>
+      <div class="note"><strong>三个来源，分开理解</strong><p>官方 Jev：已核查文本 API 文档，尚未完成认证推理。社区 jev-visual：提供接口启发。本地实验：使用 SmolVLM2。</p></div>
+      <footer><span>来源核查日期：2026.09.21</span><span><a href="sources.html#implementation">实现证据 ↗</a> · <a href="sources.html#api">API 边界 ↗</a></span></footer>
+    </section>
+    <section class="slide" id="slide-8" aria-labelledby="title-8">
+      <div class="eyebrow">07 / 成本诊断 <span class="tag">小样本本地诊断</span></div>
+      <h2 id="title-8">先测瓶颈：重复预处理很贵</h2>
+      <div class="metric-layout"><div><p class="small-label">最快结构化路径：约束生成，端到端 p50</p><div class="big-metric">1.418<span>s</span><span class="metric-arrow">→</span>0.457<span>s</span></div><div class="bar-chart" aria-label="端到端中位延迟从 1.418 秒降至 0.457 秒"><div class="bar-row"><span>优化前</span><div class="bar before"></div><b>1.418 s</b></div><div class="bar-row"><span>优化后</span><div class="bar after"></div><b>0.457 s</b></div></div></div><aside class="stat-card"><span class="small-label">描述性下降</span><strong>67.8<span>%</span></strong><p>预处理器调用<br><b>6 次 → 1 次</b></p></aside></div>
+      <p class="annotation">优化后，这次诊断仍主要耗在前处理与主机端；并非模型计算主导。</p>
+      <div class="takeaway">先减少重复工作，再讨论更复杂的评分机制。</div>
+      <footer><span>单输入，每方法 3 次；前后分别两次运行，非正式配对基准；未证明共享评分胜出</span><a href="sources.html#profiling">计时协议与原始记录 ↗</a></footer>
+    </section>
+    <section class="slide" id="slide-9" aria-labelledby="title-9">
+      <div class="eyebrow">08 / 测试设计的修正 <span class="tag">开发示例</span></div>
+      <h2 id="title-9">好测试：保留场景，只改变关键证据</h2>
+      <div class="image-grid"><figure><img src="assets/scene-clear.png" alt="清晰开发场景，可见杯子与盘子"><figcaption><strong>清晰输入</strong><span>保留正常判断基线</span></figcaption></figure><figure><img src="assets/scene-local.png" alt="局部遮挡开发场景，杯子的下部关系证据被遮住"><figcaption><strong>局部遮挡</strong><span>影响判断所需的关键区域</span></figcaption></figure><figure><img src="assets/scene-control.png" alt="同面积对照开发场景，覆盖其他区域"><figcaption><strong>同面积对照</strong><span>改变画面，但保留关键证据</span></figcaption></figure></div>
+      <p class="intro compact">开发取景视场：45° → 60°；局部覆盖仅占画面 <strong>6.25%</strong>。</p>
+      <aside class="design-retro"><img src="assets/withdrawn-4x4.png" alt="已撤回的 4×4 全图像素化输入，仅用于设计复盘"><div><strong>已撤回 · 设计复盘</strong><p>曾把整图降到 4×4，场景信息被破坏。测试应先有任务意义。</p></div></aside>
+      <footer><span>合成覆盖，非自然机器人遮挡；以上为开发样图，不是下一页统计使用的审核题</span><a href="sources.html#design">设计修订与撤回记录 ↗</a></footer>
+    </section>
+    <section class="slide" id="slide-10" aria-labelledby="title-10">
+      <div class="eyebrow">09 / 人工参考结果 <span class="tag">独立人工判断</span></div>
+      <h2 id="title-10">判断一致，也没有“逢遮挡就拒答”</h2>
+      <div class="human-layout"><div class="agreement"><strong>12<span>/12</span></strong><p>两名审核者<br>候选答案与逐条判断均一致</p><span class="tag">无需分歧裁决</span></div><div class="condition-list"><div><span>清晰输入</span><strong>0 / 4</strong><small>无法判断</small></div><div class="highlight"><span>局部遮挡</span><strong>2 / 4</strong><small>无法判断</small></div><div><span>无关区域对照</span><strong>0 / 4</strong><small>无法判断</small></div></div></div>
+      <p class="annotation">五类参考答案均有覆盖：A / B / C / D / E = 3 / 2 / 3 / 2 / 2。E 表示输入不足以判断。</p>
+      <div class="takeaway">人工参考集已完成；这不是模型准确率，也不是机器人成功率。</div>
+      <footer><span>每条件仅 4 项，且为不同场景；仅描述该批结果，不能作因果或总体可靠性推断</span><a href="sources.html#human">参考结果与样本边界 ↗</a></footer>
+    </section>
+    <section class="slide" id="slide-11" aria-labelledby="title-11">
+      <div class="eyebrow">10 / 到目前为止的 insights</div>
+      <h2 id="title-11">三个区别，决定研究是否问对问题</h2>
+      <div class="insights"><article><span class="step">01</span><div><h3>画面变了，任务信息未必变了</h3><p>对照区域发生变化时，这批人工样本仍可判断。刷新器需要识别与任务有关的变化。</p><span class="tag">人工观察 + 待验证的调度假设</span></div></article><article><span class="step">02</span><div><h3>语义不确定，刷新未必有收益</h3><p>如果关键区域仍被挡住，再运行一次慢模型可能依旧无解。需要实测“刷新后是否改善动作”。</p><span class="tag">待闭环验证</span></div></article><article><span class="step">03</span><div><h3>工程检查通过，测试仍可能问错问题</h3><p>4×4 图片的生成与绑定都正确，但任务信息被毁掉。研究意义必须先于类别覆盖。</p><span class="tag">已发生的设计教训</span></div></article></div>
+      <footer><span>把观察、机制解释和实验结论分开</span><span><a href="sources.html#design">设计证据 ↗</a> · <a href="sources.html#human">人工证据 ↗</a></span></footer>
+    </section>
+    <section class="slide closing" id="slide-12" aria-labelledby="title-12">
+      <div class="eyebrow">11 / 下一步 <span class="tag">P0 尚未通过</span></div>
+      <h2 id="title-12">把准备工作，接到可否证的实验上</h2>
+      <ol class="roadmap"><li><span>首先</span><h3>审核资格与正式人工标签</h3><p>完成已预注册的审核资格考核，再进行正式标注。</p></li><li><span>随后</span><h3>同骨干接口质量与成本</h3><p>确认候选任务可解，并完成可信的接口比较。</p></li><li><span>P0 通过后</span><h3>固定策略、等预算刷新比较</h3><p>对照周期、视觉变化、学习型与候选评分门控。</p></li></ol>
+      <blockquote>真正要证明的是：<br>同样预算，把理解用在更有用的时刻。</blockquote>
+      <footer><span>尚未训练或验证机器人闭环；H1 / H2 / H3 均未得到证实</span><a href="sources.html">查看完整证据索引 ↗</a></footer>
+    </section>
+  </main>
+  <nav class="controls" aria-label="幻灯片控制" hidden><div class="control-group"><button id="previous" aria-label="上一页">←</button><span id="page-count" aria-live="polite">1 / 12</span><button id="next" aria-label="下一页">→</button></div><div class="progress-track" aria-hidden="true"><span id="progress"></span></div><div class="control-group"><button id="overview" aria-pressed="false">总览</button><button id="fullscreen">全屏</button><button id="print">打印</button><a href="sources.html">证据</a></div></nav>
+  <script src="app.js"></script>
+</body>
+</html>

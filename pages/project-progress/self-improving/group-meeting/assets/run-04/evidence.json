@@ -1,0 +1,6325 @@
+{
+  "id": "run-04",
+  "title": "相机校准后：仍在左右往返",
+  "group": "重点案例",
+  "note": "67 次决策，没有发出抓取指令。相机修好后，动作选择仍是问题。",
+  "video": "assets/run-04/replay.mp4",
+  "poster": "assets/run-04/poster.jpg",
+  "source": "rollouts/p8/p8-full/calibrated-luna-none/RubiksCubeTask/episode_000_seed_31001/rollout_failure.mp4",
+  "sha256": "d9e340f13e09f517cb66d69ff7da276d32cde76211c847d6534d7ecf78d29a84",
+  "summary_sha256": "4cd1e1c925111b6f5f41f46d3fd60d9a264d68f5ed06b5c24cefee853490832c",
+  "steps": 67,
+  "native_success": false,
+  "end_reason": "action_oscillation_replan_exhausted",
+  "wall_s": 242.5857,
+  "actor_p95_s": 3.6228,
+  "duration_s": 13.4,
+  "fps": "5/1",
+  "codec": "h264",
+  "task": "RubiksCubeTask",
+  "seed": 31001,
+  "stage_progress": null,
+  "action_counts": {
+    "MV_BACK": 5,
+    "MV_DOWN": 1,
+    "MV_FWD": 8,
+    "MV_LEFT": 29,
+    "MV_RIGHT": 24
+  },
+  "limits": null,
+  "bytes": 2521271,
+  "trace": {
+    "entries": [
+      {
+        "request": {
+          "line": 1,
+          "schema_version": 1,
+          "request_index": 0,
+          "role": "planner",
+          "phase": "initial",
+          "model": {
+            "provider": "openai",
+            "api_dialect": "openai",
+            "model": "gpt-5.6-luna",
+            "reasoning_effort": "none"
+          },
+          "duration_s": 6.0019,
+          "subgoal_count": 6,
+          "planner_route": "guided_json",
+          "provider_latency_s": 5.972,
+          "telemetry": {
+            "latency_s": 5.972,
+            "total_latency_s": 6.001,
+            "http_status": 200,
+            "attempt_count": 1,
+            "retry_wait_ms": 0,
+            "api_total_ms": 5972,
+            "ttft_ms": null,
+            "ttft_observed": false,
+            "error_class": null,
+            "attempt_error_counts": {},
+            "usage": {
+              "prompt_tokens": 550,
+              "completion_tokens": 544,
+              "total_tokens": 1094
+            }
+          }
+        },
+        "step": null
+      },
+      {
+        "request": {
+          "line": 2,
+          "schema_version": 1,
+          "request_index": 0,
+          "role": "actor",
+          "step": 0,
+          "model": {
+            "provider": "openai",
+            "api_dialect": "openai",
+            "model": "gpt-5.6-luna",
+            "reasoning_effort": "none"
+          },
+          "duration_s": 2.1595,
+          "provider_latency_s": 2.131,
+          "token": "MV_LEFT",
+          "telemetry": {
+            "latency_s": 2.131,
+            "http_status": 200,
+            "attempt_count": 1,
+            "retry_wait_ms": 0,
+            "api_total_ms": 2131,
+            "ttft_ms": null,
+            "ttft_observed": false,
+            "error_class": null,
+            "attempt_error_counts": {},
+            "usage": {
+              "prompt_tokens": 634,
+              "completion_tokens": 55,
+              "total_tokens": 689
+            }
+          },
+          "visual_assessment": {
+            "target_visible": true,
+            "wrist_target_visible": true,
+            "aligned": false,
+            "contact_risk": false,
+            "observation": "The cube is visible left of the wrist grasp axis, so move left to align over it."
+          }
+        },
+        "step": {
+          "line": 1,
+          "i": 0,
+          "event": "executed",
+          "act": "MV_LEFT",
+          "executed": true,
+          "action_source": "model",
+          "visual_assessment": {
+            "target_visible": true,
+            "wrist_target_visible": true,
+            "aligned": false,
+            "contact_risk": false,
+            "observation": "The cube is visible left of the wrist grasp axis, so move left to align over it."
+          },
+          "sg": 0,
+          "n_sg": 6,
+          "stage": "GRASP",
+          "stage_id": "grasp_cube",
+          "target": "orange-and-blue cube",
+          "tcp_before": [
+            0.306469,
+            -0.0,
+            0.436672
+          ],
+          "tcp_after": [
+            0.306454,
+            -0.020236,
+            0.436685
+          ],
+          "tcp_delta_m": 0.020236,
+          "gripper_width_m": 0.079999,
+          "gripper_command": "OPEN",
+          "native_success": false,
+          "env_done": false,
+          "native_subtask": {
+            "status": 0,
+            "completed": 0,
+            "total": 1,
+            "info": "",
+            "score": 0.0
+          },
+          "auto_release": false,
+          "replan_count": 0,
+          "timing": {
+            "actor_s": 2.1595,
+            "provider_s": 2.131,
+            "execute_s": 0.6251,
+            "loop_s": 2.8166,
+            "episode_s": 10.16
+          }
+        }
+      },
+      {
+        "request": {
+          "line": 3,
+          "schema_version": 1,
+          "request_index": 1,
+          "role": "actor",
+          "step": 1,
+          "model": {
+            "provider": "openai",
+            "api_dialect": "openai",
+            "model": "gpt-5.6-luna",
+            "reasoning_effort": "none"
+          },
+          "duration_s": 1.9676,
+          "provider_latency_s": 1.94,
+          "token": "MV_RIGHT",
+          "telemetry": {
+            "latency_s": 1.94,
+            "http_status": 200,
+            "attempt_count": 1,
+            "retry_wait_ms": 0,
+            "api_total_ms": 1940,
+            "ttft_ms": null,
+            "ttft_observed": false,
+            "error_class": null,
+            "attempt_error_counts": {},
+            "usage": {
+              "prompt_tokens": 635,
+              "completion_tokens": 58,
+              "total_tokens": 693
+            }
+          },
+          "visual_assessment": {
+            "target_visible": true,
+            "wrist_target_visible": true,
+            "aligned": false,
+            "contact_risk": false,
+            "observation": "The cube is visible left of the open gripper center in the wrist view; move right to center it."
+          }
+        },
+        "step": {
+          "line": 2,
+          "i": 1,
+          "event": "executed",
+          "act": "MV_RIGHT",
+          "executed": true,
+          "action_source": "model",
+          "visual_assessment": {
+            "target_visible": true,
+            "wrist_target_visible": true,
+            "aligned": false,
+            "contact_risk": false,
+            "observation": "The cube is visible left of the open gripper center in the wrist view; move right to center it."
+          },
+          "sg": 0,
+          "n_sg": 6,
+          "stage": "GRASP",
+          "stage_id": "grasp_cube",
+          "target": "orange-and-blue cube",
+          "tcp_before": [
+            0.306454,
+            -0.020236,
+            0.436685
+          ],
+          "tcp_after": [
+            0.306436,
+            -0.000237,
+            0.436681
+          ],
+          "tcp_delta_m": 0.019999,
+          "gripper_width_m": 0.079999,
+          "gripper_command": "OPEN",
+          "native_success": false,
+          "env_done": false,
+          "native_subtask": {
+            "status": 0,
+            "completed": 0,
+            "total": 1,
+            "info": "",
+            "score": 0.0
+          },
+          "auto_release": false,
+          "replan_count": 0,
+          "timing": {
+            "actor_s": 1.9676,
+            "provider_s": 1.94,
+            "execute_s": 0.6315,
+            "loop_s": 2.6356,
+            "episode_s": 12.9927
+          }
+        }
+      },
+      {
+        "request": {
+          "line": 4,
+          "schema_version": 1,
+          "request_index": 2,
+          "role": "actor",
+          "step": 2,
+          "model": {
+            "provider": "openai",
+            "api_dialect": "openai",
+            "model": "gpt-5.6-luna",
+            "reasoning_effort": "none"
+          },
+          "duration_s": 2.7192,
+          "provider_latency_s": 2.69,
+          "token": "MV_LEFT",
+          "telemetry": {
+            "latency_s": 2.69,
+            "http_status": 200,
+            "attempt_count": 1,
+            "retry_wait_ms": 0,
+            "api_total_ms": 2690,
+            "ttft_ms": null,
+            "ttft_observed": false,
+            "error_class": null,
+            "attempt_error_counts": {},
+            "usage": {
+              "prompt_tokens": 638,
+              "completion_tokens": 56,
+              "total_tokens": 694
+            }
+          },
+          "visual_assessment": {
+            "target_visible": true,
+            "wrist_target_visible": true,
+            "aligned": false,
+            "contact_risk": false,
+            "observation": "The cube is visible left of the wrist grasp axis, so move left to center it before descending."
+          }
+        },
+        "step": {
+          "line": 3,
+          "i": 2,
+          "event": "executed",
+          "act": "MV_LEFT",
+          "executed": true,
+          "action_source": "model",
+          "visual_assessment": {
+            "target_visible": true,
+            "wrist_target_visible": true,
+            "aligned": false,
+            "contact_risk": false,
+            "observation": "The cube is visible left of the wrist grasp axis, so move left to center it before descending."
+          },
+          "sg": 0,
+          "n_sg": 6,
+          "stage": "GRASP",
+          "stage_id": "grasp_cube",
+          "target": "orange-and-blue cube",
+          "tcp_before": [
+            0.306436,
+            -0.000237,
+            0.436681
+          ],
+          "tcp_after": [
+            0.306417,
+            -0.020238,
+            0.436696
+          ],
+          "tcp_delta_m": 0.02,
+          "gripper_width_m": 0.079999,
+          "gripper_command": "OPEN",
+          "native_success": false,
+          "env_done": false,
+          "native_subtask": {
+            "status": 0,
+            "completed": 0,
+            "total": 1,
+            "info": "",
+            "score": 0.0
+          },
+          "auto_release": false,
+          "replan_count": 0,
+          "timing": {
+            "actor_s": 2.7192,
+            "provider_s": 2.69,
+            "execute_s": 0.6268,
+            "loop_s": 3.3748,
+            "episode_s": 16.3682
+          }
+        }
+      },
+      {
+        "request": {
+          "line": 5,
+          "schema_version": 1,
+          "request_index": 3,
+          "role": "actor",
+          "step": 3,
+          "model": {
+            "provider": "openai",
+            "api_dialect": "openai",
+            "model": "gpt-5.6-luna",
+            "reasoning_effort": "none"
+          },
+          "duration_s": 3.1268,
+          "provider_latency_s": 3.099,
+          "token": "MV_FWD",
+          "telemetry": {
+            "latency_s": 3.099,
+            "http_status": 200,
+            "attempt_count": 1,
+            "retry_wait_ms": 0,
+            "api_total_ms": 3099,
+            "ttft_ms": null,
+            "ttft_observed": false,
+            "error_class": null,
+            "attempt_error_counts": {},
+            "usage": {
+              "prompt_tokens": 641,
+              "completion_tokens": 58,
+              "total_tokens": 699
+            }
+          },
+          "visual_assessment": {
+            "target_visible": true,
+            "wrist_target_visible": true,
+            "aligned": false,
+            "contact_risk": false,
+            "observation": "The cube is visible below the wrist-image center, so move the open gripper toward it before descending."
+          }
+        },
+        "step": {
+          "line": 4,
+          "i": 3,
+          "event": "executed",
+          "act": "MV_FWD",
+          "executed": true,
+          "action_source": "model",
+          "visual_assessment": {
+            "target_visible": true,
+            "wrist_target_visible": true,
+            "aligned": false,
+            "contact_risk": false,
+            "observation": "The cube is visible below the wrist-image center, so move the open gripper toward it before descending."
+          },
+          "sg": 0,
+          "n_sg": 6,
+          "stage": "GRASP",
+          "stage_id": "grasp_cube",
+          "target": "orange-and-blue cube",
+          "tcp_before": [
+            0.306417,
+            -0.020238,
+            0.436696
+          ],
+          "tcp_after": [
+            0.326737,
+            -0.02047,
+            0.436875
+          ],
+          "tcp_delta_m": 0.020322,
+          "gripper_width_m": 0.08,
+          "gripper_command": "OPEN",
+          "native_success": false,
+          "env_done": false,
+          "native_subtask": {
+            "status": 0,
+            "completed": 0,
+            "total": 1,
+            "info": "",
+            "score": 0.0
+          },
+          "auto_release": false,
+          "replan_count": 0,
+          "timing": {
+            "actor_s": 3.1268,
+            "provider_s": 3.099,
+            "execute_s": 0.6309,
+            "loop_s": 3.7883,
+            "episode_s": 20.1572
+          }
+        }
+      },
+      {
+        "request": {
+          "line": 6,
+          "schema_version": 1,
+          "request_index": 4,
+          "role": "actor",
+          "step": 4,
+          "model": {
+            "provider": "openai",
+            "api_dialect": "openai",
+            "model": "gpt-5.6-luna",
+            "reasoning_effort": "none"
+          },
+          "duration_s": 2.351,
+          "provider_latency_s": 2.323,
+          "token": "MV_RIGHT",
+          "telemetry": {
+            "latency_s": 2.323,
+            "http_status": 200,
+            "attempt_count": 1,
+            "retry_wait_ms": 0,
+            "api_total_ms": 2323,
+            "ttft_ms": null,
+            "ttft_observed": false,
+            "error_class": null,
+            "attempt_error_counts": {},
+            "usage": {
+              "prompt_tokens": 645,
+              "completion_tokens": 54,
+              "total_tokens": 699
+            }
+          },
+          "visual_assessment": {
+            "target_visible": true,
+            "wrist_target_visible": true,
+            "aligned": false,
+            "contact_risk": false,
+            "observation": "The cube is visible left of the wrist grasp axis, so move right to center it."
+          }
+        },
+        "step": {
+          "line": 5,
+          "i": 4,
+          "event": "executed",
+          "act": "MV_RIGHT",
+          "executed": true,
+          "action_source": "model",
+          "visual_assessment": {
+            "target_visible": true,
+            "wrist_target_visible": true,
+            "aligned": false,
+            "contact_risk": false,
+            "observation": "The cube is visible left of the wrist grasp axis, so move right to center it."
+          },
+          "sg": 0,
+          "n_sg": 6,
+          "stage": "GRASP",
+          "stage_id": "grasp_cube",
+          "target": "orange-and-blue cube",
+          "tcp_before": [
+            0.326737,
+            -0.02047,
+            0.436875
+          ],
+          "tcp_after": [
+            0.326832,
+            -0.000273,
+            0.43663
+          ],
+          "tcp_delta_m": 0.0202,
+          "gripper_width_m": 0.079999,
+          "gripper_command": "OPEN",
+          "native_success": false,
+          "env_done": false,
+          "native_subtask": {
+            "status": 0,
+            "completed": 0,
+            "total": 1,
+            "info": "",
+            "score": 0.0
+          },
+          "auto_release": false,
+          "replan_count": 0,
+          "timing": {
+            "actor_s": 2.351,
+            "provider_s": 2.323,
+            "execute_s": 0.6296,
+            "loop_s": 3.0099,
+            "episode_s": 23.1678
+          }
+        }
+      },
+      {
+        "request": {
+          "line": 7,
+          "schema_version": 1,
+          "request_index": 5,
+          "role": "actor",
+          "step": 5,
+          "model": {
+            "provider": "openai",
+            "api_dialect": "openai",
+            "model": "gpt-5.6-luna",
+            "reasoning_effort": "none"
+          },
+          "duration_s": 2.3269,
+          "provider_latency_s": 2.299,
+          "token": "MV_BACK",
+          "telemetry": {
+            "latency_s": 2.299,
+            "http_status": 200,
+            "attempt_count": 1,
+            "retry_wait_ms": 0,
+            "api_total_ms": 2299,
+            "ttft_ms": null,
+            "ttft_observed": false,
+            "error_class": null,
+            "attempt_error_counts": {},
+            "usage": {
+              "prompt_tokens": 648,
+              "completion_tokens": 55,
+              "total_tokens": 703
+            }
+          },
+          "visual_assessment": {
+            "target_visible": true,
+            "wrist_target_visible": true,
+            "aligned": false,
+            "contact_risk": false,
+            "observation": "The cube is visible above the wrist-image center, so move the open gripper toward it."
+          }
+        },
+        "step": {
+          "line": 6,
+          "i": 5,
+          "event": "executed",
+          "act": "MV_BACK",
+          "executed": true,
+          "action_source": "model",
+          "visual_assessment": {
+            "target_visible": true,
+            "wrist_target_visible": true,
+            "aligned": false,
+            "contact_risk": false,
+            "observation": "The cube is visible above the wrist-image center, so move the open gripper toward it."
+          },
+          "sg": 0,
+          "n_sg": 6,
+          "stage": "GRASP",
+          "stage_id": "grasp_cube",
+          "target": "orange-and-blue cube",
+          "tcp_before": [
+            0.326832,
+            -0.000273,
+            0.43663
+          ],
+          "tcp_after": [
+            0.306525,
+            -1.3e-05,
+            0.436408
+          ],
+          "tcp_delta_m": 0.02031,
+          "gripper_width_m": 0.08,
+          "gripper_command": "OPEN",
+          "native_success": false,
+          "env_done": false,
+          "native_subtask": {
+            "status": 0,
+            "completed": 0,
+            "total": 1,
+            "info": "",
+            "score": 0.0
+          },
+          "auto_release": false,
+          "replan_count": 0,
+          "timing": {
+            "actor_s": 2.3269,
+            "provider_s": 2.299,
+            "execute_s": 0.6302,
+            "loop_s": 2.9862,
+            "episode_s": 26.1547
+          }
+        }
+      },
+      {
+        "request": {
+          "line": 8,
+          "schema_version": 1,
+          "request_index": 6,
+          "role": "actor",
+          "step": 6,
+          "model": {
+            "provider": "openai",
+            "api_dialect": "openai",
+            "model": "gpt-5.6-luna",
+            "reasoning_effort": "none"
+          },
+          "duration_s": 2.7953,
+          "provider_latency_s": 2.764,
+          "token": "MV_LEFT",
+          "telemetry": {
+            "latency_s": 2.764,
+            "http_status": 200,
+            "attempt_count": 1,
+            "retry_wait_ms": 0,
+            "api_total_ms": 2764,
+            "ttft_ms": null,
+            "ttft_observed": false,
+            "error_class": null,
+            "attempt_error_counts": {},
+            "usage": {
+              "prompt_tokens": 651,
+              "completion_tokens": 53,
+              "total_tokens": 704
+            }
+          },
+          "visual_assessment": {
+            "target_visible": true,
+            "wrist_target_visible": true,
+            "aligned": false,
+            "contact_risk": false,
+            "observation": "The cube is visible slightly left of the wrist grasp axis and remains on the table."
+          }
+        },
+        "step": {
+          "line": 7,
+          "i": 6,
+          "event": "executed",
+          "act": "MV_LEFT",
+          "executed": true,
+          "action_source": "model",
+          "visual_assessment": {
+            "target_visible": true,
+            "wrist_target_visible": true,
+            "aligned": false,
+            "contact_risk": false,
+            "observation": "The cube is visible slightly left of the wrist grasp axis and remains on the table."
+          },
+          "sg": 0,
+          "n_sg": 6,
+          "stage": "GRASP",
+          "stage_id": "grasp_cube",
+          "target": "orange-and-blue cube",
+          "tcp_before": [
+            0.306525,
+            -1.3e-05,
+            0.436408
+          ],
+          "tcp_after": [
+            0.306397,
+            -0.020228,
+            0.436653
+          ],
+          "tcp_delta_m": 0.020218,
+          "gripper_width_m": 0.079999,
+          "gripper_command": "OPEN",
+          "native_success": false,
+          "env_done": false,
+          "native_subtask": {
+            "status": 0,
+            "completed": 0,
+            "total": 1,
+            "info": "",
+            "score": 0.0
+          },
+          "auto_release": false,
+          "replan_count": 0,
+          "timing": {
+            "actor_s": 2.7953,
+            "provider_s": 2.764,
+            "execute_s": 0.6266,
+            "loop_s": 3.4504,
+            "episode_s": 29.6058
+          }
+        }
+      },
+      {
+        "request": {
+          "line": 9,
+          "schema_version": 1,
+          "request_index": 7,
+          "role": "actor",
+          "step": 7,
+          "model": {
+            "provider": "openai",
+            "api_dialect": "openai",
+            "model": "gpt-5.6-luna",
+            "reasoning_effort": "none"
+          },
+          "duration_s": 4.8773,
+          "provider_latency_s": 4.849,
+          "token": "MV_RIGHT",
+          "telemetry": {
+            "latency_s": 4.849,
+            "http_status": 200,
+            "attempt_count": 1,
+            "retry_wait_ms": 0,
+            "api_total_ms": 4849,
+            "ttft_ms": null,
+            "ttft_observed": false,
+            "error_class": null,
+            "attempt_error_counts": {},
+            "usage": {
+              "prompt_tokens": 654,
+              "completion_tokens": 56,
+              "total_tokens": 710
+            }
+          },
+          "visual_assessment": {
+            "target_visible": true,
+            "wrist_target_visible": true,
+            "aligned": false,
+            "contact_risk": false,
+            "observation": "The cube is visible slightly left of the wrist grasp axis; move right to center it before descending."
+          }
+        },
+        "step": {
+          "line": 8,
+          "i": 7,
+          "event": "executed",
+          "act": "MV_RIGHT",
+          "executed": true,
+          "action_source": "model",
+          "visual_assessment": {
+            "target_visible": true,
+            "wrist_target_visible": true,
+            "aligned": false,
+            "contact_risk": false,
+            "observation": "The cube is visible slightly left of the wrist grasp axis; move right to center it before descending."
+          },
+          "sg": 0,
+          "n_sg": 6,
+          "stage": "GRASP",
+          "stage_id": "grasp_cube",
+          "target": "orange-and-blue cube",
+          "tcp_before": [
+            0.306397,
+            -0.020228,
+            0.436653
+          ],
+          "tcp_after": [
+            0.306382,
+            -0.000229,
+            0.436651
+          ],
+          "tcp_delta_m": 0.019999,
+          "gripper_width_m": 0.079999,
+          "gripper_command": "OPEN",
+          "native_success": false,
+          "env_done": false,
+          "native_subtask": {
+            "status": 0,
+            "completed": 0,
+            "total": 1,
+            "info": "",
+            "score": 0.0
+          },
+          "auto_release": false,
+          "replan_count": 0,
+          "timing": {
+            "actor_s": 4.8773,
+            "provider_s": 4.849,
+            "execute_s": 0.6266,
+            "loop_s": 5.5321,
+            "episode_s": 35.1384
+          }
+        }
+      },
+      {
+        "request": {
+          "line": 10,
+          "schema_version": 1,
+          "request_index": 8,
+          "role": "actor",
+          "step": 8,
+          "model": {
+            "provider": "openai",
+            "api_dialect": "openai",
+            "model": "gpt-5.6-luna",
+            "reasoning_effort": "none"
+          },
+          "duration_s": 1.9966,
+          "provider_latency_s": 1.969,
+          "token": "MV_RIGHT",
+          "telemetry": {
+            "latency_s": 1.969,
+            "http_status": 200,
+            "attempt_count": 1,
+            "retry_wait_ms": 0,
+            "api_total_ms": 1969,
+            "ttft_ms": null,
+            "ttft_observed": false,
+            "error_class": null,
+            "attempt_error_counts": {},
+            "usage": {
+              "prompt_tokens": 657,
+              "completion_tokens": 55,
+              "total_tokens": 712
+            }
+          },
+          "visual_assessment": {
+            "target_visible": true,
+            "wrist_target_visible": true,
+            "aligned": false,
+            "contact_risk": false,
+            "observation": "The cube is visible left of the wrist grasp axis, so move right to align over it."
+          }
+        },
+        "step": {
+          "line": 9,
+          "i": 8,
+          "event": "executed",
+          "act": "MV_RIGHT",
+          "executed": true,
+          "action_source": "model",
+          "visual_assessment": {
+            "target_visible": true,
+            "wrist_target_visible": true,
+            "aligned": false,
+            "contact_risk": false,
+            "observation": "The cube is visible left of the wrist grasp axis, so move right to align over it."
+          },
+          "sg": 0,
+          "n_sg": 6,
+          "stage": "GRASP",
+          "stage_id": "grasp_cube",
+          "target": "orange-and-blue cube",
+          "tcp_before": [
+            0.306382,
+            -0.000229,
+            0.436651
+          ],
+          "tcp_after": [
+            0.306367,
+            0.020244,
+            0.436663
+          ],
+          "tcp_delta_m": 0.020473,
+          "gripper_width_m": 0.079999,
+          "gripper_command": "OPEN",
+          "native_success": false,
+          "env_done": false,
+          "native_subtask": {
+            "status": 0,
+            "completed": 0,
+            "total": 1,
+            "info": "",
+            "score": 0.0
+          },
+          "auto_release": false,
+          "replan_count": 0,
+          "timing": {
+            "actor_s": 1.9966,
+            "provider_s": 1.969,
+            "execute_s": 0.625,
+            "loop_s": 2.6499,
+            "episode_s": 37.7888
+          }
+        }
+      },
+      {
+        "request": {
+          "line": 11,
+          "schema_version": 1,
+          "request_index": 9,
+          "role": "actor",
+          "step": 9,
+          "model": {
+            "provider": "openai",
+            "api_dialect": "openai",
+            "model": "gpt-5.6-luna",
+            "reasoning_effort": "none"
+          },
+          "duration_s": 2.0851,
+          "provider_latency_s": 2.058,
+          "token": "MV_LEFT",
+          "telemetry": {
+            "latency_s": 2.058,
+            "http_status": 200,
+            "attempt_count": 1,
+            "retry_wait_ms": 0,
+            "api_total_ms": 2058,
+            "ttft_ms": null,
+            "ttft_observed": false,
+            "error_class": null,
+            "attempt_error_counts": {},
+            "usage": {
+              "prompt_tokens": 657,
+              "completion_tokens": 55,
+              "total_tokens": 712
+            }
+          },
+          "visual_assessment": {
+            "target_visible": true,
+            "wrist_target_visible": true,
+            "aligned": false,
+            "contact_risk": false,
+            "observation": "The cube is visible slightly left of the wrist grasp axis, with the gripper still open."
+          }
+        },
+        "step": {
+          "line": 10,
+          "i": 9,
+          "event": "executed",
+          "act": "MV_LEFT",
+          "executed": true,
+          "action_source": "model",
+          "visual_assessment": {
+            "target_visible": true,
+            "wrist_target_visible": true,
+            "aligned": false,
+            "contact_risk": false,
+            "observation": "The cube is visible slightly left of the wrist grasp axis, with the gripper still open."
+          },
+          "sg": 0,
+          "n_sg": 6,
+          "stage": "GRASP",
+          "stage_id": "grasp_cube",
+          "target": "orange-and-blue cube",
+          "tcp_before": [
+            0.306367,
+            0.020244,
+            0.436663
+          ],
+          "tcp_after": [
+            0.306335,
+            0.000243,
+            0.436664
+          ],
+          "tcp_delta_m": 0.020001,
+          "gripper_width_m": 0.079999,
+          "gripper_command": "OPEN",
+          "native_success": false,
+          "env_done": false,
+          "native_subtask": {
+            "status": 0,
+            "completed": 0,
+            "total": 1,
+            "info": "",
+            "score": 0.0
+          },
+          "auto_release": false,
+          "replan_count": 0,
+          "timing": {
+            "actor_s": 2.0851,
+            "provider_s": 2.058,
+            "execute_s": 0.628,
+            "loop_s": 2.7412,
+            "episode_s": 40.5307
+          }
+        }
+      },
+      {
+        "request": {
+          "line": 12,
+          "schema_version": 1,
+          "request_index": 10,
+          "role": "actor",
+          "step": 10,
+          "model": {
+            "provider": "openai",
+            "api_dialect": "openai",
+            "model": "gpt-5.6-luna",
+            "reasoning_effort": "none"
+          },
+          "duration_s": 2.0053,
+          "provider_latency_s": 1.978,
+          "token": "MV_FWD",
+          "telemetry": {
+            "latency_s": 1.978,
+            "http_status": 200,
+            "attempt_count": 1,
+            "retry_wait_ms": 0,
+            "api_total_ms": 1978,
+            "ttft_ms": null,
+            "ttft_observed": false,
+            "error_class": null,
+            "attempt_error_counts": {},
+            "usage": {
+              "prompt_tokens": 657,
+              "completion_tokens": 56,
+              "total_tokens": 713
+            }
+          },
+          "visual_assessment": {
+            "target_visible": true,
+            "wrist_target_visible": true,
+            "aligned": false,
+            "contact_risk": false,
+            "observation": "The cube is visible below the wrist image center, so move the open gripper toward it."
+          }
+        },
+        "step": {
+          "line": 11,
+          "i": 10,
+          "event": "executed",
+          "act": "MV_FWD",
+          "executed": true,
+          "action_source": "model",
+          "visual_assessment": {
+            "target_visible": true,
+            "wrist_target_visible": true,
+            "aligned": false,
+            "contact_risk": false,
+            "observation": "The cube is visible below the wrist image center, so move the open gripper toward it."
+          },
+          "sg": 0,
+          "n_sg": 6,
+          "stage": "GRASP",
+          "stage_id": "grasp_cube",
+          "target": "orange-and-blue cube",
+          "tcp_before": [
+            0.306335,
+            0.000243,
+            0.436664
+          ],
+          "tcp_after": [
+            0.326662,
+            2.2e-05,
+            0.436847
+          ],
+          "tcp_delta_m": 0.020329,
+          "gripper_width_m": 0.08,
+          "gripper_command": "OPEN",
+          "native_success": false,
+          "env_done": false,
+          "native_subtask": {
+            "status": 0,
+            "completed": 0,
+            "total": 1,
+            "info": "",
+            "score": 0.0
+          },
+          "auto_release": false,
+          "replan_count": 0,
+          "timing": {
+            "actor_s": 2.0053,
+            "provider_s": 1.978,
+            "execute_s": 0.6313,
+            "loop_s": 2.6649,
+            "episode_s": 43.1961
+          }
+        }
+      },
+      {
+        "request": {
+          "line": 13,
+          "schema_version": 1,
+          "request_index": 11,
+          "role": "actor",
+          "step": 11,
+          "model": {
+            "provider": "openai",
+            "api_dialect": "openai",
+            "model": "gpt-5.6-luna",
+            "reasoning_effort": "none"
+          },
+          "duration_s": 2.0193,
+          "provider_latency_s": 1.991,
+          "token": "MV_LEFT",
+          "telemetry": {
+            "latency_s": 1.991,
+            "http_status": 200,
+            "attempt_count": 1,
+            "retry_wait_ms": 0,
+            "api_total_ms": 1991,
+            "ttft_ms": null,
+            "ttft_observed": false,
+            "error_class": null,
+            "attempt_error_counts": {},
+            "usage": {
+              "prompt_tokens": 658,
+              "completion_tokens": 58,
+              "total_tokens": 716
+            }
+          },
+          "visual_assessment": {
+            "target_visible": true,
+            "wrist_target_visible": true,
+            "aligned": false,
+            "contact_risk": false,
+            "observation": "The cube is visible below-left of the wrist center, so the open gripper should move left toward it."
+          }
+        },
+        "step": {
+          "line": 12,
+          "i": 11,
+          "event": "executed",
+          "act": "MV_LEFT",
+          "executed": true,
+          "action_source": "model",
+          "visual_assessment": {
+            "target_visible": true,
+            "wrist_target_visible": true,
+            "aligned": false,
+            "contact_risk": false,
+            "observation": "The cube is visible below-left of the wrist center, so the open gripper should move left toward it."
+          },
+          "sg": 0,
+          "n_sg": 6,
+          "stage": "GRASP",
+          "stage_id": "grasp_cube",
+          "target": "orange-and-blue cube",
+          "tcp_before": [
+            0.326662,
+            2.2e-05,
+            0.436847
+          ],
+          "tcp_after": [
+            0.326761,
+            -0.020206,
+            0.436621
+          ],
+          "tcp_delta_m": 0.020229,
+          "gripper_width_m": 0.079999,
+          "gripper_command": "OPEN",
+          "native_success": false,
+          "env_done": false,
+          "native_subtask": {
+            "status": 0,
+            "completed": 0,
+            "total": 1,
+            "info": "",
+            "score": 0.0
+          },
+          "auto_release": false,
+          "replan_count": 0,
+          "timing": {
+            "actor_s": 2.0193,
+            "provider_s": 1.991,
+            "execute_s": 0.6352,
+            "loop_s": 2.6843,
+            "episode_s": 45.8809
+          }
+        }
+      },
+      {
+        "request": {
+          "line": 14,
+          "schema_version": 1,
+          "request_index": 12,
+          "role": "actor",
+          "step": 12,
+          "model": {
+            "provider": "openai",
+            "api_dialect": "openai",
+            "model": "gpt-5.6-luna",
+            "reasoning_effort": "none"
+          },
+          "duration_s": 1.8649,
+          "provider_latency_s": 1.837,
+          "token": "MV_FWD",
+          "telemetry": {
+            "latency_s": 1.837,
+            "http_status": 200,
+            "attempt_count": 1,
+            "retry_wait_ms": 0,
+            "api_total_ms": 1837,
+            "ttft_ms": null,
+            "ttft_observed": false,
+            "error_class": null,
+            "attempt_error_counts": {},
+            "usage": {
+              "prompt_tokens": 657,
+              "completion_tokens": 54,
+              "total_tokens": 711
+            }
+          },
+          "visual_assessment": {
+            "target_visible": true,
+            "wrist_target_visible": true,
+            "aligned": false,
+            "contact_risk": false,
+            "observation": "The cube is visible below the wrist center, so move the grasp axis toward it."
+          }
+        },
+        "step": {
+          "line": 13,
+          "i": 12,
+          "event": "executed",
+          "act": "MV_FWD",
+          "executed": true,
+          "action_source": "model",
+          "visual_assessment": {
+            "target_visible": true,
+            "wrist_target_visible": true,
+            "aligned": false,
+            "contact_risk": false,
+            "observation": "The cube is visible below the wrist center, so move the grasp axis toward it."
+          },
+          "sg": 0,
+          "n_sg": 6,
+          "stage": "GRASP",
+          "stage_id": "grasp_cube",
+          "target": "orange-and-blue cube",
+          "tcp_before": [
+            0.326761,
+            -0.020206,
+            0.436621
+          ],
+          "tcp_after": [
+            0.347079,
+            -0.020481,
+            0.436808
+          ],
+          "tcp_delta_m": 0.02032,
+          "gripper_width_m": 0.08,
+          "gripper_command": "OPEN",
+          "native_success": false,
+          "env_done": false,
+          "native_subtask": {
+            "status": 0,
+            "completed": 0,
+            "total": 1,
+            "info": "",
+            "score": 0.0
+          },
+          "auto_release": false,
+          "replan_count": 0,
+          "timing": {
+            "actor_s": 1.8649,
+            "provider_s": 1.837,
+            "execute_s": 0.6383,
+            "loop_s": 2.5329,
+            "episode_s": 48.4144
+          }
+        }
+      },
+      {
+        "request": {
+          "line": 15,
+          "schema_version": 1,
+          "request_index": 13,
+          "role": "actor",
+          "step": 13,
+          "model": {
+            "provider": "openai",
+            "api_dialect": "openai",
+            "model": "gpt-5.6-luna",
+            "reasoning_effort": "none"
+          },
+          "duration_s": 2.0396,
+          "provider_latency_s": 2.01,
+          "token": "MV_RIGHT",
+          "telemetry": {
+            "latency_s": 2.01,
+            "http_status": 200,
+            "attempt_count": 1,
+            "retry_wait_ms": 0,
+            "api_total_ms": 2010,
+            "ttft_ms": null,
+            "ttft_observed": false,
+            "error_class": null,
+            "attempt_error_counts": {},
+            "usage": {
+              "prompt_tokens": 658,
+              "completion_tokens": 54,
+              "total_tokens": 712
+            }
+          },
+          "visual_assessment": {
+            "target_visible": true,
+            "wrist_target_visible": true,
+            "aligned": false,
+            "contact_risk": false,
+            "observation": "The cube is visible left of the wrist grasp axis, so move right to center it."
+          }
+        },
+        "step": {
+          "line": 14,
+          "i": 13,
+          "event": "executed",
+          "act": "MV_RIGHT",
+          "executed": true,
+          "action_source": "model",
+          "visual_assessment": {
+            "target_visible": true,
+            "wrist_target_visible": true,
+            "aligned": false,
+            "contact_risk": false,
+            "observation": "The cube is visible left of the wrist grasp axis, so move right to center it."
+          },
+          "sg": 0,
+          "n_sg": 6,
+          "stage": "GRASP",
+          "stage_id": "grasp_cube",
+          "target": "orange-and-blue cube",
+          "tcp_before": [
+            0.347079,
+            -0.020481,
+            0.436808
+          ],
+          "tcp_after": [
+            0.347171,
+            -0.000322,
+            0.436549
+          ],
+          "tcp_delta_m": 0.020161,
+          "gripper_width_m": 0.079999,
+          "gripper_command": "OPEN",
+          "native_success": false,
+          "env_done": false,
+          "native_subtask": {
+            "status": 0,
+            "completed": 0,
+            "total": 1,
+            "info": "",
+            "score": 0.0
+          },
+          "auto_release": false,
+          "replan_count": 0,
+          "timing": {
+            "actor_s": 2.0396,
+            "provider_s": 2.01,
+            "execute_s": 0.6245,
+            "loop_s": 2.6928,
+            "episode_s": 51.1078
+          }
+        }
+      },
+      {
+        "request": {
+          "line": 16,
+          "schema_version": 1,
+          "request_index": 14,
+          "role": "actor",
+          "step": 14,
+          "model": {
+            "provider": "openai",
+            "api_dialect": "openai",
+            "model": "gpt-5.6-luna",
+            "reasoning_effort": "none"
+          },
+          "duration_s": 2.2683,
+          "provider_latency_s": 2.241,
+          "token": "MV_LEFT",
+          "telemetry": {
+            "latency_s": 2.241,
+            "http_status": 200,
+            "attempt_count": 1,
+            "retry_wait_ms": 0,
+            "api_total_ms": 2241,
+            "ttft_ms": null,
+            "ttft_observed": false,
+            "error_class": null,
+            "attempt_error_counts": {},
+            "usage": {
+              "prompt_tokens": 658,
+              "completion_tokens": 54,
+              "total_tokens": 712
+            }
+          },
+          "visual_assessment": {
+            "target_visible": true,
+            "wrist_target_visible": true,
+            "aligned": false,
+            "contact_risk": false,
+            "observation": "The cube is visible to the left of the wrist grasp axis and remains on the table."
+          }
+        },
+        "step": {
+          "line": 15,
+          "i": 14,
+          "event": "executed",
+          "act": "MV_LEFT",
+          "executed": true,
+          "action_source": "model",
+          "visual_assessment": {
+            "target_visible": true,
+            "wrist_target_visible": true,
+            "aligned": false,
+            "contact_risk": false,
+            "observation": "The cube is visible to the left of the wrist grasp axis and remains on the table."
+          },
+          "sg": 0,
+          "n_sg": 6,
+          "stage": "GRASP",
+          "stage_id": "grasp_cube",
+          "target": "orange-and-blue cube",
+          "tcp_before": [
+            0.347171,
+            -0.000322,
+            0.436549
+          ],
+          "tcp_after": [
+            0.347158,
+            -0.020159,
+            0.436573
+          ],
+          "tcp_delta_m": 0.019837,
+          "gripper_width_m": 0.079999,
+          "gripper_command": "OPEN",
+          "native_success": false,
+          "env_done": false,
+          "native_subtask": {
+            "status": 0,
+            "completed": 0,
+            "total": 1,
+            "info": "",
+            "score": 0.0
+          },
+          "auto_release": false,
+          "replan_count": 0,
+          "timing": {
+            "actor_s": 2.2683,
+            "provider_s": 2.241,
+            "execute_s": 0.6251,
+            "loop_s": 2.9222,
+            "episode_s": 54.0305
+          }
+        }
+      },
+      {
+        "request": {
+          "line": 17,
+          "schema_version": 1,
+          "request_index": 15,
+          "role": "actor",
+          "step": 15,
+          "model": {
+            "provider": "openai",
+            "api_dialect": "openai",
+            "model": "gpt-5.6-luna",
+            "reasoning_effort": "none"
+          },
+          "duration_s": 2.1045,
+          "provider_latency_s": 2.077,
+          "token": "MV_BACK",
+          "telemetry": {
+            "latency_s": 2.077,
+            "http_status": 200,
+            "attempt_count": 1,
+            "retry_wait_ms": 0,
+            "api_total_ms": 2077,
+            "ttft_ms": null,
+            "ttft_observed": false,
+            "error_class": null,
+            "attempt_error_counts": {},
+            "usage": {
+              "prompt_tokens": 658,
+              "completion_tokens": 56,
+              "total_tokens": 714
+            }
+          },
+          "visual_assessment": {
+            "target_visible": true,
+            "wrist_target_visible": true,
+            "aligned": false,
+            "contact_risk": false,
+            "observation": "The cube is visible below the wrist-image center, so move the grasp axis toward it before descending."
+          }
+        },
+        "step": {
+          "line": 16,
+          "i": 15,
+          "event": "executed",
+          "act": "MV_BACK",
+          "executed": true,
+          "action_source": "model",
+          "visual_assessment": {
+            "target_visible": true,
+            "wrist_target_visible": true,
+            "aligned": false,
+            "contact_risk": false,
+            "observation": "The cube is visible below the wrist-image center, so move the grasp axis toward it before descending."
+          },
+          "sg": 0,
+          "n_sg": 6,
+          "stage": "GRASP",
+          "stage_id": "grasp_cube",
+          "target": "orange-and-blue cube",
+          "tcp_before": [
+            0.347158,
+            -0.020159,
+            0.436573
+          ],
+          "tcp_after": [
+            0.326845,
+            -0.020493,
+            0.436329
+          ],
+          "tcp_delta_m": 0.020317,
+          "gripper_width_m": 0.08,
+          "gripper_command": "OPEN",
+          "native_success": false,
+          "env_done": false,
+          "native_subtask": {
+            "status": 0,
+            "completed": 0,
+            "total": 1,
+            "info": "",
+            "score": 0.0
+          },
+          "auto_release": false,
+          "replan_count": 0,
+          "timing": {
+            "actor_s": 2.1045,
+            "provider_s": 2.077,
+            "execute_s": 0.6274,
+            "loop_s": 2.7608,
+            "episode_s": 56.7918
+          }
+        }
+      },
+      {
+        "request": {
+          "line": 18,
+          "schema_version": 1,
+          "request_index": 16,
+          "role": "actor",
+          "step": 16,
+          "model": {
+            "provider": "openai",
+            "api_dialect": "openai",
+            "model": "gpt-5.6-luna",
+            "reasoning_effort": "none"
+          },
+          "duration_s": 2.9157,
+          "provider_latency_s": 2.887,
+          "token": "MV_RIGHT",
+          "telemetry": {
+            "latency_s": 2.887,
+            "http_status": 200,
+            "attempt_count": 1,
+            "retry_wait_ms": 0,
+            "api_total_ms": 2887,
+            "ttft_ms": null,
+            "ttft_observed": false,
+            "error_class": null,
+            "attempt_error_counts": {},
+            "usage": {
+              "prompt_tokens": 658,
+              "completion_tokens": 55,
+              "total_tokens": 713
+            }
+          },
+          "visual_assessment": {
+            "target_visible": true,
+            "wrist_target_visible": true,
+            "aligned": false,
+            "contact_risk": false,
+            "observation": "The cube is visible below-left of the wrist grasp axis, so move right to align horizontally."
+          }
+        },
+        "step": {
+          "line": 17,
+          "i": 16,
+          "event": "executed",
+          "act": "MV_RIGHT",
+          "executed": true,
+          "action_source": "model",
+          "visual_assessment": {
+            "target_visible": true,
+            "wrist_target_visible": true,
+            "aligned": false,
+            "contact_risk": false,
+            "observation": "The cube is visible below-left of the wrist grasp axis, so move right to align horizontally."
+          },
+          "sg": 0,
+          "n_sg": 6,
+          "stage": "GRASP",
+          "stage_id": "grasp_cube",
+          "target": "orange-and-blue cube",
+          "tcp_before": [
+            0.326845,
+            -0.020493,
+            0.436329
+          ],
+          "tcp_after": [
+            0.326721,
+            -0.000283,
+            0.436584
+          ],
+          "tcp_delta_m": 0.020212,
+          "gripper_width_m": 0.079999,
+          "gripper_command": "OPEN",
+          "native_success": false,
+          "env_done": false,
+          "native_subtask": {
+            "status": 0,
+            "completed": 0,
+            "total": 1,
+            "info": "",
+            "score": 0.0
+          },
+          "auto_release": false,
+          "replan_count": 0,
+          "timing": {
+            "actor_s": 2.9157,
+            "provider_s": 2.887,
+            "execute_s": 0.6394,
+            "loop_s": 3.5835,
+            "episode_s": 60.3759
+          }
+        }
+      },
+      {
+        "request": {
+          "line": 19,
+          "schema_version": 1,
+          "request_index": 17,
+          "role": "actor",
+          "step": 17,
+          "model": {
+            "provider": "openai",
+            "api_dialect": "openai",
+            "model": "gpt-5.6-luna",
+            "reasoning_effort": "none"
+          },
+          "duration_s": 2.1679,
+          "provider_latency_s": 2.14,
+          "token": "MV_LEFT",
+          "telemetry": {
+            "latency_s": 2.14,
+            "http_status": 200,
+            "attempt_count": 1,
+            "retry_wait_ms": 0,
+            "api_total_ms": 2140,
+            "ttft_ms": null,
+            "ttft_observed": false,
+            "error_class": null,
+            "attempt_error_counts": {},
+            "usage": {
+              "prompt_tokens": 658,
+              "completion_tokens": 53,
+              "total_tokens": 711
+            }
+          },
+          "visual_assessment": {
+            "target_visible": true,
+            "wrist_target_visible": true,
+            "aligned": false,
+            "contact_risk": false,
+            "observation": "The cube is visible left of the wrist grasp axis, so shift left before lowering."
+          }
+        },
+        "step": {
+          "line": 18,
+          "i": 17,
+          "event": "executed",
+          "act": "MV_LEFT",
+          "executed": true,
+          "action_source": "model",
+          "visual_assessment": {
+            "target_visible": true,
+            "wrist_target_visible": true,
+            "aligned": false,
+            "contact_risk": false,
+            "observation": "The cube is visible left of the wrist grasp axis, so shift left before lowering."
+          },
+          "sg": 0,
+          "n_sg": 6,
+          "stage": "GRASP",
+          "stage_id": "grasp_cube",
+          "target": "orange-and-blue cube",
+          "tcp_before": [
+            0.326721,
+            -0.000283,
+            0.436584
+          ],
+          "tcp_after": [
+            0.326703,
+            -0.020209,
+            0.436597
+          ],
+          "tcp_delta_m": 0.019926,
+          "gripper_width_m": 0.079999,
+          "gripper_command": "OPEN",
+          "native_success": false,
+          "env_done": false,
+          "native_subtask": {
+            "status": 0,
+            "completed": 0,
+            "total": 1,
+            "info": "",
+            "score": 0.0
+          },
+          "auto_release": false,
+          "replan_count": 0,
+          "timing": {
+            "actor_s": 2.1679,
+            "provider_s": 2.14,
+            "execute_s": 0.6259,
+            "loop_s": 2.8231,
+            "episode_s": 63.1996
+          }
+        }
+      },
+      {
+        "request": {
+          "line": 20,
+          "schema_version": 1,
+          "request_index": 18,
+          "role": "actor",
+          "step": 18,
+          "model": {
+            "provider": "openai",
+            "api_dialect": "openai",
+            "model": "gpt-5.6-luna",
+            "reasoning_effort": "none"
+          },
+          "duration_s": 1.8664,
+          "provider_latency_s": 1.839,
+          "token": "MV_LEFT",
+          "telemetry": {
+            "latency_s": 1.839,
+            "http_status": 200,
+            "attempt_count": 1,
+            "retry_wait_ms": 0,
+            "api_total_ms": 1839,
+            "ttft_ms": null,
+            "ttft_observed": false,
+            "error_class": null,
+            "attempt_error_counts": {},
+            "usage": {
+              "prompt_tokens": 658,
+              "completion_tokens": 56,
+              "total_tokens": 714
+            }
+          },
+          "visual_assessment": {
+            "target_visible": true,
+            "wrist_target_visible": true,
+            "aligned": false,
+            "contact_risk": false,
+            "observation": "The cube is visible below-left of the wrist center, so the grasp axis needs to move left."
+          }
+        },
+        "step": {
+          "line": 19,
+          "i": 18,
+          "event": "executed",
+          "act": "MV_LEFT",
+          "executed": true,
+          "action_source": "model",
+          "visual_assessment": {
+            "target_visible": true,
+            "wrist_target_visible": true,
+            "aligned": false,
+            "contact_risk": false,
+            "observation": "The cube is visible below-left of the wrist center, so the grasp axis needs to move left."
+          },
+          "sg": 0,
+          "n_sg": 6,
+          "stage": "GRASP",
+          "stage_id": "grasp_cube",
+          "target": "orange-and-blue cube",
+          "tcp_before": [
+            0.326703,
+            -0.020209,
+            0.436597
+          ],
+          "tcp_after": [
+            0.326687,
+            -0.040693,
+            0.436603
+          ],
+          "tcp_delta_m": 0.020484,
+          "gripper_width_m": 0.079999,
+          "gripper_command": "OPEN",
+          "native_success": false,
+          "env_done": false,
+          "native_subtask": {
+            "status": 0,
+            "completed": 0,
+            "total": 1,
+            "info": "",
+            "score": 0.0
+          },
+          "auto_release": false,
+          "replan_count": 0,
+          "timing": {
+            "actor_s": 1.8664,
+            "provider_s": 1.839,
+            "execute_s": 0.6328,
+            "loop_s": 2.5284,
+            "episode_s": 65.7286
+          }
+        }
+      },
+      {
+        "request": {
+          "line": 21,
+          "schema_version": 1,
+          "request_index": 19,
+          "role": "actor",
+          "step": 19,
+          "model": {
+            "provider": "openai",
+            "api_dialect": "openai",
+            "model": "gpt-5.6-luna",
+            "reasoning_effort": "none"
+          },
+          "duration_s": 1.8963,
+          "provider_latency_s": 1.869,
+          "token": "MV_LEFT",
+          "telemetry": {
+            "latency_s": 1.869,
+            "http_status": 200,
+            "attempt_count": 1,
+            "retry_wait_ms": 0,
+            "api_total_ms": 1869,
+            "ttft_ms": null,
+            "ttft_observed": false,
+            "error_class": null,
+            "attempt_error_counts": {},
+            "usage": {
+              "prompt_tokens": 657,
+              "completion_tokens": 58,
+              "total_tokens": 715
+            }
+          },
+          "visual_assessment": {
+            "target_visible": true,
+            "wrist_target_visible": true,
+            "aligned": false,
+            "contact_risk": false,
+            "observation": "The cube is visible slightly left of the wrist grasp axis, with the gripper still open above the table."
+          }
+        },
+        "step": {
+          "line": 20,
+          "i": 19,
+          "event": "executed",
+          "act": "MV_LEFT",
+          "executed": true,
+          "action_source": "model",
+          "visual_assessment": {
+            "target_visible": true,
+            "wrist_target_visible": true,
+            "aligned": false,
+            "contact_risk": false,
+            "observation": "The cube is visible slightly left of the wrist grasp axis, with the gripper still open above the table."
+          },
+          "sg": 0,
+          "n_sg": 6,
+          "stage": "GRASP",
+          "stage_id": "grasp_cube",
+          "target": "orange-and-blue cube",
+          "tcp_before": [
+            0.326687,
+            -0.040693,
+            0.436603
+          ],
+          "tcp_after": [
+            0.326666,
+            -0.061178,
+            0.436608
+          ],
+          "tcp_delta_m": 0.020484,
+          "gripper_width_m": 0.079999,
+          "gripper_command": "OPEN",
+          "native_success": false,
+          "env_done": false,
+          "native_subtask": {
+            "status": 0,
+            "completed": 0,
+            "total": 1,
+            "info": "",
+            "score": 0.0
+          },
+          "auto_release": false,
+          "replan_count": 0,
+          "timing": {
+            "actor_s": 1.8963,
+            "provider_s": 1.869,
+            "execute_s": 0.6248,
+            "loop_s": 2.5496,
+            "episode_s": 68.2788
+          }
+        }
+      },
+      {
+        "request": {
+          "line": 22,
+          "schema_version": 1,
+          "request_index": 20,
+          "role": "actor",
+          "step": 20,
+          "model": {
+            "provider": "openai",
+            "api_dialect": "openai",
+            "model": "gpt-5.6-luna",
+            "reasoning_effort": "none"
+          },
+          "duration_s": 4.3848,
+          "provider_latency_s": 4.357,
+          "token": "MV_RIGHT",
+          "telemetry": {
+            "latency_s": 4.357,
+            "http_status": 200,
+            "attempt_count": 1,
+            "retry_wait_ms": 0,
+            "api_total_ms": 4357,
+            "ttft_ms": null,
+            "ttft_observed": false,
+            "error_class": null,
+            "attempt_error_counts": {},
+            "usage": {
+              "prompt_tokens": 657,
+              "completion_tokens": 56,
+              "total_tokens": 713
+            }
+          },
+          "visual_assessment": {
+            "target_visible": true,
+            "wrist_target_visible": true,
+            "aligned": false,
+            "contact_risk": false,
+            "observation": "The cube is visible below-left of the wrist center, so move right to center the grasp axis."
+          }
+        },
+        "step": {
+          "line": 21,
+          "i": 20,
+          "event": "executed",
+          "act": "MV_RIGHT",
+          "executed": true,
+          "action_source": "model",
+          "visual_assessment": {
+            "target_visible": true,
+            "wrist_target_visible": true,
+            "aligned": false,
+            "contact_risk": false,
+            "observation": "The cube is visible below-left of the wrist center, so move right to center the grasp axis."
+          },
+          "sg": 0,
+          "n_sg": 6,
+          "stage": "GRASP",
+          "stage_id": "grasp_cube",
+          "target": "orange-and-blue cube",
+          "tcp_before": [
+            0.326666,
+            -0.061178,
+            0.436608
+          ],
+          "tcp_after": [
+            0.326611,
+            -0.041265,
+            0.436574
+          ],
+          "tcp_delta_m": 0.019912,
+          "gripper_width_m": 0.079999,
+          "gripper_command": "OPEN",
+          "native_success": false,
+          "env_done": false,
+          "native_subtask": {
+            "status": 0,
+            "completed": 0,
+            "total": 1,
+            "info": "",
+            "score": 0.0
+          },
+          "auto_release": false,
+          "replan_count": 0,
+          "timing": {
+            "actor_s": 4.3848,
+            "provider_s": 4.357,
+            "execute_s": 0.6284,
+            "loop_s": 5.0419,
+            "episode_s": 73.3212
+          }
+        }
+      },
+      {
+        "request": {
+          "line": 23,
+          "schema_version": 1,
+          "request_index": 21,
+          "role": "actor",
+          "step": 21,
+          "model": {
+            "provider": "openai",
+            "api_dialect": "openai",
+            "model": "gpt-5.6-luna",
+            "reasoning_effort": "none"
+          },
+          "duration_s": 2.3109,
+          "provider_latency_s": 2.283,
+          "token": "MV_FWD",
+          "telemetry": {
+            "latency_s": 2.283,
+            "http_status": 200,
+            "attempt_count": 1,
+            "retry_wait_ms": 0,
+            "api_total_ms": 2283,
+            "ttft_ms": null,
+            "ttft_observed": false,
+            "error_class": null,
+            "attempt_error_counts": {},
+            "usage": {
+              "prompt_tokens": 656,
+              "completion_tokens": 58,
+              "total_tokens": 714
+            }
+          },
+          "visual_assessment": {
+            "target_visible": true,
+            "wrist_target_visible": true,
+            "aligned": false,
+            "contact_risk": false,
+            "observation": "The cube is visible below the wrist image center, so move the open gripper toward it before descending."
+          }
+        },
+        "step": {
+          "line": 22,
+          "i": 21,
+          "event": "executed",
+          "act": "MV_FWD",
+          "executed": true,
+          "action_source": "model",
+          "visual_assessment": {
+            "target_visible": true,
+            "wrist_target_visible": true,
+            "aligned": false,
+            "contact_risk": false,
+            "observation": "The cube is visible below the wrist image center, so move the open gripper toward it before descending."
+          },
+          "sg": 0,
+          "n_sg": 6,
+          "stage": "GRASP",
+          "stage_id": "grasp_cube",
+          "target": "orange-and-blue cube",
+          "tcp_before": [
+            0.326611,
+            -0.041265,
+            0.436574
+          ],
+          "tcp_after": [
+            0.34695,
+            -0.040991,
+            0.436786
+          ],
+          "tcp_delta_m": 0.020342,
+          "gripper_width_m": 0.08,
+          "gripper_command": "OPEN",
+          "native_success": false,
+          "env_done": false,
+          "native_subtask": {
+            "status": 0,
+            "completed": 0,
+            "total": 1,
+            "info": "",
+            "score": 0.0
+          },
+          "auto_release": false,
+          "replan_count": 0,
+          "timing": {
+            "actor_s": 2.3109,
+            "provider_s": 2.283,
+            "execute_s": 0.6241,
+            "loop_s": 2.9638,
+            "episode_s": 76.2855
+          }
+        }
+      },
+      {
+        "request": {
+          "line": 24,
+          "schema_version": 1,
+          "request_index": 22,
+          "role": "actor",
+          "step": 22,
+          "model": {
+            "provider": "openai",
+            "api_dialect": "openai",
+            "model": "gpt-5.6-luna",
+            "reasoning_effort": "none"
+          },
+          "duration_s": 1.9555,
+          "provider_latency_s": 1.928,
+          "token": "MV_LEFT",
+          "telemetry": {
+            "latency_s": 1.928,
+            "http_status": 200,
+            "attempt_count": 1,
+            "retry_wait_ms": 0,
+            "api_total_ms": 1928,
+            "ttft_ms": null,
+            "ttft_observed": false,
+            "error_class": null,
+            "attempt_error_counts": {},
+            "usage": {
+              "prompt_tokens": 657,
+              "completion_tokens": 55,
+              "total_tokens": 712
+            }
+          },
+          "visual_assessment": {
+            "target_visible": true,
+            "wrist_target_visible": true,
+            "aligned": false,
+            "contact_risk": false,
+            "observation": "The cube is visible to the left of the wrist grasp axis, so shift left before descending."
+          }
+        },
+        "step": {
+          "line": 23,
+          "i": 22,
+          "event": "executed",
+          "act": "MV_LEFT",
+          "executed": true,
+          "action_source": "model",
+          "visual_assessment": {
+            "target_visible": true,
+            "wrist_target_visible": true,
+            "aligned": false,
+            "contact_risk": false,
+            "observation": "The cube is visible to the left of the wrist grasp axis, so shift left before descending."
+          },
+          "sg": 0,
+          "n_sg": 6,
+          "stage": "GRASP",
+          "stage_id": "grasp_cube",
+          "target": "orange-and-blue cube",
+          "tcp_before": [
+            0.34695,
+            -0.040991,
+            0.436786
+          ],
+          "tcp_after": [
+            0.347061,
+            -0.061139,
+            0.436544
+          ],
+          "tcp_delta_m": 0.02015,
+          "gripper_width_m": 0.079999,
+          "gripper_command": "OPEN",
+          "native_success": false,
+          "env_done": false,
+          "native_subtask": {
+            "status": 0,
+            "completed": 0,
+            "total": 1,
+            "info": "",
+            "score": 0.0
+          },
+          "auto_release": false,
+          "replan_count": 0,
+          "timing": {
+            "actor_s": 1.9555,
+            "provider_s": 1.928,
+            "execute_s": 0.6281,
+            "loop_s": 2.6124,
+            "episode_s": 78.8985
+          }
+        }
+      },
+      {
+        "request": {
+          "line": 25,
+          "schema_version": 1,
+          "request_index": 23,
+          "role": "actor",
+          "step": 23,
+          "model": {
+            "provider": "openai",
+            "api_dialect": "openai",
+            "model": "gpt-5.6-luna",
+            "reasoning_effort": "none"
+          },
+          "duration_s": 2.1625,
+          "provider_latency_s": 2.134,
+          "token": "MV_RIGHT",
+          "telemetry": {
+            "latency_s": 2.134,
+            "http_status": 200,
+            "attempt_count": 1,
+            "retry_wait_ms": 0,
+            "api_total_ms": 2134,
+            "ttft_ms": null,
+            "ttft_observed": false,
+            "error_class": null,
+            "attempt_error_counts": {},
+            "usage": {
+              "prompt_tokens": 657,
+              "completion_tokens": 59,
+              "total_tokens": 716
+            }
+          },
+          "visual_assessment": {
+            "target_visible": true,
+            "wrist_target_visible": true,
+            "aligned": false,
+            "contact_risk": false,
+            "observation": "The cube is visible left of the wrist center, so move the open gripper right to center it before descending."
+          }
+        },
+        "step": {
+          "line": 24,
+          "i": 23,
+          "event": "executed",
+          "act": "MV_RIGHT",
+          "executed": true,
+          "action_source": "model",
+          "visual_assessment": {
+            "target_visible": true,
+            "wrist_target_visible": true,
+            "aligned": false,
+            "contact_risk": false,
+            "observation": "The cube is visible left of the wrist center, so move the open gripper right to center it before descending."
+          },
+          "sg": 0,
+          "n_sg": 6,
+          "stage": "GRASP",
+          "stage_id": "grasp_cube",
+          "target": "orange-and-blue cube",
+          "tcp_before": [
+            0.347061,
+            -0.061139,
+            0.436544
+          ],
+          "tcp_after": [
+            0.346993,
+            -0.041317,
+            0.436513
+          ],
+          "tcp_delta_m": 0.019823,
+          "gripper_width_m": 0.079999,
+          "gripper_command": "OPEN",
+          "native_success": false,
+          "env_done": false,
+          "native_subtask": {
+            "status": 0,
+            "completed": 0,
+            "total": 1,
+            "info": "",
+            "score": 0.0
+          },
+          "auto_release": false,
+          "replan_count": 0,
+          "timing": {
+            "actor_s": 2.1625,
+            "provider_s": 2.134,
+            "execute_s": 0.6248,
+            "loop_s": 2.8161,
+            "episode_s": 81.7151
+          }
+        }
+      },
+      {
+        "request": {
+          "line": 26,
+          "schema_version": 1,
+          "request_index": 1,
+          "role": "planner",
+          "phase": "replan_1",
+          "model": {
+            "provider": "openai",
+            "api_dialect": "openai",
+            "model": "gpt-5.6-luna",
+            "reasoning_effort": "none"
+          },
+          "duration_s": 5.21,
+          "subgoal_count": 6,
+          "planner_route": "guided_json",
+          "provider_latency_s": 5.182,
+          "telemetry": {
+            "latency_s": 5.182,
+            "total_latency_s": 5.21,
+            "http_status": 200,
+            "attempt_count": 1,
+            "retry_wait_ms": 0,
+            "api_total_ms": 5182,
+            "ttft_ms": null,
+            "ttft_observed": false,
+            "error_class": null,
+            "attempt_error_counts": {},
+            "usage": {
+              "prompt_tokens": 716,
+              "completion_tokens": 542,
+              "total_tokens": 1258
+            }
+          }
+        },
+        "step": null
+      },
+      {
+        "request": {
+          "line": 27,
+          "schema_version": 1,
+          "request_index": 24,
+          "role": "actor",
+          "step": 24,
+          "model": {
+            "provider": "openai",
+            "api_dialect": "openai",
+            "model": "gpt-5.6-luna",
+            "reasoning_effort": "none"
+          },
+          "duration_s": 2.0801,
+          "provider_latency_s": 2.051,
+          "token": "MV_LEFT",
+          "telemetry": {
+            "latency_s": 2.051,
+            "http_status": 200,
+            "attempt_count": 1,
+            "retry_wait_ms": 0,
+            "api_total_ms": 2051,
+            "ttft_ms": null,
+            "ttft_observed": false,
+            "error_class": null,
+            "attempt_error_counts": {},
+            "usage": {
+              "prompt_tokens": 646,
+              "completion_tokens": 53,
+              "total_tokens": 699
+            }
+          },
+          "visual_assessment": {
+            "target_visible": true,
+            "wrist_target_visible": true,
+            "aligned": false,
+            "contact_risk": false,
+            "observation": "The cube is visible left of the wrist grasp axis, so shift left before lowering."
+          }
+        },
+        "step": {
+          "line": 25,
+          "i": 24,
+          "event": "executed",
+          "act": "MV_LEFT",
+          "executed": true,
+          "action_source": "model",
+          "visual_assessment": {
+            "target_visible": true,
+            "wrist_target_visible": true,
+            "aligned": false,
+            "contact_risk": false,
+            "observation": "The cube is visible left of the wrist grasp axis, so shift left before lowering."
+          },
+          "sg": 0,
+          "n_sg": 6,
+          "stage": "GRASP",
+          "stage_id": "grasp_cube",
+          "target": "orange-and-blue cube",
+          "tcp_before": [
+            0.346993,
+            -0.041317,
+            0.436513
+          ],
+          "tcp_after": [
+            0.347012,
+            -0.061148,
+            0.436549
+          ],
+          "tcp_delta_m": 0.019832,
+          "gripper_width_m": 0.079999,
+          "gripper_command": "OPEN",
+          "native_success": false,
+          "env_done": false,
+          "native_subtask": {
+            "status": 0,
+            "completed": 0,
+            "total": 1,
+            "info": "",
+            "score": 0.0
+          },
+          "auto_release": false,
+          "replan_count": 1,
+          "timing": {
+            "actor_s": 2.0801,
+            "provider_s": 2.051,
+            "execute_s": 0.6262,
+            "loop_s": 2.7371,
+            "episode_s": 89.6911
+          }
+        }
+      },
+      {
+        "request": {
+          "line": 28,
+          "schema_version": 1,
+          "request_index": 25,
+          "role": "actor",
+          "step": 25,
+          "model": {
+            "provider": "openai",
+            "api_dialect": "openai",
+            "model": "gpt-5.6-luna",
+            "reasoning_effort": "none"
+          },
+          "duration_s": 2.0547,
+          "provider_latency_s": 2.026,
+          "token": "MV_LEFT",
+          "telemetry": {
+            "latency_s": 2.026,
+            "http_status": 200,
+            "attempt_count": 1,
+            "retry_wait_ms": 0,
+            "api_total_ms": 2026,
+            "ttft_ms": null,
+            "ttft_observed": false,
+            "error_class": null,
+            "attempt_error_counts": {},
+            "usage": {
+              "prompt_tokens": 647,
+              "completion_tokens": 61,
+              "total_tokens": 708
+            }
+          },
+          "visual_assessment": {
+            "target_visible": true,
+            "wrist_target_visible": true,
+            "aligned": false,
+            "contact_risk": false,
+            "observation": "The cube is visible below-left of the wrist grasp axis, so the open gripper should move left toward it before descending."
+          }
+        },
+        "step": {
+          "line": 26,
+          "i": 25,
+          "event": "executed",
+          "act": "MV_LEFT",
+          "executed": true,
+          "action_source": "model",
+          "visual_assessment": {
+            "target_visible": true,
+            "wrist_target_visible": true,
+            "aligned": false,
+            "contact_risk": false,
+            "observation": "The cube is visible below-left of the wrist grasp axis, so the open gripper should move left toward it before descending."
+          },
+          "sg": 0,
+          "n_sg": 6,
+          "stage": "GRASP",
+          "stage_id": "grasp_cube",
+          "target": "orange-and-blue cube",
+          "tcp_before": [
+            0.347012,
+            -0.061148,
+            0.436549
+          ],
+          "tcp_after": [
+            0.346988,
+            -0.081644,
+            0.436552
+          ],
+          "tcp_delta_m": 0.020496,
+          "gripper_width_m": 0.079999,
+          "gripper_command": "OPEN",
+          "native_success": false,
+          "env_done": false,
+          "native_subtask": {
+            "status": 0,
+            "completed": 0,
+            "total": 1,
+            "info": "",
+            "score": 0.0
+          },
+          "auto_release": false,
+          "replan_count": 1,
+          "timing": {
+            "actor_s": 2.0547,
+            "provider_s": 2.026,
+            "execute_s": 0.6266,
+            "loop_s": 2.71,
+            "episode_s": 92.4017
+          }
+        }
+      },
+      {
+        "request": {
+          "line": 29,
+          "schema_version": 1,
+          "request_index": 26,
+          "role": "actor",
+          "step": 26,
+          "model": {
+            "provider": "openai",
+            "api_dialect": "openai",
+            "model": "gpt-5.6-luna",
+            "reasoning_effort": "none"
+          },
+          "duration_s": 1.9848,
+          "provider_latency_s": 1.957,
+          "token": "MV_RIGHT",
+          "telemetry": {
+            "latency_s": 1.957,
+            "http_status": 200,
+            "attempt_count": 1,
+            "retry_wait_ms": 0,
+            "api_total_ms": 1957,
+            "ttft_ms": null,
+            "ttft_observed": false,
+            "error_class": null,
+            "attempt_error_counts": {},
+            "usage": {
+              "prompt_tokens": 650,
+              "completion_tokens": 56,
+              "total_tokens": 706
+            }
+          },
+          "visual_assessment": {
+            "target_visible": true,
+            "wrist_target_visible": true,
+            "aligned": false,
+            "contact_risk": false,
+            "observation": "The cube is visible left of the wrist grasp axis, so move right to center it before lowering."
+          }
+        },
+        "step": {
+          "line": 27,
+          "i": 26,
+          "event": "executed",
+          "act": "MV_RIGHT",
+          "executed": true,
+          "action_source": "model",
+          "visual_assessment": {
+            "target_visible": true,
+            "wrist_target_visible": true,
+            "aligned": false,
+            "contact_risk": false,
+            "observation": "The cube is visible left of the wrist grasp axis, so move right to center it before lowering."
+          },
+          "sg": 0,
+          "n_sg": 6,
+          "stage": "GRASP",
+          "stage_id": "grasp_cube",
+          "target": "orange-and-blue cube",
+          "tcp_before": [
+            0.346988,
+            -0.081644,
+            0.436552
+          ],
+          "tcp_after": [
+            0.346901,
+            -0.06183,
+            0.43651
+          ],
+          "tcp_delta_m": 0.019814,
+          "gripper_width_m": 0.079999,
+          "gripper_command": "OPEN",
+          "native_success": false,
+          "env_done": false,
+          "native_subtask": {
+            "status": 0,
+            "completed": 0,
+            "total": 1,
+            "info": "",
+            "score": 0.0
+          },
+          "auto_release": false,
+          "replan_count": 1,
+          "timing": {
+            "actor_s": 1.9848,
+            "provider_s": 1.957,
+            "execute_s": 0.6243,
+            "loop_s": 2.638,
+            "episode_s": 95.0402
+          }
+        }
+      },
+      {
+        "request": {
+          "line": 30,
+          "schema_version": 1,
+          "request_index": 27,
+          "role": "actor",
+          "step": 27,
+          "model": {
+            "provider": "openai",
+            "api_dialect": "openai",
+            "model": "gpt-5.6-luna",
+            "reasoning_effort": "none"
+          },
+          "duration_s": 1.9993,
+          "provider_latency_s": 1.971,
+          "token": "MV_RIGHT",
+          "telemetry": {
+            "latency_s": 1.971,
+            "http_status": 200,
+            "attempt_count": 1,
+            "retry_wait_ms": 0,
+            "api_total_ms": 1971,
+            "ttft_ms": null,
+            "ttft_observed": false,
+            "error_class": null,
+            "attempt_error_counts": {},
+            "usage": {
+              "prompt_tokens": 653,
+              "completion_tokens": 54,
+              "total_tokens": 707
+            }
+          },
+          "visual_assessment": {
+            "target_visible": true,
+            "wrist_target_visible": true,
+            "aligned": false,
+            "contact_risk": false,
+            "observation": "The cube is visible left of the wrist grasp axis, so move right to center it."
+          }
+        },
+        "step": {
+          "line": 28,
+          "i": 27,
+          "event": "executed",
+          "act": "MV_RIGHT",
+          "executed": true,
+          "action_source": "model",
+          "visual_assessment": {
+            "target_visible": true,
+            "wrist_target_visible": true,
+            "aligned": false,
+            "contact_risk": false,
+            "observation": "The cube is visible left of the wrist grasp axis, so move right to center it."
+          },
+          "sg": 0,
+          "n_sg": 6,
+          "stage": "GRASP",
+          "stage_id": "grasp_cube",
+          "target": "orange-and-blue cube",
+          "tcp_before": [
+            0.346901,
+            -0.06183,
+            0.43651
+          ],
+          "tcp_after": [
+            0.346899,
+            -0.041337,
+            0.436522
+          ],
+          "tcp_delta_m": 0.020493,
+          "gripper_width_m": 0.079999,
+          "gripper_command": "OPEN",
+          "native_success": false,
+          "env_done": false,
+          "native_subtask": {
+            "status": 0,
+            "completed": 0,
+            "total": 1,
+            "info": "",
+            "score": 0.0
+          },
+          "auto_release": false,
+          "replan_count": 1,
+          "timing": {
+            "actor_s": 1.9993,
+            "provider_s": 1.971,
+            "execute_s": 0.6233,
+            "loop_s": 2.6505,
+            "episode_s": 97.6912
+          }
+        }
+      },
+      {
+        "request": {
+          "line": 31,
+          "schema_version": 1,
+          "request_index": 28,
+          "role": "actor",
+          "step": 28,
+          "model": {
+            "provider": "openai",
+            "api_dialect": "openai",
+            "model": "gpt-5.6-luna",
+            "reasoning_effort": "none"
+          },
+          "duration_s": 2.1232,
+          "provider_latency_s": 2.095,
+          "token": "MV_LEFT",
+          "telemetry": {
+            "latency_s": 2.095,
+            "http_status": 200,
+            "attempt_count": 1,
+            "retry_wait_ms": 0,
+            "api_total_ms": 2095,
+            "ttft_ms": null,
+            "ttft_observed": false,
+            "error_class": null,
+            "attempt_error_counts": {},
+            "usage": {
+              "prompt_tokens": 656,
+              "completion_tokens": 53,
+              "total_tokens": 709
+            }
+          },
+          "visual_assessment": {
+            "target_visible": true,
+            "wrist_target_visible": true,
+            "aligned": false,
+            "contact_risk": false,
+            "observation": "The cube is visible slightly left of the wrist center, so shift left before descending."
+          }
+        },
+        "step": {
+          "line": 29,
+          "i": 28,
+          "event": "executed",
+          "act": "MV_LEFT",
+          "executed": true,
+          "action_source": "model",
+          "visual_assessment": {
+            "target_visible": true,
+            "wrist_target_visible": true,
+            "aligned": false,
+            "contact_risk": false,
+            "observation": "The cube is visible slightly left of the wrist center, so shift left before descending."
+          },
+          "sg": 0,
+          "n_sg": 6,
+          "stage": "GRASP",
+          "stage_id": "grasp_cube",
+          "target": "orange-and-blue cube",
+          "tcp_before": [
+            0.346899,
+            -0.041337,
+            0.436522
+          ],
+          "tcp_after": [
+            0.346918,
+            -0.06117,
+            0.436558
+          ],
+          "tcp_delta_m": 0.019833,
+          "gripper_width_m": 0.079999,
+          "gripper_command": "OPEN",
+          "native_success": false,
+          "env_done": false,
+          "native_subtask": {
+            "status": 0,
+            "completed": 0,
+            "total": 1,
+            "info": "",
+            "score": 0.0
+          },
+          "auto_release": false,
+          "replan_count": 1,
+          "timing": {
+            "actor_s": 2.1232,
+            "provider_s": 2.095,
+            "execute_s": 0.6249,
+            "loop_s": 2.7768,
+            "episode_s": 100.4685
+          }
+        }
+      },
+      {
+        "request": {
+          "line": 32,
+          "schema_version": 1,
+          "request_index": 29,
+          "role": "actor",
+          "step": 29,
+          "model": {
+            "provider": "openai",
+            "api_dialect": "openai",
+            "model": "gpt-5.6-luna",
+            "reasoning_effort": "none"
+          },
+          "duration_s": 1.8801,
+          "provider_latency_s": 1.852,
+          "token": "MV_LEFT",
+          "telemetry": {
+            "latency_s": 1.852,
+            "http_status": 200,
+            "attempt_count": 1,
+            "retry_wait_ms": 0,
+            "api_total_ms": 1852,
+            "ttft_ms": null,
+            "ttft_observed": false,
+            "error_class": null,
+            "attempt_error_counts": {},
+            "usage": {
+              "prompt_tokens": 659,
+              "completion_tokens": 56,
+              "total_tokens": 715
+            }
+          },
+          "visual_assessment": {
+            "target_visible": true,
+            "wrist_target_visible": true,
+            "aligned": false,
+            "contact_risk": false,
+            "observation": "The cube is visible below-left of the wrist grasp axis, so move left to align before descending."
+          }
+        },
+        "step": {
+          "line": 30,
+          "i": 29,
+          "event": "executed",
+          "act": "MV_LEFT",
+          "executed": true,
+          "action_source": "model",
+          "visual_assessment": {
+            "target_visible": true,
+            "wrist_target_visible": true,
+            "aligned": false,
+            "contact_risk": false,
+            "observation": "The cube is visible below-left of the wrist grasp axis, so move left to align before descending."
+          },
+          "sg": 0,
+          "n_sg": 6,
+          "stage": "GRASP",
+          "stage_id": "grasp_cube",
+          "target": "orange-and-blue cube",
+          "tcp_before": [
+            0.346918,
+            -0.06117,
+            0.436558
+          ],
+          "tcp_after": [
+            0.346893,
+            -0.081666,
+            0.436561
+          ],
+          "tcp_delta_m": 0.020496,
+          "gripper_width_m": 0.079999,
+          "gripper_command": "OPEN",
+          "native_success": false,
+          "env_done": false,
+          "native_subtask": {
+            "status": 0,
+            "completed": 0,
+            "total": 1,
+            "info": "",
+            "score": 0.0
+          },
+          "auto_release": false,
+          "replan_count": 1,
+          "timing": {
+            "actor_s": 1.8801,
+            "provider_s": 1.852,
+            "execute_s": 0.6233,
+            "loop_s": 2.5321,
+            "episode_s": 103.0011
+          }
+        }
+      },
+      {
+        "request": {
+          "line": 33,
+          "schema_version": 1,
+          "request_index": 30,
+          "role": "actor",
+          "step": 30,
+          "model": {
+            "provider": "openai",
+            "api_dialect": "openai",
+            "model": "gpt-5.6-luna",
+            "reasoning_effort": "none"
+          },
+          "duration_s": 2.2373,
+          "provider_latency_s": 2.209,
+          "token": "MV_LEFT",
+          "telemetry": {
+            "latency_s": 2.209,
+            "http_status": 200,
+            "attempt_count": 1,
+            "retry_wait_ms": 0,
+            "api_total_ms": 2209,
+            "ttft_ms": null,
+            "ttft_observed": false,
+            "error_class": null,
+            "attempt_error_counts": {},
+            "usage": {
+              "prompt_tokens": 662,
+              "completion_tokens": 56,
+              "total_tokens": 718
+            }
+          },
+          "visual_assessment": {
+            "target_visible": true,
+            "wrist_target_visible": true,
+            "aligned": false,
+            "contact_risk": false,
+            "observation": "The cube is visible above-left of the wrist opening, so move left to center the grasp axis."
+          }
+        },
+        "step": {
+          "line": 31,
+          "i": 30,
+          "event": "executed",
+          "act": "MV_LEFT",
+          "executed": true,
+          "action_source": "model",
+          "visual_assessment": {
+            "target_visible": true,
+            "wrist_target_visible": true,
+            "aligned": false,
+            "contact_risk": false,
+            "observation": "The cube is visible above-left of the wrist opening, so move left to center the grasp axis."
+          },
+          "sg": 0,
+          "n_sg": 6,
+          "stage": "GRASP",
+          "stage_id": "grasp_cube",
+          "target": "orange-and-blue cube",
+          "tcp_before": [
+            0.346893,
+            -0.081666,
+            0.436561
+          ],
+          "tcp_after": [
+            0.346865,
+            -0.102162,
+            0.436561
+          ],
+          "tcp_delta_m": 0.020496,
+          "gripper_width_m": 0.079999,
+          "gripper_command": "OPEN",
+          "native_success": false,
+          "env_done": false,
+          "native_subtask": {
+            "status": 0,
+            "completed": 0,
+            "total": 1,
+            "info": "",
+            "score": 0.0
+          },
+          "auto_release": false,
+          "replan_count": 1,
+          "timing": {
+            "actor_s": 2.2373,
+            "provider_s": 2.209,
+            "execute_s": 0.6226,
+            "loop_s": 2.8886,
+            "episode_s": 105.8903
+          }
+        }
+      },
+      {
+        "request": {
+          "line": 34,
+          "schema_version": 1,
+          "request_index": 31,
+          "role": "actor",
+          "step": 31,
+          "model": {
+            "provider": "openai",
+            "api_dialect": "openai",
+            "model": "gpt-5.6-luna",
+            "reasoning_effort": "none"
+          },
+          "duration_s": 2.2345,
+          "provider_latency_s": 2.207,
+          "token": "MV_RIGHT",
+          "telemetry": {
+            "latency_s": 2.207,
+            "http_status": 200,
+            "attempt_count": 1,
+            "retry_wait_ms": 0,
+            "api_total_ms": 2207,
+            "ttft_ms": null,
+            "ttft_observed": false,
+            "error_class": null,
+            "attempt_error_counts": {},
+            "usage": {
+              "prompt_tokens": 665,
+              "completion_tokens": 56,
+              "total_tokens": 721
+            }
+          },
+          "visual_assessment": {
+            "target_visible": true,
+            "wrist_target_visible": true,
+            "aligned": false,
+            "contact_risk": false,
+            "observation": "The cube is visible left of the wrist grasp axis, so move right to center it before lowering."
+          }
+        },
+        "step": {
+          "line": 32,
+          "i": 31,
+          "event": "executed",
+          "act": "MV_RIGHT",
+          "executed": true,
+          "action_source": "model",
+          "visual_assessment": {
+            "target_visible": true,
+            "wrist_target_visible": true,
+            "aligned": false,
+            "contact_risk": false,
+            "observation": "The cube is visible left of the wrist grasp axis, so move right to center it before lowering."
+          },
+          "sg": 0,
+          "n_sg": 6,
+          "stage": "GRASP",
+          "stage_id": "grasp_cube",
+          "target": "orange-and-blue cube",
+          "tcp_before": [
+            0.346865,
+            -0.102162,
+            0.436561
+          ],
+          "tcp_after": [
+            0.346757,
+            -0.082359,
+            0.436508
+          ],
+          "tcp_delta_m": 0.019803,
+          "gripper_width_m": 0.079999,
+          "gripper_command": "OPEN",
+          "native_success": false,
+          "env_done": false,
+          "native_subtask": {
+            "status": 0,
+            "completed": 0,
+            "total": 1,
+            "info": "",
+            "score": 0.0
+          },
+          "auto_release": false,
+          "replan_count": 1,
+          "timing": {
+            "actor_s": 2.2345,
+            "provider_s": 2.207,
+            "execute_s": 0.626,
+            "loop_s": 2.8888,
+            "episode_s": 108.7796
+          }
+        }
+      },
+      {
+        "request": {
+          "line": 35,
+          "schema_version": 1,
+          "request_index": 32,
+          "role": "actor",
+          "step": 32,
+          "model": {
+            "provider": "openai",
+            "api_dialect": "openai",
+            "model": "gpt-5.6-luna",
+            "reasoning_effort": "none"
+          },
+          "duration_s": 1.992,
+          "provider_latency_s": 1.964,
+          "token": "MV_RIGHT",
+          "telemetry": {
+            "latency_s": 1.964,
+            "http_status": 200,
+            "attempt_count": 1,
+            "retry_wait_ms": 0,
+            "api_total_ms": 1964,
+            "ttft_ms": null,
+            "ttft_observed": false,
+            "error_class": null,
+            "attempt_error_counts": {},
+            "usage": {
+              "prompt_tokens": 668,
+              "completion_tokens": 54,
+              "total_tokens": 722
+            }
+          },
+          "visual_assessment": {
+            "target_visible": true,
+            "wrist_target_visible": true,
+            "aligned": false,
+            "contact_risk": false,
+            "observation": "The cube is visible left of the wrist grasp axis, so move right to center it."
+          }
+        },
+        "step": {
+          "line": 33,
+          "i": 32,
+          "event": "executed",
+          "act": "MV_RIGHT",
+          "executed": true,
+          "action_source": "model",
+          "visual_assessment": {
+            "target_visible": true,
+            "wrist_target_visible": true,
+            "aligned": false,
+            "contact_risk": false,
+            "observation": "The cube is visible left of the wrist grasp axis, so move right to center it."
+          },
+          "sg": 0,
+          "n_sg": 6,
+          "stage": "GRASP",
+          "stage_id": "grasp_cube",
+          "target": "orange-and-blue cube",
+          "tcp_before": [
+            0.346757,
+            -0.082359,
+            0.436508
+          ],
+          "tcp_after": [
+            0.346759,
+            -0.061867,
+            0.436522
+          ],
+          "tcp_delta_m": 0.020492,
+          "gripper_width_m": 0.079999,
+          "gripper_command": "OPEN",
+          "native_success": false,
+          "env_done": false,
+          "native_subtask": {
+            "status": 0,
+            "completed": 0,
+            "total": 1,
+            "info": "",
+            "score": 0.0
+          },
+          "auto_release": false,
+          "replan_count": 1,
+          "timing": {
+            "actor_s": 1.992,
+            "provider_s": 1.964,
+            "execute_s": 0.6276,
+            "loop_s": 2.648,
+            "episode_s": 111.4281
+          }
+        }
+      },
+      {
+        "request": {
+          "line": 36,
+          "schema_version": 1,
+          "request_index": 33,
+          "role": "actor",
+          "step": 33,
+          "model": {
+            "provider": "openai",
+            "api_dialect": "openai",
+            "model": "gpt-5.6-luna",
+            "reasoning_effort": "none"
+          },
+          "duration_s": 1.9649,
+          "provider_latency_s": 1.937,
+          "token": "MV_BACK",
+          "telemetry": {
+            "latency_s": 1.937,
+            "http_status": 200,
+            "attempt_count": 1,
+            "retry_wait_ms": 0,
+            "api_total_ms": 1937,
+            "ttft_ms": null,
+            "ttft_observed": false,
+            "error_class": null,
+            "attempt_error_counts": {},
+            "usage": {
+              "prompt_tokens": 668,
+              "completion_tokens": 56,
+              "total_tokens": 724
+            }
+          },
+          "visual_assessment": {
+            "target_visible": true,
+            "wrist_target_visible": true,
+            "aligned": false,
+            "contact_risk": false,
+            "observation": "The cube is visible below the wrist-image center, so move the grasp axis toward it before descending."
+          }
+        },
+        "step": {
+          "line": 34,
+          "i": 33,
+          "event": "executed",
+          "act": "MV_BACK",
+          "executed": true,
+          "action_source": "model",
+          "visual_assessment": {
+            "target_visible": true,
+            "wrist_target_visible": true,
+            "aligned": false,
+            "contact_risk": false,
+            "observation": "The cube is visible below the wrist-image center, so move the grasp axis toward it before descending."
+          },
+          "sg": 0,
+          "n_sg": 6,
+          "stage": "GRASP",
+          "stage_id": "grasp_cube",
+          "target": "orange-and-blue cube",
+          "tcp_before": [
+            0.346759,
+            -0.061867,
+            0.436522
+          ],
+          "tcp_after": [
+            0.326489,
+            -0.061504,
+            0.436309
+          ],
+          "tcp_delta_m": 0.020275,
+          "gripper_width_m": 0.08,
+          "gripper_command": "OPEN",
+          "native_success": false,
+          "env_done": false,
+          "native_subtask": {
+            "status": 0,
+            "completed": 0,
+            "total": 1,
+            "info": "",
+            "score": 0.0
+          },
+          "auto_release": false,
+          "replan_count": 1,
+          "timing": {
+            "actor_s": 1.9649,
+            "provider_s": 1.937,
+            "execute_s": 0.6246,
+            "loop_s": 2.6183,
+            "episode_s": 114.047
+          }
+        }
+      },
+      {
+        "request": {
+          "line": 37,
+          "schema_version": 1,
+          "request_index": 34,
+          "role": "actor",
+          "step": 34,
+          "model": {
+            "provider": "openai",
+            "api_dialect": "openai",
+            "model": "gpt-5.6-luna",
+            "reasoning_effort": "none"
+          },
+          "duration_s": 2.0097,
+          "provider_latency_s": 1.981,
+          "token": "MV_RIGHT",
+          "telemetry": {
+            "latency_s": 1.981,
+            "http_status": 200,
+            "attempt_count": 1,
+            "retry_wait_ms": 0,
+            "api_total_ms": 1981,
+            "ttft_ms": null,
+            "ttft_observed": false,
+            "error_class": null,
+            "attempt_error_counts": {},
+            "usage": {
+              "prompt_tokens": 668,
+              "completion_tokens": 57,
+              "total_tokens": 725
+            }
+          },
+          "visual_assessment": {
+            "target_visible": true,
+            "wrist_target_visible": true,
+            "aligned": false,
+            "contact_risk": false,
+            "observation": "The cube is visible left of the wrist grasp axis, so move the gripper leftward toward it."
+          }
+        },
+        "step": {
+          "line": 35,
+          "i": 34,
+          "event": "executed",
+          "act": "MV_RIGHT",
+          "executed": true,
+          "action_source": "model",
+          "visual_assessment": {
+            "target_visible": true,
+            "wrist_target_visible": true,
+            "aligned": false,
+            "contact_risk": false,
+            "observation": "The cube is visible left of the wrist grasp axis, so move the gripper leftward toward it."
+          },
+          "sg": 0,
+          "n_sg": 6,
+          "stage": "GRASP",
+          "stage_id": "grasp_cube",
+          "target": "orange-and-blue cube",
+          "tcp_before": [
+            0.326489,
+            -0.061504,
+            0.436309
+          ],
+          "tcp_after": [
+            0.326344,
+            -0.041339,
+            0.436547
+          ],
+          "tcp_delta_m": 0.020167,
+          "gripper_width_m": 0.079999,
+          "gripper_command": "OPEN",
+          "native_success": false,
+          "env_done": false,
+          "native_subtask": {
+            "status": 0,
+            "completed": 0,
+            "total": 1,
+            "info": "",
+            "score": 0.0
+          },
+          "auto_release": false,
+          "replan_count": 1,
+          "timing": {
+            "actor_s": 2.0097,
+            "provider_s": 1.981,
+            "execute_s": 0.6324,
+            "loop_s": 2.6711,
+            "episode_s": 116.7186
+          }
+        }
+      },
+      {
+        "request": {
+          "line": 38,
+          "schema_version": 1,
+          "request_index": 35,
+          "role": "actor",
+          "step": 35,
+          "model": {
+            "provider": "openai",
+            "api_dialect": "openai",
+            "model": "gpt-5.6-luna",
+            "reasoning_effort": "none"
+          },
+          "duration_s": 1.8806,
+          "provider_latency_s": 1.853,
+          "token": "MV_FWD",
+          "telemetry": {
+            "latency_s": 1.853,
+            "http_status": 200,
+            "attempt_count": 1,
+            "retry_wait_ms": 0,
+            "api_total_ms": 1853,
+            "ttft_ms": null,
+            "ttft_observed": false,
+            "error_class": null,
+            "attempt_error_counts": {},
+            "usage": {
+              "prompt_tokens": 668,
+              "completion_tokens": 54,
+              "total_tokens": 722
+            }
+          },
+          "visual_assessment": {
+            "target_visible": true,
+            "wrist_target_visible": true,
+            "aligned": false,
+            "contact_risk": false,
+            "observation": "The cube is visible below the wrist-image center, so move forward to align it."
+          }
+        },
+        "step": {
+          "line": 36,
+          "i": 35,
+          "event": "executed",
+          "act": "MV_FWD",
+          "executed": true,
+          "action_source": "model",
+          "visual_assessment": {
+            "target_visible": true,
+            "wrist_target_visible": true,
+            "aligned": false,
+            "contact_risk": false,
+            "observation": "The cube is visible below the wrist-image center, so move forward to align it."
+          },
+          "sg": 0,
+          "n_sg": 6,
+          "stage": "GRASP",
+          "stage_id": "grasp_cube",
+          "target": "orange-and-blue cube",
+          "tcp_before": [
+            0.326344,
+            -0.041339,
+            0.436547
+          ],
+          "tcp_after": [
+            0.346685,
+            -0.041066,
+            0.43676
+          ],
+          "tcp_delta_m": 0.020344,
+          "gripper_width_m": 0.08,
+          "gripper_command": "OPEN",
+          "native_success": false,
+          "env_done": false,
+          "native_subtask": {
+            "status": 0,
+            "completed": 0,
+            "total": 1,
+            "info": "",
+            "score": 0.0
+          },
+          "auto_release": false,
+          "replan_count": 1,
+          "timing": {
+            "actor_s": 1.8806,
+            "provider_s": 1.853,
+            "execute_s": 0.6206,
+            "loop_s": 2.5311,
+            "episode_s": 119.2503
+          }
+        }
+      },
+      {
+        "request": {
+          "line": 39,
+          "schema_version": 1,
+          "request_index": 36,
+          "role": "actor",
+          "step": 36,
+          "model": {
+            "provider": "openai",
+            "api_dialect": "openai",
+            "model": "gpt-5.6-luna",
+            "reasoning_effort": "none"
+          },
+          "duration_s": 2.0303,
+          "provider_latency_s": 2.001,
+          "token": "MV_LEFT",
+          "telemetry": {
+            "latency_s": 2.001,
+            "http_status": 200,
+            "attempt_count": 1,
+            "retry_wait_ms": 0,
+            "api_total_ms": 2001,
+            "ttft_ms": null,
+            "ttft_observed": false,
+            "error_class": null,
+            "attempt_error_counts": {},
+            "usage": {
+              "prompt_tokens": 669,
+              "completion_tokens": 53,
+              "total_tokens": 722
+            }
+          },
+          "visual_assessment": {
+            "target_visible": true,
+            "wrist_target_visible": true,
+            "aligned": false,
+            "contact_risk": false,
+            "observation": "The cube is visible left of the wrist grasp axis, so shift left before descending."
+          }
+        },
+        "step": {
+          "line": 37,
+          "i": 36,
+          "event": "executed",
+          "act": "MV_LEFT",
+          "executed": true,
+          "action_source": "model",
+          "visual_assessment": {
+            "target_visible": true,
+            "wrist_target_visible": true,
+            "aligned": false,
+            "contact_risk": false,
+            "observation": "The cube is visible left of the wrist grasp axis, so shift left before descending."
+          },
+          "sg": 0,
+          "n_sg": 6,
+          "stage": "GRASP",
+          "stage_id": "grasp_cube",
+          "target": "orange-and-blue cube",
+          "tcp_before": [
+            0.346685,
+            -0.041066,
+            0.43676
+          ],
+          "tcp_after": [
+            0.346796,
+            -0.061215,
+            0.436519
+          ],
+          "tcp_delta_m": 0.020151,
+          "gripper_width_m": 0.079999,
+          "gripper_command": "OPEN",
+          "native_success": false,
+          "env_done": false,
+          "native_subtask": {
+            "status": 0,
+            "completed": 0,
+            "total": 1,
+            "info": "",
+            "score": 0.0
+          },
+          "auto_release": false,
+          "replan_count": 1,
+          "timing": {
+            "actor_s": 2.0303,
+            "provider_s": 2.001,
+            "execute_s": 0.6276,
+            "loop_s": 2.6865,
+            "episode_s": 121.9373
+          }
+        }
+      },
+      {
+        "request": {
+          "line": 40,
+          "schema_version": 1,
+          "request_index": 37,
+          "role": "actor",
+          "step": 37,
+          "model": {
+            "provider": "openai",
+            "api_dialect": "openai",
+            "model": "gpt-5.6-luna",
+            "reasoning_effort": "none"
+          },
+          "duration_s": 2.1949,
+          "provider_latency_s": 2.167,
+          "token": "MV_LEFT",
+          "telemetry": {
+            "latency_s": 2.167,
+            "http_status": 200,
+            "attempt_count": 1,
+            "retry_wait_ms": 0,
+            "api_total_ms": 2167,
+            "ttft_ms": null,
+            "ttft_observed": false,
+            "error_class": null,
+            "attempt_error_counts": {},
+            "usage": {
+              "prompt_tokens": 669,
+              "completion_tokens": 55,
+              "total_tokens": 724
+            }
+          },
+          "visual_assessment": {
+            "target_visible": true,
+            "wrist_target_visible": true,
+            "aligned": false,
+            "contact_risk": false,
+            "observation": "The cube is visible below-left of the wrist grasp axis, so move left to center it."
+          }
+        },
+        "step": {
+          "line": 38,
+          "i": 37,
+          "event": "executed",
+          "act": "MV_LEFT",
+          "executed": true,
+          "action_source": "model",
+          "visual_assessment": {
+            "target_visible": true,
+            "wrist_target_visible": true,
+            "aligned": false,
+            "contact_risk": false,
+            "observation": "The cube is visible below-left of the wrist grasp axis, so move left to center it."
+          },
+          "sg": 0,
+          "n_sg": 6,
+          "stage": "GRASP",
+          "stage_id": "grasp_cube",
+          "target": "orange-and-blue cube",
+          "tcp_before": [
+            0.346796,
+            -0.061215,
+            0.436519
+          ],
+          "tcp_after": [
+            0.34677,
+            -0.08171,
+            0.43652
+          ],
+          "tcp_delta_m": 0.020495,
+          "gripper_width_m": 0.079999,
+          "gripper_command": "OPEN",
+          "native_success": false,
+          "env_done": false,
+          "native_subtask": {
+            "status": 0,
+            "completed": 0,
+            "total": 1,
+            "info": "",
+            "score": 0.0
+          },
+          "auto_release": false,
+          "replan_count": 1,
+          "timing": {
+            "actor_s": 2.1949,
+            "provider_s": 2.167,
+            "execute_s": 0.6263,
+            "loop_s": 2.8493,
+            "episode_s": 124.7871
+          }
+        }
+      },
+      {
+        "request": {
+          "line": 41,
+          "schema_version": 1,
+          "request_index": 38,
+          "role": "actor",
+          "step": 38,
+          "model": {
+            "provider": "openai",
+            "api_dialect": "openai",
+            "model": "gpt-5.6-luna",
+            "reasoning_effort": "none"
+          },
+          "duration_s": 2.9143,
+          "provider_latency_s": 2.886,
+          "token": "MV_LEFT",
+          "telemetry": {
+            "latency_s": 2.886,
+            "http_status": 200,
+            "attempt_count": 1,
+            "retry_wait_ms": 0,
+            "api_total_ms": 2886,
+            "ttft_ms": null,
+            "ttft_observed": false,
+            "error_class": null,
+            "attempt_error_counts": {},
+            "usage": {
+              "prompt_tokens": 669,
+              "completion_tokens": 53,
+              "total_tokens": 722
+            }
+          },
+          "visual_assessment": {
+            "target_visible": true,
+            "wrist_target_visible": true,
+            "aligned": false,
+            "contact_risk": false,
+            "observation": "The cube is visible slightly left of the wrist grasp axis and remains on the table."
+          }
+        },
+        "step": {
+          "line": 39,
+          "i": 38,
+          "event": "executed",
+          "act": "MV_LEFT",
+          "executed": true,
+          "action_source": "model",
+          "visual_assessment": {
+            "target_visible": true,
+            "wrist_target_visible": true,
+            "aligned": false,
+            "contact_risk": false,
+            "observation": "The cube is visible slightly left of the wrist grasp axis and remains on the table."
+          },
+          "sg": 0,
+          "n_sg": 6,
+          "stage": "GRASP",
+          "stage_id": "grasp_cube",
+          "target": "orange-and-blue cube",
+          "tcp_before": [
+            0.34677,
+            -0.08171,
+            0.43652
+          ],
+          "tcp_after": [
+            0.346741,
+            -0.102206,
+            0.43652
+          ],
+          "tcp_delta_m": 0.020495,
+          "gripper_width_m": 0.079999,
+          "gripper_command": "OPEN",
+          "native_success": false,
+          "env_done": false,
+          "native_subtask": {
+            "status": 0,
+            "completed": 0,
+            "total": 1,
+            "info": "",
+            "score": 0.0
+          },
+          "auto_release": false,
+          "replan_count": 1,
+          "timing": {
+            "actor_s": 2.9143,
+            "provider_s": 2.886,
+            "execute_s": 0.6261,
+            "loop_s": 3.5693,
+            "episode_s": 128.357
+          }
+        }
+      },
+      {
+        "request": {
+          "line": 42,
+          "schema_version": 1,
+          "request_index": 39,
+          "role": "actor",
+          "step": 39,
+          "model": {
+            "provider": "openai",
+            "api_dialect": "openai",
+            "model": "gpt-5.6-luna",
+            "reasoning_effort": "none"
+          },
+          "duration_s": 2.2654,
+          "provider_latency_s": 2.237,
+          "token": "MV_RIGHT",
+          "telemetry": {
+            "latency_s": 2.237,
+            "http_status": 200,
+            "attempt_count": 1,
+            "retry_wait_ms": 0,
+            "api_total_ms": 2237,
+            "ttft_ms": null,
+            "ttft_observed": false,
+            "error_class": null,
+            "attempt_error_counts": {},
+            "usage": {
+              "prompt_tokens": 669,
+              "completion_tokens": 56,
+              "total_tokens": 725
+            }
+          },
+          "visual_assessment": {
+            "target_visible": true,
+            "wrist_target_visible": true,
+            "aligned": false,
+            "contact_risk": false,
+            "observation": "The cube is visible left of the wrist grasp axis, so move right to center it before descending."
+          }
+        },
+        "step": {
+          "line": 40,
+          "i": 39,
+          "event": "executed",
+          "act": "MV_RIGHT",
+          "executed": true,
+          "action_source": "model",
+          "visual_assessment": {
+            "target_visible": true,
+            "wrist_target_visible": true,
+            "aligned": false,
+            "contact_risk": false,
+            "observation": "The cube is visible left of the wrist grasp axis, so move right to center it before descending."
+          },
+          "sg": 0,
+          "n_sg": 6,
+          "stage": "GRASP",
+          "stage_id": "grasp_cube",
+          "target": "orange-and-blue cube",
+          "tcp_before": [
+            0.346741,
+            -0.102206,
+            0.43652
+          ],
+          "tcp_after": [
+            0.346634,
+            -0.082402,
+            0.436465
+          ],
+          "tcp_delta_m": 0.019804,
+          "gripper_width_m": 0.079999,
+          "gripper_command": "OPEN",
+          "native_success": false,
+          "env_done": false,
+          "native_subtask": {
+            "status": 0,
+            "completed": 0,
+            "total": 1,
+            "info": "",
+            "score": 0.0
+          },
+          "auto_release": false,
+          "replan_count": 1,
+          "timing": {
+            "actor_s": 2.2654,
+            "provider_s": 2.237,
+            "execute_s": 0.6267,
+            "loop_s": 2.9207,
+            "episode_s": 131.2783
+          }
+        }
+      },
+      {
+        "request": {
+          "line": 43,
+          "schema_version": 1,
+          "request_index": 40,
+          "role": "actor",
+          "step": 40,
+          "model": {
+            "provider": "openai",
+            "api_dialect": "openai",
+            "model": "gpt-5.6-luna",
+            "reasoning_effort": "none"
+          },
+          "duration_s": 2.0604,
+          "provider_latency_s": 2.032,
+          "token": "MV_RIGHT",
+          "telemetry": {
+            "latency_s": 2.032,
+            "http_status": 200,
+            "attempt_count": 1,
+            "retry_wait_ms": 0,
+            "api_total_ms": 2032,
+            "ttft_ms": null,
+            "ttft_observed": false,
+            "error_class": null,
+            "attempt_error_counts": {},
+            "usage": {
+              "prompt_tokens": 669,
+              "completion_tokens": 55,
+              "total_tokens": 724
+            }
+          },
+          "visual_assessment": {
+            "target_visible": true,
+            "wrist_target_visible": true,
+            "aligned": false,
+            "contact_risk": false,
+            "observation": "The cube is visible left of the wrist grasp axis, so move right to align over it."
+          }
+        },
+        "step": {
+          "line": 41,
+          "i": 40,
+          "event": "executed",
+          "act": "MV_RIGHT",
+          "executed": true,
+          "action_source": "model",
+          "visual_assessment": {
+            "target_visible": true,
+            "wrist_target_visible": true,
+            "aligned": false,
+            "contact_risk": false,
+            "observation": "The cube is visible left of the wrist grasp axis, so move right to align over it."
+          },
+          "sg": 0,
+          "n_sg": 6,
+          "stage": "GRASP",
+          "stage_id": "grasp_cube",
+          "target": "orange-and-blue cube",
+          "tcp_before": [
+            0.346634,
+            -0.082402,
+            0.436465
+          ],
+          "tcp_after": [
+            0.346635,
+            -0.06191,
+            0.436479
+          ],
+          "tcp_delta_m": 0.020492,
+          "gripper_width_m": 0.079999,
+          "gripper_command": "OPEN",
+          "native_success": false,
+          "env_done": false,
+          "native_subtask": {
+            "status": 0,
+            "completed": 0,
+            "total": 1,
+            "info": "",
+            "score": 0.0
+          },
+          "auto_release": false,
+          "replan_count": 1,
+          "timing": {
+            "actor_s": 2.0604,
+            "provider_s": 2.032,
+            "execute_s": 0.6237,
+            "loop_s": 2.713,
+            "episode_s": 133.9917
+          }
+        }
+      },
+      {
+        "request": {
+          "line": 44,
+          "schema_version": 1,
+          "request_index": 41,
+          "role": "actor",
+          "step": 41,
+          "model": {
+            "provider": "openai",
+            "api_dialect": "openai",
+            "model": "gpt-5.6-luna",
+            "reasoning_effort": "none"
+          },
+          "duration_s": 2.76,
+          "provider_latency_s": 2.731,
+          "token": "MV_RIGHT",
+          "telemetry": {
+            "latency_s": 2.731,
+            "http_status": 200,
+            "attempt_count": 1,
+            "retry_wait_ms": 0,
+            "api_total_ms": 2731,
+            "ttft_ms": null,
+            "ttft_observed": false,
+            "error_class": null,
+            "attempt_error_counts": {},
+            "usage": {
+              "prompt_tokens": 669,
+              "completion_tokens": 57,
+              "total_tokens": 726
+            }
+          },
+          "visual_assessment": {
+            "target_visible": true,
+            "wrist_target_visible": true,
+            "aligned": false,
+            "contact_risk": false,
+            "observation": "The cube is visible slightly left of the wrist grasp axis, so move right to center it before descending."
+          }
+        },
+        "step": {
+          "line": 42,
+          "i": 41,
+          "event": "executed",
+          "act": "MV_RIGHT",
+          "executed": true,
+          "action_source": "model",
+          "visual_assessment": {
+            "target_visible": true,
+            "wrist_target_visible": true,
+            "aligned": false,
+            "contact_risk": false,
+            "observation": "The cube is visible slightly left of the wrist grasp axis, so move right to center it before descending."
+          },
+          "sg": 0,
+          "n_sg": 6,
+          "stage": "GRASP",
+          "stage_id": "grasp_cube",
+          "target": "orange-and-blue cube",
+          "tcp_before": [
+            0.346635,
+            -0.06191,
+            0.436479
+          ],
+          "tcp_after": [
+            0.346633,
+            -0.041418,
+            0.436492
+          ],
+          "tcp_delta_m": 0.020491,
+          "gripper_width_m": 0.079999,
+          "gripper_command": "OPEN",
+          "native_success": false,
+          "env_done": false,
+          "native_subtask": {
+            "status": 0,
+            "completed": 0,
+            "total": 1,
+            "info": "",
+            "score": 0.0
+          },
+          "auto_release": false,
+          "replan_count": 1,
+          "timing": {
+            "actor_s": 2.76,
+            "provider_s": 2.731,
+            "execute_s": 0.6252,
+            "loop_s": 3.4131,
+            "episode_s": 137.4054
+          }
+        }
+      },
+      {
+        "request": {
+          "line": 45,
+          "schema_version": 1,
+          "request_index": 42,
+          "role": "actor",
+          "step": 42,
+          "model": {
+            "provider": "openai",
+            "api_dialect": "openai",
+            "model": "gpt-5.6-luna",
+            "reasoning_effort": "none"
+          },
+          "duration_s": 1.8656,
+          "provider_latency_s": 1.837,
+          "token": "MV_LEFT",
+          "telemetry": {
+            "latency_s": 1.837,
+            "http_status": 200,
+            "attempt_count": 1,
+            "retry_wait_ms": 0,
+            "api_total_ms": 1837,
+            "ttft_ms": null,
+            "ttft_observed": false,
+            "error_class": null,
+            "attempt_error_counts": {},
+            "usage": {
+              "prompt_tokens": 669,
+              "completion_tokens": 58,
+              "total_tokens": 727
+            }
+          },
+          "visual_assessment": {
+            "target_visible": true,
+            "wrist_target_visible": true,
+            "aligned": false,
+            "contact_risk": false,
+            "observation": "The cube is visible slightly left of the wrist grasp axis, with the gripper still open above the table."
+          }
+        },
+        "step": {
+          "line": 43,
+          "i": 42,
+          "event": "executed",
+          "act": "MV_LEFT",
+          "executed": true,
+          "action_source": "model",
+          "visual_assessment": {
+            "target_visible": true,
+            "wrist_target_visible": true,
+            "aligned": false,
+            "contact_risk": false,
+            "observation": "The cube is visible slightly left of the wrist grasp axis, with the gripper still open above the table."
+          },
+          "sg": 0,
+          "n_sg": 6,
+          "stage": "GRASP",
+          "stage_id": "grasp_cube",
+          "target": "orange-and-blue cube",
+          "tcp_before": [
+            0.346633,
+            -0.041418,
+            0.436492
+          ],
+          "tcp_after": [
+            0.346652,
+            -0.061253,
+            0.43653
+          ],
+          "tcp_delta_m": 0.019835,
+          "gripper_width_m": 0.079999,
+          "gripper_command": "OPEN",
+          "native_success": false,
+          "env_done": false,
+          "native_subtask": {
+            "status": 0,
+            "completed": 0,
+            "total": 1,
+            "info": "",
+            "score": 0.0
+          },
+          "auto_release": false,
+          "replan_count": 1,
+          "timing": {
+            "actor_s": 1.8656,
+            "provider_s": 1.837,
+            "execute_s": 0.6276,
+            "loop_s": 2.5217,
+            "episode_s": 139.9276
+          }
+        }
+      },
+      {
+        "request": {
+          "line": 46,
+          "schema_version": 1,
+          "request_index": 43,
+          "role": "actor",
+          "step": 43,
+          "model": {
+            "provider": "openai",
+            "api_dialect": "openai",
+            "model": "gpt-5.6-luna",
+            "reasoning_effort": "none"
+          },
+          "duration_s": 1.7875,
+          "provider_latency_s": 1.759,
+          "token": "MV_BACK",
+          "telemetry": {
+            "latency_s": 1.759,
+            "http_status": 200,
+            "attempt_count": 1,
+            "retry_wait_ms": 0,
+            "api_total_ms": 1759,
+            "ttft_ms": null,
+            "ttft_observed": false,
+            "error_class": null,
+            "attempt_error_counts": {},
+            "usage": {
+              "prompt_tokens": 669,
+              "completion_tokens": 57,
+              "total_tokens": 726
+            }
+          },
+          "visual_assessment": {
+            "target_visible": true,
+            "wrist_target_visible": true,
+            "aligned": false,
+            "contact_risk": false,
+            "observation": "The cube is visible below the wrist image center, so move the gripper back toward it before descending."
+          }
+        },
+        "step": {
+          "line": 44,
+          "i": 43,
+          "event": "executed",
+          "act": "MV_BACK",
+          "executed": true,
+          "action_source": "model",
+          "visual_assessment": {
+            "target_visible": true,
+            "wrist_target_visible": true,
+            "aligned": false,
+            "contact_risk": false,
+            "observation": "The cube is visible below the wrist image center, so move the gripper back toward it before descending."
+          },
+          "sg": 0,
+          "n_sg": 6,
+          "stage": "GRASP",
+          "stage_id": "grasp_cube",
+          "target": "orange-and-blue cube",
+          "tcp_before": [
+            0.346652,
+            -0.061253,
+            0.43653
+          ],
+          "tcp_after": [
+            0.326319,
+            -0.061558,
+            0.436274
+          ],
+          "tcp_delta_m": 0.020337,
+          "gripper_width_m": 0.08,
+          "gripper_command": "OPEN",
+          "native_success": false,
+          "env_done": false,
+          "native_subtask": {
+            "status": 0,
+            "completed": 0,
+            "total": 1,
+            "info": "",
+            "score": 0.0
+          },
+          "auto_release": false,
+          "replan_count": 1,
+          "timing": {
+            "actor_s": 1.7875,
+            "provider_s": 1.759,
+            "execute_s": 0.6276,
+            "loop_s": 2.4447,
+            "episode_s": 142.3729
+          }
+        }
+      },
+      {
+        "request": {
+          "line": 47,
+          "schema_version": 1,
+          "request_index": 44,
+          "role": "actor",
+          "step": 44,
+          "model": {
+            "provider": "openai",
+            "api_dialect": "openai",
+            "model": "gpt-5.6-luna",
+            "reasoning_effort": "none"
+          },
+          "duration_s": 28.7602,
+          "provider_latency_s": 28.732,
+          "token": "MV_RIGHT",
+          "telemetry": {
+            "latency_s": 28.732,
+            "http_status": 200,
+            "attempt_count": 1,
+            "retry_wait_ms": 0,
+            "api_total_ms": 28732,
+            "ttft_ms": null,
+            "ttft_observed": false,
+            "error_class": null,
+            "attempt_error_counts": {},
+            "usage": {
+              "prompt_tokens": 668,
+              "completion_tokens": 58,
+              "total_tokens": 726
+            }
+          },
+          "visual_assessment": {
+            "target_visible": true,
+            "wrist_target_visible": true,
+            "aligned": false,
+            "contact_risk": false,
+            "observation": "The cube is visible left of the wrist grasp axis in the top-down view, so move right to align."
+          }
+        },
+        "step": {
+          "line": 45,
+          "i": 44,
+          "event": "executed",
+          "act": "MV_RIGHT",
+          "executed": true,
+          "action_source": "model",
+          "visual_assessment": {
+            "target_visible": true,
+            "wrist_target_visible": true,
+            "aligned": false,
+            "contact_risk": false,
+            "observation": "The cube is visible left of the wrist grasp axis in the top-down view, so move right to align."
+          },
+          "sg": 0,
+          "n_sg": 6,
+          "stage": "GRASP",
+          "stage_id": "grasp_cube",
+          "target": "orange-and-blue cube",
+          "tcp_before": [
+            0.326319,
+            -0.061558,
+            0.436274
+          ],
+          "tcp_after": [
+            0.326174,
+            -0.041391,
+            0.436511
+          ],
+          "tcp_delta_m": 0.020169,
+          "gripper_width_m": 0.079999,
+          "gripper_command": "OPEN",
+          "native_success": false,
+          "env_done": false,
+          "native_subtask": {
+            "status": 0,
+            "completed": 0,
+            "total": 1,
+            "info": "",
+            "score": 0.0
+          },
+          "auto_release": false,
+          "replan_count": 1,
+          "timing": {
+            "actor_s": 28.7602,
+            "provider_s": 28.732,
+            "execute_s": 0.6391,
+            "loop_s": 29.4275,
+            "episode_s": 171.8009
+          }
+        }
+      },
+      {
+        "request": {
+          "line": 48,
+          "schema_version": 1,
+          "request_index": 45,
+          "role": "actor",
+          "step": 45,
+          "model": {
+            "provider": "openai",
+            "api_dialect": "openai",
+            "model": "gpt-5.6-luna",
+            "reasoning_effort": "none"
+          },
+          "duration_s": 2.1667,
+          "provider_latency_s": 2.138,
+          "token": "MV_FWD",
+          "telemetry": {
+            "latency_s": 2.138,
+            "http_status": 200,
+            "attempt_count": 1,
+            "retry_wait_ms": 0,
+            "api_total_ms": 2138,
+            "ttft_ms": null,
+            "ttft_observed": false,
+            "error_class": null,
+            "attempt_error_counts": {},
+            "usage": {
+              "prompt_tokens": 668,
+              "completion_tokens": 58,
+              "total_tokens": 726
+            }
+          },
+          "visual_assessment": {
+            "target_visible": true,
+            "wrist_target_visible": true,
+            "aligned": false,
+            "contact_risk": false,
+            "observation": "The cube is visible below the wrist-image center, so move the gripper forward toward it before descending."
+          }
+        },
+        "step": {
+          "line": 46,
+          "i": 45,
+          "event": "executed",
+          "act": "MV_FWD",
+          "executed": true,
+          "action_source": "model",
+          "visual_assessment": {
+            "target_visible": true,
+            "wrist_target_visible": true,
+            "aligned": false,
+            "contact_risk": false,
+            "observation": "The cube is visible below the wrist-image center, so move the gripper forward toward it before descending."
+          },
+          "sg": 0,
+          "n_sg": 6,
+          "stage": "GRASP",
+          "stage_id": "grasp_cube",
+          "target": "orange-and-blue cube",
+          "tcp_before": [
+            0.326174,
+            -0.041391,
+            0.436511
+          ],
+          "tcp_after": [
+            0.346515,
+            -0.041117,
+            0.436724
+          ],
+          "tcp_delta_m": 0.020344,
+          "gripper_width_m": 0.08,
+          "gripper_command": "OPEN",
+          "native_success": false,
+          "env_done": false,
+          "native_subtask": {
+            "status": 0,
+            "completed": 0,
+            "total": 1,
+            "info": "",
+            "score": 0.0
+          },
+          "auto_release": false,
+          "replan_count": 1,
+          "timing": {
+            "actor_s": 2.1667,
+            "provider_s": 2.138,
+            "execute_s": 0.624,
+            "loop_s": 2.8196,
+            "episode_s": 174.621
+          }
+        }
+      },
+      {
+        "request": {
+          "line": 49,
+          "schema_version": 1,
+          "request_index": 46,
+          "role": "actor",
+          "step": 46,
+          "model": {
+            "provider": "openai",
+            "api_dialect": "openai",
+            "model": "gpt-5.6-luna",
+            "reasoning_effort": "none"
+          },
+          "duration_s": 2.302,
+          "provider_latency_s": 2.274,
+          "token": "MV_LEFT",
+          "telemetry": {
+            "latency_s": 2.274,
+            "http_status": 200,
+            "attempt_count": 1,
+            "retry_wait_ms": 0,
+            "api_total_ms": 2274,
+            "ttft_ms": null,
+            "ttft_observed": false,
+            "error_class": null,
+            "attempt_error_counts": {},
+            "usage": {
+              "prompt_tokens": 669,
+              "completion_tokens": 53,
+              "total_tokens": 722
+            }
+          },
+          "visual_assessment": {
+            "target_visible": true,
+            "wrist_target_visible": true,
+            "aligned": false,
+            "contact_risk": false,
+            "observation": "The cube is visible slightly left of the wrist grasp axis and remains on the table."
+          }
+        },
+        "step": {
+          "line": 47,
+          "i": 46,
+          "event": "executed",
+          "act": "MV_LEFT",
+          "executed": true,
+          "action_source": "model",
+          "visual_assessment": {
+            "target_visible": true,
+            "wrist_target_visible": true,
+            "aligned": false,
+            "contact_risk": false,
+            "observation": "The cube is visible slightly left of the wrist grasp axis and remains on the table."
+          },
+          "sg": 0,
+          "n_sg": 6,
+          "stage": "GRASP",
+          "stage_id": "grasp_cube",
+          "target": "orange-and-blue cube",
+          "tcp_before": [
+            0.346515,
+            -0.041117,
+            0.436724
+          ],
+          "tcp_after": [
+            0.346627,
+            -0.061267,
+            0.436483
+          ],
+          "tcp_delta_m": 0.020152,
+          "gripper_width_m": 0.079999,
+          "gripper_command": "OPEN",
+          "native_success": false,
+          "env_done": false,
+          "native_subtask": {
+            "status": 0,
+            "completed": 0,
+            "total": 1,
+            "info": "",
+            "score": 0.0
+          },
+          "auto_release": false,
+          "replan_count": 1,
+          "timing": {
+            "actor_s": 2.302,
+            "provider_s": 2.274,
+            "execute_s": 0.6234,
+            "loop_s": 2.9535,
+            "episode_s": 177.575
+          }
+        }
+      },
+      {
+        "request": {
+          "line": 50,
+          "schema_version": 1,
+          "request_index": 47,
+          "role": "actor",
+          "step": 47,
+          "model": {
+            "provider": "openai",
+            "api_dialect": "openai",
+            "model": "gpt-5.6-luna",
+            "reasoning_effort": "none"
+          },
+          "duration_s": 2.1793,
+          "provider_latency_s": 2.151,
+          "token": "MV_LEFT",
+          "telemetry": {
+            "latency_s": 2.151,
+            "http_status": 200,
+            "attempt_count": 1,
+            "retry_wait_ms": 0,
+            "api_total_ms": 2151,
+            "ttft_ms": null,
+            "ttft_observed": false,
+            "error_class": null,
+            "attempt_error_counts": {},
+            "usage": {
+              "prompt_tokens": 669,
+              "completion_tokens": 56,
+              "total_tokens": 725
+            }
+          },
+          "visual_assessment": {
+            "target_visible": true,
+            "wrist_target_visible": true,
+            "aligned": false,
+            "contact_risk": false,
+            "observation": "The cube is visible below-left of the wrist grasp axis, while the bowl is to the right."
+          }
+        },
+        "step": {
+          "line": 48,
+          "i": 47,
+          "event": "executed",
+          "act": "MV_LEFT",
+          "executed": true,
+          "action_source": "model",
+          "visual_assessment": {
+            "target_visible": true,
+            "wrist_target_visible": true,
+            "aligned": false,
+            "contact_risk": false,
+            "observation": "The cube is visible below-left of the wrist grasp axis, while the bowl is to the right."
+          },
+          "sg": 0,
+          "n_sg": 6,
+          "stage": "GRASP",
+          "stage_id": "grasp_cube",
+          "target": "orange-and-blue cube",
+          "tcp_before": [
+            0.346627,
+            -0.061267,
+            0.436483
+          ],
+          "tcp_after": [
+            0.3466,
+            -0.081763,
+            0.436484
+          ],
+          "tcp_delta_m": 0.020495,
+          "gripper_width_m": 0.079999,
+          "gripper_command": "OPEN",
+          "native_success": false,
+          "env_done": false,
+          "native_subtask": {
+            "status": 0,
+            "completed": 0,
+            "total": 1,
+            "info": "",
+            "score": 0.0
+          },
+          "auto_release": false,
+          "replan_count": 1,
+          "timing": {
+            "actor_s": 2.1793,
+            "provider_s": 2.151,
+            "execute_s": 0.624,
+            "loop_s": 2.8315,
+            "episode_s": 180.407
+          }
+        }
+      },
+      {
+        "request": {
+          "line": 51,
+          "schema_version": 1,
+          "request_index": 2,
+          "role": "planner",
+          "phase": "replan_2",
+          "model": {
+            "provider": "openai",
+            "api_dialect": "openai",
+            "model": "gpt-5.6-luna",
+            "reasoning_effort": "none"
+          },
+          "duration_s": 5.5768,
+          "subgoal_count": 6,
+          "planner_route": "guided_json",
+          "provider_latency_s": 5.548,
+          "telemetry": {
+            "latency_s": 5.548,
+            "total_latency_s": 5.577,
+            "http_status": 200,
+            "attempt_count": 1,
+            "retry_wait_ms": 0,
+            "api_total_ms": 5548,
+            "ttft_ms": null,
+            "ttft_observed": false,
+            "error_class": null,
+            "attempt_error_counts": {},
+            "usage": {
+              "prompt_tokens": 714,
+              "completion_tokens": 561,
+              "total_tokens": 1275
+            }
+          }
+        },
+        "step": null
+      },
+      {
+        "request": {
+          "line": 52,
+          "schema_version": 1,
+          "request_index": 48,
+          "role": "actor",
+          "step": 48,
+          "model": {
+            "provider": "openai",
+            "api_dialect": "openai",
+            "model": "gpt-5.6-luna",
+            "reasoning_effort": "none"
+          },
+          "duration_s": 2.9376,
+          "provider_latency_s": 2.909,
+          "token": "MV_LEFT",
+          "telemetry": {
+            "latency_s": 2.909,
+            "http_status": 200,
+            "attempt_count": 1,
+            "retry_wait_ms": 0,
+            "api_total_ms": 2909,
+            "ttft_ms": null,
+            "ttft_observed": false,
+            "error_class": null,
+            "attempt_error_counts": {},
+            "usage": {
+              "prompt_tokens": 646,
+              "completion_tokens": 56,
+              "total_tokens": 702
+            }
+          },
+          "visual_assessment": {
+            "target_visible": true,
+            "wrist_target_visible": true,
+            "aligned": false,
+            "contact_risk": false,
+            "observation": "The cube is visible below-left of the wrist grasp axis, so move left to align before descending."
+          }
+        },
+        "step": {
+          "line": 49,
+          "i": 48,
+          "event": "executed",
+          "act": "MV_LEFT",
+          "executed": true,
+          "action_source": "model",
+          "visual_assessment": {
+            "target_visible": true,
+            "wrist_target_visible": true,
+            "aligned": false,
+            "contact_risk": false,
+            "observation": "The cube is visible below-left of the wrist grasp axis, so move left to align before descending."
+          },
+          "sg": 0,
+          "n_sg": 6,
+          "stage": "GRASP",
+          "stage_id": "grasp_cube",
+          "target": "orange-and-blue cube",
+          "tcp_before": [
+            0.3466,
+            -0.081763,
+            0.436484
+          ],
+          "tcp_after": [
+            0.346572,
+            -0.102258,
+            0.436483
+          ],
+          "tcp_delta_m": 0.020495,
+          "gripper_width_m": 0.079999,
+          "gripper_command": "OPEN",
+          "native_success": false,
+          "env_done": false,
+          "native_subtask": {
+            "status": 0,
+            "completed": 0,
+            "total": 1,
+            "info": "",
+            "score": 0.0
+          },
+          "auto_release": false,
+          "replan_count": 2,
+          "timing": {
+            "actor_s": 2.9376,
+            "provider_s": 2.909,
+            "execute_s": 0.6234,
+            "loop_s": 3.5905,
+            "episode_s": 189.6044
+          }
+        }
+      },
+      {
+        "request": {
+          "line": 53,
+          "schema_version": 1,
+          "request_index": 49,
+          "role": "actor",
+          "step": 49,
+          "model": {
+            "provider": "openai",
+            "api_dialect": "openai",
+            "model": "gpt-5.6-luna",
+            "reasoning_effort": "none"
+          },
+          "duration_s": 2.2372,
+          "provider_latency_s": 2.209,
+          "token": "MV_LEFT",
+          "telemetry": {
+            "latency_s": 2.209,
+            "http_status": 200,
+            "attempt_count": 1,
+            "retry_wait_ms": 0,
+            "api_total_ms": 2209,
+            "ttft_ms": null,
+            "ttft_observed": false,
+            "error_class": null,
+            "attempt_error_counts": {},
+            "usage": {
+              "prompt_tokens": 647,
+              "completion_tokens": 57,
+              "total_tokens": 704
+            }
+          },
+          "visual_assessment": {
+            "target_visible": true,
+            "wrist_target_visible": true,
+            "aligned": false,
+            "contact_risk": false,
+            "observation": "The cube is visible near the wrist image center, but the yellow finger opening is offset to its right."
+          }
+        },
+        "step": {
+          "line": 50,
+          "i": 49,
+          "event": "executed",
+          "act": "MV_LEFT",
+          "executed": true,
+          "action_source": "model",
+          "visual_assessment": {
+            "target_visible": true,
+            "wrist_target_visible": true,
+            "aligned": false,
+            "contact_risk": false,
+            "observation": "The cube is visible near the wrist image center, but the yellow finger opening is offset to its right."
+          },
+          "sg": 0,
+          "n_sg": 6,
+          "stage": "GRASP",
+          "stage_id": "grasp_cube",
+          "target": "orange-and-blue cube",
+          "tcp_before": [
+            0.346572,
+            -0.102258,
+            0.436483
+          ],
+          "tcp_after": [
+            0.34654,
+            -0.122754,
+            0.436481
+          ],
+          "tcp_delta_m": 0.020496,
+          "gripper_width_m": 0.079999,
+          "gripper_command": "OPEN",
+          "native_success": false,
+          "env_done": false,
+          "native_subtask": {
+            "status": 0,
+            "completed": 0,
+            "total": 1,
+            "info": "",
+            "score": 0.0
+          },
+          "auto_release": false,
+          "replan_count": 2,
+          "timing": {
+            "actor_s": 2.2372,
+            "provider_s": 2.209,
+            "execute_s": 0.6284,
+            "loop_s": 2.8952,
+            "episode_s": 192.5002
+          }
+        }
+      },
+      {
+        "request": {
+          "line": 54,
+          "schema_version": 1,
+          "request_index": 50,
+          "role": "actor",
+          "step": 50,
+          "model": {
+            "provider": "openai",
+            "api_dialect": "openai",
+            "model": "gpt-5.6-luna",
+            "reasoning_effort": "none"
+          },
+          "duration_s": 2.2866,
+          "provider_latency_s": 2.258,
+          "token": "MV_RIGHT",
+          "telemetry": {
+            "latency_s": 2.258,
+            "http_status": 200,
+            "attempt_count": 1,
+            "retry_wait_ms": 0,
+            "api_total_ms": 2258,
+            "ttft_ms": null,
+            "ttft_observed": false,
+            "error_class": null,
+            "attempt_error_counts": {},
+            "usage": {
+              "prompt_tokens": 650,
+              "completion_tokens": 56,
+              "total_tokens": 706
+            }
+          },
+          "visual_assessment": {
+            "target_visible": true,
+            "wrist_target_visible": true,
+            "aligned": false,
+            "contact_risk": false,
+            "observation": "The cube is visible left of the wrist grasp axis, so move right to center it before descending."
+          }
+        },
+        "step": {
+          "line": 51,
+          "i": 50,
+          "event": "executed",
+          "act": "MV_RIGHT",
+          "executed": true,
+          "action_source": "model",
+          "visual_assessment": {
+            "target_visible": true,
+            "wrist_target_visible": true,
+            "aligned": false,
+            "contact_risk": false,
+            "observation": "The cube is visible left of the wrist grasp axis, so move right to center it before descending."
+          },
+          "sg": 0,
+          "n_sg": 6,
+          "stage": "GRASP",
+          "stage_id": "grasp_cube",
+          "target": "orange-and-blue cube",
+          "tcp_before": [
+            0.34654,
+            -0.122754,
+            0.436481
+          ],
+          "tcp_after": [
+            0.346404,
+            -0.102961,
+            0.43641
+          ],
+          "tcp_delta_m": 0.019793,
+          "gripper_width_m": 0.079999,
+          "gripper_command": "OPEN",
+          "native_success": false,
+          "env_done": false,
+          "native_subtask": {
+            "status": 0,
+            "completed": 0,
+            "total": 1,
+            "info": "",
+            "score": 0.0
+          },
+          "auto_release": false,
+          "replan_count": 2,
+          "timing": {
+            "actor_s": 2.2866,
+            "provider_s": 2.258,
+            "execute_s": 0.6249,
+            "loop_s": 2.94,
+            "episode_s": 195.4407
+          }
+        }
+      },
+      {
+        "request": {
+          "line": 55,
+          "schema_version": 1,
+          "request_index": 51,
+          "role": "actor",
+          "step": 51,
+          "model": {
+            "provider": "openai",
+            "api_dialect": "openai",
+            "model": "gpt-5.6-luna",
+            "reasoning_effort": "none"
+          },
+          "duration_s": 2.0985,
+          "provider_latency_s": 2.07,
+          "token": "MV_RIGHT",
+          "telemetry": {
+            "latency_s": 2.07,
+            "http_status": 200,
+            "attempt_count": 1,
+            "retry_wait_ms": 0,
+            "api_total_ms": 2070,
+            "ttft_ms": null,
+            "ttft_observed": false,
+            "error_class": null,
+            "attempt_error_counts": {},
+            "usage": {
+              "prompt_tokens": 653,
+              "completion_tokens": 53,
+              "total_tokens": 706
+            }
+          },
+          "visual_assessment": {
+            "target_visible": true,
+            "wrist_target_visible": true,
+            "aligned": false,
+            "contact_risk": false,
+            "observation": "The cube is visible left of the wrist grasp axis, so move right to align."
+          }
+        },
+        "step": {
+          "line": 52,
+          "i": 51,
+          "event": "executed",
+          "act": "MV_RIGHT",
+          "executed": true,
+          "action_source": "model",
+          "visual_assessment": {
+            "target_visible": true,
+            "wrist_target_visible": true,
+            "aligned": false,
+            "contact_risk": false,
+            "observation": "The cube is visible left of the wrist grasp axis, so move right to align."
+          },
+          "sg": 0,
+          "n_sg": 6,
+          "stage": "GRASP",
+          "stage_id": "grasp_cube",
+          "target": "orange-and-blue cube",
+          "tcp_before": [
+            0.346404,
+            -0.102961,
+            0.43641
+          ],
+          "tcp_after": [
+            0.346411,
+            -0.08247,
+            0.436427
+          ],
+          "tcp_delta_m": 0.020492,
+          "gripper_width_m": 0.079999,
+          "gripper_command": "OPEN",
+          "native_success": false,
+          "env_done": false,
+          "native_subtask": {
+            "status": 0,
+            "completed": 0,
+            "total": 1,
+            "info": "",
+            "score": 0.0
+          },
+          "auto_release": false,
+          "replan_count": 2,
+          "timing": {
+            "actor_s": 2.0985,
+            "provider_s": 2.07,
+            "execute_s": 0.6258,
+            "loop_s": 2.7528,
+            "episode_s": 198.1941
+          }
+        }
+      },
+      {
+        "request": {
+          "line": 56,
+          "schema_version": 1,
+          "request_index": 52,
+          "role": "actor",
+          "step": 52,
+          "model": {
+            "provider": "openai",
+            "api_dialect": "openai",
+            "model": "gpt-5.6-luna",
+            "reasoning_effort": "none"
+          },
+          "duration_s": 1.898,
+          "provider_latency_s": 1.87,
+          "token": "MV_FWD",
+          "telemetry": {
+            "latency_s": 1.87,
+            "http_status": 200,
+            "attempt_count": 1,
+            "retry_wait_ms": 0,
+            "api_total_ms": 1870,
+            "ttft_ms": null,
+            "ttft_observed": false,
+            "error_class": null,
+            "attempt_error_counts": {},
+            "usage": {
+              "prompt_tokens": 656,
+              "completion_tokens": 55,
+              "total_tokens": 711
+            }
+          },
+          "visual_assessment": {
+            "target_visible": true,
+            "wrist_target_visible": true,
+            "aligned": false,
+            "contact_risk": false,
+            "observation": "The cube is visible above the wrist-image center, so move the gripper toward it."
+          }
+        },
+        "step": {
+          "line": 53,
+          "i": 52,
+          "event": "executed",
+          "act": "MV_FWD",
+          "executed": true,
+          "action_source": "model",
+          "visual_assessment": {
+            "target_visible": true,
+            "wrist_target_visible": true,
+            "aligned": false,
+            "contact_risk": false,
+            "observation": "The cube is visible above the wrist-image center, so move the gripper toward it."
+          },
+          "sg": 0,
+          "n_sg": 6,
+          "stage": "GRASP",
+          "stage_id": "grasp_cube",
+          "target": "orange-and-blue cube",
+          "tcp_before": [
+            0.346411,
+            -0.08247,
+            0.436427
+          ],
+          "tcp_after": [
+            0.366772,
+            -0.082175,
+            0.436666
+          ],
+          "tcp_delta_m": 0.020364,
+          "gripper_width_m": 0.08,
+          "gripper_command": "OPEN",
+          "native_success": false,
+          "env_done": false,
+          "native_subtask": {
+            "status": 0,
+            "completed": 0,
+            "total": 1,
+            "info": "",
+            "score": 0.0
+          },
+          "auto_release": false,
+          "replan_count": 2,
+          "timing": {
+            "actor_s": 1.898,
+            "provider_s": 1.87,
+            "execute_s": 0.6269,
+            "loop_s": 2.5533,
+            "episode_s": 200.7479
+          }
+        }
+      },
+      {
+        "request": {
+          "line": 57,
+          "schema_version": 1,
+          "request_index": 53,
+          "role": "actor",
+          "step": 53,
+          "model": {
+            "provider": "openai",
+            "api_dialect": "openai",
+            "model": "gpt-5.6-luna",
+            "reasoning_effort": "none"
+          },
+          "duration_s": 1.848,
+          "provider_latency_s": 1.82,
+          "token": "MV_LEFT",
+          "telemetry": {
+            "latency_s": 1.82,
+            "http_status": 200,
+            "attempt_count": 1,
+            "retry_wait_ms": 0,
+            "api_total_ms": 1820,
+            "ttft_ms": null,
+            "ttft_observed": false,
+            "error_class": null,
+            "attempt_error_counts": {},
+            "usage": {
+              "prompt_tokens": 660,
+              "completion_tokens": 55,
+              "total_tokens": 715
+            }
+          },
+          "visual_assessment": {
+            "target_visible": true,
+            "wrist_target_visible": true,
+            "aligned": false,
+            "contact_risk": false,
+            "observation": "The cube is visible to the left of the wrist grasp axis, so shift left before descending."
+          }
+        },
+        "step": {
+          "line": 54,
+          "i": 53,
+          "event": "executed",
+          "act": "MV_LEFT",
+          "executed": true,
+          "action_source": "model",
+          "visual_assessment": {
+            "target_visible": true,
+            "wrist_target_visible": true,
+            "aligned": false,
+            "contact_risk": false,
+            "observation": "The cube is visible to the left of the wrist grasp axis, so shift left before descending."
+          },
+          "sg": 0,
+          "n_sg": 6,
+          "stage": "GRASP",
+          "stage_id": "grasp_cube",
+          "target": "orange-and-blue cube",
+          "tcp_before": [
+            0.366772,
+            -0.082175,
+            0.436666
+          ],
+          "tcp_after": [
+            0.366923,
+            -0.102219,
+            0.436421
+          ],
+          "tcp_delta_m": 0.020046,
+          "gripper_width_m": 0.079999,
+          "gripper_command": "OPEN",
+          "native_success": false,
+          "env_done": false,
+          "native_subtask": {
+            "status": 0,
+            "completed": 0,
+            "total": 1,
+            "info": "",
+            "score": 0.0
+          },
+          "auto_release": false,
+          "replan_count": 2,
+          "timing": {
+            "actor_s": 1.848,
+            "provider_s": 1.82,
+            "execute_s": 0.6258,
+            "loop_s": 2.5026,
+            "episode_s": 203.251
+          }
+        }
+      },
+      {
+        "request": {
+          "line": 58,
+          "schema_version": 1,
+          "request_index": 54,
+          "role": "actor",
+          "step": 54,
+          "model": {
+            "provider": "openai",
+            "api_dialect": "openai",
+            "model": "gpt-5.6-luna",
+            "reasoning_effort": "none"
+          },
+          "duration_s": 2.6499,
+          "provider_latency_s": 2.621,
+          "token": "MV_DOWN",
+          "telemetry": {
+            "latency_s": 2.621,
+            "http_status": 200,
+            "attempt_count": 1,
+            "retry_wait_ms": 0,
+            "api_total_ms": 2621,
+            "ttft_ms": null,
+            "ttft_observed": false,
+            "error_class": null,
+            "attempt_error_counts": {},
+            "usage": {
+              "prompt_tokens": 663,
+              "completion_tokens": 63,
+              "total_tokens": 726
+            }
+          },
+          "visual_assessment": {
+            "target_visible": true,
+            "wrist_target_visible": true,
+            "aligned": true,
+            "contact_risk": false,
+            "observation": "The cube is centered within the open gripper fingers in the wrist view, while the front view shows it still resting on the table."
+          }
+        },
+        "step": {
+          "line": 55,
+          "i": 54,
+          "event": "executed",
+          "act": "MV_DOWN",
+          "executed": true,
+          "action_source": "model",
+          "visual_assessment": {
+            "target_visible": true,
+            "wrist_target_visible": true,
+            "aligned": true,
+            "contact_risk": false,
+            "observation": "The cube is centered within the open gripper fingers in the wrist view, while the front view shows it still resting on the table."
+          },
+          "sg": 0,
+          "n_sg": 6,
+          "stage": "GRASP",
+          "stage_id": "grasp_cube",
+          "target": "orange-and-blue cube",
+          "tcp_before": [
+            0.366923,
+            -0.102219,
+            0.436421
+          ],
+          "tcp_after": [
+            0.366912,
+            -0.102661,
+            0.416463
+          ],
+          "tcp_delta_m": 0.019963,
+          "gripper_width_m": 0.08,
+          "gripper_command": "OPEN",
+          "native_success": false,
+          "env_done": false,
+          "native_subtask": {
+            "status": 0,
+            "completed": 0,
+            "total": 1,
+            "info": "",
+            "score": 0.0
+          },
+          "auto_release": false,
+          "replan_count": 2,
+          "timing": {
+            "actor_s": 2.6499,
+            "provider_s": 2.621,
+            "execute_s": 0.6255,
+            "loop_s": 3.3042,
+            "episode_s": 206.5558
+          }
+        }
+      },
+      {
+        "request": {
+          "line": 59,
+          "schema_version": 1,
+          "request_index": 55,
+          "role": "actor",
+          "step": 55,
+          "model": {
+            "provider": "openai",
+            "api_dialect": "openai",
+            "model": "gpt-5.6-luna",
+            "reasoning_effort": "none"
+          },
+          "duration_s": 2.5152,
+          "provider_latency_s": 2.486,
+          "token": "MV_BACK",
+          "telemetry": {
+            "latency_s": 2.486,
+            "http_status": 200,
+            "attempt_count": 1,
+            "retry_wait_ms": 0,
+            "api_total_ms": 2486,
+            "ttft_ms": null,
+            "ttft_observed": false,
+            "error_class": null,
+            "attempt_error_counts": {},
+            "usage": {
+              "prompt_tokens": 666,
+              "completion_tokens": 56,
+              "total_tokens": 722
+            }
+          },
+          "visual_assessment": {
+            "target_visible": true,
+            "wrist_target_visible": true,
+            "aligned": false,
+            "contact_risk": false,
+            "observation": "The cube is visible below the wrist image center, so move the grasp axis toward it before descending."
+          }
+        },
+        "step": {
+          "line": 56,
+          "i": 55,
+          "event": "executed",
+          "act": "MV_BACK",
+          "executed": true,
+          "action_source": "model",
+          "visual_assessment": {
+            "target_visible": true,
+            "wrist_target_visible": true,
+            "aligned": false,
+            "contact_risk": false,
+            "observation": "The cube is visible below the wrist image center, so move the grasp axis toward it before descending."
+          },
+          "sg": 0,
+          "n_sg": 6,
+          "stage": "GRASP",
+          "stage_id": "grasp_cube",
+          "target": "orange-and-blue cube",
+          "tcp_before": [
+            0.366912,
+            -0.102661,
+            0.416463
+          ],
+          "tcp_after": [
+            0.346495,
+            -0.102529,
+            0.415659
+          ],
+          "tcp_delta_m": 0.020433,
+          "gripper_width_m": 0.08,
+          "gripper_command": "OPEN",
+          "native_success": false,
+          "env_done": false,
+          "native_subtask": {
+            "status": 0,
+            "completed": 0,
+            "total": 1,
+            "info": "",
+            "score": 0.0
+          },
+          "auto_release": false,
+          "replan_count": 2,
+          "timing": {
+            "actor_s": 2.5152,
+            "provider_s": 2.486,
+            "execute_s": 0.6289,
+            "loop_s": 3.1735,
+            "episode_s": 209.7298
+          }
+        }
+      },
+      {
+        "request": {
+          "line": 60,
+          "schema_version": 1,
+          "request_index": 56,
+          "role": "actor",
+          "step": 56,
+          "model": {
+            "provider": "openai",
+            "api_dialect": "openai",
+            "model": "gpt-5.6-luna",
+            "reasoning_effort": "none"
+          },
+          "duration_s": 2.7637,
+          "provider_latency_s": 2.735,
+          "token": "MV_RIGHT",
+          "telemetry": {
+            "latency_s": 2.735,
+            "http_status": 200,
+            "attempt_count": 1,
+            "retry_wait_ms": 0,
+            "api_total_ms": 2735,
+            "ttft_ms": null,
+            "ttft_observed": false,
+            "error_class": null,
+            "attempt_error_counts": {},
+            "usage": {
+              "prompt_tokens": 669,
+              "completion_tokens": 55,
+              "total_tokens": 724
+            }
+          },
+          "visual_assessment": {
+            "target_visible": true,
+            "wrist_target_visible": true,
+            "aligned": false,
+            "contact_risk": false,
+            "observation": "The cube is visible below the wrist-image center, slightly to the right of the grasp axis."
+          }
+        },
+        "step": {
+          "line": 57,
+          "i": 56,
+          "event": "executed",
+          "act": "MV_RIGHT",
+          "executed": true,
+          "action_source": "model",
+          "visual_assessment": {
+            "target_visible": true,
+            "wrist_target_visible": true,
+            "aligned": false,
+            "contact_risk": false,
+            "observation": "The cube is visible below the wrist-image center, slightly to the right of the grasp axis."
+          },
+          "sg": 0,
+          "n_sg": 6,
+          "stage": "GRASP",
+          "stage_id": "grasp_cube",
+          "target": "orange-and-blue cube",
+          "tcp_before": [
+            0.346495,
+            -0.102529,
+            0.415659
+          ],
+          "tcp_after": [
+            0.346318,
+            -0.082453,
+            0.415876
+          ],
+          "tcp_delta_m": 0.020078,
+          "gripper_width_m": 0.079999,
+          "gripper_command": "OPEN",
+          "native_success": false,
+          "env_done": false,
+          "native_subtask": {
+            "status": 0,
+            "completed": 0,
+            "total": 1,
+            "info": "",
+            "score": 0.0
+          },
+          "auto_release": false,
+          "replan_count": 2,
+          "timing": {
+            "actor_s": 2.7637,
+            "provider_s": 2.735,
+            "execute_s": 0.628,
+            "loop_s": 3.4205,
+            "episode_s": 213.1508
+          }
+        }
+      },
+      {
+        "request": {
+          "line": 61,
+          "schema_version": 1,
+          "request_index": 57,
+          "role": "actor",
+          "step": 57,
+          "model": {
+            "provider": "openai",
+            "api_dialect": "openai",
+            "model": "gpt-5.6-luna",
+            "reasoning_effort": "none"
+          },
+          "duration_s": 1.9997,
+          "provider_latency_s": 1.972,
+          "token": "MV_LEFT",
+          "telemetry": {
+            "latency_s": 1.972,
+            "http_status": 200,
+            "attempt_count": 1,
+            "retry_wait_ms": 0,
+            "api_total_ms": 1972,
+            "ttft_ms": null,
+            "ttft_observed": false,
+            "error_class": null,
+            "attempt_error_counts": {},
+            "usage": {
+              "prompt_tokens": 669,
+              "completion_tokens": 54,
+              "total_tokens": 723
+            }
+          },
+          "visual_assessment": {
+            "target_visible": true,
+            "wrist_target_visible": true,
+            "aligned": false,
+            "contact_risk": false,
+            "observation": "The cube is visible below-left of the wrist grasp axis, so shift left before descending."
+          }
+        },
+        "step": {
+          "line": 58,
+          "i": 57,
+          "event": "executed",
+          "act": "MV_LEFT",
+          "executed": true,
+          "action_source": "model",
+          "visual_assessment": {
+            "target_visible": true,
+            "wrist_target_visible": true,
+            "aligned": false,
+            "contact_risk": false,
+            "observation": "The cube is visible below-left of the wrist grasp axis, so shift left before descending."
+          },
+          "sg": 0,
+          "n_sg": 6,
+          "stage": "GRASP",
+          "stage_id": "grasp_cube",
+          "target": "orange-and-blue cube",
+          "tcp_before": [
+            0.346318,
+            -0.082453,
+            0.415876
+          ],
+          "tcp_after": [
+            0.346377,
+            -0.102287,
+            0.415922
+          ],
+          "tcp_delta_m": 0.019834,
+          "gripper_width_m": 0.079999,
+          "gripper_command": "OPEN",
+          "native_success": false,
+          "env_done": false,
+          "native_subtask": {
+            "status": 0,
+            "completed": 0,
+            "total": 1,
+            "info": "",
+            "score": 0.0
+          },
+          "auto_release": false,
+          "replan_count": 2,
+          "timing": {
+            "actor_s": 1.9997,
+            "provider_s": 1.972,
+            "execute_s": 0.6267,
+            "loop_s": 2.6547,
+            "episode_s": 215.8061
+          }
+        }
+      },
+      {
+        "request": {
+          "line": 62,
+          "schema_version": 1,
+          "request_index": 58,
+          "role": "actor",
+          "step": 58,
+          "model": {
+            "provider": "openai",
+            "api_dialect": "openai",
+            "model": "gpt-5.6-luna",
+            "reasoning_effort": "none"
+          },
+          "duration_s": 2.0726,
+          "provider_latency_s": 2.044,
+          "token": "MV_FWD",
+          "telemetry": {
+            "latency_s": 2.044,
+            "http_status": 200,
+            "attempt_count": 1,
+            "retry_wait_ms": 0,
+            "api_total_ms": 2044,
+            "ttft_ms": null,
+            "ttft_observed": false,
+            "error_class": null,
+            "attempt_error_counts": {},
+            "usage": {
+              "prompt_tokens": 669,
+              "completion_tokens": 56,
+              "total_tokens": 725
+            }
+          },
+          "visual_assessment": {
+            "target_visible": true,
+            "wrist_target_visible": true,
+            "aligned": false,
+            "contact_risk": false,
+            "observation": "The cube is visible below the wrist-image center, so move the grasp axis forward toward it."
+          }
+        },
+        "step": {
+          "line": 59,
+          "i": 58,
+          "event": "executed",
+          "act": "MV_FWD",
+          "executed": true,
+          "action_source": "model",
+          "visual_assessment": {
+            "target_visible": true,
+            "wrist_target_visible": true,
+            "aligned": false,
+            "contact_risk": false,
+            "observation": "The cube is visible below the wrist-image center, so move the grasp axis forward toward it."
+          },
+          "sg": 0,
+          "n_sg": 6,
+          "stage": "GRASP",
+          "stage_id": "grasp_cube",
+          "target": "orange-and-blue cube",
+          "tcp_before": [
+            0.346377,
+            -0.102287,
+            0.415922
+          ],
+          "tcp_after": [
+            0.366635,
+            -0.102681,
+            0.416078
+          ],
+          "tcp_delta_m": 0.020263,
+          "gripper_width_m": 0.08,
+          "gripper_command": "OPEN",
+          "native_success": false,
+          "env_done": false,
+          "native_subtask": {
+            "status": 0,
+            "completed": 0,
+            "total": 1,
+            "info": "",
+            "score": 0.0
+          },
+          "auto_release": false,
+          "replan_count": 2,
+          "timing": {
+            "actor_s": 2.0726,
+            "provider_s": 2.044,
+            "execute_s": 0.6241,
+            "loop_s": 2.725,
+            "episode_s": 218.5317
+          }
+        }
+      },
+      {
+        "request": {
+          "line": 63,
+          "schema_version": 1,
+          "request_index": 59,
+          "role": "actor",
+          "step": 59,
+          "model": {
+            "provider": "openai",
+            "api_dialect": "openai",
+            "model": "gpt-5.6-luna",
+            "reasoning_effort": "none"
+          },
+          "duration_s": 2.1639,
+          "provider_latency_s": 2.136,
+          "token": "MV_RIGHT",
+          "telemetry": {
+            "latency_s": 2.136,
+            "http_status": 200,
+            "attempt_count": 1,
+            "retry_wait_ms": 0,
+            "api_total_ms": 2136,
+            "ttft_ms": null,
+            "ttft_observed": false,
+            "error_class": null,
+            "attempt_error_counts": {},
+            "usage": {
+              "prompt_tokens": 670,
+              "completion_tokens": 55,
+              "total_tokens": 725
+            }
+          },
+          "visual_assessment": {
+            "target_visible": true,
+            "wrist_target_visible": true,
+            "aligned": false,
+            "contact_risk": false,
+            "observation": "The cube is visible left of the wrist grasp axis, so move right to align over it."
+          }
+        },
+        "step": {
+          "line": 60,
+          "i": 59,
+          "event": "executed",
+          "act": "MV_RIGHT",
+          "executed": true,
+          "action_source": "model",
+          "visual_assessment": {
+            "target_visible": true,
+            "wrist_target_visible": true,
+            "aligned": false,
+            "contact_risk": false,
+            "observation": "The cube is visible left of the wrist grasp axis, so move right to align over it."
+          },
+          "sg": 0,
+          "n_sg": 6,
+          "stage": "GRASP",
+          "stage_id": "grasp_cube",
+          "target": "orange-and-blue cube",
+          "tcp_before": [
+            0.366635,
+            -0.102681,
+            0.416078
+          ],
+          "tcp_after": [
+            0.366701,
+            -0.082484,
+            0.415816
+          ],
+          "tcp_delta_m": 0.020199,
+          "gripper_width_m": 0.079999,
+          "gripper_command": "OPEN",
+          "native_success": false,
+          "env_done": false,
+          "native_subtask": {
+            "status": 0,
+            "completed": 0,
+            "total": 1,
+            "info": "",
+            "score": 0.0
+          },
+          "auto_release": false,
+          "replan_count": 2,
+          "timing": {
+            "actor_s": 2.1639,
+            "provider_s": 2.136,
+            "execute_s": 0.6261,
+            "loop_s": 2.8186,
+            "episode_s": 221.3508
+          }
+        }
+      },
+      {
+        "request": {
+          "line": 64,
+          "schema_version": 1,
+          "request_index": 60,
+          "role": "actor",
+          "step": 60,
+          "model": {
+            "provider": "openai",
+            "api_dialect": "openai",
+            "model": "gpt-5.6-luna",
+            "reasoning_effort": "none"
+          },
+          "duration_s": 1.9298,
+          "provider_latency_s": 1.901,
+          "token": "MV_RIGHT",
+          "telemetry": {
+            "latency_s": 1.901,
+            "http_status": 200,
+            "attempt_count": 1,
+            "retry_wait_ms": 0,
+            "api_total_ms": 1901,
+            "ttft_ms": null,
+            "ttft_observed": false,
+            "error_class": null,
+            "attempt_error_counts": {},
+            "usage": {
+              "prompt_tokens": 670,
+              "completion_tokens": 56,
+              "total_tokens": 726
+            }
+          },
+          "visual_assessment": {
+            "target_visible": true,
+            "wrist_target_visible": true,
+            "aligned": false,
+            "contact_risk": false,
+            "observation": "The cube is visible left of the wrist grasp axis, so move right to center it before descending."
+          }
+        },
+        "step": {
+          "line": 61,
+          "i": 60,
+          "event": "executed",
+          "act": "MV_RIGHT",
+          "executed": true,
+          "action_source": "model",
+          "visual_assessment": {
+            "target_visible": true,
+            "wrist_target_visible": true,
+            "aligned": false,
+            "contact_risk": false,
+            "observation": "The cube is visible left of the wrist grasp axis, so move right to center it before descending."
+          },
+          "sg": 0,
+          "n_sg": 6,
+          "stage": "GRASP",
+          "stage_id": "grasp_cube",
+          "target": "orange-and-blue cube",
+          "tcp_before": [
+            0.366701,
+            -0.082484,
+            0.415816
+          ],
+          "tcp_after": [
+            0.366702,
+            -0.061984,
+            0.415828
+          ],
+          "tcp_delta_m": 0.020499,
+          "gripper_width_m": 0.079999,
+          "gripper_command": "OPEN",
+          "native_success": false,
+          "env_done": false,
+          "native_subtask": {
+            "status": 0,
+            "completed": 0,
+            "total": 1,
+            "info": "",
+            "score": 0.0
+          },
+          "auto_release": false,
+          "replan_count": 2,
+          "timing": {
+            "actor_s": 1.9298,
+            "provider_s": 1.901,
+            "execute_s": 0.6291,
+            "loop_s": 2.5882,
+            "episode_s": 223.9396
+          }
+        }
+      },
+      {
+        "request": {
+          "line": 65,
+          "schema_version": 1,
+          "request_index": 61,
+          "role": "actor",
+          "step": 61,
+          "model": {
+            "provider": "openai",
+            "api_dialect": "openai",
+            "model": "gpt-5.6-luna",
+            "reasoning_effort": "none"
+          },
+          "duration_s": 2.2943,
+          "provider_latency_s": 2.265,
+          "token": "MV_LEFT",
+          "telemetry": {
+            "latency_s": 2.265,
+            "http_status": 200,
+            "attempt_count": 1,
+            "retry_wait_ms": 0,
+            "api_total_ms": 2265,
+            "ttft_ms": null,
+            "ttft_observed": false,
+            "error_class": null,
+            "attempt_error_counts": {},
+            "usage": {
+              "prompt_tokens": 669,
+              "completion_tokens": 53,
+              "total_tokens": 722
+            }
+          },
+          "visual_assessment": {
+            "target_visible": true,
+            "wrist_target_visible": true,
+            "aligned": false,
+            "contact_risk": false,
+            "observation": "The cube is visible slightly left of the wrist grasp axis and remains on the table."
+          }
+        },
+        "step": {
+          "line": 62,
+          "i": 61,
+          "event": "executed",
+          "act": "MV_LEFT",
+          "executed": true,
+          "action_source": "model",
+          "visual_assessment": {
+            "target_visible": true,
+            "wrist_target_visible": true,
+            "aligned": false,
+            "contact_risk": false,
+            "observation": "The cube is visible slightly left of the wrist grasp axis and remains on the table."
+          },
+          "sg": 0,
+          "n_sg": 6,
+          "stage": "GRASP",
+          "stage_id": "grasp_cube",
+          "target": "orange-and-blue cube",
+          "tcp_before": [
+            0.366702,
+            -0.061984,
+            0.415828
+          ],
+          "tcp_after": [
+            0.366752,
+            -0.081724,
+            0.415868
+          ],
+          "tcp_delta_m": 0.01974,
+          "gripper_width_m": 0.079999,
+          "gripper_command": "OPEN",
+          "native_success": false,
+          "env_done": false,
+          "native_subtask": {
+            "status": 0,
+            "completed": 0,
+            "total": 1,
+            "info": "",
+            "score": 0.0
+          },
+          "auto_release": false,
+          "replan_count": 2,
+          "timing": {
+            "actor_s": 2.2943,
+            "provider_s": 2.265,
+            "execute_s": 0.8016,
+            "loop_s": 3.1249,
+            "episode_s": 227.0651
+          }
+        }
+      },
+      {
+        "request": {
+          "line": 66,
+          "schema_version": 1,
+          "request_index": 62,
+          "role": "actor",
+          "step": 62,
+          "model": {
+            "provider": "openai",
+            "api_dialect": "openai",
+            "model": "gpt-5.6-luna",
+            "reasoning_effort": "none"
+          },
+          "duration_s": 1.8696,
+          "provider_latency_s": 1.841,
+          "token": "MV_LEFT",
+          "telemetry": {
+            "latency_s": 1.841,
+            "http_status": 200,
+            "attempt_count": 1,
+            "retry_wait_ms": 0,
+            "api_total_ms": 1841,
+            "ttft_ms": null,
+            "ttft_observed": false,
+            "error_class": null,
+            "attempt_error_counts": {},
+            "usage": {
+              "prompt_tokens": 669,
+              "completion_tokens": 59,
+              "total_tokens": 728
+            }
+          },
+          "visual_assessment": {
+            "target_visible": true,
+            "wrist_target_visible": true,
+            "aligned": false,
+            "contact_risk": false,
+            "observation": "The cube is visible below the wrist image center and slightly left of the finger opening; move left to center it."
+          }
+        },
+        "step": {
+          "line": 63,
+          "i": 62,
+          "event": "executed",
+          "act": "MV_LEFT",
+          "executed": true,
+          "action_source": "model",
+          "visual_assessment": {
+            "target_visible": true,
+            "wrist_target_visible": true,
+            "aligned": false,
+            "contact_risk": false,
+            "observation": "The cube is visible below the wrist image center and slightly left of the finger opening; move left to center it."
+          },
+          "sg": 0,
+          "n_sg": 6,
+          "stage": "GRASP",
+          "stage_id": "grasp_cube",
+          "target": "orange-and-blue cube",
+          "tcp_before": [
+            0.366752,
+            -0.081724,
+            0.415868
+          ],
+          "tcp_after": [
+            0.366724,
+            -0.102228,
+            0.41587
+          ],
+          "tcp_delta_m": 0.020504,
+          "gripper_width_m": 0.079999,
+          "gripper_command": "OPEN",
+          "native_success": false,
+          "env_done": false,
+          "native_subtask": {
+            "status": 0,
+            "completed": 0,
+            "total": 1,
+            "info": "",
+            "score": 0.0
+          },
+          "auto_release": false,
+          "replan_count": 2,
+          "timing": {
+            "actor_s": 1.8696,
+            "provider_s": 1.841,
+            "execute_s": 0.6273,
+            "loop_s": 2.5267,
+            "episode_s": 229.5926
+          }
+        }
+      },
+      {
+        "request": {
+          "line": 67,
+          "schema_version": 1,
+          "request_index": 63,
+          "role": "actor",
+          "step": 63,
+          "model": {
+            "provider": "openai",
+            "api_dialect": "openai",
+            "model": "gpt-5.6-luna",
+            "reasoning_effort": "none"
+          },
+          "duration_s": 2.2779,
+          "provider_latency_s": 2.249,
+          "token": "MV_LEFT",
+          "telemetry": {
+            "latency_s": 2.249,
+            "http_status": 200,
+            "attempt_count": 1,
+            "retry_wait_ms": 0,
+            "api_total_ms": 2249,
+            "ttft_ms": null,
+            "ttft_observed": false,
+            "error_class": null,
+            "attempt_error_counts": {},
+            "usage": {
+              "prompt_tokens": 669,
+              "completion_tokens": 57,
+              "total_tokens": 726
+            }
+          },
+          "visual_assessment": {
+            "target_visible": true,
+            "wrist_target_visible": true,
+            "aligned": false,
+            "contact_risk": false,
+            "observation": "The cube is visible below the wrist-image center, so the grasp axis needs to move left toward it."
+          }
+        },
+        "step": {
+          "line": 64,
+          "i": 63,
+          "event": "executed",
+          "act": "MV_LEFT",
+          "executed": true,
+          "action_source": "model",
+          "visual_assessment": {
+            "target_visible": true,
+            "wrist_target_visible": true,
+            "aligned": false,
+            "contact_risk": false,
+            "observation": "The cube is visible below the wrist-image center, so the grasp axis needs to move left toward it."
+          },
+          "sg": 0,
+          "n_sg": 6,
+          "stage": "GRASP",
+          "stage_id": "grasp_cube",
+          "target": "orange-and-blue cube",
+          "tcp_before": [
+            0.366724,
+            -0.102228,
+            0.41587
+          ],
+          "tcp_after": [
+            0.366692,
+            -0.122731,
+            0.41587
+          ],
+          "tcp_delta_m": 0.020503,
+          "gripper_width_m": 0.079999,
+          "gripper_command": "OPEN",
+          "native_success": false,
+          "env_done": false,
+          "native_subtask": {
+            "status": 0,
+            "completed": 0,
+            "total": 1,
+            "info": "",
+            "score": 0.0
+          },
+          "auto_release": false,
+          "replan_count": 2,
+          "timing": {
+            "actor_s": 2.2779,
+            "provider_s": 2.249,
+            "execute_s": 0.6253,
+            "loop_s": 2.9315,
+            "episode_s": 232.5246
+          }
+        }
+      },
+      {
+        "request": {
+          "line": 68,
+          "schema_version": 1,
+          "request_index": 64,
+          "role": "actor",
+          "step": 64,
+          "model": {
+            "provider": "openai",
+            "api_dialect": "openai",
+            "model": "gpt-5.6-luna",
+            "reasoning_effort": "none"
+          },
+          "duration_s": 3.6228,
+          "provider_latency_s": 3.594,
+          "token": "MV_RIGHT",
+          "telemetry": {
+            "latency_s": 3.594,
+            "http_status": 200,
+            "attempt_count": 1,
+            "retry_wait_ms": 0,
+            "api_total_ms": 3594,
+            "ttft_ms": null,
+            "ttft_observed": false,
+            "error_class": null,
+            "attempt_error_counts": {},
+            "usage": {
+              "prompt_tokens": 669,
+              "completion_tokens": 56,
+              "total_tokens": 725
+            }
+          },
+          "visual_assessment": {
+            "target_visible": true,
+            "wrist_target_visible": true,
+            "aligned": false,
+            "contact_risk": false,
+            "observation": "The cube is visible left of the wrist grasp axis, so move right to center it before descending."
+          }
+        },
+        "step": {
+          "line": 65,
+          "i": 64,
+          "event": "executed",
+          "act": "MV_RIGHT",
+          "executed": true,
+          "action_source": "model",
+          "visual_assessment": {
+            "target_visible": true,
+            "wrist_target_visible": true,
+            "aligned": false,
+            "contact_risk": false,
+            "observation": "The cube is visible left of the wrist grasp axis, so move right to center it before descending."
+          },
+          "sg": 0,
+          "n_sg": 6,
+          "stage": "GRASP",
+          "stage_id": "grasp_cube",
+          "target": "orange-and-blue cube",
+          "tcp_before": [
+            0.366692,
+            -0.122731,
+            0.41587
+          ],
+          "tcp_after": [
+            0.366533,
+            -0.103031,
+            0.415809
+          ],
+          "tcp_delta_m": 0.019701,
+          "gripper_width_m": 0.079999,
+          "gripper_command": "OPEN",
+          "native_success": false,
+          "env_done": false,
+          "native_subtask": {
+            "status": 0,
+            "completed": 0,
+            "total": 1,
+            "info": "",
+            "score": 0.0
+          },
+          "auto_release": false,
+          "replan_count": 2,
+          "timing": {
+            "actor_s": 3.6228,
+            "provider_s": 3.594,
+            "execute_s": 0.6263,
+            "loop_s": 4.2774,
+            "episode_s": 236.8026
+          }
+        }
+      },
+      {
+        "request": {
+          "line": 69,
+          "schema_version": 1,
+          "request_index": 65,
+          "role": "actor",
+          "step": 65,
+          "model": {
+            "provider": "openai",
+            "api_dialect": "openai",
+            "model": "gpt-5.6-luna",
+            "reasoning_effort": "none"
+          },
+          "duration_s": 2.4136,
+          "provider_latency_s": 2.385,
+          "token": "MV_LEFT",
+          "telemetry": {
+            "latency_s": 2.385,
+            "http_status": 200,
+            "attempt_count": 1,
+            "retry_wait_ms": 0,
+            "api_total_ms": 2385,
+            "ttft_ms": null,
+            "ttft_observed": false,
+            "error_class": null,
+            "attempt_error_counts": {},
+            "usage": {
+              "prompt_tokens": 669,
+              "completion_tokens": 53,
+              "total_tokens": 722
+            }
+          },
+          "visual_assessment": {
+            "target_visible": true,
+            "wrist_target_visible": true,
+            "aligned": false,
+            "contact_risk": false,
+            "observation": "The cube is visible slightly left of the wrist grasp axis and remains on the table."
+          }
+        },
+        "step": {
+          "line": 66,
+          "i": 65,
+          "event": "executed",
+          "act": "MV_LEFT",
+          "executed": true,
+          "action_source": "model",
+          "visual_assessment": {
+            "target_visible": true,
+            "wrist_target_visible": true,
+            "aligned": false,
+            "contact_risk": false,
+            "observation": "The cube is visible slightly left of the wrist grasp axis and remains on the table."
+          },
+          "sg": 0,
+          "n_sg": 6,
+          "stage": "GRASP",
+          "stage_id": "grasp_cube",
+          "target": "orange-and-blue cube",
+          "tcp_before": [
+            0.366533,
+            -0.103031,
+            0.415809
+          ],
+          "tcp_after": [
+            0.366638,
+            -0.122749,
+            0.41587
+          ],
+          "tcp_delta_m": 0.019718,
+          "gripper_width_m": 0.079999,
+          "gripper_command": "OPEN",
+          "native_success": false,
+          "env_done": false,
+          "native_subtask": {
+            "status": 0,
+            "completed": 0,
+            "total": 1,
+            "info": "",
+            "score": 0.0
+          },
+          "auto_release": false,
+          "replan_count": 2,
+          "timing": {
+            "actor_s": 2.4136,
+            "provider_s": 2.385,
+            "execute_s": 0.6209,
+            "loop_s": 3.0652,
+            "episode_s": 239.8683
+          }
+        }
+      },
+      {
+        "request": {
+          "line": 70,
+          "schema_version": 1,
+          "request_index": 66,
+          "role": "actor",
+          "step": 66,
+          "model": {
+            "provider": "openai",
+            "api_dialect": "openai",
+            "model": "gpt-5.6-luna",
+            "reasoning_effort": "none"
+          },
+          "duration_s": 2.0329,
+          "provider_latency_s": 2.004,
+          "token": "MV_RIGHT",
+          "telemetry": {
+            "latency_s": 2.004,
+            "http_status": 200,
+            "attempt_count": 1,
+            "retry_wait_ms": 0,
+            "api_total_ms": 2004,
+            "ttft_ms": null,
+            "ttft_observed": false,
+            "error_class": null,
+            "attempt_error_counts": {},
+            "usage": {
+              "prompt_tokens": 669,
+              "completion_tokens": 54,
+              "total_tokens": 723
+            }
+          },
+          "visual_assessment": {
+            "target_visible": true,
+            "wrist_target_visible": true,
+            "aligned": false,
+            "contact_risk": false,
+            "observation": "The cube is visible left of the wrist grasp axis, so move right to center it."
+          }
+        },
+        "step": {
+          "line": 67,
+          "i": 66,
+          "event": "executed",
+          "act": "MV_RIGHT",
+          "executed": true,
+          "action_source": "model",
+          "visual_assessment": {
+            "target_visible": true,
+            "wrist_target_visible": true,
+            "aligned": false,
+            "contact_risk": false,
+            "observation": "The cube is visible left of the wrist grasp axis, so move right to center it."
+          },
+          "sg": 0,
+          "n_sg": 6,
+          "stage": "GRASP",
+          "stage_id": "grasp_cube",
+          "target": "orange-and-blue cube",
+          "tcp_before": [
+            0.366638,
+            -0.122749,
+            0.41587
+          ],
+          "tcp_after": [
+            0.366479,
+            -0.103049,
+            0.415808
+          ],
+          "tcp_delta_m": 0.0197,
+          "gripper_width_m": 0.079999,
+          "gripper_command": "OPEN",
+          "native_success": false,
+          "env_done": false,
+          "native_subtask": {
+            "status": 0,
+            "completed": 0,
+            "total": 1,
+            "info": "",
+            "score": 0.0
+          },
+          "auto_release": false,
+          "replan_count": 2,
+          "timing": {
+            "actor_s": 2.0329,
+            "provider_s": 2.004,
+            "execute_s": 0.6267,
+            "loop_s": 2.6879,
+            "episode_s": 242.5567
+          }
+        }
+      }
+    ],
+    "task": "Put the cube in the bowl",
+    "step_rows": 67,
+    "request_rows": 70,
+    "visual_protocol": true,
+    "artifacts": {
+      "steps.jsonl": {
+        "sha256": "9479ccf620cc6f85dea14c3d7d172a18c1e5892aa26849a72626399e601a1442"
+      },
+      "requests.jsonl": {
+        "sha256": "925f3bdff6d6e34be0aa9b5a9ea63ff61302f21b60a3f738524b3a183bf096af"
+      }
+    },
+    "stage_events": [],
+    "limits": null,
+    "boundary": "Selected recorded fields. Full serialized requests/responses, planner plan text and internal reasoning were not archived here."
+  }
+}

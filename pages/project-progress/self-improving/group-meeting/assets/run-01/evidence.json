@@ -1,0 +1,3244 @@
+{
+  "id": "run-01",
+  "title": "手动单模型：Luna 规划与执行",
+  "group": "早期对照",
+  "note": "40 次决策后阶段预算及重规划耗尽；与 P8 校准后的实验条件不同。",
+  "video": "assets/run-01/replay.mp4",
+  "poster": "assets/run-01/poster.jpg",
+  "source": "rollouts/manual_staged/manual-single-20260921_005155/single-luna-none/RubiksCubeTask/episode_000_seed_31001/rollout_failure.mp4",
+  "sha256": "3f796f960a9967f5d04e929df1e601dffd41d65cb2b97b676127d903e076bef1",
+  "summary_sha256": "ff896e5c2b51752874bb98d5e58d13e010b6981fa2686259885482f588d3dfe5",
+  "steps": 40,
+  "native_success": false,
+  "end_reason": "stage_budget_replan_exhausted",
+  "wall_s": 132.0924,
+  "actor_p95_s": 3.2124,
+  "duration_s": 8.0,
+  "fps": "5/1",
+  "codec": "h264",
+  "task": "RubiksCubeTask",
+  "seed": 31001,
+  "stage_progress": null,
+  "action_counts": {
+    "MV_DOWN": 15,
+    "MV_FWD": 4,
+    "MV_LEFT": 8,
+    "MV_RIGHT": 11,
+    "MV_UP": 2
+  },
+  "limits": null,
+  "bytes": 1544808,
+  "trace": {
+    "entries": [
+      {
+        "request": {
+          "line": 1,
+          "schema_version": 1,
+          "request_index": 0,
+          "role": "planner",
+          "phase": "initial",
+          "model": {
+            "provider": "openai",
+            "api_dialect": "openai",
+            "model": "gpt-5.6-luna",
+            "reasoning_effort": "none"
+          },
+          "duration_s": 6.8231,
+          "subgoal_count": 6,
+          "planner_route": "guided_json",
+          "provider_latency_s": 6.796,
+          "telemetry": {
+            "latency_s": 6.796,
+            "total_latency_s": 6.822,
+            "http_status": 200,
+            "attempt_count": 1,
+            "retry_wait_ms": 0,
+            "api_total_ms": 6796,
+            "ttft_ms": null,
+            "ttft_observed": false,
+            "error_class": null,
+            "attempt_error_counts": {},
+            "usage": {
+              "prompt_tokens": 550,
+              "completion_tokens": 561,
+              "total_tokens": 1111
+            }
+          }
+        },
+        "step": null
+      },
+      {
+        "request": {
+          "line": 2,
+          "schema_version": 1,
+          "request_index": 0,
+          "role": "actor",
+          "step": 0,
+          "model": {
+            "provider": "openai",
+            "api_dialect": "openai",
+            "model": "gpt-5.6-luna",
+            "reasoning_effort": "none"
+          },
+          "duration_s": 2.3433,
+          "provider_latency_s": 2.317,
+          "token": "MV_DOWN",
+          "telemetry": {
+            "latency_s": 2.317,
+            "http_status": 200,
+            "attempt_count": 1,
+            "retry_wait_ms": 0,
+            "api_total_ms": 2317,
+            "ttft_ms": null,
+            "ttft_observed": false,
+            "error_class": null,
+            "attempt_error_counts": {},
+            "usage": {
+              "prompt_tokens": 718,
+              "completion_tokens": 34,
+              "total_tokens": 752
+            }
+          }
+        },
+        "step": {
+          "line": 1,
+          "i": 0,
+          "event": "executed",
+          "act": "MV_DOWN",
+          "executed": true,
+          "action_source": "model",
+          "sg": 0,
+          "n_sg": 6,
+          "stage": "GRASP",
+          "stage_id": "grasp_cube",
+          "target": "orange-and-blue cube",
+          "tcp_before": [
+            0.306469,
+            -0.0,
+            0.436672
+          ],
+          "tcp_after": [
+            0.306521,
+            -2e-06,
+            0.416657
+          ],
+          "tcp_delta_m": 0.020016,
+          "gripper_width_m": 0.08,
+          "gripper_command": "OPEN",
+          "native_success": false,
+          "env_done": false,
+          "native_subtask": {
+            "status": 0,
+            "completed": 0,
+            "total": 1,
+            "info": "",
+            "score": 0.0
+          },
+          "auto_release": false,
+          "replan_count": 0,
+          "timing": {
+            "actor_s": 2.3433,
+            "provider_s": 2.317,
+            "execute_s": 0.6209,
+            "loop_s": 2.9659,
+            "episode_s": 11.141
+          }
+        }
+      },
+      {
+        "request": {
+          "line": 3,
+          "schema_version": 1,
+          "request_index": 1,
+          "role": "actor",
+          "step": 1,
+          "model": {
+            "provider": "openai",
+            "api_dialect": "openai",
+            "model": "gpt-5.6-luna",
+            "reasoning_effort": "none"
+          },
+          "duration_s": 3.2124,
+          "provider_latency_s": 3.184,
+          "token": "MV_LEFT",
+          "telemetry": {
+            "latency_s": 3.184,
+            "http_status": 200,
+            "attempt_count": 1,
+            "retry_wait_ms": 0,
+            "api_total_ms": 3184,
+            "ttft_ms": null,
+            "ttft_observed": false,
+            "error_class": null,
+            "attempt_error_counts": {},
+            "usage": {
+              "prompt_tokens": 719,
+              "completion_tokens": 35,
+              "total_tokens": 754
+            }
+          }
+        },
+        "step": {
+          "line": 2,
+          "i": 1,
+          "event": "executed",
+          "act": "MV_LEFT",
+          "executed": true,
+          "action_source": "model",
+          "sg": 0,
+          "n_sg": 6,
+          "stage": "GRASP",
+          "stage_id": "grasp_cube",
+          "target": "orange-and-blue cube",
+          "tcp_before": [
+            0.306521,
+            -2e-06,
+            0.416657
+          ],
+          "tcp_after": [
+            0.306388,
+            -0.020241,
+            0.416188
+          ],
+          "tcp_delta_m": 0.020245,
+          "gripper_width_m": 0.079999,
+          "gripper_command": "OPEN",
+          "native_success": false,
+          "env_done": false,
+          "native_subtask": {
+            "status": 0,
+            "completed": 0,
+            "total": 1,
+            "info": "",
+            "score": 0.0
+          },
+          "auto_release": false,
+          "replan_count": 0,
+          "timing": {
+            "actor_s": 3.2124,
+            "provider_s": 3.184,
+            "execute_s": 0.6242,
+            "loop_s": 3.8388,
+            "episode_s": 15.2052
+          }
+        }
+      },
+      {
+        "request": {
+          "line": 4,
+          "schema_version": 1,
+          "request_index": 2,
+          "role": "actor",
+          "step": 2,
+          "model": {
+            "provider": "openai",
+            "api_dialect": "openai",
+            "model": "gpt-5.6-luna",
+            "reasoning_effort": "none"
+          },
+          "duration_s": 1.9093,
+          "provider_latency_s": 1.883,
+          "token": "MV_RIGHT",
+          "telemetry": {
+            "latency_s": 1.883,
+            "http_status": 200,
+            "attempt_count": 1,
+            "retry_wait_ms": 0,
+            "api_total_ms": 1883,
+            "ttft_ms": null,
+            "ttft_observed": false,
+            "error_class": null,
+            "attempt_error_counts": {},
+            "usage": {
+              "prompt_tokens": 722,
+              "completion_tokens": 37,
+              "total_tokens": 759
+            }
+          }
+        },
+        "step": {
+          "line": 3,
+          "i": 2,
+          "event": "executed",
+          "act": "MV_RIGHT",
+          "executed": true,
+          "action_source": "model",
+          "sg": 0,
+          "n_sg": 6,
+          "stage": "GRASP",
+          "stage_id": "grasp_cube",
+          "target": "orange-and-blue cube",
+          "tcp_before": [
+            0.306388,
+            -0.020241,
+            0.416188
+          ],
+          "tcp_after": [
+            0.306367,
+            -0.000226,
+            0.41618
+          ],
+          "tcp_delta_m": 0.020016,
+          "gripper_width_m": 0.079999,
+          "gripper_command": "OPEN",
+          "native_success": false,
+          "env_done": false,
+          "native_subtask": {
+            "status": 0,
+            "completed": 0,
+            "total": 1,
+            "info": "",
+            "score": 0.0
+          },
+          "auto_release": false,
+          "replan_count": 0,
+          "timing": {
+            "actor_s": 1.9093,
+            "provider_s": 1.883,
+            "execute_s": 0.6183,
+            "loop_s": 2.5292,
+            "episode_s": 17.735
+          }
+        }
+      },
+      {
+        "request": {
+          "line": 5,
+          "schema_version": 1,
+          "request_index": 3,
+          "role": "actor",
+          "step": 3,
+          "model": {
+            "provider": "openai",
+            "api_dialect": "openai",
+            "model": "gpt-5.6-luna",
+            "reasoning_effort": "none"
+          },
+          "duration_s": 2.1147,
+          "provider_latency_s": 2.088,
+          "token": "MV_FWD",
+          "telemetry": {
+            "latency_s": 2.088,
+            "http_status": 200,
+            "attempt_count": 1,
+            "retry_wait_ms": 0,
+            "api_total_ms": 2088,
+            "ttft_ms": null,
+            "ttft_observed": false,
+            "error_class": null,
+            "attempt_error_counts": {},
+            "usage": {
+              "prompt_tokens": 725,
+              "completion_tokens": 40,
+              "total_tokens": 765
+            }
+          }
+        },
+        "step": {
+          "line": 4,
+          "i": 3,
+          "event": "executed",
+          "act": "MV_FWD",
+          "executed": true,
+          "action_source": "model",
+          "sg": 0,
+          "n_sg": 6,
+          "stage": "GRASP",
+          "stage_id": "grasp_cube",
+          "target": "orange-and-blue cube",
+          "tcp_before": [
+            0.306367,
+            -0.000226,
+            0.41618
+          ],
+          "tcp_after": [
+            0.326693,
+            1.5e-05,
+            0.416349
+          ],
+          "tcp_delta_m": 0.020329,
+          "gripper_width_m": 0.08,
+          "gripper_command": "OPEN",
+          "native_success": false,
+          "env_done": false,
+          "native_subtask": {
+            "status": 0,
+            "completed": 0,
+            "total": 1,
+            "info": "",
+            "score": 0.0
+          },
+          "auto_release": false,
+          "replan_count": 0,
+          "timing": {
+            "actor_s": 2.1147,
+            "provider_s": 2.088,
+            "execute_s": 0.6254,
+            "loop_s": 2.7413,
+            "episode_s": 20.4769
+          }
+        }
+      },
+      {
+        "request": {
+          "line": 6,
+          "schema_version": 1,
+          "request_index": 4,
+          "role": "actor",
+          "step": 4,
+          "model": {
+            "provider": "openai",
+            "api_dialect": "openai",
+            "model": "gpt-5.6-luna",
+            "reasoning_effort": "none"
+          },
+          "duration_s": 1.7043,
+          "provider_latency_s": 1.677,
+          "token": "MV_LEFT",
+          "telemetry": {
+            "latency_s": 1.677,
+            "http_status": 200,
+            "attempt_count": 1,
+            "retry_wait_ms": 0,
+            "api_total_ms": 1677,
+            "ttft_ms": null,
+            "ttft_observed": false,
+            "error_class": null,
+            "attempt_error_counts": {},
+            "usage": {
+              "prompt_tokens": 729,
+              "completion_tokens": 39,
+              "total_tokens": 768
+            }
+          }
+        },
+        "step": {
+          "line": 5,
+          "i": 4,
+          "event": "executed",
+          "act": "MV_LEFT",
+          "executed": true,
+          "action_source": "model",
+          "sg": 0,
+          "n_sg": 6,
+          "stage": "GRASP",
+          "stage_id": "grasp_cube",
+          "target": "orange-and-blue cube",
+          "tcp_before": [
+            0.326693,
+            1.5e-05,
+            0.416349
+          ],
+          "tcp_after": [
+            0.326779,
+            -0.02022,
+            0.416135
+          ],
+          "tcp_delta_m": 0.020237,
+          "gripper_width_m": 0.079999,
+          "gripper_command": "OPEN",
+          "native_success": false,
+          "env_done": false,
+          "native_subtask": {
+            "status": 0,
+            "completed": 0,
+            "total": 1,
+            "info": "",
+            "score": 0.0
+          },
+          "auto_release": false,
+          "replan_count": 0,
+          "timing": {
+            "actor_s": 1.7043,
+            "provider_s": 1.677,
+            "execute_s": 0.6242,
+            "loop_s": 2.3299,
+            "episode_s": 22.8075
+          }
+        }
+      },
+      {
+        "request": {
+          "line": 7,
+          "schema_version": 1,
+          "request_index": 5,
+          "role": "actor",
+          "step": 5,
+          "model": {
+            "provider": "openai",
+            "api_dialect": "openai",
+            "model": "gpt-5.6-luna",
+            "reasoning_effort": "none"
+          },
+          "duration_s": 2.1055,
+          "provider_latency_s": 2.079,
+          "token": "MV_DOWN",
+          "telemetry": {
+            "latency_s": 2.079,
+            "http_status": 200,
+            "attempt_count": 1,
+            "retry_wait_ms": 0,
+            "api_total_ms": 2079,
+            "ttft_ms": null,
+            "ttft_observed": false,
+            "error_class": null,
+            "attempt_error_counts": {},
+            "usage": {
+              "prompt_tokens": 732,
+              "completion_tokens": 41,
+              "total_tokens": 773
+            }
+          }
+        },
+        "step": {
+          "line": 6,
+          "i": 5,
+          "event": "executed",
+          "act": "MV_DOWN",
+          "executed": true,
+          "action_source": "model",
+          "sg": 0,
+          "n_sg": 6,
+          "stage": "GRASP",
+          "stage_id": "grasp_cube",
+          "target": "orange-and-blue cube",
+          "tcp_before": [
+            0.326779,
+            -0.02022,
+            0.416135
+          ],
+          "tcp_after": [
+            0.326846,
+            -0.020502,
+            0.396145
+          ],
+          "tcp_delta_m": 0.019992,
+          "gripper_width_m": 0.08,
+          "gripper_command": "OPEN",
+          "native_success": false,
+          "env_done": false,
+          "native_subtask": {
+            "status": 0,
+            "completed": 0,
+            "total": 1,
+            "info": "",
+            "score": 0.0
+          },
+          "auto_release": false,
+          "replan_count": 0,
+          "timing": {
+            "actor_s": 2.1055,
+            "provider_s": 2.079,
+            "execute_s": 0.6266,
+            "loop_s": 2.7333,
+            "episode_s": 25.5414
+          }
+        }
+      },
+      {
+        "request": {
+          "line": 8,
+          "schema_version": 1,
+          "request_index": 6,
+          "role": "actor",
+          "step": 6,
+          "model": {
+            "provider": "openai",
+            "api_dialect": "openai",
+            "model": "gpt-5.6-luna",
+            "reasoning_effort": "none"
+          },
+          "duration_s": 2.1101,
+          "provider_latency_s": 2.084,
+          "token": "MV_RIGHT",
+          "telemetry": {
+            "latency_s": 2.084,
+            "http_status": 200,
+            "attempt_count": 1,
+            "retry_wait_ms": 0,
+            "api_total_ms": 2084,
+            "ttft_ms": null,
+            "ttft_observed": false,
+            "error_class": null,
+            "attempt_error_counts": {},
+            "usage": {
+              "prompt_tokens": 735,
+              "completion_tokens": 35,
+              "total_tokens": 770
+            }
+          }
+        },
+        "step": {
+          "line": 7,
+          "i": 6,
+          "event": "executed",
+          "act": "MV_RIGHT",
+          "executed": true,
+          "action_source": "model",
+          "sg": 0,
+          "n_sg": 6,
+          "stage": "GRASP",
+          "stage_id": "grasp_cube",
+          "target": "orange-and-blue cube",
+          "tcp_before": [
+            0.326846,
+            -0.020502,
+            0.396145
+          ],
+          "tcp_after": [
+            0.326684,
+            -0.00027,
+            0.395635
+          ],
+          "tcp_delta_m": 0.020239,
+          "gripper_width_m": 0.079999,
+          "gripper_command": "OPEN",
+          "native_success": false,
+          "env_done": false,
+          "native_subtask": {
+            "status": 0,
+            "completed": 0,
+            "total": 1,
+            "info": "",
+            "score": 0.0
+          },
+          "auto_release": false,
+          "replan_count": 0,
+          "timing": {
+            "actor_s": 2.1101,
+            "provider_s": 2.084,
+            "execute_s": 0.623,
+            "loop_s": 2.7342,
+            "episode_s": 28.2763
+          }
+        }
+      },
+      {
+        "request": {
+          "line": 9,
+          "schema_version": 1,
+          "request_index": 7,
+          "role": "actor",
+          "step": 7,
+          "model": {
+            "provider": "openai",
+            "api_dialect": "openai",
+            "model": "gpt-5.6-luna",
+            "reasoning_effort": "none"
+          },
+          "duration_s": 2.131,
+          "provider_latency_s": 2.104,
+          "token": "MV_DOWN",
+          "telemetry": {
+            "latency_s": 2.104,
+            "http_status": 200,
+            "attempt_count": 1,
+            "retry_wait_ms": 0,
+            "api_total_ms": 2104,
+            "ttft_ms": null,
+            "ttft_observed": false,
+            "error_class": null,
+            "attempt_error_counts": {},
+            "usage": {
+              "prompt_tokens": 738,
+              "completion_tokens": 38,
+              "total_tokens": 776
+            }
+          }
+        },
+        "step": {
+          "line": 8,
+          "i": 7,
+          "event": "executed",
+          "act": "MV_DOWN",
+          "executed": true,
+          "action_source": "model",
+          "sg": 0,
+          "n_sg": 6,
+          "stage": "GRASP",
+          "stage_id": "grasp_cube",
+          "target": "orange-and-blue cube",
+          "tcp_before": [
+            0.326684,
+            -0.00027,
+            0.395635
+          ],
+          "tcp_after": [
+            0.326769,
+            -1e-05,
+            0.375659
+          ],
+          "tcp_delta_m": 0.019978,
+          "gripper_width_m": 0.08,
+          "gripper_command": "OPEN",
+          "native_success": false,
+          "env_done": false,
+          "native_subtask": {
+            "status": 0,
+            "completed": 0,
+            "total": 1,
+            "info": "",
+            "score": 0.0
+          },
+          "auto_release": false,
+          "replan_count": 0,
+          "timing": {
+            "actor_s": 2.131,
+            "provider_s": 2.104,
+            "execute_s": 0.6186,
+            "loop_s": 2.7513,
+            "episode_s": 31.0281
+          }
+        }
+      },
+      {
+        "request": {
+          "line": 10,
+          "schema_version": 1,
+          "request_index": 8,
+          "role": "actor",
+          "step": 8,
+          "model": {
+            "provider": "openai",
+            "api_dialect": "openai",
+            "model": "gpt-5.6-luna",
+            "reasoning_effort": "none"
+          },
+          "duration_s": 2.0369,
+          "provider_latency_s": 2.009,
+          "token": "MV_RIGHT",
+          "telemetry": {
+            "latency_s": 2.009,
+            "http_status": 200,
+            "attempt_count": 1,
+            "retry_wait_ms": 0,
+            "api_total_ms": 2009,
+            "ttft_ms": null,
+            "ttft_observed": false,
+            "error_class": null,
+            "attempt_error_counts": {},
+            "usage": {
+              "prompt_tokens": 741,
+              "completion_tokens": 37,
+              "total_tokens": 778
+            }
+          }
+        },
+        "step": {
+          "line": 9,
+          "i": 8,
+          "event": "executed",
+          "act": "MV_RIGHT",
+          "executed": true,
+          "action_source": "model",
+          "sg": 0,
+          "n_sg": 6,
+          "stage": "GRASP",
+          "stage_id": "grasp_cube",
+          "target": "orange-and-blue cube",
+          "tcp_before": [
+            0.326769,
+            -1e-05,
+            0.375659
+          ],
+          "tcp_after": [
+            0.326586,
+            0.020212,
+            0.37515
+          ],
+          "tcp_delta_m": 0.020229,
+          "gripper_width_m": 0.079999,
+          "gripper_command": "OPEN",
+          "native_success": false,
+          "env_done": false,
+          "native_subtask": {
+            "status": 0,
+            "completed": 0,
+            "total": 1,
+            "info": "",
+            "score": 0.0
+          },
+          "auto_release": false,
+          "replan_count": 0,
+          "timing": {
+            "actor_s": 2.0369,
+            "provider_s": 2.009,
+            "execute_s": 0.6174,
+            "loop_s": 2.6555,
+            "episode_s": 33.6843
+          }
+        }
+      },
+      {
+        "request": {
+          "line": 11,
+          "schema_version": 1,
+          "request_index": 9,
+          "role": "actor",
+          "step": 9,
+          "model": {
+            "provider": "openai",
+            "api_dialect": "openai",
+            "model": "gpt-5.6-luna",
+            "reasoning_effort": "none"
+          },
+          "duration_s": 2.5225,
+          "provider_latency_s": 2.496,
+          "token": "MV_RIGHT",
+          "telemetry": {
+            "latency_s": 2.496,
+            "http_status": 200,
+            "attempt_count": 1,
+            "retry_wait_ms": 0,
+            "api_total_ms": 2496,
+            "ttft_ms": null,
+            "ttft_observed": false,
+            "error_class": null,
+            "attempt_error_counts": {},
+            "usage": {
+              "prompt_tokens": 741,
+              "completion_tokens": 37,
+              "total_tokens": 778
+            }
+          }
+        },
+        "step": {
+          "line": 10,
+          "i": 9,
+          "event": "executed",
+          "act": "MV_RIGHT",
+          "executed": true,
+          "action_source": "model",
+          "sg": 0,
+          "n_sg": 6,
+          "stage": "GRASP",
+          "stage_id": "grasp_cube",
+          "target": "orange-and-blue cube",
+          "tcp_before": [
+            0.326586,
+            0.020212,
+            0.37515
+          ],
+          "tcp_after": [
+            0.326571,
+            0.040692,
+            0.375167
+          ],
+          "tcp_delta_m": 0.02048,
+          "gripper_width_m": 0.079999,
+          "gripper_command": "OPEN",
+          "native_success": false,
+          "env_done": false,
+          "native_subtask": {
+            "status": 0,
+            "completed": 0,
+            "total": 1,
+            "info": "",
+            "score": 0.0
+          },
+          "auto_release": false,
+          "replan_count": 0,
+          "timing": {
+            "actor_s": 2.5225,
+            "provider_s": 2.496,
+            "execute_s": 0.6203,
+            "loop_s": 3.1445,
+            "episode_s": 36.8294
+          }
+        }
+      },
+      {
+        "request": {
+          "line": 12,
+          "schema_version": 1,
+          "request_index": 10,
+          "role": "actor",
+          "step": 10,
+          "model": {
+            "provider": "openai",
+            "api_dialect": "openai",
+            "model": "gpt-5.6-luna",
+            "reasoning_effort": "none"
+          },
+          "duration_s": 1.9109,
+          "provider_latency_s": 1.885,
+          "token": "MV_LEFT",
+          "telemetry": {
+            "latency_s": 1.885,
+            "http_status": 200,
+            "attempt_count": 1,
+            "retry_wait_ms": 0,
+            "api_total_ms": 1885,
+            "ttft_ms": null,
+            "ttft_observed": false,
+            "error_class": null,
+            "attempt_error_counts": {},
+            "usage": {
+              "prompt_tokens": 741,
+              "completion_tokens": 43,
+              "total_tokens": 784
+            }
+          }
+        },
+        "step": {
+          "line": 11,
+          "i": 10,
+          "event": "executed",
+          "act": "MV_LEFT",
+          "executed": true,
+          "action_source": "model",
+          "sg": 0,
+          "n_sg": 6,
+          "stage": "GRASP",
+          "stage_id": "grasp_cube",
+          "target": "orange-and-blue cube",
+          "tcp_before": [
+            0.326571,
+            0.040692,
+            0.375167
+          ],
+          "tcp_after": [
+            0.326524,
+            0.020731,
+            0.375161
+          ],
+          "tcp_delta_m": 0.019961,
+          "gripper_width_m": 0.079999,
+          "gripper_command": "OPEN",
+          "native_success": false,
+          "env_done": false,
+          "native_subtask": {
+            "status": 0,
+            "completed": 0,
+            "total": 1,
+            "info": "",
+            "score": 0.0
+          },
+          "auto_release": false,
+          "replan_count": 0,
+          "timing": {
+            "actor_s": 1.9109,
+            "provider_s": 1.885,
+            "execute_s": 0.6202,
+            "loop_s": 2.5322,
+            "episode_s": 39.3622
+          }
+        }
+      },
+      {
+        "request": {
+          "line": 13,
+          "schema_version": 1,
+          "request_index": 11,
+          "role": "actor",
+          "step": 11,
+          "model": {
+            "provider": "openai",
+            "api_dialect": "openai",
+            "model": "gpt-5.6-luna",
+            "reasoning_effort": "none"
+          },
+          "duration_s": 2.6516,
+          "provider_latency_s": 2.626,
+          "token": "MV_DOWN",
+          "telemetry": {
+            "latency_s": 2.626,
+            "http_status": 200,
+            "attempt_count": 1,
+            "retry_wait_ms": 0,
+            "api_total_ms": 2625,
+            "ttft_ms": null,
+            "ttft_observed": false,
+            "error_class": null,
+            "attempt_error_counts": {},
+            "usage": {
+              "prompt_tokens": 741,
+              "completion_tokens": 45,
+              "total_tokens": 786
+            }
+          }
+        },
+        "step": {
+          "line": 12,
+          "i": 11,
+          "event": "executed",
+          "act": "MV_DOWN",
+          "executed": true,
+          "action_source": "model",
+          "sg": 0,
+          "n_sg": 6,
+          "stage": "GRASP",
+          "stage_id": "grasp_cube",
+          "target": "orange-and-blue cube",
+          "tcp_before": [
+            0.326524,
+            0.020731,
+            0.375161
+          ],
+          "tcp_after": [
+            0.326643,
+            0.020485,
+            0.355192
+          ],
+          "tcp_delta_m": 0.019971,
+          "gripper_width_m": 0.08,
+          "gripper_command": "OPEN",
+          "native_success": false,
+          "env_done": false,
+          "native_subtask": {
+            "status": 0,
+            "completed": 0,
+            "total": 1,
+            "info": "",
+            "score": 0.0
+          },
+          "auto_release": false,
+          "replan_count": 0,
+          "timing": {
+            "actor_s": 2.6516,
+            "provider_s": 2.626,
+            "execute_s": 0.6205,
+            "loop_s": 3.2733,
+            "episode_s": 42.636
+          }
+        }
+      },
+      {
+        "request": {
+          "line": 14,
+          "schema_version": 1,
+          "request_index": 12,
+          "role": "actor",
+          "step": 12,
+          "model": {
+            "provider": "openai",
+            "api_dialect": "openai",
+            "model": "gpt-5.6-luna",
+            "reasoning_effort": "none"
+          },
+          "duration_s": 2.3279,
+          "provider_latency_s": 2.302,
+          "token": "MV_RIGHT",
+          "telemetry": {
+            "latency_s": 2.302,
+            "http_status": 200,
+            "attempt_count": 1,
+            "retry_wait_ms": 0,
+            "api_total_ms": 2302,
+            "ttft_ms": null,
+            "ttft_observed": false,
+            "error_class": null,
+            "attempt_error_counts": {},
+            "usage": {
+              "prompt_tokens": 740,
+              "completion_tokens": 39,
+              "total_tokens": 779
+            }
+          }
+        },
+        "step": {
+          "line": 13,
+          "i": 12,
+          "event": "executed",
+          "act": "MV_RIGHT",
+          "executed": true,
+          "action_source": "model",
+          "sg": 0,
+          "n_sg": 6,
+          "stage": "GRASP",
+          "stage_id": "grasp_cube",
+          "target": "orange-and-blue cube",
+          "tcp_before": [
+            0.326643,
+            0.020485,
+            0.355192
+          ],
+          "tcp_after": [
+            0.326446,
+            0.040695,
+            0.354689
+          ],
+          "tcp_delta_m": 0.020217,
+          "gripper_width_m": 0.079999,
+          "gripper_command": "OPEN",
+          "native_success": false,
+          "env_done": false,
+          "native_subtask": {
+            "status": 0,
+            "completed": 0,
+            "total": 1,
+            "info": "",
+            "score": 0.0
+          },
+          "auto_release": false,
+          "replan_count": 0,
+          "timing": {
+            "actor_s": 2.3279,
+            "provider_s": 2.302,
+            "execute_s": 0.6206,
+            "loop_s": 2.9495,
+            "episode_s": 45.586
+          }
+        }
+      },
+      {
+        "request": {
+          "line": 15,
+          "schema_version": 1,
+          "request_index": 13,
+          "role": "actor",
+          "step": 13,
+          "model": {
+            "provider": "openai",
+            "api_dialect": "openai",
+            "model": "gpt-5.6-luna",
+            "reasoning_effort": "none"
+          },
+          "duration_s": 1.7133,
+          "provider_latency_s": 1.687,
+          "token": "MV_DOWN",
+          "telemetry": {
+            "latency_s": 1.687,
+            "http_status": 200,
+            "attempt_count": 1,
+            "retry_wait_ms": 0,
+            "api_total_ms": 1687,
+            "ttft_ms": null,
+            "ttft_observed": false,
+            "error_class": null,
+            "attempt_error_counts": {},
+            "usage": {
+              "prompt_tokens": 740,
+              "completion_tokens": 38,
+              "total_tokens": 778
+            }
+          }
+        },
+        "step": {
+          "line": 14,
+          "i": 13,
+          "event": "executed",
+          "act": "MV_DOWN",
+          "executed": true,
+          "action_source": "model",
+          "sg": 0,
+          "n_sg": 6,
+          "stage": "GRASP",
+          "stage_id": "grasp_cube",
+          "target": "orange-and-blue cube",
+          "tcp_before": [
+            0.326446,
+            0.040695,
+            0.354689
+          ],
+          "tcp_after": [
+            0.32655,
+            0.040974,
+            0.334722
+          ],
+          "tcp_delta_m": 0.019969,
+          "gripper_width_m": 0.08,
+          "gripper_command": "OPEN",
+          "native_success": false,
+          "env_done": false,
+          "native_subtask": {
+            "status": 0,
+            "completed": 0,
+            "total": 1,
+            "info": "",
+            "score": 0.0
+          },
+          "auto_release": false,
+          "replan_count": 0,
+          "timing": {
+            "actor_s": 1.7133,
+            "provider_s": 1.687,
+            "execute_s": 0.6238,
+            "loop_s": 2.3384,
+            "episode_s": 47.9249
+          }
+        }
+      },
+      {
+        "request": {
+          "line": 16,
+          "schema_version": 1,
+          "request_index": 14,
+          "role": "actor",
+          "step": 14,
+          "model": {
+            "provider": "openai",
+            "api_dialect": "openai",
+            "model": "gpt-5.6-luna",
+            "reasoning_effort": "none"
+          },
+          "duration_s": 1.8245,
+          "provider_latency_s": 1.798,
+          "token": "MV_DOWN",
+          "telemetry": {
+            "latency_s": 1.798,
+            "http_status": 200,
+            "attempt_count": 1,
+            "retry_wait_ms": 0,
+            "api_total_ms": 1798,
+            "ttft_ms": null,
+            "ttft_observed": false,
+            "error_class": null,
+            "attempt_error_counts": {},
+            "usage": {
+              "prompt_tokens": 740,
+              "completion_tokens": 38,
+              "total_tokens": 778
+            }
+          }
+        },
+        "step": {
+          "line": 15,
+          "i": 14,
+          "event": "executed",
+          "act": "MV_DOWN",
+          "executed": true,
+          "action_source": "model",
+          "sg": 0,
+          "n_sg": 6,
+          "stage": "GRASP",
+          "stage_id": "grasp_cube",
+          "target": "orange-and-blue cube",
+          "tcp_before": [
+            0.32655,
+            0.040974,
+            0.334722
+          ],
+          "tcp_after": [
+            0.326477,
+            0.040965,
+            0.314244
+          ],
+          "tcp_delta_m": 0.020477,
+          "gripper_width_m": 0.08,
+          "gripper_command": "OPEN",
+          "native_success": false,
+          "env_done": false,
+          "native_subtask": {
+            "status": 0,
+            "completed": 0,
+            "total": 1,
+            "info": "",
+            "score": 0.0
+          },
+          "auto_release": false,
+          "replan_count": 0,
+          "timing": {
+            "actor_s": 1.8245,
+            "provider_s": 1.798,
+            "execute_s": 0.621,
+            "loop_s": 2.4466,
+            "episode_s": 50.3721
+          }
+        }
+      },
+      {
+        "request": {
+          "line": 17,
+          "schema_version": 1,
+          "request_index": 15,
+          "role": "actor",
+          "step": 15,
+          "model": {
+            "provider": "openai",
+            "api_dialect": "openai",
+            "model": "gpt-5.6-luna",
+            "reasoning_effort": "none"
+          },
+          "duration_s": 2.2403,
+          "provider_latency_s": 2.214,
+          "token": "MV_LEFT",
+          "telemetry": {
+            "latency_s": 2.214,
+            "http_status": 200,
+            "attempt_count": 1,
+            "retry_wait_ms": 0,
+            "api_total_ms": 2214,
+            "ttft_ms": null,
+            "ttft_observed": false,
+            "error_class": null,
+            "attempt_error_counts": {},
+            "usage": {
+              "prompt_tokens": 740,
+              "completion_tokens": 40,
+              "total_tokens": 780
+            }
+          }
+        },
+        "step": {
+          "line": 16,
+          "i": 15,
+          "event": "executed",
+          "act": "MV_LEFT",
+          "executed": true,
+          "action_source": "model",
+          "sg": 0,
+          "n_sg": 6,
+          "stage": "GRASP",
+          "stage_id": "grasp_cube",
+          "target": "orange-and-blue cube",
+          "tcp_before": [
+            0.326477,
+            0.040965,
+            0.314244
+          ],
+          "tcp_after": [
+            0.326214,
+            0.020711,
+            0.313736
+          ],
+          "tcp_delta_m": 0.020262,
+          "gripper_width_m": 0.079999,
+          "gripper_command": "OPEN",
+          "native_success": false,
+          "env_done": false,
+          "native_subtask": {
+            "status": 0,
+            "completed": 0,
+            "total": 1,
+            "info": "",
+            "score": 0.0
+          },
+          "auto_release": false,
+          "replan_count": 0,
+          "timing": {
+            "actor_s": 2.2403,
+            "provider_s": 2.214,
+            "execute_s": 0.6219,
+            "loop_s": 2.8634,
+            "episode_s": 53.2361
+          }
+        }
+      },
+      {
+        "request": {
+          "line": 18,
+          "schema_version": 1,
+          "request_index": 16,
+          "role": "actor",
+          "step": 16,
+          "model": {
+            "provider": "openai",
+            "api_dialect": "openai",
+            "model": "gpt-5.6-luna",
+            "reasoning_effort": "none"
+          },
+          "duration_s": 3.3092,
+          "provider_latency_s": 3.282,
+          "token": "MV_RIGHT",
+          "telemetry": {
+            "latency_s": 3.282,
+            "http_status": 200,
+            "attempt_count": 1,
+            "retry_wait_ms": 0,
+            "api_total_ms": 3282,
+            "ttft_ms": null,
+            "ttft_observed": false,
+            "error_class": null,
+            "attempt_error_counts": {},
+            "usage": {
+              "prompt_tokens": 740,
+              "completion_tokens": 39,
+              "total_tokens": 779
+            }
+          }
+        },
+        "step": {
+          "line": 17,
+          "i": 16,
+          "event": "executed",
+          "act": "MV_RIGHT",
+          "executed": true,
+          "action_source": "model",
+          "sg": 0,
+          "n_sg": 6,
+          "stage": "GRASP",
+          "stage_id": "grasp_cube",
+          "target": "orange-and-blue cube",
+          "tcp_before": [
+            0.326214,
+            0.020711,
+            0.313736
+          ],
+          "tcp_after": [
+            0.326225,
+            0.040677,
+            0.313755
+          ],
+          "tcp_delta_m": 0.019966,
+          "gripper_width_m": 0.079999,
+          "gripper_command": "OPEN",
+          "native_success": false,
+          "env_done": false,
+          "native_subtask": {
+            "status": 0,
+            "completed": 0,
+            "total": 1,
+            "info": "",
+            "score": 0.0
+          },
+          "auto_release": false,
+          "replan_count": 0,
+          "timing": {
+            "actor_s": 3.3092,
+            "provider_s": 3.282,
+            "execute_s": 0.6219,
+            "loop_s": 3.9323,
+            "episode_s": 57.1689
+          }
+        }
+      },
+      {
+        "request": {
+          "line": 19,
+          "schema_version": 1,
+          "request_index": 17,
+          "role": "actor",
+          "step": 17,
+          "model": {
+            "provider": "openai",
+            "api_dialect": "openai",
+            "model": "gpt-5.6-luna",
+            "reasoning_effort": "none"
+          },
+          "duration_s": 1.9915,
+          "provider_latency_s": 1.965,
+          "token": "MV_DOWN",
+          "telemetry": {
+            "latency_s": 1.965,
+            "http_status": 200,
+            "attempt_count": 1,
+            "retry_wait_ms": 0,
+            "api_total_ms": 1965,
+            "ttft_ms": null,
+            "ttft_observed": false,
+            "error_class": null,
+            "attempt_error_counts": {},
+            "usage": {
+              "prompt_tokens": 740,
+              "completion_tokens": 34,
+              "total_tokens": 774
+            }
+          }
+        },
+        "step": {
+          "line": 18,
+          "i": 17,
+          "event": "executed",
+          "act": "MV_DOWN",
+          "executed": true,
+          "action_source": "model",
+          "sg": 0,
+          "n_sg": 6,
+          "stage": "GRASP",
+          "stage_id": "grasp_cube",
+          "target": "orange-and-blue cube",
+          "tcp_before": [
+            0.326225,
+            0.040677,
+            0.313755
+          ],
+          "tcp_after": [
+            0.32637,
+            0.040968,
+            0.293797
+          ],
+          "tcp_delta_m": 0.019961,
+          "gripper_width_m": 0.08,
+          "gripper_command": "OPEN",
+          "native_success": false,
+          "env_done": false,
+          "native_subtask": {
+            "status": 0,
+            "completed": 0,
+            "total": 1,
+            "info": "",
+            "score": 0.0
+          },
+          "auto_release": false,
+          "replan_count": 0,
+          "timing": {
+            "actor_s": 1.9915,
+            "provider_s": 1.965,
+            "execute_s": 0.6266,
+            "loop_s": 2.6194,
+            "episode_s": 59.7888
+          }
+        }
+      },
+      {
+        "request": {
+          "line": 20,
+          "schema_version": 1,
+          "request_index": 18,
+          "role": "actor",
+          "step": 18,
+          "model": {
+            "provider": "openai",
+            "api_dialect": "openai",
+            "model": "gpt-5.6-luna",
+            "reasoning_effort": "none"
+          },
+          "duration_s": 1.9886,
+          "provider_latency_s": 1.962,
+          "token": "MV_RIGHT",
+          "telemetry": {
+            "latency_s": 1.962,
+            "http_status": 200,
+            "attempt_count": 1,
+            "retry_wait_ms": 0,
+            "api_total_ms": 1962,
+            "ttft_ms": null,
+            "ttft_observed": false,
+            "error_class": null,
+            "attempt_error_counts": {},
+            "usage": {
+              "prompt_tokens": 740,
+              "completion_tokens": 42,
+              "total_tokens": 782
+            }
+          }
+        },
+        "step": {
+          "line": 19,
+          "i": 18,
+          "event": "executed",
+          "act": "MV_RIGHT",
+          "executed": true,
+          "action_source": "model",
+          "sg": 0,
+          "n_sg": 6,
+          "stage": "GRASP",
+          "stage_id": "grasp_cube",
+          "target": "orange-and-blue cube",
+          "tcp_before": [
+            0.32637,
+            0.040968,
+            0.293797
+          ],
+          "tcp_after": [
+            0.326111,
+            0.061136,
+            0.293297
+          ],
+          "tcp_delta_m": 0.020177,
+          "gripper_width_m": 0.079999,
+          "gripper_command": "OPEN",
+          "native_success": false,
+          "env_done": false,
+          "native_subtask": {
+            "status": 0,
+            "completed": 0,
+            "total": 1,
+            "info": "",
+            "score": 0.0
+          },
+          "auto_release": false,
+          "replan_count": 0,
+          "timing": {
+            "actor_s": 1.9886,
+            "provider_s": 1.962,
+            "execute_s": 0.6184,
+            "loop_s": 2.608,
+            "episode_s": 62.3973
+          }
+        }
+      },
+      {
+        "request": {
+          "line": 21,
+          "schema_version": 1,
+          "request_index": 19,
+          "role": "actor",
+          "step": 19,
+          "model": {
+            "provider": "openai",
+            "api_dialect": "openai",
+            "model": "gpt-5.6-luna",
+            "reasoning_effort": "none"
+          },
+          "duration_s": 2.161,
+          "provider_latency_s": 2.135,
+          "token": "MV_DOWN",
+          "telemetry": {
+            "latency_s": 2.135,
+            "http_status": 200,
+            "attempt_count": 1,
+            "retry_wait_ms": 0,
+            "api_total_ms": 2135,
+            "ttft_ms": null,
+            "ttft_observed": false,
+            "error_class": null,
+            "attempt_error_counts": {},
+            "usage": {
+              "prompt_tokens": 740,
+              "completion_tokens": 39,
+              "total_tokens": 779
+            }
+          }
+        },
+        "step": {
+          "line": 20,
+          "i": 19,
+          "event": "executed",
+          "act": "MV_DOWN",
+          "executed": true,
+          "action_source": "model",
+          "sg": 0,
+          "n_sg": 6,
+          "stage": "GRASP",
+          "stage_id": "grasp_cube",
+          "target": "orange-and-blue cube",
+          "tcp_before": [
+            0.326111,
+            0.061136,
+            0.293297
+          ],
+          "tcp_after": [
+            0.326258,
+            0.061459,
+            0.273339
+          ],
+          "tcp_delta_m": 0.019962,
+          "gripper_width_m": 0.08,
+          "gripper_command": "OPEN",
+          "native_success": false,
+          "env_done": false,
+          "native_subtask": {
+            "status": 0,
+            "completed": 0,
+            "total": 1,
+            "info": "",
+            "score": 0.0
+          },
+          "auto_release": false,
+          "replan_count": 0,
+          "timing": {
+            "actor_s": 2.161,
+            "provider_s": 2.135,
+            "execute_s": 0.6303,
+            "loop_s": 2.7923,
+            "episode_s": 65.1902
+          }
+        }
+      },
+      {
+        "request": {
+          "line": 22,
+          "schema_version": 1,
+          "request_index": 1,
+          "role": "planner",
+          "phase": "replan_1",
+          "model": {
+            "provider": "openai",
+            "api_dialect": "openai",
+            "model": "gpt-5.6-luna",
+            "reasoning_effort": "none"
+          },
+          "duration_s": 6.4709,
+          "subgoal_count": 6,
+          "planner_route": "guided_json",
+          "provider_latency_s": 6.444,
+          "telemetry": {
+            "latency_s": 6.444,
+            "total_latency_s": 6.471,
+            "http_status": 200,
+            "attempt_count": 1,
+            "retry_wait_ms": 0,
+            "api_total_ms": 6444,
+            "ttft_ms": null,
+            "ttft_observed": false,
+            "error_class": null,
+            "attempt_error_counts": {},
+            "usage": {
+              "prompt_tokens": 724,
+              "completion_tokens": 561,
+              "total_tokens": 1285
+            }
+          }
+        },
+        "step": null
+      },
+      {
+        "request": {
+          "line": 23,
+          "schema_version": 1,
+          "request_index": 20,
+          "role": "actor",
+          "step": 20,
+          "model": {
+            "provider": "openai",
+            "api_dialect": "openai",
+            "model": "gpt-5.6-luna",
+            "reasoning_effort": "none"
+          },
+          "duration_s": 2.4637,
+          "provider_latency_s": 2.437,
+          "token": "MV_DOWN",
+          "telemetry": {
+            "latency_s": 2.437,
+            "http_status": 200,
+            "attempt_count": 1,
+            "retry_wait_ms": 0,
+            "api_total_ms": 2437,
+            "ttft_ms": null,
+            "ttft_observed": false,
+            "error_class": null,
+            "attempt_error_counts": {},
+            "usage": {
+              "prompt_tokens": 718,
+              "completion_tokens": 41,
+              "total_tokens": 759
+            }
+          }
+        },
+        "step": {
+          "line": 21,
+          "i": 20,
+          "event": "executed",
+          "act": "MV_DOWN",
+          "executed": true,
+          "action_source": "model",
+          "sg": 0,
+          "n_sg": 6,
+          "stage": "GRASP",
+          "stage_id": "grasp_cube",
+          "target": "orange-and-blue cube",
+          "tcp_before": [
+            0.326258,
+            0.061459,
+            0.273339
+          ],
+          "tcp_after": [
+            0.326177,
+            0.061446,
+            0.252876
+          ],
+          "tcp_delta_m": 0.020463,
+          "gripper_width_m": 0.08,
+          "gripper_command": "OPEN",
+          "native_success": false,
+          "env_done": false,
+          "native_subtask": {
+            "status": 0,
+            "completed": 0,
+            "total": 1,
+            "info": "",
+            "score": 0.0
+          },
+          "auto_release": false,
+          "replan_count": 1,
+          "timing": {
+            "actor_s": 2.4637,
+            "provider_s": 2.437,
+            "execute_s": 0.6214,
+            "loop_s": 3.0865,
+            "episode_s": 74.749
+          }
+        }
+      },
+      {
+        "request": {
+          "line": 24,
+          "schema_version": 1,
+          "request_index": 21,
+          "role": "actor",
+          "step": 21,
+          "model": {
+            "provider": "openai",
+            "api_dialect": "openai",
+            "model": "gpt-5.6-luna",
+            "reasoning_effort": "none"
+          },
+          "duration_s": 2.13,
+          "provider_latency_s": 2.103,
+          "token": "MV_RIGHT",
+          "telemetry": {
+            "latency_s": 2.103,
+            "http_status": 200,
+            "attempt_count": 1,
+            "retry_wait_ms": 0,
+            "api_total_ms": 2103,
+            "ttft_ms": null,
+            "ttft_observed": false,
+            "error_class": null,
+            "attempt_error_counts": {},
+            "usage": {
+              "prompt_tokens": 719,
+              "completion_tokens": 38,
+              "total_tokens": 757
+            }
+          }
+        },
+        "step": {
+          "line": 22,
+          "i": 21,
+          "event": "executed",
+          "act": "MV_RIGHT",
+          "executed": true,
+          "action_source": "model",
+          "sg": 0,
+          "n_sg": 6,
+          "stage": "GRASP",
+          "stage_id": "grasp_cube",
+          "target": "orange-and-blue cube",
+          "tcp_before": [
+            0.326177,
+            0.061446,
+            0.252876
+          ],
+          "tcp_after": [
+            0.325888,
+            0.081546,
+            0.252384
+          ],
+          "tcp_delta_m": 0.020108,
+          "gripper_width_m": 0.079999,
+          "gripper_command": "OPEN",
+          "native_success": false,
+          "env_done": false,
+          "native_subtask": {
+            "status": 0,
+            "completed": 0,
+            "total": 1,
+            "info": "",
+            "score": 0.0
+          },
+          "auto_release": false,
+          "replan_count": 1,
+          "timing": {
+            "actor_s": 2.13,
+            "provider_s": 2.103,
+            "execute_s": 0.6218,
+            "loop_s": 2.7533,
+            "episode_s": 77.5028
+          }
+        }
+      },
+      {
+        "request": {
+          "line": 25,
+          "schema_version": 1,
+          "request_index": 22,
+          "role": "actor",
+          "step": 22,
+          "model": {
+            "provider": "openai",
+            "api_dialect": "openai",
+            "model": "gpt-5.6-luna",
+            "reasoning_effort": "none"
+          },
+          "duration_s": 2.4581,
+          "provider_latency_s": 2.432,
+          "token": "MV_DOWN",
+          "telemetry": {
+            "latency_s": 2.432,
+            "http_status": 200,
+            "attempt_count": 1,
+            "retry_wait_ms": 0,
+            "api_total_ms": 2432,
+            "ttft_ms": null,
+            "ttft_observed": false,
+            "error_class": null,
+            "attempt_error_counts": {},
+            "usage": {
+              "prompt_tokens": 722,
+              "completion_tokens": 36,
+              "total_tokens": 758
+            }
+          }
+        },
+        "step": {
+          "line": 23,
+          "i": 22,
+          "event": "executed",
+          "act": "MV_DOWN",
+          "executed": true,
+          "action_source": "model",
+          "sg": 0,
+          "n_sg": 6,
+          "stage": "GRASP",
+          "stage_id": "grasp_cube",
+          "target": "orange-and-blue cube",
+          "tcp_before": [
+            0.325888,
+            0.081546,
+            0.252384
+          ],
+          "tcp_after": [
+            0.326051,
+            0.081954,
+            0.23243
+          ],
+          "tcp_delta_m": 0.019959,
+          "gripper_width_m": 0.08,
+          "gripper_command": "OPEN",
+          "native_success": false,
+          "env_done": false,
+          "native_subtask": {
+            "status": 0,
+            "completed": 0,
+            "total": 1,
+            "info": "",
+            "score": 0.0
+          },
+          "auto_release": false,
+          "replan_count": 1,
+          "timing": {
+            "actor_s": 2.4581,
+            "provider_s": 2.432,
+            "execute_s": 0.6245,
+            "loop_s": 3.0836,
+            "episode_s": 80.5869
+          }
+        }
+      },
+      {
+        "request": {
+          "line": 26,
+          "schema_version": 1,
+          "request_index": 23,
+          "role": "actor",
+          "step": 23,
+          "model": {
+            "provider": "openai",
+            "api_dialect": "openai",
+            "model": "gpt-5.6-luna",
+            "reasoning_effort": "none"
+          },
+          "duration_s": 1.8337,
+          "provider_latency_s": 1.807,
+          "token": "MV_LEFT",
+          "telemetry": {
+            "latency_s": 1.807,
+            "http_status": 200,
+            "attempt_count": 1,
+            "retry_wait_ms": 0,
+            "api_total_ms": 1807,
+            "ttft_ms": null,
+            "ttft_observed": false,
+            "error_class": null,
+            "attempt_error_counts": {},
+            "usage": {
+              "prompt_tokens": 725,
+              "completion_tokens": 36,
+              "total_tokens": 761
+            }
+          }
+        },
+        "step": {
+          "line": 24,
+          "i": 23,
+          "event": "executed",
+          "act": "MV_LEFT",
+          "executed": true,
+          "action_source": "model",
+          "sg": 0,
+          "n_sg": 6,
+          "stage": "GRASP",
+          "stage_id": "grasp_cube",
+          "target": "orange-and-blue cube",
+          "tcp_before": [
+            0.326051,
+            0.081954,
+            0.23243
+          ],
+          "tcp_after": [
+            0.325693,
+            0.061723,
+            0.231941
+          ],
+          "tcp_delta_m": 0.02024,
+          "gripper_width_m": 0.079999,
+          "gripper_command": "OPEN",
+          "native_success": false,
+          "env_done": false,
+          "native_subtask": {
+            "status": 0,
+            "completed": 0,
+            "total": 1,
+            "info": "",
+            "score": 0.0
+          },
+          "auto_release": false,
+          "replan_count": 1,
+          "timing": {
+            "actor_s": 1.8337,
+            "provider_s": 1.807,
+            "execute_s": 0.6191,
+            "loop_s": 2.4539,
+            "episode_s": 83.0413
+          }
+        }
+      },
+      {
+        "request": {
+          "line": 27,
+          "schema_version": 1,
+          "request_index": 24,
+          "role": "actor",
+          "step": 24,
+          "model": {
+            "provider": "openai",
+            "api_dialect": "openai",
+            "model": "gpt-5.6-luna",
+            "reasoning_effort": "none"
+          },
+          "duration_s": 2.563,
+          "provider_latency_s": 2.537,
+          "token": "MV_FWD",
+          "telemetry": {
+            "latency_s": 2.537,
+            "http_status": 200,
+            "attempt_count": 1,
+            "retry_wait_ms": 0,
+            "api_total_ms": 2537,
+            "ttft_ms": null,
+            "ttft_observed": false,
+            "error_class": null,
+            "attempt_error_counts": {},
+            "usage": {
+              "prompt_tokens": 728,
+              "completion_tokens": 41,
+              "total_tokens": 769
+            }
+          }
+        },
+        "step": {
+          "line": 25,
+          "i": 24,
+          "event": "executed",
+          "act": "MV_FWD",
+          "executed": true,
+          "action_source": "model",
+          "sg": 0,
+          "n_sg": 6,
+          "stage": "GRASP",
+          "stage_id": "grasp_cube",
+          "target": "orange-and-blue cube",
+          "tcp_before": [
+            0.325693,
+            0.061723,
+            0.231941
+          ],
+          "tcp_after": [
+            0.345974,
+            0.06142,
+            0.231924
+          ],
+          "tcp_delta_m": 0.020284,
+          "gripper_width_m": 0.08,
+          "gripper_command": "OPEN",
+          "native_success": false,
+          "env_done": false,
+          "native_subtask": {
+            "status": 0,
+            "completed": 0,
+            "total": 1,
+            "info": "",
+            "score": 0.0
+          },
+          "auto_release": false,
+          "replan_count": 1,
+          "timing": {
+            "actor_s": 2.563,
+            "provider_s": 2.537,
+            "execute_s": 0.6184,
+            "loop_s": 3.1824,
+            "episode_s": 86.2243
+          }
+        }
+      },
+      {
+        "request": {
+          "line": 28,
+          "schema_version": 1,
+          "request_index": 25,
+          "role": "actor",
+          "step": 25,
+          "model": {
+            "provider": "openai",
+            "api_dialect": "openai",
+            "model": "gpt-5.6-luna",
+            "reasoning_effort": "none"
+          },
+          "duration_s": 1.8222,
+          "provider_latency_s": 1.796,
+          "token": "MV_UP",
+          "telemetry": {
+            "latency_s": 1.796,
+            "http_status": 200,
+            "attempt_count": 1,
+            "retry_wait_ms": 0,
+            "api_total_ms": 1796,
+            "ttft_ms": null,
+            "ttft_observed": false,
+            "error_class": null,
+            "attempt_error_counts": {},
+            "usage": {
+              "prompt_tokens": 732,
+              "completion_tokens": 36,
+              "total_tokens": 768
+            }
+          }
+        },
+        "step": {
+          "line": 26,
+          "i": 25,
+          "event": "executed",
+          "act": "MV_UP",
+          "executed": true,
+          "action_source": "model",
+          "sg": 0,
+          "n_sg": 6,
+          "stage": "GRASP",
+          "stage_id": "grasp_cube",
+          "target": "orange-and-blue cube",
+          "tcp_before": [
+            0.345974,
+            0.06142,
+            0.231924
+          ],
+          "tcp_after": [
+            0.345926,
+            0.061249,
+            0.251938
+          ],
+          "tcp_delta_m": 0.020015,
+          "gripper_width_m": 0.08,
+          "gripper_command": "OPEN",
+          "native_success": false,
+          "env_done": false,
+          "native_subtask": {
+            "status": 0,
+            "completed": 0,
+            "total": 1,
+            "info": "",
+            "score": 0.0
+          },
+          "auto_release": false,
+          "replan_count": 1,
+          "timing": {
+            "actor_s": 1.8222,
+            "provider_s": 1.796,
+            "execute_s": 0.6181,
+            "loop_s": 2.4414,
+            "episode_s": 88.6662
+          }
+        }
+      },
+      {
+        "request": {
+          "line": 29,
+          "schema_version": 1,
+          "request_index": 26,
+          "role": "actor",
+          "step": 26,
+          "model": {
+            "provider": "openai",
+            "api_dialect": "openai",
+            "model": "gpt-5.6-luna",
+            "reasoning_effort": "none"
+          },
+          "duration_s": 2.5005,
+          "provider_latency_s": 2.474,
+          "token": "MV_DOWN",
+          "telemetry": {
+            "latency_s": 2.474,
+            "http_status": 200,
+            "attempt_count": 1,
+            "retry_wait_ms": 0,
+            "api_total_ms": 2474,
+            "ttft_ms": null,
+            "ttft_observed": false,
+            "error_class": null,
+            "attempt_error_counts": {},
+            "usage": {
+              "prompt_tokens": 735,
+              "completion_tokens": 42,
+              "total_tokens": 777
+            }
+          }
+        },
+        "step": {
+          "line": 27,
+          "i": 26,
+          "event": "executed",
+          "act": "MV_DOWN",
+          "executed": true,
+          "action_source": "model",
+          "sg": 0,
+          "n_sg": 6,
+          "stage": "GRASP",
+          "stage_id": "grasp_cube",
+          "target": "orange-and-blue cube",
+          "tcp_before": [
+            0.345926,
+            0.061249,
+            0.251938
+          ],
+          "tcp_after": [
+            0.346454,
+            0.061397,
+            0.232517
+          ],
+          "tcp_delta_m": 0.019429,
+          "gripper_width_m": 0.08,
+          "gripper_command": "OPEN",
+          "native_success": false,
+          "env_done": false,
+          "native_subtask": {
+            "status": 0,
+            "completed": 0,
+            "total": 1,
+            "info": "",
+            "score": 0.0
+          },
+          "auto_release": false,
+          "replan_count": 1,
+          "timing": {
+            "actor_s": 2.5005,
+            "provider_s": 2.474,
+            "execute_s": 0.6251,
+            "loop_s": 3.1272,
+            "episode_s": 91.7939
+          }
+        }
+      },
+      {
+        "request": {
+          "line": 30,
+          "schema_version": 1,
+          "request_index": 27,
+          "role": "actor",
+          "step": 27,
+          "model": {
+            "provider": "openai",
+            "api_dialect": "openai",
+            "model": "gpt-5.6-luna",
+            "reasoning_effort": "none"
+          },
+          "duration_s": 1.869,
+          "provider_latency_s": 1.843,
+          "token": "MV_RIGHT",
+          "telemetry": {
+            "latency_s": 1.843,
+            "http_status": 200,
+            "attempt_count": 1,
+            "retry_wait_ms": 0,
+            "api_total_ms": 1843,
+            "ttft_ms": null,
+            "ttft_observed": false,
+            "error_class": null,
+            "attempt_error_counts": {},
+            "usage": {
+              "prompt_tokens": 738,
+              "completion_tokens": 37,
+              "total_tokens": 775
+            }
+          }
+        },
+        "step": {
+          "line": 28,
+          "i": 27,
+          "event": "executed",
+          "act": "MV_RIGHT",
+          "executed": true,
+          "action_source": "model",
+          "sg": 0,
+          "n_sg": 6,
+          "stage": "GRASP",
+          "stage_id": "grasp_cube",
+          "target": "orange-and-blue cube",
+          "tcp_before": [
+            0.346454,
+            0.061397,
+            0.232517
+          ],
+          "tcp_after": [
+            0.346171,
+            0.081368,
+            0.232007
+          ],
+          "tcp_delta_m": 0.01998,
+          "gripper_width_m": 0.079999,
+          "gripper_command": "OPEN",
+          "native_success": false,
+          "env_done": false,
+          "native_subtask": {
+            "status": 0,
+            "completed": 0,
+            "total": 1,
+            "info": "",
+            "score": 0.0
+          },
+          "auto_release": false,
+          "replan_count": 1,
+          "timing": {
+            "actor_s": 1.869,
+            "provider_s": 1.843,
+            "execute_s": 0.6202,
+            "loop_s": 2.4904,
+            "episode_s": 94.2848
+          }
+        }
+      },
+      {
+        "request": {
+          "line": 31,
+          "schema_version": 1,
+          "request_index": 28,
+          "role": "actor",
+          "step": 28,
+          "model": {
+            "provider": "openai",
+            "api_dialect": "openai",
+            "model": "gpt-5.6-luna",
+            "reasoning_effort": "none"
+          },
+          "duration_s": 2.2241,
+          "provider_latency_s": 2.197,
+          "token": "MV_DOWN",
+          "telemetry": {
+            "latency_s": 2.197,
+            "http_status": 200,
+            "attempt_count": 1,
+            "retry_wait_ms": 0,
+            "api_total_ms": 2197,
+            "ttft_ms": null,
+            "ttft_observed": false,
+            "error_class": null,
+            "attempt_error_counts": {},
+            "usage": {
+              "prompt_tokens": 741,
+              "completion_tokens": 36,
+              "total_tokens": 777
+            }
+          }
+        },
+        "step": {
+          "line": 29,
+          "i": 28,
+          "event": "executed",
+          "act": "MV_DOWN",
+          "executed": true,
+          "action_source": "model",
+          "sg": 0,
+          "n_sg": 6,
+          "stage": "GRASP",
+          "stage_id": "grasp_cube",
+          "target": "orange-and-blue cube",
+          "tcp_before": [
+            0.346171,
+            0.081368,
+            0.232007
+          ],
+          "tcp_after": [
+            0.346326,
+            0.081939,
+            0.212064
+          ],
+          "tcp_delta_m": 0.019952,
+          "gripper_width_m": 0.08,
+          "gripper_command": "OPEN",
+          "native_success": false,
+          "env_done": false,
+          "native_subtask": {
+            "status": 0,
+            "completed": 0,
+            "total": 1,
+            "info": "",
+            "score": 0.0
+          },
+          "auto_release": false,
+          "replan_count": 1,
+          "timing": {
+            "actor_s": 2.2241,
+            "provider_s": 2.197,
+            "execute_s": 0.6219,
+            "loop_s": 2.8471,
+            "episode_s": 97.1324
+          }
+        }
+      },
+      {
+        "request": {
+          "line": 32,
+          "schema_version": 1,
+          "request_index": 29,
+          "role": "actor",
+          "step": 29,
+          "model": {
+            "provider": "openai",
+            "api_dialect": "openai",
+            "model": "gpt-5.6-luna",
+            "reasoning_effort": "none"
+          },
+          "duration_s": 2.2692,
+          "provider_latency_s": 2.243,
+          "token": "MV_DOWN",
+          "telemetry": {
+            "latency_s": 2.243,
+            "http_status": 200,
+            "attempt_count": 1,
+            "retry_wait_ms": 0,
+            "api_total_ms": 2242,
+            "ttft_ms": null,
+            "ttft_observed": false,
+            "error_class": null,
+            "attempt_error_counts": {},
+            "usage": {
+              "prompt_tokens": 741,
+              "completion_tokens": 35,
+              "total_tokens": 776
+            }
+          }
+        },
+        "step": {
+          "line": 30,
+          "i": 29,
+          "event": "executed",
+          "act": "MV_DOWN",
+          "executed": true,
+          "action_source": "model",
+          "sg": 0,
+          "n_sg": 6,
+          "stage": "GRASP",
+          "stage_id": "grasp_cube",
+          "target": "orange-and-blue cube",
+          "tcp_before": [
+            0.346326,
+            0.081939,
+            0.212064
+          ],
+          "tcp_after": [
+            0.346242,
+            0.081937,
+            0.191603
+          ],
+          "tcp_delta_m": 0.020462,
+          "gripper_width_m": 0.08,
+          "gripper_command": "OPEN",
+          "native_success": false,
+          "env_done": false,
+          "native_subtask": {
+            "status": 0,
+            "completed": 0,
+            "total": 1,
+            "info": "",
+            "score": 0.0
+          },
+          "auto_release": false,
+          "replan_count": 1,
+          "timing": {
+            "actor_s": 2.2692,
+            "provider_s": 2.243,
+            "execute_s": 0.6196,
+            "loop_s": 2.8898,
+            "episode_s": 100.0227
+          }
+        }
+      },
+      {
+        "request": {
+          "line": 33,
+          "schema_version": 1,
+          "request_index": 30,
+          "role": "actor",
+          "step": 30,
+          "model": {
+            "provider": "openai",
+            "api_dialect": "openai",
+            "model": "gpt-5.6-luna",
+            "reasoning_effort": "none"
+          },
+          "duration_s": 2.7685,
+          "provider_latency_s": 2.742,
+          "token": "MV_LEFT",
+          "telemetry": {
+            "latency_s": 2.742,
+            "http_status": 200,
+            "attempt_count": 1,
+            "retry_wait_ms": 0,
+            "api_total_ms": 2742,
+            "ttft_ms": null,
+            "ttft_observed": false,
+            "error_class": null,
+            "attempt_error_counts": {},
+            "usage": {
+              "prompt_tokens": 741,
+              "completion_tokens": 42,
+              "total_tokens": 783
+            }
+          }
+        },
+        "step": {
+          "line": 31,
+          "i": 30,
+          "event": "executed",
+          "act": "MV_LEFT",
+          "executed": true,
+          "action_source": "model",
+          "sg": 0,
+          "n_sg": 6,
+          "stage": "GRASP",
+          "stage_id": "grasp_cube",
+          "target": "orange-and-blue cube",
+          "tcp_before": [
+            0.346242,
+            0.081937,
+            0.191603
+          ],
+          "tcp_after": [
+            0.345808,
+            0.061831,
+            0.191098
+          ],
+          "tcp_delta_m": 0.020116,
+          "gripper_width_m": 0.079999,
+          "gripper_command": "OPEN",
+          "native_success": false,
+          "env_done": false,
+          "native_subtask": {
+            "status": 0,
+            "completed": 0,
+            "total": 1,
+            "info": "",
+            "score": 0.0
+          },
+          "auto_release": false,
+          "replan_count": 1,
+          "timing": {
+            "actor_s": 2.7685,
+            "provider_s": 2.742,
+            "execute_s": 0.6216,
+            "loop_s": 3.3915,
+            "episode_s": 103.4147
+          }
+        }
+      },
+      {
+        "request": {
+          "line": 34,
+          "schema_version": 1,
+          "request_index": 31,
+          "role": "actor",
+          "step": 31,
+          "model": {
+            "provider": "openai",
+            "api_dialect": "openai",
+            "model": "gpt-5.6-luna",
+            "reasoning_effort": "none"
+          },
+          "duration_s": 1.7156,
+          "provider_latency_s": 1.689,
+          "token": "MV_LEFT",
+          "telemetry": {
+            "latency_s": 1.689,
+            "http_status": 200,
+            "attempt_count": 1,
+            "retry_wait_ms": 0,
+            "api_total_ms": 1689,
+            "ttft_ms": null,
+            "ttft_observed": false,
+            "error_class": null,
+            "attempt_error_counts": {},
+            "usage": {
+              "prompt_tokens": 741,
+              "completion_tokens": 37,
+              "total_tokens": 778
+            }
+          }
+        },
+        "step": {
+          "line": 32,
+          "i": 31,
+          "event": "executed",
+          "act": "MV_LEFT",
+          "executed": true,
+          "action_source": "model",
+          "sg": 0,
+          "n_sg": 6,
+          "stage": "GRASP",
+          "stage_id": "grasp_cube",
+          "target": "orange-and-blue cube",
+          "tcp_before": [
+            0.345808,
+            0.061831,
+            0.191098
+          ],
+          "tcp_after": [
+            0.345804,
+            0.04133,
+            0.19109
+          ],
+          "tcp_delta_m": 0.020501,
+          "gripper_width_m": 0.079999,
+          "gripper_command": "OPEN",
+          "native_success": false,
+          "env_done": false,
+          "native_subtask": {
+            "status": 0,
+            "completed": 0,
+            "total": 1,
+            "info": "",
+            "score": 0.0
+          },
+          "auto_release": false,
+          "replan_count": 1,
+          "timing": {
+            "actor_s": 1.7156,
+            "provider_s": 1.689,
+            "execute_s": 0.6234,
+            "loop_s": 2.3402,
+            "episode_s": 105.7554
+          }
+        }
+      },
+      {
+        "request": {
+          "line": 35,
+          "schema_version": 1,
+          "request_index": 32,
+          "role": "actor",
+          "step": 32,
+          "model": {
+            "provider": "openai",
+            "api_dialect": "openai",
+            "model": "gpt-5.6-luna",
+            "reasoning_effort": "none"
+          },
+          "duration_s": 2.6742,
+          "provider_latency_s": 2.647,
+          "token": "MV_FWD",
+          "telemetry": {
+            "latency_s": 2.647,
+            "http_status": 200,
+            "attempt_count": 1,
+            "retry_wait_ms": 0,
+            "api_total_ms": 2647,
+            "ttft_ms": null,
+            "ttft_observed": false,
+            "error_class": null,
+            "attempt_error_counts": {},
+            "usage": {
+              "prompt_tokens": 741,
+              "completion_tokens": 42,
+              "total_tokens": 783
+            }
+          }
+        },
+        "step": {
+          "line": 33,
+          "i": 32,
+          "event": "executed",
+          "act": "MV_FWD",
+          "executed": true,
+          "action_source": "model",
+          "sg": 0,
+          "n_sg": 6,
+          "stage": "GRASP",
+          "stage_id": "grasp_cube",
+          "target": "orange-and-blue cube",
+          "tcp_before": [
+            0.345804,
+            0.04133,
+            0.19109
+          ],
+          "tcp_after": [
+            0.366071,
+            0.040844,
+            0.191048
+          ],
+          "tcp_delta_m": 0.020274,
+          "gripper_width_m": 0.08,
+          "gripper_command": "OPEN",
+          "native_success": false,
+          "env_done": false,
+          "native_subtask": {
+            "status": 0,
+            "completed": 0,
+            "total": 1,
+            "info": "",
+            "score": 0.0
+          },
+          "auto_release": false,
+          "replan_count": 1,
+          "timing": {
+            "actor_s": 2.6742,
+            "provider_s": 2.647,
+            "execute_s": 0.6223,
+            "loop_s": 3.2977,
+            "episode_s": 109.0537
+          }
+        }
+      },
+      {
+        "request": {
+          "line": 36,
+          "schema_version": 1,
+          "request_index": 33,
+          "role": "actor",
+          "step": 33,
+          "model": {
+            "provider": "openai",
+            "api_dialect": "openai",
+            "model": "gpt-5.6-luna",
+            "reasoning_effort": "none"
+          },
+          "duration_s": 4.4694,
+          "provider_latency_s": 4.443,
+          "token": "MV_DOWN",
+          "telemetry": {
+            "latency_s": 4.443,
+            "http_status": 200,
+            "attempt_count": 1,
+            "retry_wait_ms": 0,
+            "api_total_ms": 4443,
+            "ttft_ms": null,
+            "ttft_observed": false,
+            "error_class": null,
+            "attempt_error_counts": {},
+            "usage": {
+              "prompt_tokens": 741,
+              "completion_tokens": 36,
+              "total_tokens": 777
+            }
+          }
+        },
+        "step": {
+          "line": 34,
+          "i": 33,
+          "event": "executed",
+          "act": "MV_DOWN",
+          "executed": true,
+          "action_source": "model",
+          "sg": 0,
+          "n_sg": 6,
+          "stage": "GRASP",
+          "stage_id": "grasp_cube",
+          "target": "orange-and-blue cube",
+          "tcp_before": [
+            0.366071,
+            0.040844,
+            0.191048
+          ],
+          "tcp_after": [
+            0.35612,
+            0.032427,
+            0.169644
+          ],
+          "tcp_delta_m": 0.02506,
+          "gripper_width_m": 0.075644,
+          "gripper_command": "OPEN",
+          "native_success": false,
+          "env_done": false,
+          "native_subtask": {
+            "status": 0,
+            "completed": 0,
+            "total": 1,
+            "info": "",
+            "score": 0.0
+          },
+          "auto_release": false,
+          "replan_count": 1,
+          "timing": {
+            "actor_s": 4.4694,
+            "provider_s": 4.443,
+            "execute_s": 0.664,
+            "loop_s": 5.1345,
+            "episode_s": 114.1887
+          }
+        }
+      },
+      {
+        "request": {
+          "line": 37,
+          "schema_version": 1,
+          "request_index": 34,
+          "role": "actor",
+          "step": 34,
+          "model": {
+            "provider": "openai",
+            "api_dialect": "openai",
+            "model": "gpt-5.6-luna",
+            "reasoning_effort": "none"
+          },
+          "duration_s": 2.2601,
+          "provider_latency_s": 2.234,
+          "token": "MV_RIGHT",
+          "telemetry": {
+            "latency_s": 2.234,
+            "http_status": 200,
+            "attempt_count": 1,
+            "retry_wait_ms": 0,
+            "api_total_ms": 2234,
+            "ttft_ms": null,
+            "ttft_observed": false,
+            "error_class": null,
+            "attempt_error_counts": {},
+            "usage": {
+              "prompt_tokens": 741,
+              "completion_tokens": 38,
+              "total_tokens": 779
+            }
+          }
+        },
+        "step": {
+          "line": 35,
+          "i": 34,
+          "event": "executed",
+          "act": "MV_RIGHT",
+          "executed": true,
+          "action_source": "model",
+          "sg": 0,
+          "n_sg": 6,
+          "stage": "GRASP",
+          "stage_id": "grasp_cube",
+          "target": "orange-and-blue cube",
+          "tcp_before": [
+            0.35612,
+            0.032427,
+            0.169644
+          ],
+          "tcp_after": [
+            0.348565,
+            0.038767,
+            0.16605
+          ],
+          "tcp_delta_m": 0.010498,
+          "gripper_width_m": 0.077205,
+          "gripper_command": "OPEN",
+          "native_success": false,
+          "env_done": false,
+          "native_subtask": {
+            "status": 0,
+            "completed": 0,
+            "total": 1,
+            "info": "",
+            "score": 0.0
+          },
+          "auto_release": false,
+          "replan_count": 1,
+          "timing": {
+            "actor_s": 2.2601,
+            "provider_s": 2.234,
+            "execute_s": 0.6655,
+            "loop_s": 2.927,
+            "episode_s": 117.1162
+          }
+        }
+      },
+      {
+        "request": {
+          "line": 38,
+          "schema_version": 1,
+          "request_index": 35,
+          "role": "actor",
+          "step": 35,
+          "model": {
+            "provider": "openai",
+            "api_dialect": "openai",
+            "model": "gpt-5.6-luna",
+            "reasoning_effort": "none"
+          },
+          "duration_s": 1.9588,
+          "provider_latency_s": 1.933,
+          "token": "MV_UP",
+          "telemetry": {
+            "latency_s": 1.933,
+            "http_status": 200,
+            "attempt_count": 1,
+            "retry_wait_ms": 0,
+            "api_total_ms": 1933,
+            "ttft_ms": null,
+            "ttft_observed": false,
+            "error_class": null,
+            "attempt_error_counts": {},
+            "usage": {
+              "prompt_tokens": 741,
+              "completion_tokens": 40,
+              "total_tokens": 781
+            }
+          }
+        },
+        "step": {
+          "line": 36,
+          "i": 35,
+          "event": "executed",
+          "act": "MV_UP",
+          "executed": true,
+          "action_source": "model",
+          "sg": 0,
+          "n_sg": 6,
+          "stage": "GRASP",
+          "stage_id": "grasp_cube",
+          "target": "orange-and-blue cube",
+          "tcp_before": [
+            0.348565,
+            0.038767,
+            0.16605
+          ],
+          "tcp_after": [
+            0.347891,
+            0.039013,
+            0.185908
+          ],
+          "tcp_delta_m": 0.019871,
+          "gripper_width_m": 0.08,
+          "gripper_command": "OPEN",
+          "native_success": false,
+          "env_done": false,
+          "native_subtask": {
+            "status": 0,
+            "completed": 0,
+            "total": 1,
+            "info": "",
+            "score": 0.0
+          },
+          "auto_release": false,
+          "replan_count": 1,
+          "timing": {
+            "actor_s": 1.9588,
+            "provider_s": 1.933,
+            "execute_s": 0.6229,
+            "loop_s": 2.5828,
+            "episode_s": 119.6996
+          }
+        }
+      },
+      {
+        "request": {
+          "line": 39,
+          "schema_version": 1,
+          "request_index": 36,
+          "role": "actor",
+          "step": 36,
+          "model": {
+            "provider": "openai",
+            "api_dialect": "openai",
+            "model": "gpt-5.6-luna",
+            "reasoning_effort": "none"
+          },
+          "duration_s": 3.2116,
+          "provider_latency_s": 3.185,
+          "token": "MV_LEFT",
+          "telemetry": {
+            "latency_s": 3.185,
+            "http_status": 200,
+            "attempt_count": 1,
+            "retry_wait_ms": 0,
+            "api_total_ms": 3185,
+            "ttft_ms": null,
+            "ttft_observed": false,
+            "error_class": null,
+            "attempt_error_counts": {},
+            "usage": {
+              "prompt_tokens": 741,
+              "completion_tokens": 36,
+              "total_tokens": 777
+            }
+          }
+        },
+        "step": {
+          "line": 37,
+          "i": 36,
+          "event": "executed",
+          "act": "MV_LEFT",
+          "executed": true,
+          "action_source": "model",
+          "sg": 0,
+          "n_sg": 6,
+          "stage": "GRASP",
+          "stage_id": "grasp_cube",
+          "target": "orange-and-blue cube",
+          "tcp_before": [
+            0.347891,
+            0.039013,
+            0.185908
+          ],
+          "tcp_after": [
+            0.348174,
+            0.019195,
+            0.186398
+          ],
+          "tcp_delta_m": 0.019825,
+          "gripper_width_m": 0.079999,
+          "gripper_command": "OPEN",
+          "native_success": false,
+          "env_done": false,
+          "native_subtask": {
+            "status": 0,
+            "completed": 0,
+            "total": 1,
+            "info": "",
+            "score": 0.0
+          },
+          "auto_release": false,
+          "replan_count": 1,
+          "timing": {
+            "actor_s": 3.2116,
+            "provider_s": 3.185,
+            "execute_s": 0.6288,
+            "loop_s": 3.8416,
+            "episode_s": 123.5417
+          }
+        }
+      },
+      {
+        "request": {
+          "line": 40,
+          "schema_version": 1,
+          "request_index": 37,
+          "role": "actor",
+          "step": 37,
+          "model": {
+            "provider": "openai",
+            "api_dialect": "openai",
+            "model": "gpt-5.6-luna",
+            "reasoning_effort": "none"
+          },
+          "duration_s": 2.4705,
+          "provider_latency_s": 2.443,
+          "token": "MV_FWD",
+          "telemetry": {
+            "latency_s": 2.443,
+            "http_status": 200,
+            "attempt_count": 1,
+            "retry_wait_ms": 0,
+            "api_total_ms": 2443,
+            "ttft_ms": null,
+            "ttft_observed": false,
+            "error_class": null,
+            "attempt_error_counts": {},
+            "usage": {
+              "prompt_tokens": 741,
+              "completion_tokens": 40,
+              "total_tokens": 781
+            }
+          }
+        },
+        "step": {
+          "line": 38,
+          "i": 37,
+          "event": "executed",
+          "act": "MV_FWD",
+          "executed": true,
+          "action_source": "model",
+          "sg": 0,
+          "n_sg": 6,
+          "stage": "GRASP",
+          "stage_id": "grasp_cube",
+          "target": "orange-and-blue cube",
+          "tcp_before": [
+            0.348174,
+            0.019195,
+            0.186398
+          ],
+          "tcp_after": [
+            0.36843,
+            0.018673,
+            0.186357
+          ],
+          "tcp_delta_m": 0.020262,
+          "gripper_width_m": 0.08,
+          "gripper_command": "OPEN",
+          "native_success": false,
+          "env_done": false,
+          "native_subtask": {
+            "status": 0,
+            "completed": 0,
+            "total": 1,
+            "info": "",
+            "score": 0.0
+          },
+          "auto_release": false,
+          "replan_count": 1,
+          "timing": {
+            "actor_s": 2.4705,
+            "provider_s": 2.443,
+            "execute_s": 0.6244,
+            "loop_s": 3.0962,
+            "episode_s": 126.6385
+          }
+        }
+      },
+      {
+        "request": {
+          "line": 41,
+          "schema_version": 1,
+          "request_index": 38,
+          "role": "actor",
+          "step": 38,
+          "model": {
+            "provider": "openai",
+            "api_dialect": "openai",
+            "model": "gpt-5.6-luna",
+            "reasoning_effort": "none"
+          },
+          "duration_s": 1.8993,
+          "provider_latency_s": 1.873,
+          "token": "MV_RIGHT",
+          "telemetry": {
+            "latency_s": 1.873,
+            "http_status": 200,
+            "attempt_count": 1,
+            "retry_wait_ms": 0,
+            "api_total_ms": 1873,
+            "ttft_ms": null,
+            "ttft_observed": false,
+            "error_class": null,
+            "attempt_error_counts": {},
+            "usage": {
+              "prompt_tokens": 742,
+              "completion_tokens": 43,
+              "total_tokens": 785
+            }
+          }
+        },
+        "step": {
+          "line": 39,
+          "i": 38,
+          "event": "executed",
+          "act": "MV_RIGHT",
+          "executed": true,
+          "action_source": "model",
+          "sg": 0,
+          "n_sg": 6,
+          "stage": "GRASP",
+          "stage_id": "grasp_cube",
+          "target": "orange-and-blue cube",
+          "tcp_before": [
+            0.36843,
+            0.018673,
+            0.186357
+          ],
+          "tcp_after": [
+            0.368649,
+            0.038172,
+            0.18648
+          ],
+          "tcp_delta_m": 0.0195,
+          "gripper_width_m": 0.079048,
+          "gripper_command": "OPEN",
+          "native_success": false,
+          "env_done": false,
+          "native_subtask": {
+            "status": 0,
+            "completed": 0,
+            "total": 1,
+            "info": "",
+            "score": 0.0
+          },
+          "auto_release": false,
+          "replan_count": 1,
+          "timing": {
+            "actor_s": 1.8993,
+            "provider_s": 1.873,
+            "execute_s": 0.6396,
+            "loop_s": 2.5402,
+            "episode_s": 129.1793
+          }
+        }
+      },
+      {
+        "request": {
+          "line": 42,
+          "schema_version": 1,
+          "request_index": 39,
+          "role": "actor",
+          "step": 39,
+          "model": {
+            "provider": "openai",
+            "api_dialect": "openai",
+            "model": "gpt-5.6-luna",
+            "reasoning_effort": "none"
+          },
+          "duration_s": 2.2151,
+          "provider_latency_s": 2.189,
+          "token": "MV_DOWN",
+          "telemetry": {
+            "latency_s": 2.189,
+            "http_status": 200,
+            "attempt_count": 1,
+            "retry_wait_ms": 0,
+            "api_total_ms": 2189,
+            "ttft_ms": null,
+            "ttft_observed": false,
+            "error_class": null,
+            "attempt_error_counts": {},
+            "usage": {
+              "prompt_tokens": 742,
+              "completion_tokens": 37,
+              "total_tokens": 779
+            }
+          }
+        },
+        "step": {
+          "line": 40,
+          "i": 39,
+          "event": "executed",
+          "act": "MV_DOWN",
+          "executed": true,
+          "action_source": "model",
+          "sg": 0,
+          "n_sg": 6,
+          "stage": "GRASP",
+          "stage_id": "grasp_cube",
+          "target": "orange-and-blue cube",
+          "tcp_before": [
+            0.368649,
+            0.038172,
+            0.18648
+          ],
+          "tcp_after": [
+            0.358486,
+            0.026414,
+            0.165107
+          ],
+          "tcp_delta_m": 0.026426,
+          "gripper_width_m": 0.076353,
+          "gripper_command": "OPEN",
+          "native_success": false,
+          "env_done": false,
+          "native_subtask": {
+            "status": 0,
+            "completed": 0,
+            "total": 1,
+            "info": "",
+            "score": 0.0
+          },
+          "auto_release": false,
+          "replan_count": 1,
+          "timing": {
+            "actor_s": 2.2151,
+            "provider_s": 2.189,
+            "execute_s": 0.6952,
+            "loop_s": 2.9114,
+            "episode_s": 132.0912
+          }
+        }
+      }
+    ],
+    "task": "Put the cube in the bowl",
+    "step_rows": 40,
+    "request_rows": 42,
+    "visual_protocol": false,
+    "artifacts": {
+      "steps.jsonl": {
+        "sha256": "b699de94a619b1ed0748cbadb1c94605e186296b4c206f01fac7ca66c2583b54"
+      },
+      "requests.jsonl": {
+        "sha256": "3809497bd15e7636a4dfa37839211e7de7244896497ff5de3ebfa9e90c0a1144"
+      }
+    },
+    "stage_events": [],
+    "limits": null,
+    "boundary": "Selected recorded fields. Full serialized requests/responses, planner plan text and internal reasoning were not archived here."
+  }
+}

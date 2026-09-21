@@ -1,0 +1,1300 @@
+{
+  "id": "run-03",
+  "title": "早期 Luna 完整尝试",
+  "group": "早期对照",
+  "note": "早期相机与控制流程下的记录，仅作历史过程展示。",
+  "video": "assets/run-03/replay.mp4",
+  "poster": "assets/run-03/poster.jpg",
+  "source": "rollouts/openrouter_baseline_luna_none_full/RL-RubiksCubeTask/0920/task_0/08-17-40/rollout_failure.mp4",
+  "sha256": "1c9bad2cc74d6302bfc4fdc819bce38b421b156b0767eb60b65f81fcd721f0dc",
+  "summary_sha256": "4d8c4de6d91315feb1f891973caaf70f28a73b9e8686b82c4f3edaadf0bce082",
+  "steps": 74,
+  "native_success": false,
+  "end_reason": "env_truncated",
+  "wall_s": null,
+  "actor_p95_s": null,
+  "duration_s": 37.0,
+  "fps": "2/1",
+  "codec": "h264",
+  "task": "RubiksCubeTask",
+  "seed": 0,
+  "stage_progress": null,
+  "action_counts": null,
+  "limits": null,
+  "bytes": 10701253,
+  "trace": {
+    "entries": [
+      {
+        "request": null,
+        "step": {
+          "line": 1,
+          "i": 0,
+          "stage": "-",
+          "act": "MV_LEFT",
+          "eef": [
+            0.306,
+            -0.02,
+            0.437
+          ],
+          "w": 0.08,
+          "grip": "OPEN",
+          "vlm_ms": 3127
+        }
+      },
+      {
+        "request": null,
+        "step": {
+          "line": 2,
+          "i": 1,
+          "stage": "-",
+          "act": "MV_RIGHT",
+          "eef": [
+            0.306,
+            -0.0,
+            0.437
+          ],
+          "w": 0.08,
+          "grip": "OPEN",
+          "vlm_ms": 2242
+        }
+      },
+      {
+        "request": null,
+        "step": {
+          "line": 3,
+          "i": 2,
+          "stage": "-",
+          "act": "MV_FWD",
+          "eef": [
+            0.327,
+            0.0,
+            0.437
+          ],
+          "w": 0.08,
+          "grip": "OPEN",
+          "vlm_ms": 2308
+        }
+      },
+      {
+        "request": null,
+        "step": {
+          "line": 4,
+          "i": 3,
+          "stage": "-",
+          "act": "MV_BACK",
+          "eef": [
+            0.307,
+            -0.0,
+            0.436
+          ],
+          "w": 0.08,
+          "grip": "OPEN",
+          "vlm_ms": 1820
+        }
+      },
+      {
+        "request": null,
+        "step": {
+          "line": 5,
+          "i": 4,
+          "stage": "-",
+          "act": "MV_LEFT",
+          "eef": [
+            0.306,
+            -0.02,
+            0.437
+          ],
+          "w": 0.08,
+          "grip": "OPEN",
+          "vlm_ms": 3432
+        }
+      },
+      {
+        "request": null,
+        "step": {
+          "line": 6,
+          "i": 5,
+          "stage": "-",
+          "act": "MV_RIGHT",
+          "eef": [
+            0.306,
+            -0.0,
+            0.437
+          ],
+          "w": 0.08,
+          "grip": "OPEN",
+          "vlm_ms": 2378
+        }
+      },
+      {
+        "request": null,
+        "step": {
+          "line": 7,
+          "i": 6,
+          "stage": "-",
+          "act": "MV_LEFT",
+          "eef": [
+            0.306,
+            -0.02,
+            0.437
+          ],
+          "w": 0.08,
+          "grip": "OPEN",
+          "vlm_ms": 1890
+        }
+      },
+      {
+        "request": null,
+        "step": {
+          "line": 8,
+          "i": 7,
+          "stage": "-",
+          "act": "MV_RIGHT",
+          "eef": [
+            0.306,
+            -0.0,
+            0.437
+          ],
+          "w": 0.08,
+          "grip": "OPEN",
+          "vlm_ms": 1859
+        }
+      },
+      {
+        "request": null,
+        "step": {
+          "line": 9,
+          "i": 8,
+          "stage": "-",
+          "act": "MV_FWD",
+          "eef": [
+            0.327,
+            0.0,
+            0.437
+          ],
+          "w": 0.08,
+          "grip": "OPEN",
+          "vlm_ms": 2141
+        }
+      },
+      {
+        "request": null,
+        "step": {
+          "line": 10,
+          "i": 9,
+          "stage": "-",
+          "act": "MV_RIGHT",
+          "eef": [
+            0.327,
+            0.02,
+            0.437
+          ],
+          "w": 0.08,
+          "grip": "OPEN",
+          "vlm_ms": 2204
+        }
+      },
+      {
+        "request": null,
+        "step": {
+          "line": 11,
+          "i": 10,
+          "stage": "-",
+          "act": "MV_BACK",
+          "eef": [
+            0.306,
+            0.02,
+            0.436
+          ],
+          "w": 0.08,
+          "grip": "OPEN",
+          "vlm_ms": 1523
+        }
+      },
+      {
+        "request": null,
+        "step": {
+          "line": 12,
+          "i": 11,
+          "stage": "-",
+          "act": "MV_LEFT",
+          "eef": [
+            0.306,
+            0.0,
+            0.437
+          ],
+          "w": 0.08,
+          "grip": "OPEN",
+          "vlm_ms": 1513
+        }
+      },
+      {
+        "request": null,
+        "step": {
+          "line": 13,
+          "i": 12,
+          "stage": "-",
+          "act": "MV_FWD",
+          "eef": [
+            0.327,
+            0.0,
+            0.437
+          ],
+          "w": 0.08,
+          "grip": "OPEN",
+          "vlm_ms": 2523
+        }
+      },
+      {
+        "request": null,
+        "step": {
+          "line": 14,
+          "i": 13,
+          "stage": "-",
+          "act": "MV_LEFT",
+          "eef": [
+            0.327,
+            -0.02,
+            0.437
+          ],
+          "w": 0.08,
+          "grip": "OPEN",
+          "vlm_ms": 2142
+        }
+      },
+      {
+        "request": null,
+        "step": {
+          "line": 15,
+          "i": 14,
+          "stage": "-",
+          "act": "MV_RIGHT",
+          "eef": [
+            0.327,
+            -0.0,
+            0.437
+          ],
+          "w": 0.08,
+          "grip": "OPEN",
+          "vlm_ms": 1643
+        }
+      },
+      {
+        "request": null,
+        "step": {
+          "line": 16,
+          "i": 15,
+          "stage": "-",
+          "act": "MV_LEFT",
+          "eef": [
+            0.327,
+            -0.02,
+            0.437
+          ],
+          "w": 0.08,
+          "grip": "OPEN",
+          "vlm_ms": 1763
+        }
+      },
+      {
+        "request": null,
+        "step": {
+          "line": 17,
+          "i": 16,
+          "stage": "-",
+          "act": "MV_RIGHT",
+          "eef": [
+            0.327,
+            -0.0,
+            0.437
+          ],
+          "w": 0.08,
+          "grip": "OPEN",
+          "vlm_ms": 1633
+        }
+      },
+      {
+        "request": null,
+        "step": {
+          "line": 18,
+          "i": 17,
+          "stage": "-",
+          "act": "MV_BACK",
+          "eef": [
+            0.306,
+            -0.0,
+            0.436
+          ],
+          "w": 0.08,
+          "grip": "OPEN",
+          "vlm_ms": 2123
+        }
+      },
+      {
+        "request": null,
+        "step": {
+          "line": 19,
+          "i": 18,
+          "stage": "-",
+          "act": "MV_BACK",
+          "eef": [
+            0.286,
+            -0.0,
+            0.436
+          ],
+          "w": 0.08,
+          "grip": "OPEN",
+          "vlm_ms": 1494
+        }
+      },
+      {
+        "request": null,
+        "step": {
+          "line": 20,
+          "i": 19,
+          "stage": "-",
+          "act": "MV_LEFT",
+          "eef": [
+            0.286,
+            -0.02,
+            0.437
+          ],
+          "w": 0.08,
+          "grip": "OPEN",
+          "vlm_ms": 1444
+        }
+      },
+      {
+        "request": null,
+        "step": {
+          "line": 21,
+          "i": 20,
+          "stage": "-",
+          "act": "MV_RIGHT",
+          "eef": [
+            0.286,
+            -0.0,
+            0.437
+          ],
+          "w": 0.08,
+          "grip": "OPEN",
+          "vlm_ms": 1484
+        }
+      },
+      {
+        "request": null,
+        "step": {
+          "line": 22,
+          "i": 21,
+          "stage": "-",
+          "act": "MV_FWD",
+          "eef": [
+            0.306,
+            -0.0,
+            0.437
+          ],
+          "w": 0.08,
+          "grip": "OPEN",
+          "vlm_ms": 1552
+        }
+      },
+      {
+        "request": null,
+        "step": {
+          "line": 23,
+          "i": 22,
+          "stage": "-",
+          "act": "MV_LEFT",
+          "eef": [
+            0.306,
+            -0.02,
+            0.437
+          ],
+          "w": 0.08,
+          "grip": "OPEN",
+          "vlm_ms": 1541
+        }
+      },
+      {
+        "request": null,
+        "step": {
+          "line": 24,
+          "i": 23,
+          "stage": "-",
+          "act": "MV_FWD",
+          "eef": [
+            0.327,
+            -0.02,
+            0.437
+          ],
+          "w": 0.08,
+          "grip": "OPEN",
+          "vlm_ms": 2138
+        }
+      },
+      {
+        "request": null,
+        "step": {
+          "line": 25,
+          "i": 24,
+          "stage": "-",
+          "act": "MV_BACK",
+          "eef": [
+            0.306,
+            -0.02,
+            0.436
+          ],
+          "w": 0.08,
+          "grip": "OPEN",
+          "vlm_ms": 1591
+        }
+      },
+      {
+        "request": null,
+        "step": {
+          "line": 26,
+          "i": 25,
+          "stage": "-",
+          "act": "MV_FWD",
+          "eef": [
+            0.327,
+            -0.02,
+            0.437
+          ],
+          "w": 0.08,
+          "grip": "OPEN",
+          "vlm_ms": 1603
+        }
+      },
+      {
+        "request": null,
+        "step": {
+          "line": 27,
+          "i": 26,
+          "stage": "-",
+          "act": "MV_RIGHT",
+          "eef": [
+            0.327,
+            -0.0,
+            0.436
+          ],
+          "w": 0.08,
+          "grip": "OPEN",
+          "vlm_ms": 2176
+        }
+      },
+      {
+        "request": null,
+        "step": {
+          "line": 28,
+          "i": 27,
+          "stage": "-",
+          "act": "MV_RIGHT",
+          "eef": [
+            0.327,
+            0.02,
+            0.436
+          ],
+          "w": 0.08,
+          "grip": "OPEN",
+          "vlm_ms": 1499
+        }
+      },
+      {
+        "request": null,
+        "step": {
+          "line": 29,
+          "i": 28,
+          "stage": "-",
+          "act": "MV_LEFT",
+          "eef": [
+            0.327,
+            0.0,
+            0.436
+          ],
+          "w": 0.08,
+          "grip": "OPEN",
+          "vlm_ms": 1860
+        }
+      },
+      {
+        "request": null,
+        "step": {
+          "line": 30,
+          "i": 29,
+          "stage": "-",
+          "act": "MV_FWD",
+          "eef": [
+            0.347,
+            0.0,
+            0.437
+          ],
+          "w": 0.08,
+          "grip": "OPEN",
+          "vlm_ms": 2002
+        }
+      },
+      {
+        "request": null,
+        "step": {
+          "line": 31,
+          "i": 30,
+          "stage": "-",
+          "act": "MV_LEFT",
+          "eef": [
+            0.347,
+            -0.02,
+            0.436
+          ],
+          "w": 0.08,
+          "grip": "OPEN",
+          "vlm_ms": 1819
+        }
+      },
+      {
+        "request": null,
+        "step": {
+          "line": 32,
+          "i": 31,
+          "stage": "-",
+          "act": "MV_FWD",
+          "eef": [
+            0.367,
+            -0.021,
+            0.437
+          ],
+          "w": 0.08,
+          "grip": "OPEN",
+          "vlm_ms": 1594
+        }
+      },
+      {
+        "request": null,
+        "step": {
+          "line": 33,
+          "i": 32,
+          "stage": "-",
+          "act": "MV_RIGHT",
+          "eef": [
+            0.368,
+            -0.0,
+            0.436
+          ],
+          "w": 0.08,
+          "grip": "OPEN",
+          "vlm_ms": 1508
+        }
+      },
+      {
+        "request": null,
+        "step": {
+          "line": 34,
+          "i": 33,
+          "stage": "-",
+          "act": "MV_RIGHT",
+          "eef": [
+            0.368,
+            0.02,
+            0.436
+          ],
+          "w": 0.08,
+          "grip": "OPEN",
+          "vlm_ms": 1582
+        }
+      },
+      {
+        "request": null,
+        "step": {
+          "line": 35,
+          "i": 34,
+          "stage": "-",
+          "act": "MV_RIGHT",
+          "eef": [
+            0.367,
+            0.041,
+            0.436
+          ],
+          "w": 0.08,
+          "grip": "OPEN",
+          "vlm_ms": 1647
+        }
+      },
+      {
+        "request": null,
+        "step": {
+          "line": 36,
+          "i": 35,
+          "stage": "-",
+          "act": "MV_LEFT",
+          "eef": [
+            0.367,
+            0.021,
+            0.436
+          ],
+          "w": 0.08,
+          "grip": "OPEN",
+          "vlm_ms": 1470
+        }
+      },
+      {
+        "request": null,
+        "step": {
+          "line": 37,
+          "i": 36,
+          "stage": "-",
+          "act": "MV_FWD",
+          "eef": [
+            0.388,
+            0.021,
+            0.437
+          ],
+          "w": 0.08,
+          "grip": "OPEN",
+          "vlm_ms": 1584
+        }
+      },
+      {
+        "request": null,
+        "step": {
+          "line": 38,
+          "i": 37,
+          "stage": "-",
+          "act": "MV_LEFT",
+          "eef": [
+            0.388,
+            0.0,
+            0.436
+          ],
+          "w": 0.08,
+          "grip": "OPEN",
+          "vlm_ms": 1460
+        }
+      },
+      {
+        "request": null,
+        "step": {
+          "line": 39,
+          "i": 38,
+          "stage": "-",
+          "act": "MV_FWD",
+          "eef": [
+            0.408,
+            -0.0,
+            0.437
+          ],
+          "w": 0.08,
+          "grip": "OPEN",
+          "vlm_ms": 1707
+        }
+      },
+      {
+        "request": null,
+        "step": {
+          "line": 40,
+          "i": 39,
+          "stage": "-",
+          "act": "MV_RIGHT",
+          "eef": [
+            0.408,
+            0.02,
+            0.436
+          ],
+          "w": 0.08,
+          "grip": "OPEN",
+          "vlm_ms": 1739
+        }
+      },
+      {
+        "request": null,
+        "step": {
+          "line": 41,
+          "i": 40,
+          "stage": "-",
+          "act": "MV_RIGHT",
+          "eef": [
+            0.408,
+            0.04,
+            0.436
+          ],
+          "w": 0.08,
+          "grip": "OPEN",
+          "vlm_ms": 1467
+        }
+      },
+      {
+        "request": null,
+        "step": {
+          "line": 42,
+          "i": 41,
+          "stage": "-",
+          "act": "MV_LEFT",
+          "eef": [
+            0.408,
+            0.021,
+            0.436
+          ],
+          "w": 0.08,
+          "grip": "OPEN",
+          "vlm_ms": 1488
+        }
+      },
+      {
+        "request": null,
+        "step": {
+          "line": 43,
+          "i": 42,
+          "stage": "-",
+          "act": "MV_LEFT",
+          "eef": [
+            0.408,
+            0.0,
+            0.436
+          ],
+          "w": 0.08,
+          "grip": "OPEN",
+          "vlm_ms": 2328
+        }
+      },
+      {
+        "request": null,
+        "step": {
+          "line": 44,
+          "i": 43,
+          "stage": "-",
+          "act": "MV_RIGHT",
+          "eef": [
+            0.408,
+            0.02,
+            0.436
+          ],
+          "w": 0.08,
+          "grip": "OPEN",
+          "vlm_ms": 1649
+        }
+      },
+      {
+        "request": null,
+        "step": {
+          "line": 45,
+          "i": 44,
+          "stage": "-",
+          "act": "MV_LEFT",
+          "eef": [
+            0.408,
+            0.0,
+            0.436
+          ],
+          "w": 0.08,
+          "grip": "OPEN",
+          "vlm_ms": 2381
+        }
+      },
+      {
+        "request": null,
+        "step": {
+          "line": 46,
+          "i": 45,
+          "stage": "-",
+          "act": "MV_BACK",
+          "eef": [
+            0.388,
+            -0.0,
+            0.436
+          ],
+          "w": 0.08,
+          "grip": "OPEN",
+          "vlm_ms": 1978
+        }
+      },
+      {
+        "request": null,
+        "step": {
+          "line": 47,
+          "i": 46,
+          "stage": "-",
+          "act": "MV_FWD",
+          "eef": [
+            0.408,
+            -0.0,
+            0.436
+          ],
+          "w": 0.08,
+          "grip": "OPEN",
+          "vlm_ms": 1478
+        }
+      },
+      {
+        "request": null,
+        "step": {
+          "line": 48,
+          "i": 47,
+          "stage": "-",
+          "act": "MV_RIGHT",
+          "eef": [
+            0.408,
+            0.02,
+            0.436
+          ],
+          "w": 0.08,
+          "grip": "OPEN",
+          "vlm_ms": 1379
+        }
+      },
+      {
+        "request": null,
+        "step": {
+          "line": 49,
+          "i": 48,
+          "stage": "-",
+          "act": "MV_LEFT",
+          "eef": [
+            0.408,
+            0.0,
+            0.436
+          ],
+          "w": 0.08,
+          "grip": "OPEN",
+          "vlm_ms": 1627
+        }
+      },
+      {
+        "request": null,
+        "step": {
+          "line": 50,
+          "i": 49,
+          "stage": "-",
+          "act": "MV_RIGHT",
+          "eef": [
+            0.408,
+            0.02,
+            0.436
+          ],
+          "w": 0.08,
+          "grip": "OPEN",
+          "vlm_ms": 1272
+        }
+      },
+      {
+        "request": null,
+        "step": {
+          "line": 51,
+          "i": 50,
+          "stage": "-",
+          "act": "MV_RIGHT",
+          "eef": [
+            0.408,
+            0.04,
+            0.436
+          ],
+          "w": 0.08,
+          "grip": "OPEN",
+          "vlm_ms": 1432
+        }
+      },
+      {
+        "request": null,
+        "step": {
+          "line": 52,
+          "i": 51,
+          "stage": "-",
+          "act": "MV_LEFT",
+          "eef": [
+            0.408,
+            0.021,
+            0.436
+          ],
+          "w": 0.08,
+          "grip": "OPEN",
+          "vlm_ms": 2195
+        }
+      },
+      {
+        "request": null,
+        "step": {
+          "line": 53,
+          "i": 52,
+          "stage": "-",
+          "act": "MV_FWD",
+          "eef": [
+            0.428,
+            0.021,
+            0.436
+          ],
+          "w": 0.08,
+          "grip": "OPEN",
+          "vlm_ms": 1350
+        }
+      },
+      {
+        "request": null,
+        "step": {
+          "line": 54,
+          "i": 53,
+          "stage": "-",
+          "act": "MV_LEFT",
+          "eef": [
+            0.428,
+            0.001,
+            0.436
+          ],
+          "w": 0.08,
+          "grip": "OPEN",
+          "vlm_ms": 1332
+        }
+      },
+      {
+        "request": null,
+        "step": {
+          "line": 55,
+          "i": 54,
+          "stage": "-",
+          "act": "MV_FWD",
+          "eef": [
+            0.449,
+            -0.0,
+            0.436
+          ],
+          "w": 0.08,
+          "grip": "OPEN",
+          "vlm_ms": 1649
+        }
+      },
+      {
+        "request": null,
+        "step": {
+          "line": 56,
+          "i": 55,
+          "stage": "-",
+          "act": "MV_RIGHT",
+          "eef": [
+            0.449,
+            0.02,
+            0.436
+          ],
+          "w": 0.08,
+          "grip": "OPEN",
+          "vlm_ms": 1682
+        }
+      },
+      {
+        "request": null,
+        "step": {
+          "line": 57,
+          "i": 56,
+          "stage": "-",
+          "act": "MV_RIGHT",
+          "eef": [
+            0.449,
+            0.04,
+            0.436
+          ],
+          "w": 0.08,
+          "grip": "OPEN",
+          "vlm_ms": 2416
+        }
+      },
+      {
+        "request": null,
+        "step": {
+          "line": 58,
+          "i": 57,
+          "stage": "-",
+          "act": "MV_LEFT",
+          "eef": [
+            0.449,
+            0.021,
+            0.436
+          ],
+          "w": 0.08,
+          "grip": "OPEN",
+          "vlm_ms": 2500
+        }
+      },
+      {
+        "request": null,
+        "step": {
+          "line": 59,
+          "i": 58,
+          "stage": "-",
+          "act": "MV_FWD",
+          "eef": [
+            0.469,
+            0.021,
+            0.436
+          ],
+          "w": 0.08,
+          "grip": "OPEN",
+          "vlm_ms": 1502
+        }
+      },
+      {
+        "request": null,
+        "step": {
+          "line": 60,
+          "i": 59,
+          "stage": "-",
+          "act": "MV_LEFT",
+          "eef": [
+            0.469,
+            0.001,
+            0.436
+          ],
+          "w": 0.08,
+          "grip": "OPEN",
+          "vlm_ms": 1393
+        }
+      },
+      {
+        "request": null,
+        "step": {
+          "line": 61,
+          "i": 60,
+          "stage": "-",
+          "act": "MV_RIGHT",
+          "eef": [
+            0.469,
+            0.02,
+            0.436
+          ],
+          "w": 0.08,
+          "grip": "OPEN",
+          "vlm_ms": 1329
+        }
+      },
+      {
+        "request": null,
+        "step": {
+          "line": 62,
+          "i": 61,
+          "stage": "-",
+          "act": "MV_LEFT",
+          "eef": [
+            0.469,
+            0.001,
+            0.436
+          ],
+          "w": 0.08,
+          "grip": "OPEN",
+          "vlm_ms": 1945
+        }
+      },
+      {
+        "request": null,
+        "step": {
+          "line": 63,
+          "i": 62,
+          "stage": "-",
+          "act": "MV_RIGHT",
+          "eef": [
+            0.469,
+            0.02,
+            0.436
+          ],
+          "w": 0.08,
+          "grip": "OPEN",
+          "vlm_ms": 1489
+        }
+      },
+      {
+        "request": null,
+        "step": {
+          "line": 64,
+          "i": 63,
+          "stage": "-",
+          "act": "MV_FWD",
+          "eef": [
+            0.489,
+            0.021,
+            0.436
+          ],
+          "w": 0.08,
+          "grip": "OPEN",
+          "vlm_ms": 2531
+        }
+      },
+      {
+        "request": null,
+        "step": {
+          "line": 65,
+          "i": 64,
+          "stage": "-",
+          "act": "MV_LEFT",
+          "eef": [
+            0.489,
+            0.001,
+            0.436
+          ],
+          "w": 0.08,
+          "grip": "OPEN",
+          "vlm_ms": 2314
+        }
+      },
+      {
+        "request": null,
+        "step": {
+          "line": 66,
+          "i": 65,
+          "stage": "-",
+          "act": "MV_FWD",
+          "eef": [
+            0.51,
+            -0.0,
+            0.436
+          ],
+          "w": 0.08,
+          "grip": "OPEN",
+          "vlm_ms": 1810
+        }
+      },
+      {
+        "request": null,
+        "step": {
+          "line": 67,
+          "i": 66,
+          "stage": "-",
+          "act": "MV_LEFT",
+          "eef": [
+            0.51,
+            -0.02,
+            0.436
+          ],
+          "w": 0.08,
+          "grip": "OPEN",
+          "vlm_ms": 1783
+        }
+      },
+      {
+        "request": null,
+        "step": {
+          "line": 68,
+          "i": 67,
+          "stage": "-",
+          "act": "MV_RIGHT",
+          "eef": [
+            0.51,
+            -0.001,
+            0.436
+          ],
+          "w": 0.08,
+          "grip": "OPEN",
+          "vlm_ms": 1780
+        }
+      },
+      {
+        "request": null,
+        "step": {
+          "line": 69,
+          "i": 68,
+          "stage": "-",
+          "act": "MV_RIGHT",
+          "eef": [
+            0.51,
+            0.019,
+            0.436
+          ],
+          "w": 0.08,
+          "grip": "OPEN",
+          "vlm_ms": 1770
+        }
+      },
+      {
+        "request": null,
+        "step": {
+          "line": 70,
+          "i": 69,
+          "stage": "-",
+          "act": "MV_RIGHT",
+          "eef": [
+            0.51,
+            0.04,
+            0.436
+          ],
+          "w": 0.08,
+          "grip": "OPEN",
+          "vlm_ms": 2007
+        }
+      },
+      {
+        "request": null,
+        "step": {
+          "line": 71,
+          "i": 70,
+          "stage": "-",
+          "act": "MV_LEFT",
+          "eef": [
+            0.509,
+            0.022,
+            0.436
+          ],
+          "w": 0.08,
+          "grip": "OPEN",
+          "vlm_ms": 1925
+        }
+      },
+      {
+        "request": null,
+        "step": {
+          "line": 72,
+          "i": 71,
+          "stage": "-",
+          "act": "MV_LEFT",
+          "eef": [
+            0.509,
+            0.001,
+            0.436
+          ],
+          "w": 0.08,
+          "grip": "OPEN",
+          "vlm_ms": 1456
+        }
+      },
+      {
+        "request": null,
+        "step": {
+          "line": 73,
+          "i": 72,
+          "stage": "-",
+          "act": "MV_FWD",
+          "eef": [
+            0.53,
+            -0.0,
+            0.436
+          ],
+          "w": 0.08,
+          "grip": "OPEN",
+          "vlm_ms": 1691
+        }
+      },
+      {
+        "request": null,
+        "step": {
+          "line": 74,
+          "i": 73,
+          "stage": "-",
+          "act": "MV_FWD",
+          "eef": [
+            0.55,
+            -0.0,
+            0.436
+          ],
+          "w": 0.08,
+          "grip": "OPEN",
+          "vlm_ms": 1444,
+          "env_done": true
+        }
+      }
+    ],
+    "task": "Put the cube in the bowl",
+    "step_rows": 74,
+    "request_rows": 0,
+    "visual_protocol": false,
+    "artifacts": {
+      "steps.jsonl": {
+        "sha256": "9e1dcb20349995c1119feb4c6c4352f6b4764c67b1019504c3d44548f9867938"
+      }
+    },
+    "stage_events": [],
+    "limits": null,
+    "boundary": "Selected recorded fields. Full serialized requests/responses, planner plan text and internal reasoning were not archived here."
+  }
+}
