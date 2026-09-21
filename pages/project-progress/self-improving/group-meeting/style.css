@@ -17,3 +17,10 @@ footer{position:fixed;bottom:0;background:var(--paper);border-top:1px solid var(
 #inspection{margin:28px 0}#inspection>summary{font-size:19px;color:var(--accent)}
 .trace-warning{color:var(--muted)}button:disabled{opacity:.4;cursor:default}
 @media(max-width:800px){.trace-grid{grid-template-columns:1fr}.trace-controls{display:block}.trace-controls>*{margin:4px 0;max-width:100%}}
+.recovered-images{display:flex;gap:12px;flex-wrap:wrap;margin-top:15px}
+.recovered-images img{width:min(46%,300px);height:210px;object-fit:contain;background:#172a30}
+#recovery-panel article{padding:14px 0;border-bottom:1px solid var(--line)}
+.io-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.io-grid label{min-width:0;font-size:16px;font-weight:bold}
+.io-grid textarea{display:block;width:100%;height:470px;margin-top:10px;padding:20px;border:1px solid var(--line);border-radius:8px;background:#fcfcf9;color:var(--ink);font:15px/1.8 Arial,"Microsoft YaHei",sans-serif;resize:vertical;white-space:pre-wrap;overflow-wrap:anywhere}
+@media(max-width:800px){.io-grid{grid-template-columns:1fr}.io-grid textarea{height:350px}}

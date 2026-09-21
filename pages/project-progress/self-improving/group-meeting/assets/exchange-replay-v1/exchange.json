@@ -1,0 +1,144 @@
+{
+  "kind": "new_open_loop_diagnostic_not_historical",
+  "created_utc": "2026-09-21T05:44:36.738537+00:00",
+  "code_commit": "ea47ca8c7d9c496b0ddf9b7780249cf21f4cd4f5",
+  "historical_template_commit": "c877d35",
+  "template": "You control a robot using only the supplied front image (first) and wrist image (second).\nComplete the current visual subgoal with ONE action. Never claim to know hidden object coordinates.\nThe wrist image is a top-down view: its centre is the grasp axis. The yellow finger pair\ndefines the opening. Move the grasp axis toward the target before descending.\nCalibrated wrist image directions: target LEFT of centre -> MV_LEFT; RIGHT -> MV_RIGHT;\ntarget BELOW centre -> MV_FWD; ABOVE centre -> MV_BACK. These move the gripper toward\nthe target; a stationary target moves in the OPPOSITE image direction after the action.\nMV_DOWN approaches the surface; MV_UP retreats. Use the front image to judge height.\nDo not infer height solely from the target being centred. Grasp only at the target's\nheight, with the target inside the finger opening. After GRASP, lift; after transport,\nlower and RELEASE. DONE means only this subgoal is visibly complete.\nIf target alignment is uncertain, correct horizontally or retreat. Alternating directions\nis NEVER a reason to descend. An opposite direction is allowed to correct overshoot.\nIf the target disappears, report it honestly; do not substitute the bowl for the cube.\nReport contact_risk if the fingers are pushing a non-target object or scraping a surface.\nReturn JSON with decision, target_visible (in either image), wrist_target_visible,\naligned (grasp axis horizontally over the current target), contact_risk, and observation\n(one short sentence describing visible evidence, not a chain of thought).\nActions: MV_FWD, MV_BACK, MV_LEFT, MV_RIGHT, MV_UP, MV_DOWN, GRASP, RELEASE, DONE.\n",
+  "template_sha256": "a009a7992d97587c56f1ebd41a77ee987c1aff74d200285e6e4b802d6df3fb10",
+  "image_sources": [
+    {
+      "path": "rollouts/p8/p8-full/calibrated-luna-none/RubiksCubeTask/episode_000_seed_31001/start_agentview.png",
+      "sha256": "a6abbc8e3379f62c493fb1be1807ddc0f9809920a65133e56ffbaf983468f159"
+    },
+    {
+      "path": "rollouts/p8/p8-full/calibrated-luna-none/RubiksCubeTask/episode_000_seed_31001/start_wrist.png",
+      "sha256": "4648e183325eecdab5474530e602c1ead38e0704ccae659615a69a323f969f89"
+    }
+  ],
+  "records": [
+    {
+      "role": "planner",
+      "request": {
+        "model": "gpt-5.6-luna",
+        "messages": [
+          {
+            "role": "user",
+            "content": [
+              {
+                "type": "image_url",
+                "image_url": {
+                  "saved_file": "assets/exchange-replay-v1/0-image-0.png",
+                  "sha256": "a6abbc8e3379f62c493fb1be1807ddc0f9809920a65133e56ffbaf983468f159"
+                }
+              },
+              {
+                "type": "image_url",
+                "image_url": {
+                  "saved_file": "assets/exchange-replay-v1/0-image-1.png",
+                  "sha256": "4648e183325eecdab5474530e602c1ead38e0704ccae659615a69a323f969f89"
+                }
+              },
+              {
+                "type": "text",
+                "text": "IMAGE ORDER (same order as the attached images):\n1. LIVE AgentView: current global scene.\n2. LIVE Wrist view: current local gripper view.\n\nROLE: SubgoalPlanner\nTASK: Put the cube in the bowl\n\n\n\nReturn an ordered JSON plan:\n{\n  \"subgoals\": [\n    {\n      \"id\": \"short_snake_case_id\",\n      \"target\": \"object or destination\",\n      \"affordance\": \"visible part or placement region\",\n      \"motion\": \"semantic stage label\",\n      \"description\": \"visual strategy for this stage\",\n      \"completion\": \"visible condition that means this stage is complete\"\n    }\n  ]\n}\n\n### STRICT RULES\n\n1. Stage Segmentation\n\n-Break the task down into meaningful visual milestones (e.g., GRASP, LIFT, MOVE, PLACE, RELEASE, RETREAT)\n-MERGE: Do NOT split immediate pre-grasp steps. Combine approach, align, lower, and close into a single `GRASP` stage\n-SEPARATE: Keep lift/clearance after a successful grasp as a separate `LIFT` stage\n-RETREAT: After every `RELEASE`, add a `RETREAT` stage that lifts the gripper up\n\n2. Affordance Selection\n\n-ONE specific part -- never alternatives like \"left end or middle\"\n-Must be visible in AgentView & bracketable by open fingers\n-Containers/Hollow objects (cups, bowls): Target left/right rim or edge.\n-Simple Solid objects (blocks): main body\n\n3. Completion Criteria\n\n-ALL completion conditions MUST be strictly judgeable from raw 2D images\n-Movement stages: End with a stable visual spatial relation, NOT a gripper event\n-Set-aside placements: If moving an object to another location, ensure it is placed away from the origin point on the table\n-MUST distinguish among similar objects\n\nReturn JSON ONLY."
+              }
+            ]
+          }
+        ],
+        "max_completion_tokens": 4096,
+        "reasoning_effort": "none",
+        "response_format": {
+          "type": "json_object"
+        }
+      },
+      "response": {
+        "id": "resp_03dacfc0ba40670d016ab0c46478b887d0b1b68a161261efb9",
+        "object": "chat.completion",
+        "created": 1789969513,
+        "model": "gpt-5.6-luna",
+        "choices": [
+          {
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"subgoals\": [\n    {\n      \"id\": \"grasp_cube\",\n      \"target\": \"orange-and-blue cube\",\n      \"affordance\": \"top face of the cube\",\n      \"motion\": \"GRASP\",\n      \"description\": \"Align the open gripper over the cube, descend until the fingers bracket its sides, and close around the cube.\",\n      \"completion\": \"The cube is visibly held between the gripper fingers and lifted slightly from the tabletop.\"\n    },\n    {\n      \"id\": \"lift_cube\",\n      \"target\": \"orange-and-blue cube\",\n      \"affordance\": \"main body\",\n      \"motion\": \"LIFT\",\n      \"description\": \"Raise the gripper vertically to clear the tabletop and the bowl rim while keeping the cube centered under the gripper.\",\n      \"completion\": \"The cube is visibly suspended above the tabletop with its bottom higher than the bowl rim.\"\n    },\n    {\n      \"id\": \"move_over_bowl\",\n      \"target\": \"red bowl\",\n      \"affordance\": \"center of the bowl opening\",\n      \"motion\": \"MOVE\",\n      \"description\": \"Move the held cube horizontally until it is centered over the visible interior of the red bowl.\",\n      \"completion\": \"The cube is visibly positioned above the bowl opening, with its projected center inside the bowl.\"\n    },\n    {\n      \"id\": \"place_cube\",\n      \"target\": \"red bowl\",\n      \"affordance\": \"inside region at the bottom of the bowl\",\n      \"motion\": \"PLACE\",\n      \"description\": \"Lower the gripper into the bowl until the cube rests inside the bowl without pushing against the rim.\",\n      \"completion\": \"The cube is visibly inside the bowl and supported below the rim.\"\n    },\n    {\n      \"id\": \"release_cube\",\n      \"target\": \"orange-and-blue cube\",\n      \"affordance\": \"main body\",\n      \"motion\": \"RELEASE\",\n      \"description\": \"Open the gripper fingers while keeping the gripper centered above the cube so the cube remains in the bowl.\",\n      \"completion\": \"The fingers are visibly open and the cube remains stationary inside the bowl without contact with the gripper.\"\n    },\n    {\n      \"id\": \"retreat_gripper\",\n      \"target\": \"red bowl\",\n      \"affordance\": \"rim\",\n      \"motion\": \"RETREAT\",\n      \"description\": \"Lift the open gripper vertically away from the bowl and clear the placement area.\",\n      \"completion\": \"The open gripper is visibly above and clear of the bowl, while the cube remains inside it.\"\n    }\n  ]\n}"
+            },
+            "finish_reason": "stop"
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 550,
+          "completion_tokens": 550,
+          "total_tokens": 1100
+        }
+      },
+      "http_status": 200,
+      "duration_s": 6.598,
+      "request_file": "assets/exchange-replay-v1/0-request.json",
+      "response_file": "assets/exchange-replay-v1/0-response.txt"
+    },
+    {
+      "role": "actor",
+      "request": {
+        "model": "gpt-5.6-luna",
+        "messages": [
+          {
+            "role": "user",
+            "content": [
+              {
+                "type": "image_url",
+                "image_url": {
+                  "saved_file": "assets/exchange-replay-v1/1-image-0.png",
+                  "sha256": "a6abbc8e3379f62c493fb1be1807ddc0f9809920a65133e56ffbaf983468f159"
+                }
+              },
+              {
+                "type": "image_url",
+                "image_url": {
+                  "saved_file": "assets/exchange-replay-v1/1-image-1.png",
+                  "sha256": "4648e183325eecdab5474530e602c1ead38e0704ccae659615a69a323f969f89"
+                }
+              },
+              {
+                "type": "text",
+                "text": "You control a robot using only the supplied front image (first) and wrist image (second).\nComplete the current visual subgoal with ONE action. Never claim to know hidden object coordinates.\nThe wrist image is a top-down view: its centre is the grasp axis. The yellow finger pair\ndefines the opening. Move the grasp axis toward the target before descending.\nCalibrated wrist image directions: target LEFT of centre -> MV_LEFT; RIGHT -> MV_RIGHT;\ntarget BELOW centre -> MV_FWD; ABOVE centre -> MV_BACK. These move the gripper toward\nthe target; a stationary target moves in the OPPOSITE image direction after the action.\nMV_DOWN approaches the surface; MV_UP retreats. Use the front image to judge height.\nDo not infer height solely from the target being centred. Grasp only at the target's\nheight, with the target inside the finger opening. After GRASP, lift; after transport,\nlower and RELEASE. DONE means only this subgoal is visibly complete.\nIf target alignment is uncertain, correct horizontally or retreat. Alternating directions\nis NEVER a reason to descend. An opposite direction is allowed to correct overshoot.\nIf the target disappears, report it honestly; do not substitute the bowl for the cube.\nReport contact_risk if the fingers are pushing a non-target object or scraping a surface.\nReturn JSON with decision, target_visible (in either image), wrist_target_visible,\naligned (grasp axis horizontally over the current target), contact_risk, and observation\n(one short sentence describing visible evidence, not a chain of thought).\nActions: MV_FWD, MV_BACK, MV_LEFT, MV_RIGHT, MV_UP, MV_DOWN, GRASP, RELEASE, DONE.\n\n{\"task\": \"Put the cube in the bowl\", \"current_subgoal\": {\"id\": \"grasp_cube\", \"target\": \"orange-and-blue cube\", \"affordance\": \"top face of the cube\", \"motion\": \"GRASP\", \"description\": \"Align the open gripper over the cube, descend until the fingers bracket its sides, and close around the cube.\", \"completion\": \"The cube is visibly held between the gripper fingers and lifted slightly from the tabletop.\"}, \"recent_actions_newest_first\": \"none\", \"gripper_command\": \"OPEN\", \"recovery\": \"\"}"
+              }
+            ]
+          }
+        ],
+        "max_completion_tokens": 512,
+        "reasoning_effort": "none",
+        "response_format": {
+          "type": "json_object"
+        }
+      },
+      "response": {
+        "id": "resp_0e7323cea9b4f13c016ab0c46b115887d0b6ea76fde626f2ff",
+        "object": "chat.completion",
+        "created": 1789969516,
+        "model": "gpt-5.6-luna",
+        "choices": [
+          {
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "{\"decision\":\"MV_FWD\",\"target_visible\":true,\"wrist_target_visible\":true,\"aligned\":false,\"contact_risk\":false,\"observation\":\"The cube is visible below the wrist-image center, so move the grasp axis forward toward it before descending.\"}"
+            },
+            "finish_reason": "stop"
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 630,
+          "completion_tokens": 58,
+          "total_tokens": 688
+        }
+      },
+      "http_status": 200,
+      "duration_s": 2.328,
+      "request_file": "assets/exchange-replay-v1/1-request.json",
+      "response_file": "assets/exchange-replay-v1/1-response.txt"
+    }
+  ],
+  "error_class": null,
+  "explanation": "New planner then new actor on saved initial images. No simulator/action execution. New plan is not recovered historical plan. Provider returned fields only; unavailable internal reasoning cannot be reconstructed. Headers and credentials are excluded."
+}
