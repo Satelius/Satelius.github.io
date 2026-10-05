@@ -1,0 +1,16 @@
+{
+  "schema": "tacharness.public_rollout_summary.v1",
+  "run_id": "20261005T120900-669962",
+  "source": "vitaforge",
+  "policy_mode": "bc_observation_closed_loop_residual",
+  "recorded_frames": 170,
+  "fps": 60.0,
+  "task_success": false,
+  "tactile_audit_passed": true,
+  "p0_complete": false,
+  "source_report_sha256": "67a4252e75663f46b1ded652aa08e680be1893864a982d74faf3d74c52eda938",
+  "publication_note": "公开摘要，非原始报告的逐字副本；仅保留实验结论与可核验统计。",
+  "policy_checkpoint_sha256": "fc268f665d0ada911b754692df72f22fb47f90a400697240a75c6e83225ce216",
+  "policy_decision_count": 169,
+  "bootstrap_action_count": 1
+}

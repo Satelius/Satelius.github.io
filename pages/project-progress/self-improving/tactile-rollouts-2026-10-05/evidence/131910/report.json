@@ -1,0 +1,15 @@
+{
+  "schema": "tacharness.public_rollout_summary.v1",
+  "run_id": "20261005T131910-381801",
+  "source": "isaaclab_arena_franka_put_and_close_door",
+  "policy_mode": "source_scaffold_cartesian_feedback_teacher",
+  "recorded_frames": 404,
+  "fps": 50.0,
+  "task_success": null,
+  "tactile_audit_passed": null,
+  "p0_complete": false,
+  "source_report_sha256": "cf0817cdc9a55c0288bea2e17604b198e7a24e4bff3878c4887a376e5cbfa7d4",
+  "publication_note": "公开摘要，非原始报告的逐字副本；仅保留实验结论与可核验统计。",
+  "stop_reason": "用户调整第三来源为 RoboSynChallenge，主动停止；未完成整任务验收。",
+  "historical_field_note": "原 report 的 zero_action_smoke 是遗留标签；实际执行示范脚手架反馈。"
+}

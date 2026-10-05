@@ -9,6 +9,7 @@
   const lockButton = document.querySelector("#lockButton");
   const redirect = new URLSearchParams(window.location.search).get("redirect");
   const redirectTargets = {
+    "tactile-rollouts-2026-10-05": "./self-improving/tactile-rollouts-2026-10-05/",
     "group-meeting-2026-09-21": "./self-improving/group-meeting-2026-09-21/",
     "group-meeting": "./self-improving/group-meeting/",
     "x2env": "./self-improving/x2env/",

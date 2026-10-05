@@ -1,0 +1,30 @@
+{
+  "schema": "tacharness.p0_tactile_audit.v1",
+  "checks": {
+    "frame_contract": true,
+    "bilateral_contact_observed": true,
+    "bilateral_tactile_observed": true,
+    "no_contact_observed_both_sides": true,
+    "all_requested_actions_recorded": true
+  },
+  "passed": true,
+  "task_success": false,
+  "frames": 170,
+  "sides": {
+    "left": {
+      "contact_frames": 2,
+      "no_contact_frames": 168,
+      "active_tactile_frames": 1,
+      "saturated_indent_frames": 0
+    },
+    "right": {
+      "contact_frames": 5,
+      "no_contact_frames": 165,
+      "active_tactile_frames": 5,
+      "saturated_indent_frames": 0
+    }
+  },
+  "errors": [],
+  "p0_complete": false,
+  "source_sha256": "83b4b78d6ea2ff6fa4db1dd547953751a1d4b58d110b5aea728707512d50e3d5"
+}

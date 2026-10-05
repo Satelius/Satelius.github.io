@@ -1,0 +1,12 @@
+{
+  "schema": "tacharness.p0_policy_decision_audit.v1",
+  "passed": true,
+  "policy_decisions": 169,
+  "bootstrap_actions": 1,
+  "max_action_error": 0.0,
+  "checkpoint_sha256": "fc268f665d0ada911b754692df72f22fb47f90a400697240a75c6e83225ce216",
+  "task_success": false,
+  "errors": [],
+  "p0_complete": false,
+  "note": "Decision provenance only; tactile quality and task success are separate gates."
+}

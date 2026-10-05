@@ -1,0 +1,170 @@
+{
+  "schema": "tacharness.public_presentation_manifest.v1",
+  "files": [
+    {
+      "file": "README.md",
+      "bytes": 810,
+      "sha256": "196694a9901d5af02fc0976008de3bf873e1d7f28c2b221f670be25462b922dc"
+    },
+    {
+      "file": "app.js",
+      "bytes": 13987,
+      "sha256": "31142b7d8abeb4ebc64fb7e0e819682094dadbac71851002fbe3cb4c52b03c86"
+    },
+    {
+      "file": "assets/comparison-preview.png",
+      "bytes": 258294,
+      "sha256": "fb178be4b27834ec0327ff5874ef563036125475897ee29ee6a5d0e12926cadd"
+    },
+    {
+      "file": "assets/posters/115502.jpg",
+      "bytes": 129900,
+      "sha256": "7390126be90b7b9ee8a522943004830e580785ffb5c843b0d81d12ca4ba620d8"
+    },
+    {
+      "file": "assets/posters/120900.jpg",
+      "bytes": 39615,
+      "sha256": "153c79a2f959c127a8ff338e8355742638c400176a60a8677fb65ebb05bf1b08"
+    },
+    {
+      "file": "assets/posters/130903.jpg",
+      "bytes": 83945,
+      "sha256": "ac5633b9a3692ad05303798310491225a373f54a4c3219d57b081f01dc395df4"
+    },
+    {
+      "file": "assets/posters/131910.jpg",
+      "bytes": 76265,
+      "sha256": "0676931054dbdbbf148357a21c7ce8b4e874e695357523f92985dc1be389b431"
+    },
+    {
+      "file": "assets/posters/133133.jpg",
+      "bytes": 32396,
+      "sha256": "47a392df6842275ea7ac33f9fb4d43e54b6fc2177c7712eb24421b005480798a"
+    },
+    {
+      "file": "assets/preview.png",
+      "bytes": 265566,
+      "sha256": "59609de9015ffefa5283c697479a0240299233d997154c407e572f23d55a97f8"
+    },
+    {
+      "file": "assets/videos/115502.mp4",
+      "bytes": 1396183,
+      "sha256": "d7582d46172d4d9ec30b6acea4ab6d881684404990b3f24319d2509699c68201"
+    },
+    {
+      "file": "assets/videos/120900.mp4",
+      "bytes": 823453,
+      "sha256": "d54a30a1aa1794250bc98836499e127a8d2b580d218a186f1ac1ebe18c7b703b"
+    },
+    {
+      "file": "assets/videos/130903.mp4",
+      "bytes": 540645,
+      "sha256": "910d96a6f38f63a262ba84dc336b1a84aac79d09e3e20ba97fa4e98f7365fb5d"
+    },
+    {
+      "file": "assets/videos/131910.mp4",
+      "bytes": 1053823,
+      "sha256": "8255d99374d534da3116e710a3ed18264e1ee4780b2d0fd6b3eab3cc9cbf49e0"
+    },
+    {
+      "file": "assets/videos/133133.mp4",
+      "bytes": 421368,
+      "sha256": "7c1c890e9dd549b4cfdf51b2d088ae50348488a00da2e80ee2fbeaf61337ab45"
+    },
+    {
+      "file": "data.js",
+      "bytes": 14177,
+      "sha256": "6adc11667315786726603373d879b478dd5c6d15728f0b8a356c85c32172dc7d"
+    },
+    {
+      "file": "evidence/115502/report.json",
+      "bytes": 492,
+      "sha256": "d4061420fc75cbf4a21eac7c3ca09dbd08bd102a25f556366791000b1ed18428"
+    },
+    {
+      "file": "evidence/115502/tactile_audit.json",
+      "bytes": 771,
+      "sha256": "8dfac18b54d98f8fedfbf7525107384a67bbbc6307d2a3722e25af5eae0a35d1"
+    },
+    {
+      "file": "evidence/120900/policy_decision_audit.json",
+      "bytes": 403,
+      "sha256": "f42859a8952e6575b07ef983f6f39980f14301dd039e23273356c5822a611ddb"
+    },
+    {
+      "file": "evidence/120900/report.json",
+      "bytes": 667,
+      "sha256": "5efe24db329b435be7ffa24177d1f8690e69878206b034c803917624fcf0bf47"
+    },
+    {
+      "file": "evidence/120900/tactile_audit.json",
+      "bytes": 766,
+      "sha256": "8fd943e101ff3ba7d7b38e3c0237f9ca3cc99883d58bc2a202da79fb3bc0604e"
+    },
+    {
+      "file": "evidence/130903/report.json",
+      "bytes": 832,
+      "sha256": "13f12a8e50ba40f32e1f59f9ee0dfdcb2a67caa4081450f55a71d1f3184b1137"
+    },
+    {
+      "file": "evidence/130903/tactile_audit.json",
+      "bytes": 769,
+      "sha256": "e1a9d60b1a26f546bfab365c1c63ffa5beb2dbbb04e5e909e5dea9e31d4b2e24"
+    },
+    {
+      "file": "evidence/131910/report.json",
+      "bytes": 771,
+      "sha256": "c85a46b5e6e9c4c56f9f84fff68bc4e7668590185c4a776b2ff32d1d1d0efe5a"
+    },
+    {
+      "file": "evidence/133133/policy_decision_audit.json",
+      "bytes": 403,
+      "sha256": "201593470a1a64e89ab0ff2e6c9c673520e927db3469dd708aa68f3d59eb9f0e"
+    },
+    {
+      "file": "evidence/133133/report.json",
+      "bytes": 668,
+      "sha256": "474d8f4ac5c8f861609eeb0b95788609d78a1ad55a9f1be6f23e2e86e1705f0b"
+    },
+    {
+      "file": "evidence/133133/tactile_audit.json",
+      "bytes": 769,
+      "sha256": "64ec92227ff6153f2d0ed60bee696fbe3e27edf2ce8e4cfd8e8150718d26d3b6"
+    },
+    {
+      "file": "evidence/arena-training.json",
+      "bytes": 605,
+      "sha256": "7c2f9209c82b682ad0524f2ffa11e5739a32c3919bcf8fee24a56954dbe0dcd2"
+    },
+    {
+      "file": "evidence/bc-absolute.json",
+      "bytes": 747,
+      "sha256": "e6ea919c77812a01e2c9237eb4620c447d1d914edcdca84cf3d380d901cf70a3"
+    },
+    {
+      "file": "evidence/bc-residual.json",
+      "bytes": 563,
+      "sha256": "f62ee4fbd5a234baae0a185aab64865b3c051d02098cef3c8b001b08ebce0f16"
+    },
+    {
+      "file": "evidence/workplan-snapshot.md",
+      "bytes": 1161,
+      "sha256": "5a74a40ec822a5edd1f74de4cfd4943f8c0578c2d191ec94f5f94a8810e99b05"
+    },
+    {
+      "file": "gate.js",
+      "bytes": 242,
+      "sha256": "eb6d2e674c48da87361af7bd0aa8a92f15a192626bfb3835d11e92e5f0713f43"
+    },
+    {
+      "file": "index.html",
+      "bytes": 22847,
+      "sha256": "4f7e17447f8d57f838041d2b14e34022146a826450e4a19b25d7b9d0ea0a17cd"
+    },
+    {
+      "file": "styles.css",
+      "bytes": 19372,
+      "sha256": "41452e247c648f0b1d49200643fb63062417721141c9804f294aef1ff9683cb1"
+    }
+  ]
+}

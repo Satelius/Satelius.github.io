@@ -1,0 +1,17 @@
+{
+  "schema": "tacharness.public_rollout_summary.v1",
+  "run_id": "20261005T130903-428292",
+  "source": "isaaclab_arena_franka_lift_object",
+  "policy_mode": "geometry_feedback_teacher",
+  "recorded_frames": 207,
+  "fps": 50.0,
+  "task_success": true,
+  "tactile_audit_passed": true,
+  "p0_complete": false,
+  "source_report_sha256": "e4ee931c21a8abbcf2f2a253b8d62a812dbc0221ee49d5530d9e1f8a7253fd86",
+  "publication_note": "公开摘要，非原始报告的逐字副本；仅保留实验结论与可核验统计。",
+  "historical_field_note": "原 report 的 input/checkpoint 仍为旧字段，实际决策来源为归档几何教师源码及其哈希。",
+  "terminal_captured_before_reset": true,
+  "policy_source_sha256": "12ee1edbe0bb2d69bd2b1560b4b4646aadcb23528e37e0234c1ecc173545c8ac",
+  "policy_checkpoint_sha256": null
+}

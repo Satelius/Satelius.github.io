@@ -1,0 +1,16 @@
+{
+  "schema": "tacharness.p0_bc_training_smoke.v1",
+  "samples": 206,
+  "steps": 300,
+  "initial_mse": 1.3209309577941895,
+  "final_mse": 0.0010153850307688117,
+  "reload_max_error": 0.0,
+  "passed": true,
+  "checkpoint_sha256": "d23dc191ff65dac68e284fdd2cc11fc95e39e3f1993f63a0abf5db897983103c",
+  "alignment": "post_action_observation_t_to_action_t_plus_1",
+  "evaluation": "single_episode_training_set_only",
+  "action_contract": "arena_relative_ik",
+  "closed_loop_evaluated": false,
+  "p0_complete": false,
+  "note": "Overfit/data-loading smoke only. No held-out success or tactile benefit claim."
+}

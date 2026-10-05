@@ -1,0 +1,18 @@
+{
+  "schema": "tacharness.p0_bc_training_smoke.v1",
+  "samples": 169,
+  "steps": 1000,
+  "initial_mse": 0.9439932703971863,
+  "final_mse": 4.843257670472667e-07,
+  "reload_max_error": 0.0,
+  "passed": true,
+  "checkpoint_sha256": "1e9f5e20c024864d552a9169ece4c4682b45e16ca6793eb4837dd6368d0bf4ce",
+  "alignment": "post_action_observation_t_to_action_t_plus_1",
+  "evaluation": "single_episode_training_set_only",
+  "action_contract": "vitaforge_joint_position",
+  "learning_rate_schedule": "cosine",
+  "training_source_sha256": "99b2eeaac6c75864dc6656edee8912d4027ea616923444033fed631f486a3e66",
+  "closed_loop_evaluated": false,
+  "p0_complete": false,
+  "note": "Overfit/data-loading smoke only. No held-out success or tactile benefit claim."
+}
