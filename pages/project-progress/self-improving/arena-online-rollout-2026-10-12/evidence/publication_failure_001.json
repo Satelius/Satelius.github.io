@@ -1,0 +1,9 @@
+{
+  "schema": "tacharness.online-publication-failure.v1",
+  "failed_destination": "outputs/datasets/unified/tacjev-online-first-20261012T014737Z",
+  "reason": "standalone CLI did not add checkout root for existing tactile audit import",
+  "exit_code": 1,
+  "partial_destination_preserved": true,
+  "native_sources_unchanged": true,
+  "repaired_cli_sha256": "efcad2d64a3d7a78dacb87fd3e856a0bb662b018b5fa116277524174c712763c"
+}

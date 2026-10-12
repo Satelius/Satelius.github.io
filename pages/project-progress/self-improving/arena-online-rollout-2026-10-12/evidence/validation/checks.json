@@ -1,0 +1,94 @@
+{
+  "schema": "tacharness.arena.online-validation.v1",
+  "created_at": "2026-10-12T03:02:09.910496+00:00",
+  "targeted": {
+    "passed": 134,
+    "elapsed_s": 12.39,
+    "log": "validation/pytest_targeted.log",
+    "sha256": "a58d35101a60a02923d06cda5810eca74bd14f3e280e161835c24b3eb0154ae3"
+  },
+  "types": {
+    "passed": true,
+    "source_files": 7,
+    "log": "validation/mypy.log",
+    "sha256": "050c52a2b0c61e8b681ef5c485e0bc03340b8d55148e0acef27d744c8be42033"
+  },
+  "full_cpu": {
+    "run_count": 1,
+    "passed": 2663,
+    "failed": 3,
+    "skipped": 22,
+    "deselected": 7,
+    "collection_errors": 1,
+    "exit_code": 1,
+    "log": "validation/pytest_full.log",
+    "sha256": "dc75d37872169d385be02ebfbbfee7fc4ff40b5fb80959647f8fc31a96cc915c",
+    "same_failure_and_error_nodes_as_previous": true,
+    "historical_audit": "outputs/arena-jitter/20261011T203643Z/validation/full_cpu.json",
+    "source_audit": [
+      {
+        "path": "tools/build_robosyn_mixer_operating_physics_usd.py",
+        "sha256": "d50fde893983c2e534435cf2ab33867386fb078aaa34a378b0747bac0ea52f09",
+        "matches_prior_failure_source": true
+      },
+      {
+        "path": "scripts/agentic/replay_robosynchallenge_mixer_operating_isaac.py",
+        "sha256": "51d170b5dc1e8336b57e3831c9e0a410cd2dcd3c5c0b73b8554a76096f56cf97",
+        "matches_prior_failure_source": true
+      },
+      {
+        "path": "src/tacumi/tactile_runtime.py",
+        "sha256": "b123dc78e0330912e8270894680979b94403b075af61e5ae6d576f8286f8a68b",
+        "matches_prior_failure_source": true
+      },
+      {
+        "path": "tests/agentic/test_robosynchallenge_mixer_physical_replay.py",
+        "sha256": "93400b56c6d4e0e0124d25d43dbbb20867fe1702a238c1e0e6858ced883621b2",
+        "matches_prior_failure_source": true
+      },
+      {
+        "path": "tests/test_monorepo_layout.py",
+        "sha256": "4b7a6cc5d9134058a33442606570dca8b920bcf9cfc23f33037a4d98f9a9c3fc",
+        "matches_prior_failure_source": true
+      },
+      {
+        "path": "tests/test_tabero_rollout_hook.py",
+        "sha256": "1500a1a851ce73458d642047e28da2b407d7bf9bf73a74d6dbe0b953c256a3ca",
+        "matches_prior_failure_source": true
+      },
+      {
+        "path": "tests/test_isaac_localhost_env.py",
+        "sha256": "d6ed2300ef558dd290771dcd6aef95977083c25dfc077b94698d8390757efcd4",
+        "matches_prior_failure_source": true
+      }
+    ],
+    "ordering": "Full CPU suite before final CLI bootstrap fix; final delta checked by public CLI regression, final 134 targeted tests, types and actual publication/DataEngine readback."
+  },
+  "reviews": {
+    "standards_remaining": 0,
+    "spec_remaining": 0,
+    "report": "validation/code_review.md"
+  },
+  "independent_artifact_checks": {
+    "passed": 35,
+    "report": "independent_verification.json"
+  },
+  "private_scan": {
+    "checked_text_files": 826,
+    "private_config_values_found": false,
+    "config_contents_recorded": false
+  },
+  "historical_budget_hashes_match": {
+    "outputs/collections/tacjev-first/arena-calibration-case-20261011/budget_ledger.json": true,
+    "outputs/arena-reference/20261011T141000Z/budget_ledger.json": true,
+    "outputs/arena-jitter/20261011T203643Z/budget_ledger.json": true
+  },
+  "sealed_branch": "research/arena-jitter",
+  "sealed_head": "15398c4aacd45066b201d8945084164f800dbd0a",
+  "markdown_links_valid": true,
+  "closure_receipt_link_expected_after_commit": true,
+  "git_diff_check": true,
+  "active_online_runner_processes": 0,
+  "native_starts_by_validation": 0,
+  "teacher_requests_by_validation": 0
+}

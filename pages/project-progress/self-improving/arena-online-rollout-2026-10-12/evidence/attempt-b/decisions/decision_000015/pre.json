@@ -1,0 +1,59 @@
+{
+  "schema": "tacharness.arena.online_decision_records.v1",
+  "task": "Grasp the cube and move it to the displayed target position.",
+  "observation_version": "arena-visible-online-v3",
+  "interpreter_version": "arena-online-step0.12-clamp0.12-hold5-v1",
+  "teacher_model": "gpt-6.1-sol",
+  "control_source": "online_multimodal_teacher",
+  "online_teacher": true,
+  "positive_demonstration": false,
+  "train_action_mask": false,
+  "decision_id": "decision_000015",
+  "observation_control_frame": 75,
+  "source_physical_frame_index": 74,
+  "recent_movement_tokens": [
+    "MV_DOWN",
+    "MV_FWD",
+    "MV_DOWN",
+    "MV_DOWN",
+    "MV_FWD"
+  ],
+  "history_decision_ids": [
+    "decision_000014",
+    "decision_000013",
+    "decision_000012",
+    "decision_000010",
+    "decision_000009"
+  ],
+  "images_file": "images.npz",
+  "images_file_sha256": "f1cef02ecdbb71dc574a063a2a1c288542a7c6f689d9a5f2145bd8fe9ef4f0a2",
+  "images": {
+    "scene_rgb": {
+      "shape": [
+        360,
+        640,
+        3
+      ],
+      "dtype": "uint8",
+      "array_sha256": "4610b80bb4effb056fcf9b8f35ad52fd2f8cb7b2e729ee6a312a332bcfee4db5"
+    },
+    "wrist_rgb": {
+      "shape": [
+        360,
+        640,
+        3
+      ],
+      "dtype": "uint8",
+      "array_sha256": "918ff660e82f496ef470888bab377cfc0d5142a05bef61ca8403dc29dd309125"
+    },
+    "tactile_mosaic_rgb": {
+      "shape": [
+        576,
+        384,
+        3
+      ],
+      "dtype": "uint8",
+      "array_sha256": "3ff92f1bf4386b3e693370dcecfae955502dac5c6b106ef5728cb0efcb66d342"
+    }
+  }
+}

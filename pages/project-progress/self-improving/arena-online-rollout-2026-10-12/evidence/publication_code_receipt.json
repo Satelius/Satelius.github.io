@@ -1,0 +1,16 @@
+{
+  "schema": "tacharness.online-publication-code.v1",
+  "created_at": "2026-10-12T03:02:09.883880+00:00",
+  "git_head_before_final_commit": "ddac751b2f7e625c9f7d023d3c9f2cc2f06d8671",
+  "scope": "final publication/runtime sources; does not replace the A/B execution archives",
+  "files": {
+    "scripts/agentic/publish_tacjev_online_collection.py": "efcad2d64a3d7a78dacb87fd3e856a0bb662b018b5fa116277524174c712763c",
+    "scripts/agentic/run_tacjev_online.py": "ecd4b3f93eec34e544d31ce128c5040ae33fdd85623f8291d863f53cf47f1a16",
+    "src/tacharness/first_collection_budget.py": "4e6683ceb215c7da31f09c3b67b18d8758160ef7050575cf36909c8db08d8a9d",
+    "src/tacharness/tacjev_teacher.py": "c5463a55bb84d9f03a12d8e56dcb49abe9ef33d8277fb34d5d1cb6d00a87d821",
+    "src/tacharness/isaaclab/arena_online_execution.py": "c034d436c6436e4bf4374b87fbd596139aef39af5373a3d393a3e97db2cdd342",
+    "src/tacharness/isaaclab/arena_online_records.py": "778622321390e83d620d3094f975fc3ddd32c132a241dc931593ac3b9c34a60e",
+    "src/tacharness/isaaclab/tacjev_online_dataset.py": "d670735418594ed04ccedb5d4ab82052208a07397acb7679ae9a3a0581d9c9a4",
+    "tools/audit_p0_tactile_episode.py": "a8a7c2f0d76a9ea949fcafb7ce0cf72266b24acc5b25fe0811522d7d755f0d05"
+  }
+}

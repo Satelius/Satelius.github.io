@@ -1,0 +1,128 @@
+{
+  "schema": "tacharness.tacjev_online_inference.v1",
+  "created_at": "2026-10-12T02:11:28.287510+00:00",
+  "status": "ok",
+  "reason": null,
+  "token": "MV_FWD",
+  "model_requested": "gpt-6.1-sol",
+  "response_model": "gpt-6.1-sol",
+  "protocol": "chat_completions",
+  "expected_response_model": "gpt-6.1-sol",
+  "prompt_version": "arena-online-teacher-v1",
+  "task": "Grasp the cube and move it to the displayed target position.",
+  "history": [
+    "MV_FWD",
+    "MV_FWD",
+    "MV_FWD",
+    "MV_FWD"
+  ],
+  "image_inputs": {
+    "scene_rgb": {
+      "shape": [
+        360,
+        640,
+        3
+      ],
+      "dtype": "uint8",
+      "array_sha256": "b90de76567efc76ca7b34e46a8411652726c740906b82e9da8aa5e4db62952ec",
+      "png_sha256": "cb5e291177ae98a0e09240dc9aa915b6850a263542315ed0484d04e48b1b1540"
+    },
+    "wrist_rgb": {
+      "shape": [
+        360,
+        640,
+        3
+      ],
+      "dtype": "uint8",
+      "array_sha256": "b818d0c3fc31892d902c3fadc740c01d5adff73a36bde07c1d337e42fbf796d5",
+      "png_sha256": "e750ca7b59c62cc427eca6c4d83890db46bac16d505b97853b50ce8e6d46a623"
+    },
+    "tactile_mosaic_rgb": {
+      "shape": [
+        576,
+        384,
+        3
+      ],
+      "dtype": "uint8",
+      "array_sha256": "3ff92f1bf4386b3e693370dcecfae955502dac5c6b106ef5728cb0efcb66d342",
+      "png_sha256": "60467b9f45790ece318625a816baa74de398f1b78821523c460dc58542fabe7a"
+    }
+  },
+  "request_path": "request.json",
+  "request_sha256": "bb43a0250081a33e6101fbfa7c50c82bd3b56ed0ef80efd1e5ca2a30c096e526",
+  "attempts": [
+    {
+      "attempt": 1,
+      "request_path": "request.json",
+      "request_sha256": "bb43a0250081a33e6101fbfa7c50c82bd3b56ed0ef80efd1e5ca2a30c096e526",
+      "freeze_before": {
+        "schema": "tacharness.arena_state_freeze.v1",
+        "unchanged": true,
+        "checked_fields": 16,
+        "tolerance": 1e-07,
+        "max_abs_delta": 0.0,
+        "changed_fields": [],
+        "field_max_abs_delta": {
+          "env._sim_step_counter": 0.0,
+          "env.common_step_counter": 0.0,
+          "env.episode_length_buf": 0.0,
+          "object_pose.command": 0.0,
+          "object_pose.command_counter": 0.0,
+          "object_pose.pose_command_b": 0.0,
+          "object_pose.pose_command_w": 0.0,
+          "object_pose.time_left": 0.0,
+          "scene.articulation.robot.joint_position": 0.0,
+          "scene.articulation.robot.joint_velocity": 0.0,
+          "scene.articulation.robot.root_pose": 0.0,
+          "scene.articulation.robot.root_velocity": 0.0,
+          "scene.rigid_object.dex_cube.root_pose": 0.0,
+          "scene.rigid_object.dex_cube.root_velocity": 0.0,
+          "sim.physics_step_count": 0.0,
+          "sim.physics_time_s": 0.0
+        }
+      },
+      "freeze_after": {
+        "schema": "tacharness.arena_state_freeze.v1",
+        "unchanged": true,
+        "checked_fields": 16,
+        "tolerance": 1e-07,
+        "max_abs_delta": 0.0,
+        "changed_fields": [],
+        "field_max_abs_delta": {
+          "env._sim_step_counter": 0.0,
+          "env.common_step_counter": 0.0,
+          "env.episode_length_buf": 0.0,
+          "object_pose.command": 0.0,
+          "object_pose.command_counter": 0.0,
+          "object_pose.pose_command_b": 0.0,
+          "object_pose.pose_command_w": 0.0,
+          "object_pose.time_left": 0.0,
+          "scene.articulation.robot.joint_position": 0.0,
+          "scene.articulation.robot.joint_velocity": 0.0,
+          "scene.articulation.robot.root_pose": 0.0,
+          "scene.articulation.robot.root_velocity": 0.0,
+          "scene.rigid_object.dex_cube.root_pose": 0.0,
+          "scene.rigid_object.dex_cube.root_velocity": 0.0,
+          "sim.physics_step_count": 0.0,
+          "sim.physics_time_s": 0.0
+        }
+      },
+      "budget_reservation": {
+        "kind": "teacher_request",
+        "ordinal": 58,
+        "reserved_at": "2026-10-12T02:11:28.289905+00:00"
+      },
+      "response_path": "response-01.json",
+      "response_sha256": "db5e5da256332b11fa1478f527491239b341c4b18f7119ba93178c2852905ad9",
+      "response_raw_sha256": "63a3fe0a728c186d18a6668cd36ea0fa565535095d3af95e2cff2f9f445cc62e",
+      "http_status": 200,
+      "status": "ok",
+      "reason": null,
+      "token": "MV_FWD",
+      "response_model": "gpt-6.1-sol",
+      "elapsed_s": 13.313539864029735
+    }
+  ],
+  "inference_requests": 1,
+  "elapsed_s": 13.405073861125857
+}

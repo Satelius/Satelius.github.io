@@ -1,0 +1,39 @@
+{
+  "schema": "tacharness.arena.online-closure.v1",
+  "created_at": "2026-10-12T03:03:49.047858+00:00",
+  "branch": "bingsheng",
+  "git_head": "9dfc1b13c449fd65411bceb26dacba75b4d99ce6",
+  "commits": [
+    "9dfc1b13c449fd65411bceb26dacba75b4d99ce6 fix: verify standalone publication and close online first-batch evidence",
+    "ddac751b2f7e625c9f7d023d3c9f2cc2f06d8671 fix: retain online startup failures and exclude audited action errors",
+    "ae8ea16fff781bc79fff9dfb3fda6c8826f421a7 feat: wire budgeted Arena online teacher collection and causal publication"
+  ],
+  "tracked_worktree_clean": true,
+  "untracked_original_inputs_retained": {
+    "34_TacHarness_Agentic_Infrastr.pdf": "f5aaa0dedc67094af46df0ec274e4f95d72b2119f8263016f5b00fc90c4837ef",
+    "GPT-6 Rollout 全流程.html": "7a9a2426f84f28d451cf91d37fcd5083cd9fd3734b82b072355c1709f80da72f",
+    "GPT-6 Rollout 全流程_files": {
+      "files": 3,
+      "manifest_sha256": "92f13149c35acd2faf920ee62f8ccfcf9819e1a4dcd3548d11037bdb3d1e8871"
+    },
+    "TacHarness rollout参考.html": "5fef4990a87ac39e6f96fa113bb0cb35327a114fb0aa7c42f8ee0d3e0506c6cd",
+    "TacHarness rollout参考_files": {
+      "files": 6,
+      "manifest_sha256": "0d1e98d915cd0d84bf3efba841f65e29d6e090509eb30d59f46bcc16454c1763"
+    }
+  },
+  "original_snapshot_scope": "closing hashes for future preservation; no claim of a start-to-end hash comparison for these inputs",
+  "sealed_branch": "research/arena-jitter",
+  "sealed_head": "15398c4aacd45066b201d8945084164f800dbd0a",
+  "three_historical_budget_hashes_unchanged": true,
+  "budget_ledger_sha256": "f5ff75002a4b238d3df96c572fe6b0c359d84f02edfe30de39ddd4a5d03ed95e",
+  "new_inference_requests_during_closure": 0,
+  "new_native_starts_during_closure": 0,
+  "evidence_sha256": {
+    "README.md": "c1568db82bba98b8acee54097f3a2936ad983b89926a6c22ccc8fabe35198a8b",
+    "phase_acceptance.json": "e66fd8c31e7b43beb078827aade14d72d42c24d7930caa091517743b049edb51",
+    "validation/checks.json": "3c48dadc989e629b6295c5dfe34caddc46ae1bf0529d362881976b65df63a6de",
+    "validation/code_review.md": "1d63137c279af487b116d238366f872d92512bf8d4ba323ce1d7c6b4cd20545a",
+    "publication_code_receipt.json": "c59deadaac04760e2e1c77e36df4bb775ed5f971d6491c2514ef29abba31505a"
+  }
+}

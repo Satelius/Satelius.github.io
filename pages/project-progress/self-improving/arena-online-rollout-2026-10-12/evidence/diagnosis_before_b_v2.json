@@ -1,0 +1,75 @@
+{
+  "schema": "tacharness.arena.online-agent-diagnosis.v1",
+  "created_at": "2026-10-12T02:10:04.832073+00:00",
+  "baseline": "attempt-a",
+  "baseline_report_sha256": "adf0c5a6ee3b66b1c522f9f255a4fcfb6ae96067f12e6b3607c7e16287bed20a",
+  "problem": "Full-budget online baseline had limited per-token motion (47 forward,3 down decisions), no contact/native success, and a large remaining height gap.",
+  "evidence": {
+    "MV_FWD_full_hold5_count": 47,
+    "axis_projection_median_m": 0.008687227964401245,
+    "axis_projection_mean_m": 0.007534885501607936,
+    "cross_axis_norm_median_m": 0.0023431603592132116,
+    "cross_axis_norm_max_m": 0.013325872690913764,
+    "last_tcp_base_xyz_m": [
+      0.45643746852874756,
+      -0.04669848084449768,
+      0.6905080080032349
+    ],
+    "native_success": false,
+    "contact_frames": 0,
+    "token_counts": {
+      "MV_FWD": 47,
+      "MV_DOWN": 3
+    }
+  },
+  "hypothesis": "A larger bounded translation step and clamp may increase realized motion per fixed five-frame token, improving progress within 250 physical frames. Teacher action choice and height planning remain separate possible limitations.",
+  "intervention_fields": [
+    "translation_step_m",
+    "translation_clamp_m"
+  ],
+  "intervention_A": {
+    "translation_step_m": 0.025,
+    "translation_clamp_m": 0.025,
+    "hold_frames": 5
+  },
+  "intervention_B": {
+    "translation_step_m": 0.12,
+    "translation_clamp_m": 0.12,
+    "hold_frames": 5
+  },
+  "profile_B": "arena-online-step0.12-clamp0.12-hold5-v1",
+  "reference_boundary": "120mm/hold1 scripted success supports considering amplitude only. This120mm/hold5 is a new uncalibrated candidate, not the proven research profile.",
+  "frozen_conditions": {
+    "teacher_requested": "gpt-6.1-sol",
+    "response_model": "gpt-6.1-sol",
+    "protocol": "chat_completions",
+    "temperature": 0,
+    "prompt_version": "arena-online-teacher-v1",
+    "observation_version": "arena-visible-online-v3",
+    "seed": 42,
+    "task": "lift_object/dex_cube",
+    "physical_frame_cap": 250,
+    "retry_cap": 3,
+    "decision_wait_cap_s": 120,
+    "request_timeout_s": 35,
+    "gripper_effort_nm": 1,
+    "rotation_clamp_rad": 0.08
+  },
+  "expected_response": {
+    "same_direction_full_hold5_axis_projection_median_at_least_m": 0.01737445592880249,
+    "comparison": "separate by movement direction; report first shared control interval and full run, no mixed-direction score"
+  },
+  "acceptance": {
+    "diagnosis": "Actual initialstate+goal match, all frozen conditions and causal/physical/media receipts valid; report no improvement or uncertainty honestly.",
+    "positive_demonstration": "Independent native success+tactile audit+causal readback+all-frame video+execution accounting; no known wrong or uncertain labels.",
+    "adoption": "No automatic global interpreter or research-variant adoption; candidate remains explicit per-run version."
+  },
+  "limits": [
+    "single development opening",
+    "two translation fields co-change, not separate identification",
+    "closed-loop teacher decisions can change after state differences",
+    "no statistical benefit, general calibration or student claims"
+  ],
+  "supersedes_sha256": "fcad623890b003de47776844333677b673e4eefba661328b3bd424786681ad96",
+  "correction": "Draft cross-axis calculation subtracted scalar x instead of full xyz; corrected before B launch. Full token counts supersede partial progress statement. Primary x projection threshold unchanged; original preserved."
+}

@@ -1,0 +1,54 @@
+{
+  "inference_file": "inference/inference.json",
+  "inference_sha256": "2e6979952b57b38228f04bcebd20e322f0b49080edba1d7a95772a4b2663f0a3",
+  "token": "MV_FWD",
+  "freeze": {
+    "verified": true,
+    "state_check": {
+      "schema": "tacharness.arena_state_freeze.v1",
+      "unchanged": true,
+      "checked_fields": 16,
+      "tolerance": 1e-07,
+      "max_abs_delta": 0.0,
+      "changed_fields": [],
+      "field_max_abs_delta": {
+        "env._sim_step_counter": 0.0,
+        "env.common_step_counter": 0.0,
+        "env.episode_length_buf": 0.0,
+        "object_pose.command": 0.0,
+        "object_pose.command_counter": 0.0,
+        "object_pose.pose_command_b": 0.0,
+        "object_pose.pose_command_w": 0.0,
+        "object_pose.time_left": 0.0,
+        "scene.articulation.robot.joint_position": 0.0,
+        "scene.articulation.robot.joint_velocity": 0.0,
+        "scene.articulation.robot.root_pose": 0.0,
+        "scene.articulation.robot.root_velocity": 0.0,
+        "scene.rigid_object.dex_cube.root_pose": 0.0,
+        "scene.rigid_object.dex_cube.root_velocity": 0.0,
+        "sim.physics_step_count": 0.0,
+        "sim.physics_time_s": 0.0
+      }
+    },
+    "before_sha256": "8bae09897d1703c06d47436ca580e0ba85e2c7a33bfa2019b46c003ed4b5fc55",
+    "after_sha256": "8bae09897d1703c06d47436ca580e0ba85e2c7a33bfa2019b46c003ed4b5fc55",
+    "control_frame_before": 40,
+    "control_frame_after": 40,
+    "history_before": [
+      "MV_FWD",
+      "MV_FWD",
+      "MV_FWD",
+      "MV_FWD",
+      "MV_FWD"
+    ],
+    "history_after": [
+      "MV_FWD",
+      "MV_FWD",
+      "MV_FWD",
+      "MV_FWD",
+      "MV_FWD"
+    ],
+    "state_file": "http_state_before.npz",
+    "after_state_file": "http_state_after.npz"
+  }
+}

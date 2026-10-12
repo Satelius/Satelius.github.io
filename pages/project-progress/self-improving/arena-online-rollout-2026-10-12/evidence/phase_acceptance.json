@@ -1,0 +1,81 @@
+{
+  "schema": "tacharness.arena.online-first-batch-acceptance.v1",
+  "created_at": "2026-10-12T03:02:09.885482+00:00",
+  "online_collector_complete": true,
+  "formal_agent_diagnosis_pair_complete": true,
+  "qualified_demonstration_complete": false,
+  "positive_demonstrations": 0,
+  "candidate_adopted": false,
+  "native_attempts": {
+    "historical": 4,
+    "new": 2,
+    "total": 6,
+    "cap": 6
+  },
+  "teacher_requests": {
+    "historical": 0,
+    "preflight": 1,
+    "A": 52,
+    "B": 50,
+    "total": 103,
+    "cap": 300
+  },
+  "wall_s": {
+    "historical": 1848.098,
+    "resumed_continuous": 2361.471184948925,
+    "total": 4209.569184948925,
+    "cap": 7200
+  },
+  "budget_closed": true,
+  "stop_reason": "native_attempt_budget_exhausted",
+  "episodes": [
+    {
+      "id": "attempt-a",
+      "frames": 250,
+      "decisions": 50,
+      "native_success": false,
+      "contact_frames": 0,
+      "positive_demonstration": false
+    },
+    {
+      "id": "attempt-b",
+      "frames": 250,
+      "decisions": 50,
+      "native_success": false,
+      "contact_frames": 0,
+      "positive_demonstration": false
+    }
+  ],
+  "published": {
+    "dataset": "outputs/datasets/unified/tacjev-online-first-20261012T014737Z-v2",
+    "diagnostic_episodes": 2,
+    "samples": 100,
+    "positive_episodes": 0,
+    "training_samples": 0,
+    "known_wrong_samples": 1,
+    "dataengine_readback": "passed"
+  },
+  "limitations": [
+    "Service-reported model identity; no independent checkpoint attestation.",
+    "Single development opening and coupled step/clamp adjustment.",
+    "Both A and B have reversed DOWN response; general interpreter calibration unproven.",
+    "No qualified online tactile demonstration or student ability evidence."
+  ],
+  "out_of_scope_not_performed": [
+    "jitter experiments",
+    "TacJev training",
+    "collection expansion"
+  ],
+  "evidence_sha256": {
+    "teacher_identity.json": "e948c7f8788e98d099fc5fa390c2b49142e693acbe0a7b6ed2bacdb115aa5fcf",
+    "budget_ledger.json": "f5ff75002a4b238d3df96c572fe6b0c359d84f02edfe30de39ddd4a5d03ed95e",
+    "comparison.json": "0ab94cece4928eff19122181a46768043895c7db0c204bbcc57a65f50d3ad6a2",
+    "diagnosis_before_b_v2.json": "98bd340fe1537c1f0786a3f60c0e7d47d27e628d822aa6e44f6db46fee99fe8f",
+    "initial_pair_check.json": "a029dbf3ae6bd67b1e85ea049f766e48a658c337c8930f3668add798f29625b6",
+    "independent_verification.json": "3c6e3c0637bd2fe5078061a07cbbcf5ef0f7f50f707b71bf51a12fcc15d593dc",
+    "dataengine_readback.json": "b30956c8d613499fef70d3cabcebc673aaf6ad060de1243feefc7c58739fbbe8",
+    "known_error_receipt.json": "82f30e62254c9d2d1f2d09e4ee74190fc18da4653cace70629d61a412e224b09",
+    "publication_result_v2.json": "f6f7fbd5fd6aaada436ee35e71b1fdf8cdf16c222bf008ca904de1a0aa8c9b70",
+    "publication_code_receipt.json": "c59deadaac04760e2e1c77e36df4bb775ed5f971d6491c2514ef29abba31505a"
+  }
+}

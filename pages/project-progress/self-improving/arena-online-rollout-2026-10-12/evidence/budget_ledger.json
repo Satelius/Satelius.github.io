@@ -1,0 +1,554 @@
+{
+  "schema": "tacharness.first-collection.online-budget.v1",
+  "historical_sha256": "e8cdf39af2291b49f8e533b15aa5ebda2afd97530a8a36185a5e1273a0abc0be",
+  "historical_native_attempts": 4,
+  "historical_teacher_requests": 0,
+  "historical_run_wall_s": 1848.098,
+  "native_attempt_cap": 6,
+  "teacher_request_cap": 300,
+  "run_wall_cap_s": 7200,
+  "native_attempts_started": 6,
+  "teacher_inference_requests": 103,
+  "resumed_started_at": "2026-10-12T01:47:37.115488+00:00",
+  "resumed_started_monotonic_s": 3439026.349922666,
+  "resumed_deadline_monotonic_s": 3444378.2519226656,
+  "resumed_boot_id": "b545a404-441b-4c61-a632-12196c2f23c0",
+  "resumed_wall_s": 2361.471184948925,
+  "run_wall_used_s": 4209.569184948925,
+  "phase": "online_first_batch_closed",
+  "accounting": "historical_conservative_wall_plus_continuous_resumed_window",
+  "closed_at": "2026-10-12T02:26:58.586671+00:00",
+  "close_reason": "native_attempt_budget_exhausted",
+  "reservations": [
+    {
+      "kind": "teacher_request",
+      "ordinal": 1,
+      "reserved_at": "2026-10-12T01:47:52.256340+00:00"
+    },
+    {
+      "kind": "native_attempt",
+      "ordinal": 5,
+      "reserved_at": "2026-10-12T01:52:26.647952+00:00",
+      "output": "/home/jingxiang/bingsheng/TacHarness/outputs/collections/tacjev-first/online-resume-20261012T014737Z/attempt-a"
+    },
+    {
+      "kind": "teacher_request",
+      "ordinal": 2,
+      "reserved_at": "2026-10-12T01:52:40.675550+00:00"
+    },
+    {
+      "kind": "teacher_request",
+      "ordinal": 3,
+      "reserved_at": "2026-10-12T01:52:58.635145+00:00"
+    },
+    {
+      "kind": "teacher_request",
+      "ordinal": 4,
+      "reserved_at": "2026-10-12T01:53:13.172387+00:00"
+    },
+    {
+      "kind": "teacher_request",
+      "ordinal": 5,
+      "reserved_at": "2026-10-12T01:53:30.586233+00:00"
+    },
+    {
+      "kind": "teacher_request",
+      "ordinal": 6,
+      "reserved_at": "2026-10-12T01:53:45.671607+00:00"
+    },
+    {
+      "kind": "teacher_request",
+      "ordinal": 7,
+      "reserved_at": "2026-10-12T01:54:03.007348+00:00"
+    },
+    {
+      "kind": "teacher_request",
+      "ordinal": 8,
+      "reserved_at": "2026-10-12T01:54:38.022515+00:00"
+    },
+    {
+      "kind": "teacher_request",
+      "ordinal": 9,
+      "reserved_at": "2026-10-12T01:54:55.649676+00:00"
+    },
+    {
+      "kind": "teacher_request",
+      "ordinal": 10,
+      "reserved_at": "2026-10-12T01:55:15.104470+00:00"
+    },
+    {
+      "kind": "teacher_request",
+      "ordinal": 11,
+      "reserved_at": "2026-10-12T01:55:29.384340+00:00"
+    },
+    {
+      "kind": "teacher_request",
+      "ordinal": 12,
+      "reserved_at": "2026-10-12T01:56:04.397135+00:00"
+    },
+    {
+      "kind": "teacher_request",
+      "ordinal": 13,
+      "reserved_at": "2026-10-12T01:56:18.839915+00:00"
+    },
+    {
+      "kind": "teacher_request",
+      "ordinal": 14,
+      "reserved_at": "2026-10-12T01:56:37.773263+00:00"
+    },
+    {
+      "kind": "teacher_request",
+      "ordinal": 15,
+      "reserved_at": "2026-10-12T01:57:10.358706+00:00"
+    },
+    {
+      "kind": "teacher_request",
+      "ordinal": 16,
+      "reserved_at": "2026-10-12T01:57:30.244498+00:00"
+    },
+    {
+      "kind": "teacher_request",
+      "ordinal": 17,
+      "reserved_at": "2026-10-12T01:57:46.090479+00:00"
+    },
+    {
+      "kind": "teacher_request",
+      "ordinal": 18,
+      "reserved_at": "2026-10-12T01:58:00.701448+00:00"
+    },
+    {
+      "kind": "teacher_request",
+      "ordinal": 19,
+      "reserved_at": "2026-10-12T01:58:15.274226+00:00"
+    },
+    {
+      "kind": "teacher_request",
+      "ordinal": 20,
+      "reserved_at": "2026-10-12T01:58:33.716717+00:00"
+    },
+    {
+      "kind": "teacher_request",
+      "ordinal": 21,
+      "reserved_at": "2026-10-12T01:58:48.976496+00:00"
+    },
+    {
+      "kind": "teacher_request",
+      "ordinal": 22,
+      "reserved_at": "2026-10-12T01:59:08.197812+00:00"
+    },
+    {
+      "kind": "teacher_request",
+      "ordinal": 23,
+      "reserved_at": "2026-10-12T01:59:23.328329+00:00"
+    },
+    {
+      "kind": "teacher_request",
+      "ordinal": 24,
+      "reserved_at": "2026-10-12T01:59:40.328214+00:00"
+    },
+    {
+      "kind": "teacher_request",
+      "ordinal": 25,
+      "reserved_at": "2026-10-12T01:59:58.206923+00:00"
+    },
+    {
+      "kind": "teacher_request",
+      "ordinal": 26,
+      "reserved_at": "2026-10-12T02:00:17.147757+00:00"
+    },
+    {
+      "kind": "teacher_request",
+      "ordinal": 27,
+      "reserved_at": "2026-10-12T02:00:33.504933+00:00"
+    },
+    {
+      "kind": "teacher_request",
+      "ordinal": 28,
+      "reserved_at": "2026-10-12T02:00:53.279550+00:00"
+    },
+    {
+      "kind": "teacher_request",
+      "ordinal": 29,
+      "reserved_at": "2026-10-12T02:01:09.031747+00:00"
+    },
+    {
+      "kind": "teacher_request",
+      "ordinal": 30,
+      "reserved_at": "2026-10-12T02:01:25.392380+00:00"
+    },
+    {
+      "kind": "teacher_request",
+      "ordinal": 31,
+      "reserved_at": "2026-10-12T02:01:41.506962+00:00"
+    },
+    {
+      "kind": "teacher_request",
+      "ordinal": 32,
+      "reserved_at": "2026-10-12T02:01:58.286338+00:00"
+    },
+    {
+      "kind": "teacher_request",
+      "ordinal": 33,
+      "reserved_at": "2026-10-12T02:02:13.224586+00:00"
+    },
+    {
+      "kind": "teacher_request",
+      "ordinal": 34,
+      "reserved_at": "2026-10-12T02:02:28.274842+00:00"
+    },
+    {
+      "kind": "teacher_request",
+      "ordinal": 35,
+      "reserved_at": "2026-10-12T02:02:44.524446+00:00"
+    },
+    {
+      "kind": "teacher_request",
+      "ordinal": 36,
+      "reserved_at": "2026-10-12T02:03:01.859410+00:00"
+    },
+    {
+      "kind": "teacher_request",
+      "ordinal": 37,
+      "reserved_at": "2026-10-12T02:03:17.290254+00:00"
+    },
+    {
+      "kind": "teacher_request",
+      "ordinal": 38,
+      "reserved_at": "2026-10-12T02:03:32.902096+00:00"
+    },
+    {
+      "kind": "teacher_request",
+      "ordinal": 39,
+      "reserved_at": "2026-10-12T02:03:50.051861+00:00"
+    },
+    {
+      "kind": "teacher_request",
+      "ordinal": 40,
+      "reserved_at": "2026-10-12T02:04:08.355171+00:00"
+    },
+    {
+      "kind": "teacher_request",
+      "ordinal": 41,
+      "reserved_at": "2026-10-12T02:04:27.289302+00:00"
+    },
+    {
+      "kind": "teacher_request",
+      "ordinal": 42,
+      "reserved_at": "2026-10-12T02:04:42.062353+00:00"
+    },
+    {
+      "kind": "teacher_request",
+      "ordinal": 43,
+      "reserved_at": "2026-10-12T02:05:00.271745+00:00"
+    },
+    {
+      "kind": "teacher_request",
+      "ordinal": 44,
+      "reserved_at": "2026-10-12T02:05:16.236451+00:00"
+    },
+    {
+      "kind": "teacher_request",
+      "ordinal": 45,
+      "reserved_at": "2026-10-12T02:05:32.355275+00:00"
+    },
+    {
+      "kind": "teacher_request",
+      "ordinal": 46,
+      "reserved_at": "2026-10-12T02:05:47.471482+00:00"
+    },
+    {
+      "kind": "teacher_request",
+      "ordinal": 47,
+      "reserved_at": "2026-10-12T02:06:05.998183+00:00"
+    },
+    {
+      "kind": "teacher_request",
+      "ordinal": 48,
+      "reserved_at": "2026-10-12T02:06:22.028917+00:00"
+    },
+    {
+      "kind": "teacher_request",
+      "ordinal": 49,
+      "reserved_at": "2026-10-12T02:06:40.524723+00:00"
+    },
+    {
+      "kind": "teacher_request",
+      "ordinal": 50,
+      "reserved_at": "2026-10-12T02:06:59.837259+00:00"
+    },
+    {
+      "kind": "teacher_request",
+      "ordinal": 51,
+      "reserved_at": "2026-10-12T02:07:14.197060+00:00"
+    },
+    {
+      "kind": "teacher_request",
+      "ordinal": 52,
+      "reserved_at": "2026-10-12T02:07:35.260001+00:00"
+    },
+    {
+      "kind": "teacher_request",
+      "ordinal": 53,
+      "reserved_at": "2026-10-12T02:07:50.797641+00:00"
+    },
+    {
+      "kind": "native_attempt",
+      "ordinal": 6,
+      "reserved_at": "2026-10-12T02:10:04.883838+00:00",
+      "output": "/home/jingxiang/bingsheng/TacHarness/outputs/collections/tacjev-first/online-resume-20261012T014737Z/attempt-b"
+    },
+    {
+      "kind": "teacher_request",
+      "ordinal": 54,
+      "reserved_at": "2026-10-12T02:10:19.368334+00:00"
+    },
+    {
+      "kind": "teacher_request",
+      "ordinal": 55,
+      "reserved_at": "2026-10-12T02:10:36.419690+00:00"
+    },
+    {
+      "kind": "teacher_request",
+      "ordinal": 56,
+      "reserved_at": "2026-10-12T02:10:52.992320+00:00"
+    },
+    {
+      "kind": "teacher_request",
+      "ordinal": 57,
+      "reserved_at": "2026-10-12T02:11:08.585725+00:00"
+    },
+    {
+      "kind": "teacher_request",
+      "ordinal": 58,
+      "reserved_at": "2026-10-12T02:11:28.289905+00:00"
+    },
+    {
+      "kind": "teacher_request",
+      "ordinal": 59,
+      "reserved_at": "2026-10-12T02:11:45.869900+00:00"
+    },
+    {
+      "kind": "teacher_request",
+      "ordinal": 60,
+      "reserved_at": "2026-10-12T02:12:03.622275+00:00"
+    },
+    {
+      "kind": "teacher_request",
+      "ordinal": 61,
+      "reserved_at": "2026-10-12T02:12:17.727526+00:00"
+    },
+    {
+      "kind": "teacher_request",
+      "ordinal": 62,
+      "reserved_at": "2026-10-12T02:12:33.379190+00:00"
+    },
+    {
+      "kind": "teacher_request",
+      "ordinal": 63,
+      "reserved_at": "2026-10-12T02:12:49.842087+00:00"
+    },
+    {
+      "kind": "teacher_request",
+      "ordinal": 64,
+      "reserved_at": "2026-10-12T02:13:07.100297+00:00"
+    },
+    {
+      "kind": "teacher_request",
+      "ordinal": 65,
+      "reserved_at": "2026-10-12T02:13:23.089090+00:00"
+    },
+    {
+      "kind": "teacher_request",
+      "ordinal": 66,
+      "reserved_at": "2026-10-12T02:13:50.188622+00:00"
+    },
+    {
+      "kind": "teacher_request",
+      "ordinal": 67,
+      "reserved_at": "2026-10-12T02:14:03.425119+00:00"
+    },
+    {
+      "kind": "teacher_request",
+      "ordinal": 68,
+      "reserved_at": "2026-10-12T02:14:19.021818+00:00"
+    },
+    {
+      "kind": "teacher_request",
+      "ordinal": 69,
+      "reserved_at": "2026-10-12T02:14:37.182710+00:00"
+    },
+    {
+      "kind": "teacher_request",
+      "ordinal": 70,
+      "reserved_at": "2026-10-12T02:14:54.618296+00:00"
+    },
+    {
+      "kind": "teacher_request",
+      "ordinal": 71,
+      "reserved_at": "2026-10-12T02:15:12.185525+00:00"
+    },
+    {
+      "kind": "teacher_request",
+      "ordinal": 72,
+      "reserved_at": "2026-10-12T02:15:28.783368+00:00"
+    },
+    {
+      "kind": "teacher_request",
+      "ordinal": 73,
+      "reserved_at": "2026-10-12T02:15:42.647227+00:00"
+    },
+    {
+      "kind": "teacher_request",
+      "ordinal": 74,
+      "reserved_at": "2026-10-12T02:15:59.119532+00:00"
+    },
+    {
+      "kind": "teacher_request",
+      "ordinal": 75,
+      "reserved_at": "2026-10-12T02:16:18.119794+00:00"
+    },
+    {
+      "kind": "teacher_request",
+      "ordinal": 76,
+      "reserved_at": "2026-10-12T02:16:34.317127+00:00"
+    },
+    {
+      "kind": "teacher_request",
+      "ordinal": 77,
+      "reserved_at": "2026-10-12T02:16:52.065135+00:00"
+    },
+    {
+      "kind": "teacher_request",
+      "ordinal": 78,
+      "reserved_at": "2026-10-12T02:17:07.551432+00:00"
+    },
+    {
+      "kind": "teacher_request",
+      "ordinal": 79,
+      "reserved_at": "2026-10-12T02:17:22.833531+00:00"
+    },
+    {
+      "kind": "teacher_request",
+      "ordinal": 80,
+      "reserved_at": "2026-10-12T02:17:41.904963+00:00"
+    },
+    {
+      "kind": "teacher_request",
+      "ordinal": 81,
+      "reserved_at": "2026-10-12T02:17:58.620964+00:00"
+    },
+    {
+      "kind": "teacher_request",
+      "ordinal": 82,
+      "reserved_at": "2026-10-12T02:18:17.280156+00:00"
+    },
+    {
+      "kind": "teacher_request",
+      "ordinal": 83,
+      "reserved_at": "2026-10-12T02:18:40.461027+00:00"
+    },
+    {
+      "kind": "teacher_request",
+      "ordinal": 84,
+      "reserved_at": "2026-10-12T02:19:01.154055+00:00"
+    },
+    {
+      "kind": "teacher_request",
+      "ordinal": 85,
+      "reserved_at": "2026-10-12T02:19:17.532383+00:00"
+    },
+    {
+      "kind": "teacher_request",
+      "ordinal": 86,
+      "reserved_at": "2026-10-12T02:19:38.224262+00:00"
+    },
+    {
+      "kind": "teacher_request",
+      "ordinal": 87,
+      "reserved_at": "2026-10-12T02:19:57.079185+00:00"
+    },
+    {
+      "kind": "teacher_request",
+      "ordinal": 88,
+      "reserved_at": "2026-10-12T02:20:14.889256+00:00"
+    },
+    {
+      "kind": "teacher_request",
+      "ordinal": 89,
+      "reserved_at": "2026-10-12T02:20:33.861902+00:00"
+    },
+    {
+      "kind": "teacher_request",
+      "ordinal": 90,
+      "reserved_at": "2026-10-12T02:20:53.167336+00:00"
+    },
+    {
+      "kind": "teacher_request",
+      "ordinal": 91,
+      "reserved_at": "2026-10-12T02:21:15.054044+00:00"
+    },
+    {
+      "kind": "teacher_request",
+      "ordinal": 92,
+      "reserved_at": "2026-10-12T02:21:32.268546+00:00"
+    },
+    {
+      "kind": "teacher_request",
+      "ordinal": 93,
+      "reserved_at": "2026-10-12T02:21:48.198548+00:00"
+    },
+    {
+      "kind": "teacher_request",
+      "ordinal": 94,
+      "reserved_at": "2026-10-12T02:22:07.009432+00:00"
+    },
+    {
+      "kind": "teacher_request",
+      "ordinal": 95,
+      "reserved_at": "2026-10-12T02:22:29.027026+00:00"
+    },
+    {
+      "kind": "teacher_request",
+      "ordinal": 96,
+      "reserved_at": "2026-10-12T02:22:43.909539+00:00"
+    },
+    {
+      "kind": "teacher_request",
+      "ordinal": 97,
+      "reserved_at": "2026-10-12T02:23:04.130167+00:00"
+    },
+    {
+      "kind": "teacher_request",
+      "ordinal": 98,
+      "reserved_at": "2026-10-12T02:23:23.519418+00:00"
+    },
+    {
+      "kind": "teacher_request",
+      "ordinal": 99,
+      "reserved_at": "2026-10-12T02:23:42.957835+00:00"
+    },
+    {
+      "kind": "teacher_request",
+      "ordinal": 100,
+      "reserved_at": "2026-10-12T02:24:00.635930+00:00"
+    },
+    {
+      "kind": "teacher_request",
+      "ordinal": 101,
+      "reserved_at": "2026-10-12T02:24:16.402681+00:00"
+    },
+    {
+      "kind": "teacher_request",
+      "ordinal": 102,
+      "reserved_at": "2026-10-12T02:24:32.112417+00:00"
+    },
+    {
+      "kind": "teacher_request",
+      "ordinal": 103,
+      "reserved_at": "2026-10-12T02:24:49.135080+00:00"
+    }
+  ],
+  "native_attempts_remaining": 0,
+  "teacher_requests_remaining": 197,
+  "run_wall_remaining_s": 2990.430815051075
+}

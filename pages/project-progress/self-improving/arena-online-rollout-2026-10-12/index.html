@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Arena lift_object / dex_cube 在线教师运行的中文说明、视频与100次真实决策证据。">
+  <title>这次在线教师，到底做了什么？ · TacHarness</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="data.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+<header class="site-header">
+  <a class="brand" href="#intro"><span class="brand-mark">T</span> TacHarness <span class="brand-sub">运行说明</span></a>
+  <nav aria-label="页面导航"><a href="#results">看录像</a><a href="#explorer">逐次决策</a><a href="#mapping">动作怎么执行</a><a href="#analysis">为什么失败</a><a href="#evidence">查原件</a></nav>
+</header>
+<main>
+  <section class="hero" id="intro">
+    <div class="eyebrow">2026年10月12日 · ARENA / FRANKA · lift_object / dex_cube</div>
+    <div class="hero-grid">
+      <div>
+        <h1>这次在线教师，<br>到底做了什么？</h1>
+        <p class="hero-lead">让模型看当前图像，选一个动作词，再让机械臂执行。我们实际跑了两次，并查清了“模型的选择”和“机器人的运动”之间的差别。</p>
+        <div class="outcome"><span class="status-dot"></span><strong>在线链路与正式诊断对照完成。合格示范尚未取得。</strong></div>
+        <p class="muted">两次都走完原生物理预算，方块没有被抓起，双指没有接触。第二种参数让前移更明显，但下探方向与跨轴偏移仍有问题，因此没有采纳。</p>
+        <div class="hero-actions"><a class="button primary" href="#results">先看两次运行</a><a class="button secondary" href="#explorer">展开一次真实决策</a></div>
+      </div>
+      <aside class="hero-aside" aria-label="本次结果">
+        <div class="big-stat"><strong>0</strong><span>条合格在线触觉示范</span></div>
+        <div class="small-stats"><div><b>100</b><span>次实际动作决策</span></div><div><b>500</b><span>个原生控制帧</span></div><div><b>2</b><span>次完整在线尝试</span></div><div><b>0</b><span>条训练采纳样本</span></div></div>
+        <p class="aside-foot">成功以原生任务判定和触觉证据为准。流程可用，不自动代表任务能完成。</p>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section story" id="process">
+    <div class="section-heading"><span class="section-number">01</span><div><h2>先把这次运行想成一个循环</h2><p>不是模型直接控制每个关节。模型选词，解释器把词展开成连续控制。</p></div></div>
+    <div class="pipeline">
+      <div><span>1</span><h3>拍三张当前图</h3><p>场景、腕部、双指触觉。再附完整任务与最近最多5个移动词。</p></div>
+      <div><span>2</span><h3>暂停，等待教师</h3><p>发送真实HTTP请求。等待与重试期间，场景、目标计时器、动作历史都冻结。</p></div>
+      <div><span>3</span><h3>得到一个动作词</h3><p>例如 <code>MV_FWD</code>。只允许九个词之一；这次没有输出推理过程或解释。</p></div>
+      <div><span>4</span><h3>执行5个控制帧</h3><p>解释器固定一个目标，连续追踪0.1秒。保存实际动作与结果，再拍图。</p></div>
+    </div>
+    <div class="two-notes"><p><strong>在线多模态教师</strong>是实际选动作的模型。本次请求与服务响应均声明 <code>gpt-6.1-sol</code>；这是服务报告的型号，没有独立认证后端权重。</p><p><strong>编排Agent</strong>负责接线、核查证据、提出诊断与比较方案。本次没有训练学生策略 <strong>TacJev</strong>，也没有完成完整采训评测 campaign。</p></div>
+    <div class="time-explainer"><b>5秒物理时间 ≠ 5秒现实等待</b><p>一帧控制为0.02秒，包含4个0.005秒物理子步。250帧＝5秒＝1000物理子步。模型询问很慢，所以真实运行约15分钟；视频播放的是执行过程，不把等待伪装成机器人在动。</p></div>
+  </section>
+
+  <section class="section" id="results">
+    <div class="section-heading"><span class="section-number">02</span><div><h2>两次实际运行：看视频，再看结果</h2><p>同一个开发开局，物理状态与目标16字段逐值相同。图像像素并非完全相同；没有把同seed当作唯一配对依据。</p></div></div>
+    <div class="video-comparison">
+      <article class="run-panel"><div class="run-heading"><span class="run-label a">A · 原基线</span><h3>25mm / hold5</h3><span class="pill">未校准</span></div><video id="video-a" controls playsinline preload="metadata" aria-label="A原基线原生运行录像"></video><div id="a-facts" class="run-facts"></div><p>A长时间持续前移，到决策#42才首次下探。即使下探词出现，实际末端仍向上移动。</p><button class="text-button" data-jump="A:42">查看A首次下探 →</button></article>
+      <article class="run-panel"><div class="run-heading"><span class="run-label b">B · 空间幅度候选</span><h3>120mm / hold5</h3><span class="pill">未采纳</span></div><video id="video-b" controls playsinline preload="metadata" aria-label="B候选原生运行录像"></video><div id="b-facts" class="run-facts"></div><p>B更早下探，却也多次实际向上。决策#11在远离方块时闭合夹爪，随后没有释放。</p><button class="text-button" data-jump="B:11">查看B过早空闭合 →</button></article>
+    </div>
+    <div class="task-definition"><strong>到底怎样才算成功？</strong><p>任务原文是 <q lang="en">Grasp the cube and move it to the displayed target position.</q>：抓取方块，并把它搬到图中彩色坐标轴标记处。原生环境比较<strong>方块与目标位置的距离是否小于50mm</strong>。夹爪靠近目标、出现接触、教师输出 <code>DONE</code> 都不能自行宣布成功；合格示范还需要触觉验收。本次两组接触帧都是0。</p></div>
+  </section>
+
+  <section class="section explorer-section" id="explorer">
+    <div class="section-heading"><span class="section-number">03</span><div><h2>展开一次决策：它看见什么，做了什么？</h2><p>100次真实决策全部可查。界面中的“决策#00”是原记录ID；它对应第1次决策。</p></div></div>
+    <div class="explorer-toolbar">
+      <div class="segmented" role="group" aria-label="选择运行"><button class="active" id="choose-a" aria-pressed="true">A · 25mm</button><button id="choose-b" aria-pressed="false">B · 120mm</button></div>
+      <div class="decision-navigation"><button id="prev-decision" aria-label="上一决策">←</button><label for="decision-range">决策 <b id="decision-position">#00</b></label><input id="decision-range" type="range" min="0" max="49" value="0" aria-label="选择决策"><button id="next-decision" aria-label="下一决策">→</button></div>
+    </div>
+    <div class="quick-jumps"><span>关键时刻</span><button data-jump="A:0">A开局</button><button data-jump="A:5">A超时重试</button><button data-jump="A:42">A首次下探</button><button data-jump="B:10">B首次下探</button><button data-jump="B:11">B空闭合</button><button data-jump="B:49">B最后动作</button></div>
+    <div id="token-timeline" class="token-timeline" aria-label="50次动作决策序列"></div>
+    <div class="timeline-legend"><span><i class="swatch forward"></i>前移</span><span><i class="swatch down"></i>下探</span><span><i class="swatch grasp"></i>闭合</span><span><i class="swatch other"></i>其他动作</span><small>序列由模型实际输出构成，没有用正确词替换错误词。</small></div>
+    <div class="decision-title"><div><span id="decision-id" class="eyebrow"></span><h3 id="decision-token"></h3></div><div id="decision-meta" class="decision-meta"></div></div>
+    <div id="decision-note" class="decision-note"></div>
+
+    <div class="observations">
+      <figure><figcaption><b>场景图</b><span>640 × 360</span></figcaption><button class="image-open" aria-label="放大场景图"><img id="image-scene" alt="本决策真实教师输入的场景图" loading="lazy"></button></figure>
+      <figure><figcaption><b>腕部图</b><span>640 × 360</span></figcaption><button class="image-open" aria-label="放大腕部图"><img id="image-wrist" alt="本决策真实教师输入的腕部图" loading="lazy"></button></figure>
+      <figure class="tactile-figure"><figcaption><b>双指触觉拼图</b><span>384 × 576 · 上左指 / 下右指</span></figcaption><button class="image-open" aria-label="放大触觉拼图"><img id="image-tactile" alt="本决策真实教师输入的双指触觉拼图" loading="lazy"></button></figure>
+    </div>
+    <p class="caption">这些是实际HTTP请求中的PNG原字节，没有重新渲染或补画。三图采样在本动作执行前；第一决策来自reset后的初始观测，后续来自上一控制帧。<strong>触觉黑图表示无接触时有效字段归零，并非第三图漏发；本次尚未验证接触后的触觉决策。</strong></p>
+
+    <div class="decision-detail-grid">
+      <article class="context-panel">
+        <div class="panel-heading"><h4>模型输入与上下文原文</h4><span class="pill">实际messages</span></div>
+        <p class="compact">每次都是独立请求：一条固定system、一条当次user。请求中没有上轮assistant回答、完整聊天记录或精确坐标；不告诉模型本次步长与hold数值。服务端隐藏状态未知。</p>
+        <div class="history"><span>最近移动历史<br><small>最新在前</small></span><div id="history-tokens"></div></div>
+        <h5>user文字段 · 保留原文</h5><pre id="user-text"></pre>
+        <details><summary>展开完整固定system提示词原文与中文说明</summary><pre id="system-text"></pre><p>提示词说明了任务目标、三图顺序、机器人基座方向、固定朝下姿态、九个合法词，以及实际运动可能小于请求。它要求只返回一个词，没有要求解释原因。</p></details>
+        <details><summary>展开完整请求结构（图像长编码折叠）</summary><p class="compact">这里仅把PNG的长base64编码换成路径与哈希以便阅读。下方“完整请求原件”保留实际发送的JSON全部字节。</p><pre id="request-text"></pre></details>
+        <div class="raw-actions"><a id="request-link" download>完整请求原件</a><a id="inference-link" download>请求与等待收据</a></div>
+      </article>
+      <article class="execution-panel">
+        <div class="panel-heading"><h4>真实输出与实际执行</h4><span id="selected-token" class="token-output"></span></div>
+        <div id="execution-stats" class="execution-stats"></div>
+        <div id="movement-detail" class="movement-detail"></div>
+        <h5>HTTP发送与重试</h5><div id="http-attempts"></div>
+        <details><summary>展开已保存的响应回执原文</summary><p class="compact">下面是运行时保存的真实脱敏回执与输出token。完整HTTP响应正文当时没有保留，只有原响应SHA-256；本网页没有把回执重建成“原始响应全文”，也没有模型思维链。</p><pre id="response-text"></pre></details>
+        <details><summary>展开解释器固定目标与执行收据</summary><pre id="interpreter-text"></pre><pre id="finish-text"></pre></details>
+        <div class="raw-actions"><a id="finish-link" download>执行区间原件</a><a id="selected-link" download>token选择收据</a></div>
+      </article>
+    </div>
+
+    <div class="execution-playback">
+      <div class="playback-heading"><h4>看这一个词实际落地的5帧</h4><div><button class="button secondary small" id="play-decision">播放本动作</button><label><input id="follow-video" type="checkbox"> 随视频切换决策</label></div></div>
+      <div class="playback-grid"><video id="decision-video" controls playsinline preload="metadata" aria-label="所选决策的原生视频"></video><div><p class="compact">控制点（TCP）是解释器跟踪的夹爪末端位置。下方坐标和7维动作来自审计记录，<strong>模型没有收到这些数值</strong>。动作向量的前三维控制平移，中间三维控制姿态，最后一维控制夹爪。</p><div class="frame-control"><button id="prev-frame" aria-label="上一控制帧">←</button><label for="frame-range">控制帧 <b id="frame-number"></b></label><input id="frame-range" type="range" min="0" max="249" value="0" aria-label="逐帧查看"><button id="next-frame" aria-label="下一控制帧">→</button></div><div id="frame-detail"></div></div></div>
+      <details><summary>本动作区间的全部连续动作与控制点记录</summary><div class="table-scroll"><table class="frame-table"><thead><tr><th>帧索引</th><th>时间(s)</th><th>原生7维动作（实际提交值）</th><th>控制点XYZ(m，基座)</th><th>双指接触</th></tr></thead><tbody id="frame-rows"></tbody></table></div></details>
+    </div>
+  </section>
+
+  <section class="section" id="mapping">
+    <div class="section-heading"><span class="section-number">04</span><div><h2>一个动作词，怎样变成机械臂的运动？</h2><p>“向前25mm”设定的是目标，不是承诺每次都能走到25mm。</p></div></div>
+    <div class="mapping-intro">
+      <div><h3>先定目标，再连续纠偏</h3><ol class="plain-steps"><li>读取当前控制点。在机器人基座坐标里，沿所选方向加25mm（A）或120mm（B），固定这个位置目标。</li><li>姿态目标始终是夹爪朝下：四元数 <code>xyzw=[1,0,0,0]</code>。教师不能通过九个词选择新的旋转方向。</li><li>每个控制帧重新算当前位置与固定目标的误差。平移误差逐轴限幅，旋转误差逐轴限制到±0.08弧度。</li><li>六个误差分量除以控制器的0.5缩放，再附上夹爪±1，生成7维控制。原生逆运动学和机器人动力学决定实际走了多远。</li><li>执行5帧后结束这个词，再询问教师。新目标不是每帧不断向前叠加。</li></ol></div>
+      <div class="mapping-example"><span class="eyebrow">仅用于说明映射 · 不是新增实验</span><h3><code>MV_FWD</code> 的第一帧</h3><div class="formula">A：目标偏移 +0.025m<br>÷ 控制器scale 0.5<br><strong>输入的X分量 +0.05</strong></div><div class="formula">B：目标偏移 +0.120m<br>÷ 控制器scale 0.5<br><strong>输入的X分量 +0.24</strong></div><p>下一帧用剩余误差重新计算，因此后续数值可以变小，其他轴与姿态分量也会出现纠偏。<strong>±0.05/±0.24是控制命令值，不是实际位移。</strong></p></div>
+    </div>
+    <div class="table-scroll"><table class="mapping-table"><thead><tr><th>合法动作词</th><th>基座方向 / 含义</th><th>位置目标</th><th>夹爪与持续时间</th><th>本次A / B次数</th></tr></thead><tbody id="mapping-rows"></tbody></table></div>
+    <div class="emphasis-note"><strong>闭合夹爪，也仍然会控制手臂。</strong><p><code>GRASP</code>保持决策开始时的位置目标，夹爪目标改成−1，并继续朝下姿态纠偏5帧。<code>RELEASE</code>同理、夹爪目标为+1。后续移动词沿用上次夹爪目标，所以B空闭合后一直保持闭合指令。<code>DONE</code>执行0帧并停止，但不修改原生成功判定。</p></div>
+  </section>
+
+  <section class="section" id="analysis">
+    <div class="section-heading"><span class="section-number">05</span><div><h2>怎样分析这两次结果？</h2><p>先写假设与门槛，再跑候选，再按真实结果决定是否采用。失败也必须留下可检查的结论。</p></div></div>
+    <div class="diagnosis-line"><div><b>观察A</b><p>前移响应偏小、末端仍高，没有触觉接触。</p></div><div><b>事前假设</b><p>只联动提高步长与平移限幅，hold5不变，预计前向位移中位至少翻倍。</p></div><div><b>运行B</b><p>实际开局/目标、教师、提示、视角、原生规则保持可比较。</p></div><div><b>按证据选择</b><p>前向指标达标，整体控制仍有问题，拒绝采纳120mm／hold5。</p></div></div>
+    <details><summary>事前门槛、草稿修正与对照限制</summary><p>A的全程前向投影中位8.687mm，事前门槛取其2倍，即17.374mm。正式执行依据是B启动前保存的诊断v2：v1草稿曾把跨轴向量做错广播计算，并有过时的动作计数；这些错误在B启动前纠正，v1原字节仍保留。步长和限幅联动变化，不能称为只改变一个独立参数。</p><p>A/B实际开局16字段相同；教师型号、协议、提示、采样、视角、hold5和原生规则一致。父入口许可检查与发布代码修复有版本差别，实际native_run和控制源码相同。两次图片哈希不同，闭环动作分布也不同；没有剩余额度做不变方案重复运行，因此结论只限于这对开发案例。</p></details>
+    <div class="analysis-grid"><div><h3>前移增加，方向问题仍在</h3><div id="metric-comparison"></div><p class="compact">投影表示“实际运动沿着请求方向走了多少”。负值就是走反了；跨轴偏移表示同时偏向其他方向。全程统计的模型动作和状态分布不同，不能据此宣布唯一根因或统计提升。</p></div><div class="chart-panel"><h3>实际控制点高度（基座Z）</h3><div id="height-chart"></div><div class="chart-legend"><span><i class="swatch forward"></i>A</span><span><i class="swatch down"></i>B</span></div><p class="caption">按原生逐帧位置绘制。这里是基座坐标的TCP高度，不是方块高度，也不是模型输入。</p></div></div>
+    <div class="cause-list">
+      <article><span class="evidence-label fact">已有直接证据</span><h3>动作词的实际效果，达不到可靠控制</h3><p>A的3次下探全部反向；B的18次下探中17次反向。B前移和下探时跨轴偏移也更大。因此设定目标与真实末端运动之间存在问题，不能只靠加大位移来解决。</p><button class="text-button" data-jump="B:10">看B第一次下探的实际位移 →</button></article>
+      <article><span class="evidence-label fact">已有直接证据</span><h3>教师做出了过早的空闭合选择</h3><p>B的<code>GRASP</code>在距方块675.9mm、高出方块671.4mm时执行，接触和力都为0。随后没有<code>RELEASE</code>。这证明这个选择不构成抓取；无法从单token知道模型为何这样选。</p><button class="text-button" data-jump="B:11">对照输入图与闭合记录 →</button></article>
+      <article><span class="evidence-label hypothesis">有支持，尚未单独验证</span><h3>姿态纠偏、逆运动学和短执行时长可能互相影响</h3><p>解释器在平移时也追踪固定朝下姿态，每次只有0.1秒。姿态残差、关节速度/可达性、IK求解与动态跟踪都可能影响实际方向。现有证据能指出控制表现异常，尚不能在这些机制之间确定根因。</p></article>
+      <article><span class="evidence-label hypothesis">可能，尚无识别验证</span><h3>图像理解与空间判断也可能不够稳定</h3><p>场景中的方块较小，腕部图的主要内容是夹爪和桌面。模型需要从图像判断空间、方向和接近程度。空闭合支持“策略选择有问题”，但不能直接断言它把什么看错了，或认为它一定理解了目标。</p></article>
+      <article><span class="evidence-label limit">当前无法区分</span><h3>100次教师选择与控制误差是在闭环里互相影响的</h3><p>控制走偏后，模型收到的下一张图也不同；B实际选择的词序列因此不同。没有额外额度做同动作序列回放、固定模型重复运行或逐机制消融。本次是单开局诊断案例，不是成功率评测。</p></article>
+    </div>
+    <div class="bounded-result"><strong>为什么“正式诊断完成”，却仍然没有“合格示范”？</strong><p>诊断交付的是可比较的运行、事前假设、真实指标和事后选择，本次这些证据齐备。合格示范要求机器人真正完成任务并通过触觉门槛，本次两次都没有做到。两项交付分别验收，不能相互替代。</p><p>历史120mm／hold1成功属于特权几何脚本研究参考。它与本次在线图像教师的输入、控制节奏不同；研究已封存，结果和预算没有合并进来。</p></div>
+  </section>
+
+  <section class="section" id="evidence">
+    <div class="section-heading"><span class="section-number">06</span><div><h2>预算、数据去向与可查原件</h2><p>网页是原件的本地说明与副本。不会向教师发送请求，不会启动仿真，也不改变历史记录。</p></div></div>
+    <div class="budget-grid"><div><span>原生启动</span><strong>6 / 6</strong><p>历史4次 + 本次2次<br>启动上限已耗尽，阶段关闭。</p></div><div><span>推理请求</span><strong>103 / 300</strong><p>预检1 + A52 + B50<br>A两次重试也计入请求。</p></div><div><span>累计运行墙钟</span><strong>70.16 / 120<span>分钟</span></strong><p>历史1848.098秒 + 恢复连续2361.471秒；包含HTTP等待/重试与运行间诊断。</p></div></div>
+    <p class="muted">剩余197次推理和墙钟余量不构成继续运行授权。历史预算未重置，研究预算未混用。网页制作、原件读取和验证没有新增推理或原生启动。</p>
+    <div class="data-outcome"><div><h3>保留100条诊断样本</h3><p>没有删除失败轨迹，也没有把错误动作替换成“正确答案”。空闭合通过独立错误收据标记，原token、图像、执行原件保持原样。</p></div><div><h3>训练视图为0条</h3><p>两次都未成功且无接触，因此没有正示范资格。DataEngine的目录、曲线、媒体分段读取和500帧state/action对照均通过，但没有训练TacJev或发布学生评测血缘。</p></div></div>
+    <div class="evidence-links" id="evidence-links"></div>
+    <details class="validation-detail"><summary>代码验证与证据保留边界</summary><p>134项相关回归、7文件类型检查通过；独立原件核验35项通过。全仓CPU一次为2663项通过，仍有3项历史失败和1项环境导入错误。Standards/Spec审查问题修复后，无剩余发现。</p><p>网页只包含本次正式在线A/B证据副本、必要源代码与审计记录。完整请求包含原PNG；响应保留实际token、脱敏回执及原响应SHA，未保存的原始HTTP全文无法补回。没有隐藏思维链，也没有新增实验。大体积逐帧NPZ原件未全部重复打包；网页保留250帧的审计字段和动作明细，复制文件的源/副本SHA见清单。</p><p>当前实现分支：<code>bingsheng</code>；本次运行收尾提交：<code>9dfc1b13</code>。这说明证据版本，不表示本网页会控制机器人。</p></details>
+    <noscript><p class="error-note">本地证据浏览需要启用JavaScript。所有视频、原文和数据文件也可直接从本文件夹打开。</p></noscript>
+    <p id="load-status" class="caption" role="status">正在加载本地证据…</p>
+  </section>
+</main>
+<footer><span>TacHarness · 本地证据说明</span><span>日期按 Asia/Shanghai · 2026-10-12</span><a href="README.md">文件夹使用说明</a></footer>
+<dialog id="image-dialog"><button id="close-image" aria-label="关闭大图">关闭 ×</button><img id="large-image" alt="放大的真实模型输入图像"><p id="large-image-caption"></p></dialog>
+</body>
+</html>

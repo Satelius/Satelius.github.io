@@ -1,0 +1,139 @@
+........................................................................ [  2%]
+........................................................................ [  5%]
+........................................................................ [  8%]
+........................................................................ [ 10%]
+........................................................................ [ 13%]
+........................................................................ [ 16%]
+........................................................................ [ 18%]
+........................................................................ [ 21%]
+........................................................................ [ 24%]
+........................................................................ [ 26%]
+..........................s............................................. [ 29%]
+........................................................................ [ 32%]
+........................................................................ [ 34%]
+........................................................................ [ 37%]
+........................................................................ [ 40%]
+........................................................................ [ 42%]
+..........................................................s............. [ 45%]
+..............................s...................................F..... [ 48%]
+........................................................................ [ 50%]
+........................................................................ [ 53%]
+........................................................................ [ 56%]
+...................s.................................................... [ 59%]
+.................................................s...................... [ 61%]
+sss..........s.......................................................... [ 64%]
+.........................s...........s.ss.s................s............ [ 67%]
+......................................................................ss [ 69%]
+........................................................................ [ 72%]
+........................................................................ [ 75%]
+........................................................................ [ 77%]
+......................................................s................. [ 80%]
+...................................F.................................... [ 83%]
+........................................................................ [ 85%]
+........................................................................ [ 88%]
+..............................F......................................... [ 91%]
+........................................................................ [ 93%]
+........................................................................ [ 96%]
+........................................................................ [ 99%]
+....................                                                     [100%]
+==================================== ERRORS ====================================
+______________ ERROR collecting tests/test_isaac_localhost_env.py ______________
+ImportError while importing test module '/home/jingxiang/bingsheng/TacHarness/tests/test_isaac_localhost_env.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/test_isaac_localhost_env.py:17: in <module>
+    from lerobot.envs.configs import IsaacLocalhostEnv
+E   ImportError: cannot import name 'IsaacLocalhostEnv' from 'lerobot.envs.configs' (/home/jingxiang/bingsheng/TacHarness/.venv-codex-replay/lib/python3.12/site-packages/lerobot/envs/configs.py)
+=================================== FAILURES ===================================
+______ test_mixer_builder_marker_is_noncolliding_and_filter_is_real_mesh _______
+
+    def test_mixer_builder_marker_is_noncolliding_and_filter_is_real_mesh():
+        builder = (ROOT / "tools/build_robosyn_mixer_operating_physics_usd.py").read_text(
+            encoding="utf-8"
+        )
+        replay_source = (
+            ROOT / "scripts/agentic/replay_robosynchallenge_mixer_operating_isaac.py"
+        ).read_text(encoding="utf-8")
+    
+        assert '"collision_enabled": False' in builder
+        assert '"button_region_collision_disabled": not region.HasAPI' in builder
+        assert "CollisionAPI.Apply(region_prim)" not in builder
+        assert 'scene["mixer_collision_path"], "robosyn_mixer_mesh_contacts"' in replay_source
+        assert 'scene["button_region_path"], "robosyn_mixer_button_contacts"' not in replay_source
+        assert "_button_region_surface_points" not in replay_source
+        assert "_geometry_surface_points" not in replay_source
+>       assert "particle_points_world=left_tactile_points" in replay_source
+E       assert 'particle_points_world=left_tactile_points' in '#!/usr/bin/env python3\n"""Physically replay one pinned RoboSyn mixer_operating episode on TacUMI.\n\nThis runner int...t None:\n            app.close()\n    return exit_code\n\n\nif __name__ == "__main__":\n    raise SystemExit(main())\n'
+
+tests/agentic/test_robosynchallenge_mixer_physical_replay.py:595: AssertionError
+______ test_every_versioned_top_level_directory_has_one_documented_owner _______
+
+    def test_every_versioned_top_level_directory_has_one_documented_owner() -> None:
+        result = subprocess.run(
+            [
+                "git",
+                "ls-files",
+                "--cached",
+                "--others",
+                "--exclude-standard",
+                "-z",
+            ],
+            cwd=ROOT,
+            text=True,
+            stdout=subprocess.PIPE,
+            check=True,
+        )
+        actual = {
+            Path(relative).parts[0]
+            for relative in result.stdout.split("\0")
+            if relative
+            if len(Path(relative).parts) > 1
+            if (ROOT / Path(relative).parts[0]).is_dir()
+        }
+>       assert actual == TOP_LEVEL_DIRECTORIES
+E       AssertionError: assert {'.agents', '..., 'apps', ...} == {'.agents', '...configs', ...}
+E         
+E         Extra items in the left set:
+E         'TacHarness rollout参考_files'
+E         'GPT-6 Rollout 全流程_files'
+E         'repo-docs'
+E         '.scratch'
+E         Use -v to get more diff
+
+tests/test_monorepo_layout.py:147: AssertionError
+_________ test_tactile_depth_uses_a_separate_temporary_visibility_pass _________
+
+    def test_tactile_depth_uses_a_separate_temporary_visibility_pass() -> None:
+        rollout_source = ROLLOUT.read_text(encoding="utf-8")
+        runtime_source = TACTILE_RUNTIME.read_text(encoding="utf-8")
+    
+        assert "with self.runtime.hide_sensor_geometry_for_depth():" in rollout_source
+>       assert "def hide_sensor_geometry_for_depth(self):" in runtime_source
+E       assert 'def hide_sensor_geometry_for_depth(self):' in 'from __future__ import annotations\n\nfrom contextlib import contextmanager\nimport logging\nimport os\nfrom pathlib ...le(values, 50.0)),\n        "p99": float(np.percentile(values, 99.0)),\n        "max": float(np.max(values)),\n    }\n'
+
+tests/test_tabero_rollout_hook.py:220: AssertionError
+=============================== warnings summary ===============================
+.venv-codex-replay/lib/python3.12/site-packages/fastapi/testclient.py:1
+  /home/jingxiang/bingsheng/TacHarness/.venv-codex-replay/lib/python3.12/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+.venv-codex-replay/lib/python3.12/site-packages/starlette/testclient.py:53
+  /home/jingxiang/bingsheng/TacHarness/.venv-codex-replay/lib/python3.12/site-packages/starlette/testclient.py:53: DeprecationWarning: The anyio.abc.BlockingPortal alias is deprecated, use anyio.from_thread.BlockingPortal instead.
+    _PortalFactoryType = Callable[[], AbstractContextManager[anyio.abc.BlockingPortal]]
+
+tests/agentic/test_agentic_flywheel_store.py::test_unclean_process_exit_recovers_committed_activation
+tests/tabero/unit/test_training_evaluation.py::test_demo_dataset_supports_dataloader_workers
+tests/tabero/unit/test_training_evaluation.py::test_demo_dataset_supports_dataloader_workers
+  /usr/lib/python3.12/multiprocessing/popen_fork.py:66: DeprecationWarning: This process (pid=3789467) is multi-threaded, use of fork() may lead to deadlocks in the child.
+    self.pid = os.fork()
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/agentic/test_robosynchallenge_mixer_physical_replay.py::test_mixer_builder_marker_is_noncolliding_and_filter_is_real_mesh
+FAILED tests/test_monorepo_layout.py::test_every_versioned_top_level_directory_has_one_documented_owner
+FAILED tests/test_tabero_rollout_hook.py::test_tactile_depth_uses_a_separate_temporary_visibility_pass
+ERROR tests/test_isaac_localhost_env.py
+3 failed, 2663 passed, 22 skipped, 7 deselected, 5 warnings, 1 error in 122.07s (0:02:02)

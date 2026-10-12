@@ -1,0 +1,89 @@
+{
+  "schema": "tacharness.arena_object_goal.v1",
+  "quaternion_order": "xyzw",
+  "command_frame": "robot_root",
+  "command_pose_b": [
+    [
+      0.5975437760353088,
+      0.16293340921401978,
+      0.4009198546409607,
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "robot_root_position_w": [
+    [
+      9.313225746154785e-09,
+      5.820766091346741e-10,
+      -1.862645149230957e-08
+    ]
+  ],
+  "robot_root_quaternion_w_xyzw": [
+    [
+      -1.489094958451176e-10,
+      -8.78133399329073e-10,
+      -8.47253794900027e-11,
+      1.0
+    ]
+  ],
+  "goal_pose_w_xyzw": [
+    [
+      0.5975437760353088,
+      0.16293340921401978,
+      0.4009198248386383,
+      -1.489094958451176e-10,
+      -8.78133399329073e-10,
+      -8.47253794900027e-11,
+      1.0
+    ]
+  ],
+  "previous_goal_pose_w_xyzw": [
+    [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  ],
+  "time_left_s": [
+    5.0
+  ],
+  "command_counter": [
+    1
+  ],
+  "physics_time_s": 0.0,
+  "physics_step_count": 0,
+  "marker_updated": true,
+  "marker_rgb_visibility": "not_verified",
+  "state_guard": {
+    "schema": "tacharness.arena_state_freeze.v1",
+    "unchanged": true,
+    "checked_fields": 16,
+    "tolerance": 1e-07,
+    "max_abs_delta": 0.0,
+    "changed_fields": [],
+    "field_max_abs_delta": {
+      "env._sim_step_counter": 0.0,
+      "env.common_step_counter": 0.0,
+      "env.episode_length_buf": 0.0,
+      "object_pose.command": 0.0,
+      "object_pose.command_counter": 0.0,
+      "object_pose.pose_command_b": 0.0,
+      "object_pose.pose_command_w": 0.0,
+      "object_pose.time_left": 0.0,
+      "scene.articulation.robot.joint_position": 0.0,
+      "scene.articulation.robot.joint_velocity": 0.0,
+      "scene.articulation.robot.root_pose": 0.0,
+      "scene.articulation.robot.root_velocity": 0.0,
+      "scene.rigid_object.dex_cube.root_pose": 0.0,
+      "scene.rigid_object.dex_cube.root_velocity": 0.0,
+      "sim.physics_step_count": 0.0,
+      "sim.physics_time_s": 0.0
+    }
+  }
+}

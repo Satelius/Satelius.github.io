@@ -1,0 +1,27 @@
+{
+  "decision_index": 43,
+  "token": "MV_DOWN",
+  "execute": true,
+  "done": false,
+  "hold_frames": 5,
+  "initial_tcp_position_base_m": [
+    0.4322248697280884,
+    -0.050584577023983,
+    0.7034469842910767
+  ],
+  "target_position_base_m": [
+    0.4322248697280884,
+    -0.050584577023983,
+    0.6784470081329346
+  ],
+  "target_quaternion_xyzw": [
+    1.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "gripper_target": 1.0,
+  "interpreter_version": "arena-online-step0.025-clamp0.025-hold5-v1",
+  "interpreter_config_sha256": "0ea37cc04b5462392ad4edd5ec2c8ea899fb7f2b886a9fc99f6417af56b2fbb5",
+  "calibration_status": "uncalibrated"
+}

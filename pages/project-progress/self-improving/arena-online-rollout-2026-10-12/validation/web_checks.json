@@ -1,0 +1,85 @@
+{
+  "schema": "tacharness.rollout-local-web-checks.v1",
+  "created_at": "2026-10-12T05:44:00.997113+00:00",
+  "passed": true,
+  "browser": "fresh headless Google Chrome, no existing profile",
+  "in_app_browser": "unavailable; browser runtime discovery returned no browser",
+  "page_protocol": "file://; no local web server required",
+  "checks": {
+    "file_protocol_load": true,
+    "all_three_video_metadata_load": [
+      {
+        "id": "video-a",
+        "duration": 5,
+        "width": 960,
+        "height": 930
+      },
+      {
+        "id": "video-b",
+        "duration": 5,
+        "width": 960,
+        "height": 930
+      },
+      {
+        "id": "decision-video",
+        "duration": 5,
+        "width": 960,
+        "height": 930
+      }
+    ],
+    "all_100_rendered_decisions_match_original_inputs_outputs_and_intervals": 100,
+    "retry_two_sends_one_execution_interval": true,
+    "actual_three_input_images_load": [
+      [
+        640,
+        360
+      ],
+      [
+        640,
+        360
+      ],
+      [
+        384,
+        576
+      ]
+    ],
+    "original_image_zoom": true,
+    "five_frame_clip_stops_before_next_decision": {
+      "run": "B",
+      "decision": 11,
+      "current_time_s": 1.198,
+      "interval_s": [
+        1.1,
+        1.2
+      ]
+    },
+    "grasp_excluded_from_movement_history_and_gripper_persists": true,
+    "terminal_frame_249_uses_pre_reset_trajectory": true,
+    "frame_step_navigation": true,
+    "video_follow_selects_owning_decision": true,
+    "nine_token_mapping_and_two_original_tcp_curves": true,
+    "responsive_no_document_overflow": [
+      390,
+      768,
+      1440
+    ],
+    "browser_javascript_errors": [],
+    "page_requests_outside_local_bundle": []
+  },
+  "evidence_review": {
+    "file_hashes": 1324,
+    "actual_request_pngs": 300,
+    "original_contexts": 100,
+    "control_frames": 500,
+    "decision_original_links": 902,
+    "passed": true
+  },
+  "new_teacher_api_requests": 0,
+  "new_native_starts": 0,
+  "screenshots": [
+    "validation/screenshots/desktop-empty-grasp.png",
+    "validation/screenshots/desktop-overview.png",
+    "validation/screenshots/mobile-decision.png",
+    "validation/screenshots/mobile-overview.png"
+  ]
+}

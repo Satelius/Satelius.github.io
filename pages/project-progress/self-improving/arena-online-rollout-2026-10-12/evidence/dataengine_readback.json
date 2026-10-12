@@ -1,0 +1,192 @@
+{
+  "schema": "tacharness.tacjev_online_dataengine_readback.v1",
+  "created_at": "2026-10-12T02:41:09.225629+00:00",
+  "status": "passed",
+  "scope": "actual_v2_online_collection_backend_and_local_read_only_http",
+  "dataset_manifest": "outputs/datasets/unified/tacjev-online-first-20261012T014737Z-v2/manifest.json",
+  "dataset_manifest_sha256": "de6d5e9de8592bbd022270d0b3339f60acf39a7cf4538358fe0d127667b3a049",
+  "dataset_catalog": "outputs/datasets/unified/tacjev-online-first-20261012T014737Z-v2/catalog.json",
+  "dataset_catalog_sha256": "8752a005fdd3cac9f0bef7ae7ec4e046bbc7bf913b189f0a89014ef83398603b",
+  "dataset_canonical": "outputs/datasets/unified/tacjev-online-first-20261012T014737Z-v2/canonical.json",
+  "dataset_canonical_sha256": "ad2de66632722397d3ab1bded25e8e88b76a482015a2988ddb3fce37740355e0",
+  "backend_canonical_version": "02efe290bd8f06ea84c1b833",
+  "backend_legacy_version": "24d9265844afeb153d08a9a6",
+  "global_catalog_lineage_validation": {
+    "schema": "tacharness.replay.lineage_validation.v1",
+    "status": "valid",
+    "valid": true,
+    "sources": [
+      "outputs/datasets/unified/custom-codex-replay/catalog.json"
+    ],
+    "record_count": 1,
+    "identifier_count": 4,
+    "checked_path_count": 5,
+    "identifiers": [
+      {
+        "link": "dataset",
+        "identifier": "sha256:cc6b9ea0195ce578c04a1c03a376821ae81e2d234b1cde08349419c374b7fe0a"
+      },
+      {
+        "link": "checkpoint",
+        "identifier": "sha256:fe10bb387ff14b0af94538cf8bdcc26d7ee7c732652e1045e85dc60191bce4fc"
+      },
+      {
+        "link": "evaluation",
+        "identifier": "codex-replay-fixture-eval"
+      },
+      {
+        "link": "replay",
+        "identifier": "codex-replay-fixture-replay"
+      }
+    ],
+    "checked_paths": [
+      {
+        "record_index": 0,
+        "link": "dataset",
+        "field": "path",
+        "path": "outputs/datasets/lerobot_v3/custom/codex-replay-fixture",
+        "kind": "directory",
+        "size_bytes": 4096
+      },
+      {
+        "record_index": 0,
+        "link": "checkpoint",
+        "field": "checkpoint_path",
+        "path": "outputs/replays/custom/codex-replay-fixture-policy.json",
+        "kind": "file",
+        "size_bytes": 68
+      },
+      {
+        "record_index": 0,
+        "link": "evaluation",
+        "field": "result_path",
+        "path": "outputs/replays/custom/codex-replay-fixture-eval.json",
+        "kind": "file",
+        "size_bytes": 99
+      },
+      {
+        "record_index": 0,
+        "link": "replay",
+        "field": "video_path",
+        "path": "outputs/replays/custom/codex-replay-fixture.mp4",
+        "kind": "file",
+        "size_bytes": 5028
+      },
+      {
+        "record_index": 0,
+        "link": "replay",
+        "field": "report_path",
+        "path": "outputs/replays/custom/codex-replay-fixture-report.json",
+        "kind": "file",
+        "size_bytes": 198
+      }
+    ],
+    "errors": []
+  },
+  "new_collection_lineage_status": "not_published; online teacher collection only, no student checkpoint/evaluation chain",
+  "diagnostic_episodes": 2,
+  "positive_episodes": 0,
+  "sample_count": 100,
+  "training_sample_count": 0,
+  "known_wrong_samples": [
+    {
+      "episode_id": "attempt-b",
+      "decision_id": "decision_000011",
+      "token": "GRASP",
+      "train_action_mask": false
+    }
+  ],
+  "episodes": [
+    {
+      "episode_id": "attempt-a",
+      "entry_id": "online-attempt-a",
+      "status": "passed",
+      "legacy_catalog_entry_present": true,
+      "canonical_catalog_entry_present": true,
+      "native_frame_count": 250,
+      "causal_sample_count": 50,
+      "training_sample_count": 0,
+      "known_wrong_samples": 0,
+      "media_file": "outputs/datasets/unified/tacjev-online-first-20261012T014737Z-v2/attempt-a/replay.mp4",
+      "media_sha256": "3d1a2ab8429e5f4b56285d5d23aaae713596438cd781016b9a6754283e974588",
+      "series_file": "outputs/datasets/unified/tacjev-online-first-20261012T014737Z-v2/attempt-a/series.json",
+      "series_sha256": "ec8628466b0a3e4c358cd9b3a361187bdc9893639ba9fd92eb52ea985d8bf208",
+      "video_decoded_frames": 250,
+      "series_timestamps": 250,
+      "max_pts_error_s": 2.2888183615066282e-07,
+      "native_timestamp_state_action_match": true,
+      "catalog_file_allowlist_verified": true
+    },
+    {
+      "episode_id": "attempt-b",
+      "entry_id": "online-attempt-b",
+      "status": "passed",
+      "legacy_catalog_entry_present": true,
+      "canonical_catalog_entry_present": true,
+      "native_frame_count": 250,
+      "causal_sample_count": 50,
+      "training_sample_count": 0,
+      "known_wrong_samples": 1,
+      "media_file": "outputs/datasets/unified/tacjev-online-first-20261012T014737Z-v2/attempt-b/replay.mp4",
+      "media_sha256": "b9185f82680f92c15806d74a5042a6d055bf1f89fce310390cec0412652b1ce7",
+      "series_file": "outputs/datasets/unified/tacjev-online-first-20261012T014737Z-v2/attempt-b/series.json",
+      "series_sha256": "bddef85d43682ec13e36befa19ce54369aa294f9cb1e3a2cbea61804ba99364a",
+      "video_decoded_frames": 250,
+      "series_timestamps": 250,
+      "max_pts_error_s": 2.2888183615066282e-07,
+      "native_timestamp_state_action_match": true,
+      "catalog_file_allowlist_verified": true
+    }
+  ],
+  "http_readback": [
+    {
+      "route": "/api/catalog",
+      "http_status": 200,
+      "expected_entries_present": true
+    },
+    {
+      "route": "/api/catalog/canonical",
+      "http_status": 200,
+      "expected_entries_present": true
+    },
+    {
+      "route": "/api/file",
+      "kind": "portable_series",
+      "episode_id": "attempt-a",
+      "http_status": 200,
+      "response_sha256": "ec8628466b0a3e4c358cd9b3a361187bdc9893639ba9fd92eb52ea985d8bf208",
+      "raw_file_hash_match": true
+    },
+    {
+      "route": "/api/file",
+      "kind": "media_byte_range",
+      "episode_id": "attempt-a",
+      "http_status": 206,
+      "returned_bytes": 64,
+      "content_range": "bytes 0-63/445098",
+      "raw_file_bytes_match": true
+    },
+    {
+      "route": "/api/file",
+      "kind": "portable_series",
+      "episode_id": "attempt-b",
+      "http_status": 200,
+      "response_sha256": "bddef85d43682ec13e36befa19ce54369aa294f9cb1e3a2cbea61804ba99364a",
+      "raw_file_hash_match": true
+    },
+    {
+      "route": "/api/file",
+      "kind": "media_byte_range",
+      "episode_id": "attempt-b",
+      "http_status": 206,
+      "returned_bytes": 64,
+      "content_range": "bytes 0-63/987350",
+      "raw_file_bytes_match": true
+    }
+  ],
+  "production_budget_modified": false,
+  "historical_artifacts_modified": false,
+  "dataset_modified": false,
+  "external_requests": 0,
+  "native_simulator_starts": 0
+}

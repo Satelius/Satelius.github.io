@@ -1,0 +1,175 @@
+{
+  "schema": "tacharness.arena.online-independent-verification.v1",
+  "created_at": "2026-10-12T02:42:29.186554+00:00",
+  "passed": true,
+  "checks": {
+    "attempt-a_full_250_frame_native_non_success": true,
+    "attempt-a_zero_contact": true,
+    "attempt-a_native_action_clock_accounting": true,
+    "attempt-a_all_native_video_frames_decode": true,
+    "attempt-a_causal_frozen_teacher_records": true,
+    "attempt-a_teacher_request_accounting": true,
+    "attempt-a_visible_request_contract": true,
+    "attempt-b_full_250_frame_native_non_success": true,
+    "attempt-b_zero_contact": true,
+    "attempt-b_native_action_clock_accounting": true,
+    "attempt-b_all_native_video_frames_decode": true,
+    "attempt-b_causal_frozen_teacher_records": true,
+    "attempt-b_teacher_request_accounting": true,
+    "attempt-b_visible_request_contract": true,
+    "actual_initial_scene_goal_clocks_exactly_match": true,
+    "only_coupled_translation_parameters_and_version_changed": true,
+    "declared_frozen_run_parameters_match": true,
+    "actual_system_prompt_identical": true,
+    "actual_camera_embodiment_profile_identical": true,
+    "native_run_archived_AST_identical": true,
+    "archived_source_receipt_hashes_match": true,
+    "controlling_source_files_identical": true,
+    "diagnosis_correction_preserved_and_before_B_reservation": true,
+    "corrected_baseline_metrics_match_original_records": true,
+    "predeclared_threshold_is_two_times_A_full_forward_median": true,
+    "A_common_prefix_metrics_match_comparison": true,
+    "B_common_prefix_metrics_match_comparison": true,
+    "B_down_direction_reversal_17_of_18": true,
+    "candidate_rejected_and_no_positive_claim": true,
+    "closed_six_start_budget_no_reset": true,
+    "103_teacher_requests_accounted": true,
+    "closed_wall_4209_569184948925_seconds": true,
+    "three_historical_budget_hashes_preserved": true,
+    "known_premature_empty_close_actual_evidence": true,
+    "formal_pair_flag_supported_by_independent_conditions": true
+  },
+  "actual_metrics": {
+    "A": {
+      "MV_FWD": {
+        "count": 47,
+        "axis_median_m": 0.008687227964401245,
+        "cross_median_m": 0.0023431603592132116,
+        "cross_max_m": 0.013325872690913764,
+        "reversed_count": 1
+      },
+      "MV_DOWN": {
+        "count": 3,
+        "axis_median_m": -0.005638718605041504,
+        "cross_median_m": 0.008611675101449057,
+        "cross_max_m": 0.014902850924752112,
+        "reversed_count": 3
+      }
+    },
+    "B": {
+      "MV_FWD": {
+        "count": 30,
+        "axis_median_m": 0.03533446416258812,
+        "cross_median_m": 0.027537108047335376,
+        "cross_max_m": 0.10426799641129349,
+        "reversed_count": 5
+      },
+      "MV_DOWN": {
+        "count": 18,
+        "axis_median_m": -0.038677722215652466,
+        "cross_median_m": 0.04267826388852859,
+        "cross_max_m": 0.08298286449046896,
+        "reversed_count": 17
+      },
+      "MV_LEFT": {
+        "count": 1,
+        "axis_median_m": 0.02032988704741001,
+        "cross_median_m": 0.028215444097642286,
+        "cross_max_m": 0.028215444097642286,
+        "reversed_count": 0
+      }
+    },
+    "common_forward_prefix": {
+      "A": {
+        "count": 10,
+        "axis_median_m": 0.003516416996717453,
+        "cross_median_m": 0.0009273323163107108,
+        "cross_max_m": 0.002502088479139882
+      },
+      "B": {
+        "count": 10,
+        "axis_median_m": 0.040451548993587494,
+        "cross_median_m": 0.010311137717852595,
+        "cross_max_m": 0.04426220666048353
+      }
+    },
+    "total_decodable_native_video_frames": 500,
+    "initial_state_field_max_abs_delta": {
+      "scene.articulation.robot.root_pose": 0.0,
+      "scene.articulation.robot.root_velocity": 0.0,
+      "scene.articulation.robot.joint_position": 0.0,
+      "scene.articulation.robot.joint_velocity": 0.0,
+      "scene.rigid_object.dex_cube.root_pose": 0.0,
+      "scene.rigid_object.dex_cube.root_velocity": 0.0,
+      "env.episode_length_buf": 0.0,
+      "env.common_step_counter": 0.0,
+      "env._sim_step_counter": 0.0,
+      "sim.physics_step_count": 0.0,
+      "sim.physics_time_s": 0.0,
+      "object_pose.command": 0.0,
+      "object_pose.pose_command_b": 0.0,
+      "object_pose.pose_command_w": 0.0,
+      "object_pose.time_left": 0.0,
+      "object_pose.command_counter": 0.0
+    },
+    "changed_interpreter_fields": [
+      "version",
+      "translation_step_m",
+      "translation_clamp_m"
+    ],
+    "changed_archived_files": [
+      "scripts/agentic/run_tacjev_online.py",
+      "src/tacharness/isaaclab/tacjev_online_dataset.py"
+    ],
+    "empty_close_distance_m": 0.6759093716257768,
+    "empty_close_vertical_gap_m": 0.6713937939630548,
+    "teacher_requests": {
+      "A": 52,
+      "B": 50,
+      "preflight": 1
+    },
+    "wall_s": 4209.569184948925
+  },
+  "evidence_sha256": {
+    "outputs/collections/tacjev-first/online-resume-20261012T014737Z/attempt-a/report.json": "adf0c5a6ee3b66b1c522f9f255a4fcfb6ae96067f12e6b3607c7e16287bed20a",
+    "outputs/collections/tacjev-first/online-resume-20261012T014737Z/attempt-a/native/summary.json": "81b4720de450c09c28f3926b5b9600cb3e32e74dc4ae6349c8a1a6726d85680f",
+    "outputs/collections/tacjev-first/online-resume-20261012T014737Z/attempt-a/native/trajectory.json": "20c6c5b6bdf34a154b7e62b6bb99a2fc5cbfa0870071db588c87479b5b130713",
+    "outputs/collections/tacjev-first/online-resume-20261012T014737Z/attempt-a/decisions/index.json": "5d40072caa565a5347af36f42136be6f8c552ab5d9fc2c593d720f0ab298f67a",
+    "outputs/collections/tacjev-first/online-resume-20261012T014737Z/attempt-a/interpreter.json": "313761764f620011dc5072a62498d48cf4aa65c5130e7c1033f1d4352f7dd97d",
+    "outputs/collections/tacjev-first/online-resume-20261012T014737Z/attempt-a/code_receipt.json": "be415b833b27e58c5a9ed375e59de5f19f500c8b00b7f556a2f0a2d637f514cd",
+    "outputs/collections/tacjev-first/online-resume-20261012T014737Z/attempt-a/reservation.json": "a0955b1ebb1db179fafc9f55d1c8b0946e252e39ea57887b3a0e5f2da96679e1",
+    "outputs/collections/tacjev-first/online-resume-20261012T014737Z/attempt-a/native_started.json": "22278aabd95ffc6c2f71257b8f76a444f125f61e1ad933c1fd6e84a6dde6a11a",
+    "outputs/collections/tacjev-first/online-resume-20261012T014737Z/attempt-a/reset_state.npz": "cbe6e286d32080d4c121136ae7db2141dd1f40b106dbe148f4cbfb615451e32e",
+    "outputs/collections/tacjev-first/online-resume-20261012T014737Z/attempt-a/final_state.npz": "0a01f5b7ffc7ac3ed022de5ed301409593c3b05724af56c0166811f2c2646bbd",
+    "outputs/collections/tacjev-first/online-resume-20261012T014737Z/attempt-a/rollout_h264.mp4": "0bd5f46fa594a4856287ee557fdcb9d2014ea58bf51ee1634b164cd6972ff6db",
+    "outputs/collections/tacjev-first/online-resume-20261012T014737Z/attempt-b/report.json": "4bb0dbb0d83446868d80a3266008fb747904a10813563f3c706ea39f7b0988eb",
+    "outputs/collections/tacjev-first/online-resume-20261012T014737Z/attempt-b/native/summary.json": "0b9f5583f38381c55b66832f54fa9e2df94984f1d6f4f0cf8dd535e7a5248a31",
+    "outputs/collections/tacjev-first/online-resume-20261012T014737Z/attempt-b/native/trajectory.json": "587636eaf6b59b76bf3c7042abe810ea360d3fc15cd95d6a7658ef5db14edf84",
+    "outputs/collections/tacjev-first/online-resume-20261012T014737Z/attempt-b/decisions/index.json": "67eb512e335fcf4df7885ab73b20ecef8921c66c4fd967af9681abc9f2257e17",
+    "outputs/collections/tacjev-first/online-resume-20261012T014737Z/attempt-b/interpreter.json": "78e1cab340595cdb719471650849901d293dad8a4fb6e14c53e35b633089f264",
+    "outputs/collections/tacjev-first/online-resume-20261012T014737Z/attempt-b/code_receipt.json": "76e5230f7c04d37271f174fb3958b2c949035f382260027f2e31d0021edced51",
+    "outputs/collections/tacjev-first/online-resume-20261012T014737Z/attempt-b/reservation.json": "d47ce15d7860cd4896e65d7cf00fbe0422e4cac41fde543b0c8fb6a3a9e90f65",
+    "outputs/collections/tacjev-first/online-resume-20261012T014737Z/attempt-b/native_started.json": "9c9d168b886ed751d75374379c0617f1785c4a32fb4d8624cd2db7d0df479051",
+    "outputs/collections/tacjev-first/online-resume-20261012T014737Z/attempt-b/reset_state.npz": "cbe6e286d32080d4c121136ae7db2141dd1f40b106dbe148f4cbfb615451e32e",
+    "outputs/collections/tacjev-first/online-resume-20261012T014737Z/attempt-b/final_state.npz": "0a01f5b7ffc7ac3ed022de5ed301409593c3b05724af56c0166811f2c2646bbd",
+    "outputs/collections/tacjev-first/online-resume-20261012T014737Z/attempt-b/rollout_h264.mp4": "c0df654325fe0fd24aaa945edbec726bcd0b1cadee392a7ce4f28509c33a3e2d",
+    "outputs/collections/tacjev-first/online-resume-20261012T014737Z/comparison.json": "0ab94cece4928eff19122181a46768043895c7db0c204bbcc57a65f50d3ad6a2",
+    "outputs/collections/tacjev-first/online-resume-20261012T014737Z/diagnosis_before_b.json": "fcad623890b003de47776844333677b673e4eefba661328b3bd424786681ad96",
+    "outputs/collections/tacjev-first/online-resume-20261012T014737Z/diagnosis_before_b_v2.json": "98bd340fe1537c1f0786a3f60c0e7d47d27e628d822aa6e44f6db46fee99fe8f",
+    "outputs/collections/tacjev-first/online-resume-20261012T014737Z/initial_pair_check.json": "a029dbf3ae6bd67b1e85ea049f766e48a658c337c8930f3668add798f29625b6",
+    "outputs/collections/tacjev-first/online-resume-20261012T014737Z/known_error_receipt.json": "82f30e62254c9d2d1f2d09e4ee74190fc18da4653cace70629d61a412e224b09",
+    "outputs/collections/tacjev-first/online-resume-20261012T014737Z/empty_close_audit.json": "93bd20a615a4f96cdd41937d7b52c53f02d9acd44e9ca08041db4da4873e7110",
+    "outputs/collections/tacjev-first/online-resume-20261012T014737Z/preservation_start.json": "7baac86f5121433c0986cd283094ad036abd4c4f5a1c816ef52454947e90affd",
+    "outputs/collections/tacjev-first/online-resume-20261012T014737Z/budget_ledger.json": "f5ff75002a4b238d3df96c572fe6b0c359d84f02edfe30de39ddd4a5d03ed95e",
+    "outputs/collections/tacjev-first/online-resume-20261012T014737Z/teacher_inference_preflight/inference.json": "5a486ece980167d773ec4ddaa2517cecd75069d2758eb5a180bbbc5a69f2e1f6"
+  },
+  "publisher_working_tree_status": " M scripts/agentic/publish_tacjev_online_collection.py\n M tests/test_tacjev_online_dataset.py\n",
+  "native_attempts_started_by_verification": 0,
+  "model_api_requests_by_verification": 0,
+  "limits": [
+    "Independent local artifact validation, without new simulator/model execution.",
+    "Single development opening; coupled step/clamp comparison, not universal calibration.",
+    "Model identity is the service-reported model field, not independent checkpoint attestation.",
+    "No positive demonstration, training or student rollout claim."
+  ]
+}

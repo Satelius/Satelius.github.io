@@ -1,0 +1,46 @@
+{
+  "decision_id": "decision_000015",
+  "frame_start": 75,
+  "frame_end_exclusive": 80,
+  "actual_control_frame_count": 5,
+  "token": "MV_DOWN",
+  "status": "completed",
+  "failure_reason": null,
+  "execution_uncertain": false,
+  "known_wrong": false,
+  "audit_evidence": {
+    "native_success": false,
+    "interpreter": {
+      "decision_index": 15,
+      "token": "MV_DOWN",
+      "execute": true,
+      "done": false,
+      "hold_frames": 5,
+      "initial_tcp_position_base_m": [
+        0.4839833080768585,
+        0.015542201697826385,
+        0.7737805843353271
+      ],
+      "target_position_base_m": [
+        0.4839833080768585,
+        0.015542201697826385,
+        0.6537805795669556
+      ],
+      "target_quaternion_xyzw": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "gripper_target": -1.0,
+      "interpreter_version": "arena-online-step0.12-clamp0.12-hold5-v1",
+      "interpreter_config_sha256": "e12b18b5f4ca905cd76eaca0d193e98cb6d2445a8c7e32934960126707871852",
+      "calibration_status": "uncalibrated"
+    },
+    "unissued_control_frames": 0
+  },
+  "positive_demonstration": false,
+  "train_action_mask": false,
+  "pre_sha256": "7043581b9b21b55955c29aaa42689ebe80bc70d83b960fcaf8b1ce74973e9c5c",
+  "selected_sha256": "63e30f34b1422d54083d0f6c4aa4af5e57b525bbd82a1a8aeba42b44715e5f0e"
+}

@@ -1,0 +1,10 @@
+{
+  "schema": "tacharness.online-preservation.v1",
+  "historical_budget_sha256": {
+    "outputs/collections/tacjev-first/arena-calibration-case-20261011/budget_ledger.json": "e8cdf39af2291b49f8e533b15aa5ebda2afd97530a8a36185a5e1273a0abc0be",
+    "outputs/arena-reference/20261011T141000Z/budget_ledger.json": "3dd08527a7a4d01da0c627d13b0bc0151ebcdf877456414dcf7e7e7bf8dee8a4",
+    "outputs/arena-jitter/20261011T203643Z/budget_ledger.json": "b2cd6394a4ac22f69033142c88f416e25b360fd49e39db9f53e99b0ea5ac21f6"
+  },
+  "sealed_branch": "research/arena-jitter",
+  "sealed_head": "15398c4a"
+}

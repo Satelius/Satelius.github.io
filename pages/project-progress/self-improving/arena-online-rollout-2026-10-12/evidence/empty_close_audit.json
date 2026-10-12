@@ -1,0 +1,26 @@
+{
+  "schema": "tacharness.arena.empty-close-audit.v1",
+  "decision_id": "decision_000011",
+  "control_frame_start": 55,
+  "control_frame_end_exclusive": 60,
+  "tcp_before_base_xyz_m": [
+    0.4917691946029663,
+    -0.07756410539150238,
+    0.6923937201499939
+  ],
+  "tcp_before_world_xyz_m": [
+    0.4917692026870207,
+    -0.07756410468654844,
+    0.6923937024103204
+  ],
+  "cube_before_world_xyz_m": [
+    0.5000003576278687,
+    -5.812506742586265e-07,
+    0.020999908447265625
+  ],
+  "tcp_cube_distance_m": 0.6759093716257768,
+  "vertical_gap_m": 0.6713937939630548,
+  "physical_contact_in_interval": false,
+  "max_contact_force_n": 0.0,
+  "interpretation": "Premature empty finger closure during cube-grasp task; teacher internal intent is not inferred."
+}

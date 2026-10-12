@@ -1,0 +1,27 @@
+{
+  "decision_index": 26,
+  "token": "MV_FWD",
+  "execute": true,
+  "done": false,
+  "hold_frames": 5,
+  "initial_tcp_position_base_m": [
+    0.521353006362915,
+    0.03272143751382828,
+    1.00099778175354
+  ],
+  "target_position_base_m": [
+    0.6413530111312866,
+    0.03272143751382828,
+    1.00099778175354
+  ],
+  "target_quaternion_xyzw": [
+    1.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "gripper_target": -1.0,
+  "interpreter_version": "arena-online-step0.12-clamp0.12-hold5-v1",
+  "interpreter_config_sha256": "e12b18b5f4ca905cd76eaca0d193e98cb6d2445a8c7e32934960126707871852",
+  "calibration_status": "uncalibrated"
+}

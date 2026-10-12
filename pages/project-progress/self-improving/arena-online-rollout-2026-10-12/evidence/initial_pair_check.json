@@ -1,0 +1,40 @@
+{
+  "schema": "tacharness.online-pair-initial-check.v1",
+  "actual_initial_state": {
+    "schema": "tacharness.arena_state_freeze.v1",
+    "unchanged": true,
+    "checked_fields": 16,
+    "tolerance": 1e-07,
+    "max_abs_delta": 0.0,
+    "changed_fields": [],
+    "field_max_abs_delta": {
+      "env._sim_step_counter": 0.0,
+      "env.common_step_counter": 0.0,
+      "env.episode_length_buf": 0.0,
+      "object_pose.command": 0.0,
+      "object_pose.command_counter": 0.0,
+      "object_pose.pose_command_b": 0.0,
+      "object_pose.pose_command_w": 0.0,
+      "object_pose.time_left": 0.0,
+      "scene.articulation.robot.joint_position": 0.0,
+      "scene.articulation.robot.joint_velocity": 0.0,
+      "scene.articulation.robot.root_pose": 0.0,
+      "scene.articulation.robot.root_velocity": 0.0,
+      "scene.rigid_object.dex_cube.root_pose": 0.0,
+      "scene.rigid_object.dex_cube.root_velocity": 0.0,
+      "sim.physics_step_count": 0.0,
+      "sim.physics_time_s": 0.0
+    }
+  },
+  "changed_archived_files": [
+    "scripts/agentic/run_tacjev_online.py",
+    "src/tacharness/isaaclab/tacjev_online_dataset.py"
+  ],
+  "control_source_files_unchanged": true,
+  "native_run_function_identical": true,
+  "source_receipt_hashes": {
+    "A": "be415b833b27e58c5a9ed375e59de5f19f500c8b00b7f556a2f0a2d637f514cd",
+    "B": "76e5230f7c04d37271f174fb3958b2c949035f382260027f2e31d0021edced51"
+  },
+  "diagnosis_v2_sha256": "98bd340fe1537c1f0786a3f60c0e7d47d27e628d822aa6e44f6db46fee99fe8f"
+}

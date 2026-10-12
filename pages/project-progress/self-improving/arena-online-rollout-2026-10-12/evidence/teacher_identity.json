@@ -1,0 +1,18 @@
+{
+  "schema": "tacharness.teacher_identity_preflight.v1",
+  "model_requested": "gpt-6.1-sol",
+  "response_model": "gpt-6.1-sol",
+  "protocol": "chat_completions",
+  "preflight_http_status": 200,
+  "legal_token": "MV_FWD",
+  "capability": "three_actual_PNG_inputs_and_single_token_response_observed",
+  "backend_attestation": false,
+  "model_visible_inputs": [
+    "scene_rgb",
+    "wrist_rgb",
+    "tactile_mosaic_rgb",
+    "complete_task",
+    "last_5_executed_movement_tokens"
+  ],
+  "inference_receipt_sha256": "5a486ece980167d773ec4ddaa2517cecd75069d2758eb5a180bbbc5a69f2e1f6"
+}

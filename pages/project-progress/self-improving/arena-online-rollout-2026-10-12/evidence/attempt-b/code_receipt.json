@@ -1,0 +1,24 @@
+{
+  "git_head": "ddac751b2f7e625c9f7d023d3c9f2cc2f06d8671",
+  "source_sha256": {
+    "scripts/agentic/preflight_tacjev_arena.py": "8d40df4261483e470a8ccef2aace25859857fb116006ecf26313c59b5529e0fc",
+    "scripts/agentic/run_isaaclab_arena_smoke.py": "be072c15f8ab0bbe4cc6c6d574e537bf6080b42979c3e5fd8a7f6c16f4687135",
+    "scripts/run_p0_rollout.py": "6f9808098630b679f83cf8528604514f028021cc8f2be2351ce57ad31121f8ac",
+    "src/tacharness/isaaclab/arena_tactile.py": "00d7c09621d93a3619217bd3405ba461c2bf4f3cdb0fd3f3575f5eb3d819fe45",
+    "src/tacharness/isaaclab/arena_collection_state.py": "99a65035308b7727ce89f617dc49e1156396c3b95a04cc5e67753eebf31fa96c",
+    "src/tacharness/isaaclab/arena_meta_actions.py": "3564805477ad362f78876c9ba64c46cb6cc969d64a7638eab9ff03b8a7cd02f5",
+    "src/tacharness/isaaclab/arena_decision_records.py": "86272e8355b62e711520946d0ed7a143d3ba6d980ec354f923f012e62b75585d",
+    "src/tacharness/isaaclab/tacumi_arena.py": "e7e143a5231aab3194d3a145e0f06d39c7759ce8c8dc55db528faa2a515f0d25",
+    "src/tacharness/isaaclab/rtx_camera.py": "feda3016dcdbc5972ecee14b8f9805466b1eaf065fed489bd0751f1de4b5a95b",
+    "src/tacumi/recorder.py": "2de1e262d16f8d0c1712e3855eb42eb45e472ed749f698f6eb50a5e27dbec605",
+    "src/tacumi/tactile_runtime.py": "b123dc78e0330912e8270894680979b94403b075af61e5ae6d576f8286f8a68b",
+    "src/tacumi/visualization.py": "587812246136afbf3f742576c178b31ad008108aa40698dc4d215c975b920a2c",
+    "scripts/agentic/run_tacjev_online.py": "ecd4b3f93eec34e544d31ce128c5040ae33fdd85623f8291d863f53cf47f1a16",
+    "src/tacharness/tacjev_teacher.py": "c5463a55bb84d9f03a12d8e56dcb49abe9ef33d8277fb34d5d1cb6d00a87d821",
+    "src/tacharness/first_collection_budget.py": "4e6683ceb215c7da31f09c3b67b18d8758160ef7050575cf36909c8db08d8a9d",
+    "src/tacharness/isaaclab/arena_online_execution.py": "c034d436c6436e4bf4374b87fbd596139aef39af5373a3d393a3e97db2cdd342",
+    "src/tacharness/isaaclab/arena_online_records.py": "778622321390e83d620d3094f975fc3ddd32c132a241dc931593ac3b9c34a60e",
+    "src/tacharness/isaaclab/tacjev_online_dataset.py": "d670735418594ed04ccedb5d4ab82052208a07397acb7679ae9a3a0581d9c9a4"
+  },
+  "tracked_patch_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

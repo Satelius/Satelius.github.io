@@ -1,0 +1,26 @@
+{
+  "schema": "tacharness.tacjev-known-error.v1",
+  "episode_id": "attempt-b",
+  "decision_id": "decision_000011",
+  "token": "GRASP",
+  "finish_sha256": "80c3c431a7962eee3d7d694169975c1993753d881b033ec0c4a9f7137a7c6797",
+  "reason": "Premature empty closure: TCP was over0.67m from cube, with zero contact and force; preserve actual action and exclude its positive label.",
+  "evidence": [
+    {
+      "path": "outputs/collections/tacjev-first/online-resume-20261012T014737Z/empty_close_audit.json",
+      "sha256": "93bd20a615a4f96cdd41937d7b52c53f02d9acd44e9ca08041db4da4873e7110"
+    },
+    {
+      "path": "outputs/collections/tacjev-first/online-resume-20261012T014737Z/attempt-b/decisions/decision_000011/interpreter.json",
+      "sha256": "e0ef67e07a91b01bb00b663242fe2afe8ae4fed6666421cf337d0eb60abc2fca"
+    },
+    {
+      "path": "outputs/collections/tacjev-first/online-resume-20261012T014737Z/attempt-b/decisions/decision_000011/http_state_before.npz",
+      "sha256": "f0556885fa0a90f7d6e464f0133b5ac643b6c5a044b248c663ffc4357d7948ac"
+    },
+    {
+      "path": "outputs/collections/tacjev-first/online-resume-20261012T014737Z/attempt-b/native/trajectory.json",
+      "sha256": "587636eaf6b59b76bf3c7042abe810ea360d3fc15cd95d6a7658ef5db14edf84"
+    }
+  ]
+}

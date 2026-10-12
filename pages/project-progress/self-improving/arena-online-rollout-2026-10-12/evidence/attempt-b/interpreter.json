@@ -1,0 +1,59 @@
+{
+  "version": "arena-online-step0.12-clamp0.12-hold5-v1",
+  "calibration_status": "uncalibrated",
+  "coordinate_frame": "robot_base",
+  "quaternion_order": "xyzw",
+  "down_quaternion_xyzw": [
+    1.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "token_directions_base": {
+    "MV_FWD": [
+      1.0,
+      0.0,
+      0.0
+    ],
+    "MV_BACK": [
+      -1.0,
+      0.0,
+      0.0
+    ],
+    "MV_LEFT": [
+      0.0,
+      1.0,
+      0.0
+    ],
+    "MV_RIGHT": [
+      0.0,
+      -1.0,
+      0.0
+    ],
+    "MV_UP": [
+      0.0,
+      0.0,
+      1.0
+    ],
+    "MV_DOWN": [
+      0.0,
+      0.0,
+      -1.0
+    ]
+  },
+  "translation_step_m": 0.12,
+  "hold_frames": 5,
+  "translation_clamp_m": 0.12,
+  "rotation_clamp_rad": 0.08,
+  "arm_scale": [
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5
+  ],
+  "initial_gripper_target": 1.0,
+  "tcp_position_tolerance_m": 1e-05,
+  "tcp_quaternion_tolerance": 0.0001
+}
