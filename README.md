@@ -4,6 +4,8 @@
 
 2026-10-20：项目进展 SELF-IMPROVING 首条新增[元动作 Smooth 成功视频对照](pages/project-progress/self-improving/meta-smooth-success-2026-10-20/)。页面包含成功 OFF、两条195帧成功 ON、前两轮负结果与逐帧证据。公开副本仅脱敏日志中的本机路径和 GPU UUID；每层 `source-manifest.json` 保留原制品清单，`manifest.json` 绑定发布副本并记录变化。沿用项目进展会话门禁，未修改原生成功或指标口径。
 
+2026-10-20：项目进展 SELF-IMPROVING 顶部新增[元动作 Smooth 组会展示](pages/project-progress/self-improving/meta-smooth-meeting-2026-10-20/)。独立文件夹内含8节中文讲述、缓动原理动画与两段完整OFF／ON视频，附完整逐帧对比链接；原有详细对照条目顺延保留。
+
 ## 技术约束
 
 - 纯 HTML、CSS、原生 JavaScript

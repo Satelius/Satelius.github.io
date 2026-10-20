@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="description" content="TacHarness 元动作平滑执行组会：Show-Harness式五次缓动原理、Arena适配、成功收尾、完整OFF/ON视频与真实证据。">
+  <meta name="theme-color" content="#14292f">
+  <link rel="canonical" href="https://satelius.github.io/pages/project-progress/self-improving/meta-smooth-meeting-2026-10-20/">
+  <link rel="stylesheet" href="styles.css">
+  <script src="gate.js"></script>
+  <script src="app.js" defer></script>
+  <title>元动作，如何走得更顺？ · TacHarness 组会</title>
+</head>
+<body>
+<header class="deck-header">
+  <a class="brand" href="#intro">T<span>／</span>TacHarness <small>GROUP MEETING · 2026.10.20</small></a>
+  <a class="evidence-link" href="https://satelius.github.io/pages/project-progress/self-improving/meta-smooth-success-2026-10-20/">完整视频对比 ↗</a>
+</header>
+<main>
+  <section class="slide hero" id="intro" aria-labelledby="title">
+    <div class="section-kicker">01 / 这次要回答的问题</div>
+    <div class="hero-layout">
+      <div><p class="eyebrow">元动作控制 × 平滑执行 × 任务成功</p>
+        <h1 id="title">元动作，<br>如何走得<span>更顺？</span></h1>
+        <p class="hero-lead">动作词照常说，执行器把目标平缓地交接。<br>再用元动作完成收尾，把方块送进目标范围。</p>
+        <a class="button bright" href="#videos">先看 OFF / ON 视频 <span>↓</span></a>
+      </div>
+      <aside class="hero-result" aria-label="本轮结果">
+        <span class="tag light">Arena · lift_object / dex_cube</span>
+        <div class="hero-number">3.90 <small>秒</small></div>
+        <p>smooth ON 完成任务，<br>同配置再跑一次也成功。</p>
+        <div class="hero-facts"><div><b>45.590 mm</b><span>物体与目标的末距</span></div><div><b>&lt; 50 mm</b><span>沿用原生成功门槛</span></div></div>
+        <p class="small">本轮来源：固定元动作参考序列。<br>教师请求 0 次；验证同一个开发开局。</p>
+      </aside>
+    </div>
+    <p class="slide-takeaway">先讲清怎样平滑，再看是否真的把任务做完。</p>
+  </section>
+
+  <section class="slide" id="problem" aria-labelledby="problem-title">
+    <div class="section-kicker">02 / 为什么会有顿挫</div>
+    <h2 id="problem-title">目标可以瞬间换，<br>机械臂需要时间跟上。</h2>
+    <div class="two-col">
+      <div><p class="lead">把元动作想成方向键：<strong>向前 → 向左 → 向上</strong>。每个词先变成一个目标位置，底层控制器再驱动机械臂追过去。</p>
+        <p>目标变化很快、动作又频繁换方向时，真实运动会受跟踪响应和已有速度影响，视频里就可能看到“一顿一顿”。</p>
+        <p class="callout">这次改的是<strong>目标怎样推进</strong>，不把问题简单归因于“用了 token”。</p>
+      </div>
+      <div class="diagram-card"><p class="diagram-label">元动作执行链 · 职责示意</p>
+        <div class="token-row"><code>MV_FWD</code><span>→</span><code>MV_LEFT</code><span>→</span><code>MV_UP</code></div>
+        <div class="stack-flow"><div>解释器：本条动作要去哪里</div><span>↓</span><div>目标参考：怎样推进到那里</div><span>↓</span><div>原生 IK 与控制器：让关节跟随</div></div>
+        <p class="small">目标位置 ≠ 此刻的实际位置。smooth 改动后，实际运动仍要靠物理执行验证。</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" id="principle" aria-labelledby="principle-title">
+    <div class="section-kicker">03 / 借鉴 Show-Harness 的 smooth 插件</div>
+    <h2 id="principle-title">把“突然指到终点”，<br>换成一串逐步推进的路标。</h2>
+    <p class="lead compact">像端着一杯水：轻起步，中间前进，接近终点时轻收尾。插件给出的是<strong>移动进度表</strong>；控制器把进度换成中间目标。</p>
+    <div class="motion-card">
+      <div class="motion-heading"><span class="tag">原理示意 · 非实测轨迹</span><button id="motion-play" type="button">播放原理示意</button></div>
+      <div class="motion-lane"><span>匀速参考</span><svg viewBox="0 0 680 66" role="img" aria-label="匀速推进示意"><path d="M60 33H620"/><circle id="linear-dot" cx="60" cy="33" r="13"/></svg><b id="linear-value">0%</b></div>
+      <div class="motion-lane smooth-lane"><span>五次缓动</span><svg viewBox="0 0 680 66" role="img" aria-label="五次曲线推进示意"><path d="M60 33H620"/><circle id="smooth-dot" cx="60" cy="33" r="13"/></svg><b id="smooth-value">0%</b></div>
+      <label class="motion-control" for="motion-progress"><span>拖动时间进度</span><input id="motion-progress" type="range" min="0" max="100" value="0"><span>起点 → 终点</span></label>
+      <p class="small">两条均为讲原理的参考轨迹。我们的 OFF 直接发送目标，真实 OFF / ON 效果看后面的视频。</p>
+    </div>
+    <div class="three-col principles"><div><b>01 / 先定路段</b><p>起点、终点明确，路径仍由解释器确定。</p></div><div><b>02 / 再定节奏</b><p>首尾慢，中间快；不是每一档走相同距离。</p></div><div><b>03 / 交给控制器</b><p>发出准确末参考，不等于实体已经到位。</p></div></div>
+    <details><summary>展开一行公式与来源</summary><p>归一化时间 u 从0到1；零起末参考速度时，移动比例 s(u) = 10u³ − 15u⁴ + 6u⁵。中间目标 = 起点 +（终点 − 起点）× s。我们复用的插件来自 <a href="https://github.com/showlab/Show-Harness/blob/101bd59d3413d32a85d3afa1164f62ddf31f99da/plugins/smooth/plugin.py" target="_blank" rel="noopener">Show-Harness 固定版本源码</a>。上游另支持有条件的速度衔接；本轮只验证目标缓动。</p></details>
+  </section>
+
+  <section class="slide" id="integration" aria-labelledby="integration-title">
+    <div class="section-kicker">04 / 在 TacHarness 中放在哪里</div>
+    <h2 id="integration-title">动作词不变，<br>在“目标”和“IK”之间加一个开关。</h2>
+    <div class="execution-flow"><div><span>元动作</span><b>向前 / 向左 / 向上</b></div><i>→</i><div><span>解释器</span><b>确定本条目标</b></div><i>→</i><div class="highlight"><span>smooth 开关</span><b>安排中间参考</b></div><i>→</i><div><span>原生 IK / 控制</span><b>执行并记录实态</b></div></div>
+    <div class="two-col integration-copy"><div><h3>复用原有的四个物理子步</h3><p>一个移动 token 仍是 <strong>20ms</strong>，内部本来就有四个 <strong>5ms</strong> 物理步。开启后，在这些时刻逐步交接参考，不额外增加本条动作的执行帧。</p>
+        <div class="substeps"><div><b>10.35%</b><span>第1子步</span></div><div><b>50%</b><span>第2子步</span></div><div><b>89.65%</b><span>第3子步</span></div><div><b>100%</b><span>第4子步</span></div></div>
+        <p class="small">50Hz 控制／200Hz 物理为原有仿真时钟，不是本次提高了帧率。</p>
+      </div><div class="diagram-card"><h3>接续的是参考目标</h3><p><strong>上一条已执行的目标 → 本条的新目标。</strong>实际 TCP 由原生反馈控制跟踪。</p><p>每段移动的第一步直接执行；GRASP / RELEASE 保留原夹爪命令，并清除移动继承，避免把抓放混进移动缓动。</p><p class="callout">本轮没有开启跨 token 保速；也不保证 ON / OFF 每一步的实际起终点相同。</p></div></div>
+  </section>
+
+  <section class="slide" id="iterations" aria-labelledby="iterations-title">
+    <div class="section-kicker">05 / 平滑之后，任务为什么还需要调试</div>
+    <h2 id="iterations-title">路走顺了一些，<br>原动作串却提前用完了。</h2>
+    <p class="lead compact">关闭 smooth 的成功基线是186条元动作。开启后实际跟踪发生变化，末段仍在接近目标；因此保留原186条前缀，单独声明收尾动作，再重新运行。</p>
+    <div class="iteration-list">
+      <article><span class="iteration-index">原前缀</span><div><h3>186条，开启 smooth</h3><p>抓持搬运后还没进入目标范围。</p></div><b>80.300 <small>mm</small></b><em>未成功</em></article>
+      <article><span class="iteration-index">第1版</span><div><h3>加4个向前，共190条</h3><p>前进有帮助，侧向与高度误差仍在。</p></div><b>56.693 <small>mm</small></b><em>未成功</em></article>
+      <article><span class="iteration-index">第2版</span><div><h3>再加2个向左、2个向上，共194条</h3><p>末距只差约2.132mm才进入成功球。</p></div><b>52.132 <small>mm</small></b><em>未成功</em></article>
+      <article class="success"><span class="iteration-index">成功版</span><div><h3>再执行1个向上，共195条</h3><p>与上一版前194帧实态相同；这一步物体再上移约6.502mm。</p></div><b>45.590 <small>mm</small></b><em>原生成功</em></article>
+    </div>
+    <p class="callout"><strong>成功序列 = 原186条 + 实际9条收尾。</strong>没有放宽50mm门槛，也未增加250帧／5秒上限。第三版预留的后缀更长，但成功即停，余下动作没有执行。</p>
+  </section>
+
+  <section class="slide video-slide" id="videos" aria-labelledby="videos-title">
+    <div class="section-kicker">06 / 看真实运动，再看数字</div>
+    <div class="video-title"><div><h2 id="videos-title">两条完整视频，<br>都把任务做完。</h2></div><a class="button" href="https://satelius.github.io/pages/project-progress/self-improving/meta-smooth-success-2026-10-20/" target="_blank" rel="noopener">打开逐帧视频对比 ↗</a></div>
+    <div class="video-toolbar"><button id="play-videos" type="button">同步播放</button><button id="restart-videos" type="button">从头开始</button><label for="video-rate">速度 <select id="video-rate"><option value="1">1× 原速</option><option value=".5" selected>0.5× 慢放</option><option value=".25">0.25× 慢放</option></select></label><span>完整时长保留，短视频结束后停在末帧。</span></div>
+    <div class="two-videos">
+      <article class="video-card off"><div class="video-card-title"><h3>Smooth OFF</h3><span>原生成功</span></div><video id="video-off" src="assets/smooth-off.mp4" controls playsinline muted preload="metadata" aria-label="成功元动作OFF完整原生视频"></video><div class="video-facts"><b>186条 · 3.72秒</b><span>末距 43.187mm</span></div><p>成功但有顿挫的元动作基线。</p></article>
+      <article class="video-card on"><div class="video-card-title"><h3>Smooth ON</h3><span>原生成功</span></div><video id="video-on" src="assets/smooth-on.mp4" controls playsinline muted preload="metadata" aria-label="成功元动作smooth ON完整原生视频"></video><div class="video-facts"><b>195条 · 3.90秒</b><span>末距 45.590mm</span></div><p>相同186条前缀，实际追加9条收尾；同配置复验也成功。</p></article>
+    </div>
+    <p class="small">两次为同一开发开局，视频没有裁短或拉伸。这里比较真实任务结果；平顺度另取相同公共区间计算。</p>
+  </section>
+
+  <section class="slide" id="results" aria-labelledby="results-title">
+    <div class="section-kicker">07 / 怎样判断“更顺”</div>
+    <h2 id="results-title">同一段搬运动作，<br>运动变化的尖峰更低了。</h2>
+    <p class="lead compact">只比较双方共同的<strong>1秒搬运区间</strong>（控制索引136–185），用200Hz真实TCP位置计算；新增收尾没有混入统计。</p>
+    <div class="result-cards"><article><span>加速度 p95</span><b>↓27.74<small>%</small></b><p>54.948 → 39.707 m/s²</p><div class="bar off-bar"></div><div class="bar on-bar" style="width:72.2635%"></div></article><article><span>jerk p95</span><b>↓54.71<small>%</small></b><p>11050.480 → 5004.770 m/s³</p><div class="bar off-bar"></div><div class="bar on-bar" style="width:45.2901%"></div></article></div>
+    <div class="two-col"><div><h3>jerk，用人话说</h3><p>就是“加速度变化得有多猛”。更低的尖峰支持运动变化变缓；它不是肉眼抖动幅度，也不是任务成功率。</p><p class="small">p95：95%的采样值不超过这个数。橙色为OFF，绿色为ON；原始数据未做滤波。</p></div><div class="limit-card"><h3>进展成立，局限也要留下</h3><p>公共搬运段总体改善，<strong>同向接续组的部分指标仍变差</strong>，顿挫没有全部消失。</p><p>两条ON是同开局复验，尚不能推为跨开局成功率；本轮验证的是固定元动作参考。</p></div></div>
+  </section>
+
+  <section class="slide closing" id="next" aria-labelledby="next-title">
+    <div class="section-kicker">08 / 这一阶段得到什么</div>
+    <h2 id="next-title">把“选哪个动作”，<br>和“怎样把动作走好”分开。</h2>
+    <div class="three-col closing-cards"><article><span>已验证</span><h3>执行层可模块化</h3><p>同一元动作解释器保留，smooth 放在目标与原生IK之间，可明确开关和记录版本。</p></article><article><span>已验证</span><h3>减尖峰，也完成任务</h3><p>同一公共区间指标改善；195条成功参考与同配置复验，都在原5秒上限内完成。</p></article><article><span>后续研究</span><h3>再验证闭环与连续性</h3><p>改善同向／转向接续，再让教师或TacJev用同版本执行器，依据新观测选择后续动作。</p></article></div>
+    <div class="closing-links"><a class="button bright" href="https://satelius.github.io/pages/project-progress/self-improving/meta-smooth-success-2026-10-20/" target="_blank" rel="noopener">完整视频、逐帧动作与负结果 ↗</a><a href="https://satelius.github.io/pages/project-progress/">返回项目进展</a></div>
+    <details class="evidence-details"><summary>来源、复核与记账说明</summary><p>来源：TacHarness元动作smooth研究，原生数据与报告以e0f0a5d3归档；公开完整对照以站点c8ef8a9发布。这里两段MP4保留原字节，来源与SHA见<a href="metadata.json">本页元文件</a>。</p><p>方法来源：<a href="https://github.com/showlab/Show-Harness/blob/101bd59d3413d32a85d3afa1164f62ddf31f99da/plugins/smooth/plugin.py" target="_blank" rel="noopener">Show-Harness SmoothPlugin固定源码</a>；本地适配器为arena-meta-reference-smooth-v1，采用已有4×5ms子步；跨token保速关闭，首移动／抓放旁路。</p><p>本研究7次原生、0教师请求；全部尝试与视频保留。第三批原生在1502.695秒内已结束，但未及时封账，退出后间隔也计入连续墙钟，最终15033.827秒以wall_budget_exhausted关闭；总17396.985秒，原账不改，上限后无新增运行。本组会网页制作未新增仿真、教师或训练。</p><p><a href="https://satelius.github.io/pages/project-progress/self-improving/meta-smooth-success-2026-10-20/analysis.json" target="_blank" rel="noopener">完整运动指标JSON</a> · <a href="README.md">文件夹说明与讲述顺序</a></p></details>
+  </section>
+</main>
+<footer class="deck-controls"><span class="key-hint">← → 翻页 · 滚动阅读 · 视频保留原生控件</span><div><button id="prev-slide" type="button" aria-label="上一节">←</button><span id="slide-count" aria-live="polite">01 / 08</span><button id="next-slide" type="button" aria-label="下一节">→</button></div><div class="progress-track"><div id="deck-progress"></div></div></footer>
+</body>
+</html>

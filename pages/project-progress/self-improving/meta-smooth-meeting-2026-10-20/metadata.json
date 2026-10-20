@@ -1,0 +1,60 @@
+{
+  "schema": "tacharness.group-meeting.presentation.v1",
+  "title": "元动作，如何走得更顺？",
+  "date": "2026-10-20",
+  "timezone": "Asia/Shanghai",
+  "source_research_revision": "e0f0a5d3",
+  "source_publication_revision": "c8ef8a9",
+  "control_source": "frozen_meta_sequence_with_declared_suffix",
+  "source_analysis_sha256": "b021d4a7ab2062cf6b13d17c21b029cd3afad3d143b45f17ad5133c82f774dd1",
+  "comparison_url": "https://satelius.github.io/pages/project-progress/self-improving/meta-smooth-success-2026-10-20/",
+  "meeting_url": "https://satelius.github.io/pages/project-progress/self-improving/meta-smooth-meeting-2026-10-20/",
+  "runs": [
+    {
+      "variant": "off",
+      "video": "assets/smooth-off.mp4",
+      "video_sha256": "397a359800ab7422b936abcc875f44c0d2acb5cc6cef3d1472dc871e1c1c0ffa",
+      "source_report_sha256": "a0853e8d5ea35d8168eb658ec21261287854adac7019ee8e2d19ade9cbfd950a",
+      "source_run": "outputs/research/meta-smooth-success-20261020/native-stage-v3/attempts/01-success-off",
+      "control_frames": 186,
+      "simulated_time_s": 3.72,
+      "native_success": true,
+      "reference_accepted": true,
+      "tactile_quality_passed": true,
+      "actual_executed_suffix_tokens": 0
+    },
+    {
+      "variant": "on",
+      "video": "assets/smooth-on.mp4",
+      "video_sha256": "6512feced4a98bd2ec956b64365cd0a74c1137ec843b7642a4a400fcbbf743b0",
+      "source_report_sha256": "61e8ee0977729a009bea6e6642524da80874671d928ddd0d095b6b9b3b0eb083",
+      "source_run": "outputs/research/meta-smooth-success-20261020/native-stage-v3/attempts/02-all-movement-on",
+      "control_frames": 195,
+      "simulated_time_s": 3.9,
+      "native_success": true,
+      "reference_accepted": true,
+      "tactile_quality_passed": true,
+      "actual_executed_suffix_tokens": 9
+    }
+  ],
+  "primary_controls": [
+    136,
+    186
+  ],
+  "primary_p95_reduction_percent": {
+    "tcp_acceleration": 27.73650370990438,
+    "tcp_jerk": 54.70992874178406,
+    "ik_joint_target_jump_rad": 54.268815193864214
+  },
+  "new_simulator_launches": 0,
+  "new_teacher_requests": 0,
+  "principle_animation": "illustration of normalized reference progress, not recorded physical motion",
+  "upstream_source": "https://github.com/showlab/Show-Harness/blob/101bd59d3413d32a85d3afa1164f62ddf31f99da/plugins/smooth/plugin.py",
+  "limits": [
+    "one development opening and same-configuration confirmation",
+    "some same-direction actual motion statistics worsen",
+    "no cross-token velocity blending in this run",
+    "actual OFF/ON token endpoints not guaranteed equal",
+    "extra9 tokens are explicit, original186 not relabeled as smooth success"
+  ]
+}
