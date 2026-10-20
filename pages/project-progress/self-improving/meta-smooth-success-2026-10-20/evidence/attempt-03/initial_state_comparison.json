@@ -1,0 +1,22 @@
+{
+  "comparisons": [
+    {
+      "attempt": "01-success-off",
+      "reset_state_sha256": "cbe6e286d32080d4c121136ae7db2141dd1f40b106dbe148f4cbfb615451e32e",
+      "equal_within_1e7": true,
+      "field_count": 16
+    },
+    {
+      "attempt": "02-all-movement-on",
+      "reset_state_sha256": "cbe6e286d32080d4c121136ae7db2141dd1f40b106dbe148f4cbfb615451e32e",
+      "equal_within_1e7": true,
+      "field_count": 16
+    },
+    {
+      "attempt": "01-task120-off",
+      "reset_state_sha256": "cbe6e286d32080d4c121136ae7db2141dd1f40b106dbe148f4cbfb615451e32e",
+      "equal_within_1e7": true,
+      "field_count": 16
+    }
+  ]
+}

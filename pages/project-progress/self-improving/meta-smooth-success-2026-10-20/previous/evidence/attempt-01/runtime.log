@@ -1,0 +1,391 @@
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1792488303.954862 1804899 descriptor_database.cc:633] File already exists in database: grpc/health/v1/health.proto
+W0000 00:00:1792488303.954897 1804899 message.cc:301] Protobuf GeneratedMessageFactory: File is already registered: grpc/health/v1/health.proto
+Loading user config located at: '<TACHARNESS_CHECKOUT>/.venv-arena-native/lib/python3.12/site-packages/isaacsim/kit/data/Kit/IsaacLab/3.0/user.config.json'
+2026-10-20T09:25:03Z [Info] [carb] Logging to file: <TACHARNESS_CHECKOUT>/.venv-arena-native/lib/python3.12/site-packages/isaacsim/kit/logs/Kit/IsaacLab/3.0/kit_20261020_172503.log
+2026-10-20T09:25:03Z [4ms] [Warning] [omni.ext.plugin] [ext: isaaclab_visualizers] Extensions config 'extension.toml' doesn't exist '<TACHARNESS_CHECKOUT>/.venv-arena-native/lib/python3.12/site-packages/isaaclab/source/isaaclab_visualizers' or '<TACHARNESS_CHECKOUT>/.venv-arena-native/lib/python3.12/site-packages/isaaclab/source/isaaclab_visualizers/config'
+2026-10-20T09:25:04Z [389ms] [Warning] [omni.platforminfo.plugin] failed to open the default display.  Can't verify X Server version.
+2026-10-20T09:25:04Z [743ms] [Warning] [carb.windowing-glfw.plugin] GLFW initialization failed.
+2026-10-20T09:25:04Z [743ms] [Warning] [carb] Failed to startup plugin carb.windowing-glfw.plugin (interfaces: [carb::windowing::IGLContext v1.0],[carb::windowing::IWindowing v1.5]) (impl: carb.windowing-glfw.plugin)
+2026-10-20T09:25:04Z [836ms] [Warning] [omni.rtx] Skipping unsupported non-NVIDIA GPU: AMD Ryzen 7 7800X3D 8-Core Processor (RADV RAPHAEL_MENDOCINO)
+2026-10-20T09:25:04Z [836ms] [Warning] [omni.rtx] Skipping unsupported non-NVIDIA GPU: AMD Ryzen 7 7800X3D 8-Core Processor (RADV RAPHAEL_MENDOCINO)
+
+|---------------------------------------------------------------------------------------------|
+| Driver Version: 580.173.02    | Graphics API: Vulkan
+|=============================================================================================|
+| GPU | Name                             | Active | LDA | GPU Memory | Vendor-ID | LUID       |
+|     |                                  |        |     |            | Device-ID | UUID       |
+|     |                                  |        |     |            | Bus-ID    |            |
+|---------------------------------------------------------------------------------------------|
+| 0   | NVIDIA GeForce RTX 5090          | Yes: 0 |     | 32607   MB | 10de      | 0          |
+|     |                                  |        |     |            | 2b85      | REDACTED   |
+|     |                                  |        |     |            | 1         |            |
+|---------------------------------------------------------------------------------------------|
+| 1   | AMD Ryzen 7 7800X3D 8-Core Pro.. |        |     | 21475   MB | 1002      | 0          |
+|     |                                  |        |     |            | 164e      | REDACTED   |
+|     |                                  |        |     |            | 12        |            |
+|=============================================================================================|
+| OS: 24.04.4 LTS (Noble Numbat) ubuntu, Version: 24.04.4, Kernel: 7.0.0-30-generic
+| Processor: AMD Ryzen 7 7800X3D 8-Core Processor
+| Cores: 8 | Logical Cores: 16
+|---------------------------------------------------------------------------------------------|
+| Total Memory (MB): 63402 | Free Memory: 49237
+| Total Page/Swap (MB): 62499 | Free Page/Swap: 43267
+|---------------------------------------------------------------------------------------------|
+2026-10-20T09:25:04Z [1,101ms] [Warning] [omni.rtx] IOMMU is enabled.
+2026-10-20T09:25:05Z [1,635ms] [Warning] [carb.windowing-glfw.plugin] GLFW initialization failed.
+2026-10-20T09:25:05Z [1,635ms] [Warning] [carb] Failed to startup plugin carb.windowing-glfw.plugin (interfaces: [carb::windowing::IGLContext v1.0],[carb::windowing::IWindowing v1.5]) (impl: carb.windowing-glfw.plugin)
+2026-10-20T09:25:05Z [1,683ms] [Warning] [carb.windowing-glfw.plugin] GLFW initialization failed.
+2026-10-20T09:25:05Z [1,683ms] [Warning] [carb] Failed to startup plugin carb.windowing-glfw.plugin (interfaces: [carb::windowing::IGLContext v1.0],[carb::windowing::IWindowing v1.5]) (impl: carb.windowing-glfw.plugin)
+2026-10-20T09:25:05Z [1,684ms] [Warning] [carb.windowing-glfw.plugin] GLFW initialization failed.
+[ISAACLAB] AppLauncher initialization complete
+No objects with relations found in scene. Skipping relation solving.
+[INFO]: Parsing configuration from: IsaacLabArenaManagerBasedRLEnvCfg(viewer=ViewerCfg(eye=(-1.0, -1.5, 1.555), lookat=(0.5, 0.0, 0.055), cam_prim_path='/OmniverseKit_Persp', resolution=(1280, 720), origin_type='env', env_index=0, asset_name=None, body_name=None), sim=SimulationCfg(device='cuda:0', dt=0.005, gravity=(0.0, 0.0, -9.81), physics_prim_path='/physicsScene', physics_material=RigidBodyMaterialCfg(func='isaaclab.sim.spawners.materials.physics_materials:spawn_rigid_body_material', static_friction=0.5, dynamic_friction=0.5, restitution=0.0, compliant_contact_stiffness=None, compliant_contact_damping=None, friction_combine_mode=None, restitution_combine_mode=None), use_fabric=True, render_interval=2, enable_scene_query_support=False, use_newton_actuators=False, physics=None, render=RenderCfg(enable_translucency=None, enable_reflections=None, enable_global_illumination=None, antialiasing_mode=None, enable_dlssg=None, enable_dl_denoiser=None, dlss_mode=None, enable_direct_lighting=None, samples_per_pixel=None, enable_shadows=None, enable_ambient_occlusion=None, dome_light_upper_lower_strategy=None, max_bounces=None, split_glass=None, split_clearcoat=None, split_rough_reflection=None, ambient_light_intensity=None, ambient_occlusion_denoiser_mode=None, view_tile_limit=None, carb_settings={'/rtx/sceneDb/ambientLightIntensity': 0.0, '/physics/tensors/recursiveLeafPatternMatch': False}, rendering_mode=None), create_stage_in_memory=False, logging_level='WARNING', save_logs_to_file=True, log_dir=None, visualizer_cfgs=[]), ui_window_class_type='isaaclab.envs.ui.manager_based_rl_env_window:ManagerBasedRLEnvWindow', seed=42, decimation=4, scene=SceneCfg(num_envs=1, env_spacing=30.0, lazy_sensor_update=True, replicate_physics=False, filter_collisions=True, clone_in_fabric=False, table=AssetBaseCfg(class_type=None, prim_path='{ENV_REGEX_NS}/table', spawn=UsdFileCfg(func='isaaclab.sim.spawners.from_files.from_files:spawn_from_usd', visible=True, semantic_tags=None, copy_from_source=True, spawn_path=None, mass_props=None, deformable_props=None, rigid_props=None, collision_props=None, activate_contact_sensors=False, scale=(1.0, 1.0, 1.0), articulation_props=None, fixed_tendons_props=None, spatial_tendons_props=None, joint_drive_props=None, visual_material_path='material', visual_material=None, physics_material_path='material', physics_material=None, usd_path='https://omniverse-content-production.s3-us-west-2.amazonaws.com/Assets/Isaac/6.0/Isaac/Props/Mounts/SeattleLabTable/table_instanceable.usd', variants=None), init_state=AssetBaseCfg.InitialStateCfg(pos=(0.5, 0, 0), rot=(0, 0, 0.707, 0.707)), collision_group=0, debug_vis=False, disable_shape_checks=None), dex_cube=RigidObjectCfg(class_type='isaaclab.assets.rigid_object.rigid_object:RigidObject', prim_path='{ENV_REGEX_NS}/dex_cube', spawn=UsdFileCfg(func='isaaclab.sim.spawners.from_files.from_files:spawn_from_usd', visible=True, semantic_tags=None, copy_from_source=True, spawn_path=None, mass_props=None, deformable_props=None, rigid_props=None, collision_props=None, activate_contact_sensors=True, scale=(0.8, 0.8, 0.8), articulation_props=None, fixed_tendons_props=None, spatial_tendons_props=None, joint_drive_props=None, visual_material_path='material', visual_material=None, physics_material_path='material', physics_material=None, usd_path='https://omniverse-content-production.s3-us-west-2.amazonaws.com/Assets/Isaac/6.0/Isaac/Props/Blocks/DexCube/dex_cube_instanceable.usd', variants=None), init_state=RigidObjectCfg.InitialStateCfg(pos=(0.5, 0, 0.055), rot=(0, 0, 0, 1), lin_vel=(0.0, 0.0, 0.0), ang_vel=(0.0, 0.0, 0.0)), collision_group=0, debug_vis=False, disable_shape_checks=None), ground_plane=AssetBaseCfg(class_type=None, prim_path='/World/GroundPlane', spawn=GroundPlaneCfg(func='isaaclab.sim.spawners.from_files.from_files:spawn_ground_plane', visible=True, semantic_tags=None, copy_from_source=True, spawn_path=None, usd_path='https://omniverse-content-production.s3-us-west-2.amazonaws.com/Assets/Isaac/6.0/Isaac/Environments/Grid/default_environment.usd', color=(0.0, 0.0, 0.0), size=(100.0, 100.0), physics_material=RigidBodyMaterialCfg(func='isaaclab.sim.spawners.materials.physics_materials:spawn_rigid_body_material', static_friction=0.5, dynamic_friction=0.5, restitution=0.0, compliant_contact_stiffness=None, compliant_contact_damping=None, friction_combine_mode=None, restitution_combine_mode=None)), init_state=AssetBaseCfg.InitialStateCfg(pos=(0.0, 0.0, -1.05), rot=(0.0, 0.0, 0.0, 1.0)), collision_group=0, debug_vis=False, disable_shape_checks=None), light=AssetBaseCfg(class_type=None, prim_path='/World/Light', spawn=DomeLightCfg(func='isaaclab.sim.spawners.lights.lights:spawn_light', visible=True, semantic_tags=None, copy_from_source=True, spawn_path=None, prim_type='DomeLight', color=(0.75, 0.75, 0.75), enable_color_temperature=False, color_temperature=6500.0, normalize=False, exposure=0.0, intensity=500.0, texture_file=None, texture_format='automatic', visible_in_primary_ray=True), init_state=AssetBaseCfg.InitialStateCfg(pos=(0.0, 0.0, 0.0), rot=(0.0, 0.0, 0.0, 1.0)), collision_group=0, debug_vis=False, disable_shape_checks=None), robot=ArticulationCfg(class_type='isaaclab.assets.articulation.articulation:Articulation', prim_path='{ENV_REGEX_NS}/Robot', spawn=UsdFileCfg(func='isaaclab.sim.spawners.from_files.from_files:spawn_from_usd', visible=True, semantic_tags=None, copy_from_source=True, spawn_path=None, mass_props=None, deformable_props=None, rigid_props=RigidBodyPropertiesCfg(rigid_body_enabled=None, kinematic_enabled=None, disable_gravity=True, linear_damping=None, angular_damping=None, max_linear_velocity=None, max_angular_velocity=None, max_depenetration_velocity=5.0, max_contact_impulse=None, enable_gyroscopic_forces=None, retain_accelerations=None, solver_position_iteration_count=None, solver_velocity_iteration_count=None, sleep_threshold=None, stabilization_threshold=None), collision_props=None, activate_contact_sensors=True, scale=None, articulation_props=ArticulationRootPropertiesCfg(articulation_enabled=None, fix_root_link=None, enabled_self_collisions=True, solver_position_iteration_count=8, solver_velocity_iteration_count=0, sleep_threshold=None, stabilization_threshold=None), fixed_tendons_props=None, spatial_tendons_props=None, joint_drive_props=None, visual_material_path='material', visual_material=None, physics_material_path='material', physics_material=None, usd_path='<TACHARNESS_CHECKOUT>/assets/robots/isaaclab_franka_tacumi_dm25pd04.usda', variants=None), init_state=ArticulationCfg.InitialStateCfg(pos=(0.0, 0.0, 0.0), rot=(0.0, 0.0, 0.0, 1.0), lin_vel=(0.0, 0.0, 0.0), ang_vel=(0.0, 0.0, 0.0), joint_pos={'panda_joint1': 0.0, 'panda_joint2': -0.569, 'panda_joint3': 0.0, 'panda_joint4': -2.81, 'panda_joint5': 0.0, 'panda_joint6': 3.037, 'panda_joint7': 0.741, 'Link4_joint': 0.0, 'Link5_joint': 0.0}, joint_vel={'.*': 0.0}), collision_group=0, debug_vis=False, disable_shape_checks=None, articulation_root_prim_path=None, soft_joint_pos_limit_factor=1.0, actuators={'panda_shoulder': ImplicitActuatorCfg(class_type='isaaclab.actuators.actuator_pd:ImplicitActuator', joint_names_expr=['panda_joint[1-4]'], effort_limit=None, velocity_limit=None, effort_limit_sim=87.0, velocity_limit_sim=None, stiffness=400.0, damping=80.0, armature=0.001, friction=None, dynamic_friction=None, viscous_friction=None), 'panda_forearm': ImplicitActuatorCfg(class_type='isaaclab.actuators.actuator_pd:ImplicitActuator', joint_names_expr=['panda_joint[5-7]'], effort_limit=None, velocity_limit=None, effort_limit_sim=12.0, velocity_limit_sim=None, stiffness=400.0, damping=80.0, armature=0.001, friction=None, dynamic_friction=None, viscous_friction=None), 'tacumi_gripper': ImplicitActuatorCfg(class_type='isaaclab.actuators.actuator_pd:ImplicitActuator', joint_names_expr=['Link4_joint', 'Link5_joint'], effort_limit=None, velocity_limit=None, effort_limit_sim=1.0, velocity_limit_sim=2.0, stiffness=2000.0, damping=100.0, armature=0.0, friction=0.0, dynamic_friction=None, viscous_friction=None)}, actuator_value_resolution_debug_print=False), ee_frame=FrameTransformerCfg(class_type='isaaclab.sensors.frame_transformer.frame_transformer:FrameTransformer', prim_path='{ENV_REGEX_NS}/Robot/panda_link0', update_period=0.0, debug_vis=False, source_frame_offset=OffsetCfg(pos=(0.0, 0.0, 0.0), rot=(0.0, 0.0, 0.0, 1.0)), target_frames=[FrameTransformerCfg.FrameCfg(prim_path='{ENV_REGEX_NS}/Robot/Gripper/Tacumi/base_link', name='end_effector', offset=OffsetCfg(pos=(0.0, 0.0, 0.104275), rot=(0.0, 0.0, 0.0, 1.0)))], visualizer_cfg=VisualizationMarkersCfg(prim_path='/Visuals/FrameTransformer', markers={'frame': UsdFileCfg(func='isaaclab.sim.spawners.from_files.from_files:spawn_from_usd', visible=True, semantic_tags=None, copy_from_source=True, spawn_path=None, mass_props=None, deformable_props=None, rigid_props=None, collision_props=None, activate_contact_sensors=False, scale=(0.1, 0.1, 0.1), articulation_props=None, fixed_tendons_props=None, spatial_tendons_props=None, joint_drive_props=None, visual_material_path='material', visual_material=None, physics_material_path='material', physics_material=None, usd_path='https://omniverse-content-production.s3-us-west-2.amazonaws.com/Assets/Isaac/6.0/Isaac/Props/UIElements/frame_prim.usd', variants=None), 'connecting_line': CylinderCfg(func='isaaclab.sim.spawners.shapes.shapes:spawn_cylinder', visible=True, semantic_tags=None, copy_from_source=True, spawn_path=None, mass_props=None, rigid_props=None, collision_props=None, activate_contact_sensors=False, visual_material_path='material', visual_material=PreviewSurfaceCfg(func='isaaclab.sim.spawners.materials.visual_materials:spawn_preview_surface', diffuse_color=(1.0, 1.0, 0.0), emissive_color=(0.0, 0.0, 0.0), roughness=1.0, metallic=0.0, opacity=1.0), physics_material_path='material', physics_material=None, radius=0.002, height=1.0, axis='Z')})), contact_gripper=ContactSensorCfg(class_type='isaaclab.sensors.contact_sensor.contact_sensor:ContactSensor', prim_path='{ENV_REGEX_NS}/Robot/Gripper/Tacumi/Link[45]', update_period=0.0, debug_vis=False, track_pose=False, track_contact_points=False, track_friction_forces=False, max_contact_data_count_per_prim=None, track_air_time=False, force_threshold=None, history_length=0, filter_prim_paths_expr=[], visualizer_cfg=VisualizationMarkersCfg(prim_path='/Visuals/ContactSensor', markers={'contact': SphereCfg(func='isaaclab.sim.spawners.shapes.shapes:spawn_sphere', visible=True, semantic_tags=None, copy_from_source=True, spawn_path=None, mass_props=None, rigid_props=None, collision_props=None, activate_contact_sensors=False, visual_material_path='material', visual_material=PreviewSurfaceCfg(func='isaaclab.sim.spawners.materials.visual_materials:spawn_preview_surface', diffuse_color=(1.0, 0.0, 0.0), emissive_color=(0.0, 0.0, 0.0), roughness=0.5, metallic=0.0, opacity=1.0), physics_material_path='material', physics_material=None, radius=0.02), 'no_contact': SphereCfg(func='isaaclab.sim.spawners.shapes.shapes:spawn_sphere', visible=False, semantic_tags=None, copy_from_source=True, spawn_path=None, mass_props=None, rigid_props=None, collision_props=None, activate_contact_sensors=False, visual_material_path='material', visual_material=PreviewSurfaceCfg(func='isaaclab.sim.spawners.materials.visual_materials:spawn_preview_surface', diffuse_color=(0.0, 1.0, 0.0), emissive_color=(0.0, 0.0, 0.0), roughness=0.5, metallic=0.0, opacity=1.0), physics_material_path='material', physics_material=None, radius=0.02)})), tacumi_finger_frames=FrameTransformerCfg(class_type='isaaclab.sensors.frame_transformer.frame_transformer:FrameTransformer', prim_path='{ENV_REGEX_NS}/Robot/panda_link0', update_period=0.0, debug_vis=False, source_frame_offset=OffsetCfg(pos=(0.0, 0.0, 0.0), rot=(0.0, 0.0, 0.0, 1.0)), target_frames=[FrameTransformerCfg.FrameCfg(prim_path='{ENV_REGEX_NS}/Robot/Gripper/Tacumi/Link4', name='tool_rightfinger', offset=OffsetCfg(pos=(0.0, 0.0, 0.0), rot=(0.0, 0.0, 0.0, 1.0))), FrameTransformerCfg.FrameCfg(prim_path='{ENV_REGEX_NS}/Robot/Gripper/Tacumi/Link5', name='tool_leftfinger', offset=OffsetCfg(pos=(0.0, 0.0, 0.0), rot=(0.0, 0.0, 0.0, 1.0)))], visualizer_cfg=VisualizationMarkersCfg(prim_path='/Visuals/FrameTransformer', markers={'frame': UsdFileCfg(func='isaaclab.sim.spawners.from_files.from_files:spawn_from_usd', visible=True, semantic_tags=None, copy_from_source=True, spawn_path=None, mass_props=None, deformable_props=None, rigid_props=None, collision_props=None, activate_contact_sensors=False, scale=(0.1, 0.1, 0.1), articulation_props=None, fixed_tendons_props=None, spatial_tendons_props=None, joint_drive_props=None, visual_material_path='material', visual_material=None, physics_material_path='material', physics_material=None, usd_path='https://omniverse-content-production.s3-us-west-2.amazonaws.com/Assets/Isaac/6.0/Isaac/Props/UIElements/frame_prim.usd', variants=None), 'connecting_line': CylinderCfg(func='isaaclab.sim.spawners.shapes.shapes:spawn_cylinder', visible=True, semantic_tags=None, copy_from_source=True, spawn_path=None, mass_props=None, rigid_props=None, collision_props=None, activate_contact_sensors=False, visual_material_path='material', visual_material=PreviewSurfaceCfg(func='isaaclab.sim.spawners.materials.visual_materials:spawn_preview_surface', diffuse_color=(1.0, 1.0, 0.0), emissive_color=(0.0, 0.0, 0.0), roughness=1.0, metallic=0.0, opacity=1.0), physics_material_path='material', physics_material=None, radius=0.002, height=1.0, axis='Z')}))), recorders=RecorderManagerCfg(dataset_file_handler_class_type=<class 'isaaclab.utils.datasets.hdf5_dataset_file_handler.HDF5DatasetFileHandler'>, dataset_export_dir_path='/tmp/isaaclab/logs', dataset_filename='dataset_20261020_172511_rank0', dataset_export_mode=<DatasetExportMode.EXPORT_ALL: 1>, export_in_record_pre_reset=True, export_in_close=False, dataset_compression=True, success_rate=SuccessRecorderCfg(class_type=<class 'isaaclab_arena.metrics.success_rate.SuccessRecorder'>, name='success')), observations=ObservationCfg(policy=FrankaObservationsCfg.PolicyCfg(concatenate_terms=True, concatenate_dim=-1, enable_corruption=False, history_length=None, flatten_history_dim=True, actions=ObservationTermCfg(func=<function last_action at 0x796bb040d940>, params={}, modifiers=None, noise=None, clip=None, scale=None, history_length=0, flatten_history_dim=True), joint_pos=ObservationTermCfg(func=<function joint_pos_rel at 0x796bb040c9a0>, params={}, modifiers=None, noise=None, clip=None, scale=None, history_length=0, flatten_history_dim=True), joint_vel=ObservationTermCfg(func=<function joint_vel_rel at 0x796bb040cd60>, params={}, modifiers=None, noise=None, clip=None, scale=None, history_length=0, flatten_history_dim=True), eef_pos=ObservationTermCfg(func=<function ee_frame_pos at 0x796bb0be2c00>, params={}, modifiers=None, noise=None, clip=None, scale=None, history_length=0, flatten_history_dim=True), eef_quat=ObservationTermCfg(func=<function ee_frame_quat at 0x796bb0be2ca0>, params={}, modifiers=None, noise=None, clip=None, scale=None, history_length=0, flatten_history_dim=True), gripper_pos=ObservationTermCfg(func=<function gripper_pos at 0x796bb05831a0>, params={}, modifiers=None, noise=None, clip=None, scale=None, history_length=0, flatten_history_dim=True)), task_obs=LiftObjectObservationsCfg.__init__.<locals>.TaskObsCfg(concatenate_terms=True, concatenate_dim=-1, enable_corruption=False, history_length=None, flatten_history_dim=True, target_object_position=ObservationTermCfg(func=<function generated_commands at 0x796bb040da80>, params={'command_name': 'object_pose'}, modifiers=None, noise=None, clip=None, scale=None, history_length=0, flatten_history_dim=True), object_position=ObservationTermCfg(func=<function object_position_in_frame at 0x796b6c1ef240>, params={'root_frame_cfg': SceneEntityCfg(name='robot', joint_names=None, joint_ids=slice(None, None, None), fixed_tendon_names=None, fixed_tendon_ids=slice(None, None, None), body_names=None, body_ids=slice(None, None, None), object_collection_names=None, object_collection_ids=slice(None, None, None), preserve_order=False), 'object_cfg': SceneEntityCfg(name='dex_cube', joint_names=None, joint_ids=slice(None, None, None), fixed_tendon_names=None, fixed_tendon_ids=slice(None, None, None), body_names=None, body_ids=slice(None, None, None), object_collection_names=None, object_collection_ids=slice(None, None, None), preserve_order=False)}, modifiers=None, noise=None, clip=None, scale=None, history_length=0, flatten_history_dim=True))), actions=FrankaIKActionCfg(arm_action=DifferentialInverseKinematicsActionCfg(class_type='isaaclab.envs.mdp.actions.task_space_actions:DifferentialInverseKinematicsAction', asset_name='robot', debug_vis=False, clip=None, joint_names=['panda_joint.*'], body_name='base_link', body_offset=DifferentialInverseKinematicsActionCfg.OffsetCfg(pos=(0.0, 0.0, 0.104275), rot=(0.0, 0.0, 0.0, 1.0)), scale=0.5, controller=DifferentialIKControllerCfg(class_type='isaaclab.controllers.differential_ik:DifferentialIKController', command_type='pose', use_relative_mode=True, ik_method='dls', ik_params={'lambda_val': 0.01})), gripper_action=BinaryJointPositionActionCfg(class_type='isaaclab.envs.mdp.actions.binary_joint_actions:BinaryJointPositionAction', asset_name='robot', debug_vis=False, clip=None, joint_names=['Link4_joint', 'Link5_joint'], open_command_expr={'Link4_joint': 0.0, 'Link5_joint': 0.0}, close_command_expr={'Link4_joint': 0.3490658503988659, 'Link5_joint': -0.3490658503988659})), events=EventsCfg(init_franka_arm_pose=EventTermCfg(func=<function set_default_joint_pose at 0x796bb0582200>, params={'default_pose': [0.0, -0.785, -0.1107, -1.1775, 0.0, 0.785, 0.785, 0.0, 0.0]}, mode='reset', interval_range_s=None, is_global_time=False, min_step_count_between_reset=0), randomize_franka_joint_state=EventTermCfg(func=<function randomize_joint_by_gaussian_offset at 0x796bb0582980>, params={'mean': 0.0, 'std': 0.02, 'asset_cfg': SceneEntityCfg(name='robot', joint_names=None, joint_ids=slice(None, None, None), fixed_tendon_names=None, fixed_tendon_ids=slice(None, None, None), body_names=None, body_ids=slice(None, None, None), object_collection_names=None, object_collection_ids=slice(None, None, None), preserve_order=False)}, mode='reset', interval_range_s=None, is_global_time=False, min_step_count_between_reset=0), dex_cube=EventTermCfg(func=<function set_object_pose at 0x796bb04a09a0>, params={'pose': Pose(position_xyz=(0.5, 0, 0.055), rotation_xyzw=(0, 0, 0, 1)), 'asset_cfg': SceneEntityCfg(name='dex_cube', joint_names=None, joint_ids=slice(None, None, None), fixed_tendon_names=None, fixed_tendon_ids=slice(None, None, None), body_names=None, body_ids=slice(None, None, None), object_collection_names=None, object_collection_ids=slice(None, None, None), preserve_order=False), 'velocity': None}, mode='reset', interval_range_s=None, is_global_time=False, min_step_count_between_reset=0)), rerender_on_reset=False, num_rerenders_on_reset=0, wait_for_textures=False, xr=None, teleop_devices=None, isaac_teleop=None, export_io_descriptors=False, log_dir=None, video_recorder=VideoRecorderCfg(class_type=<class 'isaaclab.envs.utils.video_recorder.VideoRecorder'>, env_render_mode=None, eye=(7.5, 7.5, 7.5), lookat=(0.0, 0.0, 0.0), backend_source='visualizer', window_width=1280, window_height=720), is_finite_horizon=False, episode_length_s=5.0, rewards=RewardsCfg(action_rate=RewardTermCfg(func=<function action_rate_l2 at 0x796bb040f560>, params={}, weight=-0.0001), joint_vel=RewardTermCfg(func=<function joint_vel_l2 at 0x796bb040f1a0>, params={'asset_cfg': SceneEntityCfg(name='robot', joint_names=None, joint_ids=slice(None, None, None), fixed_tendon_names=None, fixed_tendon_ids=slice(None, None, None), body_names=None, body_ids=slice(None, None, None), object_collection_names=None, object_collection_ids=slice(None, None, None), preserve_order=False)}, weight=-0.0001), reaching_object=RewardTermCfg(func=<function object_ee_distance at 0x796b6c1ef7e0>, params={'std': 0.1, 'object_cfg': SceneEntityCfg(name='dex_cube', joint_names=None, joint_ids=slice(None, None, None), fixed_tendon_names=None, fixed_tendon_ids=slice(None, None, None), body_names=None, body_ids=slice(None, None, None), object_collection_names=None, object_collection_ids=slice(None, None, None), preserve_order=False), 'ee_frame_cfg': SceneEntityCfg(name='ee_frame', joint_names=None, joint_ids=slice(None, None, None), fixed_tendon_names=None, fixed_tendon_ids=slice(None, None, None), body_names=None, body_ids=slice(None, None, None), object_collection_names=None, object_collection_ids=slice(None, None, None), preserve_order=False)}, weight=1.0), lifting_object=RewardTermCfg(func=<function object_is_lifted at 0x796b6c1ef4c0>, params={'object_cfg': SceneEntityCfg(name='dex_cube', joint_names=None, joint_ids=slice(None, None, None), fixed_tendon_names=None, fixed_tendon_ids=slice(None, None, None), body_names=None, body_ids=slice(None, None, None), object_collection_names=None, object_collection_ids=slice(None, None, None), preserve_order=False), 'minimal_height': 0.04}, weight=15.0), object_goal_tracking=RewardTermCfg(func=<function object_goal_distance at 0x796b6c1ef600>, params={'std': 0.3, 'minimal_height': 0.04, 'command_name': 'object_pose', 'robot_cfg': SceneEntityCfg(name='robot', joint_names=None, joint_ids=slice(None, None, None), fixed_tendon_names=None, fixed_tendon_ids=slice(None, None, None), body_names=None, body_ids=slice(None, None, None), object_collection_names=None, object_collection_ids=slice(None, None, None), preserve_order=False), 'object_cfg': SceneEntityCfg(name='dex_cube', joint_names=None, joint_ids=slice(None, None, None), fixed_tendon_names=None, fixed_tendon_ids=slice(None, None, None), body_names=None, body_ids=slice(None, None, None), object_collection_names=None, object_collection_ids=slice(None, None, None), preserve_order=False)}, weight=16.0), object_goal_tracking_fine_grained=RewardTermCfg(func=<function object_goal_distance at 0x796b6c1ef600>, params={'std': 0.05, 'minimal_height': 0.04, 'command_name': 'object_pose', 'robot_cfg': SceneEntityCfg(name='robot', joint_names=None, joint_ids=slice(None, None, None), fixed_tendon_names=None, fixed_tendon_ids=slice(None, None, None), body_names=None, body_ids=slice(None, None, None), object_collection_names=None, object_collection_ids=slice(None, None, None), preserve_order=False), 'object_cfg': SceneEntityCfg(name='dex_cube', joint_names=None, joint_ids=slice(None, None, None), fixed_tendon_names=None, fixed_tendon_ids=slice(None, None, None), body_names=None, body_ids=slice(None, None, None), object_collection_names=None, object_collection_ids=slice(None, None, None), preserve_order=False)}, weight=5.0)), terminations=TerminationCfg(time_out=TerminationTermCfg(func=<function time_out at 0x796b945d9580>, params={}, time_out=False), object_dropped=TerminationTermCfg(func=<function root_height_below_minimum at 0x796b945d9760>, params={'minimum_height': -0.05, 'asset_cfg': SceneEntityCfg(name='dex_cube', joint_names=None, joint_ids=slice(None, None, None), fixed_tendon_names=None, fixed_tendon_ids=slice(None, None, None), body_names=None, body_ids=slice(None, None, None), object_collection_names=None, object_collection_ids=slice(None, None, None), preserve_order=False)}, time_out=False), success=TerminationTermCfg(func=<function lift_object_rl_success at 0x796b6c1efb00>, params={'object_cfg': SceneEntityCfg(name='dex_cube', joint_names=None, joint_ids=slice(None, None, None), fixed_tendon_names=None, fixed_tendon_ids=slice(None, None, None), body_names=None, body_ids=slice(None, None, None), object_collection_names=None, object_collection_ids=slice(None, None, None), preserve_order=False), 'robot_cfg': SceneEntityCfg(name='robot', joint_names=None, joint_ids=slice(None, None, None), fixed_tendon_names=None, fixed_tendon_ids=slice(None, None, None), body_names=None, body_ids=slice(None, None, None), object_collection_names=None, object_collection_ids=slice(None, None, None), preserve_order=False), 'rl_training': False, 'command_name': 'object_pose', 'position_tolerance': 0.05}, time_out=False)), curriculum=CurriculumCfg(), commands=CommandsCfg(object_pose=UniformPoseCommandCfg(class_type='isaaclab.envs.mdp.commands.pose_command:UniformPoseCommand', resampling_time_range=(5.0, 5.0), debug_vis=True, cmd_kind=None, element_names=None, asset_name='robot', body_name='base_link', make_quat_unique=False, ranges=UniformPoseCommandCfg.Ranges(pos_x=(0.4, 0.6), pos_y=(-0.25, 0.25), pos_z=(0.255, 0.455), roll=(0.0, 0.0), pitch=(0.0, 0.0), yaw=(0.0, 0.0)), position_success_threshold=None, goal_pose_visualizer_cfg=VisualizationMarkersCfg(prim_path='/Visuals/Command/goal_pose', markers={'frame': UsdFileCfg(func='isaaclab.sim.spawners.from_files.from_files:spawn_from_usd', visible=True, semantic_tags=None, copy_from_source=True, spawn_path=None, mass_props=None, deformable_props=None, rigid_props=None, collision_props=None, activate_contact_sensors=False, scale=(0.1, 0.1, 0.1), articulation_props=None, fixed_tendons_props=None, spatial_tendons_props=None, joint_drive_props=None, visual_material_path='material', visual_material=None, physics_material_path='material', physics_material=None, usd_path='https://omniverse-content-production.s3-us-west-2.amazonaws.com/Assets/Isaac/6.0/Isaac/Props/UIElements/frame_prim.usd', variants=None), 'connecting_line': CylinderCfg(func='isaaclab.sim.spawners.shapes.shapes:spawn_cylinder', visible=True, semantic_tags=None, copy_from_source=True, spawn_path=None, mass_props=None, rigid_props=None, collision_props=None, activate_contact_sensors=False, visual_material_path='material', visual_material=PreviewSurfaceCfg(func='isaaclab.sim.spawners.materials.visual_materials:spawn_preview_surface', diffuse_color=(1.0, 1.0, 0.0), emissive_color=(0.0, 0.0, 0.0), roughness=1.0, metallic=0.0, opacity=1.0), physics_material_path='material', physics_material=None, radius=0.002, height=1.0, axis='Z')}), current_pose_visualizer_cfg=VisualizationMarkersCfg(prim_path='/Visuals/Command/body_pose', markers={'frame': UsdFileCfg(func='isaaclab.sim.spawners.from_files.from_files:spawn_from_usd', visible=True, semantic_tags=None, copy_from_source=True, spawn_path=None, mass_props=None, deformable_props=None, rigid_props=None, collision_props=None, activate_contact_sensors=False, scale=(0.1, 0.1, 0.1), articulation_props=None, fixed_tendons_props=None, spatial_tendons_props=None, joint_drive_props=None, visual_material_path='material', visual_material=None, physics_material_path='material', physics_material=None, usd_path='https://omniverse-content-production.s3-us-west-2.amazonaws.com/Assets/Isaac/6.0/Isaac/Props/UIElements/frame_prim.usd', variants=None), 'connecting_line': CylinderCfg(func='isaaclab.sim.spawners.shapes.shapes:spawn_cylinder', visible=True, semantic_tags=None, copy_from_source=True, spawn_path=None, mass_props=None, rigid_props=None, collision_props=None, activate_contact_sensors=False, visual_material_path='material', visual_material=PreviewSurfaceCfg(func='isaaclab.sim.spawners.materials.visual_materials:spawn_preview_surface', diffuse_color=(1.0, 1.0, 0.0), emissive_color=(0.0, 0.0, 0.0), roughness=1.0, metallic=0.0, opacity=1.0), physics_material_path='material', physics_material=None, radius=0.002, height=1.0, axis='Z')}))), metrics=MetricsCfg(success_rate=MetricTermCfg(compute_metric_func=<function compute_success_rate at 0x796b6c1ee700>, params={}, recorder_term_name='success')), episode_recorders=EpisodeRecorderManagerCfg(core=CoreEpisodeRecorderTermCfg(func=<function record_core_episode_results at 0x796b6c11fa60>, params={}), variations=VariationEpisodeRecorderTermCfg(func=<function record_variation_samples at 0x796b6c11fce0>, params={}), progress=ProgressEpisodeRecorderTermCfg(func=<function record_progress_results at 0x796b6c148e00>, params={})), task_description='Grasp the cube and move it to the displayed target position.')
+[INFO]: Base environment:
+	Environment device    : cuda:0
+	Environment seed      : 42
+	Physics step-size     : 0.005
+	Rendering step-size   : 0.01
+	Environment step-size : 0.02
+[INFO]: Registered backend 'physx' for factory FrameView.
+[INFO]: Registered backend 'physx' for factory RigidObject.
+[INFO]: Registered backend 'physx' for factory Articulation.
+[INFO]: Registered backend 'physx' for factory FrameTransformer.
+[INFO]: Registered backend 'physx' for factory ContactSensor.
+[INFO]: Physics scene prim path: /physicsScene
+[INFO]: Time taken for scene creation Last: 1.052048 s, Mean: 1.052048 s, Std: 0.000000 s, N: 1
+[INFO]: Scene manager:  <class InteractiveScene>
+	Number of environments: 1
+	Environment spacing   : 30.0
+	Source prim name      : /World/envs/env_0
+	Global prim paths     : []
+	Replicate physics     : False
+[INFO]: Simulation parameters for joints in /World/envs/env_.*/Robot:
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                 Simulation Joint Information (Prim path: /World/envs/env_.*/Robot)                                                 |
++-------+--------------+-----------+---------+----------+-----------------+------------------+------------------+------------------+-----------------+---------------+
+| Index | Name         | Stiffness | Damping | Armature | Static Friction | Dynamic Friction | Viscous Friction | Position Limits  | Velocity Limits | Effort Limits |
++-------+--------------+-----------+---------+----------+-----------------+------------------+------------------+------------------+-----------------+---------------+
+|   0   | panda_joint1 |  400.000  |  80.000 |  0.001   |      0.000      |      0.000       |      0.000       | [-2.897, 2.897]  |      2.175      |     87.000    |
+|   1   | panda_joint2 |  400.000  |  80.000 |  0.001   |      0.000      |      0.000       |      0.000       | [-1.763, 1.763]  |      2.175      |     87.000    |
+|   2   | panda_joint3 |  400.000  |  80.000 |  0.001   |      0.000      |      0.000       |      0.000       | [-2.897, 2.897]  |      2.175      |     87.000    |
+|   3   | panda_joint4 |  400.000  |  80.000 |  0.001   |      0.000      |      0.000       |      0.000       | [-3.072, -0.070] |      2.175      |     87.000    |
+|   4   | panda_joint5 |  400.000  |  80.000 |  0.001   |      0.000      |      0.000       |      0.000       | [-2.897, 2.897]  |      2.610      |     12.000    |
+|   5   | panda_joint6 |  400.000  |  80.000 |  0.001   |      0.000      |      0.000       |      0.000       | [-0.018, 3.753]  |      2.610      |     12.000    |
+|   6   | panda_joint7 |  400.000  |  80.000 |  0.001   |      0.000      |      0.000       |      0.000       | [-2.897, 2.897]  |      2.610      |     12.000    |
+|   7   | Link4_joint  |  2.0e+03  | 100.000 |  0.000   |      0.000      |      0.000       |      0.000       |  [0.000, 0.559]  |      2.000      |     1.000     |
+|   8   | Link5_joint  |  2.0e+03  | 100.000 |  0.000   |      0.000      |      0.000       |      0.000       | [-0.559, 0.000]  |      2.000      |     1.000     |
++-------+--------------+-----------+---------+----------+-----------------+------------------+------------------+------------------+-----------------+---------------+
+[INFO]: Offsets application needed from '/World/envs/env_.*/Robot/panda_link0' to the following target frames: ['end_effector']
+[INFO]: No offsets application needed from '/World/envs/env_.*/Robot/panda_link0' to target frames as all are identity: ['tool_rightfinger', 'tool_leftfinger']
+[INFO]: Time taken for simulation start Last: 1.475325 s, Mean: 1.475325 s, Std: 0.000000 s, N: 1
+[INFO] Command Manager:  <CommandManager> contains 1 active terms.
++------------------------------------------+
+|           Active Command Terms           |
++-------+-------------+--------------------+
+| Index | Name        |        Type        |
++-------+-------------+--------------------+
+|   0   | object_pose | UniformPoseCommand |
++-------+-------------+--------------------+
+
+[INFO] Event Manager:  <EventManager> contains 1 active terms.
++--------------------------------------+
+| Active Event Terms in Mode: 'reset'  |
++-------+------------------------------+
+| Index | Name                         |
++-------+------------------------------+
+|   0   | init_franka_arm_pose         |
+|   1   | randomize_franka_joint_state |
+|   2   | dex_cube                     |
++-------+------------------------------+
+
+[INFO] Recorder Manager:  <RecorderManager> contains 1 active terms.
++-------------------------+
+|  Active Recorder Terms  |
++--------+----------------+
+| Index  | Name           |
++--------+----------------+
+|   0    | success_rate   |
++--------+----------------+
+
+[INFO]: Resolved joint names for the action term DifferentialInverseKinematicsAction: ['panda_joint1', 'panda_joint2', 'panda_joint3', 'panda_joint4', 'panda_joint5', 'panda_joint6', 'panda_joint7'] [[0, 1, 2, 3, 4, 5, 6]]
+[INFO]: Resolved body name for the action term DifferentialInverseKinematicsAction: base_link [9]
+[INFO]: Resolved joint names for the action term BinaryJointPositionAction: ['Link4_joint', 'Link5_joint'] [[7, 8]]
+[INFO] Action Manager:  <ActionManager> contains 2 active terms.
++------------------------------------+
+|   Active Action Terms (shape: 7)   |
++-------+----------------+-----------+
+| Index | Name           | Dimension |
++-------+----------------+-----------+
+|   0   | arm_action     |         6 |
+|   1   | gripper_action |         1 |
++-------+----------------+-----------+
+
+[INFO] Observation Manager: <ObservationManager> contains 2 groups.
++------------------------------------------------------+
+| Active Observation Terms in Group: 'policy' (shape: (34,)) |
++-------------+--------------------------+-------------+
+|    Index    | Name                     |    Shape    |
++-------------+--------------------------+-------------+
+|      0      | actions                  |     (7,)    |
+|      1      | joint_pos                |     (9,)    |
+|      2      | joint_vel                |     (9,)    |
+|      3      | eef_pos                  |     (3,)    |
+|      4      | eef_quat                 |     (4,)    |
+|      5      | gripper_pos              |     (2,)    |
++-------------+--------------------------+-------------+
++------------------------------------------------------------+
+| Active Observation Terms in Group: 'task_obs' (shape: (10,)) |
++----------+--------------------------------------+----------+
+|  Index   | Name                                 |  Shape   |
++----------+--------------------------------------+----------+
+|    0     | target_object_position               |   (7,)   |
+|    1     | object_position                      |   (3,)   |
++----------+--------------------------------------+----------+
+
+[INFO] Termination Manager:  <TerminationManager> contains 3 active terms.
++-----------------------------------+
+|      Active Termination Terms     |
++-------+----------------+----------+
+| Index | Name           | Time Out |
++-------+----------------+----------+
+|   0   | time_out       |  False   |
+|   1   | object_dropped |  False   |
+|   2   | success        |  False   |
++-------+----------------+----------+
+
+[INFO] Reward Manager:  <RewardManager> contains 6 active terms.
++-----------------------------------------------------+
+|                 Active Reward Terms                 |
++-------+-----------------------------------+---------+
+| Index | Name                              |  Weight |
++-------+-----------------------------------+---------+
+|   0   | action_rate                       | -0.0001 |
+|   1   | joint_vel                         | -0.0001 |
+|   2   | reaching_object                   |     1.0 |
+|   3   | lifting_object                    |    15.0 |
+|   4   | object_goal_tracking              |    16.0 |
+|   5   | object_goal_tracking_fine_grained |     5.0 |
++-------+-----------------------------------+---------+
+
+[INFO] Curriculum Manager:  <CurriculumManager> contains 0 active terms.
++----------------------+
+| Active Curriculum Terms |
++-----------+----------+
+|   Index   | Name     |
++-----------+----------+
++-----------+----------+
+
+[INFO]: Completed setting up the environment...
+[INFO]: RTX streaming completed in 0.03 s.
+[INFO]: RTX streaming completed in 0.25 s.
+[INFO]: RTX streaming completed in 0.01 s.
+[INFO]: RTX streaming completed in 0.01 s.
+[INFO]: RTX streaming completed in 0.01 s.
+[INFO]: RTX streaming completed in 0.02 s.
+[INFO]: RTX streaming completed in 0.01 s.
+[INFO]: RTX streaming completed in 0.01 s.
+[INFO]: RTX streaming completed in 0.01 s.
+[INFO]: RTX streaming completed in 0.01 s.
+[INFO]: RTX streaming completed in 0.01 s.
+[INFO]: RTX streaming completed in 0.01 s.
+[INFO]: RTX streaming completed in 0.01 s.
+[INFO]: RTX streaming completed in 0.01 s.
+[INFO]: RTX streaming completed in 0.02 s.
+[INFO]: RTX streaming completed in 0.01 s.
+[INFO]: RTX streaming completed in 0.02 s.
+[INFO]: RTX streaming completed in 0.01 s.
+[INFO]: RTX streaming completed in 0.02 s.
+[INFO]: RTX streaming completed in 0.01 s.
+[INFO]: RTX streaming completed in 0.02 s.
+[INFO]: RTX streaming completed in 0.01 s.
+[INFO]: RTX streaming completed in 0.01 s.
+[INFO]: RTX streaming completed in 0.01 s.
+[INFO]: RTX streaming completed in 0.01 s.
+[INFO]: RTX streaming completed in 0.01 s.
+[INFO]: RTX streaming completed in 0.01 s.
+[INFO]: RTX streaming completed in 0.01 s.
+[INFO]: RTX streaming completed in 0.01 s.
+[INFO]: RTX streaming completed in 0.01 s.
+[INFO]: RTX streaming completed in 0.01 s.
+[INFO]: RTX streaming completed in 0.03 s.
+[INFO]: RTX streaming completed in 0.01 s.
+[INFO]: RTX streaming completed in 0.02 s.
+[INFO]: RTX streaming completed in 0.01 s.
+[INFO]: RTX streaming completed in 0.01 s.
+[INFO]: RTX streaming completed in 0.01 s.
+[INFO]: RTX streaming completed in 0.01 s.
+[INFO]: RTX streaming completed in 0.01 s.
+[INFO]: RTX streaming completed in 0.01 s.
+[INFO]: RTX streaming completed in 0.01 s.
+[INFO]: RTX streaming completed in 0.01 s.
+[INFO]: RTX streaming completed in 0.01 s.
+[INFO]: RTX streaming completed in 0.01 s.
+[INFO]: RTX streaming completed in 0.01 s.
+[INFO]: RTX streaming completed in 0.01 s.
+[INFO]: RTX streaming completed in 0.01 s.
+[INFO]: RTX streaming completed in 0.01 s.
+[INFO]: RTX streaming completed in 0.02 s.
+[INFO]: RTX streaming completed in 0.01 s.
+[INFO]: RTX streaming completed in 0.08 s.
+[INFO]: RTX streaming completed in 0.01 s.
+[INFO]: RTX streaming completed in 0.02 s.
+[INFO]: RTX streaming completed in 0.01 s.
+[INFO]: RTX streaming completed in 0.01 s.
+[INFO]: RTX streaming completed in 0.01 s.
+[INFO]: RTX streaming completed in 0.01 s.
+[INFO]: RTX streaming completed in 0.01 s.
+[INFO]: RTX streaming completed in 0.01 s.
+[INFO]: RTX streaming completed in 0.01 s.
+[INFO]: RTX streaming completed in 0.01 s.
+[INFO]: RTX streaming completed in 0.01 s.
+[INFO]: RTX streaming completed in 0.01 s.
+[INFO]: RTX streaming completed in 0.01 s.
+[INFO]: RTX streaming completed in 0.01 s.
+[INFO]: RTX streaming completed in 0.01 s.
+[INFO]: RTX streaming completed in 0.01 s.
+[INFO]: RTX streaming completed in 0.02 s.
+[INFO]: RTX streaming completed in 0.01 s.
+[INFO]: RTX streaming completed in 0.02 s.
+[INFO]: RTX streaming completed in 0.01 s.
+[INFO]: RTX streaming completed in 0.01 s.
+[INFO]: RTX streaming completed in 0.01 s.
+[INFO]: RTX streaming completed in 0.02 s.
+[INFO]: RTX streaming completed in 0.01 s.
+[INFO]: RTX streaming completed in 0.02 s.
+[INFO]: RTX streaming completed in 0.01 s.
+[INFO]: RTX streaming completed in 0.01 s.
+[INFO]: RTX streaming completed in 0.01 s.
+[INFO]: RTX streaming completed in 0.01 s.
+[INFO]: RTX streaming completed in 0.01 s.
+[INFO]: RTX streaming completed in 0.01 s.
+[INFO]: RTX streaming completed in 0.01 s.
+[INFO]: RTX streaming completed in 0.01 s.
+[INFO]: RTX streaming completed in 0.01 s.
+[INFO]: RTX streaming completed in 0.01 s.
+[INFO]: RTX streaming completed in 0.01 s.
+[INFO]: RTX streaming completed in 0.01 s.
+[INFO]: RTX streaming completed in 0.02 s.
+[INFO]: RTX streaming completed in 0.01 s.
+[INFO]: RTX streaming completed in 0.02 s.
+[INFO]: RTX streaming completed in 0.01 s.
+[INFO]: RTX streaming completed in 0.02 s.
+[INFO]: RTX streaming completed in 0.01 s.
+[INFO]: RTX streaming completed in 0.02 s.
+[INFO]: RTX streaming completed in 0.02 s.
+[INFO]: RTX streaming completed in 0.08 s.
+[INFO]: RTX streaming completed in 0.01 s.
+[INFO]: RTX streaming completed in 0.02 s.
+[INFO]: RTX streaming completed in 0.01 s.
+[INFO]: RTX streaming completed in 0.02 s.
+[INFO]: RTX streaming completed in 0.01 s.
+[INFO]: RTX streaming completed in 0.08 s.
+[INFO]: RTX streaming completed in 0.01 s.
+[INFO]: RTX streaming completed in 0.01 s.
+[INFO]: RTX streaming completed in 0.01 s.
+[INFO]: RTX streaming completed in 0.02 s.
+[INFO]: RTX streaming completed in 0.01 s.
+[INFO]: RTX streaming completed in 0.01 s.
+[INFO]: RTX streaming completed in 0.01 s.
+[INFO]: RTX streaming completed in 0.01 s.
+[INFO]: RTX streaming completed in 0.01 s.
+[INFO]: RTX streaming completed in 0.01 s.
+[INFO]: RTX streaming completed in 0.01 s.
+[INFO]: RTX streaming completed in 0.01 s.
+[INFO]: RTX streaming completed in 0.01 s.
+[INFO]: RTX streaming completed in 0.02 s.
+[INFO]: RTX streaming completed in 0.01 s.
+[INFO]: RTX streaming completed in 0.01 s.
+[INFO]: RTX streaming completed in 0.01 s.
+[INFO]: RTX streaming completed in 0.02 s.
+[INFO]: RTX streaming completed in 0.01 s.
+[INFO]: RTX streaming completed in 0.01 s.
+[INFO]: RTX streaming completed in 0.01 s.
+[INFO]: RTX streaming completed in 0.01 s.
+[INFO]: RTX streaming completed in 0.01 s.
+[INFO]: RTX streaming completed in 0.01 s.
+[INFO]: RTX streaming completed in 0.02 s.
+[INFO]: RTX streaming completed in 0.01 s.
+[INFO]: RTX streaming completed in 0.02 s.
+[INFO]: RTX streaming completed in 0.01 s.
+[INFO]: RTX streaming completed in 0.01 s.
+[INFO]: RTX streaming completed in 0.01 s.
+[INFO]: RTX streaming completed in 0.01 s.
+[INFO]: RTX streaming completed in 0.01 s.
+[INFO]: RTX streaming completed in 0.01 s.
+[INFO]: RTX streaming completed in 0.01 s.
+[INFO]: RTX streaming completed in 0.01 s.
+[INFO]: RTX streaming completed in 0.08 s.
+[INFO]: RTX streaming completed in 0.01 s.
+[INFO]: RTX streaming completed in 0.01 s.
+[INFO]: RTX streaming completed in 0.01 s.
+[INFO]: RTX streaming completed in 0.01 s.
+[INFO]: RTX streaming completed in 0.01 s.
+[INFO]: RTX streaming completed in 0.01 s.
+[INFO]: RTX streaming completed in 0.01 s.
+[INFO]: RTX streaming completed in 0.01 s.
+[INFO]: RTX streaming completed in 0.01 s.
+[INFO]: RTX streaming completed in 0.03 s.
+[INFO]: RTX streaming completed in 0.01 s.
+[INFO]: RTX streaming completed in 0.01 s.
+[INFO]: RTX streaming completed in 0.01 s.
+[INFO]: RTX streaming completed in 0.01 s.
+[INFO]: RTX streaming completed in 0.02 s.
+[INFO]: RTX streaming completed in 0.01 s.
+[INFO]: RTX streaming completed in 0.01 s.
+[INFO]: RTX streaming completed in 0.01 s.
+[INFO]: RTX streaming completed in 0.01 s.
+[INFO]: RTX streaming completed in 0.01 s.
+[INFO]: RTX streaming completed in 0.01 s.
+[INFO]: RTX streaming completed in 0.01 s.
+[INFO]: RTX streaming completed in 0.08 s.
+[INFO]: RTX streaming completed in 0.01 s.
+[INFO]: RTX streaming completed in 0.01 s.
+[INFO]: RTX streaming completed in 0.01 s.
+[INFO]: RTX streaming completed in 0.01 s.
+[INFO]: RTX streaming completed in 0.02 s.
+[INFO]: RTX streaming completed in 0.01 s.
+[INFO]: RTX streaming completed in 0.01 s.
+[INFO]: RTX streaming completed in 0.01 s.
+[INFO]: RTX streaming completed in 0.01 s.
+[INFO]: RTX streaming completed in 0.02 s.
+[INFO]: RTX streaming completed in 0.01 s.
+[INFO]: RTX streaming completed in 0.01 s.
+[INFO]: RTX streaming completed in 0.01 s.
+[INFO]: RTX streaming completed in 0.01 s.
+[INFO]: RTX streaming completed in 0.01 s.
+[INFO]: RTX streaming completed in 0.01 s.
+[INFO]: RTX streaming completed in 0.02 s.
+[INFO]: RTX streaming completed in 0.01 s.
+[INFO]: RTX streaming completed in 0.01 s.
+[INFO]: RTX streaming completed in 0.01 s.
+[INFO]: RTX streaming completed in 0.01 s.
+[INFO]: RTX streaming completed in 0.01 s.
+[INFO]: RTX streaming completed in 0.01 s.
+[INFO]: RTX streaming completed in 0.01 s.
+[INFO]: RTX streaming completed in 0.02 s.
+[INFO]: RTX streaming completed in 0.01 s.
+[INFO]: RTX streaming completed in 0.01 s.
+[INFO]: SimulationContext cleared
+2026-10-20T09:25:05Z [1,684ms] [Warning] [carb] Failed to startup plugin carb.windowing-glfw.plugin (interfaces: [carb::windowing::IGLContext v1.0],[carb::windowing::IWindowing v1.5]) (impl: carb.windowing-glfw.plugin)
+2026-10-20T09:25:05Z [1,913ms] [Warning] [isaacsim.core.simulation_manager.plugin] USD stage is not available; stage-opened subscription is deferred
+2026-10-20T09:25:05Z [1,913ms] [Warning] [isaacsim.core.simulation_manager.plugin] USD stage is not available; stage-opened subscription is deferred
+2026-10-20T09:25:05Z [1,937ms] [Warning] [omni.log] Source: omni.hydra was already registered.
+2026-10-20T09:25:06Z [3,084ms] [Warning] [pxr.Semantics] pxr.Semantics is deprecated - please use Semantics instead
+2026-10-20T09:25:07Z [3,152ms] [Warning] [omni.replicator.core.scripts.extension] No material configuration file, adding configuration to material settings directly.
+2026-10-20T09:25:08Z [4,170ms] [Warning] [rtx.hydra] RenderDelegate : Warning /rtx/hydra/readTransformsFromFabricInRenderDelegate and geometry streaming are enabled together but this can cause issues with dynamic objects not streaming correctly due to problems in the transform update.
+2026-10-20T09:25:08Z [4,743ms] [Warning] [omni.rtx] DLSS increasing input dimensions: Render resolution of (480, 270) is below minimal input resolution of 300.
+2026-10-20T09:25:12Z [8,164ms] [Warning] [isaaclab_physx.physics.physx_manager] TGS solver with enable_external_forces_every_iteration=False may cause noisy velocities.
+2026-10-20T09:25:12Z [8,175ms] [Warning] [isaaclab.envs.manager_based_env] The render interval (2) is smaller than the decimation (4). Multiple render calls will happen for each environment step. If this is not intended, set the render interval to be equal to the decimation.
+2026-10-20T09:25:14Z [10,225ms] [Warning] [omni.usd] Encountered USD Warnings but USD Diagnostics are currently muted. To view USD Warnings, please set the '/persistent/app/usd/muteUsdDiagnostics' setting to false in Preferences page.
+2026-10-20T09:25:14Z [11,015ms] [Warning] [omni.physx.fabric.plugin] FabricManager::initializePointInstancer mismatched prototypes on point instancer: /Visuals/Command/body_pose.
+2026-10-20T09:25:14Z [11,015ms] [Warning] [omni.physx.fabric.plugin] FabricManager::initializePointInstancer mismatched prototypes on point instancer: /Visuals/Command/goal_pose.
+2026-10-20T09:25:21Z [17,404ms] [Warning] [omni.fabric.plugin] Unsupported type encountered during VtValue extraction
+2026-10-20T09:25:21Z [17,404ms] [Warning] [omni.fabric.plugin] Attempting to set an invalid data source to array attribute
+
+2026-10-20T09:25:21Z [17,418ms] [Warning] [tacumi.tactile_runtime] Tacumi tactile-only render hides 4 self-occluders; RGB cameras are refreshed after visibility is restored
+2026-10-20T09:25:21Z [17,418ms] [Warning] [omni.physx.fabric.plugin] FabricManager::initializePointInstancer mismatched prototypes on point instancer: /Visuals/Command/goal_pose.
+2026-10-20T09:25:21Z [17,621ms] [Warning] [omni.syntheticdata.plugin] OgnSdPostRenderVarToHost : rendervar copy from texture directly to host buffer is counter-performant. Please use copy from texture to device buffer first.
+2026-10-20T09:25:21Z [17,672ms] [Warning] [omni.kit.material.library.material_extensions] Could not initialize context menu integration: No module named 'omni.kit.context_menu'
+2026-10-20T09:25:22Z [18,143ms] [Warning] [tacumi.tactile_runtime] Tacumi raw depth side=left camera=/World/envs/env_0/Robot/Gripper/Tacumi/Link5/dm_vt_x_2_left/dm_vt_x/cel/contact/Camera valid=0.00% min=nan p50=nan p99=nan max=nan mapping=[0.00649000006, 0.00730999978] render=[0.005, 0.02]
+2026-10-20T09:25:22Z [18,157ms] [Warning] [tacumi.tactile_runtime] Tacumi raw depth side=right camera=/World/envs/env_0/Robot/Gripper/Tacumi/Link4/dm_vt_x_2_right/dm_vt_x/cel/contact/Camera valid=0.00% min=nan p50=nan p99=nan max=nan mapping=[0.00649000006, 0.00730999978] render=[0.005, 0.02]

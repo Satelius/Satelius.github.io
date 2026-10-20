@@ -1,0 +1,277 @@
+{
+  "schema": "tacharness.arena.meta-smooth-run.v1",
+  "status": "meta_execution_complete",
+  "control_source": "frozen_meta_sequence_with_declared_suffix",
+  "mode": "fixed",
+  "smooth_enabled": false,
+  "online_teacher": false,
+  "teacher_inference_requests": 0,
+  "teacher_request_reservations": 0,
+  "catalog_request_reservations": 0,
+  "model_api_requests": 0,
+  "positive_demonstration": false,
+  "train_action_mask": false,
+  "seed": 42,
+  "physical_control_cap": 250,
+  "physical_time_cap_s": 5.0,
+  "actual_control_frames": 186,
+  "native_success": true,
+  "native_terminal": true,
+  "reference_accepted": true,
+  "env_step_calls_submitted": 186,
+  "env_step_calls_returned": 186,
+  "smooth_kind": "reference-transition",
+  "movement_scope": "all_movement",
+  "success_baseline_sha256": "e203fb4cd8ea7e03b181f43abf76128e745d220f441e363862cee2ba1ee001ff",
+  "fixed_tokens_sha256": "24b3482a3cb8ac2d6cdce2b8dfe84e07d3b1ed8ae8e7c304368c1aba782ddc87",
+  "video_kind": "native_meta_action_frames",
+  "video": {
+    "path": "rollout_h264.mp4",
+    "decoded_frames": 186,
+    "sha256": "397a359800ab7422b936abcc875f44c0d2acb5cc6cef3d1472dc871e1c1c0ffa"
+  },
+  "fixed_sequence_extension": {
+    "schema": "tacharness.arena.fixed-meta-suffix.v1",
+    "prefix_token_count": 186,
+    "suffix_token_count": 16,
+    "prefix_source_sha256": "e203fb4cd8ea7e03b181f43abf76128e745d220f441e363862cee2ba1ee001ff",
+    "suffix_source_sha256": "41541e67d8f84ca30eaf03eea4c8d6db8542df2fa18ab5d278c6b142431ebcba",
+    "complete_tokens_sha256": "bd39fd3040f656cab26f4a6cdf318d6870eaf18c615361791a239580a8ed2a49",
+    "executed_prefix_token_count": 186,
+    "executed_suffix_token_count": 0
+  },
+  "physics_steps_at_reset": 0,
+  "execution_contract": {
+    "schema": "tacharness.arena.execution-contract.v1",
+    "payload": {
+      "interpreter_configuration": {
+        "arm_scale": [
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ],
+        "calibration_status": "uncalibrated",
+        "coordinate_frame": "robot_base",
+        "down_quaternion_xyzw": [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "hold_frames": 1,
+        "initial_gripper_target": 1.0,
+        "native_actuators": {
+          "panda_forearm": {
+            "armature": 0.001,
+            "damping": 80.0,
+            "effort_limit": null,
+            "effort_limit_sim": 12.0,
+            "friction": null,
+            "joint_names_expr": [
+              "panda_joint[5-7]"
+            ],
+            "stiffness": 400.0,
+            "velocity_limit": null,
+            "velocity_limit_sim": null
+          },
+          "panda_shoulder": {
+            "armature": 0.001,
+            "damping": 80.0,
+            "effort_limit": null,
+            "effort_limit_sim": 87.0,
+            "friction": null,
+            "joint_names_expr": [
+              "panda_joint[1-4]"
+            ],
+            "stiffness": 400.0,
+            "velocity_limit": null,
+            "velocity_limit_sim": null
+          },
+          "tacumi_gripper": {
+            "armature": 0.0,
+            "damping": 100.0,
+            "effort_limit": null,
+            "effort_limit_sim": 1.0,
+            "friction": 0.0,
+            "joint_names_expr": [
+              "Link4_joint",
+              "Link5_joint"
+            ],
+            "stiffness": 2000.0,
+            "velocity_limit": null,
+            "velocity_limit_sim": 2.0
+          }
+        },
+        "native_control": {
+          "asset_name": "robot",
+          "body_name": "base_link",
+          "body_offset_pos": [
+            0.0,
+            0.0,
+            0.104275
+          ],
+          "body_offset_rot": [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "command_type": "pose",
+          "ik_method": "dls",
+          "ik_params": {
+            "lambda_val": 0.01
+          },
+          "joint_names": [
+            "panda_joint.*"
+          ],
+          "use_relative_mode": true
+        },
+        "native_gripper": {
+          "asset_name": "robot",
+          "close_command_expr": {
+            "Link4_joint": 0.3490658503988659,
+            "Link5_joint": -0.3490658503988659
+          },
+          "joint_names": [
+            "Link4_joint",
+            "Link5_joint"
+          ],
+          "open_command_expr": {
+            "Link4_joint": 0.0,
+            "Link5_joint": 0.0
+          }
+        },
+        "quaternion_order": "xyzw",
+        "rotation_clamp_rad": 0.08,
+        "tcp_position_tolerance_m": 1e-05,
+        "tcp_quaternion_tolerance": 0.0001,
+        "token_directions_base": {
+          "MV_BACK": [
+            -1.0,
+            0.0,
+            0.0
+          ],
+          "MV_DOWN": [
+            0.0,
+            0.0,
+            -1.0
+          ],
+          "MV_FWD": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "MV_LEFT": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "MV_RIGHT": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "MV_UP": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "translation_clamp_m": 0.12,
+        "translation_step_m": 0.12,
+        "version": "arena-online-step0.12-clamp0.12-hold1-v1"
+      },
+      "physics_adapter_configuration": {
+        "actual_boundary_preservation_certified": false,
+        "cross_token_blending": false,
+        "cross_token_reference_continuity": false,
+        "cross_token_velocity_continuity": false,
+        "enabled": false,
+        "experimental_instance_adapter": true,
+        "first_movement": "native_endpoint_bypass",
+        "future_token_used": false,
+        "grasp_release_boundary": "native_endpoint_bypass_and_reset",
+        "grasp_scope_trigger": "completed_GRASP_until_completed_RELEASE_not_contact_truth",
+        "gripper_filtered": false,
+        "gripper_settle_gate_implemented": false,
+        "movement_scope": "all_movement",
+        "native_ik_modified": false,
+        "object_state_used": false,
+        "operator": "original_endpoint_hold",
+        "orientation_smoothed": false,
+        "physics_dt_s": 0.005,
+        "physics_substeps_per_control": 4,
+        "progress_clock": "confirmed_env_step_returns",
+        "reference_anchor": "last_committed_native_command_endpoint",
+        "schema": "tacharness.arena.meta-reference-smooth.v1",
+        "token_schedule_modified": false,
+        "upstream_commit": "101bd59d3413d32a85d3afa1164f62ddf31f99da",
+        "upstream_source_sha256": "1ac18ae0d7bd82b2ceb5bd00e4e760c6058044aebdd208ce8816876fbae81eab",
+        "version": "arena-meta-reference-smooth-v1"
+      },
+      "source_sha256": {
+        "src/tacharness/isaaclab/arena_execution_contract.py": "58da5f94e69f67e97e673918f4095cbcd06d7cbf020d853e5dd8410e0dfd1590",
+        "src/tacharness/isaaclab/arena_meta_actions.py": "c31d2159bde4c088d4373e09677b5b5f23c0da9f64d4b0d35cf3f5a417d244f4",
+        "src/tacharness/isaaclab/arena_meta_execution.py": "e991b97e60c302c8c2a1d0cc38457f291e5c9c584a6b3ddb78c1b2badd0acd2c",
+        "src/tacharness/isaaclab/arena_meta_reference_smooth.py": "17041d0ada3fe6255f04dae7ed9a6c6e64cd9a1957f0b538052a6bf2ccafc886",
+        "src/tacharness/isaaclab/arena_smooth.py": "13c6192ad1efcff5056a69290315db32050fcf6210e10097b0b8a0499a27c17f",
+        "src/tacharness/isaaclab/arena_smooth_adapter.py": "0ca526efaf3e83bcda0ac85a04ec2a1535e024abb1cacad23a28dbfcb0c5dc8c",
+        "src/tacharness/isaaclab/arena_smooth_upstream.py": "1ac18ae0d7bd82b2ceb5bd00e4e760c6058044aebdd208ce8816876fbae81eab",
+        "src/tacharness/isaaclab/tacumi_arena.py": "e7e143a5231aab3194d3a145e0f06d39c7759ce8c8dc55db528faa2a515f0d25"
+      },
+      "timing": {
+        "control_dt_s": 0.02,
+        "decimation": 4,
+        "hold_frames": 1,
+        "physics_dt_s": 0.005,
+        "token_duration_s": {
+          "DONE": 0.0,
+          "GRASP": 0.02,
+          "MV_BACK": 0.02,
+          "MV_DOWN": 0.02,
+          "MV_FWD": 0.02,
+          "MV_LEFT": 0.02,
+          "MV_RIGHT": 0.02,
+          "MV_UP": 0.02,
+          "RELEASE": 0.02
+        }
+      },
+      "token_contract": {
+        "legal_tokens": [
+          "MV_FWD",
+          "MV_BACK",
+          "MV_LEFT",
+          "MV_RIGHT",
+          "MV_UP",
+          "MV_DOWN",
+          "GRASP",
+          "RELEASE",
+          "DONE"
+        ],
+        "semantics_version": "arena-nine-token-base-xyzw-v1"
+      }
+    },
+    "sha256": "595b5fa7cedd633da1d390861c485b2b39a26f97fc9a0a52c182ebbb990f0962"
+  },
+  "execution_contract_sha256": "595b5fa7cedd633da1d390861c485b2b39a26f97fc9a0a52c182ebbb990f0962",
+  "execution_contract_file_sha256": "85ebe3586e8a5b61403d8630f0ea595e347af5b9b2fe68199fa1424dec477fa1",
+  "stop_reason": "native_success",
+  "simulated_time_s": 3.72,
+  "decisions_validation": {
+    "valid": true,
+    "errors": [],
+    "decision_count": 186,
+    "actual_control_frame_count": 186,
+    "positive_demonstration_count": 0,
+    "online_teacher": false
+  },
+  "physics_steps_since_reset": 744,
+  "final_state_after_native_autoreset": true,
+  "execution_accounting_valid": true,
+  "tactile_quality_passed": true,
+  "native_success_verified_before_reset": true,
+  "elapsed_s": 333.287
+}

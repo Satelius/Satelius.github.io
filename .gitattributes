@@ -1,0 +1,2 @@
+# Preserve the signed evaluation CSV bytes, including standard CSV CRLF.
+/pages/project-progress/self-improving/meta-smooth-success-2026-10-20/**/*.csv -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
