@@ -1,0 +1,33 @@
+{
+  "passed": true,
+  "stats": {
+    "image_uses_verified": 2741,
+    "actual_model_PNG_bytes_and_pixels_verified": 1500,
+    "actual_model_contexts_verified": 500,
+    "honest_missing_reset_full_composite": 3,
+    "step_context_files_written": 686,
+    "previous_native_frame_composite_and_all_three_images_aligned": 683,
+    "full_videos_copied_and_counted": 3,
+    "runs_with_record_derived_events": 3,
+    "steps_written": 686,
+    "reference_audit_contexts_verified": 186
+  },
+  "unique_image_assets": 1540,
+  "image_assets_bytes": 266871851,
+  "image_deduplication_identity": "exact_PNG_bytes_SHA256",
+  "model_image_resized_or_recompressed": false,
+  "source_files_hashed": 4776,
+  "all_sources_unchanged_after_packaging": true,
+  "context_and_image_links_verified": 3430,
+  "symlinks_used": false,
+  "events_are_record_derived": true,
+  "no_invented_task_phase_labels": true,
+  "event_thresholds": {
+    "cube_height_world_m": 0.1,
+    "lateral_error_increase_m": 0.02,
+    "cube_horizontal_displacement_m": 0.001,
+    "minimum_GRASP_run_for_event": 5
+  },
+  "native_starts_by_packaging": 0,
+  "API_calls_by_packaging": 0
+}

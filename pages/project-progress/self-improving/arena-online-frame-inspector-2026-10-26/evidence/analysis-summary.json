@@ -1,0 +1,415 @@
+{
+  "schema": "tacharness.online-teacher-final-summary.v1",
+  "native_stage_closed": true,
+  "attempts": [
+    {
+      "id": "01-fresh-OFF",
+      "native_success": true,
+      "controls": 186,
+      "first_GRASP_control_index": 124,
+      "first_GRASP_human_step": 125,
+      "first_GRASP_tcp_cube_horizontal_mm": 1.5929094800236732,
+      "first_GRASP_tcp_cube_3D_mm": 18.0606838695406,
+      "GRASP_count": 12,
+      "longest_GRASP_run_controls": 12,
+      "RELEASE_control_indices": [],
+      "first_35_controls_from_first_GRASP_token_counts": {
+        "GRASP": 12,
+        "MV_UP": 21,
+        "MV_FWD": 1,
+        "MV_LEFT": 1
+      },
+      "first_35_controls_from_first_GRASP_tokens": [
+        "GRASP",
+        "GRASP",
+        "GRASP",
+        "GRASP",
+        "GRASP",
+        "GRASP",
+        "GRASP",
+        "GRASP",
+        "GRASP",
+        "GRASP",
+        "GRASP",
+        "GRASP",
+        "MV_UP",
+        "MV_UP",
+        "MV_UP",
+        "MV_UP",
+        "MV_UP",
+        "MV_UP",
+        "MV_UP",
+        "MV_UP",
+        "MV_UP",
+        "MV_UP",
+        "MV_FWD",
+        "MV_UP",
+        "MV_UP",
+        "MV_UP",
+        "MV_UP",
+        "MV_UP",
+        "MV_UP",
+        "MV_UP",
+        "MV_UP",
+        "MV_UP",
+        "MV_UP",
+        "MV_UP",
+        "MV_LEFT"
+      ],
+      "frames_left_contact": 58,
+      "frames_right_contact": 59,
+      "frames_either_contact": 59,
+      "frames_bilateral_contact": 58,
+      "first_either_contact_control_index": 127,
+      "first_bilateral_contact_control_index": 128,
+      "longest_bilateral_contact_controls": 58,
+      "tactile_arrays": {
+        "0": {
+          "frames_with_nonzero_mask": 58,
+          "frames_with_nonzero_indent": 58,
+          "frames_with_nonzero_depth": 58,
+          "frames_with_nonzero_shear": 58,
+          "frames_with_nonzero_deformation": 58,
+          "max_indent_uint16": 31373,
+          "decoded_indent_max_m": 0.001373
+        },
+        "1": {
+          "frames_with_nonzero_mask": 59,
+          "frames_with_nonzero_indent": 59,
+          "frames_with_nonzero_depth": 59,
+          "frames_with_nonzero_shear": 59,
+          "frames_with_nonzero_deformation": 59,
+          "max_indent_uint16": 30733,
+          "decoded_indent_max_m": 0.000733
+        }
+      },
+      "tactile_physical_decoding": {
+        "scale": 1000000.0,
+        "offset": 30000.0,
+        "unit": "meter",
+        "zero_encoded_value": 30000.0
+      },
+      "frames_both_fingers_nonzero_mask": 58,
+      "frames_both_fingers_nonzero_indent": 58,
+      "first_cube_horizontal_displacement_over_1mm_control_index": 130,
+      "cube_world_z_after_first_GRASP_min_max_mm": [
+        20.98955400288105,
+        373.6269772052765
+      ],
+      "cube_final_world_m": [
+        0.5719667077064514,
+        0.14134512841701508,
+        0.3736269772052765
+      ],
+      "TCP_final_base_m": [
+        0.5617904663085938,
+        0.12806570529937744,
+        0.37730658054351807
+      ],
+      "final_cube_goal_error_vector_mm": [
+        25.577068328857422,
+        21.5882807970047,
+        27.292847633361816
+      ],
+      "final_cube_goal_horizontal_error_mm": 33.46999091827429,
+      "final_cube_goal_vertical_error_mm": 27.292847633361816,
+      "final_cube_goal_3D_distance_mm": 43.18726460436302,
+      "last_20_controls_cube_displacement_mm": [
+        65.00375270843506,
+        80.19940555095673,
+        85.88486909866333
+      ],
+      "last_20_controls_TCP_displacement_mm": [
+        64.66397643089294,
+        80.29107376933098,
+        86.12328767776489
+      ],
+      "last_20_controls_cube_goal_distance_reduction_mm": 133.94210562128734,
+      "POST_sends": 0,
+      "HTTP_attempt_elapsed_sum_s": 0,
+      "inference_elapsed_sum_s": 0,
+      "physical_time_s": 3.72,
+      "motion_sampling_dt_s": 0.02
+    },
+    {
+      "id": "02-online-v2-OFF",
+      "native_success": false,
+      "controls": 250,
+      "first_GRASP_control_index": 160,
+      "first_GRASP_human_step": 161,
+      "first_GRASP_tcp_cube_horizontal_mm": 235.9851334034245,
+      "first_GRASP_tcp_cube_3D_mm": 247.88494801624796,
+      "GRASP_count": 58,
+      "longest_GRASP_run_controls": 18,
+      "RELEASE_control_indices": [],
+      "first_35_controls_from_first_GRASP_token_counts": {
+        "GRASP": 22,
+        "MV_DOWN": 5,
+        "MV_UP": 8
+      },
+      "first_35_controls_from_first_GRASP_tokens": [
+        "GRASP",
+        "MV_DOWN",
+        "MV_DOWN",
+        "GRASP",
+        "GRASP",
+        "GRASP",
+        "GRASP",
+        "GRASP",
+        "GRASP",
+        "GRASP",
+        "GRASP",
+        "GRASP",
+        "GRASP",
+        "GRASP",
+        "GRASP",
+        "GRASP",
+        "GRASP",
+        "GRASP",
+        "GRASP",
+        "GRASP",
+        "GRASP",
+        "MV_UP",
+        "MV_UP",
+        "MV_UP",
+        "MV_UP",
+        "MV_UP",
+        "MV_DOWN",
+        "GRASP",
+        "MV_DOWN",
+        "MV_UP",
+        "MV_UP",
+        "GRASP",
+        "MV_UP",
+        "MV_DOWN",
+        "GRASP"
+      ],
+      "frames_left_contact": 0,
+      "frames_right_contact": 0,
+      "frames_either_contact": 0,
+      "frames_bilateral_contact": 0,
+      "first_either_contact_control_index": null,
+      "first_bilateral_contact_control_index": null,
+      "longest_bilateral_contact_controls": 0,
+      "tactile_arrays": {
+        "0": {
+          "frames_with_nonzero_mask": 0,
+          "frames_with_nonzero_indent": 0,
+          "frames_with_nonzero_depth": 0,
+          "frames_with_nonzero_shear": 0,
+          "frames_with_nonzero_deformation": 0,
+          "max_indent_uint16": 30000,
+          "decoded_indent_max_m": 0.0
+        },
+        "1": {
+          "frames_with_nonzero_mask": 0,
+          "frames_with_nonzero_indent": 0,
+          "frames_with_nonzero_depth": 0,
+          "frames_with_nonzero_shear": 0,
+          "frames_with_nonzero_deformation": 0,
+          "max_indent_uint16": 30000,
+          "decoded_indent_max_m": 0.0
+        }
+      },
+      "tactile_physical_decoding": {
+        "scale": 1000000.0,
+        "offset": 30000.0,
+        "unit": "meter",
+        "zero_encoded_value": 30000.0
+      },
+      "frames_both_fingers_nonzero_mask": 0,
+      "frames_both_fingers_nonzero_indent": 0,
+      "first_cube_horizontal_displacement_over_1mm_control_index": null,
+      "cube_world_z_after_first_GRASP_min_max_mm": [
+        20.999861881136894,
+        20.99999040365219
+      ],
+      "cube_final_world_m": [
+        0.5000003576278687,
+        -5.927236657043977e-07,
+        0.020999886095523834
+      ],
+      "TCP_final_base_m": [
+        0.6584658026695251,
+        0.16772614419460297,
+        0.16662554442882538
+      ],
+      "final_cube_goal_error_vector_mm": [
+        97.54341840744019,
+        162.93400193768548,
+        379.91993874311447
+      ],
+      "final_cube_goal_horizontal_error_mm": 189.90051990986922,
+      "final_cube_goal_vertical_error_mm": 379.91993874311447,
+      "final_cube_goal_3D_distance_mm": 424.73682123947117,
+      "last_20_controls_cube_displacement_mm": [
+        -5.9604644775390625e-05,
+        -2.771213303276454e-05,
+        -1.30385160446167e-05
+      ],
+      "last_20_controls_TCP_displacement_mm": [
+        -2.503335475921631,
+        -0.6439834833145142,
+        49.84532296657562
+      ],
+      "last_20_controls_cube_goal_distance_reduction_mm": -3.598199970156202e-05,
+      "POST_sends": 250,
+      "HTTP_attempt_elapsed_sum_s": 1368.3443785253912,
+      "inference_elapsed_sum_s": 1392.661400873214,
+      "physical_time_s": 5.0,
+      "motion_sampling_dt_s": 0.02
+    },
+    {
+      "id": "03-online-candidate-OFF",
+      "native_success": false,
+      "controls": 250,
+      "first_GRASP_control_index": 130,
+      "first_GRASP_human_step": 131,
+      "first_GRASP_tcp_cube_horizontal_mm": 26.406149794924794,
+      "first_GRASP_tcp_cube_3D_mm": 34.39116416574565,
+      "GRASP_count": 27,
+      "longest_GRASP_run_controls": 1,
+      "RELEASE_control_indices": [
+        153,
+        160,
+        163
+      ],
+      "first_35_controls_from_first_GRASP_token_counts": {
+        "GRASP": 16,
+        "MV_UP": 2,
+        "MV_DOWN": 12,
+        "RELEASE": 3,
+        "MV_FWD": 1,
+        "MV_LEFT": 1
+      },
+      "first_35_controls_from_first_GRASP_tokens": [
+        "GRASP",
+        "MV_UP",
+        "GRASP",
+        "MV_DOWN",
+        "GRASP",
+        "MV_DOWN",
+        "GRASP",
+        "MV_DOWN",
+        "GRASP",
+        "MV_DOWN",
+        "GRASP",
+        "MV_DOWN",
+        "GRASP",
+        "MV_DOWN",
+        "GRASP",
+        "MV_DOWN",
+        "GRASP",
+        "MV_DOWN",
+        "GRASP",
+        "MV_UP",
+        "GRASP",
+        "MV_DOWN",
+        "GRASP",
+        "RELEASE",
+        "MV_FWD",
+        "GRASP",
+        "MV_DOWN",
+        "GRASP",
+        "MV_DOWN",
+        "GRASP",
+        "RELEASE",
+        "MV_DOWN",
+        "GRASP",
+        "RELEASE",
+        "MV_LEFT"
+      ],
+      "frames_left_contact": 5,
+      "frames_right_contact": 41,
+      "frames_either_contact": 41,
+      "frames_bilateral_contact": 5,
+      "first_either_contact_control_index": 133,
+      "first_bilateral_contact_control_index": 173,
+      "longest_bilateral_contact_controls": 2,
+      "tactile_arrays": {
+        "0": {
+          "frames_with_nonzero_mask": 5,
+          "frames_with_nonzero_indent": 5,
+          "frames_with_nonzero_depth": 5,
+          "frames_with_nonzero_shear": 5,
+          "frames_with_nonzero_deformation": 5,
+          "max_indent_uint16": 31500,
+          "decoded_indent_max_m": 0.0015
+        },
+        "1": {
+          "frames_with_nonzero_mask": 25,
+          "frames_with_nonzero_indent": 25,
+          "frames_with_nonzero_depth": 25,
+          "frames_with_nonzero_shear": 25,
+          "frames_with_nonzero_deformation": 25,
+          "max_indent_uint16": 31500,
+          "decoded_indent_max_m": 0.0015
+        }
+      },
+      "tactile_physical_decoding": {
+        "scale": 1000000.0,
+        "offset": 30000.0,
+        "unit": "meter",
+        "zero_encoded_value": 30000.0
+      },
+      "frames_both_fingers_nonzero_mask": 5,
+      "frames_both_fingers_nonzero_indent": 5,
+      "first_cube_horizontal_displacement_over_1mm_control_index": 133,
+      "cube_world_z_after_first_GRASP_min_max_mm": [
+        20.98798379302025,
+        24.523532018065453
+      ],
+      "cube_final_world_m": [
+        0.6354376673698425,
+        0.1332370638847351,
+        0.020999999716877937
+      ],
+      "TCP_final_base_m": [
+        0.682443380355835,
+        0.18778204917907715,
+        0.08163240551948547
+      ],
+      "final_cube_goal_error_vector_mm": [
+        -37.89389133453369,
+        29.696345329284668,
+        379.91982512176037
+      ],
+      "final_cube_goal_horizontal_error_mm": 48.14374233884997,
+      "final_cube_goal_vertical_error_mm": 379.91982512176037,
+      "final_cube_goal_3D_distance_mm": 382.9580831461043,
+      "last_20_controls_cube_displacement_mm": [
+        -23.791253566741943,
+        28.982743620872498,
+        -0.022178515791893005
+      ],
+      "last_20_controls_TCP_displacement_mm": [
+        -12.100458145141602,
+        114.1982302069664,
+        46.23521864414215
+      ],
+      "last_20_controls_cube_goal_distance_reduction_mm": 6.362497453310141,
+      "POST_sends": 250,
+      "HTTP_attempt_elapsed_sum_s": 1628.2142795268446,
+      "inference_elapsed_sum_s": 1654.3087275382131,
+      "physical_time_s": 5.0,
+      "motion_sampling_dt_s": 0.02
+    }
+  ],
+  "qualified_online_demonstrations": 0,
+  "A_pairing_eligible": false,
+  "A_pairing_executed": false,
+  "native_starts": 3,
+  "teacher_request_reservations": 504,
+  "ledger_wall_s": 4189.695101264864,
+  "raw_wall_s": 4189.697900466621,
+  "mechanism_manifest_sha256": "414ccc521a9087075231e26a2c0262c24013af95093e8be831967f457b8986bd",
+  "limitations": [
+    "Tactile indent/shear/deformation are decoded using native metadata offset30000/scale1e6; integer30000 is physical zero. Depth zero instead means no return.",
+    "Masks and decoded tactile deformation do not provide independently calibrated force or a stable-grasp certificate.",
+    "Contact flags and tactile signals alone do not prove a stable grasp or identify every contacted surface.",
+    "Cube displacement near table height with intermittent contact supports table-level pushing/sliding, not a held-lift claim.",
+    "Only control boundaries are used in this comparison, even where the fixed reference additionally has 200 Hz trace.",
+    "Fewer repeated GRASP and earlier acquisition in one development-seed run do not establish statistical or causal prompt improvement.",
+    "The candidate has no native success; conditional A pairing remains unexecuted."
+  ]
+}

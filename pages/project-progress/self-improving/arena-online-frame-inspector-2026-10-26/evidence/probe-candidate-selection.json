@@ -1,0 +1,41 @@
+{
+  "schema": "tacharness.online-teacher-candidate-selection.v1",
+  "created_at": "2026-10-26T04:35:49.175073+00:00",
+  "prompt_version": "tacjev-three-image-history-v3",
+  "rationale": [
+    "Applied predeclared evaluation-plan before viewing native outcomes.",
+    "History-only and combined both changed redundant GRASP from3/3 to0/3 and elicited UP on3/3 lift probes; unnecessary RELEASE0/4 forboth.",
+    "Tie broken toward one changedfactor; history-only retains oldstaticinstructions andallotherphysicalsettings.",
+    "Staticexecutionfactor wasimplementedandtested separately butisnotadopted inthefirstnativecandidate.",
+    "Small archived observation diagnostics; no optimalactionaccuracy/native success/statisticalimprovement inferred."
+  ],
+  "metrics": {
+    "tacjev-three-image-actions-v2": {
+      "redundant_GRASP": 3,
+      "held_RELEASE": 0,
+      "lift_probe_UP": 0
+    },
+    "tacjev-three-image-execution-v3": {
+      "redundant_GRASP": 3,
+      "held_RELEASE": 0,
+      "lift_probe_UP": 0
+    },
+    "tacjev-three-image-history-v3": {
+      "redundant_GRASP": 0,
+      "held_RELEASE": 0,
+      "lift_probe_UP": 3
+    },
+    "tacjev-three-image-execution-history-v3": {
+      "redundant_GRASP": 0,
+      "held_RELEASE": 0,
+      "lift_probe_UP": 3
+    }
+  },
+  "selection_rule_sha256": "49e695249390345392acca52209963bec665189a1f95adb6160b690c9744c999",
+  "stage_result_sha256": "53cd3ac7fab423ccc641cda4dbf5f79b34ee76080681940c4f81db03c8af7edd",
+  "selection_before_native_stage": true,
+  "maximum_new_native_candidates": 1,
+  "native_success_claimed": false,
+  "model_requested": "gpt-6.1-sol",
+  "temperature_mode": "omitted"
+}

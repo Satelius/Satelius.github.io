@@ -1,0 +1,134 @@
+{
+  "schema": "tacharness.public-exact-step-context.v1",
+  "run_id": "fixed-reference",
+  "control_source": "frozen_reference_token_sequence",
+  "input_type": "reference_audit",
+  "index": 133,
+  "human_step": 134,
+  "selected_executed_token": "GRASP",
+  "model_visible": null,
+  "safe_response_summary": null,
+  "reference_audit": {
+    "task": "Grasp the cube and move it to the displayed target position.",
+    "recent_movement_tokens": [
+      "MV_DOWN",
+      "MV_DOWN",
+      "MV_DOWN",
+      "MV_DOWN",
+      "MV_DOWN"
+    ],
+    "images_from_site_root": {
+      "scene": "assets/images/4917a318cd49cae1ee404f493f94e3cdcd0834ee0e106b7d98f2daecea13f535.png",
+      "wrist": "assets/images/60bde7de7a0c515d188c6e5bd217bf41c2a3f5827ffa7e8a43cb5e4c6b1631fc.png",
+      "tactile_model": "assets/images/52a7297be971830d5a4d37e6b9d4a25c78dcd72f23cac84913300abcd9dafe97.png",
+      "tactile_visual": "assets/images/b20f54844774c42ead8ad5c691af6660563db3d4c6dc3e940fd6fb28f6db76aa.png"
+    },
+    "model_request_exists": false
+  },
+  "execution_audit_not_model_input": {
+    "tcp_vector_mm": [
+      0.21204352378845215,
+      -0.07704115705564618,
+      -0.029906630516052246
+    ],
+    "cube_vector_mm": [
+      0.21725893020629883,
+      0.11602696031332016,
+      -0.02714991569519043
+    ],
+    "interval_s": [
+      2.66,
+      2.68
+    ],
+    "contact": {
+      "left": true,
+      "right": true
+    },
+    "tcp_coordinate_frame": "robot_base",
+    "cube_coordinate_frame": "world",
+    "tcp_start_base_m": [
+      0.49128979444503784,
+      0.0004437332972884178,
+      0.025345370173454285
+    ],
+    "tcp_end_base_m": [
+      0.4915018379688263,
+      0.00036669214023277164,
+      0.025315463542938232
+    ],
+    "cube_before_world_m": [
+      0.5007469654083252,
+      0.004078184720128775,
+      0.02110663615167141
+    ],
+    "cube_after_world_m": [
+      0.5009642243385315,
+      0.004194211680442095,
+      0.02107948623597622
+    ],
+    "goal_world_m": [
+      0.5975437760353088,
+      0.16293340921401978,
+      0.4009198248386383
+    ],
+    "cube_goal_distance_mm": 422.8527231428688,
+    "tcp_cube_horizontal_before_mm": 10.131492518305294,
+    "interpreter_target_base_m": [
+      0.49128979444503784,
+      0.0004437332972884178,
+      0.025345370173454285
+    ],
+    "intended_vector_mm": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "actual_action_7d": [
+      0.0,
+      0.0,
+      0.0,
+      0.0045843482948839664,
+      -0.026621811091899872,
+      -0.005180399864912033,
+      -1.0
+    ],
+    "action_7d_is_not_actual_TCP_displacement": true,
+    "joint_position_target_rad": [
+      0.23739609122276306,
+      0.26928141713142395,
+      -0.21671424806118011,
+      -2.4512972831726074,
+      0.13728344440460205,
+      2.710986852645874,
+      0.6888060569763184,
+      0.3490658402442932,
+      -0.3490658402442932
+    ],
+    "contact_force_n": {
+      "left": 11.694302558898926,
+      "right": 11.571767807006836
+    },
+    "control_interval": [
+      133,
+      134
+    ],
+    "physics_interval": [
+      532,
+      536
+    ],
+    "control_dt_s": 0.02,
+    "physics_dt_s": 0.005,
+    "pre_native_frame_index": 132,
+    "post_native_frame_index": 133,
+    "audit_effect_is_not_model_input": true
+  },
+  "source_bindings": {
+    "pre_record_sha256": "618e1b358166fc4c684b1f32b334c51e5a171490b0669793027becaa56f5fa17",
+    "pre_images_npz_sha256": "1e2acb9b8e34b258ed102e8cf4537d83d786e60bb98b359ea21e212e53f7119f",
+    "finish_record_sha256": "ae46b36a86fc6882570c67cb49603bef877187c0ae9aec5712c33cb39c3cdb1e",
+    "pre_native_frame_sha256": "ebf639ff3a3ac2c6a31ab14e9e1b900884a05b5ab575d10f7432dc7743482334"
+  },
+  "original_request_base64_not_repeated": false,
+  "response_raw_body_retained": false,
+  "hidden_reasoning_retained": false
+}

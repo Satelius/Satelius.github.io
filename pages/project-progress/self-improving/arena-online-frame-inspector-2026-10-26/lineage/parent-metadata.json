@@ -1,0 +1,19 @@
+{
+  "schema": "tacharness.public-frame-inspector.v1",
+  "created_at": "2026-10-26T06:03:44.827497+00:00",
+  "runs": 3,
+  "steps": 686,
+  "actual_online_contexts": 500,
+  "fixed_reference_contexts": 186,
+  "model_positive_demonstrations": 0,
+  "template_sha256": "560a5adf9510c9b38404aa51dcec8a137233046560cab062f13b4c7a6fd6e526",
+  "builder_sha256": "beb65d252e3997304a1edcaf3dadf758b80fb4f3f6454b0cab3439859cba8fd2",
+  "HTTP_waits_not_in_physical_video": true,
+  "control_dt_s": 0.02,
+  "physics_dt_s": 0.005,
+  "images_and_full_videos_are_local_actual_files": true,
+  "API_calls": 0,
+  "native_starts": 0,
+  "private_service_config_packaged": false,
+  "hidden_reasoning_packaged": false
+}

@@ -1,0 +1,154 @@
+{
+  "schema": "tacharness.public-exact-step-context.v1",
+  "run_id": "online-v2",
+  "control_source": "online_multimodal_teacher",
+  "input_type": "actual_model_request",
+  "index": 107,
+  "human_step": 108,
+  "selected_executed_token": "MV_DOWN",
+  "model_visible": {
+    "model_requested": "gpt-6.1-sol",
+    "system_prompt": "You are the robot action teacher. Use only the current images, complete task, and executed movement history. Scene camera, wrist camera, tactile mosaic are the three images in that order; the tactile mosaic has the left finger above right. The text follows the images. Recent moves are at most five completed movement tokens, newest first; GRASP, RELEASE and DONE are excluded, so this is not full action history. Environment profile: arena-franka-v1. Directions use robot base axes: MV_FWD=+X, MV_BACK=-X, MV_LEFT=+Y, MV_RIGHT=-Y, MV_UP=+Z, MV_DOWN=-Z. The interpreter holds a fixed downward gripper orientation. The goal is the colored coordinate-axis marker, not the cube; the cube must reach it. Each movement applies bounded control toward an interpreter target; commanded displacement is not measured displacement. Do not assume a universal step size or execution duration. Use the fresh images after execution. GRASP closes the fingers when aligned for grasping; RELEASE opens them at the intended destination. Tactile contact alone does not prove completion. DONE stops control; use it only when the task appears complete and the gripper is clear. DONE cannot override the native success predicate. Return exactly one token from: MV_FWD, MV_BACK, MV_LEFT, MV_RIGHT, MV_UP, MV_DOWN, GRASP, RELEASE, DONE. No explanation or punctuation.",
+    "user_text": "{\"task\": \"Grasp the cube and move it to the displayed target position.\", \"movement_history_newest_first\": [\"MV_FWD\", \"MV_DOWN\", \"MV_DOWN\", \"MV_DOWN\", \"MV_DOWN\"], \"prompt_version\": \"tacjev-three-image-actions-v2\", \"environment_profile\": \"arena-franka-v1\"}",
+    "image_order": [
+      "scene",
+      "wrist",
+      "tactile_model"
+    ],
+    "images": {
+      "scene": {
+        "path_from_site_root": "assets/images/0102c96704b454c863087a129eb39ceb3c5f7f30830f26f59dc1d246f473ac50.png",
+        "png_sha256": "0102c96704b454c863087a129eb39ceb3c5f7f30830f26f59dc1d246f473ac50"
+      },
+      "wrist": {
+        "path_from_site_root": "assets/images/7be1eaa9bf608984b0d91960ba809dd05cd70a3ef1405a80a61a7643e6e2270e.png",
+        "png_sha256": "7be1eaa9bf608984b0d91960ba809dd05cd70a3ef1405a80a61a7643e6e2270e"
+      },
+      "tactile_model": {
+        "path_from_site_root": "assets/images/60467b9f45790ece318625a816baa74de398f1b78821523c460dc58542fabe7a.png",
+        "png_sha256": "60467b9f45790ece318625a816baa74de398f1b78821523c460dc58542fabe7a"
+      }
+    }
+  },
+  "safe_response_summary": {
+    "raw_sha256": "22ebb3963c6431bf3234a2b109e09f75ea75843e145e351da66ee986da058fba",
+    "model": "gpt-6.1-sol",
+    "id": "resp_0c2ccc64c7dc8e84016adede03a21c87d0a14bed1768975d73",
+    "token": "MV_DOWN",
+    "status": "ok",
+    "output_status": "valid_single_token",
+    "http_status": 200,
+    "reason": null
+  },
+  "reference_audit": null,
+  "execution_audit_not_model_input": {
+    "tcp_vector_mm": [
+      5.9063732624053955,
+      -0.25792792439460754,
+      -6.961703300476074
+    ],
+    "cube_vector_mm": [
+      0.0,
+      5.167640892977943e-05,
+      3.166496753692627e-05
+    ],
+    "interval_s": [
+      2.14,
+      2.16
+    ],
+    "contact": {
+      "left": false,
+      "right": false
+    },
+    "tcp_coordinate_frame": "robot_base",
+    "cube_coordinate_frame": "world",
+    "tcp_start_base_m": [
+      0.4728845953941345,
+      -0.02342940680682659,
+      0.2875223755836487
+    ],
+    "tcp_end_base_m": [
+      0.4787909686565399,
+      -0.0236873347312212,
+      0.2805606722831726
+    ],
+    "cube_before_world_m": [
+      0.5000004172325134,
+      -5.780340188721311e-07,
+      0.020999878644943237
+    ],
+    "cube_after_world_m": [
+      0.5000004172325134,
+      -5.263576099423517e-07,
+      0.020999910309910774
+    ],
+    "goal_world_m": [
+      0.5975437760353088,
+      0.16293340921401978,
+      0.4009198248386383
+    ],
+    "cube_goal_distance_mm": 424.7367604327491,
+    "tcp_cube_horizontal_before_mm": 35.83541941943995,
+    "interpreter_target_base_m": [
+      0.4728845953941345,
+      -0.02342940680682659,
+      0.1675223708152771
+    ],
+    "intended_vector_mm": [
+      0.0,
+      0.0,
+      -120.00000476837158
+    ],
+    "actual_action_7d": [
+      0.0,
+      0.0,
+      -0.23999999463558197,
+      -0.0019502649083733559,
+      0.003666781820356846,
+      -0.0054268864914774895,
+      1.0
+    ],
+    "action_7d_is_not_actual_TCP_displacement": true,
+    "joint_position_target_rad": [
+      0.12211904674768448,
+      -0.18429210782051086,
+      -0.17601943016052246,
+      -2.5271499156951904,
+      -0.044595904648303986,
+      2.3451616764068604,
+      0.7673685550689697,
+      0.0,
+      0.0
+    ],
+    "contact_force_n": {
+      "left": 0.0,
+      "right": 0.0
+    },
+    "control_interval": [
+      107,
+      108
+    ],
+    "physics_interval": [
+      428,
+      432
+    ],
+    "control_dt_s": 0.02,
+    "physics_dt_s": 0.005,
+    "pre_native_frame_index": 106,
+    "post_native_frame_index": 107,
+    "audit_effect_is_not_model_input": true
+  },
+  "source_bindings": {
+    "pre_record_sha256": "225312eceea5583b7563669d25eed70de5906468b1184aab47c61e02d252b92f",
+    "pre_images_npz_sha256": "e455d7b4ef637ff37e32c7d9b71a638be79267e363b03d297b657deb9aa74bbb",
+    "finish_record_sha256": "8ad814720257d59f27362dc325f2fc9499b4b8fa312e23d7410343feee945a7b",
+    "request_body_sha256": "f6e1a35392b42507e6bd326dd98aae2fc5caadf7032a981aa1f7388ea5c1c76c",
+    "inference_sha256": "7b17423de3e76f5e4dd776b85f54daef9c340968926cecb2756a0b03aefec1c1",
+    "safe_response_sha256": "d7d351f0f6e4f724e8b3fded2848b2ac95ab35d724661c8ea50a1078242fac21",
+    "missing_raw_response_body_sha256": "22ebb3963c6431bf3234a2b109e09f75ea75843e145e351da66ee986da058fba",
+    "pre_native_frame_sha256": "cf23dccc53e7d98b1dd2075fbe4f220393a0b4ccba994b7893458751be05954a"
+  },
+  "original_request_base64_not_repeated": true,
+  "response_raw_body_retained": false,
+  "hidden_reasoning_retained": false
+}
