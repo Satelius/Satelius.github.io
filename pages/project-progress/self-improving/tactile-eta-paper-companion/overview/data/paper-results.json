@@ -1,0 +1,62 @@
+{
+  "schema": "tactile_eta.paper_results.v1",
+  "paper": {
+    "title": "Embodied Task Agents Can Perform Fine Manipulation through Tactile In-Context Learning",
+    "arxiv": "2610.27613v1",
+    "submitted": "2026-10-20",
+    "url": "https://arxiv.org/abs/2610.27613"
+  },
+  "main_results": [
+    {"task": "插入试管", "key": "insert_tube", "vision_only": 3, "current_tactile": 15, "visual_motion": 15, "tactile_eta": 32},
+    {"task": "提起罐子", "key": "lift_can", "vision_only": 0, "current_tactile": 1, "visual_motion": 3, "tactile_eta": 2},
+    {"task": "提起瓶子", "key": "lift_bottle", "vision_only": 7, "current_tactile": 3, "visual_motion": 27, "tactile_eta": 36},
+    {"task": "拔出钥匙", "key": "pull_out_key", "vision_only": 2, "current_tactile": 6, "visual_motion": 18, "tactile_eta": 26},
+    {"task": "四任务平均", "key": "average", "vision_only": 3, "current_tactile": 6.25, "visual_motion": 15.75, "tactile_eta": 24}
+  ],
+  "representation_ablation": [
+    {"name": "没有示范触觉", "success": 27},
+    {"name": "只保留首尾", "success": 27},
+    {"name": "保留全部帧", "success": 2},
+    {"name": "首尾 + 峰值相邻帧", "success": 36}
+  ],
+  "demonstration_count": [
+    {"shots": 1, "average": 22.5},
+    {"shots": 2, "average": 24},
+    {"shots": 4, "average": 19}
+  ],
+  "model_comparison": [
+    {"model": "GPT-6", "success": 36},
+    {"model": "GPT-5.6 Sol", "success": 21},
+    {"model": "Terra", "success": 3},
+    {"model": "Luna", "success": 0}
+  ],
+  "real_robot": [
+    {"task": "擦拭白板", "without_demo": 0, "with_demo": 3, "trials": 5},
+    {"task": "抓取薯片", "without_demo": 0, "with_demo": 3, "trials": 5}
+  ],
+  "execution": {
+    "physics_hz": 120,
+    "control_hz": 60,
+    "max_control_steps_per_motion": 80,
+    "max_moves": 30,
+    "max_tool_calls": 100,
+    "wall_seconds": 3600,
+    "current_feedback_scope": "primarily between motion segments"
+  },
+  "selection": {
+    "tracking_width": 160,
+    "grid": "3 × 4",
+    "patch_size": "13 × 13",
+    "search_window": "9 × 9",
+    "minimum_tracking_quality": 0.35,
+    "motion_threshold_pixels": 2,
+    "difference_threshold": 0.015,
+    "maximum_frames_per_fingertip_segment": 4
+  },
+  "sources": [
+    {"label": "论文 HTML", "url": "https://arxiv.org/html/2610.27613"},
+    {"label": "论文摘要", "url": "https://arxiv.org/abs/2610.27613"},
+    {"label": "项目主页", "url": "https://no-518.github.io/tactile-eta/"},
+    {"label": "固定源码提交", "url": "https://github.com/No-518/Tactile-ETA/tree/e7e5efbd42d3be7532ff5eb940a3cb015c2f7818"}
+  ]
+}

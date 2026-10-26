@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#f5f4ef">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="canonical" href="https://satelius.github.io/pages/project-progress/self-improving/tactile-eta-paper-companion/">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%2328684e'/%3E%3Ctext x='8' y='25' fill='white' font-family='Georgia' font-size='28'%3Et.%3C/text%3E%3C/svg%3E">
+  <title>Tactile-ETA · 论文伴读</title>
+  <meta name="description" content="左侧原文，右侧逐页中文讲解：触觉上下文学习、关键帧选择、实验与 TacHarness / TacJev 的关系。">
+  <link rel="stylesheet" href="assets/vendor/pdf_viewer.css">
+  <link rel="stylesheet" href="reader.css">
+  <script src="gate.js"></script>
+  <script type="module" src="reader.js"></script>
+</head>
+<body>
+  <a class="skip" href="#commentary">跳到中文讲解</a>
+  <header class="topbar">
+    <a class="wordmark" href="overview/"><span class="brand-icon" aria-hidden="true">t.</span><span>Tactile-ETA <small>论文伴读</small></span></a>
+    <span class="header-caption">读懂一篇论文，也读懂它能为我们做什么。</span>
+    <div class="header-actions"><button id="questions-button" class="plain-button">问题索引 <span>↗</span></button><a href="overview/" class="overview-link">复现总览 ↗</a><a href="../../" class="overview-link">项目进展 ↗</a></div>
+  </header>
+  <div class="mobile-tabs" aria-label="阅读面板"><button data-pane="paper" class="selected">原文</button><button data-pane="notes">中文讲解 <span id="mobile-page">P.01</span></button></div>
+  <main class="workspace" id="workspace">
+    <section class="paper-pane" aria-label="原始论文 PDF 阅读器">
+      <div class="pane-top paper-top"><div class="pane-label"><i></i> 原文 <span>arXiv v1 · 24 页</span></div><a href="assets/tactile-eta-v1.pdf" target="_blank" rel="noopener" title="在独立窗口打开原始 PDF">原始 PDF ↗</a></div>
+      <div class="reader-toolbar">
+        <button id="outline-button" class="icon-button" title="打开论文目录" aria-label="打开论文目录" aria-expanded="false">☷</button>
+        <div class="page-controls"><button id="previous" class="icon-button" aria-label="上一页">‹</button><label class="page-field"><span class="sr-only">论文页码</span><input id="page-input" type="number" min="1" max="24" value="1" inputmode="numeric"></label><span class="page-total">/ 24</span><button id="next" class="icon-button" aria-label="下一页">›</button></div>
+        <div class="zoom-controls"><button id="zoom-out" class="icon-button" aria-label="缩小论文">−</button><button id="zoom-reset" title="恢复适合宽度">适宽</button><button id="zoom-in" class="icon-button" aria-label="放大论文">+</button></div>
+      </div>
+      <div class="paper-body"><nav id="outline" class="outline" aria-label="论文目录" hidden></nav><div class="pdf-scroll" id="pdf-scroll" tabindex="0" aria-label="论文页面，可滚动，左右方向键翻页"><div id="pdf-status" class="pdf-status" role="status">正在打开原始 PDF…</div><div id="pdf-pages"></div></div></div>
+      <div class="paper-footer"><span id="reading-label">摘要与问题定位</span><span>滚动原文，右侧自动伴读 <i aria-hidden="true">↔</i></span></div>
+    </section>
+    <section class="notes-pane" aria-labelledby="notes-heading">
+      <div class="pane-top"><div class="pane-label"><i class="green"></i> 中文伴读 <span>随原文同步</span></div><span id="sync-state" class="sync-state">● 已跟随</span></div>
+      <div class="notes-toolbar"><div class="chapter-position"><span id="note-page">01</span><div><small>当前阅读</small><strong id="note-section">摘要 · Introduction</strong></div></div><button id="expand-all" class="plain-button">展开全部</button></div>
+      <div class="notes-scroll" id="notes-scroll"><article id="commentary" tabindex="-1" aria-live="polite"></article><footer class="notes-footer">中文讲解为独立阅读辅助。<br>绿色＝论文事实，蓝色＝代码核验，紫色＝我们的接入方案。<br>论文实验数字均为作者报告，未独立复现。<br><a href="overview/#reproduction">查看本次复现的准确边界 ↗</a></footer></div>
+    </section>
+  </main>
+  <dialog id="question-dialog" aria-labelledby="question-title"><div class="dialog-head"><div><span class="eyebrow">READING MAP</span><h2 id="question-title">带着问题读</h2></div><button id="close-questions" class="icon-button" aria-label="关闭问题索引">×</button></div><label class="search-label"><span class="sr-only">搜索问题</span><input id="question-search" type="search" placeholder="搜索：最大变化、短记忆、蒸馏…" autocomplete="off"></label><p class="dialog-hint">点击问题，会定位原文页码并打开对应讲解。迁移与蒸馏属于独立方案，已单独标记。</p><div id="question-list"></div></dialog>
+  <noscript><p class="noscript">逐页同步需要启用 JavaScript。你仍可<a href="assets/tactile-eta-v1.pdf">打开原始 PDF</a>或阅读<a href="overview/">复现总览</a>。</p></noscript>
+</body>
+</html>

@@ -9,6 +9,7 @@
   const lockButton = document.querySelector("#lockButton");
   const redirect = new URLSearchParams(window.location.search).get("redirect");
   const redirectTargets = {
+    "tactile-eta-paper-companion": "./self-improving/tactile-eta-paper-companion/",
     "meta-smooth-meeting-2026-10-20": "./self-improving/meta-smooth-meeting-2026-10-20/",
     "meta-smooth-success-2026-10-20": "./self-improving/meta-smooth-success-2026-10-20/",
     "tactile-rollouts-2026-10-05": "./self-improving/tactile-rollouts-2026-10-05/",

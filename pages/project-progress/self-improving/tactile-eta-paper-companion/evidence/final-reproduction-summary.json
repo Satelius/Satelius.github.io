@@ -1,0 +1,138 @@
+{
+  "schema": "tacharness.tactile_eta.server_reproduction_summary.v1",
+  "created_at": "2026-10-21T12:30:03+00:00",
+  "evidence_level": "component_tested",
+  "server_stage": "scene_loaded_dual_gelsight_initialized_reset_blocked",
+  "nvidia_omniverse_eula_explicitly_accepted": true,
+  "scope": {
+    "task": "insert_tube",
+    "mode": "observe_only",
+    "seed": 1000000,
+    "paper_rate_comparable": false
+  },
+  "counts": {
+    "bounded_server_attempts": 29,
+    "evaluable_episodes": 0,
+    "successful_model_responses": 0,
+    "model_decisions": 0,
+    "robot_actions": 0,
+    "task_successes": 0
+  },
+  "furthest_verified_progress": [
+    "Isaac Sim application became ready on an NVIDIA L40S.",
+    "The UniVTAC insert_tube scene and UIPC deformable/contact objects were created.",
+    "Two initial UIPC simulation advances returned.",
+    "Both left and right GelSight sensors completed camera, optical, marker, reset, and debug-visualization initialization.",
+    "Isaac Lab reported 'Completed setting up the environment'.",
+    "The first task reset entered robot joint-state initialization and then failed before ready.json or any observation sample was emitted."
+  ],
+  "final_attempt": {
+    "attempt": "native-observe-insert-tube-20261021-v29",
+    "worker_returncode": 0,
+    "worker_elapsed_seconds": 59.65488163707778,
+    "controller_status": "infrastructure_issue",
+    "evaluable": false,
+    "task_success": null,
+    "reset_valid": false,
+    "error": "Failed to set DOF positions in backend",
+    "root_cause_evidence": "PhysX expected the index tensor on CPU (device -1) while Isaac Lab supplied cuda:0 during setDofPositions.",
+    "evidence": [
+      "native-observe-insert-tube-20261021-v29/episode/episode.json",
+      "native-observe-insert-tube-20261021-v29/episode/worker_error.json",
+      "native-observe-insert-tube-20261021-v29/episode/launcher/lifecycle.json",
+      "native-observe-insert-tube-20261021-v29/episode/launcher/stdout_stderr.log",
+      "native-observe-insert-tube-20261021-v29/episode/isaaclab_runtime_switch.json"
+    ]
+  },
+  "milestones": [
+    {
+      "attempts": "v1-v7",
+      "result": "Closed missing TacEx assets, torch-scatter, geometry helpers, and cuRobo native dependencies one failure at a time."
+    },
+    {
+      "attempts": "v8-v23",
+      "result": "Localized device, Isaac Lab source, UIPC stepping, camera startup, and Taxim/JAX CUDA-context failures with bounded diagnostics."
+    },
+    {
+      "attempt": "v24",
+      "result": "Forcing Taxim's Torch backend initialized both GelSight sensors; the remaining app update hang was traced to duplicate NVIDIA Vulkan ICD manifests."
+    },
+    {
+      "attempts": "v25, v28, v29",
+      "result": "A process-local single Vulkan ICD allowed the full environment setup to finish. All three stopped at the first robot reset because the PhysX tensor view and Isaac Lab indices disagreed on CPU versus CUDA placement."
+    },
+    {
+      "attempt": "v26",
+      "result": "A narrow CPU-index compatibility patch crossed the first call but exposed another CPU/GPU buffer-index mismatch in the actuator path; the patch was rejected and reverted."
+    },
+    {
+      "attempt": "v27",
+      "result": "Using physical cuda:1 without remapping was rejected because this USD/RTX path only supports cuda:0."
+    }
+  ],
+  "runtime_findings": [
+    {
+      "finding": "Taxim backend selection",
+      "evidence": "Taxim auto-selected JAX, which created a competing CUDA primary context inside Isaac. Selecting the supported Torch backend allowed both optical tactile sensors to initialize."
+    },
+    {
+      "finding": "Vulkan device enumeration",
+      "evidence": "Two NVIDIA ICD manifests enumerated every L40S twice and left app.update stuck. Restricting VK_ICD_FILENAMES to /etc/vulkan/icd.d/nvidia_icd.json removed the duplicate enumeration and let environment setup finish."
+    },
+    {
+      "finding": "Remaining reset incompatibility",
+      "evidence": "The installed Isaac Sim 5.1 / Isaac Lab variants create a CPU PhysX tensor view while the environment and index buffers are configured for cuda:0. A local index-only shim is insufficient and changes runtime semantics, so it was not accepted as a reproduction result."
+    }
+  ],
+  "model_connectivity": {
+    "gateway_catalog_and_auth_reachable": true,
+    "catalog_http_status": 200,
+    "final_catalog_model_count": 8,
+    "final_catalog_models": [
+      "gpt-5.2",
+      "gpt-5.4",
+      "gpt-5.4-mini",
+      "gpt-5.5",
+      "gpt-5.6-luna",
+      "gpt-5.6-sol",
+      "gpt-5.6-terra",
+      "gpt-6-astra"
+    ],
+    "opus_55": {
+      "transiently_catalogued_alias_count": 4,
+      "earlier_inference_statuses": [
+        502,
+        503
+      ],
+      "present_in_final_catalog": false,
+      "successful_response": false
+    },
+    "catalogued_controls": [
+      {
+        "model": "gpt-6-astra",
+        "responses_http_status": 503
+      },
+      {
+        "model": "gpt-5.4",
+        "responses_http_status": 503
+      }
+    ],
+    "conclusion": "The Sub2API gateway, credential path, and model catalog are reachable, but the inference upstream did not return a successful response. No model was substituted and no batch rollout was started.",
+    "evidence": [
+      "model-preflight-opus55-v2/receipt.json",
+      "model-preflight-opus55-final-20261021-round13/receipt.json",
+      "model-preflight-gpt6-astra-20261021-round12/receipt.json",
+      "model-preflight-gpt54-control-20261021-round14/receipt.json"
+    ]
+  },
+  "claims": {
+    "native_application_started": true,
+    "native_scene_created": true,
+    "dual_tactile_sensors_initialized": true,
+    "valid_reset_completed": false,
+    "observation_emitted": false,
+    "robot_action_executed": false,
+    "native_episode_reproduced": false,
+    "paper_success_rates_reproduced": false
+  }
+}

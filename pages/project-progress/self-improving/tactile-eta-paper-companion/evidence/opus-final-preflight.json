@@ -1,0 +1,72 @@
+{
+  "schema": "tactile_eta.model_connectivity_preflight.v1",
+  "created_at": "2026-10-21T12:15:54.170400+00:00",
+  "credential_recorded": false,
+  "requested_models": [
+    "claude-opus-5-5",
+    "claude-opus-5.5",
+    "claude-opus-5-5-20261001",
+    "claude-opus-5.5-20261001"
+  ],
+  "control_model": null,
+  "catalog": {
+    "submitted": true,
+    "http_status": 200,
+    "status": "ok",
+    "model_count": 8,
+    "model_ids": [
+      "gpt-5.2",
+      "gpt-5.4",
+      "gpt-5.4-mini",
+      "gpt-5.5",
+      "gpt-5.6-luna",
+      "gpt-5.6-sol",
+      "gpt-5.6-terra",
+      "gpt-6-astra"
+    ],
+    "elapsed_s": 0.372505
+  },
+  "probes": [
+    {
+      "model": "claude-opus-5-5",
+      "role": "requested",
+      "protocol": "responses",
+      "submitted": false,
+      "http_status": null,
+      "status": "catalog_missing",
+      "elapsed_s": 0.0
+    },
+    {
+      "model": "claude-opus-5.5",
+      "role": "requested",
+      "protocol": "responses",
+      "submitted": false,
+      "http_status": null,
+      "status": "catalog_missing",
+      "elapsed_s": 0.0
+    },
+    {
+      "model": "claude-opus-5-5-20261001",
+      "role": "requested",
+      "protocol": "responses",
+      "submitted": false,
+      "http_status": null,
+      "status": "catalog_missing",
+      "elapsed_s": 0.0
+    },
+    {
+      "model": "claude-opus-5.5-20261001",
+      "role": "requested",
+      "protocol": "responses",
+      "submitted": false,
+      "http_status": null,
+      "status": "catalog_missing",
+      "elapsed_s": 0.0
+    }
+  ],
+  "http_sends": 1,
+  "requested_model_success": false,
+  "native_attempts": 0,
+  "robot_actions": 0,
+  "public_projection": true
+}

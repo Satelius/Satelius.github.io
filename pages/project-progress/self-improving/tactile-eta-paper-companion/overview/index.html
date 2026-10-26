@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#08111f">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="canonical" href="https://satelius.github.io/pages/project-progress/self-improving/tactile-eta-paper-companion/overview/">
+  <meta name="description" content="Tactile-ETA 的可审计复现、方法讲解，以及与 TacHarness 的接口映射和采用路线。">
+  <title>Tactile-ETA × TacHarness｜复现与借鉴</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="../gate.js"></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到正文</a>
+  <header class="site-header" aria-label="主导航">
+    <a class="brand" href="#top" aria-label="返回顶部"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></span><span>Tactile-ETA <b>×</b> TacHarness</span></a>
+    <nav>
+      <a href="#method">方法</a>
+      <a href="#results">论文结果</a>
+      <a href="#reproduction">复现</a>
+      <a href="#relationship">关系</a>
+      <a href="#roadmap">采用路线</a>
+    </nav>
+    <a class="header-cta" href="#reproduction">查看证据</a>
+  </header>
+
+  <main id="main">
+    <section class="hero section" id="top">
+      <div class="hero-glow hero-glow-a" aria-hidden="true"></div>
+      <div class="hero-glow hero-glow-b" aria-hidden="true"></div>
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="live-dot"></span> 独立复现 · 2026.10.21</p>
+        <h1>让机器人不只“现在摸到”，<br><em>还记得上次怎样摸对。</em></h1>
+        <p class="hero-lede">Tactile-ETA 把成功示范压缩成“动作—视觉—双指触觉”的短记忆，交给冻结的通用模型在执行时参考。我们复现了这条不依赖仿真的核心链，并把它放进 TacHarness 的数据、服务与证据框架里审视。</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="../">打开逐页论文伴读 <span aria-hidden="true">↗</span></a>
+          <a class="button button-primary" href="#method">用三分钟看懂方法 <span aria-hidden="true">↓</span></a>
+          <a class="button button-secondary" href="#reproduction">哪些真的跑过？</a>
+        </div>
+        <div class="status-line" role="status">
+          <span class="status-icon">✓</span>
+          <div><strong>离线核心链已复现，原生启动推进到第一次机器人重置</strong><small>场景与双 GelSight 已初始化；PhysX 的 CPU／GPU 张量接口阻塞重置，Sub2API 尚无成功推理响应</small></div>
+        </div>
+      </div>
+
+      <aside class="hero-card" aria-label="方法一句话摘要">
+        <div class="hero-card-top"><span>一句话</span><span class="mono">NO FINETUNE</span></div>
+        <p class="hero-quote">“别把所有触觉帧都塞进去。保留每个动作的首尾，再加上<strong>变化最大处前后的两帧</strong>。”</p>
+        <div class="mini-sequence" aria-label="压缩后的四个触觉时刻">
+          <div><span>起</span><i style="--d: 10%"></i></div>
+          <div><span>峰前</span><i style="--d: 58%"></i></div>
+          <div class="peak"><span>峰后</span><i style="--d: 92%"></i></div>
+          <div><span>止</span><i style="--d: 35%"></i></div>
+        </div>
+        <p class="hero-card-note">模型看见的是一次物理交互的“故事梗概”，而不是没有边界的一长串图片。</p>
+      </aside>
+
+      <div class="metric-grid" aria-label="本机离线复现摘要">
+        <article><strong data-kpi="tasks">4</strong><span>任务包</span><small>全部官方任务</small></article>
+        <article><strong data-kpi="expert_examples">8</strong><span>成功示范</span><small>每任务 2 条</small></article>
+        <article><strong data-kpi="action_segments">61</strong><span>动作段</span><small>视觉、动作、触觉对齐</small></article>
+        <article><strong data-kpi="image_strips">244</strong><span>图像条带</span><small>逐张解码与哈希</small></article>
+        <article><strong data-kpi="retained_tactile_frames">170</strong><span>触觉时刻</span><small>每段每侧共用时刻</small></article>
+      </div>
+      <p class="metric-caption"><span class="legend-dot reproduced"></span>以上是本机独立审计数字；下文的成功率用橙色“论文报告”标识。</p>
+    </section>
+
+    <section class="section method-section" id="method">
+      <div class="section-heading">
+        <p class="kicker">01 · 方法拆开看</p>
+        <h2>它没有训练一套新策略，<br>而是给现有模型一本“触觉小抄”。</h2>
+        <p>关键不是单独多给一张触觉图，而是把成功示范按动作切开，告诉模型“当时怎样动、看见什么、两根手指经历了什么变化”。</p>
+      </div>
+
+      <div class="method-steps">
+        <article class="method-step"><span class="step-number">01</span><div class="step-icon action-icon" aria-hidden="true"><i></i><i></i><i></i></div><h3>按动作切段</h3><p>每次专家动作形成一个片段。片段里保存动作前后相机、末端位姿变化、夹爪变化和左右触觉。</p><small>边界来自记录的 action id / tag</small></article>
+        <article class="method-step featured"><span class="step-number">02</span><div class="step-icon peak-icon" aria-hidden="true"><i></i><i></i><i></i><i></i></div><h3>保留首尾与峰值对</h3><p>首尾一定保留；若中间触觉变化超过阈值，再加入变化最大跳变前后的相邻两帧。</p><small>每只手指每段最多 4 个时刻</small></article>
+        <article class="method-step"><span class="step-number">03</span><div class="step-icon loop-icon" aria-hidden="true">↻</div><h3>边做边查记忆</h3><p>模型先读示范，再用当前视觉、触觉、机器人状态和执行反馈选择 <code>move_to</code> 等工具。</p><small>模型参数全程冻结</small></article>
+      </div>
+
+      <div class="memory-lab">
+        <div class="memory-intro">
+          <p class="kicker">真实示范显微镜</p>
+          <h3>同一个动作段，只留下四个触觉时刻</h3>
+          <p>下面来自作者公开的 Insert Tube 第 0 条示范、第 4 个动作段。左右手指使用同一组时间索引：动作起点、最大变化前、最大变化后、动作终点。</p>
+          <div class="frame-controls" role="group" aria-label="选择触觉时刻">
+            <button class="frame-button active" type="button" data-frame="0"><span>起点</span><small>step 598</small></button>
+            <button class="frame-button" type="button" data-frame="1"><span>峰前</span><small>step 728</small></button>
+            <button class="frame-button" type="button" data-frame="2"><span>峰后</span><small>step 730</small></button>
+            <button class="frame-button" type="button" data-frame="3"><span>终点</span><small>step 778</small></button>
+          </div>
+          <div class="selection-rule"><span class="mono">S = {起点, 峰前, 峰后, 终点}</span><p>只有最大归一化变化 ≥ 1 时才加入峰值对；否则只留首尾。相同索引同时用于左右触觉，避免两侧时间错位。</p></div>
+        </div>
+        <div class="memory-viewer">
+          <div class="viewer-head"><div><span class="viewer-pulse"></span> 当前选择</div><strong id="frame-label">动作起点 · step 598</strong></div>
+          <div class="tactile-pair">
+            <figure><figcaption><span>LEFT PAD</span><b id="left-diff">Δ 0.00</b></figcaption><img id="left-frame" src="assets/insert_tube/e0_s4_left_frames/frame-0.png" alt="左侧触觉动作起点"><div class="diff-track"><i id="left-diff-bar"></i></div></figure>
+            <figure><figcaption><span>RIGHT PAD</span><b id="right-diff">Δ 0.00</b></figcaption><img id="right-frame" src="assets/insert_tube/e0_s4_right_frames/frame-0.png" alt="右侧触觉动作起点"><div class="diff-track"><i id="right-diff-bar"></i></div></figure>
+          </div>
+          <p class="viewer-note">Δ 是本页为观察方便计算的“相对首帧平均 RGB 差”，不是论文的 patch-motion 选择分数。真实选择器使用 3×4 patch 网格、75 分位位移与低质量时的图像差回退。</p>
+          <details class="boundary-views"><summary>同时对齐的视觉边界 <span>展开</span></summary><div><figure><img src="assets/insert_tube/e0_s4_head.png" alt="头部相机动作前后"><figcaption>头部相机 · 动作前 / 后</figcaption></figure><figure><img src="assets/insert_tube/e0_s4_wrist.png" alt="腕部相机动作前后"><figcaption>腕部相机 · 动作前 / 后</figcaption></figure></div></details>
+        </div>
+      </div>
+
+      <div class="plain-explanation">
+        <div class="plain-label">通俗版</div>
+        <p>你可以把它想成教人插钥匙：只说“往前、旋转、再拔”不够；只让他看现在手指受力也不够。更有用的是给一段成功经验：<strong>旋到这里时左手指纹路突然变形，专家又多旋了一点，随后反向并上提。</strong>模型不是背坐标，而是借这段因果顺序判断当前应该继续、退回，还是横向微调。</p>
+      </div>
+    </section>
+
+    <section class="section results-section" id="results">
+      <div class="section-heading split-heading">
+        <div><p class="kicker paper-kicker">02 · 论文报告</p><h2>历史触觉经验带来提升，<br>但不是每个任务都提升。</h2></div>
+        <div class="claim-badge"><span>论文主表</span><strong>15.75% → 24.00%</strong><small>同样的当前视觉 + 当前触觉；差别是示范里有没有触觉</small></div>
+      </div>
+      <div class="result-card">
+        <div class="chart-header"><div><h3>四个 UniVTAC 任务 · 每格 100 次</h3><p>成功率，单位 %。鼠标或键盘聚焦条形可查看数值。</p></div><div class="chart-legend"><span><i class="bar-vm"></i>视觉＋动作示范</span><span><i class="bar-eta"></i>Tactile-ETA</span></div></div>
+        <div id="result-chart" class="result-chart" aria-label="论文任务成功率对比"></div>
+        <div class="chart-callout"><strong>看清反例：</strong>Lift Can 从 3% 变为 2%，说明“加触觉记忆”不是万能增益；表示方式、任务和模型本身都决定结果。</div>
+      </div>
+
+      <div class="result-grid">
+        <article class="ablation-card"><p class="kicker">表示方式消融 · Lift Bottle</p><h3>更多帧，反而可能更糟</h3><div id="ablation-chart" class="ablation-chart"></div><p class="card-note">全部触觉帧只有 2%，精选 4 帧以内达到 36%。论文把它解释为上下文组织方式很关键；这组结果本身不能证明唯一因果机制。</p></article>
+        <article class="robot-card"><p class="kicker">真机 · 每格只有 5 次</p><h3>一条示范：0/5 → 3/5</h3><div id="robot-trials" class="robot-trials"></div><p class="card-note">白板擦拭与薯片抓取各 3/5。对照加入的是整条视觉＋动作＋触觉示范，不能把全部提升单独归因于历史触觉；成功由人工判断，60% 应读作早期可行性证据。</p></article>
+        <article class="shot-card"><p class="kicker">示范条数 · 四任务平均</p><h3>两条比四条更好</h3><div class="shot-bars"><div><span>1 条</span><i><b style="width: 75%"></b></i><strong>22.5%</strong></div><div class="best"><span>2 条</span><i><b style="width: 80%"></b></i><strong>24.0%</strong></div><div><span>4 条</span><i><b style="width: 63.3%"></b></i><strong>19.0%</strong></div></div><p class="card-note">上下文不是越长越好。四条示范让 Pull Out Key 上升，却让 Lift Bottle 从 36% 降到 2%。</p></article>
+        <article class="model-card"><p class="kicker">模型消融 · Lift Bottle</p><h3>同一方法也依赖底模</h3><div id="model-chart" class="model-chart"></div><p class="card-note">论文正文称主模型为 GPT-6，附录称 GPT-6 Astra，开源配置写 <code>gpt-6-astra</code>；作者没有公布不可变模型快照或三者的正式映射。</p></article>
+      </div>
+
+      <div class="force-control-note"><div class="note-symbol">!</div><div><h3>“精细力控”要准确理解</h3><p>论文自己说明：当前系统主要在<strong>动作段之间</strong>利用触觉来做下一步决策；动作内部仍由底层控制器执行。它展示了接触敏感的闭环纠偏，但还不是 100–1000 Hz 的连续触觉伺服或显式力矩控制。作者也把“更快的动作内触觉反馈”列为未来方向。</p></div></div>
+    </section>
+
+    <section class="section reproduction-section" id="reproduction">
+      <div class="section-heading split-heading">
+        <div><p class="kicker reproduced-kicker">03 · 本机独立复现</p><h2>我们跑通了什么，<br>又在哪里诚实停下。</h2></div>
+        <div class="evidence-grade"><span>当前证据等级</span><strong>COMPONENT<br>TESTED</strong><small>场景＋双触觉已初始化；重置未通过</small></div>
+      </div>
+
+      <div class="evidence-ladder">
+        <article class="evidence-row passed"><span class="evidence-index">01</span><div><p>源码身份</p><h3>固定上游提交并核对工作树</h3><small class="mono">e7e5efbd42d3…</small></div><b>通过</b></article>
+        <article class="evidence-row passed"><span class="evidence-index">02</span><div><p>公开示范包</p><h3>244 / 244 图像可解码，61 个动作段文本与图像标签一一对应</h3><small>8 条成功示范；左右触觉共享时间索引；每段保留 2–4 帧</small></div><b>通过</b></article>
+        <article class="evidence-row passed"><span class="evidence-index">03</span><div><p>算法与提示合同</p><h3>峰值选择独立转写与上游实现一致，5 项 prompt / tool 约束成立</h3><small>包含先读示范、禁止复制绝对坐标、当前触觉可缺失、原生结果中性反馈</small></div><b>通过</b></article>
+        <article class="evidence-row passed"><span class="evidence-index">04</span><div><p>作者测试</p><h3><code>python -m pytest</code>：8 / 8 通过</h3><small>直接 <code>uv run pytest</code> 会因根目录未进入导入路径而在收集阶段失败；两种入口都保留</small></div><b>通过*</b></article>
+        <article class="evidence-row passed"><span class="evidence-index">05</span><div><p>server-b 原生依赖</p><h3>Isaac 5.1／Lab 2.3／CUDA 12.6／TacEx／UIPC／cuRobo 已按固定版本加载</h3><small>8×L40S 可见；GPU scatter 计算与 5 个 cuRobo 原生扩展通过</small></div><b>通过</b></article>
+        <article class="evidence-row passed"><span class="evidence-index">06</span><div><p>原生场景与触觉启动</p><h3>Insert Tube 场景、UIPC 物体和左右 GelSight 均完成初始化</h3><small>v25、v28、v29 均到达“Completed setting up the environment”；显式使用 Torch 触觉后端并隔离重复 Vulkan ICD</small></div><b>到达*</b></article>
+        <article class="evidence-row blocked"><span class="evidence-index">07</span><div><p>重置、观测与动作</p><h3>首次关节重置失败；0 可评估 episode、0 模型决策、0 机器人动作</h3><small>PhysX 索引期望 CPU，Isaac Lab 传入 cuda:0；兼容补丁暴露更深的混合设备状态后已撤回</small></div><b>阻塞</b></article>
+        <article class="evidence-row blocked"><span class="evidence-index">08</span><div><p>Sub2API 模型门禁</p><h3>目录与认证可达，Opus 5.5 和两个 GPT 对照均无成功推理</h3><small>Opus 别名曾出现但返回 502／503，最终目录已不含 Opus；目录中的 gpt-6-astra 与 gpt-5.4 均返回 503</small></div><b>不可用</b></article>
+      </div>
+
+      <div class="attempt-panel">
+        <div class="attempt-header"><div><span class="attempt-dot"></span><strong>原生启动事实</strong></div><span class="mono">NO ROLLOUT CLAIM</span></div>
+        <div class="attempt-grid">
+          <article><span>本机 v1–v2</span><h3>先找准环境边界</h3><p>两次启动分别止于解释器路径和 UIPC 依赖，均在模型与动作之前退出。这些失败促成了 server-b 隔离环境。</p><ul><li>可评估：0</li><li>动作：0</li><li>失败完整留证</li></ul></article>
+          <article><span>server-b v1–v24</span><h3>逐层打通到双触觉</h3><p>29 次有界尝试逐步补齐依赖并定位 UIPC、相机、Taxim 与 Vulkan 问题。v24 显式选择 Torch 后端后，两侧 GelSight 全部初始化。</p><ul><li>JAX 冲突已定位</li><li>双触觉启动</li><li>无任务动作</li></ul></article>
+          <article><span>server-b v25–v29</span><h3>完整建场，停在首次重置</h3><p>单一 NVIDIA Vulkan ICD 消除了卡住现象；三轮完成环境设置。最终 v29 在 59.65 秒时因 PhysX CPU 索引与 cuda:0 缓冲不一致退出。</p><ul><li>reset_valid：false</li><li>样本：0</li><li>任务结果：无</li></ul></article>
+        </div>
+        <div class="attempt-conclusion"><strong>现在停在哪里：</strong>用户已明确接受 NVIDIA Omniverse EULA，Isaac 也已真实启动。最远证据是“场景＋双触觉初始化完成”，随后第一次关节状态写入失败。强行把索引搬到 CPU 会继续产生执行器缓冲设备冲突，因此该补丁已撤回；这一结果属于启动与组件证据，不是原生 episode。</div>
+      </div>
+
+      <div class="attempt-panel">
+        <div class="attempt-header"><div><span class="attempt-dot"></span><strong>Sub2API 连通性事实</strong></div><span class="mono">0 MODEL OUTPUT</span></div>
+        <div class="attempt-grid">
+          <article><span>早期目录 · 42 models</span><h3>Opus 5.5 曾可见</h3><p>四个常见别名一度出现在目录中，但最小推理请求只得到 HTTP 502／503，不能据此进入闭环。</p><ul><li>目录可见 ≠ 可推理</li><li>成功响应：0</li></ul></article>
+          <article><span>最终目录 · HTTP 200</span><h3>网关与认证路径可达</h3><p>最终目录稳定返回 8 个 GPT 标识，但不再包含任何 Opus 5.5 别名。这证明目录链路可达，也证明指定模型当时不可选。</p><ul><li>目录：成功</li><li>Opus：缺席</li></ul></article>
+          <article><span>控制请求 · Responses API</span><h3>上游推理仍不可用</h3><p>目录内的 <code>gpt-6-astra</code> 和 <code>gpt-5.4</code> 都返回 HTTP 503。运行器没有偷偷换模型，也没有启动 batch。</p><ul><li>推理成功：0</li><li>batch：0</li></ul></article>
+        </div>
+        <div class="attempt-conclusion"><strong>准确结论：</strong>Sub2API 的网关、凭据与模型目录连通；推理上游没有成功返回。它是模型基础设施阻塞，不能写成 Opus 5.5 或 GPT-6 已参与机器人决策。</div>
+      </div>
+
+      <div class="repro-boundary">
+        <div><span class="yes">已证明</span><p>公开示范、紧凑选帧与 prompt/tool 合同可执行；server-b 能启动 Isaac、创建 Insert Tube 场景和 UIPC 物体，并完成左右 GelSight 初始化。</p></div>
+        <div><span class="no">尚未证明</span><p>环境能完成一次有效重置并输出观测；任何模型能作出决策；机器人能执行一步动作；论文成功率、真机 60% 或 TacHarness 迁移收益可重复。</p></div>
+      </div>
+      <p class="artifact-links">公开证据摘要：<a href="data/reproduction-summary.json">网页复现摘要</a> · <a href="../evidence/offline-summary.json">离线核验摘要</a> · <a href="../evidence/final-reproduction-summary.json">原生尝试最终摘要</a> · <a href="../evidence/v29-reset-error.json">v29 重置错误摘要</a> · <a href="../evidence/opus-final-preflight.json">Opus 最终门禁</a> · <a href="../evidence/gpt54-control-preflight.json">GPT 对照门禁</a> · <a href="../evidence/artifact-manifest.json">公开资产 SHA-256 清单</a></p>
+    </section>
+
+    <section class="section relationship-section" id="relationship">
+      <div class="section-heading">
+        <p class="kicker">04 · 与 TacHarness 的关系</p>
+        <h2>它提供“怎样用触觉记忆决策”，<br>TacHarness 提供“怎样把实验做成可相信的系统”。</h2>
+        <p>两者互补，但职责不同。最好的借鉴方式是把 Tactile-ETA 做成 TacHarness 里的一个可替换策略／教师适配器，而不是把整个项目改造成它。</p>
+      </div>
+
+      <div class="comparison-table" role="table" aria-label="Tactile-ETA 与 TacHarness 对比">
+        <div class="comparison-row comparison-head" role="row"><span role="columnheader">问题</span><span role="columnheader">Tactile-ETA</span><span role="columnheader">TacHarness</span></div>
+        <div class="comparison-row" role="row"><strong role="rowheader">核心目标</strong><span>让冻结的大模型利用触觉示范完成接触操作</span><span>统一采集、训练、服务、评测、证据和门禁</span></div>
+        <div class="comparison-row" role="row"><strong role="rowheader">记忆形态</strong><span>动作对齐的视觉＋动作＋双指触觉上下文</span><span>DataEngine episode、registry 制品、session / request 收据</span></div>
+        <div class="comparison-row" role="row"><strong role="rowheader">动作输出</strong><span>通用工具调用与连续末端目标</span><span>可接元动作、7D IK、PI0.5 或 <code>tacharness.vtla/1</code></span></div>
+        <div class="comparison-row" role="row"><strong role="rowheader">成功依据</strong><span>UniVTAC 原生判定或真机人工判定</span><span>原生结果＋媒体／状态／动作＋哈希门禁</span></div>
+        <div class="comparison-row" role="row"><strong role="rowheader">最适合扮演</strong><span>在线教师／策略候选</span><span>实验操作系统与审计层</span></div>
+      </div>
+
+      <div class="integration-diagram" aria-label="建议的 TacHarness 接入链">
+        <div class="diagram-node source-node"><span>01</span><strong>成功 episode</strong><small>ViTaForge / Arena</small></div><i aria-hidden="true">→</i>
+        <div class="diagram-node"><span>02</span><strong>动作切段</strong><small>state · action · contact</small></div><i aria-hidden="true">→</i>
+        <div class="diagram-node accent-node"><span>03</span><strong>触觉记忆包</strong><small>首尾＋峰值对</small></div><i aria-hidden="true">→</i>
+        <div class="diagram-node"><span>04</span><strong>ModelServer 会话</strong><small>review_demos once</small></div><i aria-hidden="true">→</i>
+        <div class="diagram-node"><span>05</span><strong>原生 rollout</strong><small>当前触觉＋反馈</small></div><i aria-hidden="true">→</i>
+        <div class="diagram-node gate-node"><span>06</span><strong>DataEngine / Gate</strong><small>同 seed 配对验收</small></div>
+      </div>
+
+      <div class="source-fit-grid">
+        <article><div class="fit-head"><span class="fit high">最高</span><h3>ViTaForge / UniVTAC</h3></div><p>论文同源，动作边界与双指触觉最接近。先增加独立 <code>isaac51</code> provider revision，不能覆盖仓库现有旧版 UniVTAC。</p><small>首选：验证记忆打包器与原论文任务</small></article>
+        <article><div class="fit-head"><span class="fit medium">中高</span><h3>IsaacLab-Arena Franka</h3></div><p>已有成功元动作、在线教师、逐帧触觉与平滑执行层，最适合做同 seed 的“当前触觉 vs 历史触觉”配对实验。</p><small>首选：验证对 TacJev 教师采集是否有收益</small></article>
+        <article><div class="fit-head"><span class="fit medium">中</span><h3>Isaac Manipulation</h3></div><p>已有严格 agentic ModelServer 接线，但 3 步 pilot 没有接触。需要更长工具循环、坐标标定和正向 DataEngine episode。</p><small>先补运行预算与接触，不把接线烟测当策略成功</small></article>
+      </div>
+
+      <div class="coordinate-warning"><span>坐标合同</span><p>论文历史示范用<strong>基座系 panda_hand + wxyz</strong>；在线工具用<strong>世界系 gripper-center + xyzw</strong>，并有 0.131 m 手轴偏移。TacHarness 适配器必须显式转换并写入收据，绝不能把历史绝对坐标直接复制到新场景。</p></div>
+    </section>
+
+    <section class="section roadmap-section" id="roadmap">
+      <div class="section-heading split-heading">
+        <div><p class="kicker">05 · 我们怎么借鉴</p><h2>先把“触觉经验”做成一等制品，<br>再问它能不能提高成功率。</h2></div>
+        <p class="heading-aside">推荐从不训练、可回滚、可配对的适配开始。只有在同 seed 的原生对照里看到收益，再决定是否蒸馏到 TacJev。</p>
+      </div>
+
+      <ol class="roadmap">
+        <li><span>P0</span><div><h3>定义 <code>TactileExperience.v1</code></h3><p>从 DataEngine episode 切出动作段；保存动作前后 state、视觉边界、双指触觉索引、选择分数、坐标系、标定摘要和源 episode 哈希。</p><ul><li>纯离线</li><li>不调用模型</li><li>可回放</li></ul></div><b>1–2 天</b></li>
+        <li><span>P1</span><div><h3>做 Arena 同 seed 小样本配对</h3><p>固定当前观测、工具、控制器、预算与模型，只切换“视觉＋动作示范”和“视觉＋动作＋触觉示范”。先跑 20 个开发 seed，保留全部失败。</p><ul><li>成功率</li><li>接触后退／横移</li><li>触觉饱和门禁</li></ul></div><b>2–4 天</b></li>
+        <li><span>P2</span><div><h3>接入严格 ModelServer session</h3><p>记忆只在 session 开始绑定一次；每次预测收据绑定 memory digest、prompt、模型、工具与 action frame。当前动作段结束后返回紧凑触觉历史。</p><ul><li>fail closed</li><li>请求级哈希</li><li>0 隐式换模型</li></ul></div><b>3–5 天</b></li>
+        <li><span>P3</span><div><h3>扩大消融，再决定是否训练</h3><p>在开发结果成立后再跑 100-seed 级别：无示范、视觉动作、首尾触觉、全部帧、精选触觉。最后才把优质教师决策蒸馏给 TacJev。</p><ul><li>持出 seed</li><li>成本／延迟</li><li>跨来源泛化</li></ul></div><b>按门禁</b></li>
+      </ol>
+
+      <div class="gate-grid">
+        <article><span>C0 · 身份</span><h3>同一条记忆能被精确重建</h3><p>源 episode、分段、图像、坐标与选择参数全有哈希。</p></article>
+        <article><span>C1 · 公平</span><h3>只改变示范触觉</h3><p>同模型、同 seed、同当前观测、同控制器和同预算。</p></article>
+        <article><span>C2 · 物理</span><h3>原生成功与接触都成立</h3><p>任务判定、真实触觉质量、视频和逐帧状态分别过门。</p></article>
+        <article><span>C3 · 价值</span><h3>收益覆盖成本</h3><p>报告成功率、延迟、token、失败类型与置信区间。</p></article>
+      </div>
+
+      <div class="recommendation"><div class="recommendation-mark">→</div><div><p>最优先的一个实验</p><h3>在 Arena 成功元动作参考上，打包 1 条精选触觉经验；用 20 个相同 seed 对比“视觉动作示范”与“Tactile-ETA 示范”。</h3><p>它能最快回答这项工作的核心价值是否能跨到 TacHarness，同时复用现有成功基线、触觉录制、ModelServer 与证据页。</p></div></div>
+    </section>
+
+    <section class="section limitations-section" id="limits">
+      <div class="section-heading"><p class="kicker">06 · 阅读结论时别越界</p><h2>五个最容易被宣传语遮住的事实</h2></div>
+      <div class="limit-grid">
+        <article><span>01</span><h3>不是零数据</h3><p>没有更新参数，但仍需要每个任务的成功专家示范；仿真主实验用两条，真机用一条人工示范。</p></article>
+        <article><span>02</span><h3>不是连续高频力控</h3><p>触觉主要用于动作段间决策，动作内由底层控制器执行；论文明确把更快反馈列为未来工作。</p></article>
+        <article><span>03</span><h3>60% 是 3 / 5</h3><p>两个真机任务各五次，人工判定。结果很有启发，但统计不确定性很大。</p></article>
+        <article><span>04</span><h3>更多上下文不等于更好</h3><p>全部触觉帧和四条示范都出现明显下降，说明上下文长度、噪声和模型注意分配需要一起控制。</p></article>
+        <article><span>05</span><h3>底层模型很重要</h3><p>Lift Bottle 同法结果从 36% 到 0% 不等。论文、附录和开源配置的主模型命名也不完全一致，不能脱离版本、推理强度、工具接口与成本单独谈。</p></article>
+      </div>
+    </section>
+
+    <section class="section sources-section" id="sources">
+      <div><p class="kicker">来源与证据</p><h2>每个数字都能回到原文或本机收据。</h2></div>
+      <div class="source-links">
+        <a href="https://arxiv.org/html/2610.27613" target="_blank" rel="noopener"><span>论文全文</span><strong>arXiv HTML ↗</strong></a>
+        <a href="https://github.com/No-518/Tactile-ETA/tree/e7e5efbd42d3be7532ff5eb940a3cb015c2f7818" target="_blank" rel="noopener"><span>复现源码</span><strong>固定提交 ↗</strong></a>
+        <a href="https://no-518.github.io/tactile-eta/" target="_blank" rel="noopener"><span>原项目</span><strong>主页与视频 ↗</strong></a>
+        <a href="data/reproduction-summary.json"><span>本机证据</span><strong>摘要 JSON ↓</strong></a>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="brand"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></span><span>Tactile-ETA <b>×</b> TacHarness</span></div><p>研究复现页面 · 论文结论与本机证据严格分栏 · 2026-10-21</p><a href="#top">回到顶部 ↑</a></footer>
+
+  <noscript><div class="noscript">页面的核心内容不依赖 JavaScript；开启 JavaScript 可使用触觉逐帧查看器和图表。</div></noscript>
+</body>
+</html>

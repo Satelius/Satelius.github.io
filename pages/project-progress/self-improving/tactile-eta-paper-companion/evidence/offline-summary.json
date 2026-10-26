@@ -1,0 +1,346 @@
+{
+  "schema": "tacharness.tactile_eta.public_reproduction_summary.v1",
+  "created_at": "2026-10-21T12:35:52.476968+00:00",
+  "upstream": "https://github.com/No-518/Tactile-ETA",
+  "commit": "e7e5efbd42d3be7532ff5eb940a3cb015c2f7818",
+  "evidence_level": "component_tested",
+  "claims": {
+    "simulator_independent_method_chain_reproduced": true,
+    "native_simulator_episode_reproduced": false,
+    "paper_success_rates_reproduced": false,
+    "real_robot_results_reproduced": false
+  },
+  "totals": {
+    "tasks": 4,
+    "expert_examples": 8,
+    "action_segments": 61,
+    "image_strips": 244,
+    "retained_tactile_frames": 170
+  },
+  "tasks": [
+    {
+      "task": "insert_tube",
+      "expert_examples": 2,
+      "segments": 11,
+      "all_strips": 44,
+      "retained_tactile_frames": 39,
+      "retained_frames_per_segment": {
+        "minimum": 2,
+        "maximum": 4,
+        "mean": 3.545
+      }
+    },
+    {
+      "task": "lift_can",
+      "expert_examples": 2,
+      "segments": 18,
+      "all_strips": 72,
+      "retained_tactile_frames": 45,
+      "retained_frames_per_segment": {
+        "minimum": 2,
+        "maximum": 4,
+        "mean": 2.5
+      }
+    },
+    {
+      "task": "lift_bottle",
+      "expert_examples": 2,
+      "segments": 24,
+      "all_strips": 96,
+      "retained_tactile_frames": 66,
+      "retained_frames_per_segment": {
+        "minimum": 2,
+        "maximum": 4,
+        "mean": 2.75
+      }
+    },
+    {
+      "task": "pull_out_key",
+      "expert_examples": 2,
+      "segments": 8,
+      "all_strips": 32,
+      "retained_tactile_frames": 20,
+      "retained_frames_per_segment": {
+        "minimum": 2,
+        "maximum": 4,
+        "mean": 2.5
+      }
+    }
+  ],
+  "selection_cases": [
+    {
+      "scores": [
+        0,
+        0.2,
+        0.9,
+        0.1,
+        0
+      ],
+      "selected_indices": [
+        0,
+        4
+      ],
+      "selection_matches_independent_transcription": true
+    },
+    {
+      "scores": [
+        0,
+        0.2,
+        1.0,
+        0.1,
+        0
+      ],
+      "selected_indices": [
+        0,
+        1,
+        2,
+        4
+      ],
+      "selection_matches_independent_transcription": true
+    },
+    {
+      "scores": [
+        0,
+        0.2,
+        1.2,
+        1.2,
+        0
+      ],
+      "selected_indices": [
+        0,
+        1,
+        2,
+        4
+      ],
+      "selection_matches_independent_transcription": true
+    },
+    {
+      "scores": [
+        0
+      ],
+      "selected_indices": [
+        0
+      ],
+      "selection_matches_independent_transcription": true
+    }
+  ],
+  "prompt_contract": {
+    "contains_task_instruction": true,
+    "reviews_demonstrations_before_current_observation": true,
+    "warns_against_absolute_coordinate_copy": true,
+    "allows_missing_current_tactile": true,
+    "uses_neutral_native_feedback": true
+  },
+  "representative_media": {
+    "insert_tube": {
+      "e0_s4_head.png": {
+        "path": "assets/insert_tube/e0_s4_head.png",
+        "sha256": "8b669d57ab6bb32184baf8780517aaac81ae0fd16a3f802e23fd7222cd988f06"
+      },
+      "e0_s4_wrist.png": {
+        "path": "assets/insert_tube/e0_s4_wrist.png",
+        "sha256": "8f30f9d41682c1da311e858475c643c40f999bf50086e650b869600ea2627788"
+      },
+      "e0_s4_left_tactile.png": {
+        "path": "assets/insert_tube/e0_s4_left_tactile.png",
+        "sha256": "4ee86e0aa5748d0b1220dc13948b380420e85311465e9015a38f2847cbc9a142",
+        "frames": [
+          {
+            "index": 0,
+            "path": "assets/insert_tube/e0_s4_left_frames/frame-0.png",
+            "sha256": "223b45c81a4755a4e603d9025e49fd26f319360fd146aea778fff6cd2dfeecb0",
+            "display_mean_abs_rgb_difference_from_first": 0.0,
+            "recorded_step": 598
+          },
+          {
+            "index": 1,
+            "path": "assets/insert_tube/e0_s4_left_frames/frame-1.png",
+            "sha256": "bff5c538c6c042075e2d6d982a0bd4ef0f7e727eb3a1a26e79e7ffda9339d370",
+            "display_mean_abs_rgb_difference_from_first": 18.5762,
+            "recorded_step": 728
+          },
+          {
+            "index": 2,
+            "path": "assets/insert_tube/e0_s4_left_frames/frame-2.png",
+            "sha256": "292263d0e7d4d9a0a555bc0aaac56ada87d4317a3e6baae328e47e106f5c81c5",
+            "display_mean_abs_rgb_difference_from_first": 18.4455,
+            "recorded_step": 730
+          },
+          {
+            "index": 3,
+            "path": "assets/insert_tube/e0_s4_left_frames/frame-3.png",
+            "sha256": "134d9f83901fd39515e618a4937012de192632f23a26b7113eea12f65cf102c6",
+            "display_mean_abs_rgb_difference_from_first": 9.7013,
+            "recorded_step": 778
+          }
+        ],
+        "selection_note": "segment-end image/motion change, not slip labels"
+      },
+      "e0_s4_right_tactile.png": {
+        "path": "assets/insert_tube/e0_s4_right_tactile.png",
+        "sha256": "6d3cabaabe3f4987448cb3f1f35c2bd94d3abfb98aa7bbad955852782d41c86e",
+        "frames": [
+          {
+            "index": 0,
+            "path": "assets/insert_tube/e0_s4_right_frames/frame-0.png",
+            "sha256": "e8864d77a5b18831f43d420f24966b0edb1819ce27949bade1118b9fa38b4b78",
+            "display_mean_abs_rgb_difference_from_first": 0.0,
+            "recorded_step": 598
+          },
+          {
+            "index": 1,
+            "path": "assets/insert_tube/e0_s4_right_frames/frame-1.png",
+            "sha256": "1da3881bd6ee64e5652aa7bee8e52fd5d00517cd003b41cbbcde86efdfc29255",
+            "display_mean_abs_rgb_difference_from_first": 21.3013,
+            "recorded_step": 728
+          },
+          {
+            "index": 2,
+            "path": "assets/insert_tube/e0_s4_right_frames/frame-2.png",
+            "sha256": "6f44b27e9a708814d1fc753ff757c26aa3635c6db04b93e9de418735ed2c31f8",
+            "display_mean_abs_rgb_difference_from_first": 21.5519,
+            "recorded_step": 730
+          },
+          {
+            "index": 3,
+            "path": "assets/insert_tube/e0_s4_right_frames/frame-3.png",
+            "sha256": "4655c71581b5dfbf5c116724e28e50d175b2bb3086a8c3b27531618bbdc1976a",
+            "display_mean_abs_rgb_difference_from_first": 8.7638,
+            "recorded_step": 778
+          }
+        ],
+        "selection_note": "segment-end image/motion change, not slip labels"
+      }
+    },
+    "pull_out_key": {
+      "e0_s3_head.png": {
+        "path": "assets/pull_out_key/e0_s3_head.png",
+        "sha256": "7cf10c846d9d8583b2f7a25eefed2eacf0d82ab52098d42b08d2e6d2a9d095c6"
+      },
+      "e0_s3_wrist.png": {
+        "path": "assets/pull_out_key/e0_s3_wrist.png",
+        "sha256": "666e60aff97cf51efa8a34b8fe538e401578f565fbfbd76baf33c1e4d78d2ffc"
+      },
+      "e0_s3_left_tactile.png": {
+        "path": "assets/pull_out_key/e0_s3_left_tactile.png",
+        "sha256": "db9352e58ac9aebf0d8266d2bc22cb13173b5cc53de649cd8e02ebbe0a4c9322",
+        "frames": [
+          {
+            "index": 0,
+            "path": "assets/pull_out_key/e0_s3_left_frames/frame-0.png",
+            "sha256": "58a62ff3f5f61787ed9a52ac4f03c59d0a97903caf9914d2509f09d8f8b75acd",
+            "display_mean_abs_rgb_difference_from_first": 0.0,
+            "recorded_step": 542
+          },
+          {
+            "index": 1,
+            "path": "assets/pull_out_key/e0_s3_left_frames/frame-1.png",
+            "sha256": "ccf3d980d359efe097d1648952c01911e6b2c9b979ff3e6f55c94b34b93a1a05",
+            "display_mean_abs_rgb_difference_from_first": 7.1546,
+            "recorded_step": 572
+          },
+          {
+            "index": 2,
+            "path": "assets/pull_out_key/e0_s3_left_frames/frame-2.png",
+            "sha256": "2701f1ff68d21b720cc028218d496e1d49a3290d248221a519d0c3acc4712f5f",
+            "display_mean_abs_rgb_difference_from_first": 8.6439,
+            "recorded_step": 574
+          },
+          {
+            "index": 3,
+            "path": "assets/pull_out_key/e0_s3_left_frames/frame-3.png",
+            "sha256": "70ddac8462976ee80fae1c4418641af49203715d6523c35d9065e79fd87efef3",
+            "display_mean_abs_rgb_difference_from_first": 8.7912,
+            "recorded_step": 696
+          }
+        ],
+        "selection_note": "segment-end image/motion change, not slip labels"
+      },
+      "e0_s3_right_tactile.png": {
+        "path": "assets/pull_out_key/e0_s3_right_tactile.png",
+        "sha256": "32dc04dba60c4a28b399c2a941c5e809d7cce75e24fb867dae244fa5360f1d5c",
+        "frames": [
+          {
+            "index": 0,
+            "path": "assets/pull_out_key/e0_s3_right_frames/frame-0.png",
+            "sha256": "ec577d6daed4007c0f9bd13b71b8799e0d09801b5e9b8df4df7965d95d83cd37",
+            "display_mean_abs_rgb_difference_from_first": 0.0,
+            "recorded_step": 542
+          },
+          {
+            "index": 1,
+            "path": "assets/pull_out_key/e0_s3_right_frames/frame-1.png",
+            "sha256": "399f970a5f8843507d6833cd39cccb290a952fc3d4cbd5c7f08b9eb6da798e5b",
+            "display_mean_abs_rgb_difference_from_first": 7.9712,
+            "recorded_step": 572
+          },
+          {
+            "index": 2,
+            "path": "assets/pull_out_key/e0_s3_right_frames/frame-2.png",
+            "sha256": "ed24f372534100fcfcc3191dfcb551bd6e9c81dc03c3eb0b6cf37532bdb0d1b7",
+            "display_mean_abs_rgb_difference_from_first": 9.6218,
+            "recorded_step": 574
+          },
+          {
+            "index": 3,
+            "path": "assets/pull_out_key/e0_s3_right_frames/frame-3.png",
+            "sha256": "da4ace89e4b3d2d410c314d7d6e1a55c12409fcedb6bc512596372e14d0f0da5",
+            "display_mean_abs_rgb_difference_from_first": 8.2586,
+            "recorded_step": 696
+          }
+        ],
+        "selection_note": "segment-end image/motion change, not slip labels"
+      }
+    }
+  },
+  "tests": {
+    "check_demonstrations": {
+      "returncode": 0,
+      "last_line": "]"
+    },
+    "python_module_pytest": {
+      "returncode": 0,
+      "last_line": "8 passed in 0.15s"
+    },
+    "direct_uv_pytest": {
+      "returncode": 2,
+      "last_line": "1 error in 0.06s"
+    }
+  },
+  "native_attempts": [
+    {
+      "attempt": "native-attempt-v1",
+      "evaluable": false,
+      "task_success": null,
+      "codex_process_count": 0,
+      "startup_failure_wall_seconds": 1.000297629274428,
+      "worker_elapsed_seconds": 0.058874284848570824,
+      "worker_returncode": 1,
+      "infrastructure_error": "worker_failure",
+      "missing_modules": [
+        "isaaclab"
+      ],
+      "failure_stage": "runtime_entrypoint"
+    },
+    {
+      "attempt": "native-attempt-v2",
+      "evaluable": false,
+      "task_success": null,
+      "codex_process_count": 0,
+      "startup_failure_wall_seconds": 9.001075035892427,
+      "worker_elapsed_seconds": 8.331266715191305,
+      "worker_returncode": 0,
+      "infrastructure_error": "RuntimeError: live worker exited before ready with returncode 0",
+      "missing_modules": [
+        "transforms3d",
+        "uipc"
+      ],
+      "failure_stage": "native_dependencies"
+    }
+  ],
+  "limitations": [
+    "Packaged demonstrations contain selected strips, not the raw HDF5 episodes, so raw-frame selection was not recomputed.",
+    "Successful author demonstrations were decoded and structurally audited; their native task success was not rerun.",
+    "No simulator action, model decision, paper-scale ablation, or real-robot trial is part of this offline result."
+  ]
+}

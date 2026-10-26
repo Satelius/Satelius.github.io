@@ -1,0 +1,11 @@
+{
+  "schema": "tacharness.tactile_eta.public_native_error.v1",
+  "attempt": "v29",
+  "error": "Failed to set DOF positions in backend",
+  "traceback_in_public_projection": false,
+  "stage": "first_robot_reset",
+  "root_cause": "PhysX expected the index tensor on CPU (device -1) while Isaac Lab supplied cuda:0 during setDofPositions.",
+  "evaluable": false,
+  "task_success": null,
+  "robot_actions": 0
+}

@@ -1,0 +1,484 @@
+{
+  "schema": "tacharness.tactile_eta.public_reproduction_summary.v1",
+  "created_at": "2026-10-21T12:35:52.476968+00:00",
+  "upstream": "https://github.com/No-518/Tactile-ETA",
+  "commit": "e7e5efbd42d3be7532ff5eb940a3cb015c2f7818",
+  "evidence_level": "component_tested",
+  "claims": {
+    "simulator_independent_method_chain_reproduced": true,
+    "native_simulator_episode_reproduced": false,
+    "paper_success_rates_reproduced": false,
+    "real_robot_results_reproduced": false
+  },
+  "totals": {
+    "tasks": 4,
+    "expert_examples": 8,
+    "action_segments": 61,
+    "image_strips": 244,
+    "retained_tactile_frames": 170
+  },
+  "tasks": [
+    {
+      "task": "insert_tube",
+      "expert_examples": 2,
+      "segments": 11,
+      "all_strips": 44,
+      "retained_tactile_frames": 39,
+      "retained_frames_per_segment": {
+        "minimum": 2,
+        "maximum": 4,
+        "mean": 3.545
+      }
+    },
+    {
+      "task": "lift_can",
+      "expert_examples": 2,
+      "segments": 18,
+      "all_strips": 72,
+      "retained_tactile_frames": 45,
+      "retained_frames_per_segment": {
+        "minimum": 2,
+        "maximum": 4,
+        "mean": 2.5
+      }
+    },
+    {
+      "task": "lift_bottle",
+      "expert_examples": 2,
+      "segments": 24,
+      "all_strips": 96,
+      "retained_tactile_frames": 66,
+      "retained_frames_per_segment": {
+        "minimum": 2,
+        "maximum": 4,
+        "mean": 2.75
+      }
+    },
+    {
+      "task": "pull_out_key",
+      "expert_examples": 2,
+      "segments": 8,
+      "all_strips": 32,
+      "retained_tactile_frames": 20,
+      "retained_frames_per_segment": {
+        "minimum": 2,
+        "maximum": 4,
+        "mean": 2.5
+      }
+    }
+  ],
+  "selection_cases": [
+    {
+      "scores": [
+        0,
+        0.2,
+        0.9,
+        0.1,
+        0
+      ],
+      "selected_indices": [
+        0,
+        4
+      ],
+      "selection_matches_independent_transcription": true
+    },
+    {
+      "scores": [
+        0,
+        0.2,
+        1.0,
+        0.1,
+        0
+      ],
+      "selected_indices": [
+        0,
+        1,
+        2,
+        4
+      ],
+      "selection_matches_independent_transcription": true
+    },
+    {
+      "scores": [
+        0,
+        0.2,
+        1.2,
+        1.2,
+        0
+      ],
+      "selected_indices": [
+        0,
+        1,
+        2,
+        4
+      ],
+      "selection_matches_independent_transcription": true
+    },
+    {
+      "scores": [
+        0
+      ],
+      "selected_indices": [
+        0
+      ],
+      "selection_matches_independent_transcription": true
+    }
+  ],
+  "prompt_contract": {
+    "contains_task_instruction": true,
+    "reviews_demonstrations_before_current_observation": true,
+    "warns_against_absolute_coordinate_copy": true,
+    "allows_missing_current_tactile": true,
+    "uses_neutral_native_feedback": true
+  },
+  "representative_media": {
+    "insert_tube": {
+      "e0_s4_head.png": {
+        "path": "assets/insert_tube/e0_s4_head.png",
+        "sha256": "8b669d57ab6bb32184baf8780517aaac81ae0fd16a3f802e23fd7222cd988f06"
+      },
+      "e0_s4_wrist.png": {
+        "path": "assets/insert_tube/e0_s4_wrist.png",
+        "sha256": "8f30f9d41682c1da311e858475c643c40f999bf50086e650b869600ea2627788"
+      },
+      "e0_s4_left_tactile.png": {
+        "path": "assets/insert_tube/e0_s4_left_tactile.png",
+        "sha256": "4ee86e0aa5748d0b1220dc13948b380420e85311465e9015a38f2847cbc9a142",
+        "frames": [
+          {
+            "index": 0,
+            "path": "assets/insert_tube/e0_s4_left_frames/frame-0.png",
+            "sha256": "223b45c81a4755a4e603d9025e49fd26f319360fd146aea778fff6cd2dfeecb0",
+            "display_mean_abs_rgb_difference_from_first": 0.0,
+            "recorded_step": 598
+          },
+          {
+            "index": 1,
+            "path": "assets/insert_tube/e0_s4_left_frames/frame-1.png",
+            "sha256": "bff5c538c6c042075e2d6d982a0bd4ef0f7e727eb3a1a26e79e7ffda9339d370",
+            "display_mean_abs_rgb_difference_from_first": 18.5762,
+            "recorded_step": 728
+          },
+          {
+            "index": 2,
+            "path": "assets/insert_tube/e0_s4_left_frames/frame-2.png",
+            "sha256": "292263d0e7d4d9a0a555bc0aaac56ada87d4317a3e6baae328e47e106f5c81c5",
+            "display_mean_abs_rgb_difference_from_first": 18.4455,
+            "recorded_step": 730
+          },
+          {
+            "index": 3,
+            "path": "assets/insert_tube/e0_s4_left_frames/frame-3.png",
+            "sha256": "134d9f83901fd39515e618a4937012de192632f23a26b7113eea12f65cf102c6",
+            "display_mean_abs_rgb_difference_from_first": 9.7013,
+            "recorded_step": 778
+          }
+        ],
+        "selection_note": "segment-end image/motion change, not slip labels"
+      },
+      "e0_s4_right_tactile.png": {
+        "path": "assets/insert_tube/e0_s4_right_tactile.png",
+        "sha256": "6d3cabaabe3f4987448cb3f1f35c2bd94d3abfb98aa7bbad955852782d41c86e",
+        "frames": [
+          {
+            "index": 0,
+            "path": "assets/insert_tube/e0_s4_right_frames/frame-0.png",
+            "sha256": "e8864d77a5b18831f43d420f24966b0edb1819ce27949bade1118b9fa38b4b78",
+            "display_mean_abs_rgb_difference_from_first": 0.0,
+            "recorded_step": 598
+          },
+          {
+            "index": 1,
+            "path": "assets/insert_tube/e0_s4_right_frames/frame-1.png",
+            "sha256": "1da3881bd6ee64e5652aa7bee8e52fd5d00517cd003b41cbbcde86efdfc29255",
+            "display_mean_abs_rgb_difference_from_first": 21.3013,
+            "recorded_step": 728
+          },
+          {
+            "index": 2,
+            "path": "assets/insert_tube/e0_s4_right_frames/frame-2.png",
+            "sha256": "6f44b27e9a708814d1fc753ff757c26aa3635c6db04b93e9de418735ed2c31f8",
+            "display_mean_abs_rgb_difference_from_first": 21.5519,
+            "recorded_step": 730
+          },
+          {
+            "index": 3,
+            "path": "assets/insert_tube/e0_s4_right_frames/frame-3.png",
+            "sha256": "4655c71581b5dfbf5c116724e28e50d175b2bb3086a8c3b27531618bbdc1976a",
+            "display_mean_abs_rgb_difference_from_first": 8.7638,
+            "recorded_step": 778
+          }
+        ],
+        "selection_note": "segment-end image/motion change, not slip labels"
+      }
+    },
+    "pull_out_key": {
+      "e0_s3_head.png": {
+        "path": "assets/pull_out_key/e0_s3_head.png",
+        "sha256": "7cf10c846d9d8583b2f7a25eefed2eacf0d82ab52098d42b08d2e6d2a9d095c6"
+      },
+      "e0_s3_wrist.png": {
+        "path": "assets/pull_out_key/e0_s3_wrist.png",
+        "sha256": "666e60aff97cf51efa8a34b8fe538e401578f565fbfbd76baf33c1e4d78d2ffc"
+      },
+      "e0_s3_left_tactile.png": {
+        "path": "assets/pull_out_key/e0_s3_left_tactile.png",
+        "sha256": "db9352e58ac9aebf0d8266d2bc22cb13173b5cc53de649cd8e02ebbe0a4c9322",
+        "frames": [
+          {
+            "index": 0,
+            "path": "assets/pull_out_key/e0_s3_left_frames/frame-0.png",
+            "sha256": "58a62ff3f5f61787ed9a52ac4f03c59d0a97903caf9914d2509f09d8f8b75acd",
+            "display_mean_abs_rgb_difference_from_first": 0.0,
+            "recorded_step": 542
+          },
+          {
+            "index": 1,
+            "path": "assets/pull_out_key/e0_s3_left_frames/frame-1.png",
+            "sha256": "ccf3d980d359efe097d1648952c01911e6b2c9b979ff3e6f55c94b34b93a1a05",
+            "display_mean_abs_rgb_difference_from_first": 7.1546,
+            "recorded_step": 572
+          },
+          {
+            "index": 2,
+            "path": "assets/pull_out_key/e0_s3_left_frames/frame-2.png",
+            "sha256": "2701f1ff68d21b720cc028218d496e1d49a3290d248221a519d0c3acc4712f5f",
+            "display_mean_abs_rgb_difference_from_first": 8.6439,
+            "recorded_step": 574
+          },
+          {
+            "index": 3,
+            "path": "assets/pull_out_key/e0_s3_left_frames/frame-3.png",
+            "sha256": "70ddac8462976ee80fae1c4418641af49203715d6523c35d9065e79fd87efef3",
+            "display_mean_abs_rgb_difference_from_first": 8.7912,
+            "recorded_step": 696
+          }
+        ],
+        "selection_note": "segment-end image/motion change, not slip labels"
+      },
+      "e0_s3_right_tactile.png": {
+        "path": "assets/pull_out_key/e0_s3_right_tactile.png",
+        "sha256": "32dc04dba60c4a28b399c2a941c5e809d7cce75e24fb867dae244fa5360f1d5c",
+        "frames": [
+          {
+            "index": 0,
+            "path": "assets/pull_out_key/e0_s3_right_frames/frame-0.png",
+            "sha256": "ec577d6daed4007c0f9bd13b71b8799e0d09801b5e9b8df4df7965d95d83cd37",
+            "display_mean_abs_rgb_difference_from_first": 0.0,
+            "recorded_step": 542
+          },
+          {
+            "index": 1,
+            "path": "assets/pull_out_key/e0_s3_right_frames/frame-1.png",
+            "sha256": "399f970a5f8843507d6833cd39cccb290a952fc3d4cbd5c7f08b9eb6da798e5b",
+            "display_mean_abs_rgb_difference_from_first": 7.9712,
+            "recorded_step": 572
+          },
+          {
+            "index": 2,
+            "path": "assets/pull_out_key/e0_s3_right_frames/frame-2.png",
+            "sha256": "ed24f372534100fcfcc3191dfcb551bd6e9c81dc03c3eb0b6cf37532bdb0d1b7",
+            "display_mean_abs_rgb_difference_from_first": 9.6218,
+            "recorded_step": 574
+          },
+          {
+            "index": 3,
+            "path": "assets/pull_out_key/e0_s3_right_frames/frame-3.png",
+            "sha256": "da4ace89e4b3d2d410c314d7d6e1a55c12409fcedb6bc512596372e14d0f0da5",
+            "display_mean_abs_rgb_difference_from_first": 8.2586,
+            "recorded_step": 696
+          }
+        ],
+        "selection_note": "segment-end image/motion change, not slip labels"
+      }
+    }
+  },
+  "tests": {
+    "check_demonstrations": {
+      "returncode": 0,
+      "last_line": "]"
+    },
+    "python_module_pytest": {
+      "returncode": 0,
+      "last_line": "8 passed in 0.15s"
+    },
+    "direct_uv_pytest": {
+      "returncode": 2,
+      "last_line": "1 error in 0.06s"
+    }
+  },
+  "native_attempts": [
+    {
+      "attempt": "native-attempt-v1",
+      "evaluable": false,
+      "task_success": null,
+      "codex_process_count": 0,
+      "startup_failure_wall_seconds": 1.000297629274428,
+      "worker_elapsed_seconds": 0.058874284848570824,
+      "worker_returncode": 1,
+      "infrastructure_error": "worker_failure",
+      "missing_modules": [
+        "isaaclab"
+      ],
+      "failure_stage": "runtime_entrypoint"
+    },
+    {
+      "attempt": "native-attempt-v2",
+      "evaluable": false,
+      "task_success": null,
+      "codex_process_count": 0,
+      "startup_failure_wall_seconds": 9.001075035892427,
+      "worker_elapsed_seconds": 8.331266715191305,
+      "worker_returncode": 0,
+      "infrastructure_error": "RuntimeError: live worker exited before ready with returncode 0",
+      "missing_modules": [
+        "transforms3d",
+        "uipc"
+      ],
+      "failure_stage": "native_dependencies"
+    }
+  ],
+  "limitations": [
+    "Packaged demonstrations contain selected strips, not the raw HDF5 episodes, so raw-frame selection was not recomputed.",
+    "Successful author demonstrations were decoded and structurally audited; their native task success was not rerun.",
+    "No simulator action, model decision, paper-scale ablation, or real-robot trial is part of this offline result."
+  ],
+  "server_b": {
+    "schema": "tacharness.tactile_eta.server_reproduction_summary.v1",
+    "created_at": "2026-10-21T12:30:03+00:00",
+    "evidence_level": "component_tested",
+    "server_stage": "scene_loaded_dual_gelsight_initialized_reset_blocked",
+    "nvidia_omniverse_eula_explicitly_accepted": true,
+    "scope": {
+      "task": "insert_tube",
+      "mode": "observe_only",
+      "seed": 1000000,
+      "paper_rate_comparable": false
+    },
+    "counts": {
+      "bounded_server_attempts": 29,
+      "evaluable_episodes": 0,
+      "successful_model_responses": 0,
+      "model_decisions": 0,
+      "robot_actions": 0,
+      "task_successes": 0
+    },
+    "furthest_verified_progress": [
+      "Isaac Sim application became ready on an NVIDIA L40S.",
+      "The UniVTAC insert_tube scene and UIPC deformable/contact objects were created.",
+      "Two initial UIPC simulation advances returned.",
+      "Both left and right GelSight sensors completed camera, optical, marker, reset, and debug-visualization initialization.",
+      "Isaac Lab reported 'Completed setting up the environment'.",
+      "The first task reset entered robot joint-state initialization and then failed before ready.json or any observation sample was emitted."
+    ],
+    "final_attempt": {
+      "attempt": "native-observe-insert-tube-20261021-v29",
+      "worker_returncode": 0,
+      "worker_elapsed_seconds": 59.65488163707778,
+      "controller_status": "infrastructure_issue",
+      "evaluable": false,
+      "task_success": null,
+      "reset_valid": false,
+      "error": "Failed to set DOF positions in backend",
+      "root_cause_evidence": "PhysX expected the index tensor on CPU (device -1) while Isaac Lab supplied cuda:0 during setDofPositions.",
+      "evidence": [
+        "native-observe-insert-tube-20261021-v29/episode/episode.json",
+        "native-observe-insert-tube-20261021-v29/episode/worker_error.json",
+        "native-observe-insert-tube-20261021-v29/episode/launcher/lifecycle.json",
+        "native-observe-insert-tube-20261021-v29/episode/launcher/stdout_stderr.log",
+        "native-observe-insert-tube-20261021-v29/episode/isaaclab_runtime_switch.json"
+      ]
+    },
+    "milestones": [
+      {
+        "attempts": "v1-v7",
+        "result": "Closed missing TacEx assets, torch-scatter, geometry helpers, and cuRobo native dependencies one failure at a time."
+      },
+      {
+        "attempts": "v8-v23",
+        "result": "Localized device, Isaac Lab source, UIPC stepping, camera startup, and Taxim/JAX CUDA-context failures with bounded diagnostics."
+      },
+      {
+        "attempt": "v24",
+        "result": "Forcing Taxim's Torch backend initialized both GelSight sensors; the remaining app update hang was traced to duplicate NVIDIA Vulkan ICD manifests."
+      },
+      {
+        "attempts": "v25, v28, v29",
+        "result": "A process-local single Vulkan ICD allowed the full environment setup to finish. All three stopped at the first robot reset because the PhysX tensor view and Isaac Lab indices disagreed on CPU versus CUDA placement."
+      },
+      {
+        "attempt": "v26",
+        "result": "A narrow CPU-index compatibility patch crossed the first call but exposed another CPU/GPU buffer-index mismatch in the actuator path; the patch was rejected and reverted."
+      },
+      {
+        "attempt": "v27",
+        "result": "Using physical cuda:1 without remapping was rejected because this USD/RTX path only supports cuda:0."
+      }
+    ],
+    "runtime_findings": [
+      {
+        "finding": "Taxim backend selection",
+        "evidence": "Taxim auto-selected JAX, which created a competing CUDA primary context inside Isaac. Selecting the supported Torch backend allowed both optical tactile sensors to initialize."
+      },
+      {
+        "finding": "Vulkan device enumeration",
+        "evidence": "Two NVIDIA ICD manifests enumerated every L40S twice and left app.update stuck. Restricting VK_ICD_FILENAMES to /etc/vulkan/icd.d/nvidia_icd.json removed the duplicate enumeration and let environment setup finish."
+      },
+      {
+        "finding": "Remaining reset incompatibility",
+        "evidence": "The installed Isaac Sim 5.1 / Isaac Lab variants create a CPU PhysX tensor view while the environment and index buffers are configured for cuda:0. A local index-only shim is insufficient and changes runtime semantics, so it was not accepted as a reproduction result."
+      }
+    ],
+    "model_connectivity": {
+      "gateway_catalog_and_auth_reachable": true,
+      "catalog_http_status": 200,
+      "final_catalog_model_count": 8,
+      "final_catalog_models": [
+        "gpt-5.2",
+        "gpt-5.4",
+        "gpt-5.4-mini",
+        "gpt-5.5",
+        "gpt-5.6-luna",
+        "gpt-5.6-sol",
+        "gpt-5.6-terra",
+        "gpt-6-astra"
+      ],
+      "opus_55": {
+        "transiently_catalogued_alias_count": 4,
+        "earlier_inference_statuses": [
+          502,
+          503
+        ],
+        "present_in_final_catalog": false,
+        "successful_response": false
+      },
+      "catalogued_controls": [
+        {
+          "model": "gpt-6-astra",
+          "responses_http_status": 503
+        },
+        {
+          "model": "gpt-5.4",
+          "responses_http_status": 503
+        }
+      ],
+      "conclusion": "The Sub2API gateway, credential path, and model catalog are reachable, but the inference upstream did not return a successful response. No model was substituted and no batch rollout was started.",
+      "evidence": [
+        "model-preflight-opus55-v2/receipt.json",
+        "model-preflight-opus55-final-20261021-round13/receipt.json",
+        "model-preflight-gpt6-astra-20261021-round12/receipt.json",
+        "model-preflight-gpt54-control-20261021-round14/receipt.json"
+      ]
+    },
+    "claims": {
+      "native_application_started": true,
+      "native_scene_created": true,
+      "dual_tactile_sensors_initialized": true,
+      "valid_reset_completed": false,
+      "observation_emitted": false,
+      "robot_action_executed": false,
+      "native_episode_reproduced": false,
+      "paper_success_rates_reproduced": false
+    }
+  }
+}
