@@ -24,7 +24,7 @@
       <a href="#relationship">关系</a>
       <a href="#roadmap">采用路线</a>
     </nav>
-    <a class="header-cta" href="#reproduction">查看证据</a>
+    <a class="header-cta" href="../online/">在线实测 ↗</a>
   </header>
 
   <main id="main">
@@ -32,17 +32,18 @@
       <div class="hero-glow hero-glow-a" aria-hidden="true"></div>
       <div class="hero-glow hero-glow-b" aria-hidden="true"></div>
       <div class="hero-copy">
-        <p class="eyebrow"><span class="live-dot"></span> 独立复现 · 2026.10.21</p>
+        <p class="eyebrow"><span class="live-dot"></span> 独立复现 · 2026.10.26更新</p>
         <h1>让机器人不只“现在摸到”，<br><em>还记得上次怎样摸对。</em></h1>
-        <p class="hero-lede">Tactile-ETA 把成功示范压缩成“动作—视觉—双指触觉”的短记忆，交给冻结的通用模型在执行时参考。我们复现了这条不依赖仿真的核心链，并把它放进 TacHarness 的数据、服务与证据框架里审视。</p>
+        <p class="hero-lede">Tactile-ETA 把成功示范压缩成“动作—视觉—双指触觉”的短记忆，交给冻结的通用模型在执行时参考。我们已从离线核心链推进到真实 Codex／MCP 原生在线闭环，并取得一次 Insert Tube 原生成功；下方同时保留早期失败快照。</p>
         <div class="hero-actions">
-          <a class="button button-primary" href="../">打开逐页论文伴读 <span aria-hidden="true">↗</span></a>
+          <a class="button button-primary" href="../online/">看真实在线过程与视频 <span aria-hidden="true">↗</span></a>
+          <a class="button button-secondary" href="../">打开逐页论文伴读 <span aria-hidden="true">↗</span></a>
           <a class="button button-primary" href="#method">用三分钟看懂方法 <span aria-hidden="true">↓</span></a>
           <a class="button button-secondary" href="#reproduction">哪些真的跑过？</a>
         </div>
         <div class="status-line" role="status">
           <span class="status-icon">✓</span>
-          <div><strong>离线核心链已复现，原生启动推进到第一次机器人重置</strong><small>场景与双 GelSight 已初始化；PhysX 的 CPU／GPU 张量接口阻塞重置，Sub2API 尚无成功推理响应</small></div>
+          <div><strong>原生在线闭环已实测，并取得一次任务成功</strong><small>成功运行：6段模型动作、14控制步、15帧与6份触觉历史；短试跑失败与所有初始化尝试分别保留，不代表论文成功率复现</small></div>
         </div>
       </div>
 
@@ -134,8 +135,8 @@
 
     <section class="section reproduction-section" id="reproduction">
       <div class="section-heading split-heading">
-        <div><p class="kicker reproduced-kicker">03 · 本机独立复现</p><h2>我们跑通了什么，<br>又在哪里诚实停下。</h2></div>
-        <div class="evidence-grade"><span>当前证据等级</span><strong>COMPONENT<br>TESTED</strong><small>场景＋双触觉已初始化；重置未通过</small></div>
+        <div><p class="kicker reproduced-kicker">03 · 10月21日历史快照</p><h2>早期组件核验与阻塞，<br>保留原始证据。</h2><p>以下为10月21日归档，未回写历史收据。最新模型闭环、设备修复与任务结果见<a href="../online/">10月26日在线实测</a>。</p></div>
+        <div class="evidence-grade"><span>当时证据等级</span><strong>COMPONENT<br>TESTED</strong><small>10月21日：场景＋双触觉初始化，重置阻塞</small></div>
       </div>
 
       <div class="evidence-ladder">

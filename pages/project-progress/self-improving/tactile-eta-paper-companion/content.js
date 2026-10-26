@@ -13,7 +13,7 @@ export const sources = {
   controller: ['动作执行 · autonomous_operation.py', `${UPSTREAM}sim/envs/univtac/autonomous_operation.py`],
   agent: ['模型与 prompt · run_autonomous_insert_hole.py', `${UPSTREAM}scripts/univtac/run_autonomous_insert_hole.py#L41-L123`],
   contract: ['TacJev 项目合同 · 核验摘记', 'assets/project-context.html'],
-  report: ['独立复现 · 结果与证据边界', 'overview/#reproduction'],
+  report: ['独立复现 · 最新在线结果与证据边界', 'online/'],
   kd: ['Hinton 等 · Knowledge Distillation', 'https://arxiv.org/abs/1503.02531'],
   dagger: ['Ross 等 · DAgger', 'https://proceedings.mlr.press/v15/ross11a.html'],
   seqkd: ['Kim & Rush · Sequence-Level KD', 'https://aclanthology.org/D16-1139/'],
@@ -105,7 +105,7 @@ page(9,'Figure 4–5 · §4.4–4.5','一对被首尾漏掉的接触变化','图
 page(10,'Figure 6 · §5 Discussion','真机与限制：60% 应该怎样理解？','真机结果证明完整多模态演示有潜力，作者同时明确提出动作内快速触觉反馈仍是未来方向。','每个任务只有 <strong>5 次：0/5 → 3/5</strong>；增加的是整条视觉+运动+触觉示范，不能把全部收益独立归因触觉。',[
   card('real-robot','两个真机任务分别证明什么？',p('平台为 reBot Arm B601-RS 与 vitai GF225 触觉夹爪。擦白板要求擦掉目标蓝字并移开橡皮露出区域；拾薯片要求完全离开支撑、不碎不掉，支撑仍在桌上。每种配置、每个任务 5 次，由人工判定。')+p('加入一条多模态人工示范后各成功 3/5，对照无示范各 0/5。两边当前感知相同，但没有真机“视觉动作示范 vs 加触觉”消融，因此只能说完整经验上下文有效。'),'paper',['paper'],['真机消融怎么做？0到60是否都是触觉贡献？']),
   card('force-control','它究竟是不是连续精细力控？',p('更准确地说是<strong>触觉辅助的分段闭环操作</strong>。模型没有给目标法向力或力矩曲线，没有展示 100–1000 Hz 连续触觉伺服，也没有在一段工具执行中根据触觉立即中断。')+p('代码底层为 120 Hz 物理、60 Hz 控制，模型在段结束后看压缩反馈再决定。仿真中模型思考时物理暂停，这与真实世界持续演化有差别。作者把快速动作内反馈列为未来工作。'),'caution',['paper','controller'],['它解决力控了吗？为什么不等于高速连续力控？']),
-  card('transfer','对我们最现实的借鉴是什么？',p('把它作为<strong>高层教师/策略的上下文构建层</strong>，和已有平滑执行、低层控制、门禁分别配合。先评测示范触觉能否改善接触后的决策，再谈扩大采集和学生训练。')+p('本次复现只到离线方法、原生场景和双 GelSight 初始化；首次 reset 与模型服务分别受阻。不能把上游 24% 或 3/5 作为我们项目已验证效果。'),'proposal',['report'],['有没有可能用于我们的项目？可行性如何？'])
+  card('transfer','对我们最现实的借鉴是什么？',p('把它作为<strong>高层教师/策略的上下文构建层</strong>，和已有平滑执行、低层控制、门禁分别配合。先评测示范触觉能否改善接触后的决策，再谈扩大采集和学生训练。')+p('10月26日已跑通真实 Codex／MCP 原生在线循环并取得一次 Insert Tube 成功：6段模型动作、14控制步、6份段后触觉历史。尚无配对消融或学生训练；不能把上游 24% 或 3/5 作为我们项目已验证效果。'),'proposal',['report'],['有没有可能用于我们的项目？可行性如何？'])
 ],['小样本真机','分段闭环','复现边界']),
 
 page(11,'结论续 · References [1–12]','读参考文献：区分基础、近邻和评测','参考列表不是贡献排行榜。这里可以沿着 ETA、GPT-Policy、LEMMo-Plan 三条线回看本文的定位。','作者的可靠归属是<strong>OpenETA 系统继承＋多模态 ICL 扩展</strong>；“最大灵感”没有被明确排序。',[
@@ -196,7 +196,7 @@ page(23,'Appendix F.2–F.3 · Table 9','工具调用是大模型与机器人之
 
 page(24,'Appendix F.3 · Schema 末页','读完之后，留下怎样的项目判断？','最后一页是动作 schema 的续页。语法合法只是第一关，物理意义、因果证据和持出评测还在后面。','最值得带回项目的，是<strong>动作对齐的经验制品和受控验证方法</strong>；迁移与蒸馏都应以新证据逐级成立。',[
   card('schema','JSON 对了，为什么仍可能执行错？',p('原 schema 中若干向量是 number array，但没有全部在 schema 层限制长度；三轴解释写在 prompt 里。preview 也可能过期，省略夹爪命令会保留前一目标。')+p('因此要在适配层校验维度、有限值、互斥字段、坐标、单位、预算与执行状态；请求回执绑定输入和动作，执行回执再绑定实际目标与结果。模型文字说完成、工具返回成功、任务成功仍是三件事。'),'code',['paper','controller']),
-  card('reproduction','这次独立复现的边界',p('已独立验证 4 任务、8 条成功示范、61 动作段、244 图像条、170 共同触觉时刻，选帧规则转写一致，作者 8/8 方法测试通过。server-b 29 次启动最远到建场、双 GelSight 初始化和环境设置，首次机器人 reset 被 PhysX CPU / CUDA 设备不一致阻塞。')+p('模型服务的目录/认证可达，但没有成功推理响应。没有有效观测、机器人动作、论文成功率复现或 TacJev 蒸馏结果。本页不调用模型、不启动仿真。'),'caution',['report']),
+  card('reproduction','这次独立复现的边界',p('已独立验证 4 任务、8 条成功示范、61 动作段、244 图像条、170 共同触觉时刻，选帧规则转写一致，作者 8/8 方法测试通过。10月21日原生 reset 与接口失败作为历史快照保留；10月26日已定位并修复本次 PhysX CPU／CUDA 冲突，完成新鲜观测、模型决策与真实动作后的触觉回传。')+p('最新成功运行有6段模型动作、14控制步、15采样帧与6份触觉历史，原生判定成功且按保存状态复算一致。另有5段动作的提前终止试跑，不能合并成统计成功率。论文成功率、真机结果、历史触觉收益的配对消融和 TacJev 蒸馏均未完成。本网页本身不调用模型、不启动仿真。'),'caution',['report']),
   card('next','我们可以怎样开始？',list(['<strong>先做离线：</strong>从合格 episode 生成可重建经验包，验证能保留接触转折。','<strong>再做教师：</strong>模型成功预检后，在同 seed 的原生闭环只切换经验触觉，量化收益和成本。','<strong>然后做学生：</strong>用时间对齐、动作合同一致的合格标签先做 BC，再用学生状态上的教师纠错。','<strong>最后判断迁移：</strong>在持出 seed 与扰动恢复上独立测 TacJev，报告成功、接触质量、时延和失败；不以训练 loss 代替。']),'proposal',['report','dagger'],['读完后我们究竟应该借鉴什么？'])
 ],['审计事实','可验证采用路线'])
 ];

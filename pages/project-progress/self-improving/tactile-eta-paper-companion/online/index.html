@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,nofollow"><meta name="theme-color" content="#f4f3ed">
+  <title>Tactile-ETA · 在线过程实测</title>
+  <meta name="description" content="真实Codex、MCP、原生机械臂动作与触觉反馈的逐段证据。">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%2327674e'/%3E%3Ctext x='18' y='47' fill='white' font-size='46'%3Et%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="style.css">
+  <script src="../gate.js?v=online-20261026" data-redirect="tactile-eta-online"></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header><a class="brand" href="../"><b>t.</b><span>Tactile-ETA<small>在线过程实测</small></span></a><nav><a href="../">论文伴读</a><a href="../overview/">复现总览</a><a href="../../../">项目进展 ↗</a></nav></header>
+  <main>
+    <section class="intro"><p class="eyebrow">NATIVE ONLINE REPRODUCTION · 2026.10.26</p><h1>从读触觉，到真实执行，<br><em>把每一步接起来。</em></h1><p class="lede">真实 Codex 会话通过作者 MCP 工具读取示范、观察环境、控制仿真机械臂，再读取动作后的触觉。这里展示实际发生的过程，任务成败按原生判定报告。</p><div class="proof-strip"><span>✓ 完整44张示范</span><span>✓ 新鲜四图观测</span><span>✓ 模型选择动作</span><span>✓ 动作后触觉回传</span></div></section>
+    <section class="explanation"><span class="section-no">01 / 在线怎样运转</span><div class="flow"><div><b>读经验</b><p>回合开始时，一次读取两条成功示范。</p></div><i>→</i><div><b>看当前</b><p>相机、双指触觉、机器人状态和执行反馈。</p></div><i>→</i><div><b>做一段</b><p>模型给目标，底层控制器执行，段内采集触觉。</p></div><i>→</i><div><b>读回再判断</b><p>段末选帧，图像回到同一会话，再选下一步。</p></div></div><p>固定作者源码；真实Codex 0.164.0；gpt-6-astra（服务自报）、low推理强度、两条官方示范、seed 1000000。沿用公开入口的静态任务规则条件R；模型提前知道判据，但没有获得实时孔坐标变换、夹持偏移或当前成功分数。</p><p class="boundary">模型思考时物理暂停；视频按仿真时间播放。模型在动作段之间决策，未更新模型权重。完整管线跑通、任务成功、论文成功率复现分别验收。</p></section>
+    <section class="runs-section"><div class="section-heading"><div><span class="section-no">02 / 实际运行</span><h2>看视频，也看动作依据。</h2></div><label>选择记录<select id="run-select" aria-label="选择运行"></select></label></div><p id="load-status" role="status">正在读取脱敏实测记录…</p><div class="run-grid" id="run-grid" hidden>
+      <div class="media-column"><div class="video-card"><div class="video-top"><span id="run-name"></span><span id="outcome" class="outcome"></span></div><video id="video" controls playsinline preload="metadata" aria-label="真实原生运行四视图视频"></video><div class="transport"><button id="prev-frame" aria-label="上一帧">‹ 上一帧</button><button id="next-frame" aria-label="下一帧">下一帧 ›</button><label>速度<select id="speed" aria-label="播放速度"><option value="0.1" selected>0.1×</option><option value="0.25">0.25×</option><option value="0.5">0.5×</option><option value="1">1×</option></select></label><output id="frame-label"></output></div></div><p class="caption">上排：场景与腕部相机；下排：左右触觉。无插帧。初始化抓取由作者脚本完成，视频从模型接管后的记录开始。</p><div class="metrics" id="metrics"></div><p class="result-note" id="result-note"></p><a id="download" href="#" download>下载原始仿真时间视频 ↗</a></div>
+      <div class="actions-column"><p class="eyebrow">ACTION-ALIGNED FEEDBACK</p><h3>每段动作，怎样回到模型。</h3><p class="helper">点选一段可定位视频；展开查看该段指令、实际控制步和触觉选帧。本次每段只有2—4个候选时刻，均被保留；不据此宣称已验证长序列压缩收益。</p><div id="actions"></div></div>
+    </div></section>
+    <section class="explanation"><span class="section-no">03 / 这次解决了什么</span><h2>配置写着GPU，实际view却在CPU。</h2><p>复验发现，物理设置中的强制CPU覆盖值为0。场景虽然声明GPU，实际tensor view和关节状态仍在CPU，索引却在CUDA。仅在独立进程中改为按场景配置生效后，view与关节数据回到CUDA，原来失败的关节写入通过，完整reset和新鲜观测随后完成。</p><p>另一个工具运行依赖缺失曾导致Codex正常结束却零动作。补齐配套程序，并在服务器先做真实MCP往返后，才继续原生试跑。这也是TacHarness需要逐步证据和门禁的原因：进程退出0、工具接通与机器人完成任务是不同事实。</p></section>
+    <section class="attempts"><span class="section-no">04 / 所有尝试保留</span><h2>失败记录也在这里。</h2><div id="attempts"></div></section>
+    <section class="explanation"><span class="section-no">05 / 怎样借鉴到TacHarness</span><h2>先保存经验与决策，再谈训练。</h2><p>把动作边界、执行前后观测、实测运动、双指共同选帧及来源哈希保存为DataEngine派生制品；在模型会话中绑定这份经验。它通过上下文影响模型，原方法不传递或更新权重。要训练TacJev，仍需另行转换动作语义、筛选合格教师数据，并验证学生闭环表现。</p><p>本次证明了原生在线工具循环；没有通过配对消融证明历史触觉带来提升，也没有完成触觉接触质量／力标定、TacJev训练或论文成功率复现。模型身份是服务自报；腕部深度与标定在当前入口不可用。</p></section>
+    <footer><a href="data.json">下载脱敏运行摘要</a><a href="../evidence/artifact-manifest.json">公开资产哈希</a><a href="https://github.com/No-518/Tactile-ETA/tree/e7e5efbd42d3be7532ff5eb940a3cb015c2f7818" target="_blank" rel="noopener">作者固定源码 ↗</a><a href="https://arxiv.org/abs/2610.27613v1" target="_blank" rel="noopener">论文v1 ↗</a><p>原始失败、短试跑与作者动作预算运行分开记录。单次结果不等于统计成功率。</p></footer>
+  </main>
+</body>
+</html>

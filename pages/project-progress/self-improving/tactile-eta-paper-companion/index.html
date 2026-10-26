@@ -19,7 +19,7 @@
   <header class="topbar">
     <a class="wordmark" href="overview/"><span class="brand-icon" aria-hidden="true">t.</span><span>Tactile-ETA <small>论文伴读</small></span></a>
     <span class="header-caption">读懂一篇论文，也读懂它能为我们做什么。</span>
-    <div class="header-actions"><button id="questions-button" class="plain-button">问题索引 <span>↗</span></button><a href="overview/" class="overview-link">复现总览 ↗</a><a href="../../" class="overview-link">项目进展 ↗</a></div>
+    <div class="header-actions"><button id="questions-button" class="plain-button">问题索引 <span>↗</span></button><a href="online/" class="overview-link">在线实测 ↗</a><a href="overview/" class="overview-link">复现总览 ↗</a><a href="../../" class="overview-link">项目进展 ↗</a></div>
   </header>
   <div class="mobile-tabs" aria-label="阅读面板"><button data-pane="paper" class="selected">原文</button><button data-pane="notes">中文讲解 <span id="mobile-page">P.01</span></button></div>
   <main class="workspace" id="workspace">
@@ -36,7 +36,7 @@
     <section class="notes-pane" aria-labelledby="notes-heading">
       <div class="pane-top"><div class="pane-label"><i class="green"></i> 中文伴读 <span>随原文同步</span></div><span id="sync-state" class="sync-state">● 已跟随</span></div>
       <div class="notes-toolbar"><div class="chapter-position"><span id="note-page">01</span><div><small>当前阅读</small><strong id="note-section">摘要 · Introduction</strong></div></div><button id="expand-all" class="plain-button">展开全部</button></div>
-      <div class="notes-scroll" id="notes-scroll"><article id="commentary" tabindex="-1" aria-live="polite"></article><footer class="notes-footer">中文讲解为独立阅读辅助。<br>绿色＝论文事实，蓝色＝代码核验，紫色＝我们的接入方案。<br>论文实验数字均为作者报告，未独立复现。<br><a href="overview/#reproduction">查看本次复现的准确边界 ↗</a></footer></div>
+      <div class="notes-scroll" id="notes-scroll"><article id="commentary" tabindex="-1" aria-live="polite"></article><footer class="notes-footer">中文讲解为独立阅读辅助。<br>绿色＝论文事实，蓝色＝代码核验，紫色＝我们的接入方案。<br>论文统计成功率均为作者报告，未独立复现。<br><a href="online/">10月26日：真实在线闭环与原生成功视频 ↗</a><br><a href="overview/">查看复现总览与历史证据 ↗</a></footer></div>
     </section>
   </main>
   <dialog id="question-dialog" aria-labelledby="question-title"><div class="dialog-head"><div><span class="eyebrow">READING MAP</span><h2 id="question-title">带着问题读</h2></div><button id="close-questions" class="icon-button" aria-label="关闭问题索引">×</button></div><label class="search-label"><span class="sr-only">搜索问题</span><input id="question-search" type="search" placeholder="搜索：最大变化、短记忆、蒸馏…" autocomplete="off"></label><p class="dialog-hint">点击问题，会定位原文页码并打开对应讲解。迁移与蒸馏属于独立方案，已单独标记。</p><div id="question-list"></div></dialog>

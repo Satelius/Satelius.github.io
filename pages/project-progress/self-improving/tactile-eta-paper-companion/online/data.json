@@ -1,0 +1,494 @@
+{
+  "schema": "tactile_eta.public_online_evidence.v1",
+  "date": "2026-10-26",
+  "task": "insert_tube",
+  "upstream_commit": "e7e5efbd42d3be7532ff5eb940a3cb015c2f7818",
+  "runs": [
+    {
+      "id": "v35",
+      "label": "作者动作预算 · 原生成功",
+      "seed": 1000000,
+      "model": "gpt-6-astra",
+      "model_identity": "service self-report",
+      "task_success": true,
+      "termination": "native_success",
+      "video": "assets/v35-online.mp4",
+      "video_times": [
+        0.0,
+        0.017,
+        0.033,
+        0.05,
+        0.067,
+        0.083,
+        0.1,
+        0.117,
+        0.133,
+        0.15,
+        0.167,
+        0.183,
+        0.2,
+        0.217,
+        0.233
+      ],
+      "simulation_times": [
+        0.0,
+        0.016666666666666666,
+        0.03333333333333333,
+        0.05,
+        0.06666666666666667,
+        0.08333333333333333,
+        0.1,
+        0.11666666666666667,
+        0.13333333333333333,
+        0.15,
+        0.16666666666666666,
+        0.18333333333333332,
+        0.2,
+        0.21666666666666667,
+        0.23333333333333334
+      ],
+      "motion_requests": 6,
+      "control_steps": 14,
+      "samples": 15,
+      "histories": 6,
+      "actions": [
+        {
+          "label": "沿夹爪坐标移动 [0.0, 0.0, 10.0] mm",
+          "arguments": {
+            "delta_mm": [
+              0.0,
+              0.0,
+              10.0
+            ],
+            "delta_frame": "grip_site",
+            "preview": false
+          },
+          "control_steps": 3,
+          "physical_motion": true,
+          "arm_reached": true,
+          "end_reason": "arm_reached",
+          "selected_ids": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "candidate_count": 4,
+          "first_frame": 0
+        },
+        {
+          "label": "沿夹爪坐标移动 [0.0, 0.0, 10.0] mm",
+          "arguments": {
+            "delta_mm": [
+              0.0,
+              0.0,
+              10.0
+            ],
+            "delta_frame": "grip_site",
+            "preview": false
+          },
+          "control_steps": 3,
+          "physical_motion": true,
+          "arm_reached": true,
+          "end_reason": "arm_reached",
+          "selected_ids": [
+            3,
+            4,
+            5,
+            6
+          ],
+          "candidate_count": 4,
+          "first_frame": 3
+        },
+        {
+          "label": "沿夹爪坐标移动 [0.0, 0.0, 10.0] mm",
+          "arguments": {
+            "delta_mm": [
+              0.0,
+              0.0,
+              10.0
+            ],
+            "delta_frame": "grip_site",
+            "preview": false
+          },
+          "control_steps": 2,
+          "physical_motion": true,
+          "arm_reached": true,
+          "end_reason": "arm_reached",
+          "selected_ids": [
+            6,
+            7,
+            8
+          ],
+          "candidate_count": 3,
+          "first_frame": 6
+        },
+        {
+          "label": "沿世界坐标移动 [-2.5, 2.0, 4.33] mm",
+          "arguments": {
+            "delta_mm": [
+              -2.5,
+              2.0,
+              4.33
+            ],
+            "delta_frame": "world",
+            "preview": false
+          },
+          "control_steps": 3,
+          "physical_motion": true,
+          "arm_reached": true,
+          "end_reason": "arm_reached",
+          "selected_ids": [
+            8,
+            9,
+            10,
+            11
+          ],
+          "candidate_count": 4,
+          "first_frame": 8
+        },
+        {
+          "label": "沿夹爪坐标移动 [0.0, 0.0, 8.0] mm",
+          "arguments": {
+            "delta_mm": [
+              0.0,
+              0.0,
+              8.0
+            ],
+            "delta_frame": "grip_site",
+            "preview": false
+          },
+          "control_steps": 2,
+          "physical_motion": true,
+          "arm_reached": true,
+          "end_reason": "arm_reached",
+          "selected_ids": [
+            11,
+            12,
+            13
+          ],
+          "candidate_count": 3,
+          "first_frame": 11
+        },
+        {
+          "label": "沿夹爪坐标移动 [0.0, 0.0, 8.0] mm",
+          "arguments": {
+            "delta_mm": [
+              0.0,
+              0.0,
+              8.0
+            ],
+            "delta_frame": "grip_site",
+            "preview": false
+          },
+          "control_steps": 1,
+          "physical_motion": true,
+          "arm_reached": true,
+          "end_reason": "episode_ended",
+          "selected_ids": [
+            13,
+            14
+          ],
+          "candidate_count": 2,
+          "first_frame": 13
+        }
+      ],
+      "explanation": "原生任务成功。孔坐标系轴向位置约−30.87 mm，夹持相对轴向变化约3.05 mm；按作者原生判据复算一致。一次固定seed成功不等于统计成功率。",
+      "initialization_control_steps": 395,
+      "initialization_physics_steps": 395,
+      "native_criteria_check": {
+        "criteria": {
+          "x_signed_lt_5mm": true,
+          "y_signed_lt_5mm": true,
+          "axial_z_lt_minus30mm": true,
+          "axis_alignment_gt_0965": true,
+          "inhand_bias_lt30mm": true
+        },
+        "native_result_matches_independent_metadata_check": true,
+        "task_success": true,
+        "inhand_bias_mm": 3.0524095505267415,
+        "hole_frame_position_mm": [
+          -0.21980071939542434,
+          0.027953262394009998,
+          -30.868763141907674
+        ],
+        "axis_alignment": 0.9999782864717762,
+        "signed_xy_rule_preserved": true
+      },
+      "source_sha256": {
+        "final_result.json": "0a6997f24aea979f65116ba65677facf8418b84fefbcb814414338de93c4ddf6",
+        "host_evaluator.json": "5a01710ab08869be626d79cc5abd3a44e5b510684f8e638803c7270ba4f0a8eb",
+        "tool_trace.jsonl": "f34073c19b26991ab48991476f97049c6eafac1a0f0759ac0f59b5ca55604373",
+        "samples.jsonl": "a953acc6dd21b38c65721323dceaa44914c87438e4387efbf33ae5e45e096605",
+        "control_steps.jsonl": "00b2718872f359b854bc36885a6fc3f88850bb742acbfed7977e3864d7a2e62c",
+        "review.mp4": "654b526316e2736d02b53ace0f9245deb9623559d929241ad47521826da91a8f"
+      }
+    },
+    {
+      "id": "v34",
+      "label": "5段短试跑 · 提前终止",
+      "seed": 1000000,
+      "model": "gpt-6-astra",
+      "model_identity": "service self-report",
+      "task_success": false,
+      "termination": "native_early_stop",
+      "video": "assets/v34-online.mp4",
+      "video_times": [
+        0.0,
+        0.017,
+        0.033,
+        0.05,
+        0.067,
+        0.083,
+        0.1,
+        0.117,
+        0.133,
+        0.15,
+        0.167,
+        0.183,
+        0.2,
+        0.217,
+        0.233
+      ],
+      "simulation_times": [
+        0.0,
+        0.016666666666666666,
+        0.03333333333333333,
+        0.05,
+        0.06666666666666667,
+        0.08333333333333333,
+        0.1,
+        0.11666666666666667,
+        0.13333333333333333,
+        0.15,
+        0.16666666666666666,
+        0.18333333333333332,
+        0.2,
+        0.21666666666666667,
+        0.23333333333333334
+      ],
+      "motion_requests": 5,
+      "control_steps": 14,
+      "samples": 15,
+      "histories": 5,
+      "actions": [
+        {
+          "label": "沿夹爪坐标移动 [0.0, 0.0, 10.0] mm",
+          "arguments": {
+            "delta_mm": [
+              0.0,
+              0.0,
+              10.0
+            ],
+            "delta_frame": "grip_site",
+            "preview": false
+          },
+          "control_steps": 3,
+          "physical_motion": true,
+          "arm_reached": true,
+          "end_reason": "arm_reached",
+          "selected_ids": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "candidate_count": 4,
+          "first_frame": 0
+        },
+        {
+          "label": "沿世界坐标移动 [4.965, 1.0, -8.68] mm",
+          "arguments": {
+            "delta_mm": [
+              4.965,
+              1.0,
+              -8.68
+            ],
+            "delta_frame": "world",
+            "preview": false
+          },
+          "control_steps": 3,
+          "physical_motion": true,
+          "arm_reached": true,
+          "end_reason": "arm_reached",
+          "selected_ids": [
+            3,
+            4,
+            5,
+            6
+          ],
+          "candidate_count": 4,
+          "first_frame": 3
+        },
+        {
+          "label": "沿夹爪坐标移动 [0.0, 0.0, 15.0] mm",
+          "arguments": {
+            "delta_mm": [
+              0.0,
+              0.0,
+              15.0
+            ],
+            "delta_frame": "grip_site",
+            "preview": false
+          },
+          "control_steps": 3,
+          "physical_motion": true,
+          "arm_reached": true,
+          "end_reason": "arm_reached",
+          "selected_ids": [
+            6,
+            7,
+            8,
+            9
+          ],
+          "candidate_count": 4,
+          "first_frame": 6
+        },
+        {
+          "label": "沿夹爪坐标移动 [0.0, 0.0, 15.0] mm",
+          "arguments": {
+            "delta_mm": [
+              0.0,
+              0.0,
+              15.0
+            ],
+            "delta_frame": "grip_site",
+            "preview": false
+          },
+          "control_steps": 3,
+          "physical_motion": true,
+          "arm_reached": true,
+          "end_reason": "arm_reached",
+          "selected_ids": [
+            9,
+            10,
+            11,
+            12
+          ],
+          "candidate_count": 4,
+          "first_frame": 9
+        },
+        {
+          "label": "沿夹爪坐标移动 [3.0, 0.0, 15.0] mm",
+          "arguments": {
+            "delta_mm": [
+              3.0,
+              0.0,
+              15.0
+            ],
+            "delta_frame": "grip_site",
+            "preview": false
+          },
+          "control_steps": 2,
+          "physical_motion": true,
+          "arm_reached": true,
+          "end_reason": "episode_ended",
+          "selected_ids": [
+            12,
+            13,
+            14
+          ],
+          "candidate_count": 3,
+          "first_frame": 12
+        }
+      ],
+      "explanation": "原生提前终止，任务未成功。夹持相对轴向变化约32.27 mm，超过30 mm终止阈值；孔内轴向位置约−27.49 mm，尚未低于−30 mm。",
+      "initialization_control_steps": 394,
+      "initialization_physics_steps": 394,
+      "native_criteria_check": {
+        "criteria": {
+          "x_signed_lt_5mm": true,
+          "y_signed_lt_5mm": true,
+          "axial_z_lt_minus30mm": false,
+          "axis_alignment_gt_0965": true,
+          "inhand_bias_lt30mm": false
+        },
+        "native_result_matches_independent_metadata_check": true,
+        "task_success": false,
+        "inhand_bias_mm": 32.27332925004636,
+        "hole_frame_position_mm": [
+          -0.017383615933952434,
+          0.4467380751831109,
+          -27.492934744535567
+        ],
+        "axis_alignment": 0.9996754783761451,
+        "signed_xy_rule_preserved": true
+      },
+      "source_sha256": {
+        "final_result.json": "076d117078f165a4ceb1eae497f85be40d5e6ed2f03773bcb86bb6c83b60f242",
+        "host_evaluator.json": "e7b45de9adf313a208beadb3a4af7adae2b512273e4000c95c5a3cdb3266edae",
+        "tool_trace.jsonl": "029e4ee166a5a8a8b75ec8bb8d663b86d87f41dd800b6eaf4115b6e002b88775",
+        "samples.jsonl": "619dd305a5509804b173ce226e579f9c5aad0f493e82aca623c61c1607c3a09b",
+        "control_steps.jsonl": "0734bbc60bb31a264216a8487524d780ecaa46bf15470e91bd90229e83394217",
+        "review.mp4": "6f39dcad8c56182d0c73a2234c3d0208051430640ea97edbba0f8d8bd3534450"
+      }
+    }
+  ],
+  "attempts": [
+    {
+      "id": "v30",
+      "title": "当前基线再次出现设备冲突",
+      "detail": "首次关节写入要求CPU索引，却收到CUDA索引；未完成reset，无模型动作。",
+      "status": "初始化失败"
+    },
+    {
+      "id": "v31",
+      "title": "只加读诊断，定位强制CPU覆盖",
+      "detail": "设置和原生override为0；场景声明GPU，真实view与关节动态状态仍在CPU。",
+      "status": "故障复现"
+    },
+    {
+      "id": "v32",
+      "title": "设备修复通过，另存晚到观测",
+      "detail": "仅将override改为按scene生效后，CUDA关节写入、完整reset与四图观测通过；父控制器先超时，原episode仍不可评估。初始化存在脚本物理运动，模型动作0。",
+      "status": "reset／观测通过"
+    },
+    {
+      "id": "v33",
+      "title": "正常退出仍不能证明在线控制",
+      "detail": "原生reset成功，但Codex配套工具宿主缺失，零模型动作。上游evaluable为true，本地在线链验收拒绝；随后补齐并做服务器真实工具预检。",
+      "status": "工具运行失败"
+    },
+    {
+      "id": "v34",
+      "title": "短试跑形成真实在线闭环",
+      "detail": "5段模型动作、14控制步、15采样帧与5份段后触觉历史；原生提前终止，任务未成功。",
+      "status": "闭环通过／未成功"
+    },
+    {
+      "id": "v35",
+      "title": "作者动作／工具预算下取得原生成功",
+      "detail": "保留30次动作、100次工具与300原生步预算；实际6段模型动作、14控制步、15帧与6份触觉历史，原生判定成功。",
+      "status": "原生成功"
+    }
+  ],
+  "stage": {
+    "native_starts": 6,
+    "http_requests": 34,
+    "continuous_wall_s": 4209.340863466263,
+    "cap_native": 6,
+    "cap_http": 80,
+    "cap_wall_s": 5400,
+    "closed": true
+  },
+  "limits": [
+    "Simulation only; no real hardware.",
+    "No paper success-rate reproduction or history ablation.",
+    "Service self-reported model identity.",
+    "Different action budgets; do not pool runs into a success rate.",
+    "No complete tactile force/contact calibration or TacJev training."
+  ],
+  "conditions": {
+    "model": "gpt-6-astra",
+    "reasoning_effort": "low",
+    "codex_cli": "0.164.0",
+    "task_information": "R",
+    "current_tactile": true,
+    "feedback_protocol": "native_eval_no_online_task_feedback_v1",
+    "demonstration_ids": [
+      0,
+      1
+    ],
+    "univtac_commit": "371fac67917307026be8f00869fcc1b61c623a9f"
+  }
+}

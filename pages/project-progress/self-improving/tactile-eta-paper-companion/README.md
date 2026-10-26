@@ -1,6 +1,6 @@
 # Tactile-ETA 逐页论文伴读
 
-发布于2026-10-26：[论文伴读](https://satelius.github.io/pages/project-progress/self-improving/tactile-eta-paper-companion/) · [复现总览](https://satelius.github.io/pages/project-progress/self-improving/tactile-eta-paper-companion/overview/) · [项目进展](https://satelius.github.io/pages/project-progress/)。沿用项目进展页的访问方式。SELF-IMPROVING 首项直接进入复现结果，第二项进入论文伴读；首次访问复现页并输入 PIN 后仍返回复现页。
+发布于2026-10-26：[在线实测](https://satelius.github.io/pages/project-progress/self-improving/tactile-eta-paper-companion/online/) · [论文伴读](https://satelius.github.io/pages/project-progress/self-improving/tactile-eta-paper-companion/) · [复现总览](https://satelius.github.io/pages/project-progress/self-improving/tactile-eta-paper-companion/overview/) · [项目进展](https://satelius.github.io/pages/project-progress/)。沿用项目进展页的访问方式；首次访问并输入 PIN 后返回相应页面。既有其他项目入口及顺序保持。
 
 ## 阅读方式
 
@@ -15,7 +15,9 @@
 
 TacJev接入与蒸馏属于本项目提出的工程方案，尚未完成学生训练或闭环验收。当前三图、任务与最近最多五个已执行移动token的输入约束、九token动作接口和闭源模型可见性限制，另见页面的项目合同说明。
 
-独立复现目前覆盖离线组件与方法核验。服务器尝试最远完成场景及双侧GelSight初始化，首次机器人reset仍失败；没有有效观测、模型决策、执行动作或成功episode。论文所报仿真与真机成功率没有独立复现。公开`evidence/`提供脱敏摘要，不含服务器原始日志或私有配置。
+10月26日已在固定作者源码上跑通真实Codex0.164.0／作者MCP／原生仿真在线循环，取得一次Insert Tube原生成功：6段模型动作、14控制步、15采样帧与6份动作后触觉历史。另保留5段动作的原生提前终止试跑。两个运行均使用gpt-6-astra（服务自报）及两条官方示范，动作预算不同、初始化状态也不完全相同，不能合并成成功率或视为配对消融。
+
+`online/`提供真实四视图视频、精确视频时间戳逐帧播放、逐动作指令／实际步数／触觉选帧，以及六次尝试的脱敏时间线；原视频未插帧。模型思考时物理暂停，这不是连续实时力控性能验证。论文所报仿真与真机成功率、触觉经验的因果收益、TacJev训练均未独立复现。`overview/#reproduction`与`evidence/`保留10月21日历史快照；不含服务器原始日志或私有配置。
 
 ## 来源与依赖
 
