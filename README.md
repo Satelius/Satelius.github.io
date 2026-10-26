@@ -2,6 +2,8 @@
 
 `Satelius.github.io` 的零构建静态站点。首页是一份可搜索、可筛选的子网页索引；站内页面和外部链接的元数据统一维护在 `assets/pages-data.js`。
 
+2026-10-26：项目进展 SELF-IMPROVING 首项为[Tactile-ETA 复现结果与方法详解](pages/project-progress/self-improving/tactile-eta-paper-companion/overview/)，第二项为[逐页论文伴读](pages/project-progress/self-improving/tactile-eta-paper-companion/)。直接访问复现页后输入 PIN 会返回复现页；伴读保留独立返回路径。
+
 2026-10-20：项目进展 SELF-IMPROVING 首条新增[元动作 Smooth 成功视频对照](pages/project-progress/self-improving/meta-smooth-success-2026-10-20/)。页面包含成功 OFF、两条195帧成功 ON、前两轮负结果与逐帧证据。公开副本仅脱敏日志中的本机路径和 GPU UUID；每层 `source-manifest.json` 保留原制品清单，`manifest.json` 绑定发布副本并记录变化。沿用项目进展会话门禁，未修改原生成功或指标口径。
 
 2026-10-20：项目进展 SELF-IMPROVING 顶部新增[元动作 Smooth 组会展示](pages/project-progress/self-improving/meta-smooth-meeting-2026-10-20/)。独立文件夹内含8节中文讲述、缓动原理动画与两段完整OFF／ON视频，附完整逐帧对比链接；原有详细对照条目顺延保留。

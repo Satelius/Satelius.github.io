@@ -1,6 +1,6 @@
 # Tactile-ETA 逐页论文伴读
 
-发布于2026-10-26：[论文伴读](https://satelius.github.io/pages/project-progress/self-improving/tactile-eta-paper-companion/) · [复现总览](https://satelius.github.io/pages/project-progress/self-improving/tactile-eta-paper-companion/overview/) · [项目进展](https://satelius.github.io/pages/project-progress/)。沿用项目进展页的访问方式。
+发布于2026-10-26：[论文伴读](https://satelius.github.io/pages/project-progress/self-improving/tactile-eta-paper-companion/) · [复现总览](https://satelius.github.io/pages/project-progress/self-improving/tactile-eta-paper-companion/overview/) · [项目进展](https://satelius.github.io/pages/project-progress/)。沿用项目进展页的访问方式。SELF-IMPROVING 首项直接进入复现结果，第二项进入论文伴读；首次访问复现页并输入 PIN 后仍返回复现页。
 
 ## 阅读方式
 
