@@ -1,0 +1,77 @@
+{
+  "schema_version": "robotwin.asset_catalog.v1",
+  "robotwin_root": "/runtime/TacHarness/inputs/datasets/vendor/robolab/assets",
+  "objects_root": "/workspace/summary-web/genenv-r16-20261109/runs/new-mesh/objects",
+  "source_commit": "robolab-object-catalog-acfc83ed799d",
+  "entries": [
+    {
+      "asset_id": "900_gen_hexagonal_pedestal_5695f4e5",
+      "semantic_name": "hexagonal_pedestal",
+      "category": "hexagonal_pedestal",
+      "aliases": [
+        "hexagonal pedestal",
+        "hexagonal_pedestal"
+      ],
+      "colors": [
+        "purple"
+      ],
+      "materials": [],
+      "load_type": "rigid",
+      "asset_path": "/workspace/summary-web/genenv-r16-20261109/runs/new-mesh/objects/900_gen_hexagonal_pedestal_5695f4e5",
+      "models": [
+        {
+          "model_id": 0,
+          "model_path": "/workspace/summary-web/genenv-r16-20261109/runs/new-mesh/objects/900_gen_hexagonal_pedestal_5695f4e5",
+          "metadata_path": "/workspace/summary-web/genenv-r16-20261109/runs/new-mesh/objects/900_gen_hexagonal_pedestal_5695f4e5/model_data0.json",
+          "visual_path": "/workspace/summary-web/genenv-r16-20261109/runs/new-mesh/objects/900_gen_hexagonal_pedestal_5695f4e5/visual/textured0.obj",
+          "collision_path": "/workspace/summary-web/genenv-r16-20261109/runs/new-mesh/objects/900_gen_hexagonal_pedestal_5695f4e5/collision/textured0.obj",
+          "urdf_path": null,
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "dimensions_m": [
+            0.09,
+            0.09,
+            0.075
+          ],
+          "mass_kg": null,
+          "static_friction": null,
+          "dynamic_friction": null,
+          "restitution": null,
+          "interior_dimensions_m": null,
+          "interior_floor_z_offset_m": null,
+          "footprint_shape": "box",
+          "support_surface_shape": null,
+          "support_surface_dimensions_m": null,
+          "support_surface_z_offset_m": null,
+          "support_margin_m": 0.005,
+          "support_spawn_clearance_m": 0.003,
+          "colors": [],
+          "stable_pose_id": "procedural_flat_base",
+          "stable_orientation_wxyz": [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "z_policy": "origin_on_table",
+          "is_static": false,
+          "articulation_joints": [],
+          "articulation_closed_qpos": [],
+          "articulation_open_qpos": [],
+          "usable": true,
+          "missing": []
+        }
+      ],
+      "available": true,
+      "availability_reasons": [],
+      "source_notes": [
+        "procedural_generated",
+        "scene_gen.procedural_proxy.v3",
+        "proxy_geometry"
+      ]
+    }
+  ]
+}

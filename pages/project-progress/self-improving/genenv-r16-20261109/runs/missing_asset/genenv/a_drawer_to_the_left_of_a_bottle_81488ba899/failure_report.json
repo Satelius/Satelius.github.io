@@ -1,0 +1,14 @@
+{
+  "schema_version": "robotwin.scene_generation_failure.v1",
+  "status": "fail",
+  "stage": "solve",
+  "code": "T2E_ASSET_UNAVAILABLE",
+  "blocker": "no usable catalog candidate for drawer_1 category=drawer color=None material=None",
+  "error_type": "CompileFailure",
+  "request": "A drawer to the left of a bottle.",
+  "seed": 7,
+  "details": {
+    "scene_id": "a_drawer_to_the_left_of_a_bottle_81488ba899",
+    "error": "no usable catalog candidate for drawer_1 category=drawer color=None material=None"
+  }
+}

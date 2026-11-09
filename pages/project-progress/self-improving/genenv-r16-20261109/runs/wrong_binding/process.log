@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "/workspace/TacHarness-genenv/scripts/agentic/genenv_robolab_example.py", line 97, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/workspace/TacHarness-genenv/scripts/agentic/genenv_robolab_example.py", line 77, in main
+    result = import_resolved_scene(
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/TacHarness-genenv/src/tacharness/agenticsim/generation/genenv/robolab_import.py", line 276, in import_resolved_scene
+    raise ValueError(f"task binding names {needed!r}, which is not in the scene ({sorted(ids)})")
+ValueError: task binding names 'can_1', which is not in the scene (['banana_1', 'bowl_1'])

@@ -1,0 +1,211 @@
+The '--headless' CLI argument is deprecated. Omit '--viz' for default headless. If config visualizers are enabled and you want to force headless, use '--viz none'.
+Loading user config located at: '/runtime/gujie/TacHarness/.venv-isaacsim60/lib/python3.12/site-packages/isaacsim/kit/data/Kit/IsaacLab/3.0/user.config.json'
+2026-11-09T06:10:48Z [Info] [carb] Logging to file: /runtime/gujie/TacHarness/.venv-isaacsim60/lib/python3.12/site-packages/isaacsim/kit/logs/Kit/IsaacLab/3.0/kit_20261109_141048.log
+2026-11-09T06:10:48Z [7ms] [Warning] [omni.ext.plugin] [ext: isaaclab_visualizers] Extensions config 'extension.toml' doesn't exist '/runtime/gujie/TacHarness/thirdparty/IsaacLab60/source/isaaclab_visualizers' or '/runtime/gujie/TacHarness/thirdparty/IsaacLab60/source/isaaclab_visualizers/config'
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1794204649.001153  181700 descriptor_database.cc:633] File already exists in database: grpc/health/v1/health.proto
+W0000 00:00:1794204649.001184  181700 message.cc:301] Protobuf GeneratedMessageFactory: File is already registered: grpc/health/v1/health.proto
+2026-11-09T06:10:49Z [604ms] [Warning] [omni.platforminfo.plugin] failed to open the default display.  Can't verify X Server version.
+
+|---------------------------------------------------------------------------------------------|
+| Driver Version: 595.71.05     | Graphics API: Vulkan
+|=============================================================================================|
+| GPU | Name                             | Active | LDA | GPU Memory | Vendor-ID | LUID       |
+|     |                                  |        |     |            | Device-ID | UUID       |
+|     |                                  |        |     |            | Bus-ID    |            |
+|---------------------------------------------------------------------------------------------|
+| 0   | NVIDIA GeForce RTX 5090          | Yes: 0 |     | 32853   MB | 10de      | 0          |
+|     |                                  |        |     |            | 2b85      | db99bb5e.. |
+|     |                                  |        |     |            | 49        |            |
+|=============================================================================================|
+| OS: 22.04.5 LTS (Jammy Jellyfish) ubuntu, Version: 22.04.5, Kernel: 5.15.0-119-generic
+| Processor: Intel(R) Xeon(R) Platinum 8470Q
+| Bare Metal Cores: 104 | Bare Metal Logical Cores: 208
+| Core Usage Quota: 25
+|---------------------------------------------------------------------------------------------|
+| Total Memory (MB): 92160 | Free Memory: 19205
+| Total Page/Swap (MB): 0 | Free Page/Swap: 0
+|---------------------------------------------------------------------------------------------|
+2026-11-09T06:10:51Z [2,524ms] [Warning] [carb.windowing-glfw.plugin] GLFW initialization failed.
+2026-11-09T06:10:51Z [2,524ms] [Warning] [carb] Failed to startup plugin carb.windowing-glfw.plugin (interfaces: [carb::windowing::IGLContext v1.0],[carb::windowing::IWindowing v1.5]) (impl: carb.windowing-glfw.plugin)
+2026-11-09T06:10:51Z [2,602ms] [Warning] [carb.windowing-glfw.plugin] GLFW initialization failed.
+2026-11-09T06:10:51Z [2,602ms] [Warning] [carb] Failed to startup plugin carb.windowing-glfw.plugin (interfaces: [carb::windowing::IGLContext v1.0],[carb::windowing::IWindowing v1.5]) (impl: carb.windowing-glfw.plugin)
+2026-11-09T06:10:51Z [2,604ms] [Warning] [carb.windowing-glfw.plugin] GLFW initialization failed.
+2026-11-09T06:10:51Z [2,604ms] [Warning] [carb] Failed to startup plugin carb.windowing-glfw.plugin (interfaces: [carb::windowing::IGLContext v1.0],[carb::windowing::IWindowing v1.5]) (impl: carb.windowing-glfw.plugin)
+2026-11-09T06:10:51Z [2,964ms] [Warning] [isaacsim.core.simulation_manager.plugin] USD stage is not available; stage-opened subscription is deferred
+2026-11-09T06:10:51Z [2,964ms] [Warning] [isaacsim.core.simulation_manager.plugin] USD stage is not available; stage-opened subscription is deferred
+2026-11-09T06:10:51Z [3,001ms] [Warning] [omni.log] Source: omni.hydra was already registered.
+2026-11-09T06:10:52Z [3,624ms] [Warning] [pxr.Semantics] pxr.Semantics is deprecated - please use Semantics instead
+2026-11-09T06:10:52Z [3,714ms] [Warning] [omni.replicator.core.scripts.extension] No material configuration file, adding configuration to material settings directly.
+2026-11-09T06:10:54Z [5,767ms] [Warning] [rtx.hydra] RenderDelegate : Warning /rtx/hydra/readTransformsFromFabricInRenderDelegate and geometry streaming are enabled together but this can cause issues with dynamic objects not streaming correctly due to problems in the transform update.
+[ISAACLAB] AppLauncher initialization complete
+2026-11-09T06:10:58Z [9,913ms] [Warning] [tacex_uipc.envs.direct_uipc_rl_env] Seed not set for the environment. The environment creation may not be deterministic.
+2026-11-09T06:10:58Z [9,917ms] [Warning] [isaaclab_physx.physics.physx_manager] CCD disabled when GPU dynamics is enabled.
+2026-11-09T06:10:58Z [9,922ms] [Warning] [isaaclab_physx.physics.physx_manager] TGS solver with enable_external_forces_every_iteration=False may cause noisy velocities.
+[INFO]: Base environment:
+	Environment device    : cuda:0
+	Environment seed      : None
+	Physics step-size     : 0.008333333333333333
+	Rendering step-size   : 0.008333333333333333
+	Environment step-size : 0.008333333333333333
+[INFO]: Registered backend 'physx' for factory Articulation.
+[INFO]: Registered backend 'physx' for factory RigidObject.
+2026-11-09T06:10:59Z [10,279ms] [Warning] [isaaclab.sim.utils.prims] Could not perform 'modify_mass_properties' on any prims under: '/World/envs/env_0/shelf'. This might be because of the following reasons:
+	(1) The desired attribute does not exist on any of the prims.
+	(2) The desired attribute exists on an instanced prim.
+		Discovered list of instanced prim paths: []
+Initializing uipc objects /World/envs/env_.*/shelf...
+2026-11-09T06:10:59Z [10,383ms] [Warning] [omni.usd] Encountered USD Warnings but USD Diagnostics are currently muted. To view USD Warnings, please set the '/persistent/app/usd/muteUsdDiagnostics' setting to false in Preferences page.
+USD mesh that is used for creating the UIPC Mesh:  /World/envs/env_0/shelf/mesh
+Using precomputed mesh data; num_tet_points=73
+obj id of /World/envs/env_.*/shelf: 1 
+2026-11-09T06:11:00Z [11,813ms] [Warning] [isaaclab.sim.utils.prims] Could not perform 'modify_mass_properties' on any prims under: '/World/envs/env_0/prism'. This might be because of the following reasons:
+	(1) The desired attribute does not exist on any of the prims.
+	(2) The desired attribute exists on an instanced prim.
+		Discovered list of instanced prim paths: []
+Initializing uipc objects /World/envs/env_.*/prism...
+2026-11-09T06:11:00Z [11,818ms] [Warning] [omni.fabric.plugin] Warning: attribute primvars:st:indices not found for path /World/envs/env_0/shelf/mesh
+
+USD mesh that is used for creating the UIPC Mesh:  /World/envs/env_0/prism/mesh
+Using precomputed mesh data; num_tet_points=67568
+obj id of /World/envs/env_.*/prism: 2 
+Initializing uipc objects /World/envs/env_.*/Robot/gelpad_left...
+USD mesh that is used for creating the UIPC Mesh:  /World/envs/env_0/Robot/gelpad_left/mesh
+isaac_rigid_prim  /World/envs/env_.*/Robot/.*gelsight_mini_case_left
+Creating Uipc x Isaac attachments for /World/envs/env_.*/Robot/.*gelsight_mini_case_left
+obj id of /World/envs/env_.*/Robot/gelpad_left: 3 
+Initializing uipc objects /World/envs/env_.*/Robot/gelpad_right...
+USD mesh that is used for creating the UIPC Mesh:  /World/envs/env_0/Robot/gelpad_right/mesh
+isaac_rigid_prim  /World/envs/env_.*/Robot/.*gelsight_mini_case_right
+Creating Uipc x Isaac attachments for /World/envs/env_.*/Robot/.*gelsight_mini_case_right
+obj id of /World/envs/env_.*/Robot/gelpad_right: 4 
+[INFO]: Time taken for scene creation Last: 3.275930 s, Mean: 3.275930 s, Std: 0.000000 s, N: 1
+[INFO]: Scene manager:  <class UipcInteractiveScene>
+	Number of environments: 1
+	Environment spacing   : 1.5
+	Source prim name      : /World/envs/env_0
+	Global prim paths     : []
+	Replicate physics     : True
+[INFO]: Starting the simulation. This may take a few seconds. Please wait...
+2026-11-09T06:11:02Z [14,106ms] [Warning] [omni.physx.plugin] The rigid body at /World/envs/env_0/Robot/WristCamera has a possibly invalid inertia tensor of {1.0, 1.0, 1.0} and a negative mass, small sphere approximated inertia was used. Either specify correct values in the mass properties, or add collider(s) to any shape(s) that you wish to automatically compute mass properties for.
+2026-11-09T06:11:03Z [14,543ms] [Warning] [omni.physx.plugin] The rigid body at /World/envs/env_0/Robot/WristCamera has a possibly invalid inertia tensor of {1.0, 1.0, 1.0} and a negative mass, small sphere approximated inertia was used. Either specify correct values in the mass properties, or add collider(s) to any shape(s) that you wish to automatically compute mass properties for.
+[INFO]: Simulation parameters for joints in /World/envs/env_.*/Robot:
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                     Simulation Joint Information (Prim path: /World/envs/env_.*/Robot)                                                    |
++-------+---------------------+-----------+---------+----------+-----------------+------------------+------------------+------------------+-----------------+---------------+
+| Index | Name                | Stiffness | Damping | Armature | Static Friction | Dynamic Friction | Viscous Friction | Position Limits  | Velocity Limits | Effort Limits |
++-------+---------------------+-----------+---------+----------+-----------------+------------------+------------------+------------------+-----------------+---------------+
+|   0   | panda_joint1        |   80.000  |  4.000  |  0.000   |      0.000      |      0.000       |      0.000       | [-2.897, 2.897]  |      2.175      |     87.000    |
+|   1   | panda_joint2        |   80.000  |  4.000  |  0.000   |      0.000      |      0.000       |      0.000       | [-1.763, 1.763]  |      2.175      |     87.000    |
+|   2   | panda_joint3        |   80.000  |  4.000  |  0.000   |      0.000      |      0.000       |      0.000       | [-2.897, 2.897]  |      2.175      |     87.000    |
+|   3   | panda_joint4        |   80.000  |  4.000  |  0.000   |      0.000      |      0.000       |      0.000       | [-3.072, -0.070] |      2.175      |     87.000    |
+|   4   | panda_joint5        |   80.000  |  4.000  |  0.000   |      0.000      |      0.000       |      0.000       | [-2.897, 2.897]  |      2.610      |     12.000    |
+|   5   | panda_joint6        |   80.000  |  4.000  |  0.000   |      0.000      |      0.000       |      0.000       | [-0.018, 3.753]  |      2.610      |     12.000    |
+|   6   | panda_joint7        |   80.000  |  4.000  |  0.000   |      0.000      |      0.000       |      0.000       | [-2.897, 2.897]  |      2.610      |     12.000    |
+|   7   | panda_finger_joint1 |  2.0e+03  | 100.000 |  0.000   |      0.000      |      0.000       |      0.000       |  [0.000, 0.040]  |      0.200      |    200.000    |
+|   8   | panda_finger_joint2 |  2.0e+03  | 100.000 |  0.000   |      0.000      |      0.000       |      0.000       |  [0.000, 0.040]  |      0.200      |    200.000    |
++-------+---------------------+-----------+---------+----------+-----------------+------------------+------------------+------------------+-----------------+---------------+
+Initializing GelSight Sensor `/World/envs/env_.*/Robot/gelsight_mini_case_left`...
+[INFO]: Registered backend 'physx' for factory Renderer.
+[INFO]: Created new renderer for simulation: IsaacRtxRenderer
+[INFO]: Using renderer: IsaacRtxRenderer
+[INFO]: Registered backend 'physx' for factory FrameView.
+Initializing GelSight Sensor `/World/envs/env_.*/Robot/gelsight_mini_case_right`...
+[INFO]: Using renderer: IsaacRtxRenderer
+2026-11-09T06:11:05Z [17,089ms] [Warning] [omni.rtx] DLSS increasing input dimensions: Render resolution of (213, 160) is below minimal input resolution of 300.
+[INFO]: Time taken for simulation start Last: 3.568164 s, Mean: 3.568164 s, Std: 0.000000 s, N: 1
+[INFO]: Completed setting up the environment...
+/workspace/TacHarness-genenv/outputs/genenv-audit-20261109/uni60/curobo/src/curobo/opt/opt_base.py:298: UserWarning: Sparse invariant checks are implicitly disabled. Memory errors (e.g. SEGFAULT) will occur when operating on a sparse tensor which violates the invariants, but checks incur performance overhead. To silence this warning, explicitly opt in or out. See `torch.sparse.check_sparse_tensor_invariants.__doc__` for guidance.  (Triggered internally at /pytorch/aten/src/ATen/Context.cpp:760.)
+  self.problem_kernel_ = torch.sparse_coo_tensor(
+[INFO]: Using renderer: IsaacRtxRenderer
+[INFO]: Using renderer: IsaacRtxRenderer
+2026-11-09T06:11:11Z [23,046ms] [Warning] [omni.kit.material.library.material_extensions] Could not initialize context menu integration: No module named 'omni.kit.context_menu'
+[INFO]: RTX streaming completed in 0.04 s.
+[2026-11-09 14:11:12] Task Name: put_bottle_in_shelf
+[2026-11-09 14:11:12] Config Name: demo
+[2026-11-09 14:11:12] Task Config:
+env_settings:
+  frequencies:
+    physical: 120
+    collect: 120
+    save: 60
+    video: 60
+    eval: 60
+    render: 60
+  random_texture: false
+  sensor_type: gsmini
+  optical_backend: taxim
+collect_settings:
+  save_root_dir: /workspace/TacHarness-genenv/outputs/genenv-audit-20261109/uni60/uni19
+  use_seed: true
+  episode_num: 1
+replay_settings:
+  save_root_dir: eval_result
+  force_action: false
+  max_episodes: 10
+observation_settings:
+  camera:
+  - rgb
+  tactile:
+  - rgb
+  - rgb_marker
+  - marker
+  - depth
+  - press_depth
+  - pose
+  embodiment:
+  - joint
+  - ee
+  actor: true
+task_overrides: {}
+--------------------
+
+[2026-11-09 14:11:12] Timing Plan: TimingPlan(mode='collect', physical_hz=120, control_hz=120, collect_hz=120, save_hz=60, eval_hz=60, video_hz=60, render_hz=60, decimation=1, action_stride=1, save_period_collect_steps=2, video_period_physics_steps=2, render_period_physics_steps=2, video_period_control_steps=2, render_period_control_steps=2)
+[2026-11-09 14:11:12] Env Config: 
+TaskCfg(viewer=ViewerCfg(eye=(0.6, 0.15, 0.05), lookat=(-3.0, -4.5, -0.6), cam_prim_path='/OmniverseKit_Persp', resolution=(1280, 720), origin_type='world', env_index=0, asset_name=None, body_name=None), sim=SimulationCfg(device='cuda:0', dt=0.008333333333333333, gravity=(0.0, 0.0, -9.81), physics_prim_path='/physicsScene', physics_material=RigidBodyMaterialCfg(func='isaaclab.sim.spawners.materials.physics_materials:spawn_rigid_body_material', static_friction=1, dynamic_friction=1, restitution=0.0, compliant_contact_stiffness=None, compliant_contact_damping=None, friction_combine_mode='multiply', restitution_combine_mode='multiply'), use_fabric=True, render_interval=1, enable_scene_query_support=False, use_newton_actuators=False, physics=PhysxCfg(class_type='isaaclab_physx.physics.physx_manager:PhysxManager', solver_type=1, solve_articulation_contact_last=False, min_position_iteration_count=1, max_position_iteration_count=255, min_velocity_iteration_count=0, max_velocity_iteration_count=255, enable_scene_query_support=False, enable_ccd=True, enable_stabilization=False, enable_external_forces_every_iteration=False, enable_enhanced_determinism=False, bounce_threshold_velocity=0.5, friction_offset_threshold=0.04, friction_correlation_distance=0.025, gpu_max_rigid_contact_count=8388608, gpu_max_rigid_patch_count=163840, gpu_found_lost_pairs_capacity=2097152, gpu_found_lost_aggregate_pairs_capacity=33554432, gpu_total_aggregate_pairs_capacity=2097152, gpu_collision_stack_size=67108864, gpu_heap_capacity=67108864, gpu_temp_buffer_capacity=16777216, gpu_max_num_partitions=8, gpu_max_soft_body_contacts=1048576, gpu_max_particle_contacts=1048576), render=RenderCfg(enable_translucency=None, enable_reflections=None, enable_global_illumination=None, antialiasing_mode=None, enable_dlssg=None, enable_dl_denoiser=None, dlss_mode=None, enable_direct_lighting=None, samples_per_pixel=None, enable_shadows=None, enable_ambient_occlusion=None, dome_light_upper_lower_strategy=None, max_bounces=None, split_glass=None, split_clearcoat=None, split_rough_reflection=None, ambient_light_intensity=None, ambient_occlusion_denoiser_mode=None, view_tile_limit=None, carb_settings=None, rendering_mode='quality'), create_stage_in_memory=False, logging_level='WARNING', save_logs_to_file=True, log_dir=None, visualizer_cfgs=[]), ui_window_class_type=<class 'isaaclab.envs.ui.base_env_window.BaseEnvWindow'>, seed=None, decimation=1, is_finite_horizon=False, episode_length_s=0, scene=InteractiveSceneCfg(num_envs=1, env_spacing=1.5, lazy_sensor_update=True, replicate_physics=True, filter_collisions=True, clone_in_fabric=False), events=None, observation_space=0, num_observations=None, state_space=0, num_states=None, observation_noise_model=None, action_space=0, num_actions=None, action_noise_model=None, rerender_on_reset=False, num_rerenders_on_reset=0, wait_for_textures=True, xr=None, log_dir=None, video_recorder=VideoRecorderCfg(class_type=<class 'isaaclab.envs.utils.video_recorder.VideoRecorder'>, env_render_mode=None, eye=(7.5, 7.5, 7.5), lookat=(0.0, 0.0, 0.0), backend_source='visualizer', window_width=1280, window_height=720), video_panels=None, use_adaptive_grasp=True, reset_time_limit=120.0, cameras=[CameraCfg(class_type='isaaclab.sensors.camera.tiled_camera:TiledCamera', prim_path='/World/envs/env_.*/Camera', update_period=0.008333333333333333, debug_vis=False, offset=CameraCfg.OffsetCfg(pos=(0.554, 1.0, 0.15), rot=(0, 0.707, 0.707, 0), convention='opengl'), spawn=PinholeCameraCfg(func='isaaclab.sim.spawners.sensors.sensors:spawn_camera', visible=True, semantic_tags=None, copy_from_source=True, spawn_path=None, projection_type='pinhole', clipping_range=(0.01, 100.0), focal_length=1.94, focus_distance=1.0, f_stop=0.0, horizontal_aperture=2.688, vertical_aperture=None, horizontal_aperture_offset=0.0, vertical_aperture_offset=0.0, lock_camera=True), depth_clipping_behavior='none', data_types=['rgb', 'depth'], width=480, height=270, update_latest_camera_pose=False, semantic_filter='*:*', colorize_semantic_segmentation=True, colorize_instance_id_segmentation=True, colorize_instance_segmentation=True, semantic_segmentation_mapping={}, renderer_cfg=IsaacRtxRendererCfg(renderer_type='isaac_rtx', semantic_filter='*:*', colorize_semantic_segmentation=True, colorize_instance_id_segmentation=True, colorize_instance_segmentation=True, semantic_segmentation_mapping={}, depth_clipping_behavior='none'), isp_cfg=None, name='head'), CameraCfg(class_type='isaaclab.sensors.camera.tiled_camera:TiledCamera', prim_path='/World/envs/env_.*/Robot/WristCamera/Camera', update_period=0.008333333333333333, debug_vis=False, offset=CameraCfg.OffsetCfg(pos=(0.0, 0.0, 0.0), rot=(0.0, 0.0, 0.0, 1.0), convention='ros'), spawn=None, depth_clipping_behavior='none', data_types=['rgb', 'depth'], width=480, height=270, update_latest_camera_pose=False, semantic_filter='*:*', colorize_semantic_segmentation=True, colorize_instance_id_segmentation=True, colorize_instance_segmentation=True, semantic_segmentation_mapping={}, renderer_cfg=IsaacRtxRendererCfg(renderer_type='isaac_rtx', semantic_filter='*:*', colorize_semantic_segmentation=True, colorize_instance_id_segmentation=True, colorize_instance_segmentation=True, semantic_segmentation_mapping={}, depth_clipping_behavior='none'), isp_cfg=None, name='wrist')], camera_names=None, robot=RobotCfg(robot=ArticulationCfg(class_type='isaaclab.assets.articulation.articulation:Articulation', prim_path='/World/envs/env_.*/Robot', spawn=UsdFileCfg(func='isaaclab.sim.spawners.from_files.from_files:spawn_from_usd', visible=True, semantic_tags=None, copy_from_source=True, spawn_path=None, mass_props=None, deformable_props=None, rigid_props=RigidBodyPropertiesCfg(rigid_body_enabled=None, kinematic_enabled=None, disable_gravity=True, linear_damping=None, angular_damping=None, max_linear_velocity=None, max_angular_velocity=None, max_depenetration_velocity=5.0, max_contact_impulse=None, enable_gyroscopic_forces=None, retain_accelerations=None, solver_position_iteration_count=None, solver_velocity_iteration_count=None, sleep_threshold=None, stabilization_threshold=None), collision_props=None, activate_contact_sensors=False, scale=None, articulation_props=ArticulationRootPropertiesCfg(articulation_enabled=None, fix_root_link=None, enabled_self_collisions=True, solver_position_iteration_count=8, solver_velocity_iteration_count=0, sleep_threshold=None, stabilization_threshold=None), fixed_tendons_props=None, spatial_tendons_props=None, joint_drive_props=None, visual_material_path='material', visual_material=None, physics_material_path='material', physics_material=None, usd_path='/runtime/UniVTAC/third_party/TacEx/source/tacex_assets/tacex_assets/data/Robots/Franka/GelSight_Mini/Gripper/uipc_gelpads_high_res_wrist.usd', variants=None), init_state=ArticulationCfg.InitialStateCfg(pos=(0.0, 0.0, 0.0), rot=(0.0, 0.0, 0.0, 1.0), lin_vel=(0.0, 0.0, 0.0), ang_vel=(0.0, 0.0, 0.0), joint_pos={'panda_joint1': 0.0, 'panda_joint2': 0.0, 'panda_joint3': 0.0, 'panda_joint4': -2.46, 'panda_joint5': 0.0, 'panda_joint6': 2.5, 'panda_joint7': 0.741, 'panda_finger.*': 0.02}, joint_vel={'.*': 0.0}), collision_group=0, debug_vis=False, disable_shape_checks=None, articulation_root_prim_path=None, soft_joint_pos_limit_factor=1.0, actuators={'panda_shoulder': ImplicitActuatorCfg(class_type='isaaclab.actuators.actuator_pd:ImplicitActuator', joint_names_expr=['panda_joint[1-4]'], effort_limit=None, velocity_limit=None, effort_limit_sim=87.0, velocity_limit_sim=2.175, stiffness=80.0, damping=4.0, armature=None, friction=None, dynamic_friction=None, viscous_friction=None), 'panda_forearm': ImplicitActuatorCfg(class_type='isaaclab.actuators.actuator_pd:ImplicitActuator', joint_names_expr=['panda_joint[5-7]'], effort_limit=None, velocity_limit=None, effort_limit_sim=12.0, velocity_limit_sim=2.61, stiffness=80.0, damping=4.0, armature=None, friction=None, dynamic_friction=None, viscous_friction=None), 'panda_hand': ImplicitActuatorCfg(class_type='isaaclab.actuators.actuator_pd:ImplicitActuator', joint_names_expr=['panda_finger_joint.*'], effort_limit=None, velocity_limit=None, effort_limit_sim=200.0, velocity_limit_sim=0.2, stiffness=2000.0, damping=100.0, armature=None, friction=None, dynamic_friction=None, viscous_friction=None)}, actuator_value_resolution_debug_print=False), tactiles=[TactileCfg(name='left_tactile', gelpad_cfg=UipcDeformableObjectCfg(class_type=<class 'tacex_uipc.objects.deformable.uipc_deformable_object.UipcDeformableObject'>, prim_path='/World/envs/env_.*/Robot/gelpad_left', spawn=None, init_state=AssetBaseCfg.InitialStateCfg(pos=(0.0, 0.0, 0.0), rot=(0.0, 0.0, 0.0, 1.0)), collision_group=0, debug_vis=False, disable_shape_checks=None, mesh_cfg=None, mass_density=10000.0, constraint_cfg=UipcIsaacAttachmentsCfg(constraint_strength_ratio=10000.0, constraint_type=None, debug_vis=False, body_name='gelsight_mini_case_left', compute_attachment_data=True, attachment_points_radius=0.0005, isaaclab_rigid_body_prim_path='/World/envs/env_.*/Robot', attachment_point_indices=[0, 1, 3, 4, 5, 8, 9, 13, 14, 21, 24, 40, 41, 43, 44, 45, 51, 52, 53, 54, 58, 59, 60, 61, 67, 68, 69, 70, 71, 72, 73, 74, 77, 78, 79, 80, 82, 84, 85, 86, 87, 96, 99, 100, 101, 103, 104, 106, 107, 108, 110, 111, 112, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 161, 162, 163, 165]), usd_mesh_prim_name=None, constitution_cfg=UipcDeformableObjectCfg.StableNeoHookeanCfg(youngs_modulus=0.1, poisson_rate=0.49), debug_deformation_vis=False), gelpad_attachment_cfg=UipcIsaacAttachmentsCfg(constraint_strength_ratio=10000.0, constraint_type=None, debug_vis=False, body_name='gelsight_mini_case_left', compute_attachment_data=True, attachment_points_radius=0.0005, isaaclab_rigid_body_prim_path='/World/envs/env_.*/Robot', attachment_point_indices=[0, 1, 3, 4, 5, 8, 9, 13, 14, 21, 24, 40, 41, 43, 44, 45, 51, 52, 53, 54, 58, 59, 60, 61, 67, 68, 69, 70, 71, 72, 73, 74, 77, 78, 79, 80, 82, 84, 85, 86, 87, 96, 99, 100, 101, 103, 104, 106, 107, 108, 110, 111, 112, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 161, 162, 163, 165]), sensor_cfg=GeneralGelSightMiniCfg(class_type=<class 'tacex.gelsight_sensor.GelSightSensor'>, prim_path='/World/envs/env_.*/Robot/gelsight_mini_case_left', update_period=0.008333333333333333, debug_vis=False, case_dimensions=GelSightSensorCfg.Dimensions(width=0.032, length=0.028, height=0.024), gelpad_dimensions=GelSightSensorCfg.Dimensions(width=0.02075, length=0.02525, height=0.004), max_indentation_depth=0.002, sensor_camera_cfg=GelSightSensorCfg.SensorCameraCfg(prim_name='Camera', update_period=0.008333333333333333, resolution=(320, 240), data_types=['depth', 'rgb'], clipping_range=(0.024, 0.034), update_latest_camera_pose=True, camera_pos_offset=(0.0, -0.0001, 0.0), camera_rot_offset=(0.0, 1.0, 0.0, 0.0), focal_length=1.05, focus_distance=0.028, horizontal_aperture=None, vertical_aperture=None, fov_width=0.021462500000000002, fov_height=0.0176375), data_types=['camera_depth', 'tactile_rgb', 'marker_rgb', 'marker_motion'], optical_sim_cfg=TaximSimulatorCfg(simulation_approach_class=<class 'tacex.simulation_approaches.gpu_taxim.taxim_sim.TaximSimulator'>, device='cuda', calib_folder_path='/runtime/UniVTAC/third_party/TacEx/source/tacex_assets/tacex_assets/data/Sensors/GelSight_Mini/calibs/640x480', with_shadow=False, tactile_img_res=(320, 240), gelpad_height=0.004, gelpad_to_camera_min_distance=0.024, taxim_parameters=None), marker_motion_sim_cfg=ManiSkillSimulatorCfg(simulation_approach_class=<class 'tacex.simulation_approaches.fem_based.mani_skill_sim.ManiSkillSimulator'>, device='cuda', sensor_type='gsmini', calib_folder_path='', marker_shape=(9, 7), marker_interval=(2.40625, 2.45833), marker_rotation_range=0.0, marker_translation_range=(0.0, 0.0), marker_pos_shift_range=(0.0, 0.0), marker_random_noise=0.0, marker_lose_tracking_probability=0.0, normalize=False, camera_to_surface=0.0283, real_size=(0.0266, 0.0209), tactile_img_res=(320, 240), sub_marker_num=0, marker_radius=6, marker_params=ManiSkillSimulatorCfg.MarkerParams(num_markers=63, x0=0, y0=0, dx=0, dy=0), init_marker_pos=([[]], [[]])), compute_indentation_depth_class='optical_sim', device='cuda')), TactileCfg(name='right_tactile', gelpad_cfg=UipcDeformableObjectCfg(class_type=<class 'tacex_uipc.objects.deformable.uipc_deformable_object.UipcDeformableObject'>, prim_path='/World/envs/env_.*/Robot/gelpad_right', spawn=None, init_state=AssetBaseCfg.InitialStateCfg(pos=(0.0, 0.0, 0.0), rot=(0.0, 0.0, 0.0, 1.0)), collision_group=0, debug_vis=False, disable_shape_checks=None, mesh_cfg=None, mass_density=10000.0, constraint_cfg=UipcIsaacAttachmentsCfg(constraint_strength_ratio=10000.0, constraint_type=None, debug_vis=False, body_name='gelsight_mini_case_right', compute_attachment_data=True, attachment_points_radius=0.0005, isaaclab_rigid_body_prim_path='/World/envs/env_.*/Robot', attachment_point_indices=[0, 1, 3, 4, 5, 8, 9, 13, 14, 21, 24, 40, 41, 43, 44, 45, 51, 52, 53, 54, 58, 59, 60, 61, 67, 68, 69, 70, 71, 72, 73, 74, 77, 78, 79, 80, 82, 84, 85, 86, 87, 96, 99, 100, 101, 103, 104, 106, 107, 108, 110, 111, 112, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 161, 162, 163, 165]), usd_mesh_prim_name=None, constitution_cfg=UipcDeformableObjectCfg.StableNeoHookeanCfg(youngs_modulus=0.1, poisson_rate=0.49), debug_deformation_vis=False), gelpad_attachment_cfg=UipcIsaacAttachmentsCfg(constraint_strength_ratio=10000.0, constraint_type=None, debug_vis=False, body_name='gelsight_mini_case_right', compute_attachment_data=True, attachment_points_radius=0.0005, isaaclab_rigid_body_prim_path='/World/envs/env_.*/Robot', attachment_point_indices=[0, 1, 3, 4, 5, 8, 9, 13, 14, 21, 24, 40, 41, 43, 44, 45, 51, 52, 53, 54, 58, 59, 60, 61, 67, 68, 69, 70, 71, 72, 73, 74, 77, 78, 79, 80, 82, 84, 85, 86, 87, 96, 99, 100, 101, 103, 104, 106, 107, 108, 110, 111, 112, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 161, 162, 163, 165]), sensor_cfg=GeneralGelSightMiniCfg(class_type=<class 'tacex.gelsight_sensor.GelSightSensor'>, prim_path='/World/envs/env_.*/Robot/gelsight_mini_case_right', update_period=0.008333333333333333, debug_vis=False, case_dimensions=GelSightSensorCfg.Dimensions(width=0.032, length=0.028, height=0.024), gelpad_dimensions=GelSightSensorCfg.Dimensions(width=0.02075, length=0.02525, height=0.004), max_indentation_depth=0.002, sensor_camera_cfg=GelSightSensorCfg.SensorCameraCfg(prim_name='Camera', update_period=0.008333333333333333, resolution=(320, 240), data_types=['depth', 'rgb'], clipping_range=(0.024, 0.034), update_latest_camera_pose=True, camera_pos_offset=(0.0, -0.0001, 0.0), camera_rot_offset=(0.0, 1.0, 0.0, 0.0), focal_length=1.05, focus_distance=0.028, horizontal_aperture=None, vertical_aperture=None, fov_width=0.021462500000000002, fov_height=0.0176375), data_types=['camera_depth', 'tactile_rgb', 'marker_rgb', 'marker_motion'], optical_sim_cfg=TaximSimulatorCfg(simulation_approach_class=<class 'tacex.simulation_approaches.gpu_taxim.taxim_sim.TaximSimulator'>, device='cuda', calib_folder_path='/runtime/UniVTAC/third_party/TacEx/source/tacex_assets/tacex_assets/data/Sensors/GelSight_Mini/calibs/640x480', with_shadow=False, tactile_img_res=(320, 240), gelpad_height=0.004, gelpad_to_camera_min_distance=0.024, taxim_parameters=None), marker_motion_sim_cfg=ManiSkillSimulatorCfg(simulation_approach_class=<class 'tacex.simulation_approaches.fem_based.mani_skill_sim.ManiSkillSimulator'>, device='cuda', sensor_type='gsmini', calib_folder_path='', marker_shape=(9, 7), marker_interval=(2.40625, 2.45833), marker_rotation_range=0.0, marker_translation_range=(0.0, 0.0), marker_pos_shift_range=(0.0, 0.0), marker_random_noise=0.0, marker_lose_tracking_probability=0.0, normalize=False, camera_to_surface=0.0283, real_size=(0.0266, 0.0209), tactile_img_res=(320, 240), sub_marker_num=0, marker_radius=6, marker_params=ManiSkillSimulatorCfg.MarkerParams(num_markers=63, x0=0, y0=0, dx=0, dy=0), init_marker_pos=([[]], [[]])), compute_indentation_depth_class='optical_sim', device='cuda'))], arm_stiffness=80.0, arm_damping=4.0, gripper_offset=0.131, gripper_max_qpos=0.039, tactile_far_plane=34.0, adaptive_grasp_depth_threshold=0.5, contact_threshold=(0.1, 0.5)), arm_stiffness=80.0, arm_damping=4.0, tactile_sensor_type='gsmini', tactile_optical_backend='taxim', tactile_data_types=['camera_depth', 'tactile_rgb', 'marker_rgb', 'marker_motion'], planner_time_dilation_factor=1.0, planner_use_cuda_graph=True, planner_interpolation_steps=5000, gaussian_noise_cfg=GaussianNoiseCfg(func='isaaclab.utils.noise.noise_model:gaussian_noise', operation='add', mean=0.0, std=0.002), random_texture=False, keep_contact=False, max_save_frames=1000, logger_level='error', debug_vis=False, step_lim=300, save_dir=PosixPath('/workspace/TacHarness-genenv/outputs/genenv-audit-20261109/uni60/uni19/put_bottle_in_shelf/demo'), obs_data_type={'camera': ['rgb'], 'tactile': ['rgb', 'rgb_marker', 'marker', 'depth', 'press_depth', 'pose'], 'embodiment': ['joint', 'ee'], 'actor': True}, save_frequency=2, video_frequency=2, render_frequency=2, video_size=(960, 320), uipc_sim=UipcSimCfg(device='cuda', update_render_meshes=False, debug_vis=False, dt=0.008333333333333333, sanity_check_enable=True, sanity_check_mode='quiet', workspace='/workspace/TacHarness-genenv/outputs/genenv-audit-20261109/uni60/uni19/put_bottle_in_shelf/demo/scene', logger_level='Error', gravity=(0.0, 0.0, -9.8), ground_height=0.001, ground_normal=(0.0, 0.0, 1.0), newton=UipcSimCfg.Newton(max_iter=1024, min_iter=1, use_adaptive_tol=False, velocity_tol=0.05, ccd_tol=1.0, transrate_tol=0.1), linear_system=UipcSimCfg.LinearSystem(solver='linear_pcg', tol_rate=0.001), line_search=UipcSimCfg.LineSearch(max_iter=8, report_energy=False), contact=UipcSimCfg.Contact(enable=True, enable_friction=True, default_friction_ratio=1, default_contact_resistance=10.0, constitution='ipc', d_hat=0.0005, eps_velocity=0.1), collision_detection_method='linear_bvh', diff_sim=False), light=AssetBaseCfg(class_type=None, prim_path='/World/light', spawn=DomeLightCfg(func='isaaclab.sim.spawners.lights.lights:spawn_light', visible=True, semantic_tags=None, copy_from_source=True, spawn_path=None, prim_type='DomeLight', color=(0.75, 0.75, 0.75), enable_color_temperature=False, color_temperature=6500.0, normalize=False, exposure=0.0, intensity=3000.0, texture_file='/workspace/TacHarness-genenv/outputs/genenv-audit-20261109/uni60/work/assets/scene/base0.exr', texture_format='automatic', visible_in_primary_ray=True), init_state=AssetBaseCfg.InitialStateCfg(pos=(0.0, 0.0, 0.0), rot=(0.0, 0.0, 0.0, 1.0)), collision_group=0, debug_vis=False, disable_shape_checks=None), plate=RigidObjectCfg(class_type='isaaclab.assets.rigid_object.rigid_object:RigidObject', prim_path='/World/envs/env_.*/ground_plate', spawn=UsdFileCfg(func='isaaclab.sim.spawners.from_files.from_files:spawn_from_usd', visible=True, semantic_tags=None, copy_from_source=True, spawn_path=None, mass_props=None, deformable_props=None, rigid_props=RigidBodyPropertiesCfg(rigid_body_enabled=None, kinematic_enabled=True, disable_gravity=None, linear_damping=None, angular_damping=None, max_linear_velocity=1000.0, max_angular_velocity=1000.0, max_depenetration_velocity=5.0, max_contact_impulse=None, enable_gyroscopic_forces=None, retain_accelerations=None, solver_position_iteration_count=16, solver_velocity_iteration_count=1, sleep_threshold=None, stabilization_threshold=None), collision_props=None, activate_contact_sensors=False, scale=None, articulation_props=None, fixed_tendons_props=None, spatial_tendons_props=None, joint_drive_props=None, visual_material_path='material', visual_material=None, physics_material_path='material', physics_material=None, usd_path='/workspace/TacHarness-genenv/outputs/genenv-audit-20261109/uni60/work/assets/scene/plate.usda', variants=None), init_state=RigidObjectCfg.InitialStateCfg(pos=(0.5, 0, 0), rot=(0.0, 0.0, 0.0, 1.0), lin_vel=(0.0, 0.0, 0.0), ang_vel=(0.0, 0.0, 0.0)), collision_group=0, debug_vis=False, disable_shape_checks=None), adaptive_grasp_depth_threshold=0.5)
+--------------------
+
+[2026-11-09 14:11:12] Init cost 16.41 seconds, devices: None
+[2026-11-09 14:11:12] Starting from seed 1.
+Setting seed: 1
+[2026-11-09 14:11:12] [0  ] Seed 1 failed with error: Traceback (most recent call last):
+  File "/workspace/TacHarness-genenv/outputs/genenv-audit-20261109/uni60/work/scripts/collect_data.py", line 117, in run
+    task.reset(seed=seed)
+  File "/workspace/TacHarness-genenv/outputs/genenv-audit-20261109/uni60/work/envs/_base_task.py", line 449, in reset
+    ret = super().reset()
+          ^^^^^^^^^^^^^^^
+  File "/workspace/TacHarness-genenv/outputs/genenv-audit-20261109/uni60/overlay/tacex_uipc/envs/direct_uipc_rl_env.py", line 284, in reset
+    return self._get_observations(), self.extras
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/TacHarness-genenv/outputs/genenv-audit-20261109/uni60/work/envs/_base_task.py", line 810, in _get_observations
+    obs['tactile'] = self._tactile_manager.get_observations(self.cfg.obs_data_type['tactile'])
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/TacHarness-genenv/outputs/genenv-audit-20261109/uni60/work/envs/sensors/tactile.py", line 468, in get_observations
+    obs[name] = tact.get_observations(data_types)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/TacHarness-genenv/outputs/genenv-audit-20261109/uni60/work/envs/sensors/tactile.py", line 352, in get_observations
+    obs['rgb'] = self.sensor.data.output['tactile_rgb'].squeeze(0)
+                 ^^^^^^^^^^^^^^^^
+  File "/runtime/UniVTAC/third_party/TacEx/source/tacex/tacex/gelsight_sensor.py", line 134, in data
+    self._update_outdated_buffers()
+  File "/runtime/gujie/TacHarness/thirdparty/IsaacLab60/source/isaaclab/isaaclab/sensors/sensor_base.py", line 395, in _update_outdated_buffers
+    self._update_buffers_impl(self._is_outdated)
+  File "/runtime/UniVTAC/third_party/TacEx/source/tacex/tacex/gelsight_sensor.py", line 354, in _update_buffers_impl
+    self._frame[env_ids] += 1
+    ~~~~~~~~~~~^^^^^^^^^
+  File "/runtime/gujie/TacHarness/.venv-isaacsim60/lib/python3.12/site-packages/warp/_src/types.py", line 3737, in __getitem__
+    raise RuntimeError("Item indexing is not supported on wp.array objects")
+RuntimeError: Item indexing is not supported on wp.array objects
+
+[2026-11-09 14:11:12] Complete collection, success rate: 0/2 (0.00%)
+Traceback (most recent call last):
+  File "/workspace/TacHarness-genenv/outputs/genenv-audit-20261109/uni60/work/scripts/collect_data.py", line 199, in <module>
+    main()
+  File "/workspace/TacHarness-genenv/outputs/genenv-audit-20261109/uni60/work/scripts/collect_data.py", line 189, in main
+    run(
+  File "/workspace/TacHarness-genenv/outputs/genenv-audit-20261109/uni60/work/scripts/collect_data.py", line 150, in run
+    task.close()
+  File "/workspace/TacHarness-genenv/outputs/genenv-audit-20261109/uni60/overlay/tacex_uipc/envs/direct_uipc_rl_env.py", line 482, in close
+    self.sim.clear_all_callbacks()
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'SimulationContext' object has no attribute 'clear_all_callbacks'

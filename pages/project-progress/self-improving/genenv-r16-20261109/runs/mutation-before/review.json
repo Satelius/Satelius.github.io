@@ -1,0 +1,96 @@
+[
+  {
+    "case": "move",
+    "accepted": false,
+    "readback": false,
+    "position": [
+      1.0,
+      2.0,
+      3.0
+    ],
+    "intensity": 100.0,
+    "errors": [
+      "move_object on /Cube: \n\tError in 'pxrInternal_v0_26_11__pxrReserved__::UsdGeomXformable::AddXformOp' at line 172 in file /opt/USD/pxr/usd/usdGeom/xformable.cpp : 'The xformOp 'xformOp:translate' already exists in xformOpOrder [[xformOp:translate]].'"
+    ]
+  },
+  {
+    "case": "remove",
+    "accepted": true,
+    "readback": true,
+    "position": null,
+    "intensity": 100.0,
+    "errors": []
+  },
+  {
+    "case": "light",
+    "accepted": true,
+    "readback": true,
+    "position": [
+      1.0,
+      2.0,
+      3.0
+    ],
+    "intensity": 150.0,
+    "errors": []
+  },
+  {
+    "case": "missing",
+    "accepted": true,
+    "readback": false,
+    "position": [
+      1.0,
+      2.0,
+      3.0
+    ],
+    "intensity": 100.0,
+    "errors": []
+  },
+  {
+    "case": "unknown",
+    "accepted": true,
+    "readback": false,
+    "position": [
+      1.0,
+      2.0,
+      3.0
+    ],
+    "intensity": 100.0,
+    "errors": []
+  },
+  {
+    "case": "add",
+    "accepted": true,
+    "readback": false,
+    "position": [
+      1.0,
+      2.0,
+      3.0
+    ],
+    "intensity": 100.0,
+    "errors": []
+  },
+  {
+    "case": "texture",
+    "accepted": true,
+    "readback": false,
+    "position": [
+      1.0,
+      2.0,
+      3.0
+    ],
+    "intensity": 100.0,
+    "errors": []
+  },
+  {
+    "case": "friction",
+    "accepted": true,
+    "readback": false,
+    "position": [
+      1.0,
+      2.0,
+      3.0
+    ],
+    "intensity": 100.0,
+    "errors": []
+  }
+]

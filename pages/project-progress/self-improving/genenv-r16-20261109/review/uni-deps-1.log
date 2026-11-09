@@ -1,0 +1,16 @@
+Using CPython 3.12.16 interpreter at: /runtime/gujie/TacHarness/.venv-isaacsim60/bin/python
+Resolved 8 packages in 1.44s
+Downloading mplib (11.9MiB)
+Downloading meshcat (2.5MiB)
+ Downloaded meshcat
+ Downloaded mplib
+Prepared 5 packages in 2.05s
+Installed 8 packages in 134ms
+ + decorator==5.3.1
+ + meshcat==0.3.2
+ + mplib==0.2.1
+ + pycollada==0.9.3
+ + pynvml==13.0.1
+ + toppra==0.6.11
+ + transforms3d==0.4.2
+ + yourdfpy==0.0.60

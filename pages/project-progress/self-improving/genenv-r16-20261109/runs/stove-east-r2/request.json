@@ -1,0 +1,61 @@
+{
+  "source": "/runtime/TacHarness/inputs/datasets/vendor/tabero/Isaaclab_Libero/assembled_hdf5/libero_goal_task1_put_the_bowl_on_the_stove_demo.hdf5",
+  "source_sha256": "f76a213dd28962164fba6ee51fe824a9d4012fe334f98162b660193bbed7cb43",
+  "source_demo": 4,
+  "derived_sha256": "ae556a0d44d19137014763f5ad0dfc1faf2244f8aae3174fa68cc17d44a743b9",
+  "changes_wxyz": {
+    "akita_black_bowl_1": {
+      "original": [
+        -0.08571311086416245,
+        -0.0015844247536733747,
+        0.8981584906578064,
+        0.7071067690849304,
+        -1.0724536878115032e-05,
+        -1.4310617189039476e-06,
+        0.7071067690849304
+      ],
+      "requested": [
+        -0.05571310967206955,
+        -0.0015844247536733747,
+        0.8981584906578064,
+        0.6087614297866821,
+        -1.0445995940244757e-05,
+        -2.8186516374262283e-06,
+        0.7933533191680908
+      ]
+    },
+    "flat_stove_1": {
+      "original": [
+        -0.4043894112110138,
+        0.20236548781394958,
+        0.9049999713897705,
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "requested": [
+        -0.4043894112110138,
+        0.1723654866218567,
+        0.9049999713897705,
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    }
+  },
+  "task": "libero_goal:1",
+  "reference": {
+    "image_sha256": "df75b964061024696df3dc9efc917bd2434cf7808c1693a81a780070b9e207ea",
+    "answer_sha256": "75f1b3a68f151586a7f5f2a5fdf3d7804929e6bbaa8a03f9b51df0283d3f2fd6",
+    "declared_goal": "libero_goal:1",
+    "unknown": [
+      "\u65e0\u6cd5\u786e\u5b9a\u673a\u68b0\u81c2\u6b63\u5728\u63a5\u8fd1\u3001\u6293\u53d6\u8fd8\u662f\u653e\u4e0b\u7269\u4f53\u3002",
+      "\u65e0\u6cd5\u786e\u8ba4\u5939\u722a\u4e0e\u4efb\u4f55\u7269\u4f53\u662f\u5426\u63a5\u89e6\u3002",
+      "\u65e0\u6cd5\u6d4b\u91cf\u7269\u4f53\u7684\u5b9e\u9645\u5c3a\u5bf8\u3001\u8ddd\u79bb\u548c\u9ad8\u5ea6\u3002",
+      "\u65e0\u6cd5\u786e\u5b9a\u7897\u5185\u662f\u5426\u6709\u5185\u5bb9\u7269\u3001\u7089\u5177\u662f\u5426\u901a\u7535\u6216\u53d1\u70ed\u3002",
+      "\u67dc\u4f53\u5185\u90e8\u53ca\u88ab\u906e\u6321\u533a\u57df\u4e0d\u53ef\u89c1\u3002"
+    ]
+  }
+}

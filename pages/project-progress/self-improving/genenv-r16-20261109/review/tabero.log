@@ -1,0 +1,20 @@
+{'command': ['/runtime/TacHarness/.venv-isaacsim62/bin/python', '/workspace/TacHarness-exp/src/providers/LIBERO/scripts/tools/replay_demos_with_camera.py', '--task', 'Isaac-Libero-Franka-Replay-Camera-Tactile-v0', '--task_suite', 'libero_goal', '--task_id', '1', '--demo_id', '4', '--num_envs', '1', '--dump_data', '--recorder_type', '7dpf', '--output_file', '/workspace/summary-web/genenv-r16-20261109/runs/stove-origin/teacher.hdf5', '--output_failure_record_file', '/workspace/summary-web/genenv-r16-20261109/runs/stove-origin/failures.jsonl', '--camera_view_list', 'agentview', 'eye_in_hand', '--tactile_sensor_list', 'gsmini_left', 'gsmini_right', '--tactile_output_type', 'tactile_rgb', '--device', 'cuda:0', '--headless'], 'elapsed_s': 52.70144490338862, 'rc': 0, 'loaded_derived_source': True, 'reset_errors': {'akita_black_bowl_1': {'xyz_error_m': 0.0, 'orientation_error_rad': 2.9802322387695312e-08}, 'flat_stove_1': {'xyz_error_m': 0.0, 'orientation_error_rad': 0.0}}, 'realized': True}
+{'command': ['/runtime/TacHarness/.venv-isaacsim62/bin/python', '/workspace/TacHarness-exp/src/providers/LIBERO/scripts/tools/replay_demos_with_camera.py', '--task', 'Isaac-Libero-Franka-Replay-Camera-Tactile-v0', '--task_suite', 'libero_goal', '--task_id', '1', '--demo_id', '4', '--num_envs', '1', '--dump_data', '--recorder_type', '7dpf', '--output_file', '/workspace/summary-web/genenv-r16-20261109/runs/stove-east/teacher.hdf5', '--output_failure_record_file', '/workspace/summary-web/genenv-r16-20261109/runs/stove-east/failures.jsonl', '--camera_view_list', 'agentview', 'eye_in_hand', '--tactile_sensor_list', 'gsmini_left', 'gsmini_right', '--tactile_output_type', 'tactile_rgb', '--device', 'cuda:0', '--headless'], 'elapsed_s': 49.09069361910224, 'rc': 0, 'loaded_derived_source': True, 'reset_errors': {'akita_black_bowl_1': {'xyz_error_m': 0.0, 'orientation_error_rad': 0.0}, 'flat_stove_1': {'xyz_error_m': 0.0, 'orientation_error_rad': 0.0}}, 'realized': True}
+{'command': ['/runtime/TacHarness/.venv-isaacsim62/bin/python', '/workspace/TacHarness-exp/src/providers/LIBERO/scripts/tools/replay_demos_with_camera.py', '--task', 'Isaac-Libero-Franka-Replay-Camera-Tactile-v0', '--task_suite', 'libero_goal', '--task_id', '1', '--demo_id', '4', '--num_envs', '1', '--dump_data', '--recorder_type', '7dpf', '--output_file', '/workspace/summary-web/genenv-r16-20261109/runs/stove-west/teacher.hdf5', '--output_failure_record_file', '/workspace/summary-web/genenv-r16-20261109/runs/stove-west/failures.jsonl', '--camera_view_list', 'agentview', 'eye_in_hand', '--tactile_sensor_list', 'gsmini_left', 'gsmini_right', '--tactile_output_type', 'tactile_rgb', '--device', 'cuda:0', '--headless'], 'elapsed_s': 60.743183858692646, 'rc': 0, 'loaded_derived_source': True, 'reset_errors': {'akita_black_bowl_1': {'xyz_error_m': 0.0, 'orientation_error_rad': 0.0}, 'flat_stove_1': {'xyz_error_m': 0.0, 'orientation_error_rad': 0.0}}, 'realized': True}
+Traceback (most recent call last):
+  File "/workspace/summary-web/genenv-r16-20261109/review/tabero.py", line 34, in <module>
+    v=state[name+'/'+entity+'/root_pose']
+      ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/runtime/TacHarness/.venv/lib/python3.12/site-packages/h5py/_hl/group.py", line 407, in __getitem__
+    return self._get(name)
+           ^^^^^^^^^^^^^^^
+  File "h5py/_objects.pyx", line 54, in h5py._objects.with_phil.wrapper
+  File "h5py/_objects.pyx", line 55, in h5py._objects.with_phil.wrapper
+  File "/runtime/TacHarness/.venv/lib/python3.12/site-packages/h5py/_hl/group.py", line 421, in _get
+    oid = h5o.open(self.id, self._e(name), lapl=lapl)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "h5py/_objects.pyx", line 54, in h5py._objects.with_phil.wrapper
+  File "h5py/_objects.pyx", line 55, in h5py._objects.with_phil.wrapper
+  File "h5py/h5o.pyx", line 255, in h5py.h5o.open
+KeyError: 'Unable to synchronously open object (component not found)'
+failed: drawer-east --task drawer --bowl-x 3 --target-y 0 --yaw 15

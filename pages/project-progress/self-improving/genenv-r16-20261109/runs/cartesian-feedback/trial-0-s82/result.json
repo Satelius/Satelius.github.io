@@ -1,0 +1,27 @@
+{
+  "task": "/workspace/summary-web/genenv-r16-20261109/runs/feedback/audit_feedback_task.py",
+  "task_sha256": "4c3016a6e2dd1514741d632405d5ee67d16a29fec1bae20bcc282edefbe60140",
+  "scene_sha256": "f19a83755faa28ba74af6d94530ac10b3921bd8cfca9213c6938e652552c79a2",
+  "seed": 82,
+  "initial_base_xyz": {
+    "blue_block": [
+      0.6272478699684143,
+      0.13801518082618713,
+      0.025502000004053116
+    ],
+    "bowl": [
+      0.5669292211532593,
+      -0.03251355141401291,
+      0.029485000297427177
+    ]
+  },
+  "steps": 267,
+  "dt": 0.06666666666666667,
+  "native": true,
+  "peak_lift_m": 0.14831682667136192,
+  "grasp": true,
+  "lift": true,
+  "max_stable_s": 1.6,
+  "qualified": true,
+  "reason": "native_success"
+}

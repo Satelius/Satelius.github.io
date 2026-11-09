@@ -1,0 +1,35 @@
+{
+  "roots": {
+    "/workspace/TacHarness-genenv": "226f1f96c4f68d9f89e0ba6bf9bf592532ccca6e",
+    "/workspace/TacHarness-genenv/thirdparty/robot-harness-gen-env": "b26c8dd613042ddd4e270cdbacb60048603a9efa",
+    "/workspace/TacHarness-exp": "a25aca1d30f4404835b34acab7dddeab9b72eed8",
+    "/runtime/UniVTAC": "d541e5568227ca3b66104d294f63c80acad7c52c",
+    "/workspace/TacHarness-genenv/outputs/genenv-audit-20261109/RoboTwin": "ea8b21121ebb3cd201ff5b3fe361944ac94eda3f",
+    "/runtime/TacHarness-genenv": "226f1f96c4f68d9f89e0ba6bf9bf592532ccca6e"
+  },
+  "sha256": {
+    "scripts/agentic/genenv_robolab_example.py": "c8940c59f976e4589893b1fdc4488107c2a4838d3c3fbeb72707e1009985028f",
+    "src/tacharness/agenticsim/generation/genenv/feedback.py": "963312a31c39c4b743d6a3d4a52a8e8ec0df880b14d9317393ccb4cb6ace5603",
+    "src/tacharness/agenticsim/generation/genenv/robolab_import.py": "91f826428b13bd9d46df52284fed0abb4dd181cde81eda782560d40a2c0fafb1",
+    "src/tacharness/agenticsim/generation/genenv/robolab_catalog.py": "ef40d10d1a19e23e11df1939b02a436ee9225d41ccc0eb220fc64d40506351b5",
+    "src/tacharness/agenticsim/generation/scene_gen/scene_mutator.py": "ad885b315ce762647a600f0aa72338ca715a84912e124fbc342bd8060ea999a8",
+    "tests/agentic/test_genenv_robolab.py": "29ad26faf106a86c3638009cff7c1ea30bfcb181538dc3783b6718fffd05b8ea",
+    "repo-docs/modules/agentic-runtime.md": "42355d7bfd9d9118b6af92a07b17cbf8f9312b1acea125b920c47a7cbbdb7b7c",
+    "repo-docs/change-log.md": "e3c8bef9a225746a48f7bd7d59de342860f8e8502fe333cabcdb4144f4e80a3a",
+    "scripts/agentic/probe_generated_layout.py": "21adb594b6beea8b800e40d5e5bed0d6d5dbfacfeb0c52c6156ab4381a4be713",
+    "tests/agentic/test_scene_mutator_readback.py": "05e3df09073925a92a30769b82256bcf031884f49abd42efb56f1303f52f6c90"
+  },
+  "runtime": {
+    "RoboLab/Tabero": "/runtime/TacHarness/.venv-isaacsim62/bin/python",
+    "UniVTAC": "/runtime/gujie/TacHarness/.venv-isaacsim60/bin/python",
+    "SAPIEN / USD": "/workspace/TacHarness-genenv/outputs/genenv-audit-20261109/cpu/bin/python"
+  },
+  "raw_directory": "/workspace/TacHarness-genenv/outputs/genenv-audit-20261109/raw",
+  "source_notes": [
+    "开发探针，无盲测身份",
+    "三组炉台轨迹共用源示教 #4",
+    "RoboLab 原教师使用默认机器人资产与原始相机尺寸；接触探针使用 gujie 的摩擦垫材质和 640×360 相机",
+    "程序化滑轨来自此次专项诊断脚本",
+    "部署选项、源数据与试次 ID 各自独立"
+  ]
+}

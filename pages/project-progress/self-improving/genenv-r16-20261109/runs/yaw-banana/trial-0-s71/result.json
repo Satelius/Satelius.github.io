@@ -1,0 +1,29 @@
+{
+  "task": "/workspace/summary-web/genenv-r16-20261109/runs/banana_fixed/audit_banana_fixed_task.py",
+  "task_sha256": "5a764140616af2668259e4617f4ae9a38e498fd874b257f325e0723e91cf50ff",
+  "scene_sha256": "4381de1f101ae23651aeeb52a96c2c657a2e3c9ca89a4af396e32e3028c28883",
+  "seed": 71,
+  "grasp_yaw_deg": 90.0,
+  "grasp_height_m": 0.013,
+  "initial_base_xyz": {
+    "banana": [
+      0.6060152649879456,
+      0.10815545916557312,
+      0.02033500000834465
+    ],
+    "bowl": [
+      0.536745011806488,
+      -0.11499582231044769,
+      0.029485000297427177
+    ]
+  },
+  "steps": 157,
+  "dt": 0.06666666666666667,
+  "native": false,
+  "peak_lift_m": 0.012780684977769852,
+  "grasp": true,
+  "lift": false,
+  "max_stable_s": 0.0,
+  "qualified": false,
+  "reason": "no_lift"
+}

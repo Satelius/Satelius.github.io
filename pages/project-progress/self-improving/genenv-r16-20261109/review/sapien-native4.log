@@ -1,0 +1,2 @@
+/workspace/summary-web/genenv-r16-20261109/review/sapien_probe.py:20: DeprecationWarning: component.set_pose can be ambiguous thus deprecated. It is equivalent to component.set_entity_pose, which should be used instead
+  q=Rotation.from_matrix(np.stack((forward,left,up),axis=1)).as_quat();camera.set_pose(sapien.Pose(eye,q[[3,0,1,2]]))

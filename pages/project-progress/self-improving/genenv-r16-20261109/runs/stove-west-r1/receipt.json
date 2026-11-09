@@ -1,0 +1,48 @@
+{
+  "command": [
+    "/runtime/TacHarness/.venv-isaacsim62/bin/python",
+    "/workspace/TacHarness-exp/src/providers/LIBERO/scripts/tools/replay_demos_with_camera.py",
+    "--task",
+    "Isaac-Libero-Franka-Replay-Camera-Tactile-v0",
+    "--task_suite",
+    "libero_goal",
+    "--task_id",
+    "1",
+    "--demo_id",
+    "4",
+    "--num_envs",
+    "1",
+    "--dump_data",
+    "--recorder_type",
+    "7dpf",
+    "--output_file",
+    "/workspace/summary-web/genenv-r16-20261109/runs/stove-west-r1/teacher.hdf5",
+    "--output_failure_record_file",
+    "/workspace/summary-web/genenv-r16-20261109/runs/stove-west-r1/failures.jsonl",
+    "--camera_view_list",
+    "agentview",
+    "eye_in_hand",
+    "--tactile_sensor_list",
+    "gsmini_left",
+    "gsmini_right",
+    "--tactile_output_type",
+    "tactile_rgb",
+    "--device",
+    "cuda:0",
+    "--headless"
+  ],
+  "elapsed_s": 65.51476557087153,
+  "rc": 0,
+  "loaded_derived_source": true,
+  "reset_errors": {
+    "akita_black_bowl_1": {
+      "xyz_error_m": 0.0,
+      "orientation_error_rad": 0.0
+    },
+    "flat_stove_1": {
+      "xyz_error_m": 0.0,
+      "orientation_error_rad": 0.0
+    }
+  },
+  "realized": true
+}

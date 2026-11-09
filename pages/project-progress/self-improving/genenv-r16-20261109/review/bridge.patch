@@ -1,0 +1,857 @@
+diff --git a/repo-docs/change-log.md b/repo-docs/change-log.md
+index 1ae32975..31d6b2ee 100644
+--- a/repo-docs/change-log.md
++++ b/repo-docs/change-log.md
+@@ -904,3 +904,7 @@
+ - 盒子发现 `RigidObjectCfg.InitialStateCfg.rot` 在 IsaacLab 3.0 是 xyzw（默认 (0,0,0,1)），RoboLab 全部按 wxyz 作者化：生成场景的 yaw 被读成绕 x 的 roll，物体斜插进桌面被 PhysX 弹飞；单位四元数被读成绕 x 翻 180°，意味着 6.2 上所有 RoboLab 任务的物体、机器人底座（droid 的 rot=(1,0,0,0)）和灯光都可能装反，此前没人在 6.2 上目视检查过任何 vendored 任务。新增 `robolab/core/utils/quat_order.py`：按安装的 `InitialStateCfg` 默认值判定顺序（不依赖版本号），`initial_state_rot(wxyz)` 在 `scenes/utils.py`、`robots/droid*.py`、`variations/lighting.py` 的边界处重排；`environments/env.py` 的 `_reset_idx` 也接受 slice 形式的 env_ids。CPU 测试 4 项新增。GPU 上尚未验证（需目视核对机器人与物体正立）。
+ - IsaacLab 3.0 把 `robot.data.joint_pos` 等暴露为带 `.torch` 的数组包装器而非 `torch.Tensor`：`contrib/gujie/gpt_rollout/sim.py::to_numpy` 与 ACT 客户端 `_numpy` 先解包再转 numpy（盒子上采集首回合报 "can't convert cuda:0 device type tensor"）。CPU 测试 2 项新增。
+ - 同一顺序 bug 的第二处：盒子目视检查发现 6.2 上过肩相机画面上下颠倒（180°）。所有 `OffsetCfg.rot`（过肩/俯视相机 7 处、腕部相机、FrameTransformer 的末端偏置 `EEF_OFFSET_ROT`——后者决定 abs-IK 跟踪的接触中心坐标系）改经 `offset_rot(wxyz, cfg_cls)`，顺序按该 OffsetCfg 类自己的默认值判定。`franka_high_pd.py` 的 FrameTransformer 偏置未改（DROID/TacClaw 路径不用）。
++
++### 2026-11-09 · R16 环境生成实测
++
++香蕉目录映射、编译包哈希、反馈布局的有限值与工作区、USD 修改回读已修复。新增的原生接触探针逐步保存物体位置、夹持、目标支撑与视频。碗炉台的三组初态分别完成三次合格回放。香蕉和方块各有一个物理实例通过三次接触支撑复验。UniVTAC 6.0 的架／瓶联合条件已出现原生成功，触觉标定、额外资格和独立泛化单列。[结果网页](../../summary-web/genenv-r16-20261109/index.html)
+diff --git a/repo-docs/modules/agentic-runtime.md b/repo-docs/modules/agentic-runtime.md
+index 01d71d30..cee1e369 100644
+--- a/repo-docs/modules/agentic-runtime.md
++++ b/repo-docs/modules/agentic-runtime.md
+@@ -63,3 +63,7 @@ DexSim 获取调查补充：官方 EmbodiChain issue #553 与 RoboSynChallenge i
+ 建议先在已有成功几何教师的 Arena lift 上建立最小实验循环：种子示范训练当前模型→当前模型自主采集→失败分类与教师纠正→版本化数据增量→候选训练→同条件无接管评测→通过固定门禁才提升版本，否则保留 incumbent。该任务选择和算法路线为建议，尚未替代三来源 P0 范围。初期可采用 DAgger 式纠正，不将失败学生动作当作正确标签；后续可插接 RL。老师必须能在学生实际访问的状态提供可执行纠正，不保证初始状态成功的脚本就能担当恢复老师。
+ 
+ 每代应绑定模型/父模型、数据版本、采集策略、每段控制者、环境与动作合同、教师与训练配置、评测集版本及资源成本。训练/采集池、用于迭代决策的验证池和最终保留测试池要分开；Agent 不能通过改成功标准、动作语义或评测集合制造提升。基础设施验收是能完整执行并拒绝劣化候选，模型进化验收则需要独立闭环指标的真实提升，两者分别报告。
++
++### 生成实例的原生验收
++
++生成器的 genenv_robolab_example.py 校验编译清单与 resolved_scene 身份。probe_generated_layout.py 用绝对 TCP 控制执行抓放，输出真实 reset、逐步动作、接触、向上支撑力、撤手稳定窗口和视频。collect_targeted 的位置质心及复位抖动已实现，阶段采样仍需训练端执行。相同源示教换初态保留其谱系。炉台、香蕉、方块及瓶入架的逐项证据见 [R16 环境生成审查](../../../summary-web/genenv-r16-20261109/index.html)。
+diff --git a/scripts/agentic/genenv_robolab_example.py b/scripts/agentic/genenv_robolab_example.py
+index b5d2d1f6..1cd48310 100755
+--- a/scripts/agentic/genenv_robolab_example.py
++++ b/scripts/agentic/genenv_robolab_example.py
+@@ -17,6 +17,8 @@ from __future__ import annotations
+ import argparse
+ import json
+ import os
++import re
++import hashlib
+ import subprocess
+ import sys
+ from pathlib import Path
+@@ -56,6 +58,8 @@ def main(argv: list[str] | None = None) -> int:
+     robolab_catalog = json.loads((asset_root / "objects" / "object_catalog.json").read_text())
+     out = args.out.resolve()
+     out.mkdir(parents=True, exist_ok=True)
++    if any(out.iterdir()):
++        raise SystemExit(f"output directory must be empty to preserve previous results: {out}")
+ 
+     catalog = build_genenv_catalog(robolab_catalog, str(asset_root))
+     catalog_path = out / "genenv_robolab_catalog.json"
+@@ -68,10 +72,15 @@ def main(argv: list[str] | None = None) -> int:
+         cwd=GENENV, env={**os.environ, "PYTHONPATH": str(GENENV)}, capture_output=True, text=True, check=False,
+     )
+     (out / "genenv_compile.log").write_text(completed.stdout + completed.stderr)
+-    if not completed.stdout.startswith("PASS"):
++    match = re.fullmatch(r"PASS scene_id=([a-z0-9_]+) resolved_sha256=([a-f0-9]{64}) validation=(\w+)", completed.stdout.strip())
++    if completed.returncode or match is None:
+         raise SystemExit(f"gen-env compile failed: {completed.stdout.strip() or completed.stderr.strip()}")
+-    scene_dir = Path(completed.stdout.split()[-1]) if completed.stdout.split()[-1].startswith("/") else None
+-    resolved_path = next(p for p in sorted(gen_root.glob("*/resolved_scene.json")) if "_failures" not in p.parts) if scene_dir is None else scene_dir / "resolved_scene.json"
++    resolved_path = gen_root / match[1] / "resolved_scene.json"
++    manifest = json.loads((resolved_path.parent / "package_manifest.json").read_text())
++    record = next(item for item in manifest["files"] if item["path"] == resolved_path.name)
++    if (hashlib.sha256(resolved_path.read_bytes()).hexdigest() != record["sha256"]
++            or manifest["resolved_scene_sha256"] != match[2]):
++        raise SystemExit("compiled scene does not match its package manifest")
+     validation = json.loads((resolved_path.parent / "validation_report.json").read_text())
+ 
+     result = import_resolved_scene(
+@@ -81,6 +90,8 @@ def main(argv: list[str] | None = None) -> int:
+                     success_hold_s=args.success_hold_s),
+         out_dir=out, asset_root=asset_root, scene_name=args.scene_name,
+     )
++    if result.scene_ir["extensions"]["genenv"]["resolved_scene_sha256"] != match[2]:
++        raise ValueError("imported scene identity differs from compiler receipt")
+     summary = {
+         "prompt": args.prompt, "seed": args.seed, "genenv_scene": str(resolved_path.parent),
+         "genenv_static_validation": {c["name"]: c["status"] for c in validation["checks"]},
+diff --git a/src/tacharness/agenticsim/generation/genenv/feedback.py b/src/tacharness/agenticsim/generation/genenv/feedback.py
+index 1ba073df..e2020718 100644
+--- a/src/tacharness/agenticsim/generation/genenv/feedback.py
++++ b/src/tacharness/agenticsim/generation/genenv/feedback.py
+@@ -16,6 +16,7 @@ refer to the manipuland.
+ 
+ from __future__ import annotations
+ 
++import ast
+ import json
+ import math
+ import re
+@@ -53,9 +54,12 @@ def _layouts_by_object(requirement: dict[str, Any], manipuland: str) -> dict[str
+                 xy = (item["x"], item["y"])
+         else:  # bare [x, y]
+             name, xy = manipuland, item
+-        if xy is None or len(xy) < 2:
+-            continue
+-        groups.setdefault(name, []).append((float(xy[0]), float(xy[1])))
++        if not isinstance(xy, (tuple, list)) or len(xy) != 2:
++            raise ValueError("target layout requires both x and y")
++        point = tuple(float(value) for value in xy)
++        if not all(math.isfinite(value) for value in point):
++            raise ValueError("target layout coordinates must be finite")
++        groups.setdefault(name, []).append(point)
+     return groups
+ 
+ 
+@@ -65,6 +69,8 @@ def _yaw_stats(requirement: dict[str, Any]) -> dict[str, float] | None:
+             if isinstance(item, dict) and item.get("yaw") is not None]
+     if not yaws:
+         return None
++    if not all(math.isfinite(y) for y in yaws):
++        raise ValueError("target layout yaw must be finite")
+     c = sum(math.cos(y) for y in yaws) / len(yaws)
+     s = sum(math.sin(y) for y in yaws) / len(yaws)
+     return {"mean_rad": math.atan2(s, c), "resultant_length": math.hypot(c, s), "n": len(yaws)}
+@@ -74,10 +80,6 @@ def _centroid(points: list[tuple[float, float]]) -> tuple[float, float]:
+     return (sum(p[0] for p in points) / len(points), sum(p[1] for p in points) / len(points))
+ 
+ 
+-def _clamp(value: float, bounds: tuple[float, float]) -> float:
+-    return min(max(value, bounds[0]), bounds[1])
+-
+-
+ _TRANSLATE_RE = r'(def "{prim}" \([^)]*\)\s*\{{[^}}]*?double3 xformOp:translate = \()([-0-9.eE]+), ([-0-9.eE]+), ([-0-9.eE]+)(\))'
+ 
+ 
+@@ -91,6 +93,19 @@ def _move_prim_xy(usda: str, prim: str, xy: tuple[float, float]) -> tuple[str, t
+     return usda[: match.start()] + new + usda[match.end():], old
+ 
+ 
++def _episode_length(scene_ir: dict, parent_task: Path) -> int:
++    value = scene_ir["constraints"].get("episode_length_s")
++    if value is None:
++        # Older packages recorded the horizon only in the generated task class.
++        for node in ast.walk(ast.parse(parent_task.read_text())):
++            if isinstance(node, ast.AnnAssign) and isinstance(node.target, ast.Name) and node.target.id == "episode_length_s":
++                value = ast.literal_eval(node.value)
++                break
++    if type(value) is not int or value <= 0:
++        raise ValueError("cannot verify the parent task horizon")
++    return value
++
++
+ def apply_data_requirement(
+     scene_dir: Path,
+     scene_name: str,
+@@ -110,6 +125,8 @@ def apply_data_requirement(
+     kind = requirement.get("kind")
+     if kind != "collect_targeted":
+         raise ValueError(f"only collect_targeted requirements regenerate a task (got {kind!r})")
++    if not all(re.fullmatch(r"[A-Za-z_][A-Za-z_0-9]*", key) for key in (scene_name, variant_name or scene_name)):
++        raise ValueError("scene names must be module identifiers")
+     scene_ir = json.loads((scene_dir / f"{scene_name}.scene_ir.json").read_text())
+     usda = (scene_dir / f"{scene_name}.usda").read_text()
+     entities = {e["entity_id"]: e for e in scene_ir["entities"]}
+@@ -117,6 +134,7 @@ def apply_data_requirement(
+     manipuland = roles["manipuland"]["asset_id"]
+     target = roles["target"]["asset_id"]
+     groups = _layouts_by_object(requirement, manipuland)
++    yaw_stats = _yaw_stats(requirement)
+     if not groups:
+         raise ValueError("collect_targeted requirement carries no target_layouts")
+     jitter = float(requirement.get("reset_jitter_m", 0.03))
+@@ -128,7 +146,9 @@ def apply_data_requirement(
+             result.notes.append(f"ignored target layouts for {prim!r}: not the manipuland or target")
+             continue
+         cx, cy = _centroid(points)
+-        cx, cy = _clamp(cx, ROBOLAB_SAFE_X), _clamp(cy, ROBOLAB_SAFE_Y)
++        if any(not (ROBOLAB_SAFE_X[0] <= x <= ROBOLAB_SAFE_X[1] and
++                    ROBOLAB_SAFE_Y[0] <= y <= ROBOLAB_SAFE_Y[1]) for x, y in points):
++            raise ValueError(f"target layout for {prim} is outside the RoboLab workspace")
+         usda, old = _move_prim_xy(usda, prim, (cx, cy))
+         result.centroids[prim] = (cx, cy)
+         result.moved[prim] = {"from": list(old[:2]), "to": [cx, cy], "n_layouts": len(points)}
+@@ -141,16 +161,20 @@ def apply_data_requirement(
+     # directory, and are rewritten relative to out_dir otherwise
+     if out_dir.resolve() != scene_dir.resolve():
+         usda = re.sub(r"@([^@]+)@", lambda m: "@" + _rebase(m.group(1), scene_dir, out_dir) + "@", usda)
+-    usda_path.write_text(usda)
+ 
+     base = scene_ir["constraints"].get("reset_randomization", {})
++    predicate = scene_ir["goal"]["predicate"].split("(", 1)[0]
++    if predicate not in {"inside", "on_top_of"}:
++        raise ValueError(f"unsupported parent goal {predicate!r}")
+     binding = TaskBinding(
+         object_id=roles["manipuland"]["entity_id"], target_id=roles["target"]["entity_id"],
+-        relation="inside" if scene_ir["goal"]["predicate"].startswith("inside") else "on_top_of",
++        relation=predicate,
+         task_class=_class_name(result.scene_name) + "Task", instruction=scene_ir.get("instruction", ""),
++        episode_length_s=_episode_length(scene_ir, scene_dir / f"{scene_name}_task.py"),
+         reset_xy_range_m=jitter, reset_yaw_range_rad=yaw_jitter, reset_collision_margin_m=collision_margin_m,
+         success_hold_s=float(scene_ir["constraints"].get("success_hold_s", TaskBinding.success_hold_s)),
+     )
++    usda_path.write_text(usda)
+     names = {roles["manipuland"]["entity_id"]: manipuland, roles["target"]["entity_id"]: target}
+     contact = [e["asset_id"] for e in scene_ir["entities"]] + ["table"]
+     task_path = out_dir / f"{result.scene_name}_task.py"
+@@ -173,7 +197,10 @@ def apply_data_requirement(
+         "n_target_layouts": sum(len(v) for v in groups.values()), "moved": result.moved, "notes": result.notes,
+         # the failing layouts' yaw is recorded, not applied: the variant keeps the parent's orientation
+         # and the per-reset yaw randomization covers it
+-        "target_yaw": _yaw_stats(requirement),
++        "target_yaw": yaw_stats,
++        "application": {"xy_centroids": "authored_pending_reset", "yaw_centroid": "not_applied",
++                        "phase_emphasis": "not_applied", "applied_layout_count": sum(
++                            item["n_layouts"] for item in result.moved.values())},
+     }
+     variant_ir["metadata"] = dict(variant_ir.get("metadata", {}), usda=usda_path.name, task_module=task_path.name)
+     scene_ir_path = out_dir / f"{result.scene_name}.scene_ir.json"
+diff --git a/src/tacharness/agenticsim/generation/genenv/robolab_catalog.py b/src/tacharness/agenticsim/generation/genenv/robolab_catalog.py
+index 5ba37c6f..1f91703e 100644
+--- a/src/tacharness/agenticsim/generation/genenv/robolab_catalog.py
++++ b/src/tacharness/agenticsim/generation/genenv/robolab_catalog.py
+@@ -23,6 +23,7 @@ CATEGORY_PATTERNS: tuple[tuple[str, re.Pattern[str]], ...] = (
+     ("mug", re.compile(r"mug$")),
+     ("cup", re.compile(r"(yogurt_cup|coffee_cup)$")),
+     ("apple", re.compile(r"^apple(_\d+)?$")),
++    ("banana", re.compile(r"^banana$")),
+     ("bottle", re.compile(r"_bottle$")),
+     ("block", re.compile(r"_block$")),
+ )
+@@ -35,6 +36,7 @@ ALIASES = {
+     "mug": ("mug", "coffee mug"),
+     "cup": ("cup",),
+     "apple": ("apple",),
++    "banana": ("banana",),
+     "bottle": ("bottle",),
+     "block": ("block", "cube"),
+ }
+diff --git a/src/tacharness/agenticsim/generation/genenv/robolab_import.py b/src/tacharness/agenticsim/generation/genenv/robolab_import.py
+index 7fac61cd..87da131e 100644
+--- a/src/tacharness/agenticsim/generation/genenv/robolab_import.py
++++ b/src/tacharness/agenticsim/generation/genenv/robolab_import.py
+@@ -71,6 +71,15 @@ class TaskBinding:
+     #: release and the expert's retreat.  0 restores the instantaneous predicate.
+     success_hold_s: float = 2.0
+ 
++    def __post_init__(self):
++        if self.object_id == self.target_id or self.relation not in ("inside", "on_top_of"):
++            raise ValueError("task needs distinct objects and a supported goal")
++        timing = (self.reset_xy_range_m, self.reset_yaw_range_rad, self.reset_collision_margin_m, self.success_hold_s)
++        if any(not math.isfinite(value) or value < 0 for value in timing):
++            raise ValueError("reset ranges and hold time must be finite and nonnegative")
++        if type(self.episode_length_s) is not int or self.episode_length_s <= 0:
++            raise ValueError("episode length must be a positive number of seconds")
++
+ 
+ @dataclass
+ class RoboLabImport:
+@@ -266,12 +275,16 @@ def import_resolved_scene(
+         if needed not in ids:
+             raise ValueError(f"task binding names {needed!r}, which is not in the scene ({sorted(ids)})")
+ 
++    if scene_name is not None and not re.fullmatch(r"[a-zA-Z_][a-zA-Z_0-9]*", scene_name):
++        raise ValueError("scene_name must be a module identifier")
+     out_dir.mkdir(parents=True, exist_ok=True)
+     names: dict[str, str] = {}
+     placed: list[dict[str, Any]] = []
+     blocks = ""
+     for obj in resolved["objects"]:
+         asset = obj["asset_id"]
++        if obj.get("color"):
++            raise ValueError(f"RoboLab importer cannot bind requested color {obj['color']!r} on {asset!r}")
+         if asset not in by_name:
+             raise ValueError(f"{obj['object_id']} grounded to {asset!r}, which is not a RoboLab catalog object")
+         if asset in names.values():
+@@ -293,7 +306,7 @@ def import_resolved_scene(
+     usda_path = out_dir / f"{scene_name}.usda"
+     base = _rebase_base_refs(base_usda, out_dir.resolve(), Path(asset_root)) if asset_root is not None else base_usda
+     usda_path.write_text(_insert_into_world(base, blocks))
+-    resolved_sha = hashlib.sha256(json.dumps(resolved, sort_keys=True).encode()).hexdigest()
++    resolved_sha = hashlib.sha256(json.dumps(resolved, sort_keys=True, ensure_ascii=False, separators=(",", ":")).encode()).hexdigest()
+     contact = [p["prim"] for p in placed] + ["table"]
+     task_path = out_dir / f"{scene_name}_task.py"
+     task_path.write_text(_task_source(binding, class_name, usda_path.name, names, contact, resolved_sha, resolved.get("request", "")))
+@@ -329,9 +342,9 @@ def import_resolved_scene(
+         "robot": {"provider": "robolab", "embodiment": "droid/tacclaw"},
+         "initial_state": {"source": "gen-env resolved_scene", "settle_required": True},
+         "goal": {"predicate": f"{'on_top_of' if binding.relation == 'on_top_of' else 'inside'}({object_prim}, {target_prim})"},
+-        "constraints": {"success_hold_s": binding.success_hold_s, "reset_randomization": {"assets": [object_prim, target_prim], "xy_range_m": binding.reset_xy_range_m,
++        "constraints": {"episode_length_s": binding.episode_length_s, "success_hold_s": binding.success_hold_s, "reset_randomization": {"assets": [object_prim, target_prim], "xy_range_m": binding.reset_xy_range_m,
+                                                 "yaw_range_rad": binding.reset_yaw_range_rad, "collision_margin_m": binding.reset_collision_margin_m,
+-                                                "relation_preserved": binding.relation}},
++                                                "task_relation": binding.relation}},
+         "extensions": {"genenv": {"request": resolved.get("request"), "seed": resolved.get("seed"), "resolved_scene_sha256": resolved_sha,
+                                   "compiler_version": resolved.get("compiler_version"), "asset_catalog_sha256": resolved.get("asset_catalog_sha256")}},
+         "metadata": {"assets_hashed": hashed, "usda": usda_path.name, "task_module": task_path.name},
+diff --git a/src/tacharness/agenticsim/generation/scene_gen/scene_mutator.py b/src/tacharness/agenticsim/generation/scene_gen/scene_mutator.py
+index 1cbb63e1..8881273d 100644
+--- a/src/tacharness/agenticsim/generation/scene_gen/scene_mutator.py
++++ b/src/tacharness/agenticsim/generation/scene_gen/scene_mutator.py
+@@ -7,13 +7,13 @@ the PEARL framework's task-environment co-evolution loop.
+ 
+ from __future__ import annotations
+ 
+-import logging
++import math
++import os
+ import random
+ from dataclasses import dataclass, field
+ from pathlib import Path
+ from typing import Any
+ 
+-logger = logging.getLogger(__name__)
+ 
+ 
+ @dataclass
+@@ -46,7 +46,7 @@ class SceneMutator:
+     - Texture swaps for domain randomisation.
+     - Physics property perturbation (mass, friction).
+ 
+-    All mutations are validated for physical plausibility before export.
++    The result records USD authoring errors. The backend must measure physical feasibility after loading the edited scene.
+     """
+ 
+     def __init__(self, asset_library_dir: str | Path | None = None):
+@@ -69,12 +69,20 @@ class SceneMutator:
+         output = Path(output_path) if output_path else scene_usd.with_name(f"{scene_usd.stem}_mutated.usd")
+ 
+         try:
+-            from pxr import Usd
++            from pxr import Sdf, Usd, UsdUtils
+ 
++            if output.resolve() == scene_usd.resolve() or output.exists():
++                raise ValueError("mutation output must be a new file")
+             src_stage = Usd.Stage.Open(str(scene_usd))
+             dst_stage = Usd.Stage.CreateNew(str(output))
+             dst_stage.GetRootLayer().TransferContent(src_stage.GetRootLayer())
+ 
++            if output.resolve().parent != scene_usd.resolve().parent:
++                def rebase(asset):
++                    if not asset or os.path.isabs(asset) or "://" in asset:
++                        return asset
++                    return Sdf.ComputeAssetPathRelativeToLayer(src_stage.GetRootLayer(), asset)
++                UsdUtils.ModifyAssetPaths(dst_stage.GetRootLayer(), rebase)
+             applied = []
+             errors = []
+             for mut in mutations:
+@@ -116,28 +124,33 @@ class SceneMutator:
+         cause = failure_diagnosis.get("failure_cause", "")
+ 
+         if "too_far" in cause or "reach" in cause:
+-            mutations.append(SceneMutation(
+-                mutation_type="move_object",
+-                target_prim=failure_diagnosis.get("target_object", ""),
+-                parameters={"delta_position": [random.uniform(-0.1, 0.1), random.uniform(-0.1, 0.1), 0.0]},
+-                description="Move object closer to robot workspace",
+-            ))
++            origin = failure_diagnosis.get("robot_xy_m")
++            target = failure_diagnosis.get("target_xy_m")
++            prim = failure_diagnosis.get("target_object")
++            if prim and origin is not None and target is not None and len(target) == len(origin) == 2:
++                dx, dy = float(origin[0])-float(target[0]), float(origin[1])-float(target[1])
++                distance = math.hypot(dx, dy)
++                if math.isfinite(distance) and distance > 0:
++                    scale = min(.10 / distance, 1.)
++                    mutations.append(SceneMutation("move_object", prim, {"delta_position": [dx*scale, dy*scale, 0.]},
++                                                   "Move object toward the measured robot base"))
+         if "dark" in cause or "lighting" in cause:
+             mutations.append(SceneMutation(
+                 mutation_type="change_lighting",
+                 parameters={"intensity_multiplier": random.uniform(1.2, 2.0)},
+                 description="Increase scene lighting",
+             ))
+-        if "occlu" in cause or "block" in cause:
++        if ("occlu" in cause or "block" in cause) and failure_diagnosis.get("blocking_object"):
+             mutations.append(SceneMutation(
+                 mutation_type="remove_object",
+                 target_prim=failure_diagnosis.get("blocking_object", ""),
+                 description="Remove occluding object",
+             ))
+-        if "missing" in cause:
++        if "missing" in cause and failure_diagnosis.get("asset") and failure_diagnosis.get("target_prim"):
+             mutations.append(SceneMutation(
+                 mutation_type="add_object",
+-                parameters={"asset_category": failure_diagnosis.get("missing_type", "rigid")},
++                target_prim=failure_diagnosis["target_prim"],
++                parameters={"asset": failure_diagnosis["asset"]},
+                 description="Add missing object to scene",
+             ))
+ 
+@@ -145,28 +158,82 @@ class SceneMutator:
+ 
+     def _apply_mutation(self, stage, mutation: SceneMutation) -> None:
+         """Apply a single mutation to a USD stage."""
+-        from pxr import Gf, UsdGeom
+-
+-        if mutation.mutation_type == "move_object":
+-            prim = stage.GetPrimAtPath(mutation.target_prim)
+-            if prim.IsValid():
+-                xform = UsdGeom.Xformable(prim)
+-                delta = mutation.parameters.get("delta_position", [0, 0, 0])
+-                xform.AddTranslateOp().Set(Gf.Vec3d(*delta))
+-
+-        elif mutation.mutation_type == "change_lighting":
+-            multiplier = mutation.parameters.get("intensity_multiplier", 1.0)
+-            for prim in stage.Traverse():
+-                if prim.GetTypeName() in ("DomeLight", "SphereLight", "DistantLight"):
+-                    intensity_attr = prim.GetAttribute("inputs:intensity")
+-                    if intensity_attr.IsValid():
+-                        current = intensity_attr.Get()
+-                        intensity_attr.Set(current * multiplier)
+-
+-        elif mutation.mutation_type == "remove_object":
+-            prim = stage.GetPrimAtPath(mutation.target_prim)
+-            if prim.IsValid():
+-                prim.SetActive(False)
+-
+-        elif mutation.mutation_type == "add_object":
+-            logger.info(f"add_object mutation requires asset library — skipping: {mutation.description}")
++        from pxr import Gf, UsdGeom, UsdPhysics, UsdShade
++
++        params = mutation.parameters
++        op = mutation.mutation_type
++        fields = {"change_lighting": {"intensity_multiplier"}, "add_object": {"asset"},
++                  "move_object": {"delta_position"}, "remove_object": set(), "swap_texture": {"file"},
++                  "set_mass": {"mass_kg"}, "set_friction": {"static", "dynamic"}}
++        if op not in fields:
++            raise ValueError(f"unsupported mutation {op!r}")
++        if set(params) != fields[op]:
++            raise ValueError(f"{op} expects exactly {sorted(fields[op])}")
++        if op == "change_lighting":
++            multiplier = float(params["intensity_multiplier"])
++            if not math.isfinite(multiplier) or multiplier <= 0 or multiplier == 1:
++                raise ValueError("lighting multiplier must change intensity and stay positive")
++            attrs = [p.GetAttribute("inputs:intensity") for p in stage.Traverse()
++                     if p.GetAttribute("inputs:intensity")]
++            changed = False
++            for attr in attrs:
++                value = attr.Get()
++                if value is not None and value != 0:
++                    changed |= attr.Set(value * multiplier)
++            if not changed:
++                raise ValueError("no light changed intensity")
++            return
++        if op == "add_object":
++            if not self.asset_library:
++                raise ValueError("add_object requires an asset library")
++            asset = (self.asset_library / params["asset"]).resolve()
++            if not asset.is_relative_to(self.asset_library.resolve()) or not asset.is_file():
++                raise ValueError("asset must exist inside the asset library")
++            from pxr import Usd
++            source_stage = Usd.Stage.Open(str(asset))
++            if not source_stage or not source_stage.GetDefaultPrim():
++                raise ValueError("referenced asset needs a default prim")
++            if stage.GetPrimAtPath(mutation.target_prim):
++                raise ValueError("target already exists")
++            prim = stage.DefinePrim(mutation.target_prim)
++            if not prim.GetReferences().AddReference(str(asset)):
++                raise ValueError("could not author asset reference")
++            return
++        prim = stage.GetPrimAtPath(mutation.target_prim)
++        if not prim or not prim.IsActive():
++            raise ValueError(f"missing active prim {mutation.target_prim}")
++        if op == "move_object":
++            delta = Gf.Vec3d(*params["delta_position"])
++            if not all(math.isfinite(v) for v in delta) or delta.GetLength() == 0:
++                raise ValueError("expected a finite nonzero translation")
++            transform = UsdGeom.Xformable(prim)
++            ops = transform.GetOrderedXformOps()
++            translate = next((item for item in ops if item.GetOpName() == "xformOp:translate"), None)
++            if ops and (translate is None or ops[0].GetOpName() != "xformOp:translate" or translate.IsInverseOp()):
++                raise ValueError("unsupported transform stack for translation")
++            translate = translate or transform.AddTranslateOp()
++            current = translate.Get() or Gf.Vec3d(0)
++            translate.Set(type(current)(*(Gf.Vec3d(current) + delta)))
++        elif op == "remove_object":
++            prim.SetActive(False)
++        elif op == "swap_texture":
++            from pxr import Sdf
++            texture = Path(params["file"]).resolve(strict=True)
++            if not texture.is_file():
++                raise ValueError("texture path must be a file")
++            shader = UsdShade.Shader(prim)
++            if not shader or shader.GetIdAttr().Get() != "UsdUVTexture":
++                raise ValueError("swap_texture requires an existing UsdUVTexture shader")
++            shader.CreateInput("file", Sdf.ValueTypeNames.Asset).Set(Sdf.AssetPath(str(texture)))
++        elif op == "set_mass":
++            mass = float(params["mass_kg"])
++            if not prim.HasAPI(UsdPhysics.RigidBodyAPI) or not math.isfinite(mass) or mass <= 0:
++                raise ValueError("set_mass requires a rigid body and a positive finite mass")
++            UsdPhysics.MassAPI.Apply(prim).CreateMassAttr(mass)
++        elif op == "set_friction":
++            values = [float(params[k]) for k in ("static", "dynamic")]
++            if not UsdShade.Material(prim) or not all(math.isfinite(v) and v >= 0 for v in values):
++                raise ValueError("set_friction requires a material and finite nonnegative coefficients")
++            material = UsdPhysics.MaterialAPI.Apply(prim)
++            material.CreateStaticFrictionAttr(values[0])
++            material.CreateDynamicFrictionAttr(values[1])
+diff --git a/tests/agentic/test_genenv_robolab.py b/tests/agentic/test_genenv_robolab.py
+index 3fae34c3..7307e7d0 100644
+--- a/tests/agentic/test_genenv_robolab.py
++++ b/tests/agentic/test_genenv_robolab.py
+@@ -85,6 +85,7 @@ def resolved_block_left_of_bowl() -> dict:
+ def test_catalog_maps_rigid_movable_objects_to_parser_categories():
+     assert category_for("pineapple_slices_can") == "can" and category_for("plate_large") == "plate"
+     assert category_for("spatula") is None
++    assert category_for("banana") == "banana"
+     catalog = build_genenv_catalog(ROBOLAB_CATALOG, "/data/robolab/assets")
+     assert catalog["schema_version"] == "robotwin.asset_catalog.v1"
+     ids = [entry["asset_id"] for entry in catalog["entries"]]
+@@ -183,6 +184,8 @@ def test_genenv_compiles_over_the_robolab_catalog_and_imports(tmp_path):
+     resolved_path = next((tmp_path / "gen").glob("*/resolved_scene.json"))
+     result = import_resolved_scene(json.loads(resolved_path.read_text()), ROBOLAB_CATALOG, BASE_USDA,
+                                    TaskBinding("block_1", "bowl_1", "inside"), out_dir=tmp_path / "out")
++    manifest = json.loads((resolved_path.parent / "package_manifest.json").read_text())
++    assert result.scene_ir["extensions"]["genenv"]["resolved_scene_sha256"] == manifest["resolved_scene_sha256"]
+     assert {o["prim"] for o in result.objects} == {"blue_block", "bowl"}
+     assert "@../objects/basic/blue_block.usd@" in result.usda_path.read_text()  # no asset root: RoboLab scenes/ layout
+     for obj in result.objects:
+@@ -237,6 +240,12 @@ def test_data_requirement_regenerates_a_variant_centered_on_failing_layouts(tmp_
+     assert record["constraints"]["reset_randomization"]["xy_range_m"] == 0.02
+     assert next(e for e in record["entities"] if e["asset_id"] == "blue_block")["pose"]["translation"][:2] == pytest.approx([0.70, 0.22])
+     SceneIR.from_dict(record)
++    for invalid in ([float("nan"), 0], [1.5, .1], [0.5]):
++        with pytest.raises(ValueError):
++            apply_data_requirement(scene_dir, "genenv_block_left_of_bowl",
++                                   {"kind": "collect_targeted", "target_layouts": [invalid]},
++                                   out_dir=tmp_path / "invalid", round_index=1)
++    assert not (tmp_path / "invalid").exists()
+     with pytest.raises(ValueError, match="only collect_targeted"):
+         apply_data_requirement(scene_dir, "genenv_block_left_of_bowl", {"kind": "more_training"}, out_dir=scene_dir, round_index=1)
+ 
+diff --git a/scripts/agentic/probe_generated_layout.py b/scripts/agentic/probe_generated_layout.py
+new file mode 100644
+index 00000000..61e85b85
+--- /dev/null
++++ b/scripts/agentic/probe_generated_layout.py
+@@ -0,0 +1,299 @@
++"""Replay a generated RoboLab task with a privileged Cartesian grasp/place probe.
++
++Run inside the RoboLab Sim environment with the gujie rollout helpers on PYTHONPATH.
++Every attempted reset has a separate trace, video and summary.
++"""
++
++import argparse
++import hashlib
++import json
++import math
++from pathlib import Path
++import subprocess
++
++import cv2
++import numpy as np
++import torch
++from isaaclab.app import AppLauncher
++
++parser = argparse.ArgumentParser(__doc__)
++parser.add_argument("--task", type=Path, required=True)
++parser.add_argument("--object", required=True)
++parser.add_argument("--target", required=True)
++parser.add_argument("--seeds", type=int, nargs="+", required=True)
++parser.add_argument("--grasp-yaw", type=float, default=0.0, help="relative world z rotation in degrees")
++parser.add_argument(
++    "--grasp-height", type=float, default=0.001, help="TCP height above the object origin in metres"
++)
++parser.add_argument("--out", type=Path, required=True)
++args = parser.parse_args()
++scene_record = args.task.with_name(args.task.name.removesuffix("_task.py") + ".scene_ir.json")
++identity = json.loads(scene_record.read_text())
++roles = {entry["role"]: entry["asset_id"] for entry in identity["entities"]}
++if (args.object, args.target) != (roles.get("manipuland"), roles.get("target")):
++    parser.error("probe object and target must match the registered task roles")
++if not identity["goal"]["predicate"].startswith("inside("):
++    parser.error("this probe measures an inside-container goal")
++args.out.mkdir(parents=True, exist_ok=False)
++app = AppLauncher(headless=True, enable_cameras=True, device="cuda:0").app
++
++
++def run():
++    from gpt_rollout.sim import contact_center_pose, positions_in_base_frame, seed_everything, uint8_rgb
++    from robolab.constants import set_output_dir, TASK_DIR
++    from robolab.core.task.task_utils import resolve_task_path
++    from robolab.core.environments.runtime import create_env
++    from robolab.core.environments.factory import get_envs
++    from robolab.core.world.world_state import get_world
++    from robolab.core.task.conditionals import object_in_container
++    from robolab.registrations.droid.auto_env_registrations_abs_ik import auto_register_droid_abs_ik_envs
++
++    set_output_dir(str(args.out))
++    task = str(args.task.resolve())
++    auto_register_droid_abs_ik_envs(task=[task])
++    task_name = resolve_task_path(task, TASK_DIR)[1]
++    (env_id,) = get_envs(task=[task_name])
++    env, _ = create_env(env_id, device="cuda:0", num_envs=1, policy="gpt")
++    try:
++        for trial, seed in enumerate(args.seeds):
++            out = args.out / f"trial-{trial}-s{seed}"
++            out.mkdir()
++            env.reset_eval_state()
++            seed_everything(env, seed)
++            obs, _ = env.reset(seed=seed)
++            robot = env.scene["robot"]
++            obj, target = args.object, args.target
++            world = get_world(env)
++
++            def positions():
++                values = {k: world.get_pose(k, is_relative=False, env_id=0)[0] for k in (obj, target)}
++                return positions_in_base_frame(robot, values)
++
++            def speed(field):
++                value = getattr(env.scene[obj].data, field)
++                return float(getattr(value, "torch", value).reshape(-1, 3)[0].norm())
++
++            def instant():
++                return bool(
++                    object_in_container(
++                        env,
++                        object=obj,
++                        container=target,
++                        require_contact_with=True,
++                        require_gripper_detached=True,
++                        tolerance=0.0,
++                        env_id=0,
++                    )
++                )
++
++            observed = positions()
++            initial = {k: v.tolist() for k, v in observed.items()}
++            tcp, quat = contact_center_pose(env)
++            if args.grasp_yaw:
++                from robolab.core.utils.quat_order import isaaclab_initial_state_rot_order
++                from scipy.spatial.transform import Rotation
++
++                order = isaaclab_initial_state_rot_order()
++                orientation = Rotation.from_quat(quat, scalar_first=(order == "wxyz"))
++                quat = (Rotation.from_euler("z", args.grasp_yaw, degrees=True) * orientation).as_quat(
++                    scalar_first=(order == "wxyz")
++                )
++            hold = tcp.copy()
++            dt = float(env.step_dt)
++            phase = "settle"
++            dwell = steps = stable = max_stable = 0
++            native = lifted = ever_grasped = False
++            peak = float(observed[obj][2])
++            offset = np.zeros(3)
++            reason = "timeout"
++            video = subprocess.Popen(
++                [
++                    "ffmpeg",
++                    "-loglevel",
++                    "error",
++                    "-f",
++                    "rawvideo",
++                    "-pix_fmt",
++                    "rgb24",
++                    "-s",
++                    "640x360",
++                    "-r",
++                    str(1 / dt),
++                    "-i",
++                    "pipe:0",
++                    "-c:v",
++                    "libx264",
++                    "-threads",
++                    "2",
++                    "-pix_fmt",
++                    "yuv420p",
++                    "-movflags",
++                    "+faststart",
++                    str(out / "scene.mp4"),
++                ],
++                stdin=subprocess.PIPE,
++            )
++            with (out / "steps.jsonl").open("x") as trace:
++                try:
++                    for index in range(int(env.max_episode_length)):
++                        observed = positions()
++                        p, b = observed[obj], observed[target]
++                        tcp, _ = contact_center_pose(env)
++                        if phase == "settle":
++                            goal = hold
++                        elif phase == "approach":
++                            goal = p + [0, 0, 0.115]
++                        elif phase == "descend":
++                            goal = p + [0, 0, args.grasp_height]
++                        elif phase == "close":
++                            goal = hold
++                        elif phase == "lift":
++                            goal = hold + [0, 0, 0.14]
++                        elif phase == "carry":
++                            goal = np.r_[b[:2] - offset[:2], b[2] + 0.15]
++                        elif phase == "lower":
++                            goal = np.r_[b[:2] - offset[:2], b[2] + 0.065]
++                        elif phase == "release":
++                            goal = hold
++                        else:
++                            goal = hold + [0, 0, 0.12]
++                        delta = goal - tcp
++                        position = tcp + delta * min(
++                            1.0, 0.015 / max(1.0e-9, float(np.linalg.norm(delta)))
++                        )
++                        close = phase in ("close", "lift", "carry", "lower")
++                        command = np.r_[position, quat, float(close)].astype(np.float32)
++                        obs, _, terminated, truncated, _ = env.step(
++                            torch.from_numpy(command).to(env.device)[None, :]
++                        )
++                        steps += 1
++                        frame = cv2.resize(
++                            uint8_rgb(obs["image_obs"]["over_shoulder_left_camera"][0]), (640, 360)
++                        )
++                        video.stdin.write(frame.tobytes())
++                        measured = positions()
++                        peak = max(peak, float(measured[obj][2]))
++                        contact = bool(world.in_contact(obj, "gripper", env_id=0))
++                        pair_contact = bool(world.in_contact(obj, target, env_id=0))
++                        support = bool(world.is_supported_on_surface(obj, target, env_id=0))
++                        support_force = world.get_contact_force(obj, target, env_id=0).tolist()
++                        clear = float(np.linalg.norm(contact_center_pose(env)[0] - hold)) >= 0.05
++                        vx, va = speed("root_lin_vel_w"), speed("root_ang_vel_w")
++                        raw = instant()
++                        native = bool(env.get_env_results()[0]["success"])
++                        stable = (
++                            stable + 1
++                            if phase == "withdraw"
++                            and clear
++                            and raw
++                            and not contact
++                            and support
++                            and vx < 0.02
++                            and va < 0.2
++                            else 0
++                        )
++                        max_stable = max(max_stable, stable)
++                        ever_grasped |= close and contact
++                        lifted |= ever_grasped and peak - initial[obj][2] > 0.04
++                        row = dict(
++                            step=steps,
++                            phase=phase,
++                            action=command.tolist(),
++                            pose={k: v.tolist() for k, v in measured.items()},
++                            tcp=contact_center_pose(env)[0].tolist(),
++                            gripper_contact=contact,
++                            target_contact=pair_contact,
++                            upward_support=support,
++                            target_force_N=support_force,
++                            retreated=clear,
++                            linear_speed=vx,
++                            angular_speed=va,
++                            instant_success=raw,
++                            stable_steps=stable,
++                            native=native,
++                        )
++                        trace.write(json.dumps(row) + "\n")
++                        dwell += 1
++                        near = np.linalg.norm(contact_center_pose(env)[0] - goal) < 0.012
++                        if native or bool(terminated.any()) or bool(truncated.any()):
++                            reason = (
++                                "native_success"
++                                if native
++                                else "terminated"
++                                if bool(terminated.any())
++                                else "timeout"
++                            )
++                            break
++                        if phase == "settle" and dwell >= 15:
++                            phase = "approach"
++                            dwell = 0
++                        elif phase == "approach" and near:
++                            phase = "descend"
++                            dwell = 0
++                        elif phase == "descend" and near:
++                            hold = contact_center_pose(env)[0].copy()
++                            phase = "close"
++                            dwell = 0
++                        elif phase == "close" and dwell >= 18:
++                            if not contact:
++                                reason = "no_grasp_contact"
++                                break
++                            offset = measured[obj] - contact_center_pose(env)[0]
++                            phase = "lift"
++                            dwell = 0
++                        elif phase == "lift" and near:
++                            if not lifted:
++                                reason = "no_lift"
++                                break
++                            phase = "carry"
++                            dwell = 0
++                        elif phase == "carry" and near:
++                            phase = "lower"
++                            dwell = 0
++                        elif phase == "lower" and near:
++                            hold = contact_center_pose(env)[0].copy()
++                            phase = "release"
++                            dwell = 0
++                        elif phase == "release" and dwell >= 8:
++                            phase = "withdraw"
++                            dwell = 0
++                        elif phase == "withdraw" and dwell >= 60:
++                            reason = "placement_failed"
++                            break
++                        elif dwell > 95:
++                            reason = f"{phase}_stalled"
++                            break
++                finally:
++                    video.stdin.close()
++                    if video.wait() != 0:
++                        raise RuntimeError("Video encoding failed")
++            scene = args.task.with_name(args.task.name.removesuffix("_task.py") + ".usda")
++            summary = dict(
++                rule="upward-support-retreat-v2",
++                task=str(args.task),
++                task_sha256=hashlib.sha256(args.task.read_bytes()).hexdigest(),
++                scene_sha256=hashlib.sha256(scene.read_bytes()).hexdigest(),
++                seed=seed,
++                grasp_yaw_deg=args.grasp_yaw,
++                grasp_height_m=args.grasp_height,
++                initial_base_xyz=initial,
++                steps=steps,
++                dt=dt,
++                native=native,
++                peak_lift_m=peak - initial[obj][2],
++                grasp=ever_grasped,
++                lift=lifted,
++                max_stable_s=max_stable * dt,
++                qualified=native and lifted and max_stable >= math.ceil(0.5 / dt),
++                reason=reason,
++            )
++            (out / "result.json").write_text(json.dumps(summary, indent=2))
++            print(summary, flush=True)
++    finally:
++        env.close()
++
++
++try:
++    run()
++finally:
++    app.close()
+diff --git a/tests/agentic/test_scene_mutator_readback.py b/tests/agentic/test_scene_mutator_readback.py
+new file mode 100644
+index 00000000..98913eee
+--- /dev/null
++++ b/tests/agentic/test_scene_mutator_readback.py
+@@ -0,0 +1,27 @@
++"""USD readback checks for inputs that used to be silently accepted."""
++
++import pytest
++
++from tacharness.agenticsim.generation.scene_gen.scene_mutator import SceneMutation, SceneMutator
++
++Usd = pytest.importorskip("pxr.Usd")
++from pxr import UsdGeom, Gf
++
++
++def test_move_updates_existing_translation_and_missing_targets_are_rejected(tmp_path):
++    base = tmp_path / "base.usda"
++    stage = Usd.Stage.CreateNew(str(base))
++    cube = UsdGeom.Cube.Define(stage, "/Part")
++    cube.AddTranslateOp().Set(Gf.Vec3d(1, 0, 0))
++    stage.GetRootLayer().Save()
++    mutator = SceneMutator()
++    result = mutator.mutate(
++        base, [SceneMutation("move_object", "/Part", {"delta_position": [0.03, 0, 0]})]
++    )
++    assert result.is_valid
++    readback = Usd.Stage.Open(str(result.mutated_usd))
++    assert readback.GetPrimAtPath("/Part").GetAttribute("xformOp:translate").Get()[0] == pytest.approx(
++        1.03
++    )
++    bad = mutator.mutate(base, [SceneMutation("remove_object", "/Missing")], tmp_path / "missing.usda")
++    assert not bad.is_valid and not bad.mutations_applied

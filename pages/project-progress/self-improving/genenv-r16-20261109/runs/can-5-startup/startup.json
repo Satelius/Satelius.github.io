@@ -1,0 +1,24 @@
+{
+  "world_valid": true,
+  "uipc_steps": 0,
+  "cameras": {
+    "head": {
+      "shape": [
+        270,
+        480,
+        3
+      ],
+      "min": 10,
+      "max": 252
+    },
+    "wrist": {
+      "shape": [
+        270,
+        480,
+        3
+      ],
+      "min": 29,
+      "max": 251
+    }
+  }
+}

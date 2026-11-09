@@ -1,0 +1,50 @@
+{
+  "schema_version": "robotwin.asset_generation_report.v1",
+  "generator": "scene_gen.asset_adaptation.v2",
+  "scene_id": "place_a_purple_hexagonal_pedestal_on_the_table_d38c3bf3d4",
+  "status": "generated",
+  "generated_count": 1,
+  "procedural_count": 1,
+  "derived_scale_count": 0,
+  "scaled_proxy_count": 0,
+  "stabilized_proxy_count": 0,
+  "generated": [
+    {
+      "schema_version": "robotwin.generated_asset_provenance.v1",
+      "generator": "scene_gen.procedural_proxy.v3",
+      "generation_kind": "procedural_proxy",
+      "asset_id": "900_gen_hexagonal_pedestal_5695f4e5",
+      "semantic_category": "hexagonal_pedestal",
+      "requested_color": "purple",
+      "requested_material": null,
+      "geometry_family": "hexagonal_prism",
+      "geometry_fidelity": "semantic_shape_when_recognized_otherwise_bounded_proxy",
+      "generated_license": "project_generated_academic_artifact",
+      "dimensions_m": [
+        0.09,
+        0.09,
+        0.075
+      ],
+      "files": {
+        "visual": {
+          "path": "/workspace/summary-web/genenv-r16-20261109/runs/new-mesh/objects/900_gen_hexagonal_pedestal_5695f4e5/visual/textured0.obj",
+          "sha256": "a3517e0da28a2e44bb33981c0f91f3b92d2e4bee3a20a1d3a1d041d6d6176495"
+        },
+        "collision": {
+          "path": "/workspace/summary-web/genenv-r16-20261109/runs/new-mesh/objects/900_gen_hexagonal_pedestal_5695f4e5/collision/textured0.obj",
+          "sha256": "73628bac5120cd41520410d7e6404aa04fd377a126c18af1a75361c7775704c9"
+        },
+        "material": {
+          "path": "/workspace/summary-web/genenv-r16-20261109/runs/new-mesh/objects/900_gen_hexagonal_pedestal_5695f4e5/visual/material.mtl",
+          "sha256": "b2f39d95affbd58fa63ad649dd579a22737de7dab61ec40cabe60562a4321f61"
+        },
+        "metadata": {
+          "path": "/workspace/summary-web/genenv-r16-20261109/runs/new-mesh/objects/900_gen_hexagonal_pedestal_5695f4e5/model_data0.json",
+          "sha256": "b2cbc51850dae042e07041fade5c0f13a5cdfecf723f74f0a7d4b4968b54f643"
+        }
+      }
+    }
+  ],
+  "base_catalog_sha256": "dc46aabf122a83664c858dfa2bea6ecc471a9286b34b556ff35f8c5bc7965736",
+  "effective_catalog_sha256": "48bda151c2e6b0c6611fa8c84efe326daea74e0f13d6c486294a89f4cfa89a21"
+}

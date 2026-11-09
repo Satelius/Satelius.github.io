@@ -1,0 +1,16 @@
+The '--headless' CLI argument is deprecated. Omit '--viz' for default headless. If config visualizers are enabled and you want to force headless, use '--viz none'.
+Loading user config located at: '/runtime/gujie/TacHarness/.venv-isaacsim60/lib/python3.12/site-packages/isaacsim/kit/data/Kit/IsaacLab/3.0/user.config.json'
+2026-11-09T05:30:29Z [Info] [carb] Logging to file: /runtime/gujie/TacHarness/.venv-isaacsim60/lib/python3.12/site-packages/isaacsim/kit/logs/Kit/IsaacLab/3.0/kit_20261109_133029.log
+2026-11-09T05:30:29Z [13ms] [Warning] [omni.ext.plugin] [ext: isaaclab_visualizers] Extensions config 'extension.toml' doesn't exist '/runtime/gujie/TacHarness/thirdparty/IsaacLab60/source/isaaclab_visualizers' or '/runtime/gujie/TacHarness/thirdparty/IsaacLab60/source/isaaclab_visualizers/config'
+2026-11-09T05:30:29Z [37ms] [Warning] [omni.ext.plugin] [ext: isaaclab_visualizers] Extensions config 'extension.toml' doesn't exist '/runtime/gujie/TacHarness/thirdparty/IsaacLab60/source/isaaclab_visualizers' or '/runtime/gujie/TacHarness/thirdparty/IsaacLab60/source/isaaclab_visualizers/config'
+2026-11-09T05:30:34Z [4,504ms] [Error] [omni.ext.plugin] Failed to resolve extension dependencies. Failure hints:
+  * No versions of isaacsim.core.api that satisfies: [enable list] depends on isaacsim.core.api version *
+    - Available packages for isaacsim.core.api version *:
+      (none found)
+  Synced registries:
+     - kit/prod/default    : found 360 packages 
+     - kit/prod/sdk        : found 311 packages 
+
+2026-11-09T05:30:34Z [4,504ms] [Error] [omni.kit.app.plugin] Exiting app because of dependency solver failure...
+2026-11-09T05:30:34Z [4,509ms] [Error] [simulation_app.simulation_app] SimulationApp._start_app: Application failed to start. Check the log above for errors.
+2026-11-09T05:30:34Z [4,512ms] [Warning] [carb] Recursive unloadAllPlugins() detected!

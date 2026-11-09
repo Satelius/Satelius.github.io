@@ -1,0 +1,14 @@
+image 1 
+Traceback (most recent call last):
+  File "/workspace/summary-web/genenv-r16-20261109/review/multimodal.py", line 15, in <module>
+    bundle=ingest(req,store)
+           ^^^^^^^^^^^^^^^^^
+  File "/workspace/TacHarness-genenv/thirdparty/robot-harness-gen-env/self_improving/harness/x2env/input.py", line 279, in ingest
+    video = _video(raw, source, artifact_store, limits, artifacts)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/TacHarness-genenv/thirdparty/robot-harness-gen-env/self_improving/harness/x2env/input.py", line 159, in _video
+    hashes = _command(
+             ^^^^^^^^^
+  File "/workspace/TacHarness-genenv/thirdparty/robot-harness-gen-env/self_improving/harness/x2env/input.py", line 125, in _command
+    raise InputIngestError("invalid_video", "media decoder rejected source")
+self_improving.harness.x2env.input.InputIngestError: media decoder rejected source

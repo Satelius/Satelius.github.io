@@ -1,0 +1,280 @@
+{
+  "schema": "tacharness.tacumi.episode.v1",
+  "producer": "TacUMI",
+  "codebase_version": "tacumi_unified_v4",
+  "source": "robolab",
+  "task_id": "robolab:AuditBananaFixedTask",
+  "policy_contract": "robolab_droid_gpt_taskspace_absolute_v1",
+  "robot_type": "franka_tacumi_dm25pd04",
+  "wrist_camera_contract": "tacumi-opencv-fisheye-link3-dag921265c00543e-v4",
+  "end_effector_profile": {
+    "schema": "tacumi.end_effector_profile.v1",
+    "embodiment_id": "tacumi_dm25pd04_v1",
+    "robot_type": "franka_tacumi_dm25pd04",
+    "asset": {
+      "relative_path": "assets/robots/franka_tacumi_dm25pd04.usda"
+    },
+    "mechanical": {
+      "flange_anchor_xyz_m": [
+        -0.010346,
+        0.0,
+        -0.064711
+      ],
+      "gripper_joint_names": [
+        "Link4_joint",
+        "Link5_joint"
+      ],
+      "open_joint_positions_rad": [
+        0.0,
+        0.0
+      ],
+      "closed_joint_positions_rad": [
+        0.3490658503988659,
+        -0.3490658503988659
+      ]
+    },
+    "policy_tcp": {
+      "id": "tacumi-contact-center-v1",
+      "base_link_translation_xyz_m": [
+        0.0,
+        0.0,
+        0.104275
+      ],
+      "tcp_to_tactile_contact_center_xyz_m": [
+        -0.000194,
+        -0.000373,
+        0.010483
+      ]
+    },
+    "tactile": {
+      "required_root_count": 2,
+      "side_to_link": {
+        "left": "Link5",
+        "right": "Link4"
+      },
+      "zero_contact_contract": "zero-all-fields-on-no-contact-v2"
+    },
+    "wrist_camera": {
+      "contract": "tacumi-opencv-fisheye-link3-dag921265c00543e-v4",
+      "default_cluster": "260808_majority",
+      "default_cluster_contract": "tacumi-opencv-fisheye-wrist-260808majority-v5",
+      "serial": "DAG921265C00543E",
+      "prim_suffix": "/Gripper/Tacumi/Link3/wrist_cam",
+      "legacy_prim_suffix": "/Gripper/Tacumi/Link3/wrist_camera",
+      "api_schema": "OmniLensDistortionOpenCvFisheyeAPI",
+      "model": "opencvFisheye",
+      "calibration_resolution_wh": [
+        1920,
+        1080
+      ],
+      "render_resolution_wh": [
+        1280,
+        720
+      ],
+      "intrinsics_fx_fy_cx_cy": [
+        642.3210271799527,
+        647.5727666988461,
+        961.4149867240113,
+        542.7314725472376
+      ],
+      "fisheye_k1_k2_k3_k4": [
+        -0.02875577450237588,
+        -0.005390591626179263,
+        0.0023637548743568183,
+        -0.0012494471171607886
+      ],
+      "link3_to_ros_optical_translation_xyz_m": [
+        0.00020097853677864525,
+        5.8716044312978575e-09,
+        -0.000790724450741809
+      ],
+      "link3_to_ros_optical_quaternion_wxyz": [
+        0.4999945328604634,
+        -0.500005970771398,
+        0.500009051788343,
+        -0.49999044434101036
+      ],
+      "offset_convention": "ros",
+      "quaternion_order": "wxyz",
+      "direct_landscape": true,
+      "observation_rotation_k": 0,
+      "intrinsics_source_sha256": "f251963bda359ab3b60082eeed36e90218344ed1bf59c4b3b884b14e7928a9f7",
+      "extrinsics_source_sha256": "2fba9e4919c1fbebd8dbfab36d1ae1e793c4ccb3f2995ef6281b9705d3757978"
+    }
+  },
+  "tactile_arms": [
+    "left"
+  ],
+  "tactile_sensor_roots_per_arm": 2,
+  "tactile_sensor_root_count": 2,
+  "rgb_dual_view_wrist_arm": "left",
+  "tactile_coordinate_contract": "depth-camera-aligned-v4",
+  "tactile_zero_contact_contract": "zero-all-fields-on-no-contact-v2",
+  "fps": 15.0,
+  "created_at": "2026-11-09T05:17:57.495593+00:00",
+  "tactile_uint16_encoding": {
+    "float_to_uint16": "round(x * 1000000 + 30000)",
+    "uint16_to_float": "(x - 30000) / 1000000",
+    "scale": 1000000.0,
+    "offset": 30000.0,
+    "unit": "meter"
+  },
+  "depth_uint16_encoding": {
+    "float_to_uint16": "round(depth_m * 1000000); 0 means no return",
+    "uint16_to_float": "x / 1000000 meters; 0 means no return",
+    "scale": 1000000.0,
+    "invalid": 0,
+    "unit": "meter",
+    "display_min_m": 0.005,
+    "display_max_m": 0.02
+  },
+  "features": {
+    "observation.state": {
+      "dtype": "float32",
+      "shape": [
+        15
+      ],
+      "names": [
+        "panda_joint1",
+        "panda_joint2",
+        "panda_joint3",
+        "panda_joint4",
+        "panda_joint5",
+        "panda_joint6",
+        "panda_joint7",
+        "gripper_close_ratio",
+        "eef_x_m",
+        "eef_y_m",
+        "eef_z_m",
+        "eef_qw",
+        "eef_qx",
+        "eef_qy",
+        "eef_qz"
+      ]
+    },
+    "action": {
+      "dtype": "float32",
+      "shape": [
+        8
+      ],
+      "names": [
+        "x",
+        "y",
+        "z",
+        "qw",
+        "qx",
+        "qy",
+        "qz",
+        "gripper_command"
+      ]
+    },
+    "observation.images.tacumi_tactile_composite": {
+      "dtype": "image",
+      "shape": [
+        "height",
+        "width",
+        "channels"
+      ],
+      "layout": "rows=left,right; columns=indent,deformation,shear,hsv"
+    },
+    "observation.images.cam_left_wrist": {
+      "dtype": "image",
+      "shape": [
+        "height",
+        "width",
+        "channels"
+      ]
+    },
+    "observation.images.agentview": {
+      "dtype": "image",
+      "shape": [
+        "height",
+        "width",
+        "channels"
+      ]
+    },
+    "observation.images.rgb_dual_view": {
+      "dtype": "image",
+      "shape": [
+        "height",
+        "width",
+        "channels"
+      ],
+      "layout": "left=agentview; right=left_wrist_fisheye"
+    },
+    "observation.tactile.cam_left_finger0.depth_uint16": {
+      "dtype": "uint16",
+      "shape": [
+        "height",
+        "width"
+      ]
+    },
+    "observation.tactile.cam_left_finger0.indent_uint16": {
+      "dtype": "uint16",
+      "shape": [
+        "height",
+        "width"
+      ]
+    },
+    "observation.tactile.cam_left_finger0.deformation_uint16": {
+      "dtype": "uint16",
+      "shape": [
+        "height",
+        "width",
+        2
+      ]
+    },
+    "observation.tactile.cam_left_finger0.shear_uint16": {
+      "dtype": "uint16",
+      "shape": [
+        "height",
+        "width",
+        2
+      ]
+    },
+    "observation.tactile.cam_left_finger0.mask": {
+      "dtype": "uint8",
+      "shape": [
+        "height",
+        "width"
+      ]
+    },
+    "observation.tactile.cam_left_finger1.depth_uint16": {
+      "dtype": "uint16",
+      "shape": [
+        "height",
+        "width"
+      ]
+    },
+    "observation.tactile.cam_left_finger1.indent_uint16": {
+      "dtype": "uint16",
+      "shape": [
+        "height",
+        "width"
+      ]
+    },
+    "observation.tactile.cam_left_finger1.deformation_uint16": {
+      "dtype": "uint16",
+      "shape": [
+        "height",
+        "width",
+        2
+      ]
+    },
+    "observation.tactile.cam_left_finger1.shear_uint16": {
+      "dtype": "uint16",
+      "shape": [
+        "height",
+        "width",
+        2
+      ]
+    },
+    "observation.tactile.cam_left_finger1.mask": {
+      "dtype": "uint8",
+      "shape": [
+        "height",
+        "width"
+      ]
+    }
+  }
+}

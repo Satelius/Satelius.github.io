@@ -1,0 +1,13 @@
+usage: Replay a generated RoboLab task with a privileged Cartesian grasp/place probe.
+
+Run inside the RoboLab Sim environment with the gujie rollout helpers on PYTHONPATH.
+Every attempted reset has a separate trace, video and summary.
+
+       [-h] --task TASK --object OBJECT --target TARGET --seeds SEEDS
+       [SEEDS ...] [--grasp-yaw GRASP_YAW] [--grasp-height GRASP_HEIGHT] --out
+       OUT
+Replay a generated RoboLab task with a privileged Cartesian grasp/place probe.
+
+Run inside the RoboLab Sim environment with the gujie rollout helpers on PYTHONPATH.
+Every attempted reset has a separate trace, video and summary.
+: error: probe object and target must match the registered task roles

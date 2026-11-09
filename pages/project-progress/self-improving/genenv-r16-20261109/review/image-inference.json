@@ -1,0 +1,8 @@
+{
+  "requested_model": "gpt-6.1-sol",
+  "input": "bowl-scene.png",
+  "prompt": "仅根据附图回答。返回 JSON 对象，字段 observed（可直接观察的物体和相对关系）、inferred（推断）、unknown（遮挡、尺寸、接触等无法测量项）、family（从 stove_bowl, drawer_bowl, bottle_shelf, unknown 选择）、intervals（如有多个时刻，列出有画面支持的动作区间及时间；单帧为空）、confidence（是否足以唯一确定任务）。不可使用工具。",
+  "exit": 0,
+  "elapsed_s": 24.273538033477962,
+  "errors": []
+}

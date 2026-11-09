@@ -1,0 +1,64 @@
+{
+  "schema_version": "robotwin.scene_spec.v1",
+  "scene_id": "a_can_in_front_of_a_bowl_7df55e76b7",
+  "request": "A can in front of a bowl.",
+  "language": "en",
+  "frame": {
+    "name": "robotwin_world",
+    "x_axis": "right",
+    "y_axis": "front",
+    "z_axis": "up",
+    "handedness": "right_handed"
+  },
+  "unit": "m",
+  "seed": 7,
+  "workspace": {
+    "support_surface": "table",
+    "table_height_m": 0.741,
+    "x_bounds_m": [
+      -0.35,
+      0.35
+    ],
+    "y_bounds_m": [
+      -0.2,
+      0.3
+    ],
+    "robot_keepout_x_m": [
+      -0.16,
+      0.16
+    ],
+    "robot_keepout_y_m": [
+      -0.2,
+      -0.08
+    ]
+  },
+  "objects": [
+    {
+      "object_id": "can_1",
+      "category": "can",
+      "region": "center"
+    },
+    {
+      "object_id": "bowl_1",
+      "category": "bowl",
+      "region": "center"
+    }
+  ],
+  "relations": [
+    {
+      "relation": "on_table",
+      "source": "can_1",
+      "target": "table"
+    },
+    {
+      "relation": "on_table",
+      "source": "bowl_1",
+      "target": "table"
+    },
+    {
+      "relation": "front_of",
+      "source": "can_1",
+      "target": "bowl_1"
+    }
+  ]
+}

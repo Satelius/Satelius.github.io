@@ -1,0 +1,191 @@
+{
+  "schema_version": "robotwin.resolved_scene.v1",
+  "scene_id": "a_teal_cube_on_the_table_4ab15d0e7a",
+  "request": "A teal cube on the table.",
+  "frame": {
+    "name": "robotwin_world",
+    "x_axis": "right",
+    "y_axis": "front",
+    "z_axis": "up",
+    "handedness": "right_handed"
+  },
+  "unit": "m",
+  "seed": 8,
+  "workspace": {
+    "support_surface": "table",
+    "table_height_m": 0.741,
+    "x_bounds_m": [
+      -0.35,
+      0.35
+    ],
+    "y_bounds_m": [
+      -0.2,
+      0.3
+    ],
+    "robot_keepout_x_m": [
+      -0.16,
+      0.16
+    ],
+    "robot_keepout_y_m": [
+      -0.2,
+      -0.08
+    ]
+  },
+  "source_scene_spec_sha256": "a0748dd307c0783876975b25914dd67d4f7ed1e7e3f8d58365b395302ddf9ef6",
+  "asset_catalog_sha256": "dc46aabf122a83664c858dfa2bea6ecc471a9286b34b556ff35f8c5bc7965736",
+  "compiler_version": "scene_gen.stage5_solver.v3",
+  "objects": [
+    {
+      "object_id": "block_1",
+      "category": "block",
+      "color": "teal",
+      "asset_id": "blue_block",
+      "model_id": 0,
+      "load_type": "rigid",
+      "stable_pose_id": "robolab_blue_block_upright",
+      "stable_orientation_wxyz": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "dimensions_m": [
+        0.04700441956520081,
+        0.04700441956520081,
+        0.04700441956520081
+      ],
+      "footprint_shape": "box",
+      "support_margin_m": 0.005,
+      "support_spawn_clearance_m": 0.003,
+      "z_policy": "origin_on_table",
+      "static_friction": 0.800000011920929,
+      "dynamic_friction": 1.0,
+      "mesh_scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "collision_available": true,
+      "source_files": [
+        "/runtime/TacHarness/inputs/datasets/vendor/robolab/assets/objects/basic/blue_block.usd"
+      ],
+      "grounding_score": 103.0,
+      "grounding_reasons": [
+        "exact category match",
+        "color metadata unknown; query teal preserved",
+        "collision representation available",
+        "normalized dimensions available"
+      ],
+      "rejected_candidates": [
+        {
+          "asset_id": "frozen_vegetable_block",
+          "model_id": 0,
+          "score": 103.0,
+          "reasons": [
+            "lower deterministic rank",
+            "exact category match",
+            "color metadata unknown; query teal preserved",
+            "collision representation available",
+            "normalized dimensions available"
+          ]
+        },
+        {
+          "asset_id": "green_block",
+          "model_id": 0,
+          "score": 103.0,
+          "reasons": [
+            "lower deterministic rank",
+            "exact category match",
+            "color metadata unknown; query teal preserved",
+            "collision representation available",
+            "normalized dimensions available"
+          ]
+        },
+        {
+          "asset_id": "red_block",
+          "model_id": 0,
+          "score": 103.0,
+          "reasons": [
+            "lower deterministic rank",
+            "exact category match",
+            "color metadata unknown; query teal preserved",
+            "collision representation available",
+            "normalized dimensions available"
+          ]
+        },
+        {
+          "asset_id": "wood_block",
+          "model_id": 0,
+          "score": 103.0,
+          "reasons": [
+            "lower deterministic rank",
+            "exact category match",
+            "color metadata unknown; query teal preserved",
+            "collision representation available",
+            "normalized dimensions available"
+          ]
+        },
+        {
+          "asset_id": "yellow_block",
+          "model_id": 0,
+          "score": 103.0,
+          "reasons": [
+            "lower deterministic rank",
+            "exact category match",
+            "color metadata unknown; query teal preserved",
+            "collision representation available",
+            "normalized dimensions available"
+          ]
+        }
+      ],
+      "pose": {
+        "position_m": [
+          0.206480861,
+          -0.004689502,
+          0.741
+        ],
+        "orientation_wxyz": [
+          0.653513805979,
+          0.0,
+          0.0,
+          -0.75691459584
+        ],
+        "yaw_rad": -1.717157728875
+      },
+      "is_static": false,
+      "support_relation": "on_table",
+      "support_target": "table",
+      "articulation_joint_names": [],
+      "articulation_joint_limits": [],
+      "articulation_qpos": [],
+      "asset_provenance": "robotwin_catalog"
+    }
+  ],
+  "relations": [
+    {
+      "relation": "on_table",
+      "source": "block_1",
+      "target": "table"
+    }
+  ],
+  "solver_trace": {
+    "algorithm": "bounded_rejection_backtracking_v1",
+    "seed": 8,
+    "max_attempts_per_object": 96,
+    "total_attempts": 1,
+    "attempts": [
+      {
+        "attempt": 1,
+        "object_id": "block_1",
+        "candidate_xy_m": [
+          0.206480861,
+          -0.004689502
+        ],
+        "yaw_rad": -1.717157728875,
+        "accepted": true,
+        "reasons": []
+      }
+    ],
+    "status": "pass"
+  }
+}

@@ -1,0 +1,132 @@
+{
+  "schema_version": "robotwin.resolved_scene.v1",
+  "scene_id": "place_a_purple_hexagonal_pedestal_on_the_table_d38c3bf3d4",
+  "request": "Place a purple hexagonal pedestal on the table.",
+  "frame": {
+    "name": "robotwin_world",
+    "x_axis": "right",
+    "y_axis": "front",
+    "z_axis": "up",
+    "handedness": "right_handed"
+  },
+  "unit": "m",
+  "seed": 77,
+  "workspace": {
+    "support_surface": "table",
+    "table_height_m": 0.741,
+    "x_bounds_m": [
+      -0.35,
+      0.35
+    ],
+    "y_bounds_m": [
+      -0.2,
+      0.3
+    ],
+    "robot_keepout_x_m": [
+      -0.16,
+      0.16
+    ],
+    "robot_keepout_y_m": [
+      -0.2,
+      -0.08
+    ]
+  },
+  "source_scene_spec_sha256": "1db0294cca0b42024acc541c01e5bcf91506752a9d67b00727d859e4d2a86fcd",
+  "asset_catalog_sha256": "48bda151c2e6b0c6611fa8c84efe326daea74e0f13d6c486294a89f4cfa89a21",
+  "compiler_version": "scene_gen.stage5_solver.v3",
+  "objects": [
+    {
+      "object_id": "hexagonal_pedestal_1",
+      "category": "hexagonal_pedestal",
+      "color": "purple",
+      "asset_id": "900_gen_hexagonal_pedestal_5695f4e5",
+      "model_id": 0,
+      "load_type": "rigid",
+      "stable_pose_id": "procedural_flat_base",
+      "stable_orientation_wxyz": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "dimensions_m": [
+        0.09,
+        0.09,
+        0.075
+      ],
+      "footprint_shape": "box",
+      "support_margin_m": 0.005,
+      "support_spawn_clearance_m": 0.003,
+      "z_policy": "origin_on_table",
+      "mesh_scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "collision_available": true,
+      "source_files": [
+        "/workspace/summary-web/genenv-r16-20261109/runs/new-mesh/objects/900_gen_hexagonal_pedestal_5695f4e5/collision/textured0.obj",
+        "/workspace/summary-web/genenv-r16-20261109/runs/new-mesh/objects/900_gen_hexagonal_pedestal_5695f4e5/generation_provenance.json",
+        "/workspace/summary-web/genenv-r16-20261109/runs/new-mesh/objects/900_gen_hexagonal_pedestal_5695f4e5/model_data0.json",
+        "/workspace/summary-web/genenv-r16-20261109/runs/new-mesh/objects/900_gen_hexagonal_pedestal_5695f4e5/visual/textured0.obj"
+      ],
+      "grounding_score": 108.0,
+      "grounding_reasons": [
+        "exact category match",
+        "color metadata matches purple",
+        "collision representation available",
+        "normalized dimensions available"
+      ],
+      "rejected_candidates": [],
+      "pose": {
+        "position_m": [
+          -0.067359753,
+          0.036684134,
+          0.741
+        ],
+        "orientation_wxyz": [
+          0.590031358955,
+          0.0,
+          0.0,
+          0.807380328872
+        ],
+        "yaw_rad": 1.879397292386
+      },
+      "is_static": false,
+      "support_relation": "on_table",
+      "support_target": "table",
+      "articulation_joint_names": [],
+      "articulation_joint_limits": [],
+      "articulation_qpos": [],
+      "asset_provenance": "procedural_generated",
+      "generation_metadata_path": "/workspace/summary-web/genenv-r16-20261109/runs/new-mesh/objects/900_gen_hexagonal_pedestal_5695f4e5/generation_provenance.json"
+    }
+  ],
+  "relations": [
+    {
+      "relation": "on_table",
+      "source": "hexagonal_pedestal_1",
+      "target": "table"
+    }
+  ],
+  "solver_trace": {
+    "algorithm": "bounded_rejection_backtracking_v1",
+    "seed": 77,
+    "max_attempts_per_object": 96,
+    "total_attempts": 1,
+    "attempts": [
+      {
+        "attempt": 1,
+        "object_id": "hexagonal_pedestal_1",
+        "candidate_xy_m": [
+          -0.067359753,
+          0.036684134
+        ],
+        "yaw_rad": 1.879397292386,
+        "accepted": true,
+        "reasons": []
+      }
+    ],
+    "status": "pass"
+  }
+}

@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "/workspace/TacHarness-genenv/scripts/agentic/genenv_robolab_example.py", line 108, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/workspace/TacHarness-genenv/scripts/agentic/genenv_robolab_example.py", line 86, in main
+    result = import_resolved_scene(
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/TacHarness-genenv/src/tacharness/agenticsim/generation/genenv/robolab_import.py", line 287, in import_resolved_scene
+    raise ValueError(f"RoboLab importer cannot bind requested color {obj['color']!r} on {asset!r}")
+ValueError: RoboLab importer cannot bind requested color 'teal' on 'blue_block'

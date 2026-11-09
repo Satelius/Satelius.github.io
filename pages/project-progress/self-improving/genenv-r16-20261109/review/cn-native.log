@@ -1,0 +1,82 @@
+AppLauncher is deprecated; use isaaclab.app.launch_simulation.
+Loading user config located at: '/runtime/TacHarness/.venv-isaacsim62/lib/python3.12/site-packages/isaacsim/kit/data/Kit/IsaacLab/3.0/user.config.json'
+2026-11-09T06:15:58Z [Info] [carb] Logging to file: /runtime/TacHarness/.venv-isaacsim62/lib/python3.12/site-packages/isaacsim/kit/logs/Kit/IsaacLab/3.0/kit_20261109_141558.log
+2026-11-09T06:15:58Z [4ms] [Warning] [omni.ext.plugin] [ext: isaaclab_newton] Extensions config 'extension.toml' doesn't exist '/runtime/TacHarness/thirdparty/IsaacLab-v3/source/isaaclab_newton' or '/runtime/TacHarness/thirdparty/IsaacLab-v3/source/isaaclab_newton/config'
+2026-11-09T06:15:58Z [4ms] [Warning] [omni.ext.plugin] [ext: isaaclab_teleop] Extensions config 'extension.toml' doesn't exist '/runtime/TacHarness/thirdparty/IsaacLab-v3/source/isaaclab_teleop' or '/runtime/TacHarness/thirdparty/IsaacLab-v3/source/isaaclab_teleop/config'
+2026-11-09T06:15:58Z [4ms] [Warning] [omni.ext.plugin] [ext: isaaclab_visualizers] Extensions config 'extension.toml' doesn't exist '/runtime/TacHarness/thirdparty/IsaacLab-v3/source/isaaclab_visualizers' or '/runtime/TacHarness/thirdparty/IsaacLab-v3/source/isaaclab_visualizers/config'
+2026-11-09T06:15:58Z [5ms] [Warning] [omni.ext.plugin] [ext: isaaclab_tasks] Extensions config 'extension.toml' doesn't exist '/runtime/TacHarness/thirdparty/IsaacLab-v3/source/isaaclab_tasks' or '/runtime/TacHarness/thirdparty/IsaacLab-v3/source/isaaclab_tasks/config'
+2026-11-09T06:15:58Z [5ms] [Warning] [omni.ext.plugin] [ext: isaaclab_assets] Extensions config 'extension.toml' doesn't exist '/runtime/TacHarness/thirdparty/IsaacLab-v3/source/isaaclab_assets' or '/runtime/TacHarness/thirdparty/IsaacLab-v3/source/isaaclab_assets/config'
+2026-11-09T06:15:58Z [5ms] [Warning] [omni.ext.plugin] [ext: isaaclab_experimental] Extensions config 'extension.toml' doesn't exist '/runtime/TacHarness/thirdparty/IsaacLab-v3/source/isaaclab_experimental' or '/runtime/TacHarness/thirdparty/IsaacLab-v3/source/isaaclab_experimental/config'
+2026-11-09T06:15:58Z [5ms] [Warning] [omni.ext.plugin] [ext: isaaclab_ppisp] Extensions config 'extension.toml' doesn't exist '/runtime/TacHarness/thirdparty/IsaacLab-v3/source/isaaclab_ppisp' or '/runtime/TacHarness/thirdparty/IsaacLab-v3/source/isaaclab_ppisp/config'
+2026-11-09T06:15:58Z [5ms] [Warning] [omni.ext.plugin] [ext: isaaclab_ov] Extensions config 'extension.toml' doesn't exist '/runtime/TacHarness/thirdparty/IsaacLab-v3/source/isaaclab_ov' or '/runtime/TacHarness/thirdparty/IsaacLab-v3/source/isaaclab_ov/config'
+2026-11-09T06:15:58Z [6ms] [Warning] [omni.ext.plugin] [ext: isaaclab_mimic] Extensions config 'extension.toml' doesn't exist '/runtime/TacHarness/thirdparty/IsaacLab-v3/source/isaaclab_mimic' or '/runtime/TacHarness/thirdparty/IsaacLab-v3/source/isaaclab_mimic/config'
+2026-11-09T06:15:58Z [6ms] [Warning] [omni.ext.plugin] [ext: isaaclab_physx] Extensions config 'extension.toml' doesn't exist '/runtime/TacHarness/thirdparty/IsaacLab-v3/source/isaaclab_physx' or '/runtime/TacHarness/thirdparty/IsaacLab-v3/source/isaaclab_physx/config'
+2026-11-09T06:15:58Z [6ms] [Warning] [omni.ext.plugin] [ext: isaaclab_tasks_experimental] Extensions config 'extension.toml' doesn't exist '/runtime/TacHarness/thirdparty/IsaacLab-v3/source/isaaclab_tasks_experimental' or '/runtime/TacHarness/thirdparty/IsaacLab-v3/source/isaaclab_tasks_experimental/config'
+2026-11-09T06:15:58Z [6ms] [Warning] [omni.ext.plugin] [ext: isaaclab_contrib] Extensions config 'extension.toml' doesn't exist '/runtime/TacHarness/thirdparty/IsaacLab-v3/source/isaaclab_contrib' or '/runtime/TacHarness/thirdparty/IsaacLab-v3/source/isaaclab_contrib/config'
+2026-11-09T06:15:58Z [6ms] [Warning] [omni.ext.plugin] [ext: isaaclab] Extensions config 'extension.toml' doesn't exist '/runtime/TacHarness/thirdparty/IsaacLab-v3/source/isaaclab' or '/runtime/TacHarness/thirdparty/IsaacLab-v3/source/isaaclab/config'
+2026-11-09T06:15:58Z [7ms] [Warning] [omni.ext.plugin] [ext: isaaclab_rl] Extensions config 'extension.toml' doesn't exist '/runtime/TacHarness/thirdparty/IsaacLab-v3/source/isaaclab_rl' or '/runtime/TacHarness/thirdparty/IsaacLab-v3/source/isaaclab_rl/config'
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1794204958.161014  196476 descriptor_database.cc:633] File already exists in database: grpc/health/v1/health.proto
+W0000 00:00:1794204958.161064  196476 message.cc:301] Protobuf GeneratedMessageFactory: File is already registered: grpc/health/v1/health.proto
+2026-11-09T06:15:58Z [602ms] [Warning] [omni.platforminfo.plugin] failed to open the default display.  Can't verify X Server version.
+
+|---------------------------------------------------------------------------------------------|
+| Driver Version: 595.71.05     | Graphics API: Vulkan
+|=============================================================================================|
+| GPU | Name                             | Active | LDA | GPU Memory | Vendor-ID | LUID       |
+|     |                                  |        |     |            | Device-ID | UUID       |
+|     |                                  |        |     |            | Bus-ID    |            |
+|---------------------------------------------------------------------------------------------|
+| 0   | NVIDIA GeForce RTX 5090          | Yes: 0 |     | 32607   MB | 10de      | 0          |
+|     |                                  |        |     |            | 2b85      | db99bb5e.. |
+|     |                                  |        |     |            | 49        |            |
+|=============================================================================================|
+| OS: 22.04.5 LTS (Jammy Jellyfish) ubuntu, Version: 22.04.5, Kernel: 5.15.0-119-generic
+| Processor: Intel(R) Xeon(R) Platinum 8470Q
+| Bare Metal Cores: 104 | Bare Metal Logical Cores: 208
+| Core Usage Quota: 25
+|---------------------------------------------------------------------------------------------|
+| Total Memory (MB): 92160 | Free Memory: 18008
+| Total Page/Swap (MB): 0 | Free Page/Swap: 0
+|---------------------------------------------------------------------------------------------|
+2026-11-09T06:16:00Z [2,251ms] [Warning] [carb.windowing-glfw.plugin] GLFW initialization failed.
+2026-11-09T06:16:00Z [2,251ms] [Warning] [carb] Failed to startup plugin carb.windowing-glfw.plugin (interfaces: [carb::windowing::IGLContext v1.0],[carb::windowing::IWindowing v1.5]) (impl: carb.windowing-glfw.plugin)
+2026-11-09T06:16:00Z [2,368ms] [Warning] [omni.log] Source: omni.hydra was already registered.
+2026-11-09T06:16:00Z [2,399ms] [Warning] [carb.windowing-glfw.plugin] GLFW initialization failed.
+2026-11-09T06:16:00Z [2,399ms] [Warning] [carb] Failed to startup plugin carb.windowing-glfw.plugin (interfaces: [carb::windowing::IGLContext v1.0],[carb::windowing::IWindowing v1.5]) (impl: carb.windowing-glfw.plugin)
+2026-11-09T06:16:00Z [2,401ms] [Warning] [carb.windowing-glfw.plugin] GLFW initialization failed.
+2026-11-09T06:16:00Z [2,401ms] [Warning] [carb] Failed to startup plugin carb.windowing-glfw.plugin (interfaces: [carb::windowing::IGLContext v1.0],[carb::windowing::IWindowing v1.5]) (impl: carb.windowing-glfw.plugin)
+Warning: Possible version incompatibility. Attempting to load carb::ujitso::IFactory with version v0.3 against v0.2.
+2026-11-09T06:16:00Z [2,882ms] [Warning] [pxr.Semantics] pxr.Semantics is deprecated - please use Semantics instead
+2026-11-09T06:16:01Z [2,974ms] [Warning] [omni.replicator.core.scripts.extension] No material configuration file, adding configuration to material settings directly.
+2026-11-09T06:16:02Z [4,789ms] [Warning] [rtx.hydra] RenderDelegate : Warning /rtx/hydra/readTransformsFromFabricInRenderDelegate and geometry streaming are enabled together but this can cause issues with dynamic objects not streaming correctly due to problems in the transform update.
+[ISAACLAB] KitLauncher initialization complete
+2026-11-09T06:16:03Z [5,557ms] [Warning] [omni.ext.plugin] [ext: isaaclab_mimic] Extensions config 'extension.toml' doesn't exist '/runtime/TacHarness/thirdparty/IsaacLab-v3/source/isaaclab_mimic' or '/runtime/TacHarness/thirdparty/IsaacLab-v3/source/isaaclab_mimic/config'
+2026-11-09T06:16:03Z [5,557ms] [Warning] [omni.ext.plugin] [ext: isaaclab_experimental] Extensions config 'extension.toml' doesn't exist '/runtime/TacHarness/thirdparty/IsaacLab-v3/source/isaaclab_experimental' or '/runtime/TacHarness/thirdparty/IsaacLab-v3/source/isaaclab_experimental/config'
+2026-11-09T06:16:03Z [5,557ms] [Warning] [omni.ext.plugin] [ext: isaaclab_assets] Extensions config 'extension.toml' doesn't exist '/runtime/TacHarness/thirdparty/IsaacLab-v3/source/isaaclab_assets' or '/runtime/TacHarness/thirdparty/IsaacLab-v3/source/isaaclab_assets/config'
+2026-11-09T06:16:03Z [5,557ms] [Warning] [omni.ext.plugin] [ext: isaaclab] Extensions config 'extension.toml' doesn't exist '/runtime/TacHarness/thirdparty/IsaacLab-v3/source/isaaclab' or '/runtime/TacHarness/thirdparty/IsaacLab-v3/source/isaaclab/config'
+2026-11-09T06:16:03Z [5,557ms] [Warning] [omni.ext.plugin] [ext: isaaclab_newton] Extensions config 'extension.toml' doesn't exist '/runtime/TacHarness/thirdparty/IsaacLab-v3/source/isaaclab_newton' or '/runtime/TacHarness/thirdparty/IsaacLab-v3/source/isaaclab_newton/config'
+2026-11-09T06:16:03Z [5,557ms] [Warning] [omni.ext.plugin] [ext: isaaclab_teleop] Extensions config 'extension.toml' doesn't exist '/runtime/TacHarness/thirdparty/IsaacLab-v3/source/isaaclab_teleop' or '/runtime/TacHarness/thirdparty/IsaacLab-v3/source/isaaclab_teleop/config'
+2026-11-09T06:16:03Z [5,557ms] [Warning] [omni.ext.plugin] [ext: isaaclab_tasks_experimental] Extensions config 'extension.toml' doesn't exist '/runtime/TacHarness/thirdparty/IsaacLab-v3/source/isaaclab_tasks_experimental' or '/runtime/TacHarness/thirdparty/IsaacLab-v3/source/isaaclab_tasks_experimental/config'
+2026-11-09T06:16:03Z [5,557ms] [Warning] [omni.ext.plugin] [ext: isaaclab_ov] Extensions config 'extension.toml' doesn't exist '/runtime/TacHarness/thirdparty/IsaacLab-v3/source/isaaclab_ov' or '/runtime/TacHarness/thirdparty/IsaacLab-v3/source/isaaclab_ov/config'
+2026-11-09T06:16:03Z [5,557ms] [Warning] [omni.ext.plugin] [ext: isaaclab_tasks] Extensions config 'extension.toml' doesn't exist '/runtime/TacHarness/thirdparty/IsaacLab-v3/source/isaaclab_tasks' or '/runtime/TacHarness/thirdparty/IsaacLab-v3/source/isaaclab_tasks/config'
+2026-11-09T06:16:03Z [5,557ms] [Warning] [omni.ext.plugin] [ext: isaaclab_rl] Extensions config 'extension.toml' doesn't exist '/runtime/TacHarness/thirdparty/IsaacLab-v3/source/isaaclab_rl' or '/runtime/TacHarness/thirdparty/IsaacLab-v3/source/isaaclab_rl/config'
+2026-11-09T06:16:03Z [5,557ms] [Warning] [omni.ext.plugin] [ext: isaaclab_ppisp] Extensions config 'extension.toml' doesn't exist '/runtime/TacHarness/thirdparty/IsaacLab-v3/source/isaaclab_ppisp' or '/runtime/TacHarness/thirdparty/IsaacLab-v3/source/isaaclab_ppisp/config'
+2026-11-09T06:16:03Z [5,557ms] [Warning] [omni.ext.plugin] [ext: isaaclab_contrib] Extensions config 'extension.toml' doesn't exist '/runtime/TacHarness/thirdparty/IsaacLab-v3/source/isaaclab_contrib' or '/runtime/TacHarness/thirdparty/IsaacLab-v3/source/isaaclab_contrib/config'
+2026-11-09T06:16:03Z [5,557ms] [Warning] [omni.ext.plugin] [ext: isaaclab_physx] Extensions config 'extension.toml' doesn't exist '/runtime/TacHarness/thirdparty/IsaacLab-v3/source/isaaclab_physx' or '/runtime/TacHarness/thirdparty/IsaacLab-v3/source/isaaclab_physx/config'
+2026-11-09T06:16:03Z [5,557ms] [Warning] [omni.ext.plugin] [ext: isaaclab_visualizers] Extensions config 'extension.toml' doesn't exist '/runtime/TacHarness/thirdparty/IsaacLab-v3/source/isaaclab_visualizers' or '/runtime/TacHarness/thirdparty/IsaacLab-v3/source/isaaclab_visualizers/config'
+[96m[RoboLab] Registering 1 task(s): ['/workspace/summary-web/genenv-r16-20261109/runs/cn-fixed/audit_cn-fixed_task.py'][0m
+2026-11-09T06:16:10Z [12,846ms] [Warning] [omni.ext.plugin] [ext: isaaclab_tasks] Extensions config 'extension.toml' doesn't exist '/runtime/TacHarness/thirdparty/IsaacLab-v3/source/isaaclab_tasks' or '/runtime/TacHarness/thirdparty/IsaacLab-v3/source/isaaclab_tasks/config'
+2026-11-09T06:16:10Z [12,846ms] [Warning] [omni.ext.plugin] [ext: isaaclab_visualizers] Extensions config 'extension.toml' doesn't exist '/runtime/TacHarness/thirdparty/IsaacLab-v3/source/isaaclab_visualizers' or '/runtime/TacHarness/thirdparty/IsaacLab-v3/source/isaaclab_visualizers/config'
+2026-11-09T06:16:10Z [12,846ms] [Warning] [omni.ext.plugin] [ext: isaaclab_newton] Extensions config 'extension.toml' doesn't exist '/runtime/TacHarness/thirdparty/IsaacLab-v3/source/isaaclab_newton' or '/runtime/TacHarness/thirdparty/IsaacLab-v3/source/isaaclab_newton/config'
+2026-11-09T06:16:10Z [12,846ms] [Warning] [omni.ext.plugin] [ext: isaaclab_ppisp] Extensions config 'extension.toml' doesn't exist '/runtime/TacHarness/thirdparty/IsaacLab-v3/source/isaaclab_ppisp' or '/runtime/TacHarness/thirdparty/IsaacLab-v3/source/isaaclab_ppisp/config'
+2026-11-09T06:16:10Z [12,846ms] [Warning] [omni.ext.plugin] [ext: isaaclab_mimic] Extensions config 'extension.toml' doesn't exist '/runtime/TacHarness/thirdparty/IsaacLab-v3/source/isaaclab_mimic' or '/runtime/TacHarness/thirdparty/IsaacLab-v3/source/isaaclab_mimic/config'
+2026-11-09T06:16:10Z [12,846ms] [Warning] [omni.ext.plugin] [ext: isaaclab_teleop] Extensions config 'extension.toml' doesn't exist '/runtime/TacHarness/thirdparty/IsaacLab-v3/source/isaaclab_teleop' or '/runtime/TacHarness/thirdparty/IsaacLab-v3/source/isaaclab_teleop/config'
+2026-11-09T06:16:10Z [12,846ms] [Warning] [omni.ext.plugin] [ext: isaaclab_assets] Extensions config 'extension.toml' doesn't exist '/runtime/TacHarness/thirdparty/IsaacLab-v3/source/isaaclab_assets' or '/runtime/TacHarness/thirdparty/IsaacLab-v3/source/isaaclab_assets/config'
+2026-11-09T06:16:10Z [12,846ms] [Warning] [omni.ext.plugin] [ext: isaaclab] Extensions config 'extension.toml' doesn't exist '/runtime/TacHarness/thirdparty/IsaacLab-v3/source/isaaclab' or '/runtime/TacHarness/thirdparty/IsaacLab-v3/source/isaaclab/config'
+2026-11-09T06:16:10Z [12,846ms] [Warning] [omni.ext.plugin] [ext: isaaclab_tasks_experimental] Extensions config 'extension.toml' doesn't exist '/runtime/TacHarness/thirdparty/IsaacLab-v3/source/isaaclab_tasks_experimental' or '/runtime/TacHarness/thirdparty/IsaacLab-v3/source/isaaclab_tasks_experimental/config'
+2026-11-09T06:16:10Z [12,846ms] [Warning] [omni.ext.plugin] [ext: isaaclab_ov] Extensions config 'extension.toml' doesn't exist '/runtime/TacHarness/thirdparty/IsaacLab-v3/source/isaaclab_ov' or '/runtime/TacHarness/thirdparty/IsaacLab-v3/source/isaaclab_ov/config'
+2026-11-09T06:16:10Z [12,846ms] [Warning] [omni.ext.plugin] [ext: isaaclab_contrib] Extensions config 'extension.toml' doesn't exist '/runtime/TacHarness/thirdparty/IsaacLab-v3/source/isaaclab_contrib' or '/runtime/TacHarness/thirdparty/IsaacLab-v3/source/isaaclab_contrib/config'
+2026-11-09T06:16:10Z [12,846ms] [Warning] [omni.ext.plugin] [ext: isaaclab_rl] Extensions config 'extension.toml' doesn't exist '/runtime/TacHarness/thirdparty/IsaacLab-v3/source/isaaclab_rl' or '/runtime/TacHarness/thirdparty/IsaacLab-v3/source/isaaclab_rl/config'
+2026-11-09T06:16:10Z [12,846ms] [Warning] [omni.ext.plugin] [ext: isaaclab_experimental] Extensions config 'extension.toml' doesn't exist '/runtime/TacHarness/thirdparty/IsaacLab-v3/source/isaaclab_experimental' or '/runtime/TacHarness/thirdparty/IsaacLab-v3/source/isaaclab_experimental/config'
+2026-11-09T06:16:10Z [12,846ms] [Warning] [omni.ext.plugin] [ext: isaaclab_physx] Extensions config 'extension.toml' doesn't exist '/runtime/TacHarness/thirdparty/IsaacLab-v3/source/isaaclab_physx' or '/runtime/TacHarness/thirdparty/IsaacLab-v3/source/isaaclab_physx/config'

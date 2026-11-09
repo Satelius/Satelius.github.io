@@ -9,6 +9,8 @@
   const lockButton = document.querySelector("#lockButton");
   const redirect = new URLSearchParams(window.location.search).get("redirect");
   const redirectTargets = {
+    "genenv-r16-20261109": "./self-improving/genenv-r16-20261109/",
+    "genenv-r16-20261109-reproduce": "./self-improving/genenv-r16-20261109/review/reproduce.html",
     "rsi-research": "./self-improving/rsi-research/",
     "arena-online-frame-inspector-2026-10-26": "./self-improving/arena-online-frame-inspector-2026-10-26/",
     "tactile-eta-reproduction": "./self-improving/tactile-eta-paper-companion/overview/",

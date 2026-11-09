@@ -1,0 +1,59 @@
+{
+  "derivation": {
+    "output": "/workspace/TacHarness-genenv/outputs/genenv-audit-20261109/raw/conditions.act7d.hdf5",
+    "output_sha256": "0ba89f5aef9b86486181e3e925ebe8a1e145b62d638315b9dbdf398a6afd8509",
+    "num_demos": 3,
+    "total_frames": 312,
+    "demos": [
+      {
+        "demo": "demo_0",
+        "source_file": "/workspace/TacHarness-genenv/outputs/genenv-audit-20261109/raw/stove-origin/teacher.hdf5",
+        "source_demo": "demo_0",
+        "frames": 104,
+        "source_action_dim": 13
+      },
+      {
+        "demo": "demo_1",
+        "source_file": "/workspace/TacHarness-genenv/outputs/genenv-audit-20261109/raw/stove-east/teacher.hdf5",
+        "source_demo": "demo_0",
+        "frames": 104,
+        "source_action_dim": 13
+      },
+      {
+        "demo": "demo_2",
+        "source_file": "/workspace/TacHarness-genenv/outputs/genenv-audit-20261109/raw/stove-west/teacher.hdf5",
+        "source_demo": "demo_0",
+        "frames": 104,
+        "source_action_dim": 13
+      }
+    ],
+    "derivation": "actions[:, :7] of the 7dpf 13-D record (xyz, axis-angle, gripper width); net forces dropped"
+  },
+  "source_lineage": "one original demonstration (#4), three reset conditions",
+  "samples": 312,
+  "tensors": {
+    "qpos": [
+      7
+    ],
+    "camera_images": [
+      2,
+      3,
+      224,
+      224
+    ],
+    "tactile_images": [
+      2,
+      3,
+      224,
+      224
+    ],
+    "actions": [
+      20,
+      7
+    ],
+    "is_pad": [
+      20
+    ]
+  },
+  "sha256": "0ba89f5aef9b86486181e3e925ebe8a1e145b62d638315b9dbdf398a6afd8509"
+}

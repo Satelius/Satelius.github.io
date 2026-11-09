@@ -1,0 +1,65 @@
+{
+  "source": "robolab",
+  "task_id": "robolab:AuditBananaFixedTask",
+  "task": "AuditBananaFixedTask",
+  "policy_contract": "robolab_droid_gpt_taskspace_absolute_v1",
+  "embodiment": "tacumi_dm25pd04_v1",
+  "tactile_zero_contact_contract": "zero-all-fields-on-no-contact-v2",
+  "frame_count": 599,
+  "fps": 15.0,
+  "success": false,
+  "total_reward": 0.0,
+  "created_at": "2026-11-09T05:25:29.132580+00:00",
+  "seed": 72,
+  "benchmark": "robolab",
+  "instruction": "Pick up the banana and place it in the bowl",
+  "max_episode_steps": 600,
+  "time_limit_scale": 1.0,
+  "episode_step_limit": 600,
+  "env_id": "AuditBananaFixedTask",
+  "isaacsim_version": "6.2.0.0",
+  "isaaclab_version": "28.0.0",
+  "policy_tcp": "tacumi-contact-center-v1",
+  "wrist_camera_cluster": "260808_majority",
+  "wrist_camera_contract": "tacumi-opencv-fisheye-wrist-260808majority-v5",
+  "gripper_close_angle_deg": 20.0,
+  "task_file": "/workspace/summary-web/genenv-r16-20261109/runs/banana_fixed/audit_banana_fixed_task.py",
+  "end_reason": "time_out",
+  "steps": 599,
+  "decisions": 59,
+  "max_decisions": null,
+  "wall_seconds": 402.52,
+  "policy": "scripted",
+  "policy_target": [
+    "banana",
+    "bowl"
+  ],
+  "gpt_calls": 0,
+  "timing_s": {
+    "env_step": 107.55,
+    "tactile": 31.85,
+    "record": 260.42,
+    "observe": 1.54
+  },
+  "timing_quarters_s_per_step": {
+    "env_step": [
+      0.1644,
+      0.1723,
+      0.1666,
+      0.2148
+    ],
+    "tactile": [
+      0.0501,
+      0.0515,
+      0.0564,
+      0.0546
+    ],
+    "record": [
+      0.4254,
+      0.4225,
+      0.438,
+      0.4532
+    ]
+  },
+  "success_within_max_episode_steps": false
+}

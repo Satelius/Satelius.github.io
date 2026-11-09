@@ -1,0 +1,26 @@
+{
+  "environment_package": null,
+  "error_code": "model_timeout",
+  "failure_bundle": "/workspace/summary-web/genenv-r16-20261109/runs/x2-image/failure",
+  "images": [
+    "/workspace/summary-web/genenv-r16-20261109/runs/x2-image/failure/partial/65e03080baaa11d2593f0f4c8c68bf8b994985ba3645e25847b553d1ca576be9.png"
+  ],
+  "last_operation": "codex.interpret",
+  "logs": [
+    "/workspace/summary-web/genenv-r16-20261109/runs/x2-image/failure/partial/bd5fdba5d3ab3af8ad371d7790324eaec7ac561da7f4de43304ae7e323d61d0b.txt",
+    "/workspace/summary-web/genenv-r16-20261109/runs/x2-image/failure/partial/067d0b5e0403108641bdf3a3dae526af783fe3a2868018d92555b679923f10cb.txt",
+    "/workspace/summary-web/genenv-r16-20261109/runs/x2-image/failure/partial/3e75d28a6681c31400a3f0fcb564c7613fd42796fb83294e4d53fea86bcbd401.txt"
+  ],
+  "manifest_sha256": "beadd2adfd8cae254f1792bca0bd7db3b5db42865748e6628fb44251507d498d",
+  "message": "Harness stopped at codex.interpret: model_timeout. Completed artifacts and original logs are retained. No usable environment is granted.",
+  "required_resources": [],
+  "revision": 2,
+  "scene_ir": {
+    "status": "not_produced"
+  },
+  "stage": "codex.interpret",
+  "status": "failed",
+  "stop_reason": "model_timeout",
+  "videos": [],
+  "workflow_id": "437d8e9e-43fe-45ca-a4ac-c5772d6edb42"
+}

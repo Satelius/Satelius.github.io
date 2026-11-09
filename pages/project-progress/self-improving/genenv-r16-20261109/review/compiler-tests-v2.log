@@ -1,0 +1,1102 @@
+........................................................................ [  4%]
+........................................................................ [  8%]
+...............................................................sssssssss [ 13%]
+sssssss................................................................. [ 17%]
+..........................................FF............................ [ 22%]
+........................................................................ [ 26%]
+.............................................................F.......... [ 31%]
+........................................................................ [ 35%]
+........................................................................ [ 40%]
+........................................................................ [ 44%]
+............................F...FFFFFFF................................. [ 48%]
+........................................................................ [ 53%]
+........................................................................ [ 57%]
+........................................................................ [ 62%]
+.........F.............................................................. [ 66%]
+........................................................................ [ 71%]
+........................................................................ [ 75%]
+........................................................................ [ 80%]
+........................................................................ [ 84%]
+........................................................................ [ 89%]
+........................................................................ [ 93%]
+........................................................................ [ 97%]
+.................................                                        [100%]
+=================================== FAILURES ===================================
+_ test_rehashed_encoded_video_must_match_declared_capture[setpts=2*PTS-video frame timing differs from capture sequence] _
+
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-57/test_rehashed_encoded_video_mu0')
+filter_value = 'setpts=2*PTS'
+reason = 'video frame timing differs from capture sequence'
+
+    @pytest.mark.parametrize(
+        "filter_value,reason",
+        [
+            ("setpts=2*PTS", "video frame timing differs from capture sequence"),
+            ("scale=64:32", "video frame size/count differs"),
+        ],
+    )
+    def test_rehashed_encoded_video_must_match_declared_capture(tmp_path, filter_value, reason):
+        from pathlib import Path
+    
+        kwargs = bound_fixture(tmp_path)
+        profile = kwargs["profiles"]["baseline"]
+        root = Path(profile["root"])
+        altered = root / "altered.mp4"
+>       subprocess.run(
+            [
+                "ffmpeg",
+                "-v",
+                "error",
+                "-threads",
+                "1",
+                "-i",
+                str(root / "preview.mp4"),
+                "-vf",
+                filter_value,
+                "-fps_mode",
+                "passthrough",
+                "-c:v",
+                "libx264",
+                str(altered),
+            ],
+            check=True,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
+            timeout=30,
+        )
+
+tests/self_improving/harness/x2env/test_assessment.py:1024: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+input = None, capture_output = False, timeout = 30, check = True
+popenargs = (['ffmpeg', '-v', 'error', '-threads', '1', '-i', ...],)
+kwargs = {'stdout': -1, 'stderr': -1}
+
+    def run(*popenargs,
+            input=None, capture_output=False, timeout=None, check=False, **kwargs):
+        """Run command with arguments and return a CompletedProcess instance.
+    
+        The returned instance will have attributes args, returncode, stdout and
+        stderr. By default, stdout and stderr are not captured, and those attributes
+        will be None. Pass stdout=PIPE and/or stderr=PIPE in order to capture them,
+        or pass capture_output=True to capture both.
+    
+        If check is True and the exit code was non-zero, it raises a
+        CalledProcessError. The CalledProcessError object will have the return code
+        in the returncode attribute, and output & stderr attributes if those streams
+        were captured.
+    
+        If timeout is given, and the process takes too long, a TimeoutExpired
+        exception will be raised.
+    
+        There is an optional argument "input", allowing you to
+        pass bytes or a string to the subprocess's stdin.  If you use this argument
+        you may not also use the Popen constructor's "stdin" argument, as
+        it will be used internally.
+    
+        By default, all communication is in bytes, and therefore any "input" should
+        be bytes, and the stdout and stderr will be bytes. If in text mode, any
+        "input" should be a string, and stdout and stderr will be strings decoded
+        according to locale encoding, or by "encoding" if set. Text mode is
+        triggered by setting any of text, encoding, errors or universal_newlines.
+    
+        The other arguments are the same as for the Popen constructor.
+        """
+        if input is not None:
+            if kwargs.get('stdin') is not None:
+                raise ValueError('stdin and input arguments may not both be used.')
+            kwargs['stdin'] = PIPE
+    
+        if capture_output:
+            if kwargs.get('stdout') is not None or kwargs.get('stderr') is not None:
+                raise ValueError('stdout and stderr arguments may not be used '
+                                 'with capture_output.')
+            kwargs['stdout'] = PIPE
+            kwargs['stderr'] = PIPE
+    
+        with Popen(*popenargs, **kwargs) as process:
+            try:
+                stdout, stderr = process.communicate(input, timeout=timeout)
+            except TimeoutExpired as exc:
+                process.kill()
+                if _mswindows:
+                    # Windows accumulates the output in a single blocking
+                    # read() call run on child threads, with the timeout
+                    # being done in a join() on those threads.  communicate()
+                    # _after_ kill() is required to collect that and add it
+                    # to the exception.
+                    exc.stdout, exc.stderr = process.communicate()
+                else:
+                    # POSIX _communicate already populated the output so
+                    # far into the TimeoutExpired exception.
+                    process.wait()
+                raise
+            except:  # Including KeyboardInterrupt, communicate handled that.
+                process.kill()
+                # We don't call process.wait() as .__exit__ does that for us.
+                raise
+            retcode = process.poll()
+            if check and retcode:
+>               raise CalledProcessError(retcode, process.args,
+                                         output=stdout, stderr=stderr)
+E               subprocess.CalledProcessError: Command '['ffmpeg', '-v', 'error', '-threads', '1', '-i', '/tmp/pytest-of-root/pytest-57/test_rehashed_encoded_video_mu0/baseline/preview.mp4', '-vf', 'setpts=2*PTS', '-fps_mode', 'passthrough', '-c:v', 'libx264', '/tmp/pytest-of-root/pytest-57/test_rehashed_encoded_video_mu0/baseline/altered.mp4']' returned non-zero exit status 1.
+
+/runtime/python/lib/python3.12/subprocess.py:571: CalledProcessError
+_ test_rehashed_encoded_video_must_match_declared_capture[scale=64:32-video frame size/count differs] _
+
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-57/test_rehashed_encoded_video_mu1')
+filter_value = 'scale=64:32', reason = 'video frame size/count differs'
+
+    @pytest.mark.parametrize(
+        "filter_value,reason",
+        [
+            ("setpts=2*PTS", "video frame timing differs from capture sequence"),
+            ("scale=64:32", "video frame size/count differs"),
+        ],
+    )
+    def test_rehashed_encoded_video_must_match_declared_capture(tmp_path, filter_value, reason):
+        from pathlib import Path
+    
+        kwargs = bound_fixture(tmp_path)
+        profile = kwargs["profiles"]["baseline"]
+        root = Path(profile["root"])
+        altered = root / "altered.mp4"
+>       subprocess.run(
+            [
+                "ffmpeg",
+                "-v",
+                "error",
+                "-threads",
+                "1",
+                "-i",
+                str(root / "preview.mp4"),
+                "-vf",
+                filter_value,
+                "-fps_mode",
+                "passthrough",
+                "-c:v",
+                "libx264",
+                str(altered),
+            ],
+            check=True,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
+            timeout=30,
+        )
+
+tests/self_improving/harness/x2env/test_assessment.py:1024: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+input = None, capture_output = False, timeout = 30, check = True
+popenargs = (['ffmpeg', '-v', 'error', '-threads', '1', '-i', ...],)
+kwargs = {'stdout': -1, 'stderr': -1}
+
+    def run(*popenargs,
+            input=None, capture_output=False, timeout=None, check=False, **kwargs):
+        """Run command with arguments and return a CompletedProcess instance.
+    
+        The returned instance will have attributes args, returncode, stdout and
+        stderr. By default, stdout and stderr are not captured, and those attributes
+        will be None. Pass stdout=PIPE and/or stderr=PIPE in order to capture them,
+        or pass capture_output=True to capture both.
+    
+        If check is True and the exit code was non-zero, it raises a
+        CalledProcessError. The CalledProcessError object will have the return code
+        in the returncode attribute, and output & stderr attributes if those streams
+        were captured.
+    
+        If timeout is given, and the process takes too long, a TimeoutExpired
+        exception will be raised.
+    
+        There is an optional argument "input", allowing you to
+        pass bytes or a string to the subprocess's stdin.  If you use this argument
+        you may not also use the Popen constructor's "stdin" argument, as
+        it will be used internally.
+    
+        By default, all communication is in bytes, and therefore any "input" should
+        be bytes, and the stdout and stderr will be bytes. If in text mode, any
+        "input" should be a string, and stdout and stderr will be strings decoded
+        according to locale encoding, or by "encoding" if set. Text mode is
+        triggered by setting any of text, encoding, errors or universal_newlines.
+    
+        The other arguments are the same as for the Popen constructor.
+        """
+        if input is not None:
+            if kwargs.get('stdin') is not None:
+                raise ValueError('stdin and input arguments may not both be used.')
+            kwargs['stdin'] = PIPE
+    
+        if capture_output:
+            if kwargs.get('stdout') is not None or kwargs.get('stderr') is not None:
+                raise ValueError('stdout and stderr arguments may not be used '
+                                 'with capture_output.')
+            kwargs['stdout'] = PIPE
+            kwargs['stderr'] = PIPE
+    
+        with Popen(*popenargs, **kwargs) as process:
+            try:
+                stdout, stderr = process.communicate(input, timeout=timeout)
+            except TimeoutExpired as exc:
+                process.kill()
+                if _mswindows:
+                    # Windows accumulates the output in a single blocking
+                    # read() call run on child threads, with the timeout
+                    # being done in a join() on those threads.  communicate()
+                    # _after_ kill() is required to collect that and add it
+                    # to the exception.
+                    exc.stdout, exc.stderr = process.communicate()
+                else:
+                    # POSIX _communicate already populated the output so
+                    # far into the TimeoutExpired exception.
+                    process.wait()
+                raise
+            except:  # Including KeyboardInterrupt, communicate handled that.
+                process.kill()
+                # We don't call process.wait() as .__exit__ does that for us.
+                raise
+            retcode = process.poll()
+            if check and retcode:
+>               raise CalledProcessError(retcode, process.args,
+                                         output=stdout, stderr=stderr)
+E               subprocess.CalledProcessError: Command '['ffmpeg', '-v', 'error', '-threads', '1', '-i', '/tmp/pytest-of-root/pytest-57/test_rehashed_encoded_video_mu1/baseline/preview.mp4', '-vf', 'scale=64:32', '-fps_mode', 'passthrough', '-c:v', 'libx264', '/tmp/pytest-of-root/pytest-57/test_rehashed_encoded_video_mu1/baseline/altered.mp4']' returned non-zero exit status 1.
+
+/runtime/python/lib/python3.12/subprocess.py:571: CalledProcessError
+______________ test_video_advisory_uses_verified_original_frames _______________
+
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-57/test_video_advisory_uses_verif0')
+
+    def test_video_advisory_uses_verified_original_frames(tmp_path):
+        from self_improving.harness.x2env.codex import CodexBackend
+        from self_improving.harness.x2env.contracts import InputMedia
+    
+        video = tmp_path / "input.mp4"
+        subprocess.run(
+            [
+                "ffmpeg",
+                "-v",
+                "error",
+                "-f",
+                "lavfi",
+                "-i",
+                "testsrc2=size=32x24:rate=4:duration=1",
+                "-c:v",
+                "libx264",
+                "-pix_fmt",
+                "yuv420p",
+                str(video),
+            ],
+            check=True,
+            timeout=30,
+        )
+        store = Store(tmp_path / "state")
+>       bundle = ingest(
+            X2EnvRequest(
+                video=InputMedia(path=str(video)),
+                seed=1,
+                idempotency_key="video",
+                output_dir=str(tmp_path),
+            ),
+            store,
+        )
+
+tests/self_improving/harness/x2env/test_codex.py:469: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+self_improving/harness/x2env/input.py:279: in ingest
+    video = _video(raw, source, artifact_store, limits, artifacts)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+self_improving/harness/x2env/input.py:159: in _video
+    hashes = _command(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+command = ['ffmpeg', '-v', 'error', '-xerror', '-nostdin', '-i', ...]
+store = <self_improving.harness.x2env.store.Store object at 0x7f1c49bba300>
+limits = IngestLimits(source_bytes=67108864, decoded_pixels=16000000, video_frames=600, video_seconds=60, decoded_bytes=1073741824, decoder_seconds=60)
+evidence = [ArtifactRef(sha256='37157f8dc92b7ad5b597e992cbb59d9e6dabf8dae2bbac318d4ab9abf46262f9', size_bytes=2271, media_type='a...Ref(sha256='08ea441c5e0d672de57eb848b0d7f078ae748c72dab4c2861f69274f5adc428c', size_bytes=84, media_type='text/plain')]
+
+    def _command(command, store, limits, evidence):
+        try:
+            result = subprocess.run(command, capture_output=True, timeout=limits.decoder_seconds)
+        except FileNotFoundError as exc:
+            raise InputIngestError("blocked_external_resource", "FFmpeg decoder unavailable") from exc
+        except subprocess.TimeoutExpired as exc:
+            for output in (exc.stdout, exc.stderr):
+                if output:
+                    evidence.append(store.write_artifact(output, "text/plain"))
+            raise InputIngestError("input_decode_timeout", "media decoder exceeded budget") from exc
+        evidence.append(store.write_artifact(result.stdout, "text/plain"))
+        evidence.append(store.write_artifact(result.stderr, "text/plain"))
+        if result.returncode:
+>           raise InputIngestError("invalid_video", "media decoder rejected source")
+E           self_improving.harness.x2env.input.InputIngestError: media decoder rejected source
+
+self_improving/harness/x2env/input.py:125: InputIngestError
+_______ test_video_selection_verifies_frame_zero_against_complete_ingest _______
+
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-57/test_video_selection_verifies_0')
+
+    def test_video_selection_verifies_frame_zero_against_complete_ingest(tmp_path):
+        import subprocess
+    
+        from self_improving.harness.x2env.contracts import InputMedia
+        from self_improving.harness.x2env.deployment import select_reconstruction_image
+        from self_improving.harness.x2env.input import ingest
+        from self_improving.harness.x2env.store import Store
+    
+        video = tmp_path / "input.mp4"
+        subprocess.run(
+            [
+                "ffmpeg",
+                "-v",
+                "error",
+                "-f",
+                "lavfi",
+                "-i",
+                "testsrc2=size=32x24:rate=4:duration=1",
+                "-c:v",
+                "libx264",
+                "-pix_fmt",
+                "yuv420p",
+                str(video),
+            ],
+            check=True,
+            timeout=30,
+        )
+        store = Store(tmp_path / "state")
+>       bundle = ingest(
+            X2EnvRequest(
+                video=InputMedia(path=str(video)),
+                seed=19,
+                idempotency_key="video",
+                output_dir=str(tmp_path / "out"),
+            ),
+            store,
+        )
+
+tests/self_improving/harness/x2env/test_deployment.py:437: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+self_improving/harness/x2env/input.py:279: in ingest
+    video = _video(raw, source, artifact_store, limits, artifacts)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+self_improving/harness/x2env/input.py:159: in _video
+    hashes = _command(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+command = ['ffmpeg', '-v', 'error', '-xerror', '-nostdin', '-i', ...]
+store = <self_improving.harness.x2env.store.Store object at 0x7f1c43b62630>
+limits = IngestLimits(source_bytes=67108864, decoded_pixels=16000000, video_frames=600, video_seconds=60, decoded_bytes=1073741824, decoder_seconds=60)
+evidence = [ArtifactRef(sha256='37157f8dc92b7ad5b597e992cbb59d9e6dabf8dae2bbac318d4ab9abf46262f9', size_bytes=2271, media_type='a...Ref(sha256='08ea441c5e0d672de57eb848b0d7f078ae748c72dab4c2861f69274f5adc428c', size_bytes=84, media_type='text/plain')]
+
+    def _command(command, store, limits, evidence):
+        try:
+            result = subprocess.run(command, capture_output=True, timeout=limits.decoder_seconds)
+        except FileNotFoundError as exc:
+            raise InputIngestError("blocked_external_resource", "FFmpeg decoder unavailable") from exc
+        except subprocess.TimeoutExpired as exc:
+            for output in (exc.stdout, exc.stderr):
+                if output:
+                    evidence.append(store.write_artifact(output, "text/plain"))
+            raise InputIngestError("input_decode_timeout", "media decoder exceeded budget") from exc
+        evidence.append(store.write_artifact(result.stdout, "text/plain"))
+        evidence.append(store.write_artifact(result.stderr, "text/plain"))
+        if result.returncode:
+>           raise InputIngestError("invalid_video", "media decoder rejected source")
+E           self_improving.harness.x2env.input.InputIngestError: media decoder rejected source
+
+self_improving/harness/x2env/input.py:125: InputIngestError
+_ test_public_video_selection_rejects_unbound_or_unavailable_frames[partial_decode-unbound_video_sequence] _
+
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-57/test_public_video_selection_re0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7f1c43a02840>
+fault = 'partial_decode', error = 'unbound_video_sequence'
+
+    @pytest.mark.parametrize(
+        "fault,error",
+        [
+            ("partial_decode", "unbound_video_sequence"),
+            ("foreign_source", "unbound_video_sequence"),
+            ("first_index", "incomplete_video_sequence"),
+            ("frame_count", "incomplete_video_sequence"),
+            ("relative_output", "unsafe frame extraction root"),
+            ("symbolic_output", "unsafe frame extraction root"),
+            ("decoder_timeout", "frame_decode_timeout"),
+        ],
+    )
+    def test_public_video_selection_rejects_unbound_or_unavailable_frames(
+        tmp_path, monkeypatch, fault, error
+    ):
+        from self_improving.harness.x2env.contracts import InputMedia
+        from self_improving.harness.x2env.deployment import select_reconstruction_image
+        from self_improving.harness.x2env.store import Store
+    
+        video = tmp_path / "input.mp4"
+        subprocess.run(
+            [
+                "ffmpeg",
+                "-v",
+                "error",
+                "-f",
+                "lavfi",
+                "-i",
+                "testsrc2=size=32x24:rate=4:duration=1",
+                "-c:v",
+                "libx264",
+                "-pix_fmt",
+                "yuv420p",
+                str(video),
+            ],
+            check=True,
+            timeout=30,
+        )
+        store = Store(tmp_path / "state")
+>       bundle = ingest(
+            X2EnvRequest(
+                video=InputMedia(path=str(video)),
+                seed=19,
+                idempotency_key="video-edge",
+                output_dir=str(tmp_path / "out"),
+            ),
+            store,
+        )
+
+tests/self_improving/harness/x2env/test_deployment_edges.py:59: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+self_improving/harness/x2env/input.py:279: in ingest
+    video = _video(raw, source, artifact_store, limits, artifacts)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+self_improving/harness/x2env/input.py:159: in _video
+    hashes = _command(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+command = ['ffmpeg', '-v', 'error', '-xerror', '-nostdin', '-i', ...]
+store = <self_improving.harness.x2env.store.Store object at 0x7f1c43a02d50>
+limits = IngestLimits(source_bytes=67108864, decoded_pixels=16000000, video_frames=600, video_seconds=60, decoded_bytes=1073741824, decoder_seconds=60)
+evidence = [ArtifactRef(sha256='37157f8dc92b7ad5b597e992cbb59d9e6dabf8dae2bbac318d4ab9abf46262f9', size_bytes=2271, media_type='a...Ref(sha256='08ea441c5e0d672de57eb848b0d7f078ae748c72dab4c2861f69274f5adc428c', size_bytes=84, media_type='text/plain')]
+
+    def _command(command, store, limits, evidence):
+        try:
+            result = subprocess.run(command, capture_output=True, timeout=limits.decoder_seconds)
+        except FileNotFoundError as exc:
+            raise InputIngestError("blocked_external_resource", "FFmpeg decoder unavailable") from exc
+        except subprocess.TimeoutExpired as exc:
+            for output in (exc.stdout, exc.stderr):
+                if output:
+                    evidence.append(store.write_artifact(output, "text/plain"))
+            raise InputIngestError("input_decode_timeout", "media decoder exceeded budget") from exc
+        evidence.append(store.write_artifact(result.stdout, "text/plain"))
+        evidence.append(store.write_artifact(result.stderr, "text/plain"))
+        if result.returncode:
+>           raise InputIngestError("invalid_video", "media decoder rejected source")
+E           self_improving.harness.x2env.input.InputIngestError: media decoder rejected source
+
+self_improving/harness/x2env/input.py:125: InputIngestError
+_ test_public_video_selection_rejects_unbound_or_unavailable_frames[foreign_source-unbound_video_sequence] _
+
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-57/test_public_video_selection_re1')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7f1c43a02930>
+fault = 'foreign_source', error = 'unbound_video_sequence'
+
+    @pytest.mark.parametrize(
+        "fault,error",
+        [
+            ("partial_decode", "unbound_video_sequence"),
+            ("foreign_source", "unbound_video_sequence"),
+            ("first_index", "incomplete_video_sequence"),
+            ("frame_count", "incomplete_video_sequence"),
+            ("relative_output", "unsafe frame extraction root"),
+            ("symbolic_output", "unsafe frame extraction root"),
+            ("decoder_timeout", "frame_decode_timeout"),
+        ],
+    )
+    def test_public_video_selection_rejects_unbound_or_unavailable_frames(
+        tmp_path, monkeypatch, fault, error
+    ):
+        from self_improving.harness.x2env.contracts import InputMedia
+        from self_improving.harness.x2env.deployment import select_reconstruction_image
+        from self_improving.harness.x2env.store import Store
+    
+        video = tmp_path / "input.mp4"
+        subprocess.run(
+            [
+                "ffmpeg",
+                "-v",
+                "error",
+                "-f",
+                "lavfi",
+                "-i",
+                "testsrc2=size=32x24:rate=4:duration=1",
+                "-c:v",
+                "libx264",
+                "-pix_fmt",
+                "yuv420p",
+                str(video),
+            ],
+            check=True,
+            timeout=30,
+        )
+        store = Store(tmp_path / "state")
+>       bundle = ingest(
+            X2EnvRequest(
+                video=InputMedia(path=str(video)),
+                seed=19,
+                idempotency_key="video-edge",
+                output_dir=str(tmp_path / "out"),
+            ),
+            store,
+        )
+
+tests/self_improving/harness/x2env/test_deployment_edges.py:59: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+self_improving/harness/x2env/input.py:279: in ingest
+    video = _video(raw, source, artifact_store, limits, artifacts)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+self_improving/harness/x2env/input.py:159: in _video
+    hashes = _command(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+command = ['ffmpeg', '-v', 'error', '-xerror', '-nostdin', '-i', ...]
+store = <self_improving.harness.x2env.store.Store object at 0x7f1c43a012b0>
+limits = IngestLimits(source_bytes=67108864, decoded_pixels=16000000, video_frames=600, video_seconds=60, decoded_bytes=1073741824, decoder_seconds=60)
+evidence = [ArtifactRef(sha256='37157f8dc92b7ad5b597e992cbb59d9e6dabf8dae2bbac318d4ab9abf46262f9', size_bytes=2271, media_type='a...Ref(sha256='08ea441c5e0d672de57eb848b0d7f078ae748c72dab4c2861f69274f5adc428c', size_bytes=84, media_type='text/plain')]
+
+    def _command(command, store, limits, evidence):
+        try:
+            result = subprocess.run(command, capture_output=True, timeout=limits.decoder_seconds)
+        except FileNotFoundError as exc:
+            raise InputIngestError("blocked_external_resource", "FFmpeg decoder unavailable") from exc
+        except subprocess.TimeoutExpired as exc:
+            for output in (exc.stdout, exc.stderr):
+                if output:
+                    evidence.append(store.write_artifact(output, "text/plain"))
+            raise InputIngestError("input_decode_timeout", "media decoder exceeded budget") from exc
+        evidence.append(store.write_artifact(result.stdout, "text/plain"))
+        evidence.append(store.write_artifact(result.stderr, "text/plain"))
+        if result.returncode:
+>           raise InputIngestError("invalid_video", "media decoder rejected source")
+E           self_improving.harness.x2env.input.InputIngestError: media decoder rejected source
+
+self_improving/harness/x2env/input.py:125: InputIngestError
+_ test_public_video_selection_rejects_unbound_or_unavailable_frames[first_index-incomplete_video_sequence] _
+
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-57/test_public_video_selection_re2')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7f1c43b63da0>
+fault = 'first_index', error = 'incomplete_video_sequence'
+
+    @pytest.mark.parametrize(
+        "fault,error",
+        [
+            ("partial_decode", "unbound_video_sequence"),
+            ("foreign_source", "unbound_video_sequence"),
+            ("first_index", "incomplete_video_sequence"),
+            ("frame_count", "incomplete_video_sequence"),
+            ("relative_output", "unsafe frame extraction root"),
+            ("symbolic_output", "unsafe frame extraction root"),
+            ("decoder_timeout", "frame_decode_timeout"),
+        ],
+    )
+    def test_public_video_selection_rejects_unbound_or_unavailable_frames(
+        tmp_path, monkeypatch, fault, error
+    ):
+        from self_improving.harness.x2env.contracts import InputMedia
+        from self_improving.harness.x2env.deployment import select_reconstruction_image
+        from self_improving.harness.x2env.store import Store
+    
+        video = tmp_path / "input.mp4"
+        subprocess.run(
+            [
+                "ffmpeg",
+                "-v",
+                "error",
+                "-f",
+                "lavfi",
+                "-i",
+                "testsrc2=size=32x24:rate=4:duration=1",
+                "-c:v",
+                "libx264",
+                "-pix_fmt",
+                "yuv420p",
+                str(video),
+            ],
+            check=True,
+            timeout=30,
+        )
+        store = Store(tmp_path / "state")
+>       bundle = ingest(
+            X2EnvRequest(
+                video=InputMedia(path=str(video)),
+                seed=19,
+                idempotency_key="video-edge",
+                output_dir=str(tmp_path / "out"),
+            ),
+            store,
+        )
+
+tests/self_improving/harness/x2env/test_deployment_edges.py:59: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+self_improving/harness/x2env/input.py:279: in ingest
+    video = _video(raw, source, artifact_store, limits, artifacts)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+self_improving/harness/x2env/input.py:159: in _video
+    hashes = _command(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+command = ['ffmpeg', '-v', 'error', '-xerror', '-nostdin', '-i', ...]
+store = <self_improving.harness.x2env.store.Store object at 0x7f1c43b638f0>
+limits = IngestLimits(source_bytes=67108864, decoded_pixels=16000000, video_frames=600, video_seconds=60, decoded_bytes=1073741824, decoder_seconds=60)
+evidence = [ArtifactRef(sha256='37157f8dc92b7ad5b597e992cbb59d9e6dabf8dae2bbac318d4ab9abf46262f9', size_bytes=2271, media_type='a...Ref(sha256='08ea441c5e0d672de57eb848b0d7f078ae748c72dab4c2861f69274f5adc428c', size_bytes=84, media_type='text/plain')]
+
+    def _command(command, store, limits, evidence):
+        try:
+            result = subprocess.run(command, capture_output=True, timeout=limits.decoder_seconds)
+        except FileNotFoundError as exc:
+            raise InputIngestError("blocked_external_resource", "FFmpeg decoder unavailable") from exc
+        except subprocess.TimeoutExpired as exc:
+            for output in (exc.stdout, exc.stderr):
+                if output:
+                    evidence.append(store.write_artifact(output, "text/plain"))
+            raise InputIngestError("input_decode_timeout", "media decoder exceeded budget") from exc
+        evidence.append(store.write_artifact(result.stdout, "text/plain"))
+        evidence.append(store.write_artifact(result.stderr, "text/plain"))
+        if result.returncode:
+>           raise InputIngestError("invalid_video", "media decoder rejected source")
+E           self_improving.harness.x2env.input.InputIngestError: media decoder rejected source
+
+self_improving/harness/x2env/input.py:125: InputIngestError
+_ test_public_video_selection_rejects_unbound_or_unavailable_frames[frame_count-incomplete_video_sequence] _
+
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-57/test_public_video_selection_re3')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7f1c49984e60>
+fault = 'frame_count', error = 'incomplete_video_sequence'
+
+    @pytest.mark.parametrize(
+        "fault,error",
+        [
+            ("partial_decode", "unbound_video_sequence"),
+            ("foreign_source", "unbound_video_sequence"),
+            ("first_index", "incomplete_video_sequence"),
+            ("frame_count", "incomplete_video_sequence"),
+            ("relative_output", "unsafe frame extraction root"),
+            ("symbolic_output", "unsafe frame extraction root"),
+            ("decoder_timeout", "frame_decode_timeout"),
+        ],
+    )
+    def test_public_video_selection_rejects_unbound_or_unavailable_frames(
+        tmp_path, monkeypatch, fault, error
+    ):
+        from self_improving.harness.x2env.contracts import InputMedia
+        from self_improving.harness.x2env.deployment import select_reconstruction_image
+        from self_improving.harness.x2env.store import Store
+    
+        video = tmp_path / "input.mp4"
+        subprocess.run(
+            [
+                "ffmpeg",
+                "-v",
+                "error",
+                "-f",
+                "lavfi",
+                "-i",
+                "testsrc2=size=32x24:rate=4:duration=1",
+                "-c:v",
+                "libx264",
+                "-pix_fmt",
+                "yuv420p",
+                str(video),
+            ],
+            check=True,
+            timeout=30,
+        )
+        store = Store(tmp_path / "state")
+>       bundle = ingest(
+            X2EnvRequest(
+                video=InputMedia(path=str(video)),
+                seed=19,
+                idempotency_key="video-edge",
+                output_dir=str(tmp_path / "out"),
+            ),
+            store,
+        )
+
+tests/self_improving/harness/x2env/test_deployment_edges.py:59: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+self_improving/harness/x2env/input.py:279: in ingest
+    video = _video(raw, source, artifact_store, limits, artifacts)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+self_improving/harness/x2env/input.py:159: in _video
+    hashes = _command(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+command = ['ffmpeg', '-v', 'error', '-xerror', '-nostdin', '-i', ...]
+store = <self_improving.harness.x2env.store.Store object at 0x7f1c49987d70>
+limits = IngestLimits(source_bytes=67108864, decoded_pixels=16000000, video_frames=600, video_seconds=60, decoded_bytes=1073741824, decoder_seconds=60)
+evidence = [ArtifactRef(sha256='37157f8dc92b7ad5b597e992cbb59d9e6dabf8dae2bbac318d4ab9abf46262f9', size_bytes=2271, media_type='a...Ref(sha256='08ea441c5e0d672de57eb848b0d7f078ae748c72dab4c2861f69274f5adc428c', size_bytes=84, media_type='text/plain')]
+
+    def _command(command, store, limits, evidence):
+        try:
+            result = subprocess.run(command, capture_output=True, timeout=limits.decoder_seconds)
+        except FileNotFoundError as exc:
+            raise InputIngestError("blocked_external_resource", "FFmpeg decoder unavailable") from exc
+        except subprocess.TimeoutExpired as exc:
+            for output in (exc.stdout, exc.stderr):
+                if output:
+                    evidence.append(store.write_artifact(output, "text/plain"))
+            raise InputIngestError("input_decode_timeout", "media decoder exceeded budget") from exc
+        evidence.append(store.write_artifact(result.stdout, "text/plain"))
+        evidence.append(store.write_artifact(result.stderr, "text/plain"))
+        if result.returncode:
+>           raise InputIngestError("invalid_video", "media decoder rejected source")
+E           self_improving.harness.x2env.input.InputIngestError: media decoder rejected source
+
+self_improving/harness/x2env/input.py:125: InputIngestError
+_ test_public_video_selection_rejects_unbound_or_unavailable_frames[relative_output-unsafe frame extraction root] _
+
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-57/test_public_video_selection_re4')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7f1c49987020>
+fault = 'relative_output', error = 'unsafe frame extraction root'
+
+    @pytest.mark.parametrize(
+        "fault,error",
+        [
+            ("partial_decode", "unbound_video_sequence"),
+            ("foreign_source", "unbound_video_sequence"),
+            ("first_index", "incomplete_video_sequence"),
+            ("frame_count", "incomplete_video_sequence"),
+            ("relative_output", "unsafe frame extraction root"),
+            ("symbolic_output", "unsafe frame extraction root"),
+            ("decoder_timeout", "frame_decode_timeout"),
+        ],
+    )
+    def test_public_video_selection_rejects_unbound_or_unavailable_frames(
+        tmp_path, monkeypatch, fault, error
+    ):
+        from self_improving.harness.x2env.contracts import InputMedia
+        from self_improving.harness.x2env.deployment import select_reconstruction_image
+        from self_improving.harness.x2env.store import Store
+    
+        video = tmp_path / "input.mp4"
+        subprocess.run(
+            [
+                "ffmpeg",
+                "-v",
+                "error",
+                "-f",
+                "lavfi",
+                "-i",
+                "testsrc2=size=32x24:rate=4:duration=1",
+                "-c:v",
+                "libx264",
+                "-pix_fmt",
+                "yuv420p",
+                str(video),
+            ],
+            check=True,
+            timeout=30,
+        )
+        store = Store(tmp_path / "state")
+>       bundle = ingest(
+            X2EnvRequest(
+                video=InputMedia(path=str(video)),
+                seed=19,
+                idempotency_key="video-edge",
+                output_dir=str(tmp_path / "out"),
+            ),
+            store,
+        )
+
+tests/self_improving/harness/x2env/test_deployment_edges.py:59: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+self_improving/harness/x2env/input.py:279: in ingest
+    video = _video(raw, source, artifact_store, limits, artifacts)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+self_improving/harness/x2env/input.py:159: in _video
+    hashes = _command(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+command = ['ffmpeg', '-v', 'error', '-xerror', '-nostdin', '-i', ...]
+store = <self_improving.harness.x2env.store.Store object at 0x7f1c499874d0>
+limits = IngestLimits(source_bytes=67108864, decoded_pixels=16000000, video_frames=600, video_seconds=60, decoded_bytes=1073741824, decoder_seconds=60)
+evidence = [ArtifactRef(sha256='37157f8dc92b7ad5b597e992cbb59d9e6dabf8dae2bbac318d4ab9abf46262f9', size_bytes=2271, media_type='a...Ref(sha256='08ea441c5e0d672de57eb848b0d7f078ae748c72dab4c2861f69274f5adc428c', size_bytes=84, media_type='text/plain')]
+
+    def _command(command, store, limits, evidence):
+        try:
+            result = subprocess.run(command, capture_output=True, timeout=limits.decoder_seconds)
+        except FileNotFoundError as exc:
+            raise InputIngestError("blocked_external_resource", "FFmpeg decoder unavailable") from exc
+        except subprocess.TimeoutExpired as exc:
+            for output in (exc.stdout, exc.stderr):
+                if output:
+                    evidence.append(store.write_artifact(output, "text/plain"))
+            raise InputIngestError("input_decode_timeout", "media decoder exceeded budget") from exc
+        evidence.append(store.write_artifact(result.stdout, "text/plain"))
+        evidence.append(store.write_artifact(result.stderr, "text/plain"))
+        if result.returncode:
+>           raise InputIngestError("invalid_video", "media decoder rejected source")
+E           self_improving.harness.x2env.input.InputIngestError: media decoder rejected source
+
+self_improving/harness/x2env/input.py:125: InputIngestError
+_ test_public_video_selection_rejects_unbound_or_unavailable_frames[symbolic_output-unsafe frame extraction root] _
+
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-57/test_public_video_selection_re5')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7f1c49986a20>
+fault = 'symbolic_output', error = 'unsafe frame extraction root'
+
+    @pytest.mark.parametrize(
+        "fault,error",
+        [
+            ("partial_decode", "unbound_video_sequence"),
+            ("foreign_source", "unbound_video_sequence"),
+            ("first_index", "incomplete_video_sequence"),
+            ("frame_count", "incomplete_video_sequence"),
+            ("relative_output", "unsafe frame extraction root"),
+            ("symbolic_output", "unsafe frame extraction root"),
+            ("decoder_timeout", "frame_decode_timeout"),
+        ],
+    )
+    def test_public_video_selection_rejects_unbound_or_unavailable_frames(
+        tmp_path, monkeypatch, fault, error
+    ):
+        from self_improving.harness.x2env.contracts import InputMedia
+        from self_improving.harness.x2env.deployment import select_reconstruction_image
+        from self_improving.harness.x2env.store import Store
+    
+        video = tmp_path / "input.mp4"
+        subprocess.run(
+            [
+                "ffmpeg",
+                "-v",
+                "error",
+                "-f",
+                "lavfi",
+                "-i",
+                "testsrc2=size=32x24:rate=4:duration=1",
+                "-c:v",
+                "libx264",
+                "-pix_fmt",
+                "yuv420p",
+                str(video),
+            ],
+            check=True,
+            timeout=30,
+        )
+        store = Store(tmp_path / "state")
+>       bundle = ingest(
+            X2EnvRequest(
+                video=InputMedia(path=str(video)),
+                seed=19,
+                idempotency_key="video-edge",
+                output_dir=str(tmp_path / "out"),
+            ),
+            store,
+        )
+
+tests/self_improving/harness/x2env/test_deployment_edges.py:59: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+self_improving/harness/x2env/input.py:279: in ingest
+    video = _video(raw, source, artifact_store, limits, artifacts)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+self_improving/harness/x2env/input.py:159: in _video
+    hashes = _command(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+command = ['ffmpeg', '-v', 'error', '-xerror', '-nostdin', '-i', ...]
+store = <self_improving.harness.x2env.store.Store object at 0x7f1c49987260>
+limits = IngestLimits(source_bytes=67108864, decoded_pixels=16000000, video_frames=600, video_seconds=60, decoded_bytes=1073741824, decoder_seconds=60)
+evidence = [ArtifactRef(sha256='37157f8dc92b7ad5b597e992cbb59d9e6dabf8dae2bbac318d4ab9abf46262f9', size_bytes=2271, media_type='a...Ref(sha256='08ea441c5e0d672de57eb848b0d7f078ae748c72dab4c2861f69274f5adc428c', size_bytes=84, media_type='text/plain')]
+
+    def _command(command, store, limits, evidence):
+        try:
+            result = subprocess.run(command, capture_output=True, timeout=limits.decoder_seconds)
+        except FileNotFoundError as exc:
+            raise InputIngestError("blocked_external_resource", "FFmpeg decoder unavailable") from exc
+        except subprocess.TimeoutExpired as exc:
+            for output in (exc.stdout, exc.stderr):
+                if output:
+                    evidence.append(store.write_artifact(output, "text/plain"))
+            raise InputIngestError("input_decode_timeout", "media decoder exceeded budget") from exc
+        evidence.append(store.write_artifact(result.stdout, "text/plain"))
+        evidence.append(store.write_artifact(result.stderr, "text/plain"))
+        if result.returncode:
+>           raise InputIngestError("invalid_video", "media decoder rejected source")
+E           self_improving.harness.x2env.input.InputIngestError: media decoder rejected source
+
+self_improving/harness/x2env/input.py:125: InputIngestError
+_ test_public_video_selection_rejects_unbound_or_unavailable_frames[decoder_timeout-frame_decode_timeout] _
+
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-57/test_public_video_selection_re6')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7f1c49985520>
+fault = 'decoder_timeout', error = 'frame_decode_timeout'
+
+    @pytest.mark.parametrize(
+        "fault,error",
+        [
+            ("partial_decode", "unbound_video_sequence"),
+            ("foreign_source", "unbound_video_sequence"),
+            ("first_index", "incomplete_video_sequence"),
+            ("frame_count", "incomplete_video_sequence"),
+            ("relative_output", "unsafe frame extraction root"),
+            ("symbolic_output", "unsafe frame extraction root"),
+            ("decoder_timeout", "frame_decode_timeout"),
+        ],
+    )
+    def test_public_video_selection_rejects_unbound_or_unavailable_frames(
+        tmp_path, monkeypatch, fault, error
+    ):
+        from self_improving.harness.x2env.contracts import InputMedia
+        from self_improving.harness.x2env.deployment import select_reconstruction_image
+        from self_improving.harness.x2env.store import Store
+    
+        video = tmp_path / "input.mp4"
+        subprocess.run(
+            [
+                "ffmpeg",
+                "-v",
+                "error",
+                "-f",
+                "lavfi",
+                "-i",
+                "testsrc2=size=32x24:rate=4:duration=1",
+                "-c:v",
+                "libx264",
+                "-pix_fmt",
+                "yuv420p",
+                str(video),
+            ],
+            check=True,
+            timeout=30,
+        )
+        store = Store(tmp_path / "state")
+>       bundle = ingest(
+            X2EnvRequest(
+                video=InputMedia(path=str(video)),
+                seed=19,
+                idempotency_key="video-edge",
+                output_dir=str(tmp_path / "out"),
+            ),
+            store,
+        )
+
+tests/self_improving/harness/x2env/test_deployment_edges.py:59: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+self_improving/harness/x2env/input.py:279: in ingest
+    video = _video(raw, source, artifact_store, limits, artifacts)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+self_improving/harness/x2env/input.py:159: in _video
+    hashes = _command(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+command = ['ffmpeg', '-v', 'error', '-xerror', '-nostdin', '-i', ...]
+store = <self_improving.harness.x2env.store.Store object at 0x7f1c499844d0>
+limits = IngestLimits(source_bytes=67108864, decoded_pixels=16000000, video_frames=600, video_seconds=60, decoded_bytes=1073741824, decoder_seconds=60)
+evidence = [ArtifactRef(sha256='37157f8dc92b7ad5b597e992cbb59d9e6dabf8dae2bbac318d4ab9abf46262f9', size_bytes=2271, media_type='a...Ref(sha256='08ea441c5e0d672de57eb848b0d7f078ae748c72dab4c2861f69274f5adc428c', size_bytes=84, media_type='text/plain')]
+
+    def _command(command, store, limits, evidence):
+        try:
+            result = subprocess.run(command, capture_output=True, timeout=limits.decoder_seconds)
+        except FileNotFoundError as exc:
+            raise InputIngestError("blocked_external_resource", "FFmpeg decoder unavailable") from exc
+        except subprocess.TimeoutExpired as exc:
+            for output in (exc.stdout, exc.stderr):
+                if output:
+                    evidence.append(store.write_artifact(output, "text/plain"))
+            raise InputIngestError("input_decode_timeout", "media decoder exceeded budget") from exc
+        evidence.append(store.write_artifact(result.stdout, "text/plain"))
+        evidence.append(store.write_artifact(result.stderr, "text/plain"))
+        if result.returncode:
+>           raise InputIngestError("invalid_video", "media decoder rejected source")
+E           self_improving.harness.x2env.input.InputIngestError: media decoder rejected source
+
+self_improving/harness/x2env/input.py:125: InputIngestError
+____________ test_real_video_ingest_records_every_frame_in_sequence ____________
+
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-57/test_real_video_ingest_records0')
+
+    def test_real_video_ingest_records_every_frame_in_sequence(tmp_path):
+        from self_improving.harness.x2env.input import ingest
+    
+        video = tmp_path / "input.mp4"
+        subprocess.run(
+            [
+                "ffmpeg",
+                "-v",
+                "error",
+                "-f",
+                "lavfi",
+                "-i",
+                "testsrc2=size=32x24:rate=4:duration=1",
+                "-c:v",
+                "libx264",
+                "-pix_fmt",
+                "yuv420p",
+                str(video),
+            ],
+            check=True,
+            timeout=30,
+        )
+        store = Store(tmp_path / "state")
+>       result = ingest(request(tmp_path, video=InputMedia(path=str(video))), store)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/self_improving/harness/x2env/test_input.py:83: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+self_improving/harness/x2env/input.py:279: in ingest
+    video = _video(raw, source, artifact_store, limits, artifacts)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+self_improving/harness/x2env/input.py:159: in _video
+    hashes = _command(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+command = ['ffmpeg', '-v', 'error', '-xerror', '-nostdin', '-i', ...]
+store = <self_improving.harness.x2env.store.Store object at 0x7f1c43808950>
+limits = IngestLimits(source_bytes=67108864, decoded_pixels=16000000, video_frames=600, video_seconds=60, decoded_bytes=1073741824, decoder_seconds=60)
+evidence = [ArtifactRef(sha256='37157f8dc92b7ad5b597e992cbb59d9e6dabf8dae2bbac318d4ab9abf46262f9', size_bytes=2271, media_type='a...Ref(sha256='08ea441c5e0d672de57eb848b0d7f078ae748c72dab4c2861f69274f5adc428c', size_bytes=84, media_type='text/plain')]
+
+    def _command(command, store, limits, evidence):
+        try:
+            result = subprocess.run(command, capture_output=True, timeout=limits.decoder_seconds)
+        except FileNotFoundError as exc:
+            raise InputIngestError("blocked_external_resource", "FFmpeg decoder unavailable") from exc
+        except subprocess.TimeoutExpired as exc:
+            for output in (exc.stdout, exc.stderr):
+                if output:
+                    evidence.append(store.write_artifact(output, "text/plain"))
+            raise InputIngestError("input_decode_timeout", "media decoder exceeded budget") from exc
+        evidence.append(store.write_artifact(result.stdout, "text/plain"))
+        evidence.append(store.write_artifact(result.stderr, "text/plain"))
+        if result.returncode:
+>           raise InputIngestError("invalid_video", "media decoder rejected source")
+E           self_improving.harness.x2env.input.InputIngestError: media decoder rejected source
+
+self_improving/harness/x2env/input.py:125: InputIngestError
+=============================== warnings summary ===============================
+tests/demo/test_workbench_browser.py::test_browser_does_not_treat_an_empty_cache_as_authoritative_history
+  /workspace/TacHarness-genenv/outputs/genenv-audit-20261109/cpu/lib/python3.12/site-packages/_pytest/threadexception.py:54: PytestUnhandledThreadExceptionWarning: Exception in thread Thread-5 (publish_after_the_empty_page)
+  
+  Traceback (most recent call last):
+    File "/runtime/python/lib/python3.12/threading.py", line 1073, in _bootstrap_inner
+      self.run()
+    File "/runtime/python/lib/python3.12/threading.py", line 1010, in run
+      self._target(*self._args, **self._kwargs)
+    File "/workspace/TacHarness-genenv/thirdparty/robot-harness-gen-env/tests/demo/test_workbench_browser.py", line 394, in publish_after_the_empty_page
+      assert first_empty_page_returned.wait(timeout=5)
+  AssertionError: assert False
+   +  where False = wait(timeout=5)
+   +    where wait = <threading.Event at 0x7f1c49ddc4d0: unset>.wait
+  
+  Enable tracemalloc to get traceback where the object was allocated.
+  See https://docs.pytest.org/en/stable/how-to/capture-warnings.html#resource-warnings for more info.
+    warnings.warn(pytest.PytestUnhandledThreadExceptionWarning(msg))
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/self_improving/harness/x2env/test_assessment.py::test_rehashed_encoded_video_must_match_declared_capture[setpts=2*PTS-video frame timing differs from capture sequence]
+FAILED tests/self_improving/harness/x2env/test_assessment.py::test_rehashed_encoded_video_must_match_declared_capture[scale=64:32-video frame size/count differs]
+FAILED tests/self_improving/harness/x2env/test_codex.py::test_video_advisory_uses_verified_original_frames
+FAILED tests/self_improving/harness/x2env/test_deployment.py::test_video_selection_verifies_frame_zero_against_complete_ingest
+FAILED tests/self_improving/harness/x2env/test_deployment_edges.py::test_public_video_selection_rejects_unbound_or_unavailable_frames[partial_decode-unbound_video_sequence]
+FAILED tests/self_improving/harness/x2env/test_deployment_edges.py::test_public_video_selection_rejects_unbound_or_unavailable_frames[foreign_source-unbound_video_sequence]
+FAILED tests/self_improving/harness/x2env/test_deployment_edges.py::test_public_video_selection_rejects_unbound_or_unavailable_frames[first_index-incomplete_video_sequence]
+FAILED tests/self_improving/harness/x2env/test_deployment_edges.py::test_public_video_selection_rejects_unbound_or_unavailable_frames[frame_count-incomplete_video_sequence]
+FAILED tests/self_improving/harness/x2env/test_deployment_edges.py::test_public_video_selection_rejects_unbound_or_unavailable_frames[relative_output-unsafe frame extraction root]
+FAILED tests/self_improving/harness/x2env/test_deployment_edges.py::test_public_video_selection_rejects_unbound_or_unavailable_frames[symbolic_output-unsafe frame extraction root]
+FAILED tests/self_improving/harness/x2env/test_deployment_edges.py::test_public_video_selection_rejects_unbound_or_unavailable_frames[decoder_timeout-frame_decode_timeout]
+FAILED tests/self_improving/harness/x2env/test_input.py::test_real_video_ingest_records_every_frame_in_sequence
+12 failed, 1589 passed, 16 skipped, 1 warning in 424.65s (0:07:04)

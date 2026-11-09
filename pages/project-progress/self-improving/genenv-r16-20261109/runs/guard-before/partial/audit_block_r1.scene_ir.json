@@ -1,0 +1,131 @@
+{
+  "schema": "tacharness.scene_ir.v1",
+  "scene_id": "audit_block_r1",
+  "task_id": "robolab:AuditBlockR1Task",
+  "instruction": "Pick up the blue block and place it in the bowl",
+  "assets": [
+    {
+      "schema": "tacharness.scene_asset_ref.v1",
+      "asset_id": "blue_block",
+      "uri": "inputs/datasets/vendor/robolab/assets/objects/basic/blue_block.usd",
+      "sha256": "dd54b933b3b7f082319a2232df8ad43a6a82ff7343e110933adccc20f3b44eaf",
+      "kind": "usd",
+      "media_type": "model/vnd.usd",
+      "size_bytes": 19688
+    },
+    {
+      "schema": "tacharness.scene_asset_ref.v1",
+      "asset_id": "bowl",
+      "uri": "inputs/datasets/vendor/robolab/assets/objects/ycb/bowl.usd",
+      "sha256": "4674da9935073ec0355cf3e27ead3b87ab98588e1d9bbb116eedaa6fad3ce98e",
+      "kind": "usd",
+      "media_type": "model/vnd.usd",
+      "size_bytes": 342393
+    }
+  ],
+  "entities": [
+    {
+      "schema": "tacharness.scene_entity.v1",
+      "entity_id": "block_1",
+      "role": "manipuland",
+      "asset_id": "blue_block",
+      "pose": {
+        "translation": [
+          0.5,
+          0.1,
+          0.025502209782600406
+        ],
+        "orientation_wxyz": [
+          0.22987814376398116,
+          0.0,
+          0.0,
+          -0.9732194197711154
+        ],
+        "frame": "robolab_world"
+      }
+    },
+    {
+      "schema": "tacharness.scene_entity.v1",
+      "entity_id": "bowl_1",
+      "role": "target",
+      "asset_id": "bowl",
+      "pose": {
+        "translation": [
+          0.564032159,
+          -0.012159944,
+          0.029484999969601633
+        ],
+        "orientation_wxyz": [
+          0.5293488293117914,
+          0.0,
+          0.0,
+          0.8484042768080768
+        ],
+        "frame": "robolab_world"
+      }
+    }
+  ],
+  "robot": {
+    "provider": "robolab",
+    "embodiment": "droid/tacclaw"
+  },
+  "initial_state": {
+    "source": "gen-env resolved_scene",
+    "settle_required": true
+  },
+  "goal": {
+    "predicate": "inside(blue_block, bowl)"
+  },
+  "constraints": {
+    "success_hold_s": 2.0,
+    "reset_randomization": {
+      "assets": [
+        "blue_block",
+        "bowl"
+      ],
+      "xy_range_m": 0.03,
+      "yaw_range_rad": 0.26,
+      "collision_margin_m": 0.01,
+      "relation_preserved": "inside",
+      "centered_on": "failing_layouts"
+    }
+  },
+  "extensions": {
+    "genenv": {
+      "request": "A block to the left of a bowl.",
+      "seed": 7,
+      "resolved_scene_sha256": "68e6700ac9cf5e3e06daa528a08a8532302abd1560efd1981b072f4c45883eec",
+      "compiler_version": "scene_gen.stage5_solver.v3",
+      "asset_catalog_sha256": "dc46aabf122a83664c858dfa2bea6ecc471a9286b34b556ff35f8c5bc7965736"
+    },
+    "feedback": {
+      "round_index": 1,
+      "parent_scene_id": "audit_block",
+      "requirement_kind": "collect_targeted",
+      "requirement": {
+        "kind": "collect_targeted"
+      },
+      "n_target_layouts": 1,
+      "moved": {
+        "blue_block": {
+          "from": [
+            0.612742,
+            0.152555
+          ],
+          "to": [
+            0.5,
+            0.1
+          ],
+          "n_layouts": 1
+        }
+      },
+      "notes": [],
+      "target_yaw": null
+    }
+  },
+  "metadata": {
+    "assets_hashed": true,
+    "usda": "audit_block_r1.usda",
+    "task_module": "audit_block_r1_task.py"
+  }
+}

@@ -1,0 +1,107 @@
+{
+  "schema": "tacharness.scene_ir.v1",
+  "scene_id": "audit_hash",
+  "task_id": "robolab:AuditHashTask",
+  "instruction": "Pick up the banana and place it in the bowl",
+  "assets": [
+    {
+      "schema": "tacharness.scene_asset_ref.v1",
+      "asset_id": "banana",
+      "uri": "inputs/datasets/vendor/robolab/assets/objects/ycb/banana.usd",
+      "sha256": "b376d3dcbd4c66e6fbbb0ff83d09fdf0d27847cda09ca46a07590045b14b68d9",
+      "kind": "usd",
+      "media_type": "model/vnd.usd",
+      "size_bytes": 419223
+    },
+    {
+      "schema": "tacharness.scene_asset_ref.v1",
+      "asset_id": "bowl",
+      "uri": "inputs/datasets/vendor/robolab/assets/objects/ycb/bowl.usd",
+      "sha256": "4674da9935073ec0355cf3e27ead3b87ab98588e1d9bbb116eedaa6fad3ce98e",
+      "kind": "usd",
+      "media_type": "model/vnd.usd",
+      "size_bytes": 342393
+    }
+  ],
+  "entities": [
+    {
+      "schema": "tacharness.scene_entity.v1",
+      "entity_id": "banana_1",
+      "role": "manipuland",
+      "asset_id": "banana",
+      "pose": {
+        "translation": [
+          0.595514677,
+          0.101855234,
+          0.020334999680519106
+        ],
+        "orientation_wxyz": [
+          0.22987814376398116,
+          0.0,
+          0.0,
+          -0.9732194197711154
+        ],
+        "frame": "robolab_world"
+      }
+    },
+    {
+      "schema": "tacharness.scene_entity.v1",
+      "entity_id": "bowl_1",
+      "role": "target",
+      "asset_id": "bowl",
+      "pose": {
+        "translation": [
+          0.535274947,
+          -0.110765933,
+          0.029484999969601633
+        ],
+        "orientation_wxyz": [
+          0.5212100460487632,
+          0.0,
+          0.0,
+          -0.8534284316202773
+        ],
+        "frame": "robolab_world"
+      }
+    }
+  ],
+  "robot": {
+    "provider": "robolab",
+    "embodiment": "droid/tacclaw"
+  },
+  "initial_state": {
+    "source": "gen-env resolved_scene",
+    "settle_required": true
+  },
+  "goal": {
+    "predicate": "inside(banana, bowl)"
+  },
+  "constraints": {
+    "episode_length_s": 40,
+    "success_hold_s": 2.0,
+    "reset_randomization": {
+      "assets": [
+        "banana",
+        "bowl"
+      ],
+      "xy_range_m": 0.06,
+      "yaw_range_rad": 0.26,
+      "collision_margin_m": 0.01,
+      "task_relation": "inside"
+    }
+  },
+  "extensions": {
+    "genenv": {
+      "request": "A banana to the left of a bowl.",
+      "seed": 7,
+      "resolved_scene_sha256": "21ff12f21eec1504158b34c21c93ef57eb1fd5b0bd04288133e15e5aceea9647",
+      "compiler_version": "scene_gen.stage5_solver.v3",
+      "asset_catalog_sha256": "dc46aabf122a83664c858dfa2bea6ecc471a9286b34b556ff35f8c5bc7965736"
+    }
+  },
+  "metadata": {
+    "assets_hashed": true,
+    "usda": "audit_hash.usda",
+    "task_module": "audit_hash_task.py"
+  }
+}

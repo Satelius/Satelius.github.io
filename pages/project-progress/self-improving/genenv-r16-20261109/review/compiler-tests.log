@@ -1,0 +1,291 @@
+
+==================================== ERRORS ====================================
+___________________ ERROR collecting tests/demo/test_app.py ____________________
+ImportError while importing test module '/workspace/TacHarness-genenv/thirdparty/robot-harness-gen-env/tests/demo/test_app.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+tests/demo/test_app.py:11: in <module>
+    from demo.app import DEFAULT_SETTLE_STEPS, create_app, utc_now
+demo/app.py:17: in <module>
+    from flask import Flask, jsonify, request, send_from_directory
+E   ModuleNotFoundError: No module named 'flask'
+____________ ERROR collecting tests/demo/test_retired_workbench.py _____________
+ImportError while importing test module '/workspace/TacHarness-genenv/thirdparty/robot-harness-gen-env/tests/demo/test_retired_workbench.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+tests/demo/test_retired_workbench.py:5: in <module>
+    from tests.demo.test_app import configured_app
+E   ImportError: cannot import name 'configured_app' from 'tests.demo.test_app' (/workspace/TacHarness-genenv/thirdparty/robot-harness-gen-env/tests/demo/test_app.py)
+____________ ERROR collecting tests/demo/test_workbench_browser.py _____________
+ImportError while importing test module '/workspace/TacHarness-genenv/thirdparty/robot-harness-gen-env/tests/demo/test_workbench_browser.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+tests/demo/test_workbench_browser.py:15: in <module>
+    from flask import request
+E   ModuleNotFoundError: No module named 'flask'
+______ ERROR collecting tests/self_improving/harness/test_asset_repair.py ______
+ImportError while importing test module '/workspace/TacHarness-genenv/thirdparty/robot-harness-gen-env/tests/self_improving/harness/test_asset_repair.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+tests/self_improving/harness/test_asset_repair.py:9: in <module>
+    from jsonschema import Draft202012Validator
+E   ModuleNotFoundError: No module named 'jsonschema'
+______ ERROR collecting tests/self_improving/harness/test_validate_v2.py _______
+ImportError while importing test module '/workspace/TacHarness-genenv/thirdparty/robot-harness-gen-env/tests/self_improving/harness/test_validate_v2.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+tests/self_improving/harness/test_validate_v2.py:7: in <module>
+    from jsonschema import Draft202012Validator
+E   ModuleNotFoundError: No module named 'jsonschema'
+_ ERROR collecting tests/self_improving/harness/x2env/test_asset_preparation.py _
+ImportError while importing test module '/workspace/TacHarness-genenv/thirdparty/robot-harness-gen-env/tests/self_improving/harness/x2env/test_asset_preparation.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+tests/self_improving/harness/x2env/test_asset_preparation.py:11: in <module>
+    from tests.self_improving.harness.x2env.test_resolver import inputs
+tests/self_improving/harness/x2env/test_resolver.py:7: in <module>
+    import trimesh
+E   ModuleNotFoundError: No module named 'trimesh'
+__ ERROR collecting tests/self_improving/harness/x2env/test_asset_preview.py ___
+ImportError while importing test module '/workspace/TacHarness-genenv/thirdparty/robot-harness-gen-env/tests/self_improving/harness/x2env/test_asset_preview.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+tests/self_improving/harness/x2env/test_asset_preview.py:9: in <module>
+    from tests.self_improving.harness.x2env.test_asset_revision import fixture
+tests/self_improving/harness/x2env/test_asset_revision.py:9: in <module>
+    import trimesh
+E   ModuleNotFoundError: No module named 'trimesh'
+__ ERROR collecting tests/self_improving/harness/x2env/test_asset_revision.py __
+ImportError while importing test module '/workspace/TacHarness-genenv/thirdparty/robot-harness-gen-env/tests/self_improving/harness/x2env/test_asset_revision.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+tests/self_improving/harness/x2env/test_asset_revision.py:9: in <module>
+    import trimesh
+E   ModuleNotFoundError: No module named 'trimesh'
+_ ERROR collecting tests/self_improving/harness/x2env/test_collision_decomposition.py _
+ImportError while importing test module '/workspace/TacHarness-genenv/thirdparty/robot-harness-gen-env/tests/self_improving/harness/x2env/test_collision_decomposition.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+tests/self_improving/harness/x2env/test_collision_decomposition.py:9: in <module>
+    import trimesh
+E   ModuleNotFoundError: No module named 'trimesh'
+_____ ERROR collecting tests/self_improving/harness/x2env/test_compile.py ______
+ImportError while importing test module '/workspace/TacHarness-genenv/thirdparty/robot-harness-gen-env/tests/self_improving/harness/x2env/test_compile.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+tests/self_improving/harness/x2env/test_compile.py:6: in <module>
+    import trimesh
+E   ModuleNotFoundError: No module named 'trimesh'
+_ ERROR collecting tests/self_improving/harness/x2env/test_completion_local_color.py _
+ImportError while importing test module '/workspace/TacHarness-genenv/thirdparty/robot-harness-gen-env/tests/self_improving/harness/x2env/test_completion_local_color.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+tests/self_improving/harness/x2env/test_completion_local_color.py:14: in <module>
+    from self_improving.harness.x2env.resolver import LocalAssetResolver
+self_improving/harness/x2env/resolver.py:22: in <module>
+    from .local_color_advisory import ColorRepairCandidate, classify_color_repair
+self_improving/harness/x2env/local_color_advisory.py:16: in <module>
+    from .asset_preparation import Unit
+self_improving/harness/x2env/asset_preparation.py:13: in <module>
+    import trimesh
+E   ModuleNotFoundError: No module named 'trimesh'
+_ ERROR collecting tests/self_improving/harness/x2env/test_deployment_edges.py _
+ImportError while importing test module '/workspace/TacHarness-genenv/thirdparty/robot-harness-gen-env/tests/self_improving/harness/x2env/test_deployment_edges.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+tests/self_improving/harness/x2env/test_deployment_edges.py:17: in <module>
+    from tests.self_improving.harness.x2env.test_local_color_advisory import color_inputs
+tests/self_improving/harness/x2env/test_local_color_advisory.py:10: in <module>
+    from tests.self_improving.harness.x2env.test_resolver import inputs, preview_proof
+tests/self_improving/harness/x2env/test_resolver.py:7: in <module>
+    import trimesh
+E   ModuleNotFoundError: No module named 'trimesh'
+_ ERROR collecting tests/self_improving/harness/x2env/test_design_grounding_v2.py _
+ImportError while importing test module '/workspace/TacHarness-genenv/thirdparty/robot-harness-gen-env/tests/self_improving/harness/x2env/test_design_grounding_v2.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+tests/self_improving/harness/x2env/test_design_grounding_v2.py:8: in <module>
+    import trimesh
+E   ModuleNotFoundError: No module named 'trimesh'
+_ ERROR collecting tests/self_improving/harness/x2env/test_design_workflow.py __
+ImportError while importing test module '/workspace/TacHarness-genenv/thirdparty/robot-harness-gen-env/tests/self_improving/harness/x2env/test_design_workflow.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+tests/self_improving/harness/x2env/test_design_workflow.py:11: in <module>
+    from self_improving.harness.x2env.resolver import ResolutionResult
+self_improving/harness/x2env/resolver.py:22: in <module>
+    from .local_color_advisory import ColorRepairCandidate, classify_color_repair
+self_improving/harness/x2env/local_color_advisory.py:16: in <module>
+    from .asset_preparation import Unit
+self_improving/harness/x2env/asset_preparation.py:13: in <module>
+    import trimesh
+E   ModuleNotFoundError: No module named 'trimesh'
+____ ERROR collecting tests/self_improving/harness/x2env/test_diagnosis.py _____
+ImportError while importing test module '/workspace/TacHarness-genenv/thirdparty/robot-harness-gen-env/tests/self_improving/harness/x2env/test_diagnosis.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+tests/self_improving/harness/x2env/test_diagnosis.py:14: in <module>
+    from tests.self_improving.harness.x2env.test_resolver import inputs
+tests/self_improving/harness/x2env/test_resolver.py:7: in <module>
+    import trimesh
+E   ModuleNotFoundError: No module named 'trimesh'
+_ ERROR collecting tests/self_improving/harness/x2env/test_local_color_advisory.py _
+ImportError while importing test module '/workspace/TacHarness-genenv/thirdparty/robot-harness-gen-env/tests/self_improving/harness/x2env/test_local_color_advisory.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+tests/self_improving/harness/x2env/test_local_color_advisory.py:10: in <module>
+    from tests.self_improving.harness.x2env.test_resolver import inputs, preview_proof
+tests/self_improving/harness/x2env/test_resolver.py:7: in <module>
+    import trimesh
+E   ModuleNotFoundError: No module named 'trimesh'
+_ ERROR collecting tests/self_improving/harness/x2env/test_local_color_execution.py _
+ImportError while importing test module '/workspace/TacHarness-genenv/thirdparty/robot-harness-gen-env/tests/self_improving/harness/x2env/test_local_color_execution.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+tests/self_improving/harness/x2env/test_local_color_execution.py:11: in <module>
+    from self_improving.harness.x2env.local_color_advisory import (
+self_improving/harness/x2env/local_color_advisory.py:16: in <module>
+    from .asset_preparation import Unit
+self_improving/harness/x2env/asset_preparation.py:13: in <module>
+    import trimesh
+E   ModuleNotFoundError: No module named 'trimesh'
+_ ERROR collecting tests/self_improving/harness/x2env/test_local_color_harness.py _
+ImportError while importing test module '/workspace/TacHarness-genenv/thirdparty/robot-harness-gen-env/tests/self_improving/harness/x2env/test_local_color_harness.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+tests/self_improving/harness/x2env/test_local_color_harness.py:20: in <module>
+    from self_improving.harness.x2env.resolver import LocalAssetResolver
+self_improving/harness/x2env/resolver.py:22: in <module>
+    from .local_color_advisory import ColorRepairCandidate, classify_color_repair
+self_improving/harness/x2env/local_color_advisory.py:16: in <module>
+    from .asset_preparation import Unit
+self_improving/harness/x2env/asset_preparation.py:13: in <module>
+    import trimesh
+E   ModuleNotFoundError: No module named 'trimesh'
+_ ERROR collecting tests/self_improving/harness/x2env/test_measured_support.py _
+ImportError while importing test module '/workspace/TacHarness-genenv/thirdparty/robot-harness-gen-env/tests/self_improving/harness/x2env/test_measured_support.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+tests/self_improving/harness/x2env/test_measured_support.py:8: in <module>
+    import trimesh
+E   ModuleNotFoundError: No module named 'trimesh'
+__ ERROR collecting tests/self_improving/harness/x2env/test_normalization.py ___
+ImportError while importing test module '/workspace/TacHarness-genenv/thirdparty/robot-harness-gen-env/tests/self_improving/harness/x2env/test_normalization.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+tests/self_improving/harness/x2env/test_normalization.py:10: in <module>
+    import trimesh
+E   ModuleNotFoundError: No module named 'trimesh'
+___ ERROR collecting tests/self_improving/harness/x2env/test_observation.py ____
+ImportError while importing test module '/workspace/TacHarness-genenv/thirdparty/robot-harness-gen-env/tests/self_improving/harness/x2env/test_observation.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+tests/self_improving/harness/x2env/test_observation.py:8: in <module>
+    from tests.self_improving.harness.x2env.test_diagnosis import evidence
+E   ImportError: cannot import name 'evidence' from 'tests.self_improving.harness.x2env.test_diagnosis' (/workspace/TacHarness-genenv/thirdparty/robot-harness-gen-env/tests/self_improving/harness/x2env/test_diagnosis.py)
+_ ERROR collecting tests/self_improving/harness/x2env/test_reconstruction_planning.py _
+ImportError while importing test module '/workspace/TacHarness-genenv/thirdparty/robot-harness-gen-env/tests/self_improving/harness/x2env/test_reconstruction_planning.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+tests/self_improving/harness/x2env/test_reconstruction_planning.py:11: in <module>
+    from tests.self_improving.harness.x2env.test_resolver import inputs
+tests/self_improving/harness/x2env/test_resolver.py:7: in <module>
+    import trimesh
+E   ModuleNotFoundError: No module named 'trimesh'
+_ ERROR collecting tests/self_improving/harness/x2env/test_reconstruction_resolver.py _
+ImportError while importing test module '/workspace/TacHarness-genenv/thirdparty/robot-harness-gen-env/tests/self_improving/harness/x2env/test_reconstruction_resolver.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+tests/self_improving/harness/x2env/test_reconstruction_resolver.py:11: in <module>
+    from tests.self_improving.harness.x2env.test_resolver import VisualDouble, inputs
+tests/self_improving/harness/x2env/test_resolver.py:7: in <module>
+    import trimesh
+E   ModuleNotFoundError: No module named 'trimesh'
+_____ ERROR collecting tests/self_improving/harness/x2env/test_resolver.py _____
+ImportError while importing test module '/workspace/TacHarness-genenv/thirdparty/robot-harness-gen-env/tests/self_improving/harness/x2env/test_resolver.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+tests/self_improving/harness/x2env/test_resolver.py:7: in <module>
+    import trimesh
+E   ModuleNotFoundError: No module named 'trimesh'
+_____ ERROR collecting tests/self_improving/harness/x2env/test_revision.py _____
+ImportError while importing test module '/workspace/TacHarness-genenv/thirdparty/robot-harness-gen-env/tests/self_improving/harness/x2env/test_revision.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+tests/self_improving/harness/x2env/test_revision.py:10: in <module>
+    from tests.self_improving.harness.x2env.test_resolver import inputs
+E   ImportError: cannot import name 'inputs' from 'tests.self_improving.harness.x2env.test_resolver' (/workspace/TacHarness-genenv/thirdparty/robot-harness-gen-env/tests/self_improving/harness/x2env/test_resolver.py)
+_ ERROR collecting tests/self_improving/harness/x2env/test_revision_reservation.py _
+ImportError while importing test module '/workspace/TacHarness-genenv/thirdparty/robot-harness-gen-env/tests/self_improving/harness/x2env/test_revision_reservation.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+tests/self_improving/harness/x2env/test_revision_reservation.py:11: in <module>
+    from tests.self_improving.harness.x2env.test_resolver import inputs
+E   ImportError: cannot import name 'inputs' from 'tests.self_improving.harness.x2env.test_resolver' (/workspace/TacHarness-genenv/thirdparty/robot-harness-gen-env/tests/self_improving/harness/x2env/test_resolver.py)
+_ ERROR collecting tests/self_improving/harness/x2env/test_search_advisory.py __
+ImportError while importing test module '/workspace/TacHarness-genenv/thirdparty/robot-harness-gen-env/tests/self_improving/harness/x2env/test_search_advisory.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+tests/self_improving/harness/x2env/test_search_advisory.py:11: in <module>
+    from tests.self_improving.harness.x2env.test_resolver import inputs
+E   ImportError: cannot import name 'inputs' from 'tests.self_improving.harness.x2env.test_resolver' (/workspace/TacHarness-genenv/thirdparty/robot-harness-gen-env/tests/self_improving/harness/x2env/test_resolver.py)
+_ ERROR collecting tests/self_improving/harness/x2env/test_skill_execution.py __
+ImportError while importing test module '/workspace/TacHarness-genenv/thirdparty/robot-harness-gen-env/tests/self_improving/harness/x2env/test_skill_execution.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+tests/self_improving/harness/x2env/test_skill_execution.py:6: in <module>
+    from tests.self_improving.harness.x2env.test_resolver import inputs
+E   ImportError: cannot import name 'inputs' from 'tests.self_improving.harness.x2env.test_resolver' (/workspace/TacHarness-genenv/thirdparty/robot-harness-gen-env/tests/self_improving/harness/x2env/test_resolver.py)
+__ ERROR collecting tests/self_improving/harness/x2env/test_source_router.py ___
+ImportError while importing test module '/workspace/TacHarness-genenv/thirdparty/robot-harness-gen-env/tests/self_improving/harness/x2env/test_source_router.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+tests/self_improving/harness/x2env/test_source_router.py:8: in <module>
+    from self_improving.harness.x2env.resolver import ResolutionResult
+self_improving/harness/x2env/resolver.py:22: in <module>
+    from .local_color_advisory import ColorRepairCandidate, classify_color_repair
+self_improving/harness/x2env/local_color_advisory.py:16: in <module>
+    from .asset_preparation import Unit
+self_improving/harness/x2env/asset_preparation.py:13: in <module>
+    import trimesh
+E   ModuleNotFoundError: No module named 'trimesh'
+___ ERROR collecting tests/self_improving/harness/x2env/test_web_resolver.py ___
+ImportError while importing test module '/workspace/TacHarness-genenv/thirdparty/robot-harness-gen-env/tests/self_improving/harness/x2env/test_web_resolver.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+tests/self_improving/harness/x2env/test_web_resolver.py:16: in <module>
+    from tests.self_improving.harness.x2env.test_resolver import VisualDouble, inputs
+E   ImportError: cannot import name 'VisualDouble' from 'tests.self_improving.harness.x2env.test_resolver' (/workspace/TacHarness-genenv/thirdparty/robot-harness-gen-env/tests/self_improving/harness/x2env/test_resolver.py)
+=========================== short test summary info ============================
+ERROR tests/demo/test_app.py
+ERROR tests/demo/test_retired_workbench.py
+ERROR tests/demo/test_workbench_browser.py
+ERROR tests/self_improving/harness/test_asset_repair.py
+ERROR tests/self_improving/harness/test_validate_v2.py
+ERROR tests/self_improving/harness/x2env/test_asset_preparation.py
+ERROR tests/self_improving/harness/x2env/test_asset_preview.py
+ERROR tests/self_improving/harness/x2env/test_asset_revision.py
+ERROR tests/self_improving/harness/x2env/test_collision_decomposition.py
+ERROR tests/self_improving/harness/x2env/test_compile.py
+ERROR tests/self_improving/harness/x2env/test_completion_local_color.py
+ERROR tests/self_improving/harness/x2env/test_deployment_edges.py
+ERROR tests/self_improving/harness/x2env/test_design_grounding_v2.py
+ERROR tests/self_improving/harness/x2env/test_design_workflow.py
+ERROR tests/self_improving/harness/x2env/test_diagnosis.py
+ERROR tests/self_improving/harness/x2env/test_local_color_advisory.py
+ERROR tests/self_improving/harness/x2env/test_local_color_execution.py
+ERROR tests/self_improving/harness/x2env/test_local_color_harness.py
+ERROR tests/self_improving/harness/x2env/test_measured_support.py
+ERROR tests/self_improving/harness/x2env/test_normalization.py
+ERROR tests/self_improving/harness/x2env/test_observation.py
+ERROR tests/self_improving/harness/x2env/test_reconstruction_planning.py
+ERROR tests/self_improving/harness/x2env/test_reconstruction_resolver.py
+ERROR tests/self_improving/harness/x2env/test_resolver.py
+ERROR tests/self_improving/harness/x2env/test_revision.py
+ERROR tests/self_improving/harness/x2env/test_revision_reservation.py
+ERROR tests/self_improving/harness/x2env/test_search_advisory.py
+ERROR tests/self_improving/harness/x2env/test_skill_execution.py
+ERROR tests/self_improving/harness/x2env/test_source_router.py
+ERROR tests/self_improving/harness/x2env/test_web_resolver.py
+!!!!!!!!!!!!!!!!!!! Interrupted: 30 errors during collection !!!!!!!!!!!!!!!!!!!
+726 deselected, 30 errors in 2.94s

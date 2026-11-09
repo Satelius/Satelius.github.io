@@ -1,0 +1,104 @@
+[
+  {
+    "case": "move",
+    "accepted": true,
+    "readback": true,
+    "position": [
+      1.03,
+      2.0,
+      3.0
+    ],
+    "intensity": 100.0,
+    "errors": []
+  },
+  {
+    "case": "remove",
+    "accepted": true,
+    "readback": true,
+    "position": null,
+    "intensity": 100.0,
+    "errors": []
+  },
+  {
+    "case": "light",
+    "accepted": true,
+    "readback": true,
+    "position": [
+      1.0,
+      2.0,
+      3.0
+    ],
+    "intensity": 150.0,
+    "errors": []
+  },
+  {
+    "case": "missing",
+    "accepted": false,
+    "readback": false,
+    "position": [
+      1.0,
+      2.0,
+      3.0
+    ],
+    "intensity": 100.0,
+    "errors": [
+      "move_object on /Missing: missing active prim /Missing"
+    ]
+  },
+  {
+    "case": "unknown",
+    "accepted": false,
+    "readback": false,
+    "position": [
+      1.0,
+      2.0,
+      3.0
+    ],
+    "intensity": 100.0,
+    "errors": [
+      "fake on /Cube: unsupported mutation 'fake'"
+    ]
+  },
+  {
+    "case": "add",
+    "accepted": false,
+    "readback": false,
+    "position": [
+      1.0,
+      2.0,
+      3.0
+    ],
+    "intensity": 100.0,
+    "errors": [
+      "add_object on /New: add_object requires an asset library"
+    ]
+  },
+  {
+    "case": "texture",
+    "accepted": false,
+    "readback": false,
+    "position": [
+      1.0,
+      2.0,
+      3.0
+    ],
+    "intensity": 100.0,
+    "errors": [
+      "swap_texture on /Cube: 'file'"
+    ]
+  },
+  {
+    "case": "friction",
+    "accepted": false,
+    "readback": false,
+    "position": [
+      1.0,
+      2.0,
+      3.0
+    ],
+    "intensity": 100.0,
+    "errors": [
+      "friction on /Cube: unsupported mutation 'friction'"
+    ]
+  }
+]

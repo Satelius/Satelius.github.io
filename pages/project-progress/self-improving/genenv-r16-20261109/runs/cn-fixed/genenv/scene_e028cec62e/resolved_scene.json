@@ -1,0 +1,306 @@
+{
+  "schema_version": "robotwin.resolved_scene.v1",
+  "scene_id": "scene_e028cec62e",
+  "request": "在碗的左侧放一根香蕉。",
+  "frame": {
+    "name": "robotwin_world",
+    "x_axis": "right",
+    "y_axis": "front",
+    "z_axis": "up",
+    "handedness": "right_handed"
+  },
+  "unit": "m",
+  "seed": 7,
+  "workspace": {
+    "support_surface": "table",
+    "table_height_m": 0.741,
+    "x_bounds_m": [
+      -0.35,
+      0.35
+    ],
+    "y_bounds_m": [
+      -0.2,
+      0.3
+    ],
+    "robot_keepout_x_m": [
+      -0.16,
+      0.16
+    ],
+    "robot_keepout_y_m": [
+      -0.2,
+      -0.08
+    ]
+  },
+  "source_scene_spec_sha256": "af360851898681611f59155aa67ff5fdc4237de39e079c2da6f61fe94470b2fc",
+  "asset_catalog_sha256": "dc46aabf122a83664c858dfa2bea6ecc471a9286b34b556ff35f8c5bc7965736",
+  "compiler_version": "scene_gen.stage5_solver.v3",
+  "objects": [
+    {
+      "object_id": "banana_1",
+      "category": "banana",
+      "asset_id": "banana",
+      "model_id": 0,
+      "load_type": "rigid",
+      "stable_pose_id": "robolab_banana_upright",
+      "stable_orientation_wxyz": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "dimensions_m": [
+        0.10888800024986267,
+        0.17841200530529022,
+        0.03666999936103821
+      ],
+      "footprint_shape": "box",
+      "support_margin_m": 0.005,
+      "support_spawn_clearance_m": 0.003,
+      "z_policy": "origin_on_table",
+      "mass_kg": 0.11999999731779099,
+      "static_friction": 2.0,
+      "dynamic_friction": 2.0,
+      "mesh_scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "collision_available": true,
+      "source_files": [
+        "/runtime/TacHarness/inputs/datasets/vendor/robolab/assets/objects/ycb/banana.usd"
+      ],
+      "grounding_score": 103.0,
+      "grounding_reasons": [
+        "exact category match",
+        "collision representation available",
+        "normalized dimensions available"
+      ],
+      "rejected_candidates": [],
+      "pose": {
+        "position_m": [
+          -0.101855234,
+          0.095514677,
+          0.741
+        ],
+        "orientation_wxyz": [
+          0.850718445605,
+          0.0,
+          0.0,
+          -0.525621657
+        ],
+        "yaw_rad": -1.106891383607
+      },
+      "is_static": false,
+      "support_relation": "on_table",
+      "support_target": "table",
+      "articulation_joint_names": [],
+      "articulation_joint_limits": [],
+      "articulation_qpos": [],
+      "asset_provenance": "robotwin_catalog"
+    },
+    {
+      "object_id": "bowl_1",
+      "category": "bowl",
+      "asset_id": "bowl",
+      "model_id": 0,
+      "load_type": "rigid",
+      "stable_pose_id": "robolab_bowl_upright",
+      "stable_orientation_wxyz": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "dimensions_m": [
+        0.16144399344921112,
+        0.16111300885677338,
+        0.05496999993920326
+      ],
+      "interior_dimensions_m": [
+        0.1211,
+        0.1208,
+        0.044
+      ],
+      "interior_floor_z_offset_m": 0.0082,
+      "footprint_shape": "circle",
+      "support_margin_m": 0.005,
+      "support_spawn_clearance_m": 0.003,
+      "z_policy": "origin_on_table",
+      "mass_kg": 0.5,
+      "static_friction": 2.0,
+      "dynamic_friction": 2.0,
+      "mesh_scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "collision_available": true,
+      "source_files": [
+        "/runtime/TacHarness/inputs/datasets/vendor/robolab/assets/objects/ycb/bowl.usd"
+      ],
+      "grounding_score": 103.0,
+      "grounding_reasons": [
+        "exact category match",
+        "collision representation available",
+        "normalized dimensions available"
+      ],
+      "rejected_candidates": [
+        {
+          "asset_id": "blackandbrassbowl_large",
+          "model_id": 0,
+          "score": 103.0,
+          "reasons": [
+            "lower deterministic rank",
+            "exact category match",
+            "collision representation available",
+            "normalized dimensions available"
+          ]
+        },
+        {
+          "asset_id": "blackandbrassbowl_small",
+          "model_id": 0,
+          "score": 103.0,
+          "reasons": [
+            "lower deterministic rank",
+            "exact category match",
+            "collision representation available",
+            "normalized dimensions available"
+          ]
+        },
+        {
+          "asset_id": "serving_bowl",
+          "model_id": 0,
+          "score": 103.0,
+          "reasons": [
+            "lower deterministic rank",
+            "exact category match",
+            "collision representation available",
+            "normalized dimensions available"
+          ]
+        },
+        {
+          "asset_id": "wooden_bowl",
+          "model_id": 0,
+          "score": 103.0,
+          "reasons": [
+            "lower deterministic rank",
+            "exact category match",
+            "collision representation available",
+            "normalized dimensions available"
+          ]
+        }
+      ],
+      "pose": {
+        "position_m": [
+          0.110765933,
+          0.035274947,
+          0.741
+        ],
+        "orientation_wxyz": [
+          0.97201618924,
+          0.0,
+          0.0,
+          -0.234913873272
+        ],
+        "yaw_rad": -0.474259921754
+      },
+      "is_static": false,
+      "support_relation": "on_table",
+      "support_target": "table",
+      "articulation_joint_names": [],
+      "articulation_joint_limits": [],
+      "articulation_qpos": [],
+      "asset_provenance": "robotwin_catalog"
+    }
+  ],
+  "relations": [
+    {
+      "relation": "on_table",
+      "source": "bowl_1",
+      "target": "table"
+    },
+    {
+      "relation": "on_table",
+      "source": "banana_1",
+      "target": "table"
+    },
+    {
+      "relation": "left_of",
+      "source": "banana_1",
+      "target": "bowl_1"
+    }
+  ],
+  "solver_trace": {
+    "algorithm": "bounded_rejection_backtracking_v1",
+    "seed": 7,
+    "max_attempts_per_object": 96,
+    "total_attempts": 5,
+    "attempts": [
+      {
+        "attempt": 1,
+        "object_id": "banana_1",
+        "candidate_xy_m": [
+          -0.101855234,
+          0.095514677
+        ],
+        "yaw_rad": -1.106891383607,
+        "accepted": true,
+        "reasons": []
+      },
+      {
+        "attempt": 2,
+        "object_id": "bowl_1",
+        "candidate_xy_m": [
+          0.012159944,
+          0.064032159
+        ],
+        "yaw_rad": -2.686462041494,
+        "accepted": false,
+        "reasons": [
+          "three-dimensional overlap with banana_1",
+          "left_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 3,
+        "object_id": "bowl_1",
+        "candidate_xy_m": [
+          0.002519873,
+          0.02501425
+        ],
+        "yaw_rad": -2.777174661613,
+        "accepted": false,
+        "reasons": [
+          "three-dimensional overlap with banana_1",
+          "left_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 4,
+        "object_id": "bowl_1",
+        "candidate_xy_m": [
+          -0.145770401,
+          0.031341102
+        ],
+        "yaw_rad": -0.41691646548,
+        "accepted": false,
+        "reasons": [
+          "three-dimensional overlap with banana_1",
+          "left_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 5,
+        "object_id": "bowl_1",
+        "candidate_xy_m": [
+          0.110765933,
+          0.035274947
+        ],
+        "yaw_rad": -0.474259921754,
+        "accepted": true,
+        "reasons": []
+      }
+    ],
+    "status": "pass"
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "schema_version": "x2env.input_bundle.v1",
+  "request_sha256": "d925cbff9b421f5ab20536638086733a18c4a8f363277457323d7f906102e1fd",
+  "text": null,
+  "images": [],
+  "video": {
+    "source": {
+      "sha256": "c8a5d35d24e6527a59c8dc3406b9b19ddd6296f5dda015ec4020f6f3751e58a4",
+      "size_bytes": 77178,
+      "media_type": "application/octet-stream"
+    },
+    "probe": {
+      "sha256": "6d2d40814447aa110b47f0fef684b0710d44f6aeb88d8ef63668170a9648af1f",
+      "size_bytes": 2525,
+      "media_type": "application/json"
+    },
+    "sequence": {
+      "sha256": "ba23183d67011a82deab6ef6a0b0f9758bfde52003f861a57ad43fbcdd09ab04",
+      "size_bytes": 70424,
+      "media_type": "application/json"
+    },
+    "width": 480,
+    "height": 270,
+    "codec": "h264",
+    "pixel_format": "rgb24",
+    "fps_num": 60,
+    "fps_den": 1,
+    "time_base_num": 1,
+    "time_base_den": 60,
+    "frame_count": 524,
+    "unique_frame_count": 524,
+    "decoder_version": "Lavf63.1.102"
+  },
+  "modality": "video",
+  "seed": 7,
+  "override_policy": "explicit_text_over_media_with_provenance",
+  "resource_limits": {
+    "source_bytes": 67108864,
+    "decoded_pixels": 16000000,
+    "video_frames": 600,
+    "video_seconds": 60,
+    "decoded_bytes": 1073741824,
+    "decoder_seconds": 60
+  }
+}

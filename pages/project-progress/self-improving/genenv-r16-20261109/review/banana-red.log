@@ -1,0 +1,15 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+_________ test_catalog_maps_rigid_movable_objects_to_parser_categories _________
+
+    def test_catalog_maps_rigid_movable_objects_to_parser_categories():
+        assert category_for("pineapple_slices_can") == "can" and category_for("plate_large") == "plate"
+        assert category_for("spatula") is None
+>       assert category_for("banana") == "banana"
+E       AssertionError: assert None == 'banana'
+E        +  where None = category_for('banana')
+
+tests/agentic/test_genenv_robolab.py:88: AssertionError
+=========================== short test summary info ============================
+FAILED tests/agentic/test_genenv_robolab.py::test_catalog_maps_rigid_movable_objects_to_parser_categories
+1 failed, 8 deselected in 1.45s

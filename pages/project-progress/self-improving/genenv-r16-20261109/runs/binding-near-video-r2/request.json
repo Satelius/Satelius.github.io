@@ -1,0 +1,31 @@
+{
+  "goal": "put_bottle_in_shelf",
+  "reference": "c8a5d35d24e6527a59c8dc3406b9b19ddd6296f5dda015ec4020f6f3751e58a4",
+  "sequence": "ba23183d67011a82deab6ef6a0b0f9758bfde52003f861a57ad43fbcdd09ab04",
+  "intervals": [
+    {
+      "start": 0.0,
+      "end": 1.23,
+      "action": "瓶状物由台面上的竖立位置变为机械臂末端附近的倾斜位置，支持拿起并移向左侧开口的判断。"
+    },
+    {
+      "start": 1.23,
+      "end": 8.72,
+      "action": "瓶状物持续出现在开口边缘及机械臂末端附近，姿态逐渐接近竖直；未见明确释放。"
+    }
+  ],
+  "unknown": [
+    "无法确认夹爪与瓶子的具体接触方式及抓握是否稳定。",
+    "粉色结构内部受到遮挡，无法确认内部层板位置。",
+    "无法测量瓶子、开口及机械臂之间的实际距离和尺寸。",
+    "无法确认瓶子是否进入柜内、接触层板或被释放。",
+    "采样时刻之间的连续运动不可见。"
+  ],
+  "condition": [
+    -0.04,
+    0.025,
+    0.114,
+    -7.0
+  ],
+  "condition_origin": "frozen native development instance; not inferred metric geometry"
+}

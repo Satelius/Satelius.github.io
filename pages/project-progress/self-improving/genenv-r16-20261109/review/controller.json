@@ -1,0 +1,28 @@
+[
+  {
+    "case": "text",
+    "workflow": "24988d2f-db25-4689-b5c2-4bbabf974ecf",
+    "status": "failed",
+    "revision": 2,
+    "exported": "runs/package-repeat-text/failure",
+    "error": "model_timeout",
+    "capabilities": [
+      "x2env.compile",
+      "x2env.replay",
+      "x2env.validate"
+    ]
+  },
+  {
+    "case": "video",
+    "workflow": "8556ede2-8939-4e57-a7a5-f7ce21af2f1a",
+    "status": "failed",
+    "revision": 2,
+    "exported": "runs/package-repeat-video/failure",
+    "error": "proposal_input_mismatch",
+    "capabilities": [
+      "x2env.compile",
+      "x2env.replay",
+      "x2env.validate"
+    ]
+  }
+]

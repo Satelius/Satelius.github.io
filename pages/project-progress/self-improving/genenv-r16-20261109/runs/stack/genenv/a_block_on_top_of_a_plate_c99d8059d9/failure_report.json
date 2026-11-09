@@ -1,0 +1,1366 @@
+{
+  "schema_version": "robotwin.scene_generation_failure.v1",
+  "status": "fail",
+  "stage": "solve",
+  "code": "T2E_SOLVER_EXHAUSTED",
+  "blocker": "bounded solver exhausted",
+  "error_type": "CompileFailure",
+  "request": "A block on top of a plate.",
+  "seed": 7,
+  "details": {
+    "schema_version": "robotwin.scene_solver_failure.v1",
+    "scene_id": "a_block_on_top_of_a_plate_c99d8059d9",
+    "seed": 7,
+    "status": "fail",
+    "blocker": "bounded solver exhausted",
+    "max_attempts_per_object": 96,
+    "max_backtracks": 48,
+    "total_attempts": 96,
+    "attempts": [
+      {
+        "attempt": 1,
+        "object_id": "plate_1",
+        "candidate_xy_m": [
+          0.0,
+          0.08
+        ],
+        "yaw_rad": -1.106891383607,
+        "accepted": false,
+        "reasons": [
+          "asset footprint does not fit selected region",
+          "robot initial keepout overlap"
+        ]
+      },
+      {
+        "attempt": 2,
+        "object_id": "plate_1",
+        "candidate_xy_m": [
+          0.0,
+          0.08
+        ],
+        "yaw_rad": -2.193779340387,
+        "accepted": false,
+        "reasons": [
+          "asset footprint does not fit selected region",
+          "robot initial keepout overlap"
+        ]
+      },
+      {
+        "attempt": 3,
+        "object_id": "plate_1",
+        "candidate_xy_m": [
+          0.0,
+          0.08
+        ],
+        "yaw_rad": 0.948349263351,
+        "accepted": false,
+        "reasons": [
+          "asset footprint does not fit selected region",
+          "robot initial keepout overlap"
+        ]
+      },
+      {
+        "attempt": 4,
+        "object_id": "plate_1",
+        "candidate_xy_m": [
+          0.0,
+          0.08
+        ],
+        "yaw_rad": -2.686462041494,
+        "accepted": false,
+        "reasons": [
+          "asset footprint does not fit selected region",
+          "robot initial keepout overlap"
+        ]
+      },
+      {
+        "attempt": 5,
+        "object_id": "plate_1",
+        "candidate_xy_m": [
+          0.0,
+          0.08
+        ],
+        "yaw_rad": 0.225453282252,
+        "accepted": false,
+        "reasons": [
+          "asset footprint does not fit selected region",
+          "robot initial keepout overlap"
+        ]
+      },
+      {
+        "attempt": 6,
+        "object_id": "plate_1",
+        "candidate_xy_m": [
+          0.0,
+          0.08
+        ],
+        "yaw_rad": -0.843901423846,
+        "accepted": false,
+        "reasons": [
+          "asset footprint does not fit selected region",
+          "robot initial keepout overlap"
+        ]
+      },
+      {
+        "attempt": 7,
+        "object_id": "plate_1",
+        "candidate_xy_m": [
+          0.0,
+          0.08
+        ],
+        "yaw_rad": -2.777174661613,
+        "accepted": false,
+        "reasons": [
+          "asset footprint does not fit selected region",
+          "robot initial keepout overlap"
+        ]
+      },
+      {
+        "attempt": 8,
+        "object_id": "plate_1",
+        "candidate_xy_m": [
+          0.0,
+          0.08
+        ],
+        "yaw_rad": 0.046720089524,
+        "accepted": false,
+        "reasons": [
+          "asset footprint does not fit selected region",
+          "robot initial keepout overlap"
+        ]
+      },
+      {
+        "attempt": 9,
+        "object_id": "plate_1",
+        "candidate_xy_m": [
+          0.0,
+          0.08
+        ],
+        "yaw_rad": -2.906000483384,
+        "accepted": false,
+        "reasons": [
+          "asset footprint does not fit selected region",
+          "robot initial keepout overlap"
+        ]
+      },
+      {
+        "attempt": 10,
+        "object_id": "plate_1",
+        "candidate_xy_m": [
+          0.0,
+          0.08
+        ],
+        "yaw_rad": -0.41691646548,
+        "accepted": false,
+        "reasons": [
+          "asset footprint does not fit selected region",
+          "robot initial keepout overlap"
+        ]
+      },
+      {
+        "attempt": 11,
+        "object_id": "plate_1",
+        "candidate_xy_m": [
+          0.0,
+          0.08
+        ],
+        "yaw_rad": -2.702678082559,
+        "accepted": false,
+        "reasons": [
+          "asset footprint does not fit selected region",
+          "robot initial keepout overlap"
+        ]
+      },
+      {
+        "attempt": 12,
+        "object_id": "plate_1",
+        "candidate_xy_m": [
+          0.0,
+          0.08
+        ],
+        "yaw_rad": -2.571625980978,
+        "accepted": false,
+        "reasons": [
+          "asset footprint does not fit selected region",
+          "robot initial keepout overlap"
+        ]
+      },
+      {
+        "attempt": 13,
+        "object_id": "plate_1",
+        "candidate_xy_m": [
+          0.0,
+          0.08
+        ],
+        "yaw_rad": -0.474259921754,
+        "accepted": false,
+        "reasons": [
+          "asset footprint does not fit selected region",
+          "robot initial keepout overlap"
+        ]
+      },
+      {
+        "attempt": 14,
+        "object_id": "plate_1",
+        "candidate_xy_m": [
+          0.0,
+          0.08
+        ],
+        "yaw_rad": 2.05367246736,
+        "accepted": false,
+        "reasons": [
+          "asset footprint does not fit selected region",
+          "robot initial keepout overlap"
+        ]
+      },
+      {
+        "attempt": 15,
+        "object_id": "plate_1",
+        "candidate_xy_m": [
+          0.0,
+          0.08
+        ],
+        "yaw_rad": -2.363721990294,
+        "accepted": false,
+        "reasons": [
+          "asset footprint does not fit selected region",
+          "robot initial keepout overlap"
+        ]
+      },
+      {
+        "attempt": 16,
+        "object_id": "plate_1",
+        "candidate_xy_m": [
+          0.0,
+          0.08
+        ],
+        "yaw_rad": -1.738940871181,
+        "accepted": false,
+        "reasons": [
+          "asset footprint does not fit selected region",
+          "robot initial keepout overlap"
+        ]
+      },
+      {
+        "attempt": 17,
+        "object_id": "plate_1",
+        "candidate_xy_m": [
+          0.0,
+          0.08
+        ],
+        "yaw_rad": 0.800686550665,
+        "accepted": false,
+        "reasons": [
+          "asset footprint does not fit selected region",
+          "robot initial keepout overlap"
+        ]
+      },
+      {
+        "attempt": 18,
+        "object_id": "plate_1",
+        "candidate_xy_m": [
+          0.0,
+          0.08
+        ],
+        "yaw_rad": 2.813038249139,
+        "accepted": false,
+        "reasons": [
+          "asset footprint does not fit selected region",
+          "robot initial keepout overlap"
+        ]
+      },
+      {
+        "attempt": 19,
+        "object_id": "plate_1",
+        "candidate_xy_m": [
+          0.0,
+          0.08
+        ],
+        "yaw_rad": 0.484452113894,
+        "accepted": false,
+        "reasons": [
+          "asset footprint does not fit selected region",
+          "robot initial keepout overlap"
+        ]
+      },
+      {
+        "attempt": 20,
+        "object_id": "plate_1",
+        "candidate_xy_m": [
+          0.0,
+          0.08
+        ],
+        "yaw_rad": -0.649175723619,
+        "accepted": false,
+        "reasons": [
+          "asset footprint does not fit selected region",
+          "robot initial keepout overlap"
+        ]
+      },
+      {
+        "attempt": 21,
+        "object_id": "plate_1",
+        "candidate_xy_m": [
+          0.0,
+          0.08
+        ],
+        "yaw_rad": 2.992399081931,
+        "accepted": false,
+        "reasons": [
+          "asset footprint does not fit selected region",
+          "robot initial keepout overlap"
+        ]
+      },
+      {
+        "attempt": 22,
+        "object_id": "plate_1",
+        "candidate_xy_m": [
+          0.0,
+          0.08
+        ],
+        "yaw_rad": -2.848905039163,
+        "accepted": false,
+        "reasons": [
+          "asset footprint does not fit selected region",
+          "robot initial keepout overlap"
+        ]
+      },
+      {
+        "attempt": 23,
+        "object_id": "plate_1",
+        "candidate_xy_m": [
+          0.0,
+          0.08
+        ],
+        "yaw_rad": 2.252323754982,
+        "accepted": false,
+        "reasons": [
+          "asset footprint does not fit selected region",
+          "robot initial keepout overlap"
+        ]
+      },
+      {
+        "attempt": 24,
+        "object_id": "plate_1",
+        "candidate_xy_m": [
+          0.0,
+          0.08
+        ],
+        "yaw_rad": -1.321923840888,
+        "accepted": false,
+        "reasons": [
+          "asset footprint does not fit selected region",
+          "robot initial keepout overlap"
+        ]
+      },
+      {
+        "attempt": 25,
+        "object_id": "plate_1",
+        "candidate_xy_m": [
+          0.0,
+          0.08
+        ],
+        "yaw_rad": -2.235211233352,
+        "accepted": false,
+        "reasons": [
+          "asset footprint does not fit selected region",
+          "robot initial keepout overlap"
+        ]
+      },
+      {
+        "attempt": 26,
+        "object_id": "plate_1",
+        "candidate_xy_m": [
+          0.0,
+          0.08
+        ],
+        "yaw_rad": -2.401482193996,
+        "accepted": false,
+        "reasons": [
+          "asset footprint does not fit selected region",
+          "robot initial keepout overlap"
+        ]
+      },
+      {
+        "attempt": 27,
+        "object_id": "plate_1",
+        "candidate_xy_m": [
+          0.0,
+          0.08
+        ],
+        "yaw_rad": -1.203344188861,
+        "accepted": false,
+        "reasons": [
+          "asset footprint does not fit selected region",
+          "robot initial keepout overlap"
+        ]
+      },
+      {
+        "attempt": 28,
+        "object_id": "plate_1",
+        "candidate_xy_m": [
+          0.0,
+          0.08
+        ],
+        "yaw_rad": 1.986280494835,
+        "accepted": false,
+        "reasons": [
+          "asset footprint does not fit selected region",
+          "robot initial keepout overlap"
+        ]
+      },
+      {
+        "attempt": 29,
+        "object_id": "plate_1",
+        "candidate_xy_m": [
+          0.0,
+          0.08
+        ],
+        "yaw_rad": -2.006055318632,
+        "accepted": false,
+        "reasons": [
+          "asset footprint does not fit selected region",
+          "robot initial keepout overlap"
+        ]
+      },
+      {
+        "attempt": 30,
+        "object_id": "plate_1",
+        "candidate_xy_m": [
+          0.0,
+          0.08
+        ],
+        "yaw_rad": 0.512708949387,
+        "accepted": false,
+        "reasons": [
+          "asset footprint does not fit selected region",
+          "robot initial keepout overlap"
+        ]
+      },
+      {
+        "attempt": 31,
+        "object_id": "plate_1",
+        "candidate_xy_m": [
+          0.0,
+          0.08
+        ],
+        "yaw_rad": 0.872819066926,
+        "accepted": false,
+        "reasons": [
+          "asset footprint does not fit selected region",
+          "robot initial keepout overlap"
+        ]
+      },
+      {
+        "attempt": 32,
+        "object_id": "plate_1",
+        "candidate_xy_m": [
+          0.0,
+          0.08
+        ],
+        "yaw_rad": -0.801749884706,
+        "accepted": false,
+        "reasons": [
+          "asset footprint does not fit selected region",
+          "robot initial keepout overlap"
+        ]
+      },
+      {
+        "attempt": 33,
+        "object_id": "plate_1",
+        "candidate_xy_m": [
+          0.0,
+          0.08
+        ],
+        "yaw_rad": 0.299987325445,
+        "accepted": false,
+        "reasons": [
+          "asset footprint does not fit selected region",
+          "robot initial keepout overlap"
+        ]
+      },
+      {
+        "attempt": 34,
+        "object_id": "plate_1",
+        "candidate_xy_m": [
+          0.0,
+          0.08
+        ],
+        "yaw_rad": -2.747077888585,
+        "accepted": false,
+        "reasons": [
+          "asset footprint does not fit selected region",
+          "robot initial keepout overlap"
+        ]
+      },
+      {
+        "attempt": 35,
+        "object_id": "plate_1",
+        "candidate_xy_m": [
+          0.0,
+          0.08
+        ],
+        "yaw_rad": -2.767107458167,
+        "accepted": false,
+        "reasons": [
+          "asset footprint does not fit selected region",
+          "robot initial keepout overlap"
+        ]
+      },
+      {
+        "attempt": 36,
+        "object_id": "plate_1",
+        "candidate_xy_m": [
+          0.0,
+          0.08
+        ],
+        "yaw_rad": -1.847515895318,
+        "accepted": false,
+        "reasons": [
+          "asset footprint does not fit selected region",
+          "robot initial keepout overlap"
+        ]
+      },
+      {
+        "attempt": 37,
+        "object_id": "plate_1",
+        "candidate_xy_m": [
+          0.0,
+          0.08
+        ],
+        "yaw_rad": 1.133486460911,
+        "accepted": false,
+        "reasons": [
+          "asset footprint does not fit selected region",
+          "robot initial keepout overlap"
+        ]
+      },
+      {
+        "attempt": 38,
+        "object_id": "plate_1",
+        "candidate_xy_m": [
+          0.0,
+          0.08
+        ],
+        "yaw_rad": -0.454950961145,
+        "accepted": false,
+        "reasons": [
+          "asset footprint does not fit selected region",
+          "robot initial keepout overlap"
+        ]
+      },
+      {
+        "attempt": 39,
+        "object_id": "plate_1",
+        "candidate_xy_m": [
+          0.0,
+          0.08
+        ],
+        "yaw_rad": -1.167747768386,
+        "accepted": false,
+        "reasons": [
+          "asset footprint does not fit selected region",
+          "robot initial keepout overlap"
+        ]
+      },
+      {
+        "attempt": 40,
+        "object_id": "plate_1",
+        "candidate_xy_m": [
+          0.0,
+          0.08
+        ],
+        "yaw_rad": 0.537601043646,
+        "accepted": false,
+        "reasons": [
+          "asset footprint does not fit selected region",
+          "robot initial keepout overlap"
+        ]
+      },
+      {
+        "attempt": 41,
+        "object_id": "plate_1",
+        "candidate_xy_m": [
+          0.0,
+          0.08
+        ],
+        "yaw_rad": -0.294151238534,
+        "accepted": false,
+        "reasons": [
+          "asset footprint does not fit selected region",
+          "robot initial keepout overlap"
+        ]
+      },
+      {
+        "attempt": 42,
+        "object_id": "plate_1",
+        "candidate_xy_m": [
+          0.0,
+          0.08
+        ],
+        "yaw_rad": -1.258101063319,
+        "accepted": false,
+        "reasons": [
+          "asset footprint does not fit selected region",
+          "robot initial keepout overlap"
+        ]
+      },
+      {
+        "attempt": 43,
+        "object_id": "plate_1",
+        "candidate_xy_m": [
+          0.0,
+          0.08
+        ],
+        "yaw_rad": 1.849640833037,
+        "accepted": false,
+        "reasons": [
+          "asset footprint does not fit selected region",
+          "robot initial keepout overlap"
+        ]
+      },
+      {
+        "attempt": 44,
+        "object_id": "plate_1",
+        "candidate_xy_m": [
+          0.0,
+          0.08
+        ],
+        "yaw_rad": 1.25031890222,
+        "accepted": false,
+        "reasons": [
+          "asset footprint does not fit selected region",
+          "robot initial keepout overlap"
+        ]
+      },
+      {
+        "attempt": 45,
+        "object_id": "plate_1",
+        "candidate_xy_m": [
+          0.0,
+          0.08
+        ],
+        "yaw_rad": -1.607889043887,
+        "accepted": false,
+        "reasons": [
+          "asset footprint does not fit selected region",
+          "robot initial keepout overlap"
+        ]
+      },
+      {
+        "attempt": 46,
+        "object_id": "plate_1",
+        "candidate_xy_m": [
+          0.0,
+          0.08
+        ],
+        "yaw_rad": 0.467617962803,
+        "accepted": false,
+        "reasons": [
+          "asset footprint does not fit selected region",
+          "robot initial keepout overlap"
+        ]
+      },
+      {
+        "attempt": 47,
+        "object_id": "plate_1",
+        "candidate_xy_m": [
+          0.0,
+          0.08
+        ],
+        "yaw_rad": 0.15831430254,
+        "accepted": false,
+        "reasons": [
+          "asset footprint does not fit selected region",
+          "robot initial keepout overlap"
+        ]
+      },
+      {
+        "attempt": 48,
+        "object_id": "plate_1",
+        "candidate_xy_m": [
+          0.0,
+          0.08
+        ],
+        "yaw_rad": 2.357058400359,
+        "accepted": false,
+        "reasons": [
+          "asset footprint does not fit selected region",
+          "robot initial keepout overlap"
+        ]
+      },
+      {
+        "attempt": 49,
+        "object_id": "plate_1",
+        "candidate_xy_m": [
+          0.0,
+          0.08
+        ],
+        "yaw_rad": 1.441647271406,
+        "accepted": false,
+        "reasons": [
+          "asset footprint does not fit selected region",
+          "robot initial keepout overlap"
+        ]
+      },
+      {
+        "attempt": 50,
+        "object_id": "plate_1",
+        "candidate_xy_m": [
+          0.0,
+          0.08
+        ],
+        "yaw_rad": -1.33242631985,
+        "accepted": false,
+        "reasons": [
+          "asset footprint does not fit selected region",
+          "robot initial keepout overlap"
+        ]
+      },
+      {
+        "attempt": 51,
+        "object_id": "plate_1",
+        "candidate_xy_m": [
+          0.0,
+          0.08
+        ],
+        "yaw_rad": 3.017027546643,
+        "accepted": false,
+        "reasons": [
+          "asset footprint does not fit selected region",
+          "robot initial keepout overlap"
+        ]
+      },
+      {
+        "attempt": 52,
+        "object_id": "plate_1",
+        "candidate_xy_m": [
+          0.0,
+          0.08
+        ],
+        "yaw_rad": -2.399763490377,
+        "accepted": false,
+        "reasons": [
+          "asset footprint does not fit selected region",
+          "robot initial keepout overlap"
+        ]
+      },
+      {
+        "attempt": 53,
+        "object_id": "plate_1",
+        "candidate_xy_m": [
+          0.0,
+          0.08
+        ],
+        "yaw_rad": -0.514449483152,
+        "accepted": false,
+        "reasons": [
+          "asset footprint does not fit selected region",
+          "robot initial keepout overlap"
+        ]
+      },
+      {
+        "attempt": 54,
+        "object_id": "plate_1",
+        "candidate_xy_m": [
+          0.0,
+          0.08
+        ],
+        "yaw_rad": 1.615664110519,
+        "accepted": false,
+        "reasons": [
+          "asset footprint does not fit selected region",
+          "robot initial keepout overlap"
+        ]
+      },
+      {
+        "attempt": 55,
+        "object_id": "plate_1",
+        "candidate_xy_m": [
+          0.0,
+          0.08
+        ],
+        "yaw_rad": -2.186645658492,
+        "accepted": false,
+        "reasons": [
+          "asset footprint does not fit selected region",
+          "robot initial keepout overlap"
+        ]
+      },
+      {
+        "attempt": 56,
+        "object_id": "plate_1",
+        "candidate_xy_m": [
+          0.0,
+          0.08
+        ],
+        "yaw_rad": -0.069346884927,
+        "accepted": false,
+        "reasons": [
+          "asset footprint does not fit selected region",
+          "robot initial keepout overlap"
+        ]
+      },
+      {
+        "attempt": 57,
+        "object_id": "plate_1",
+        "candidate_xy_m": [
+          0.0,
+          0.08
+        ],
+        "yaw_rad": -2.895246192175,
+        "accepted": false,
+        "reasons": [
+          "asset footprint does not fit selected region",
+          "robot initial keepout overlap"
+        ]
+      },
+      {
+        "attempt": 58,
+        "object_id": "plate_1",
+        "candidate_xy_m": [
+          0.0,
+          0.08
+        ],
+        "yaw_rad": 1.056931398212,
+        "accepted": false,
+        "reasons": [
+          "asset footprint does not fit selected region",
+          "robot initial keepout overlap"
+        ]
+      },
+      {
+        "attempt": 59,
+        "object_id": "plate_1",
+        "candidate_xy_m": [
+          0.0,
+          0.08
+        ],
+        "yaw_rad": 1.662347779296,
+        "accepted": false,
+        "reasons": [
+          "asset footprint does not fit selected region",
+          "robot initial keepout overlap"
+        ]
+      },
+      {
+        "attempt": 60,
+        "object_id": "plate_1",
+        "candidate_xy_m": [
+          0.0,
+          0.08
+        ],
+        "yaw_rad": 0.458835514994,
+        "accepted": false,
+        "reasons": [
+          "asset footprint does not fit selected region",
+          "robot initial keepout overlap"
+        ]
+      },
+      {
+        "attempt": 61,
+        "object_id": "plate_1",
+        "candidate_xy_m": [
+          0.0,
+          0.08
+        ],
+        "yaw_rad": 2.359196670468,
+        "accepted": false,
+        "reasons": [
+          "asset footprint does not fit selected region",
+          "robot initial keepout overlap"
+        ]
+      },
+      {
+        "attempt": 62,
+        "object_id": "plate_1",
+        "candidate_xy_m": [
+          0.0,
+          0.08
+        ],
+        "yaw_rad": -1.170258890698,
+        "accepted": false,
+        "reasons": [
+          "asset footprint does not fit selected region",
+          "robot initial keepout overlap"
+        ]
+      },
+      {
+        "attempt": 63,
+        "object_id": "plate_1",
+        "candidate_xy_m": [
+          0.0,
+          0.08
+        ],
+        "yaw_rad": 1.227076975931,
+        "accepted": false,
+        "reasons": [
+          "asset footprint does not fit selected region",
+          "robot initial keepout overlap"
+        ]
+      },
+      {
+        "attempt": 64,
+        "object_id": "plate_1",
+        "candidate_xy_m": [
+          0.0,
+          0.08
+        ],
+        "yaw_rad": 0.592943425267,
+        "accepted": false,
+        "reasons": [
+          "asset footprint does not fit selected region",
+          "robot initial keepout overlap"
+        ]
+      },
+      {
+        "attempt": 65,
+        "object_id": "plate_1",
+        "candidate_xy_m": [
+          0.0,
+          0.08
+        ],
+        "yaw_rad": 0.501996373662,
+        "accepted": false,
+        "reasons": [
+          "asset footprint does not fit selected region",
+          "robot initial keepout overlap"
+        ]
+      },
+      {
+        "attempt": 66,
+        "object_id": "plate_1",
+        "candidate_xy_m": [
+          0.0,
+          0.08
+        ],
+        "yaw_rad": -0.2751700189,
+        "accepted": false,
+        "reasons": [
+          "asset footprint does not fit selected region",
+          "robot initial keepout overlap"
+        ]
+      },
+      {
+        "attempt": 67,
+        "object_id": "plate_1",
+        "candidate_xy_m": [
+          0.0,
+          0.08
+        ],
+        "yaw_rad": 2.136080563431,
+        "accepted": false,
+        "reasons": [
+          "asset footprint does not fit selected region",
+          "robot initial keepout overlap"
+        ]
+      },
+      {
+        "attempt": 68,
+        "object_id": "plate_1",
+        "candidate_xy_m": [
+          0.0,
+          0.08
+        ],
+        "yaw_rad": 2.794013723163,
+        "accepted": false,
+        "reasons": [
+          "asset footprint does not fit selected region",
+          "robot initial keepout overlap"
+        ]
+      },
+      {
+        "attempt": 69,
+        "object_id": "plate_1",
+        "candidate_xy_m": [
+          0.0,
+          0.08
+        ],
+        "yaw_rad": -0.162744945756,
+        "accepted": false,
+        "reasons": [
+          "asset footprint does not fit selected region",
+          "robot initial keepout overlap"
+        ]
+      },
+      {
+        "attempt": 70,
+        "object_id": "plate_1",
+        "candidate_xy_m": [
+          0.0,
+          0.08
+        ],
+        "yaw_rad": 1.03139872558,
+        "accepted": false,
+        "reasons": [
+          "asset footprint does not fit selected region",
+          "robot initial keepout overlap"
+        ]
+      },
+      {
+        "attempt": 71,
+        "object_id": "plate_1",
+        "candidate_xy_m": [
+          0.0,
+          0.08
+        ],
+        "yaw_rad": -2.760395397516,
+        "accepted": false,
+        "reasons": [
+          "asset footprint does not fit selected region",
+          "robot initial keepout overlap"
+        ]
+      },
+      {
+        "attempt": 72,
+        "object_id": "plate_1",
+        "candidate_xy_m": [
+          0.0,
+          0.08
+        ],
+        "yaw_rad": 1.266011707774,
+        "accepted": false,
+        "reasons": [
+          "asset footprint does not fit selected region",
+          "robot initial keepout overlap"
+        ]
+      },
+      {
+        "attempt": 73,
+        "object_id": "plate_1",
+        "candidate_xy_m": [
+          0.0,
+          0.08
+        ],
+        "yaw_rad": 0.92443785703,
+        "accepted": false,
+        "reasons": [
+          "asset footprint does not fit selected region",
+          "robot initial keepout overlap"
+        ]
+      },
+      {
+        "attempt": 74,
+        "object_id": "plate_1",
+        "candidate_xy_m": [
+          0.0,
+          0.08
+        ],
+        "yaw_rad": 3.098213161887,
+        "accepted": false,
+        "reasons": [
+          "asset footprint does not fit selected region",
+          "robot initial keepout overlap"
+        ]
+      },
+      {
+        "attempt": 75,
+        "object_id": "plate_1",
+        "candidate_xy_m": [
+          0.0,
+          0.08
+        ],
+        "yaw_rad": 2.022713089243,
+        "accepted": false,
+        "reasons": [
+          "asset footprint does not fit selected region",
+          "robot initial keepout overlap"
+        ]
+      },
+      {
+        "attempt": 76,
+        "object_id": "plate_1",
+        "candidate_xy_m": [
+          0.0,
+          0.08
+        ],
+        "yaw_rad": -1.353426187847,
+        "accepted": false,
+        "reasons": [
+          "asset footprint does not fit selected region",
+          "robot initial keepout overlap"
+        ]
+      },
+      {
+        "attempt": 77,
+        "object_id": "plate_1",
+        "candidate_xy_m": [
+          0.0,
+          0.08
+        ],
+        "yaw_rad": -0.717593530773,
+        "accepted": false,
+        "reasons": [
+          "asset footprint does not fit selected region",
+          "robot initial keepout overlap"
+        ]
+      },
+      {
+        "attempt": 78,
+        "object_id": "plate_1",
+        "candidate_xy_m": [
+          0.0,
+          0.08
+        ],
+        "yaw_rad": 1.059676266459,
+        "accepted": false,
+        "reasons": [
+          "asset footprint does not fit selected region",
+          "robot initial keepout overlap"
+        ]
+      },
+      {
+        "attempt": 79,
+        "object_id": "plate_1",
+        "candidate_xy_m": [
+          0.0,
+          0.08
+        ],
+        "yaw_rad": -2.999825595544,
+        "accepted": false,
+        "reasons": [
+          "asset footprint does not fit selected region",
+          "robot initial keepout overlap"
+        ]
+      },
+      {
+        "attempt": 80,
+        "object_id": "plate_1",
+        "candidate_xy_m": [
+          0.0,
+          0.08
+        ],
+        "yaw_rad": -0.240675614317,
+        "accepted": false,
+        "reasons": [
+          "asset footprint does not fit selected region",
+          "robot initial keepout overlap"
+        ]
+      },
+      {
+        "attempt": 81,
+        "object_id": "plate_1",
+        "candidate_xy_m": [
+          0.0,
+          0.08
+        ],
+        "yaw_rad": -2.085713548349,
+        "accepted": false,
+        "reasons": [
+          "asset footprint does not fit selected region",
+          "robot initial keepout overlap"
+        ]
+      },
+      {
+        "attempt": 82,
+        "object_id": "plate_1",
+        "candidate_xy_m": [
+          0.0,
+          0.08
+        ],
+        "yaw_rad": -2.40585807817,
+        "accepted": false,
+        "reasons": [
+          "asset footprint does not fit selected region",
+          "robot initial keepout overlap"
+        ]
+      },
+      {
+        "attempt": 83,
+        "object_id": "plate_1",
+        "candidate_xy_m": [
+          0.0,
+          0.08
+        ],
+        "yaw_rad": -2.771171112254,
+        "accepted": false,
+        "reasons": [
+          "asset footprint does not fit selected region",
+          "robot initial keepout overlap"
+        ]
+      },
+      {
+        "attempt": 84,
+        "object_id": "plate_1",
+        "candidate_xy_m": [
+          0.0,
+          0.08
+        ],
+        "yaw_rad": 1.685357572071,
+        "accepted": false,
+        "reasons": [
+          "asset footprint does not fit selected region",
+          "robot initial keepout overlap"
+        ]
+      },
+      {
+        "attempt": 85,
+        "object_id": "plate_1",
+        "candidate_xy_m": [
+          0.0,
+          0.08
+        ],
+        "yaw_rad": -2.328924070975,
+        "accepted": false,
+        "reasons": [
+          "asset footprint does not fit selected region",
+          "robot initial keepout overlap"
+        ]
+      },
+      {
+        "attempt": 86,
+        "object_id": "plate_1",
+        "candidate_xy_m": [
+          0.0,
+          0.08
+        ],
+        "yaw_rad": -1.585782768666,
+        "accepted": false,
+        "reasons": [
+          "asset footprint does not fit selected region",
+          "robot initial keepout overlap"
+        ]
+      },
+      {
+        "attempt": 87,
+        "object_id": "plate_1",
+        "candidate_xy_m": [
+          0.0,
+          0.08
+        ],
+        "yaw_rad": -0.685183223017,
+        "accepted": false,
+        "reasons": [
+          "asset footprint does not fit selected region",
+          "robot initial keepout overlap"
+        ]
+      },
+      {
+        "attempt": 88,
+        "object_id": "plate_1",
+        "candidate_xy_m": [
+          0.0,
+          0.08
+        ],
+        "yaw_rad": 2.333713090594,
+        "accepted": false,
+        "reasons": [
+          "asset footprint does not fit selected region",
+          "robot initial keepout overlap"
+        ]
+      },
+      {
+        "attempt": 89,
+        "object_id": "plate_1",
+        "candidate_xy_m": [
+          0.0,
+          0.08
+        ],
+        "yaw_rad": -2.635285405856,
+        "accepted": false,
+        "reasons": [
+          "asset footprint does not fit selected region",
+          "robot initial keepout overlap"
+        ]
+      },
+      {
+        "attempt": 90,
+        "object_id": "plate_1",
+        "candidate_xy_m": [
+          0.0,
+          0.08
+        ],
+        "yaw_rad": -0.319264975775,
+        "accepted": false,
+        "reasons": [
+          "asset footprint does not fit selected region",
+          "robot initial keepout overlap"
+        ]
+      },
+      {
+        "attempt": 91,
+        "object_id": "plate_1",
+        "candidate_xy_m": [
+          0.0,
+          0.08
+        ],
+        "yaw_rad": 0.310640110722,
+        "accepted": false,
+        "reasons": [
+          "asset footprint does not fit selected region",
+          "robot initial keepout overlap"
+        ]
+      },
+      {
+        "attempt": 92,
+        "object_id": "plate_1",
+        "candidate_xy_m": [
+          0.0,
+          0.08
+        ],
+        "yaw_rad": 2.408871625308,
+        "accepted": false,
+        "reasons": [
+          "asset footprint does not fit selected region",
+          "robot initial keepout overlap"
+        ]
+      },
+      {
+        "attempt": 93,
+        "object_id": "plate_1",
+        "candidate_xy_m": [
+          0.0,
+          0.08
+        ],
+        "yaw_rad": 2.006094385968,
+        "accepted": false,
+        "reasons": [
+          "asset footprint does not fit selected region",
+          "robot initial keepout overlap"
+        ]
+      },
+      {
+        "attempt": 94,
+        "object_id": "plate_1",
+        "candidate_xy_m": [
+          0.0,
+          0.08
+        ],
+        "yaw_rad": 2.286981872051,
+        "accepted": false,
+        "reasons": [
+          "asset footprint does not fit selected region",
+          "robot initial keepout overlap"
+        ]
+      },
+      {
+        "attempt": 95,
+        "object_id": "plate_1",
+        "candidate_xy_m": [
+          0.0,
+          0.08
+        ],
+        "yaw_rad": -1.392221511827,
+        "accepted": false,
+        "reasons": [
+          "asset footprint does not fit selected region",
+          "robot initial keepout overlap"
+        ]
+      },
+      {
+        "attempt": 96,
+        "object_id": "plate_1",
+        "candidate_xy_m": [
+          0.0,
+          0.08
+        ],
+        "yaw_rad": -0.532207678522,
+        "accepted": false,
+        "reasons": [
+          "asset footprint does not fit selected region",
+          "robot initial keepout overlap"
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,15 @@
+#usda 1.0
+
+def Cube "Cube" (
+    active = false
+)
+{
+    double3 xformOp:translate = (1, 2, 3)
+    uniform token[] xformOpOrder = ["xformOp:translate"]
+}
+
+def DistantLight "Light"
+{
+    float inputs:intensity = 100
+}
+

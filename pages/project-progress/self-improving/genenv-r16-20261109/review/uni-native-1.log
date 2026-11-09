@@ -1,0 +1,16 @@
+Traceback (most recent call last):
+  File "/workspace/TacHarness-genenv/outputs/genenv-audit-20261109/uni60/work/envs/utils/__init__.py", line 2, in <module>
+    import carb # need to use when IsaacSim is open.
+    ^^^^^^^^^^^
+ModuleNotFoundError: No module named 'carb'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/workspace/TacHarness-genenv/outputs/genenv-audit-20261109/uni60/work/scripts/collect_data.py", line 14, in <module>
+    from envs.utils.env_parser import (
+  File "/workspace/TacHarness-genenv/outputs/genenv-audit-20261109/uni60/work/envs/utils/__init__.py", line 8, in <module>
+    from .transforms import *
+  File "/workspace/TacHarness-genenv/outputs/genenv-audit-20261109/uni60/work/envs/utils/transforms.py", line 4, in <module>
+    import transforms3d as t3d
+ModuleNotFoundError: No module named 'transforms3d'

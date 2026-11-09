@@ -1,0 +1,21 @@
+{
+  "kind": "collect_targeted",
+  "target_layouts": [
+    {
+      "object": "banana",
+      "xy": [
+        0.47972712039947507,
+        -0.145806944668293
+      ]
+    },
+    {
+      "object": "bowl",
+      "xy": [
+        0.5611012578010559,
+        0.15261490643024445
+      ]
+    }
+  ],
+  "reset_jitter_m": 0,
+  "reset_yaw_jitter_rad": 0
+}

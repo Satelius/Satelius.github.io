@@ -1,0 +1,115 @@
+{
+  "schema_version": "robotwin.scene_validation.v1",
+  "scene_id": "a_teal_cube_on_the_table_4ab15d0e7a",
+  "resolved_scene_sha256": "e6efcd2db4b6a23f742353f7fe64841ff7271b3e2d149db0c305ccbbadbe5dfb",
+  "status": "incomplete",
+  "fail_count": 0,
+  "not_run_count": 1,
+  "checks": [
+    {
+      "name": "workspace_bounds:block_1",
+      "status": "pass",
+      "evidence": {
+        "aabb": [
+          0.1710684335952139,
+          0.2335015564047861,
+          -0.03251458040478609,
+          0.02991854240478609
+        ]
+      }
+    },
+    {
+      "name": "table_support_height:block_1",
+      "status": "pass",
+      "evidence": {
+        "bottom_z_m": 0.741,
+        "table_height_m": 0.741,
+        "support_relation": "on_table"
+      }
+    },
+    {
+      "name": "real_asset_files:block_1",
+      "status": "pass",
+      "evidence": {
+        "paths": [
+          "/workspace/summary-web/genenv-r16-20261109/runs/teal-proxy/objects/900_gen_block_75e996a2/collision/textured0.obj",
+          "/workspace/summary-web/genenv-r16-20261109/runs/teal-proxy/objects/900_gen_block_75e996a2/generation_provenance.json",
+          "/workspace/summary-web/genenv-r16-20261109/runs/teal-proxy/objects/900_gen_block_75e996a2/model_data0.json",
+          "/workspace/summary-web/genenv-r16-20261109/runs/teal-proxy/objects/900_gen_block_75e996a2/visual/textured0.obj"
+        ],
+        "exists": [
+          true,
+          true,
+          true,
+          true
+        ]
+      }
+    },
+    {
+      "name": "relation:on_table:block_1",
+      "status": "pass",
+      "evidence": {
+        "target": "table"
+      }
+    },
+    {
+      "name": "resolved_only_roundtrip",
+      "status": "pass",
+      "evidence": {
+        "before": "e6efcd2db4b6a23f742353f7fe64841ff7271b3e2d149db0c305ccbbadbe5dfb",
+        "after": "e6efcd2db4b6a23f742353f7fe64841ff7271b3e2d149db0c305ccbbadbe5dfb"
+      }
+    },
+    {
+      "name": "package_manifest",
+      "status": "pass",
+      "evidence": {
+        "schema_version": "robotwin.generated_scene_package_verification.v1",
+        "status": "pass",
+        "checks": [
+          {
+            "path": "request.txt",
+            "exists": true,
+            "expected_sha256": "2e82327fadc289d3278fbaa4d234fbc35f7aa8754472ed2caf1662f8db1415b9",
+            "actual_sha256": "2e82327fadc289d3278fbaa4d234fbc35f7aa8754472ed2caf1662f8db1415b9",
+            "pass": true
+          },
+          {
+            "path": "scene_spec.json",
+            "exists": true,
+            "expected_sha256": "8cd99e3a8c2576fe5699a91f9309c51842c585341bf35acfcbd4501a6abebd31",
+            "actual_sha256": "8cd99e3a8c2576fe5699a91f9309c51842c585341bf35acfcbd4501a6abebd31",
+            "pass": true
+          },
+          {
+            "path": "resolved_scene.json",
+            "exists": true,
+            "expected_sha256": "914057e9897b503effcb5c9a077630466a80c78597be92c0205506025ed76989",
+            "actual_sha256": "914057e9897b503effcb5c9a077630466a80c78597be92c0205506025ed76989",
+            "pass": true
+          },
+          {
+            "path": "generated_scene.py",
+            "exists": true,
+            "expected_sha256": "4fa36e16f78bee1680d4e892ee11c28fd84204025b8295b9937bbc5e5716cad6",
+            "actual_sha256": "4fa36e16f78bee1680d4e892ee11c28fd84204025b8295b9937bbc5e5716cad6",
+            "pass": true
+          },
+          {
+            "path": "resolved_scene.json#canonical_digest",
+            "expected_sha256": "e6efcd2db4b6a23f742353f7fe64841ff7271b3e2d149db0c305ccbbadbe5dfb",
+            "actual_sha256": "e6efcd2db4b6a23f742353f7fe64841ff7271b3e2d149db0c305ccbbadbe5dfb",
+            "pass": true
+          }
+        ]
+      }
+    },
+    {
+      "name": "runtime_evidence",
+      "status": "not_run",
+      "evidence": {
+        "required": false
+      }
+    }
+  ]
+}

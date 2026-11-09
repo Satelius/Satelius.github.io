@@ -1,0 +1,32 @@
+[
+  {
+    "case": "nan",
+    "result": "emitted",
+    "position": [
+      [
+        "NaN",
+        0.1
+      ]
+    ]
+  },
+  {
+    "case": "outside",
+    "result": "emitted",
+    "position": [
+      [
+        0.8,
+        0.1
+      ]
+    ]
+  },
+  {
+    "case": "partial",
+    "result": "emitted",
+    "position": [
+      [
+        0.5,
+        0.1
+      ]
+    ]
+  }
+]

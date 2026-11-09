@@ -1,0 +1,576 @@
+--- a/work/envs/_base_task.py
++++ b/work/envs/_base_task.py
+@@ -34,7 +34,8 @@
+ from isaaclab.scene import InteractiveSceneCfg
+ from isaaclab.sensors import FrameTransformer, FrameTransformerCfg
+ from isaaclab.sensors.frame_transformer.frame_transformer_cfg import OffsetCfg
+-from isaaclab.sim import PhysxCfg, SimulationCfg
++from isaaclab.sim import SimulationCfg
++from isaaclab_physx.physics.physx_manager_cfg import PhysxCfg
+ from isaaclab.sim.schemas.schemas_cfg import RigidBodyPropertiesCfg
+ from isaaclab.utils import configclass
+ from isaaclab.utils.math import (
+@@ -96,7 +97,7 @@
+         dt=1/120,
+         render_interval=decimation,
+         # device="cpu",
+-        physx=PhysxCfg(
++        physics=PhysxCfg(
+             enable_ccd=True,  # needed for more stable ball_rolling
+             # bounce_threshold_velocity=10000,
+         ),
+@@ -163,7 +164,7 @@
+         CameraCfg(
+             name="head",
+             prim_path="/World/envs/env_.*/Camera",
+-            offset=CameraCfg.OffsetCfg(pos=(0.554, 1.0, 0.150), rot=(0, 0, 0.707, 0.707), convention="opengl"),
++            offset=CameraCfg.OffsetCfg(pos=(0.554, 1.0, 0.150), rot=(0, 0.707, 0.707, 0), convention="opengl"),
+             data_types=["rgb", "depth"],
+             spawn=sim_utils.PinholeCameraCfg(
+                 focal_length=1.94, focus_distance=1.0, horizontal_aperture=2.688, clipping_range=(0.01, 100.0)
+@@ -501,6 +502,44 @@
+         self._update_render()
+ 
+         self._stabilize_and_calibrate_marker_references()
++        import os
++        if os.environ.get("GENENV_ZERO_AIR") == "1":
++            from scipy.spatial import cKDTree
++            saved = {k:actor.get_pose() for k,actor in self._actor_manager.actors.items()}
++            for actor in self._actor_manager.actors.values():
++                actor.set_pose(actor.get_pose().add_bias([0.,1.2,0.]))
++            for _ in range(5): self._step(is_save=False)
++            samples = {k: [] for k in self._tactile_manager.tactiles}
++            distances = {k: [] for k in samples}
++            for _ in range(3):
++                self._step(is_save=False)
++                self._update_render()
++                tree=cKDTree(np.vstack([actor.vertices.copy() for actor in self._actor_manager.actors.values()]))
++                for name, tactile in self._tactile_manager.tactiles.items():
++                    verts=tactile.gelpad._data.nodal_pos_w.detach().cpu().numpy().reshape(-1,3)
++                    separation=float(tree.query(verts,k=1)[0].min())
++                    if separation<.04:
++                        (Path(os.environ["GENENV_UNI_DIAG"])/"air-block.json").write_text(json.dumps(
++                            dict(pad=name,separation_m=separation,gel_bounds=[verts.min(0).tolist(),verts.max(0).tolist()],
++                                 actors={k:[obj.vertices.min(0).tolist(),obj.vertices.max(0).tolist()]
++                                         for k,obj in self._actor_manager.actors.items()}),indent=2))
++                        raise RuntimeError("insufficient object clearance for empty gel reference")
++                    samples[name].append(tactile.get_press_depth_map().detach().clone())
++                    distances[name].append(separation)
++            receipt={}
++            for name,tactile in self._tactile_manager.tactiles.items():
++                maps=torch.stack(samples[name]); noise=(maps.max(0).values-maps.min(0).values).max().item()
++                receipt[name]={"clearance_m":distances[name],"empty_peak_mm":maps.max().item(),"max_range_mm":noise}
++                if noise>.1:raise RuntimeError(f"empty reference unstable: {receipt[name]}")
++                tactile._air_mm=maps.median(0).values
++            for k,actor in self._actor_manager.actors.items():
++                actor.set_pose(saved[k])
++            for _ in range(5): self._step(is_save=False)
++            receipt['restored_m']={k:(actor.get_pose().p-saved[k].p).tolist()
++                                  for k,actor in self._actor_manager.actors.items()}
++            (Path(os.environ["GENENV_UNI_DIAG"])/"calibration.json").write_text(json.dumps(receipt,indent=2))
++            if any(np.linalg.norm(v)>.002 for v in receipt['restored_m'].values()):
++                raise RuntimeError("calibration condition did not restore within 2 mm")
+         self.pre_move()
+         self.in_pre_move = False
+ 
+@@ -599,6 +638,31 @@
+         self._actor_manager.update(dt=dt)
+         self._tactile_manager.update(dt=dt, force_recompute=True)
+  
++        if self.step_count % 6 == 0 and self.step_count != getattr(self, "_genenv_captured_step", -1):
++            import os
++            from PIL import Image
++            folder = Path(os.environ["GENENV_UNI_DIAG"])
++            folder.mkdir(parents=True, exist_ok=True)
++            self._genenv_captured_step = self.step_count
++            panes = []
++            for key, camera in self._camera_manager.cameras.items():
++                panes.append(Image.fromarray(camera.data.output["rgb"][0].cpu().numpy()[:,:,:3]))
++            depths = {}
++            for key, sensor in self._tactile_manager.tactiles.items():
++                depths[key] = float(sensor.get_press_depth())
++                tactile = sensor.get_observations(["rgb"])["rgb"]
++                if tactile.ndim == 4: tactile = tactile[0]
++                arr = tactile.detach().cpu().numpy()
++                if arr.dtype != np.uint8: arr = (arr.clip(0, 1) * 255).astype(np.uint8)
++                panes.append(Image.fromarray(arr))
++            image = Image.new("RGB",(640,360))
++            for ix,pane in enumerate(panes[:4]):
++                image.paste(pane.resize((320,180)),((ix%2)*320,(ix//2)*180))
++            image.save(folder/f"f{self.step_count:06d}.jpg",quality=88)
++            with (folder/"frames.jsonl").open("a") as stream:
++                stream.write(json.dumps({"step":self.step_count,"uipc_advances":self.uipc_sim._advances,
++                    "pressure_mm":depths,"actor_positions":{k:obj.get_pose().p.tolist() for k,obj in self._actor_manager.actors.items()}})+"\n")
++
+         self.last_render = self.step_count
+         self._last_render_physics_step = self._physics_step_count
+ 
+--- a/work/envs/put_bottle_in_shelf.py
++++ b/work/envs/put_bottle_in_shelf.py
+@@ -3,10 +3,15 @@
+ 
+ @configclass
+ class TaskCfg(BaseTaskCfg):
+-    pass
++    # [shelf x offset, bottle y offset, tool height, tool pitch angle]
++    condition: tuple | None = None
+ 
+ class Task(BaseTask):
+     def __init__(self, cfg: BaseTaskCfg, mode:Literal['collect', 'eval'] = 'collect', render_mode: str|None = None, **kwargs):
++        if cfg.condition is not None:
++            bounds = [(-.05,.05),(-.03,.03),(.11,.12),(-10.,10.)]
++            if len(cfg.condition) != 4 or any(isinstance(x,bool) or not lo<=x<=hi for x,(lo,hi) in zip(cfg.condition,bounds)):
++                raise ValueError("bottle condition exceeds native limits")
+         cfg.sim.physics_material.dynamic_friction = 1
+         cfg.sim.physics_material.static_friction = 1
+         cfg.uipc_sim.contact.default_friction_ratio = 1
+@@ -29,8 +34,12 @@
+         
+     def _reset_actors(self):
+         base_offset = self.create_noise([0.05, 0.0, 0.0])
++        if self.cfg.condition is not None:
++            base_offset = Pose([self.cfg.condition[0],0.,0.])
+         base_pose = Pose([0.9, 0.0, 0.01], [1, 0, 0, 0]).add_offset(base_offset)
+         bottle_offset = self.create_noise([0.0, 0.03, 0.0])
++        if self.cfg.condition is not None:
++            bottle_offset = Pose([0.,self.cfg.condition[1],0.])
+         bottle_pose = Pose([0.5, 0.0, 0.01], [1, 0, 0, 0]).add_offset(bottle_offset)
+ 
+         self.shelf.set_pose(base_pose)
+@@ -42,15 +51,23 @@
+         bottle_pose = self.bottle.get_pose()
+         target_pose = bottle_pose.add_bias([0, 0, 0.11+0.01*self.rng.random()])
+         self.grasp_noise = self.create_noise(euler=[0, np.pi/18, 0])
+-        target_pose = construct_grasp_pose(
+-            target_pose.p,
+-            [0, 0, 1],
+-            [1, 0, 0]
+-        ).add_offset(self.grasp_noise)
++        if self.cfg.condition is not None:
++            angle=np.deg2rad(self.cfg.condition[3])*.5
++            self.grasp_noise=Pose(q=[np.cos(angle),0.,np.sin(angle),0.])
++            target_pose=bottle_pose.add_bias([0,0,self.cfg.condition[2]])
++        nominal=construct_grasp_pose(target_pose.p, [0,0,1], [1,0,0])
++        target_pose=nominal.add_offset(self.grasp_noise)
+         grasp_idx = self.bottle.register_point(
+             pose=target_pose,
+             type='contact'
+         )
++        import os, json
++        from pathlib import Path
++        (Path(os.environ["GENENV_UNI_DIAG"])/"pregrasp.json").write_text(json.dumps({
++            "condition":self.cfg.condition, "shelf_actual":self.shelf.get_pose().tolist(),
++            "bottle_actual":bottle_pose.tolist(), "grasp_height_m":float(target_pose.p[2]-bottle_pose.p[2]),
++            "tool_noise_wxyz":self.grasp_noise.q.tolist(), "registered_contact":int(grasp_idx), "nominal_q":nominal.q.tolist(), "registered_q":target_pose.q.tolist()
++        },indent=2))
+         self.move(self.atom.grasp_actor(
+             self.bottle, contact_point_id=grasp_idx, pre_dis=0.0, is_close=False
+         ))
+--- a/work/envs/robot/robot.py
++++ b/work/envs/robot/robot.py
+@@ -71,10 +71,10 @@
+ 
+         self._arm_ids = torch.tensor([
+             self.joint_name_to_id[n] for n in self._arm_joint_names
+-        ], device=self.device)
++        ], device=self.device, dtype=torch.int32)
+         self._gripper_ids = torch.tensor([
+             self.joint_name_to_id[n] for n in self._gripper_joint_names
+-        ], device=self.device)
++        ], device=self.device, dtype=torch.int32)
+         self.origin_pose = self.get_gripper_center_pose()
+         self._all_ids = torch.cat([self._arm_ids, self._gripper_ids], dim=0)
+  
+@@ -113,16 +113,16 @@
+         """获取当前末端执行器目标位姿（target_pose）"""
+         if env_ids is None:
+             env_ids = [0]
+-        ee_pos_w = self.robot.data.body_link_pos_w[:, self._body_idx]
+-        ee_quat_w = self.robot.data.body_link_quat_w[:, self._body_idx]
+-        root_pos_w = self.robot.data.root_link_pos_w
+-        root_quat_w = self.robot.data.root_link_quat_w
++        ee_pos_w = self.robot.data.body_link_pos_w.torch[:, self._body_idx]
++        ee_quat_w = self.robot.data.body_link_quat_w.torch[:, self._body_idx]
++        root_pos_w = self.robot.data.root_link_pos_w.torch
++        root_quat_w = self.robot.data.root_link_quat_w.torch
+         ee_pose_b, ee_quat_b = math_utils.subtract_frame_transforms(
+             root_pos_w, root_quat_w, ee_pos_w, ee_quat_w)
+-        return Pose(ee_pose_b[0].cpu().numpy(), ee_quat_b[0].cpu().numpy())
++        return Pose(ee_pose_b[0].cpu().numpy(), ee_quat_b[0][[3, 0, 1, 2]].cpu().numpy())
+ 
+     def get_qpos(self):
+-        return self.robot.data.joint_pos.clone().cpu()
++        return self.robot.data.joint_pos.torch.clone().cpu()
+ 
+     def get_gripper_qpos_all(self):
+         """Return the measured position of each gripper finger joint."""
+@@ -137,25 +137,19 @@
+ 
+     def set_arm(self, pos:torch.Tensor, vel:torch.Tensor=None, env_ids:slice=None, force:bool=True):
+         '''设置目标位姿'''
+-        self.robot.set_joint_position_target(pos, joint_ids=self._arm_ids, env_ids=env_ids)
++        self.robot.set_joint_position_target(pos.reshape(1,-1), joint_ids=self._arm_ids, env_ids=env_ids)
+         if vel is not None:
+-            self.robot.set_joint_velocity_target(vel, joint_ids=self._arm_ids, env_ids=env_ids)
++            self.robot.set_joint_velocity_target(vel.reshape(1,-1), joint_ids=self._arm_ids, env_ids=env_ids)
+         if force:
+-            self.robot.root_physx_view.set_dof_positions(
+-                self.robot._data.joint_pos_target,
+-                self.robot._ALL_INDICES
+-            )
++            self.robot.write_joint_position_to_sim_index(position=self.robot.data.joint_pos_target.torch)
+ 
+     def set_gripper(self, pos:torch.Tensor, vel:torch.Tensor=None, env_ids:slice=None, force:bool=True):
+         '''设置目标位姿'''
+-        self.robot.set_joint_position_target(pos, joint_ids=self._gripper_ids, env_ids=env_ids)
++        self.robot.set_joint_position_target(pos.reshape(1,-1), joint_ids=self._gripper_ids, env_ids=env_ids)
+         if vel is not None:
+-            self.robot.set_joint_velocity_target(vel, joint_ids=self._gripper_ids, env_ids=env_ids)
++            self.robot.set_joint_velocity_target(vel.reshape(1,-1), joint_ids=self._gripper_ids, env_ids=env_ids)
+         if force:
+-            self.robot.root_physx_view.set_dof_positions(
+-                self.robot._data.joint_pos_target,
+-                self.robot._ALL_INDICES
+-            )
++            self.robot.write_joint_position_to_sim_index(position=self.robot.data.joint_pos_target.torch)
+ 
+     def plan_arm(self, target_pose:Pose, constraint_pose=None, pre_dis=None, time_dilation_factor=None):
+         result:MotionGenResult = self.planner.plan_path(
+--- a/work/envs/sensors/camera.py
++++ b/work/envs/sensors/camera.py
+@@ -7,6 +7,19 @@
+ if TYPE_CHECKING:
+     from .._base_task import BaseTask
+     from tacex_uipc import UipcInteractiveScene
++
++def install_scale_readback():
++    from isaaclab.sim.views import usd_frame_view as views
++    import numpy as np
++    import warp as wp
++    def get_scales(self, indices=None):
++        rows = []
++        for prim_index in self._resolve_indices(indices):
++            value = self._prims[prim_index].GetAttribute("xformOp:scale").Get()
++            rows.append(np.broadcast_to(1.0 if value is None else value, (3,)))
++        return wp.array(np.asarray(rows, dtype=np.float32), dtype=wp.float32, device=self._device)
++    views.UsdFrameView.get_scales = get_scales
++
+ 
+ @configclass
+ class CameraCfg(TiledCameraCfg):
+@@ -24,6 +37,8 @@
+         }
+ 
+     def add_camera(self, cam_cfg: CameraCfg):
++        install_scale_readback()
++        cam_cfg = cam_cfg.replace(prim_path=cam_cfg.prim_path.replace("env_.*", "env_0"))
+         camera = TiledCamera(cam_cfg)
+         camera._initialize_impl()
+         camera._is_initialized = True
+--- a/work/envs/sensors/tactile.py
++++ b/work/envs/sensors/tactile.py
+@@ -318,22 +318,13 @@
+         self.attach_to_init = torch.tensor(self.attach_to_init, dtype=torch.float64, device=self.device)
+ 
+     def get_attach_pose(self):
+-        if type(self.attachment.isaaclab_rigid_object) is Articulation:
+-            # this only works when rigid body is an articulation
+-            # self.attachment.isaaclab_rigid_object._physics_sim_view.update_articulations_kinematic()
+-            # read data from simulation
+-            poses = self.attachment.isaaclab_rigid_object.root_physx_view.get_link_transforms().clone()
+-            poses[..., 3:7] = math_utils.convert_quat(poses[..., 3:7], to="wxyz")
+-            pose = poses[:, self.attachment.rigid_body_id, 0:7].clone()
+-        elif type(self.attachment.isaaclab_rigid_object) is RigidObject:
+-            # only works with rigid body
+-            pose = self.attachment.isaaclab_rigid_object.root_physx_view.get_transforms().clone()
+-            pose[..., 3:7] = math_utils.convert_quat(pose[..., 3:7], to="wxyz")
+-            pose = pose.view(-1, 1, 7)
+-            pose = pose[:, self.attachment.rigid_body_id, 0:7].clone()
+-        else:
+-            raise RuntimeError("Need an Articulation or a RigidBody object for the Isaac X UIPC attachment.")
+-        return Pose.from_list(pose.flatten().tolist())
++        data = self.attachment.isaaclab_rigid_object.data
++        link = self.attachment.rigid_body_id
++        poses = data.body_link_pose_w.torch[:, link].reshape(-1,7)
++        if poses.shape[0] != 1:
++            raise ValueError("expected one tactile pad attachment link")
++        pose = poses[0].cpu().numpy()
++        return Pose(pose[:3], pose[[6,3,4,5]])
+ 
+     def get_init_pts(self):
+         curr_attach_pose = self.get_attach_pose()
+@@ -399,10 +390,13 @@
+     
+     def get_press_depth_map(self):
+         """Return positive gel indentation in millimetres (zero means no press)."""
+-        return (-self.sensor.data.output['height_map'].squeeze(0)).clamp_min(0.0)
++        raw=(-self.sensor.data.output['height_map'].squeeze(0)).clamp_min(0.0)
++        return (raw-self._air_mm).clamp_min(0.0) if hasattr(self,'_air_mm') else raw
+ 
+     def get_press_depth(self):
+         """Return the maximum positive indentation in millimetres."""
++        if hasattr(self,"_air_mm"):
++            return self.get_press_depth_map().max().item()
+         return max(0.0, self.sensor.indentation_depth.squeeze().item())
+ 
+     def get_min_camera_depth(self) -> tuple[float, float]:
+--- a/work/envs/utils/actor.py
++++ b/work/envs/utils/actor.py
+@@ -90,7 +90,7 @@
+         common = dict(
+             prim_path=cfg.prim_path,
+             spawn=cfg.spawn,
+-            init_state=cfg.init_state,
++            init_state=cfg.init_state.replace(rot=tuple(np.roll(cfg.init_state.rot, -1))),
+             collision_group=cfg.collision_group,
+             debug_vis=cfg.debug_vis,
+             mesh_cfg=cfg.mesh_cfg,
+--- a/work/envs/utils/data.py
++++ b/work/envs/utils/data.py
+@@ -271,6 +271,7 @@
+         self.video_path.unlink(missing_ok=True)
+  
+     def close(self, result:str=None):
++        if self.ffmpeg is None: return
+         self.ffmpeg.stdin.close()
+         self.ffmpeg.wait()
+         del self.ffmpeg
+--- a/work/scripts/collect_data.py
++++ b/work/scripts/collect_data.py
+@@ -163,6 +163,19 @@
+         device=args_cli.device,
+     )
+     task: 'BaseTask' = task_env.task
++    # Capture startup state separately from the later reset and expert outcome.
++    from PIL import Image
++    import json
++    diag = Path(os.environ["GENENV_UNI_DIAG"])
++    diag.mkdir(parents=True, exist_ok=True)
++    task.sim.render()
++    task.sim.render()
++    startup = {"world_valid": task.uipc_sim.world.is_valid(), "uipc_steps":task.uipc_sim._advances, "cameras":{}}
++    for name, camera in task._camera_manager.cameras.items():
++        rgb=camera.data.output["rgb"][0].cpu().numpy()[:,:,:3]
++        Image.fromarray(rgb).save(diag/(name+".png"))
++        startup["cameras"][name]={"shape":rgb.shape,"min":int(rgb.min()),"max":int(rgb.max())}
++    (diag/"startup.json").write_text(json.dumps(startup,indent=2))
+     env_cfg = task_env.env_cfg
+     init_cost = time.perf_counter() - init_start
+     
+--- a/overlay/tacex_uipc/envs/direct_uipc_rl_env.py
++++ b/overlay/tacex_uipc/envs/direct_uipc_rl_env.py
+@@ -109,7 +109,7 @@
+         # viewport is not available in other rendering modes so the function will throw a warning
+         # FIXME: This needs to be fixed in the future when we unify the UI functionalities even for
+         # non-rendering modes.
+-        if self.sim.render_mode >= self.sim.RenderMode.PARTIAL_RENDERING:
++        if self.sim.has_gui:
+             self.viewport_camera_controller = ViewportCameraController(self, self.cfg.viewer)
+         else:
+             self.viewport_camera_controller = None
+@@ -148,7 +148,7 @@
+         # extend UI elements
+         # we need to do this here after all the managers are initialized
+         # this is because they dictate the sensors and commands right now
+-        if self.sim.has_gui() and self.cfg.ui_window_class_type is not None:
++        if self.sim.has_gui and self.cfg.ui_window_class_type is not None:
+             self._window = self.cfg.ui_window_class_type(self, window_name="IsaacLab")
+         else:
+             # if no window, then we don't need to store the window
+@@ -273,10 +273,10 @@
+         self.sim.forward()
+ 
+         # if sensors are added to the scene, make sure we render to reflect changes in reset
+-        if self.sim.has_rtx_sensors() and self.cfg.rerender_on_reset:
++        if self.sim.get_setting("/isaaclab/render/rtx_sensors") and self.cfg.rerender_on_reset:
+             self.sim.render()
+ 
+-        if self.cfg.wait_for_textures and self.sim.has_rtx_sensors():
++        if self.cfg.wait_for_textures and self.sim.get_setting("/isaaclab/render/rtx_sensors"):
+             while SimulationManager.assets_loading():
+                 self.sim.render()
+ 
+@@ -317,7 +317,7 @@
+ 
+         # check if we need to do rendering within the physics loop
+         # note: checked here once to avoid multiple checks within the loop
+-        is_rendering = self.sim.has_gui() or self.sim.has_rtx_sensors()
++        is_rendering = self.sim.has_gui or self.sim.get_setting("/isaaclab/render/rtx_sensors")
+ 
+         # perform physics stepping
+         for _ in range(self.cfg.decimation):
+@@ -361,7 +361,7 @@
+             self.scene.write_data_to_sim()
+             self.sim.forward()
+             # if sensors are added to the scene, make sure we render to reflect changes in reset
+-            if self.sim.has_rtx_sensors() and self.cfg.rerender_on_reset:
++            if self.sim.get_setting("/isaaclab/render/rtx_sensors") and self.cfg.rerender_on_reset:
+                 if self.uipc_sim is not None and self.cfg.uipc_sim.update_render_meshes:
+                     self.uipc_sim.update_render_meshes()
+                 self.sim.render()
+@@ -426,7 +426,7 @@
+         """
+         # run a rendering step of the simulator
+         # if we have rtx sensors, we do not need to render again sin
+-        if not self.sim.has_rtx_sensors() and not recompute:
++        if not self.sim.get_setting("/isaaclab/render/rtx_sensors") and not recompute:
+             if self.uipc_sim is not None and self.cfg.uipc_sim.update_render_meshes:
+                 self.uipc_sim.update_render_meshes()
+             self.sim.render()
+@@ -479,7 +479,7 @@
+             if self.viewport_camera_controller is not None:
+                 del self.viewport_camera_controller
+             # clear callbacks and instance
+-            self.sim.clear_all_callbacks()
++            self.sim.physics_manager.clear_callbacks()
+             self.sim.clear_instance()
+             # destroy the window
+             if self._window is not None:
+--- a/overlay/tacex_uipc/envs/uipc_interactive_scene.py
++++ b/overlay/tacex_uipc/envs/uipc_interactive_scene.py
+@@ -190,6 +190,10 @@
+             )
+ 
+         # clone the environment
++        if self.cfg.num_envs == 1:
++            # The source environment was already defined at the origin. No clones or cross-env collision filters exist.
++            self._default_env_origins = torch.zeros((1, 3), device=self.device)
++            return
+         env_origins = self.cloner.clone(
+             source_prim_path=self.env_prim_paths[0],
+             prim_paths=self.env_prim_paths,
+--- a/overlay/tacex_uipc/objects/constraints/uipc_isaac_attachments.py
++++ b/overlay/tacex_uipc/objects/constraints/uipc_isaac_attachments.py
+@@ -3,6 +3,8 @@
+ import inspect
+ import numpy as np
+ import torch
++from isaaclab_physx.assets.articulation.articulation import Articulation as PhysxArticulation
++from isaaclab_physx.assets.rigid_object.rigid_object import RigidObject as PhysxRigidObject
+ import weakref
+ from typing import TYPE_CHECKING
+ 
+@@ -302,7 +304,7 @@
+         obj_position = np.array([obj_position])
+ 
+         q = pose.ExtractRotation().GetQuaternion()
+-        obj_orientation = [q.GetReal(), q.GetImaginary()[0], q.GetImaginary()[1], q.GetImaginary()[2]]
++        obj_orientation = [*q.GetImaginary(), q.GetReal()]
+         obj_orientation = torch.tensor(np.array([obj_orientation]), device="cuda:0").float()
+ 
+         idx = []
+@@ -404,28 +406,19 @@
+         if self.cfg.body_name is not None:
+             self.rigid_body_id, found_body_name = self.isaaclab_rigid_object.find_bodies(self.cfg.body_name)
+ 
+-        if type(self.isaaclab_rigid_object) is Articulation:
+-            # this only works when rigid body is an articulation
+-            # self.isaaclab_rigid_object._physics_sim_view.update_articulations_kinematic()
+-            # read data from simulation
+-            poses = self.isaaclab_rigid_object.root_physx_view.get_link_transforms().clone()
+-            poses[..., 3:7] = math_utils.convert_quat(poses[..., 3:7], to="wxyz")
+-            pose = poses[:, self.rigid_body_id, 0:7].clone()
+-        elif type(self.isaaclab_rigid_object) is RigidObject:
+-            # only works with rigid body
+-            # read data from simulation
+-            pose = self.isaaclab_rigid_object._root_physx_view.get_transforms().clone()
+-            pose[:, 3:7] = math_utils.convert_quat(pose[:, 3:7], to="wxyz")
+-            # pose = self.isaaclab_rigid_object.root_physx_view.root_state_w.view(-1, 1, 13)
+-            pose = pose[:, self.rigid_body_id, 0:7].clone()
+-
++        if isinstance(self.isaaclab_rigid_object, (Articulation, PhysxArticulation)):
++            pose = self.isaaclab_rigid_object.data.body_link_pose_w.torch[:, self.rigid_body_id].clone()
++        elif isinstance(self.isaaclab_rigid_object, (RigidObject, PhysxRigidObject)):
++            pose = self.isaaclab_rigid_object.data.root_pose_w.torch[:, None, :].clone()
++        else:
++            raise TypeError(type(self.isaaclab_rigid_object))
+         self.obj_pose = pose
+ 
+         sim: sim_utils.SimulationContext = sim_utils.SimulationContext.instance()
+-        sim.add_physics_callback(
+-            f"{self.uipc_object.cfg.prim_path}_X_{self.isaaclab_rigid_object.cfg.prim_path}_attachment_update",
+-            self._compute_aim_positions,
+-        )
++        from isaaclab_physx.physics.physx_manager import IsaacEvents
++        self._physics_handle = sim.physics_manager.register_callback(
++            self._compute_aim_positions, IsaacEvents.POST_PHYSICS_STEP, order=-1,
++            name=f"{self.uipc_object.cfg.prim_path}_attachment_update")
+ 
+     def _create_animation(self):
+         animator = self.uipc_object._uipc_sim.scene.animator()
+@@ -457,25 +450,12 @@
+ 
+     def _compute_aim_positions(self, dt=0):
+         # make sure we have the newest data
+-        if type(self.isaaclab_rigid_object) is Articulation:
+-            # this only works when rigid body is an articulation
+-            # self.isaaclab_rigid_object._physics_sim_view.update_articulations_kinematic()
+-            # read data from simulation
+-            poses = self.isaaclab_rigid_object.root_physx_view.get_link_transforms().clone()
+-            poses[..., 3:7] = math_utils.convert_quat(poses[..., 3:7], to="wxyz")
+-            pose = poses[:, self.rigid_body_id, 0:7].clone()
+-        elif type(self.isaaclab_rigid_object) is RigidObject:
+-            # only works with rigid body
+-            # pose = self.isaaclab_rigid_object.root_physx_view.root_state_w.view(-1, 1, 13)
+-            # pose = pose[:, self.rigid_body_id, 0:7].clone()
+-
+-            pose = self.isaaclab_rigid_object._root_physx_view.get_transforms().clone()
+-            pose[:, 3:7] = math_utils.convert_quat(pose[:, 3:7], to="wxyz")
+-            pose = pose[:, self.rigid_body_id, 0:7].clone()
+-
+-        # - doing this is undesirable -> need to update the scene to get newest data and that happens in the next sim step
+-        # pose = self.isaaclab_rigid_object.data.body_state_w[:, self.rigid_body_id, 0:7].clone()
+-
++        if isinstance(self.isaaclab_rigid_object, (Articulation, PhysxArticulation)):
++            pose = self.isaaclab_rigid_object.data.body_link_pose_w.torch[:, self.rigid_body_id].clone()
++        elif isinstance(self.isaaclab_rigid_object, (RigidObject, PhysxRigidObject)):
++            pose = self.isaaclab_rigid_object.data.root_pose_w.torch[:, None, :].clone()
++        else:
++            raise TypeError(type(self.isaaclab_rigid_object))
+         self.obj_pose = pose
+ 
+         # obj_pos = pose[:, 0, :3].cpu().numpy().flatten().reshape(-1,3)
+--- a/overlay/tacex_uipc/objects/rigid/uipc_rigid_object.py
++++ b/overlay/tacex_uipc/objects/rigid/uipc_rigid_object.py
+@@ -132,7 +132,7 @@
+         # Pull all requested state fields first, modify them locally, then commit
+         # them atomically. This avoids overwriting velocity with stale buffers.
+         self._state_accessor.copy_to(self._state_geo)
+-        pose_matrix = math_utils.make_pose(pose[:, :3], math_utils.matrix_from_quat(pose[:, 3:]))
++        pose_matrix = math_utils.make_pose(pose[:, :3], math_utils.matrix_from_quat(pose[:, [4, 5, 6, 3]]))
+         view(self._state_geo.transforms())[:, :] = pose_matrix.cpu()
+         if zero_velocity:
+             view(self._state_geo.instances().find(builtin.velocity))[:] = 0.0
+--- a/overlay/tacex_uipc/sim/uipc_sim.py
++++ b/overlay/tacex_uipc/sim/uipc_sim.py
+@@ -232,12 +232,16 @@
+ 
+         # initialize callbacks
+         self.isaac_sim: sim_utils.SimulationContext = sim_utils.SimulationContext.instance()
+-        self.isaac_sim.add_physics_callback("uicp_step", self.step)
++        from isaaclab_physx.physics.physx_manager import IsaacEvents
++        self._step_handle = self.isaac_sim.physics_manager.register_callback(
++            self.step, IsaacEvents.POST_PHYSICS_STEP, name="uipc_step")
++        self._advances = 0
+ 
+         if self.cfg.update_render_meshes:
+-            self.isaac_sim.add_physics_callback("uicp_update_render_meshes", self.update_render_meshes)
++            self._render_handle = self.isaac_sim.physics_manager.register_callback(self.update_render_meshes, IsaacEvents.POST_PHYSICS_STEP, order=1, name="uipc_render")
+ 
+     def step(self, dt=0):
++        self._advances += 1
+         self.world.advance()
+         self.world.retrieve()
+ 
+--- a/overlay/tacex/gelsight_sensor.py
++++ b/overlay/tacex/gelsight_sensor.py
+@@ -351,6 +351,9 @@
+         #     "xformOp:rotation"
+         # ).Get()
+ 
++        import warp as wp
++        if isinstance(env_ids, wp.array):
++            env_ids = wp.to_torch(env_ids)
+         self._frame[env_ids] += 1
+ 
+         # -- update camera buffer

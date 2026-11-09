@@ -1,0 +1,74 @@
+FF                                                                       [100%]
+=================================== FAILURES ===================================
+_______ test_chinese_banana_placement_keeps_the_moving_object_as_source ________
+
+    def test_chinese_banana_placement_keeps_the_moving_object_as_source():
+>       spec = parse_rule_based("在碗的左侧放一根香蕉。", seed=7)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/scene_gen/test_parser.py:283: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+scene_gen/parser.py:537: in parse_rule_based
+    mention_groups = extract_mentions(request)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+scene_gen/parser.py:437: in extract_mentions
+    _validate_unbound_quantities(normalized, consumed_quantity_spans)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+normalized = '在碗的左侧放一根香蕉。', consumed_spans = []
+
+    def _validate_unbound_quantities(normalized: str, consumed_spans: list[tuple[int, int]]) -> None:
+        reference_spans = [
+            match.span()
+            for pattern in (
+                r"\b(?:two|both)\s+objects?\b",
+                r"两件物体|两个物体|两者",
+            )
+            for match in re.finditer(pattern, normalized)
+        ]
+        english_terms = set(ENGLISH_QUANTITIES) - {"a", "an"}
+        english_terms.update(UNSUPPORTED_ENGLISH_QUANTITIES)
+        english_pattern = "|".join(
+            re.escape(term) for term in sorted(english_terms, key=len, reverse=True)
+        )
+        for match in re.finditer(rf"\b(?:{english_pattern})\b", normalized):
+            if _span_is_covered(match.span(), consumed_spans + reference_spans):
+                continue
+            raise SceneSpecError(f"quantity term {match.group(0)!r} is not bound to an object")
+    
+        chinese_terms = "|".join(
+            re.escape(term) for term in sorted(CHINESE_QUANTITIES, key=len, reverse=True)
+        )
+        for match in re.finditer(chinese_terms, normalized):
+            if _span_is_covered(match.span(), consumed_spans + reference_spans):
+                continue
+            if match.group(0) == "一" and normalized[match.end() :].startswith(("半", "起")):
+                continue
+            if match.start() > 0 and normalized[match.start() - 1] == "第":
+                continue
+>           raise SceneSpecError(f"quantity term {match.group(0)!r} is not bound to an object")
+E           scene_gen.schema.SceneSpecError: quantity term '一' is not bound to an object
+
+scene_gen/parser.py:317: SceneSpecError
+____________________ test_teal_remains_an_asset_constraint _____________________
+
+    def test_teal_remains_an_asset_constraint():
+        spec = parse_rule_based("A teal cube on the table.", seed=8)
+>       assert spec.objects[0].color == "teal"
+E       AssertionError: assert None == 'teal'
+E        +  where None = SceneObjectSpec(object_id='block_1', category='block', color=None, material=None, region='center', articulation=None).color
+
+tests/scene_gen/test_parser.py:290: AssertionError
+=============================== warnings summary ===============================
+../../outputs/genenv-audit-20261109/cpu/lib/python3.12/site-packages/dash/testing/plugin.py:104
+  /workspace/TacHarness-genenv/outputs/genenv-audit-20261109/cpu/lib/python3.12/site-packages/dash/testing/plugin.py:104: PytestRemovedIn10Warning: The hookimpl pytest_addhooks uses old-style configuration options (marks or attributes).
+  Please use the pytest.hookimpl(tryfirst=True) decorator instead
+   to configure the hooks.
+   See https://docs.pytest.org/en/latest/deprecations.html#configuring-hook-specs-impls-using-markers
+    @pytest.mark.tryfirst
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/scene_gen/test_parser.py::test_chinese_banana_placement_keeps_the_moving_object_as_source
+FAILED tests/scene_gen/test_parser.py::test_teal_remains_an_asset_constraint
+2 failed, 35 deselected, 1 warning in 0.15s

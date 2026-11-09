@@ -1,0 +1,115 @@
+{
+  "schema_version": "robotwin.scene_validation.v1",
+  "scene_id": "place_a_purple_hexagonal_pedestal_on_the_table_d38c3bf3d4",
+  "resolved_scene_sha256": "ecbc1b21b946bee0cca3ae90fe9c02a0191fec7a96950d1bb6ffbb75fbe7079a",
+  "status": "incomplete",
+  "fail_count": 0,
+  "not_run_count": 1,
+  "checks": [
+    {
+      "name": "workspace_bounds:hexagonal_pedestal_1",
+      "status": "pass",
+      "evidence": {
+        "aabb": [
+          -0.12390159672790618,
+          -0.010817909272093806,
+          -0.019857709727906188,
+          0.0932259777279062
+        ]
+      }
+    },
+    {
+      "name": "table_support_height:hexagonal_pedestal_1",
+      "status": "pass",
+      "evidence": {
+        "bottom_z_m": 0.741,
+        "table_height_m": 0.741,
+        "support_relation": "on_table"
+      }
+    },
+    {
+      "name": "real_asset_files:hexagonal_pedestal_1",
+      "status": "pass",
+      "evidence": {
+        "paths": [
+          "/workspace/summary-web/genenv-r16-20261109/runs/new-mesh/objects/900_gen_hexagonal_pedestal_5695f4e5/collision/textured0.obj",
+          "/workspace/summary-web/genenv-r16-20261109/runs/new-mesh/objects/900_gen_hexagonal_pedestal_5695f4e5/generation_provenance.json",
+          "/workspace/summary-web/genenv-r16-20261109/runs/new-mesh/objects/900_gen_hexagonal_pedestal_5695f4e5/model_data0.json",
+          "/workspace/summary-web/genenv-r16-20261109/runs/new-mesh/objects/900_gen_hexagonal_pedestal_5695f4e5/visual/textured0.obj"
+        ],
+        "exists": [
+          true,
+          true,
+          true,
+          true
+        ]
+      }
+    },
+    {
+      "name": "relation:on_table:hexagonal_pedestal_1",
+      "status": "pass",
+      "evidence": {
+        "target": "table"
+      }
+    },
+    {
+      "name": "resolved_only_roundtrip",
+      "status": "pass",
+      "evidence": {
+        "before": "ecbc1b21b946bee0cca3ae90fe9c02a0191fec7a96950d1bb6ffbb75fbe7079a",
+        "after": "ecbc1b21b946bee0cca3ae90fe9c02a0191fec7a96950d1bb6ffbb75fbe7079a"
+      }
+    },
+    {
+      "name": "package_manifest",
+      "status": "pass",
+      "evidence": {
+        "schema_version": "robotwin.generated_scene_package_verification.v1",
+        "status": "pass",
+        "checks": [
+          {
+            "path": "request.txt",
+            "exists": true,
+            "expected_sha256": "c7b5c826bf6c7e5325de99cafe841a6f63909f523161edf027eb098ed4bca343",
+            "actual_sha256": "c7b5c826bf6c7e5325de99cafe841a6f63909f523161edf027eb098ed4bca343",
+            "pass": true
+          },
+          {
+            "path": "scene_spec.json",
+            "exists": true,
+            "expected_sha256": "a56cd1a6552e282e9f909bebceaeed914fc9c699974df256c66b120564d84c4a",
+            "actual_sha256": "a56cd1a6552e282e9f909bebceaeed914fc9c699974df256c66b120564d84c4a",
+            "pass": true
+          },
+          {
+            "path": "resolved_scene.json",
+            "exists": true,
+            "expected_sha256": "11cc9f20b22aeafee075c66d84a57ca43caa24b091806cd7acf5eec2291b5120",
+            "actual_sha256": "11cc9f20b22aeafee075c66d84a57ca43caa24b091806cd7acf5eec2291b5120",
+            "pass": true
+          },
+          {
+            "path": "generated_scene.py",
+            "exists": true,
+            "expected_sha256": "a22e746619084e123c56294ce4fe876c623ac04d12a1f72ba4a5ee2f8b10bde2",
+            "actual_sha256": "a22e746619084e123c56294ce4fe876c623ac04d12a1f72ba4a5ee2f8b10bde2",
+            "pass": true
+          },
+          {
+            "path": "resolved_scene.json#canonical_digest",
+            "expected_sha256": "ecbc1b21b946bee0cca3ae90fe9c02a0191fec7a96950d1bb6ffbb75fbe7079a",
+            "actual_sha256": "ecbc1b21b946bee0cca3ae90fe9c02a0191fec7a96950d1bb6ffbb75fbe7079a",
+            "pass": true
+          }
+        ]
+      }
+    },
+    {
+      "name": "runtime_evidence",
+      "status": "not_run",
+      "evidence": {
+        "required": false
+      }
+    }
+  ]
+}

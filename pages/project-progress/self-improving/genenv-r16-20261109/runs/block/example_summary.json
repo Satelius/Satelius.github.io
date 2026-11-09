@@ -1,0 +1,45 @@
+{
+  "prompt": "A block to the left of a bowl.",
+  "seed": 7,
+  "genenv_scene": "/workspace/summary-web/genenv-r16-20261109/runs/block/genenv/a_block_to_the_left_of_a_bowl_4b8a1e0227",
+  "genenv_static_validation": {
+    "workspace_bounds:block_1": "pass",
+    "table_support_height:block_1": "pass",
+    "real_asset_files:block_1": "pass",
+    "workspace_bounds:bowl_1": "pass",
+    "table_support_height:bowl_1": "pass",
+    "real_asset_files:bowl_1": "pass",
+    "no_overlap:block_1:bowl_1": "pass",
+    "relation:on_table:block_1": "pass",
+    "relation:on_table:bowl_1": "pass",
+    "relation:left_of:block_1:bowl_1": "pass",
+    "resolved_only_roundtrip": "pass",
+    "package_manifest": "pass",
+    "runtime_evidence": "not_run"
+  },
+  "usda": "/workspace/summary-web/genenv-r16-20261109/runs/block/audit_block.usda",
+  "task": "/workspace/summary-web/genenv-r16-20261109/runs/block/audit_block_task.py",
+  "scene_ir": "/workspace/summary-web/genenv-r16-20261109/runs/block/audit_block.scene_ir.json",
+  "objects": [
+    {
+      "prim": "blue_block",
+      "translate": [
+        0.6127,
+        0.1526,
+        0.0255
+      ],
+      "yaw_rad": -2.6777
+    },
+    {
+      "prim": "bowl",
+      "translate": [
+        0.564,
+        -0.0122,
+        0.0295
+      ],
+      "yaw_rad": 2.0259
+    }
+  ],
+  "assets_hashed": true,
+  "warnings": []
+}

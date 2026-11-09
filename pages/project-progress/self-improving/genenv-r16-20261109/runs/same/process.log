@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "/workspace/TacHarness-genenv/scripts/agentic/genenv_robolab_example.py", line 97, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/workspace/TacHarness-genenv/scripts/agentic/genenv_robolab_example.py", line 79, in main
+    TaskBinding(args.object, args.target, args.relation, episode_length_s=args.episode_length_s,
+  File "<string>", line 13, in __init__
+  File "/workspace/TacHarness-genenv/src/tacharness/agenticsim/generation/genenv/robolab_import.py", line 76, in __post_init__
+    raise ValueError("task needs distinct objects and a supported goal")
+ValueError: task needs distinct objects and a supported goal

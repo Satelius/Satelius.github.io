@@ -1,0 +1,264 @@
+[
+  {
+    "case": "near-fixed",
+    "seed": 1,
+    "request": [
+      -0.04,
+      0.025,
+      0.114,
+      -7.0
+    ],
+    "shelf_actual": [
+      0.8599997293225534,
+      -7.467974193890946e-07,
+      0.0010165662215017486,
+      0.9999999999596667,
+      -6.183029389035405e-06,
+      6.513730517632155e-06,
+      -8.601487412262565e-08
+    ],
+    "bottle_actual": [
+      0.5000023504731866,
+      0.02500211029346386,
+      0.001492921605185876,
+      0.9999999999940112,
+      3.132996260564954e-06,
+      1.4698514773092697e-06,
+      3.576367273339264e-08
+    ],
+    "physics_steps": 916,
+    "result": "success",
+    "final_native_relative_xyz_m": [
+      -0.004688584336330348,
+      -0.0011521576169951616,
+      -0.003200352062241646
+    ],
+    "sampled_peak_z_m": 0.3455423950650054,
+    "final_sampled_z_m": 0.20781889494735756,
+    "initial_pressure_mm": {
+      "left_tactile": 3.745579719543457,
+      "right_tactile": 0.3360002338886261
+    },
+    "captures": 152,
+    "task_pair_support_force": null,
+    "released_stable_support_qualification": "unverified",
+    "final_axis_dot": 0.9999999999766839,
+    "recomputed_native_success": true,
+    "demonstration": {
+      "path": "/workspace/TacHarness-genenv/outputs/genenv-audit-20261109/uni60/near-fixed/put_bottle_in_shelf/demo/hdf5/1.hdf5",
+      "sha256": "0bbe83258e42b4941ff9d4f5d76a280c40b67c5158a5e75634c718b12df633cd",
+      "frames": 320,
+      "step_range": [
+        258,
+        896
+      ],
+      "step_spacing": [
+        2
+      ],
+      "streams": {
+        "observation/head/rgb": {
+          "frames": 320,
+          "distinct_encoded_frames": 320
+        },
+        "observation/wrist/rgb": {
+          "frames": 320,
+          "distinct_encoded_frames": 320
+        },
+        "tactile/left_tactile/rgb": {
+          "frames": 320,
+          "distinct_encoded_frames": 320
+        },
+        "tactile/right_tactile/rgb": {
+          "frames": 320,
+          "distinct_encoded_frames": 320
+        }
+      },
+      "tactile_shape": [
+        320,
+        240,
+        320
+      ],
+      "joint_shape": [
+        320,
+        9
+      ]
+    }
+  },
+  {
+    "case": "near-video-r2",
+    "seed": 1,
+    "request": [
+      -0.04,
+      0.025,
+      0.114,
+      -7.0
+    ],
+    "shelf_actual": [
+      0.8599997293135966,
+      -7.468351677134857e-07,
+      0.0010165662215017475,
+      0.9999999999596669,
+      -6.183029389019794e-06,
+      6.513730517632155e-06,
+      -8.601722694760999e-08
+    ],
+    "bottle_actual": [
+      0.5000023504464589,
+      0.025002110278292262,
+      0.001492921605185875,
+      0.9999999999940113,
+      3.132996260563445e-06,
+      1.4698514775313143e-06,
+      3.5761179928479175e-08
+    ],
+    "physics_steps": 910,
+    "result": "fail",
+    "final_native_relative_xyz_m": [
+      -0.15652272642520382,
+      0.022009707214775912,
+      -0.20952801702842921
+    ],
+    "sampled_peak_z_m": 0.009319444594686489,
+    "final_sampled_z_m": 0.0014929216051858707,
+    "initial_pressure_mm": {
+      "left_tactile": 3.7455852031707764,
+      "right_tactile": 0.3360412120819092
+    },
+    "captures": 151,
+    "task_pair_support_force": null,
+    "released_stable_support_qualification": "unverified",
+    "final_axis_dot": 0.9999999998078276,
+    "recomputed_native_success": false
+  },
+  {
+    "case": "near-video-r3",
+    "seed": 1,
+    "request": [
+      -0.04,
+      0.025,
+      0.114,
+      -7.0
+    ],
+    "shelf_actual": [
+      0.8599997292800613,
+      -7.468720295998051e-07,
+      0.0010165662215017477,
+      0.999999999959667,
+      -6.1830293889967174e-06,
+      6.513730517854199e-06,
+      -8.602074654810073e-08
+    ],
+    "bottle_actual": [
+      0.5000023504241982,
+      0.025002110265444397,
+      0.0014929216051858749,
+      0.9999999999940115,
+      3.1329962605715604e-06,
+      1.4698514773092697e-06,
+      3.5759292494977364e-08
+    ],
+    "physics_steps": 914,
+    "result": "success",
+    "final_native_relative_xyz_m": [
+      -0.00674176821016248,
+      -0.0011592356177649022,
+      -0.0032003531512051486
+    ],
+    "sampled_peak_z_m": 0.3450031628475385,
+    "final_sampled_z_m": 0.20781892069050906,
+    "initial_pressure_mm": {
+      "left_tactile": 3.7455925941467285,
+      "right_tactile": 0.3360840380191803
+    },
+    "captures": 152,
+    "task_pair_support_force": null,
+    "released_stable_support_qualification": "unverified",
+    "final_axis_dot": 0.9999999999766587,
+    "recomputed_native_success": true,
+    "demonstration": {
+      "path": "/workspace/TacHarness-genenv/outputs/genenv-audit-20261109/uni60/near-video-r3/put_bottle_in_shelf/demo/hdf5/1.hdf5",
+      "sha256": "7d82b0a80e665b7a19940e64ed28e8667cf2721c72ab2e6898bc5ec97d97869d",
+      "frames": 319,
+      "step_range": [
+        258,
+        894
+      ],
+      "step_spacing": [
+        2
+      ],
+      "streams": {
+        "observation/head/rgb": {
+          "frames": 319,
+          "distinct_encoded_frames": 319
+        },
+        "observation/wrist/rgb": {
+          "frames": 319,
+          "distinct_encoded_frames": 319
+        },
+        "tactile/left_tactile/rgb": {
+          "frames": 319,
+          "distinct_encoded_frames": 319
+        },
+        "tactile/right_tactile/rgb": {
+          "frames": 319,
+          "distinct_encoded_frames": 319
+        }
+      },
+      "tactile_shape": [
+        319,
+        240,
+        320
+      ],
+      "joint_shape": [
+        319,
+        9
+      ]
+    }
+  },
+  {
+    "case": "far-fixed",
+    "seed": 1,
+    "request": [
+      0.04,
+      -0.025,
+      0.118,
+      7.0
+    ],
+    "shelf_actual": [
+      0.9399997291280988,
+      -7.468710912935468e-07,
+      0.0010165662215017484,
+      0.9999999999596668,
+      -6.183029388977829e-06,
+      6.513730518076244e-06,
+      -8.602368288480641e-08
+    ],
+    "bottle_actual": [
+      0.5000023503966211,
+      -0.024997889761636354,
+      0.001492921605185877,
+      0.9999999999940115,
+      3.13299626057891e-06,
+      1.4698514776423366e-06,
+      3.5752400989128485e-08
+    ],
+    "physics_steps": 896,
+    "result": "fail",
+    "final_native_relative_xyz_m": [
+      -0.23980296649528932,
+      -0.025344395499188748,
+      -0.209529687542094
+    ],
+    "sampled_peak_z_m": 0.009319446122996934,
+    "final_sampled_z_m": 0.0014929216051858777,
+    "initial_pressure_mm": {
+      "left_tactile": 3.745650291442871,
+      "right_tactile": 0.33532780408859253
+    },
+    "captures": 149,
+    "task_pair_support_force": null,
+    "released_stable_support_qualification": "unverified",
+    "final_axis_dot": 0.9999999997821003,
+    "recomputed_native_success": false
+  }
+]

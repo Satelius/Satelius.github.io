@@ -1,0 +1,12 @@
+text 1 
+Traceback (most recent call last):
+  File "/workspace/summary-web/genenv-r16-20261109/review/multimodal.py", line 13, in <module>
+    req=X2EnvRequest(**fields,seed=7,idempotency_key='r16-'+key,output_dir=str(site/'runs'/('x2-'+key)))
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/TacHarness-genenv/outputs/genenv-audit-20261109/cpu/lib/python3.12/site-packages/pydantic/main.py", line 280, in __init__
+    validated_self = self.__pydantic_validator__.validate_python(data, self_instance=self)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+pydantic_core._pydantic_core.ValidationError: 1 validation error for X2EnvRequest
+images
+  Input should be a valid tuple [type=tuple_type, input_value=[InputMedia(path='/root/a...assets/bowl-scene.png')], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.14/v/tuple_type

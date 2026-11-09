@@ -1,0 +1,379 @@
+[
+  {
+    "name": "air-isolated",
+    "log": "air-isolated.log",
+    "errors": [
+      "[2026-11-09 14:33:11.326] [error] [cuda] Assertion toi > 0.0f failed. Invalid toi[uipc::backend::cuda::EasyVertexHalfPlaneTrajectoryFilter] value: -0.9743149240706103 /runtime/UniVTAC/third_party/TacEx/source/tacex_uipc/libuipc/src/backends/cuda/collision_detection/global_trajectory_filter.cu(95)"
+    ],
+    "last_measurements": []
+  },
+  {
+    "name": "bottle-air",
+    "log": "bottle-air.log",
+    "errors": [
+      "RuntimeError: insufficient object clearance for empty gel reference"
+    ],
+    "last_measurements": [
+      "[2026-11-09 14:30:04] [0  ] Seed 1 failed with error: Traceback (most recent call last):",
+      "[2026-11-09 14:30:04] Complete collection, success rate: 0/2 (0.00%)"
+    ]
+  },
+  {
+    "name": "bottle-far",
+    "log": "bottle-far.log",
+    "errors": [],
+    "last_measurements": [
+      "[2026-11-09 14:29:34] [0  ] Seed 1 failed in 25.93 s.",
+      "[2026-11-09 14:29:34] Complete collection, success rate: 0/2 (0.00%)"
+    ]
+  },
+  {
+    "name": "bottle-near",
+    "log": "bottle-near.log",
+    "errors": [],
+    "last_measurements": [
+      "[2026-11-09 14:28:40] [0  ] Seed 1 failed in 11.26 s.",
+      "[2026-11-09 14:28:40] Complete collection, success rate: 0/2 (0.00%)"
+    ]
+  },
+  {
+    "name": "can-4",
+    "log": "can-4.log",
+    "errors": [
+      "TypeError: Articulation.write_joint_position_to_sim_index() takes 1 positional argument but 2 were given"
+    ],
+    "last_measurements": [
+      "[2026-11-09 14:21:35] [0  ] Seed 1 failed with error: Traceback (most recent call last):",
+      "[2026-11-09 14:21:35] Complete collection, success rate: 0/2 (0.00%)"
+    ]
+  },
+  {
+    "name": "can-5",
+    "log": "can-5.log",
+    "errors": [
+      "TypeError: Articulation.write_joint_position_to_sim_index() takes 1 positional argument but 2 were given"
+    ],
+    "last_measurements": [
+      "[2026-11-09 14:22:07] [0  ] Seed 1 failed with error: Traceback (most recent call last):",
+      "[2026-11-09 14:22:07] Complete collection, success rate: 0/2 (0.00%)"
+    ]
+  },
+  {
+    "name": "can-6",
+    "log": "can-6.log",
+    "errors": [
+      "TypeError: Articulation.write_joint_position_to_sim_index() takes 1 positional argument but 2 were given"
+    ],
+    "last_measurements": [
+      "[2026-11-09 14:22:58] [0  ] Seed 1 failed with error: Traceback (most recent call last):",
+      "[2026-11-09 14:22:58] Complete collection, success rate: 0/2 (0.00%)"
+    ]
+  },
+  {
+    "name": "can-v2-4",
+    "log": "can-v2-4.log",
+    "errors": [],
+    "last_measurements": [
+      "[2026-11-09 14:26:07] [0  ] Seed 1 failed in 97.13 s.",
+      "[2026-11-09 14:26:07] Complete collection, success rate: 0/2 (0.00%)"
+    ]
+  },
+  {
+    "name": "can-v2-5",
+    "log": "can-v2-5.log",
+    "errors": [],
+    "last_measurements": [
+      "[2026-11-09 14:27:43] [0  ] Seed 1 failed in 70.38 s.",
+      "[2026-11-09 14:27:44] Complete collection, success rate: 0/2 (0.00%)"
+    ]
+  },
+  {
+    "name": "can-v2-6",
+    "log": "can-v2-6.log",
+    "errors": [],
+    "last_measurements": [
+      "[2026-11-09 14:29:48] [0  ] Seed 1 failed in 99.17 s.",
+      "[2026-11-09 14:29:48] Complete collection, success rate: 0/2 (0.00%)"
+    ]
+  },
+  {
+    "name": "far-fixed",
+    "log": "far-fixed.log",
+    "errors": [],
+    "last_measurements": [
+      "[2026-11-09 14:39:23] [0  ] Seed 1 failed in 234.46 s.",
+      "[2026-11-09 14:39:23] Complete collection, success rate: 0/2 (0.00%)"
+    ]
+  },
+  {
+    "name": "near-fixed",
+    "log": "near-fixed.log",
+    "errors": [],
+    "last_measurements": [
+      "[2026-11-09 14:34:54] [0  ] Seed 1 success in 136.49 s.",
+      "[2026-11-09 14:34:54] Complete collection, success rate: 1/2 (50.00%)"
+    ]
+  },
+  {
+    "name": "near-video-r2",
+    "log": "near-video-r2.log",
+    "errors": [],
+    "last_measurements": [
+      "[2026-11-09 14:40:15] [0  ] Seed 1 failed in 232.01 s.",
+      "[2026-11-09 14:40:16] Complete collection, success rate: 0/2 (0.00%)"
+    ]
+  },
+  {
+    "name": "near-video-r3",
+    "log": "near-video-r3.log",
+    "errors": [],
+    "last_measurements": [
+      "[2026-11-09 14:42:52] [0  ] Seed 1 success in 127.74 s.",
+      "[2026-11-09 14:42:52] Complete collection, success rate: 1/2 (50.00%)"
+    ]
+  },
+  {
+    "name": "uni-native-1",
+    "log": "uni-native-1.log",
+    "errors": [
+      "ModuleNotFoundError: No module named 'carb'",
+      "ModuleNotFoundError: No module named 'transforms3d'"
+    ],
+    "last_measurements": []
+  },
+  {
+    "name": "uni-native-10",
+    "log": "uni-native-10.log",
+    "errors": [
+      "RuntimeError: get_memory_info: failed to acquire gpu::foundation::ISystemInfo!",
+      "RuntimeError: get_memory_info: failed to acquire gpu::foundation::ISystemInfo!",
+      "AttributeError: type object 'PhysxManager' has no attribute 'is_fabric_usd_notice_handler_enabled'"
+    ],
+    "last_measurements": []
+  },
+  {
+    "name": "uni-native-11",
+    "log": "uni-native-11.log",
+    "errors": [
+      "AttributeError: 'SimulationContext' object has no attribute 'render_mode'"
+    ],
+    "last_measurements": []
+  },
+  {
+    "name": "uni-native-12",
+    "log": "uni-native-12.log",
+    "errors": [
+      "Geometry(1) in Object[/World/envs/env_.*/shelf(1)] is too close (distance <= 0) to HalfPlane(0) in Object[ground(0)]",
+      "Geometry(2) in Object[/World/envs/env_.*/prism(2)] is too close (distance <= 0) to HalfPlane(0) in Object[ground(0)]",
+      "AttributeError: 'SimulationContext' object has no attribute 'add_physics_callback'"
+    ],
+    "last_measurements": []
+  },
+  {
+    "name": "uni-native-13",
+    "log": "uni-native-13.log",
+    "errors": [
+      "Geometry(1) in Object[/World/envs/env_.*/shelf(1)] is too close (distance <= 0) to HalfPlane(0) in Object[ground(0)]",
+      "Geometry(2) in Object[/World/envs/env_.*/prism(2)] is too close (distance <= 0) to HalfPlane(0) in Object[ground(0)]",
+      "AttributeError: 'NoneType' object has no attribute 'create_geometry'"
+    ],
+    "last_measurements": []
+  },
+  {
+    "name": "uni-native-14",
+    "log": "uni-native-14.log",
+    "errors": [
+      "UnboundLocalError: cannot access local variable 'pose' where it is not associated with a value",
+      "UnboundLocalError: cannot access local variable 'pose' where it is not associated with a value",
+      "RuntimeError: quat_inv() Expected a value of type 'Tensor' for argument 'q' but instead found type 'ProxyArray'."
+    ],
+    "last_measurements": []
+  },
+  {
+    "name": "uni-native-15",
+    "log": "uni-native-15.log",
+    "errors": [
+      "TypeError: <class 'isaaclab_physx.assets.articulation.articulation.Articulation'>",
+      "TypeError: <class 'isaaclab_physx.assets.articulation.articulation.Articulation'>",
+      "ModuleNotFoundError: No module named 'skimage'"
+    ],
+    "last_measurements": []
+  },
+  {
+    "name": "uni-native-16",
+    "log": "uni-native-16.log",
+    "errors": [
+      "RuntimeError: Could not find prim with path '/World/envs/env_.*/Camera'."
+    ],
+    "last_measurements": []
+  },
+  {
+    "name": "uni-native-17",
+    "log": "uni-native-17.log",
+    "errors": [
+      "TypeError: No registered converter was able to produce a C++ rvalue of type pxrInternal_v0_25_11__pxrReserved__::GfVec3d from this Python object of type float"
+    ],
+    "last_measurements": []
+  },
+  {
+    "name": "uni-native-18",
+    "log": "uni-native-18.log",
+    "errors": [
+      "RuntimeError: Need an Articulation or a RigidBody object for the Isaac X UIPC attachment.",
+      "RuntimeError: Need an Articulation or a RigidBody object for the Isaac X UIPC attachment.",
+      "AttributeError: 'NoneType' object has no attribute 'stdin'"
+    ],
+    "last_measurements": [
+      "[2026-11-09 14:08:02] [0  ] Seed 1 failed with error: Traceback (most recent call last):"
+    ]
+  },
+  {
+    "name": "uni-native-19",
+    "log": "uni-native-19.log",
+    "errors": [
+      "RuntimeError: Item indexing is not supported on wp.array objects",
+      "AttributeError: 'SimulationContext' object has no attribute 'clear_all_callbacks'"
+    ],
+    "last_measurements": [
+      "[2026-11-09 14:11:12] [0  ] Seed 1 failed with error: Traceback (most recent call last):",
+      "[2026-11-09 14:11:12] Complete collection, success rate: 0/2 (0.00%)"
+    ]
+  },
+  {
+    "name": "uni-native-2",
+    "log": "uni-native-2.log",
+    "errors": [
+      "RuntimeError: get_memory_info: failed to acquire gpu::foundation::ISystemInfo!",
+      "RuntimeError: get_memory_info: failed to acquire gpu::foundation::ISystemInfo!",
+      "ModuleNotFoundError: No module named 'isaacsim.core.api'"
+    ],
+    "last_measurements": []
+  },
+  {
+    "name": "uni-native-20",
+    "log": "uni-native-20.log",
+    "errors": [
+      "[2026-11-09 14:12:52.725] [error] [cuda] Assertion toi > 0.0f failed. Invalid toi[uipc::backend::cuda::EasyVertexHalfPlaneTrajectoryFilter] value: -9484.492950135487 /runtime/UniVTAC/third_party/TacEx/source/tacex_uipc/libuipc/src/backends/cuda/collision_detection/global_trajectory_filter.cu(95)"
+    ],
+    "last_measurements": []
+  },
+  {
+    "name": "uni-native-21",
+    "log": "uni-native-21.log",
+    "errors": [
+      "AssertionError: Articulation: 'target' Shape mismatch: torch.Size([7]) != (1, 7)"
+    ],
+    "last_measurements": [
+      "[2026-11-09 14:15:34] [0  ] Seed 1 failed with error: Traceback (most recent call last):",
+      "[2026-11-09 14:15:34] Complete collection, success rate: 0/2 (0.00%)"
+    ]
+  },
+  {
+    "name": "uni-native-22",
+    "log": "uni-native-22.log",
+    "errors": [
+      "RuntimeError: Could not convert array interface with typestr='<i8' to Warp array with dtype=<class 'warp._src.types.int32'>"
+    ],
+    "last_measurements": [
+      "[2026-11-09 14:17:36] [0  ] Seed 1 failed with error: Traceback (most recent call last):",
+      "[2026-11-09 14:17:36] Complete collection, success rate: 0/2 (0.00%)"
+    ]
+  },
+  {
+    "name": "uni-native-23",
+    "log": "uni-native-23.log",
+    "errors": [
+      "AttributeError: 'Tensor' object has no attribute 'ptr'"
+    ],
+    "last_measurements": [
+      "[2026-11-09 14:19:18] [0  ] Seed 1 failed with error: Traceback (most recent call last):",
+      "[2026-11-09 14:19:18] Complete collection, success rate: 0/2 (0.00%)"
+    ]
+  },
+  {
+    "name": "uni-native-24",
+    "log": "uni-native-24.log",
+    "errors": [
+      "TypeError: Articulation.write_joint_position_to_sim_index() takes 1 positional argument but 2 were given"
+    ],
+    "last_measurements": [
+      "[2026-11-09 14:21:23] [0  ] Seed 1 failed with error: Traceback (most recent call last):",
+      "[2026-11-09 14:21:23] Complete collection, success rate: 0/2 (0.00%)"
+    ]
+  },
+  {
+    "name": "uni-native-25",
+    "log": "uni-native-25.log",
+    "errors": [],
+    "last_measurements": [
+      "[2026-11-09 14:26:25] [0  ] Seed 1 failed in 194.82 s.",
+      "[2026-11-09 14:26:25] Complete collection, success rate: 0/2 (0.00%)"
+    ]
+  },
+  {
+    "name": "uni-native-3",
+    "log": "uni-native-3.log",
+    "errors": [],
+    "last_measurements": []
+  },
+  {
+    "name": "uni-native-4",
+    "log": "uni-native-4.log",
+    "errors": [
+      "RuntimeError: get_memory_info: failed to acquire gpu::foundation::ISystemInfo!",
+      "RuntimeError: get_memory_info: failed to acquire gpu::foundation::ISystemInfo!",
+      "ImportError: cannot import name 'PhysxCfg' from 'isaaclab.sim' (/runtime/gujie/TacHarness/thirdparty/IsaacLab60/source/isaaclab/isaaclab/sim/__init__.py)"
+    ],
+    "last_measurements": []
+  },
+  {
+    "name": "uni-native-5",
+    "log": "uni-native-5.log",
+    "errors": [
+      "RuntimeError: get_memory_info: failed to acquire gpu::foundation::ISystemInfo!",
+      "RuntimeError: get_memory_info: failed to acquire gpu::foundation::ISystemInfo!",
+      "ModuleNotFoundError: No module named 'torch_scatter'"
+    ],
+    "last_measurements": []
+  },
+  {
+    "name": "uni-native-6",
+    "log": "uni-native-6.log",
+    "errors": [
+      "RuntimeError: get_memory_info: failed to acquire gpu::foundation::ISystemInfo!",
+      "RuntimeError: get_memory_info: failed to acquire gpu::foundation::ISystemInfo!",
+      "ModuleNotFoundError: No module named 'wildmeshing'"
+    ],
+    "last_measurements": []
+  },
+  {
+    "name": "uni-native-7",
+    "log": "uni-native-7.log",
+    "errors": [
+      "RuntimeError: get_memory_info: failed to acquire gpu::foundation::ISystemInfo!",
+      "RuntimeError: get_memory_info: failed to acquire gpu::foundation::ISystemInfo!",
+      "ModuleNotFoundError: No module named 'polyscope'"
+    ],
+    "last_measurements": []
+  },
+  {
+    "name": "uni-native-8",
+    "log": "uni-native-8.log",
+    "errors": [
+      "RuntimeError: get_memory_info: failed to acquire gpu::foundation::ISystemInfo!",
+      "RuntimeError: get_memory_info: failed to acquire gpu::foundation::ISystemInfo!",
+      "ModuleNotFoundError: No module named 'isaacsim.core.cloner'"
+    ],
+    "last_measurements": []
+  },
+  {
+    "name": "uni-native-9",
+    "log": "uni-native-9.log",
+    "errors": [
+      "RuntimeError: get_memory_info: failed to acquire gpu::foundation::ISystemInfo!",
+      "RuntimeError: get_memory_info: failed to acquire gpu::foundation::ISystemInfo!",
+      "ModuleNotFoundError: No module named 'setuptools_scm'"
+    ],
+    "last_measurements": []
+  }
+]

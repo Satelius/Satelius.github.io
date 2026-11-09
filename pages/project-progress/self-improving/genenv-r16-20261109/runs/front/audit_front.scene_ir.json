@@ -1,0 +1,107 @@
+{
+  "schema": "tacharness.scene_ir.v1",
+  "scene_id": "audit_front",
+  "task_id": "robolab:AuditFrontTask",
+  "instruction": "Pick up the soup can and place it in the bowl",
+  "assets": [
+    {
+      "schema": "tacharness.scene_asset_ref.v1",
+      "asset_id": "bowl",
+      "uri": "inputs/datasets/vendor/robolab/assets/objects/ycb/bowl.usd",
+      "sha256": "4674da9935073ec0355cf3e27ead3b87ab98588e1d9bbb116eedaa6fad3ce98e",
+      "kind": "usd",
+      "media_type": "model/vnd.usd",
+      "size_bytes": 342393
+    },
+    {
+      "schema": "tacharness.scene_asset_ref.v1",
+      "asset_id": "soup_can",
+      "uri": "inputs/datasets/vendor/robolab/assets/objects/hot3d/soup_can.usd",
+      "sha256": "840ab3201f1f092dcc2d4c7620a31fff089a35b28af7d252270a8b9600dd491b",
+      "kind": "usd",
+      "media_type": "model/vnd.usd",
+      "size_bytes": 289115
+    }
+  ],
+  "entities": [
+    {
+      "schema": "tacharness.scene_entity.v1",
+      "entity_id": "bowl_1",
+      "role": "target",
+      "asset_id": "bowl",
+      "pose": {
+        "translation": [
+          0.544806649,
+          0.121535216,
+          0.029484999969601633
+        ],
+        "orientation_wxyz": [
+          0.3643492450300573,
+          0.0,
+          0.0,
+          -0.9312623838886801
+        ],
+        "frame": "robolab_world"
+      }
+    },
+    {
+      "schema": "tacharness.scene_entity.v1",
+      "entity_id": "can_1",
+      "role": "manipuland",
+      "asset_id": "soup_can",
+      "pose": {
+        "translation": [
+          0.67706434,
+          0.083538222,
+          0.042898041097534596
+        ],
+        "orientation_wxyz": [
+          0.104428048774977,
+          0.0,
+          0.0,
+          -0.9945324442314846
+        ],
+        "frame": "robolab_world"
+      }
+    }
+  ],
+  "robot": {
+    "provider": "robolab",
+    "embodiment": "droid/tacclaw"
+  },
+  "initial_state": {
+    "source": "gen-env resolved_scene",
+    "settle_required": true
+  },
+  "goal": {
+    "predicate": "inside(soup_can, bowl)"
+  },
+  "constraints": {
+    "episode_length_s": 40,
+    "success_hold_s": 2.0,
+    "reset_randomization": {
+      "assets": [
+        "soup_can",
+        "bowl"
+      ],
+      "xy_range_m": 0.06,
+      "yaw_range_rad": 0.26,
+      "collision_margin_m": 0.01,
+      "task_relation": "inside"
+    }
+  },
+  "extensions": {
+    "genenv": {
+      "request": "A can in front of a bowl.",
+      "seed": 7,
+      "resolved_scene_sha256": "0dd7409a227ea5c338c393b5b0375b74e13147e86324f1a3341f6b1d017d26fc",
+      "compiler_version": "scene_gen.stage5_solver.v3",
+      "asset_catalog_sha256": "dc46aabf122a83664c858dfa2bea6ecc471a9286b34b556ff35f8c5bc7965736"
+    }
+  },
+  "metadata": {
+    "assets_hashed": true,
+    "usda": "audit_front.usda",
+    "task_module": "audit_front_task.py"
+  }
+}

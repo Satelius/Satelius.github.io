@@ -1,0 +1,35 @@
+{
+  "asset_id": "900_gen_block_75e996a2",
+  "dimensions_m": [
+    0.055,
+    0.055,
+    0.04
+  ],
+  "files": {
+    "collision": {
+      "path": "/workspace/summary-web/genenv-r16-20261109/runs/teal-proxy/objects/900_gen_block_75e996a2/collision/textured0.obj",
+      "sha256": "726a145e9f2b5904b5499b6e1cfc331f5e968a79ebaaeac4ce1408eba43e1a2c"
+    },
+    "material": {
+      "path": "/workspace/summary-web/genenv-r16-20261109/runs/teal-proxy/objects/900_gen_block_75e996a2/visual/material.mtl",
+      "sha256": "c16343c2d9e542f0ab0e3c765cf7414cbde20c3a2b48c6ebce650c714271a008"
+    },
+    "metadata": {
+      "path": "/workspace/summary-web/genenv-r16-20261109/runs/teal-proxy/objects/900_gen_block_75e996a2/model_data0.json",
+      "sha256": "62808808ad92ed71dfeb6721a9fc1c378f15b6b99731ef96cba72c97dc635edb"
+    },
+    "visual": {
+      "path": "/workspace/summary-web/genenv-r16-20261109/runs/teal-proxy/objects/900_gen_block_75e996a2/visual/textured0.obj",
+      "sha256": "5a31e7872dbd47d5125d18944e03d1d754a335ed69c75e05e0abfaabf2898924"
+    }
+  },
+  "generated_license": "project_generated_academic_artifact",
+  "generation_kind": "procedural_proxy",
+  "generator": "scene_gen.procedural_proxy.v3",
+  "geometry_family": "bounded_box_proxy",
+  "geometry_fidelity": "semantic_shape_when_recognized_otherwise_bounded_proxy",
+  "requested_color": "teal",
+  "requested_material": null,
+  "schema_version": "robotwin.generated_asset_provenance.v1",
+  "semantic_category": "block"
+}

@@ -1,0 +1,36 @@
+{
+  "environment_package": null,
+  "error_code": "proposal_input_mismatch",
+  "failure_bundle": "/workspace/summary-web/genenv-r16-20261109/runs/package-repeat-video/failure",
+  "images": [
+    "/workspace/summary-web/genenv-r16-20261109/runs/package-repeat-video/failure/partial/5ffbc676012b44560d6bfa8a1a7e34ca523d892494331619050589c54b318f3c.png",
+    "/workspace/summary-web/genenv-r16-20261109/runs/package-repeat-video/failure/partial/68db47c50fd3b4cfe4702487ee80b55004d8d794ad26143f4a3bb51e27e713de.png",
+    "/workspace/summary-web/genenv-r16-20261109/runs/package-repeat-video/failure/partial/1890c4b754d90ec19f4fd91cdf7ef14f4a084d97b1a905d7d33e88ece437f160.png",
+    "/workspace/summary-web/genenv-r16-20261109/runs/package-repeat-video/failure/partial/7580d42d5f88b8c9fa7f9fa959eeab953faed43c9570dae20369aa9c66a6f1ad.png",
+    "/workspace/summary-web/genenv-r16-20261109/runs/package-repeat-video/failure/partial/ba534e35078849f2707c609cf3a695d3f2edb2e491ad3162bd3005b0a105b6ee.png",
+    "/workspace/summary-web/genenv-r16-20261109/runs/package-repeat-video/failure/partial/720171cd9b002049313be94d327313c8dce3f1a425a559faaa287dbaf6e665c7.png",
+    "/workspace/summary-web/genenv-r16-20261109/runs/package-repeat-video/failure/partial/1207c687432f25d7dc0c03937d5002b1f16b5cc7ff15c445bad310550d84ceea.png",
+    "/workspace/summary-web/genenv-r16-20261109/runs/package-repeat-video/failure/partial/d8f89fe565357884b4673413e1c7eeebe2f4e10967ca378882647708a61c41d7.png"
+  ],
+  "last_operation": "codex.interpret",
+  "logs": [
+    "/workspace/summary-web/genenv-r16-20261109/runs/package-repeat-video/failure/partial/6ad314ed9c319524bf7ab842eebe8843dda39ac21aa138ceca38370f314368d8.txt",
+    "/workspace/summary-web/genenv-r16-20261109/runs/package-repeat-video/failure/partial/e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.txt",
+    "/workspace/summary-web/genenv-r16-20261109/runs/package-repeat-video/failure/partial/ba9309e8528086df6e42a71fa7d02323b5e88e4a92b666bf8d36639a033d513f.txt",
+    "/workspace/summary-web/genenv-r16-20261109/runs/package-repeat-video/failure/partial/d7bc893dd9c875730785bcb35063e986a167d78ab0a297f1e4abfface9aaf307.txt",
+    "/workspace/summary-web/genenv-r16-20261109/runs/package-repeat-video/failure/partial/03d8e41f394861be623ed718848869fd17ceb34fb0dfb89c669aab5445b4fea6.txt",
+    "/workspace/summary-web/genenv-r16-20261109/runs/package-repeat-video/failure/partial/3e75d28a6681c31400a3f0fcb564c7613fd42796fb83294e4d53fea86bcbd401.txt"
+  ],
+  "manifest_sha256": "e6370f69762a9ee84e4b2142a4a56340dd8428fcfb1ce0dd6ede97eb1655552d",
+  "message": "Harness stopped at codex.interpret: proposal_input_mismatch. Completed artifacts and original logs are retained. No usable environment is granted.",
+  "required_resources": [],
+  "revision": 2,
+  "scene_ir": {
+    "status": "not_produced"
+  },
+  "stage": "codex.interpret",
+  "status": "failed",
+  "stop_reason": "proposal_input_mismatch",
+  "videos": [],
+  "workflow_id": "8556ede2-8939-4e57-a7a5-f7ce21af2f1a"
+}

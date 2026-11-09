@@ -1,0 +1,35 @@
+Using Python 3.12.3 environment at: TacHarness-genenv/outputs/genenv-audit-20261109/cpu
+Resolved 30 packages in 5.26s
+Downloading opencv-python (70.4MiB)
+Downloading sapien (48.9MiB)
+Downloading lxml (5.0MiB)
+Downloading kiwisolver (1.4MiB)
+Downloading matplotlib (9.4MiB)
+Downloading imageio-ffmpeg (64.8MiB)
+ Downloaded kiwisolver
+ Downloaded lxml
+ Downloaded matplotlib
+ Downloaded sapien
+ Downloaded imageio-ffmpeg
+ Downloaded opencv-python
+Prepared 10 packages in 36.70s
+Installed 19 packages in 242ms
+ + contourpy==1.4.0
+ + cycler==0.12.1
+ + fonttools==4.68.0
+ + imageio-ffmpeg==0.8.1
+ + importlib-resources==7.1.0
+ + kiwisolver==1.5.1
+ + lxml==6.1.3
+ + matplotlib==3.11.2
+ + networkx==3.7
+ + opencv-python==5.0.0.93
+ + psutil==7.2.2
+ + pyparsing==3.3.3
+ + pyperclip==1.11.0
+ + python-dateutil==4.0.0
+ + sapien==3.0.3
+ + setuptools==84.2.1
+ + toppra==0.6.11
+ + transforms3d==0.4.2
+ + tzdata==2026.6

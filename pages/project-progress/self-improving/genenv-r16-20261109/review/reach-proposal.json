@@ -1,0 +1,22 @@
+{
+  "request": {
+    "failure_cause": "object_too_far",
+    "robot_xy_m": [
+      0,
+      0
+    ],
+    "target_xy_m": [
+      0.7,
+      0.1
+    ],
+    "target_object": "/Body"
+  },
+  "delta": [
+    -0.09899494936611666,
+    -0.014142135623730954,
+    0.0
+  ],
+  "before": 0.7071067811865475,
+  "after": 0.6071067811865475,
+  "missing_positions": []
+}

@@ -1,0 +1,136 @@
+diff --git a/repo-docs/change-log.md b/repo-docs/change-log.md
+index 104545e..d21c6fe 100644
+--- a/repo-docs/change-log.md
++++ b/repo-docs/change-log.md
+@@ -483,3 +483,5 @@
+ | 2026-07-29 10:55 +08:00 | 用 `repo-docs-zh` 为 `robot-harness-gen-env` 首次构建中文 repo-docs 包 | 读完父 `repo-docs` 三个核心规则文件（SKILL/REFERENCE/PAGE_RULES/WRITING/QUALITY_RULES/EXAMPLES）。在 `repo-docs/` 下新建：`README.md`（中文开场 + 阅读路径表）、`walkthroughs/one-real-run.md`（一条 prompt → resolved 包 → SAPIEN 回放 → 运行时门控，8 步）、`code-map.md`（`scene_gen/`/`script/`/`demo/`/`tests/` 四区目录职责 + 关键符号 + 主路径关系 + 排除项）、`modules/` 下 7 页（bounded-parser、scene-contract、target-local-geometry、solver、derived-proxy、replay-package、runtime-gates）、`references/source-evidence.md`（两轮 traversal + claim/evidence/confidence/caveat/used-by 表）、`references/quality-review.md`（Reader Simulation + 可理解性 review + 残余风险）、`glossary.md`（17 行术语）、本 change-log。在仓库根 `AGENTS.md` 末尾追加 `Repo docs` 路由句与中文 overlay 指明。 | `$env:PYTHONIOENCODING = "utf-8"; python "C:\Users\SatelluS\.agents\skills\repo-docs\scripts\validate_repo_docs.py" repo-docs --repo-root .` → 初轮 0 errors / 32 warnings（含 walkthrough 难点触发句、code-map 目录/Header/Coverage 形态、source locator 前缀、证伪检查、5 个高频术语缺 glossary 行），按 warning 逐项修了 5 轮后到 0 errors / 0 warnings。`pytest -q` 在本机未能跑——当前 Python 3.12 解释器没装 pytest、本地无 `.venv`，仓库要求 Python 3.11 + 装了 `dev` extra 才有 pytest；但本次改动只动了 `AGENTS.md` 文范畴路由段与新建 `repo-docs/*.md`，没动任何 Python 源码或 `tests/fixtures/`，故测试集状态不受影响。真机 SAPIEN/RoboTwin 回放另按根 `AGENTS.md` 在支持机器上验证。`git rev-parse HEAD` = `60a25971738e0cd4c64615e4455cc2b4098aaa43`，与 sync anchor 一致。 | build：通过；validator 0 errors / 0 warnings；测试集本机未跑（环境缺 pytest），仅改文档不影响契约层。 |
+ 
+ Synced through behavior commit 1180aef33936fcf1955923ed2a270e5a775029fb.
++
++2026-11-09 · 香蕉中英文别名、量词“根”、参照物在前的左右布局与 teal 颜色约束加入解析回归。新增几何通过 RoboTwin 物体工厂在 SAPIEN 中读回。详见 [场景合同](modules/scene-contract.md)。
+diff --git a/repo-docs/modules/scene-contract.md b/repo-docs/modules/scene-contract.md
+index 1375932..820a286 100644
+--- a/repo-docs/modules/scene-contract.md
++++ b/repo-docs/modules/scene-contract.md
+@@ -63,4 +63,5 @@
+ 
+ 要继续追「digest 怎么和磁盘包绑」，去 [哈希绑定包](replay-package.md)。要追「catalog 模型怎么挑出唯一一个」，去 [确定性代理](derived-proxy.md) 的相邻 ground 部分——但 grounding 本身的逻辑不分模块，在 `scene_gen/grounding.py` 直接读。
+ 
+-证据状态：除特别标注外，本页基于当前源码已确认。
+\ No newline at end of file
++证据状态：除特别标注外，本页基于当前源码已确认。
++规则解析现支持“在碗的左侧放一根香蕉”这类先写参照物的中文请求。banana_1 是移动物体，bowl_1 是关系目标。颜色词 teal 会进入约束及程序化材质，运行证据由场景包的物理后端提供。
+diff --git a/scene_gen/colors.py b/scene_gen/colors.py
+index de67988..fcb0ec3 100644
+--- a/scene_gen/colors.py
++++ b/scene_gen/colors.py
+@@ -8,6 +8,7 @@ COLOR_RGB: dict[str, tuple[float, float, float]] = {
+     "orange": (0.95, 0.38, 0.06),
+     "pink": (0.93, 0.35, 0.58),
+     "purple": (0.48, 0.18, 0.72),
++    "teal": (0.0, 0.5, 0.5),
+     "red": (0.82, 0.10, 0.12),
+     "white": (0.82, 0.84, 0.86),
+     "yellow": (0.92, 0.72, 0.08),
+diff --git a/scene_gen/parser.py b/scene_gen/parser.py
+index 85c6fc5..30d4ea0 100644
+--- a/scene_gen/parser.py
++++ b/scene_gen/parser.py
+@@ -40,6 +40,7 @@ class _MentionCandidate:
+ 
+ OBJECT_TERMS: dict[str, tuple[str, ...]] = {
+     "apple": ("apple", "苹果"),
++    "banana": ("banana", "香蕉"),
+     "basket": ("basket", "篮子", "筐"),
+     "block": ("block", "cube", "方块", "积木"),
+     "mustard_bottle": ("mustard bottle",),
+@@ -75,6 +76,7 @@ COLOR_TERMS: dict[str, tuple[str, ...]] = {
+     "orange": ("orange", "橙色", "橙"),
+     "pink": ("pink", "粉色", "粉"),
+     "purple": ("purple", "紫色", "紫"),
++    "teal": ("teal", "蓝绿色"),
+     "red": ("red", "红色", "红"),
+     "white": ("white", "白色", "白"),
+     "yellow": ("yellow", "黄色", "黄"),
+@@ -108,13 +110,16 @@ CHINESE_QUANTITIES = {
+     "一": 1,
+     "一个": 1,
+     "一只": 1,
++    "一根": 1,
+     "二": 2,
+     "两": 2,
+     "两个": 2,
+     "两只": 2,
++    "两根": 2,
+     "三": 3,
+     "三个": 3,
+     "三只": 3,
++    "三根": 3,
+ }
+ 
+ IRREGULAR_ENGLISH_PLURALS = {
+@@ -272,7 +277,7 @@ def _quantity_before(
+         token = match.group("quantity")
+         return CHINESE_QUANTITIES[token], match.span("quantity")
+     unsupported = re.search(
+-        rf"(?P<quantity>[0-9零一二两三四五六七八九十百千万]+(?:个|只)?)"
++        rf"(?P<quantity>[0-9零一二两三四五六七八九十百千万]+(?:个|只|根)?)"
+         rf"\s*(?:(?:{attributes})\s*)*$",
+         prefix,
+     )
+@@ -327,7 +332,7 @@ def _validate_unbound_quantities(normalized: str, consumed_spans: list[tuple[int
+         if re.match(r"\s*(?:[a-z]|[\u3400-\u9fff])", suffix):
+             raise SceneSpecError(f"numeric object quantity {match.group(0)!r} is unsupported")
+ 
+-    for match in re.finditer(r"[零一二两三四五六七八九十百千万]+(?:个|只)", normalized):
++    for match in re.finditer(r"[零一二两三四五六七八九十百千万]+(?:个|只|根)", normalized):
+         if _span_is_covered(match.span(), consumed_spans + reference_spans):
+             continue
+         raise SceneSpecError(f"quantity term {match.group(0)!r} is not bound to an object")
+@@ -559,16 +564,23 @@ def parse_rule_based(request: str, *, seed: int = 0) -> SceneSpec:
+     nested_sources: set[str] = set()
+     for first_index, first in enumerate(mention_groups):
+         for second in mention_groups[first_index + 1 :]:
+-            relation = _relation_between(request, first, second)
++            source_group, target_group = first, second
++            text = _normalize(request)
++            placement = re.fullmatch(r"(?:的)?(左侧|左边|右侧|右边)放(?:置)?(?:一根|两根|三根|一个|两个|三个)?", text[first.end:second.start].strip())
++            if text[:first.start].endswith("在") and placement:
++                source_group, target_group = second, first
++                relation = RelationType.LEFT_OF if placement[1].startswith("左") else RelationType.RIGHT_OF
++            else:
++                relation = _relation_between(request, first, second)
+             if relation is None:
+                 continue
+-            if second.quantity > 1:
++            if target_group.quantity > 1:
+                 raise SceneSpecError(
+                     "relations with a plural target are unsupported; "
+                     "only multiple sources to one target are supported"
+                 )
+-            target = second.object_ids[0]
+-            for source in first.object_ids:
++            target = target_group.object_ids[0]
++            for source in source_group.object_ids:
+                 pair_relations.append(
+                     RelationSpec(
+                         relation=relation,
+diff --git a/tests/scene_gen/test_parser.py b/tests/scene_gen/test_parser.py
+index 45e2e51..66087bb 100644
+--- a/tests/scene_gen/test_parser.py
++++ b/tests/scene_gen/test_parser.py
+@@ -277,3 +277,14 @@ def test_quantity_expansion_digest_is_deterministic() -> None:
+ def test_unsupported_or_unbound_quantities_fail_closed(prompt: str) -> None:
+     with pytest.raises(SceneSpecError):
+         parse_rule_based(prompt, seed=36)
++
++
++def test_chinese_banana_placement_keeps_the_moving_object_as_source():
++    spec = parse_rule_based("在碗的左侧放一根香蕉。", seed=7)
++    assert any(r.relation == RelationType.LEFT_OF and r.source == "banana_1" and r.target == "bowl_1"
++               for r in spec.relations)
++
++
++def test_teal_remains_an_asset_constraint():
++    spec = parse_rule_based("A teal cube on the table.", seed=8)
++    assert spec.objects[0].color == "teal"

@@ -1,0 +1,2172 @@
+[
+  {
+    "group": "Tabero",
+    "title": "原始初态 · 1/3",
+    "status": "通过",
+    "detail": "同源示教 #4。初态位置误差 0.0000 mm。原生连续成功 20 帧，释放后最长合格窗口 13/10 帧。",
+    "media": "runs/stove-origin/teacher.mp4",
+    "links": [
+      [
+        "请求",
+        "runs/stove-origin/request.json"
+      ],
+      [
+        "实际初态",
+        "runs/stove-origin/teacher.reset.json"
+      ],
+      [
+        "逐帧评分",
+        "runs/stove-origin/review.json"
+      ],
+      [
+        "命令与耗时",
+        "runs/stove-origin/receipt.json"
+      ]
+    ]
+  },
+  {
+    "group": "Tabero",
+    "title": "原始初态 · 2/3",
+    "status": "通过",
+    "detail": "同源示教 #4。初态位置误差 0.0000 mm。原生连续成功 20 帧，释放后最长合格窗口 13/10 帧。",
+    "media": "runs/stove-origin-r1/teacher.mp4",
+    "links": [
+      [
+        "请求",
+        "runs/stove-origin-r1/request.json"
+      ],
+      [
+        "实际初态",
+        "runs/stove-origin-r1/teacher.reset.json"
+      ],
+      [
+        "逐帧评分",
+        "runs/stove-origin-r1/review.json"
+      ],
+      [
+        "命令与耗时",
+        "runs/stove-origin-r1/receipt.json"
+      ]
+    ]
+  },
+  {
+    "group": "Tabero",
+    "title": "原始初态 · 3/3",
+    "status": "通过",
+    "detail": "同源示教 #4。初态位置误差 0.0000 mm。原生连续成功 20 帧，释放后最长合格窗口 13/10 帧。",
+    "media": "runs/stove-origin-r2/teacher.mp4",
+    "links": [
+      [
+        "请求",
+        "runs/stove-origin-r2/request.json"
+      ],
+      [
+        "实际初态",
+        "runs/stove-origin-r2/teacher.reset.json"
+      ],
+      [
+        "逐帧评分",
+        "runs/stove-origin-r2/review.json"
+      ],
+      [
+        "命令与耗时",
+        "runs/stove-origin-r2/receipt.json"
+      ]
+    ]
+  },
+  {
+    "group": "Tabero",
+    "title": "碗向东 3 cm · 1/3",
+    "status": "通过",
+    "detail": "同源示教 #4。初态位置误差 0.0000 mm。原生连续成功 20 帧，释放后最长合格窗口 13/10 帧。",
+    "media": "runs/stove-east/teacher.mp4",
+    "links": [
+      [
+        "请求",
+        "runs/stove-east/request.json"
+      ],
+      [
+        "实际初态",
+        "runs/stove-east/teacher.reset.json"
+      ],
+      [
+        "逐帧评分",
+        "runs/stove-east/review.json"
+      ],
+      [
+        "命令与耗时",
+        "runs/stove-east/receipt.json"
+      ]
+    ]
+  },
+  {
+    "group": "Tabero",
+    "title": "碗向东 3 cm · 2/3",
+    "status": "通过",
+    "detail": "同源示教 #4。初态位置误差 0.0000 mm。原生连续成功 20 帧，释放后最长合格窗口 13/10 帧。",
+    "media": "runs/stove-east-r1/teacher.mp4",
+    "links": [
+      [
+        "请求",
+        "runs/stove-east-r1/request.json"
+      ],
+      [
+        "实际初态",
+        "runs/stove-east-r1/teacher.reset.json"
+      ],
+      [
+        "逐帧评分",
+        "runs/stove-east-r1/review.json"
+      ],
+      [
+        "命令与耗时",
+        "runs/stove-east-r1/receipt.json"
+      ]
+    ]
+  },
+  {
+    "group": "Tabero",
+    "title": "碗向东 3 cm · 3/3",
+    "status": "通过",
+    "detail": "同源示教 #4。初态位置误差 0.0000 mm。原生连续成功 20 帧，释放后最长合格窗口 13/10 帧。",
+    "media": "runs/stove-east-r2/teacher.mp4",
+    "links": [
+      [
+        "请求",
+        "runs/stove-east-r2/request.json"
+      ],
+      [
+        "实际初态",
+        "runs/stove-east-r2/teacher.reset.json"
+      ],
+      [
+        "逐帧评分",
+        "runs/stove-east-r2/review.json"
+      ],
+      [
+        "命令与耗时",
+        "runs/stove-east-r2/receipt.json"
+      ]
+    ]
+  },
+  {
+    "group": "Tabero",
+    "title": "碗向西 3 cm · 1/3",
+    "status": "通过",
+    "detail": "同源示教 #4。初态位置误差 0.0000 mm。原生连续成功 20 帧，释放后最长合格窗口 12/10 帧。",
+    "media": "runs/stove-west/teacher.mp4",
+    "links": [
+      [
+        "请求",
+        "runs/stove-west/request.json"
+      ],
+      [
+        "实际初态",
+        "runs/stove-west/teacher.reset.json"
+      ],
+      [
+        "逐帧评分",
+        "runs/stove-west/review.json"
+      ],
+      [
+        "命令与耗时",
+        "runs/stove-west/receipt.json"
+      ]
+    ]
+  },
+  {
+    "group": "Tabero",
+    "title": "碗向西 3 cm · 2/3",
+    "status": "通过",
+    "detail": "同源示教 #4。初态位置误差 0.0000 mm。原生连续成功 20 帧，释放后最长合格窗口 12/10 帧。",
+    "media": "runs/stove-west-r1/teacher.mp4",
+    "links": [
+      [
+        "请求",
+        "runs/stove-west-r1/request.json"
+      ],
+      [
+        "实际初态",
+        "runs/stove-west-r1/teacher.reset.json"
+      ],
+      [
+        "逐帧评分",
+        "runs/stove-west-r1/review.json"
+      ],
+      [
+        "命令与耗时",
+        "runs/stove-west-r1/receipt.json"
+      ]
+    ]
+  },
+  {
+    "group": "Tabero",
+    "title": "碗向西 3 cm · 3/3",
+    "status": "通过",
+    "detail": "同源示教 #4。初态位置误差 0.0000 mm。原生连续成功 20 帧，释放后最长合格窗口 12/10 帧。",
+    "media": "runs/stove-west-r2/teacher.mp4",
+    "links": [
+      [
+        "请求",
+        "runs/stove-west-r2/request.json"
+      ],
+      [
+        "实际初态",
+        "runs/stove-west-r2/teacher.reset.json"
+      ],
+      [
+        "逐帧评分",
+        "runs/stove-west-r2/review.json"
+      ],
+      [
+        "命令与耗时",
+        "runs/stove-west-r2/receipt.json"
+      ]
+    ]
+  },
+  {
+    "group": "Tabero",
+    "title": "碗入抽屉 · 东侧 · 1/3",
+    "status": "未通过",
+    "detail": "同源示教 #4。初态位置误差 0.0000 mm。原生连续成功 14 帧，释放后最长合格窗口 7/10 帧。",
+    "media": "runs/drawer-east-v2-r1/teacher.mp4",
+    "links": [
+      [
+        "请求",
+        "runs/drawer-east-v2-r1/request.json"
+      ],
+      [
+        "实际初态",
+        "runs/drawer-east-v2-r1/teacher.reset.json"
+      ],
+      [
+        "逐帧评分",
+        "runs/drawer-east-v2-r1/review.json"
+      ],
+      [
+        "命令与耗时",
+        "runs/drawer-east-v2-r1/receipt.json"
+      ]
+    ]
+  },
+  {
+    "group": "Tabero",
+    "title": "碗入抽屉 · 东侧 · 2/3",
+    "status": "未通过",
+    "detail": "同源示教 #4。初态位置误差 0.0000 mm。原生连续成功 14 帧，释放后最长合格窗口 7/10 帧。",
+    "media": "runs/drawer-east-v2-r2/teacher.mp4",
+    "links": [
+      [
+        "请求",
+        "runs/drawer-east-v2-r2/request.json"
+      ],
+      [
+        "实际初态",
+        "runs/drawer-east-v2-r2/teacher.reset.json"
+      ],
+      [
+        "逐帧评分",
+        "runs/drawer-east-v2-r2/review.json"
+      ],
+      [
+        "命令与耗时",
+        "runs/drawer-east-v2-r2/receipt.json"
+      ]
+    ]
+  },
+  {
+    "group": "Tabero",
+    "title": "碗入抽屉 · 东侧 · 3/3",
+    "status": "未通过",
+    "detail": "同源示教 #4。初态位置误差 0.0000 mm。原生连续成功 14 帧，释放后最长合格窗口 7/10 帧。",
+    "media": "runs/drawer-east-v2-r3/teacher.mp4",
+    "links": [
+      [
+        "请求",
+        "runs/drawer-east-v2-r3/request.json"
+      ],
+      [
+        "实际初态",
+        "runs/drawer-east-v2-r3/teacher.reset.json"
+      ],
+      [
+        "逐帧评分",
+        "runs/drawer-east-v2-r3/review.json"
+      ],
+      [
+        "命令与耗时",
+        "runs/drawer-east-v2-r3/receipt.json"
+      ]
+    ]
+  },
+  {
+    "group": "Tabero",
+    "title": "ACT 数据入口",
+    "status": "通过",
+    "detail": "三个炉台初态各取一条回放。312 帧经项目转换器读入 ACT，双相机、双触觉、7 维状态与 20×7 动作块均可取样。三条回放共享一条源示教。",
+    "media": "assets/tabero-window.png",
+    "links": [
+      [
+        "张量与数据身份",
+        "review/student-readback.json"
+      ]
+    ]
+  },
+  {
+    "group": "RoboLab",
+    "title": "右侧香蕉 · 小碗目标 · s82 / 1",
+    "status": "未通过",
+    "detail": "189 个控制步，最高抬升 0.1 cm。原生成功 0，稳定窗口 0.00 s。资格检查要求目标向上支撑、撤手 ≥5 cm。结束原因 descend_stalled。",
+    "media": "runs/audit-banana_right/trial-0-s82/scene.mp4",
+    "links": [
+      [
+        "物理记录",
+        "runs/audit-banana_right/trial-0-s82/result.json"
+      ],
+      [
+        "逐步动作和状态",
+        "runs/audit-banana_right/trial-0-s82/steps.jsonl"
+      ],
+      [
+        "任务模块",
+        "runs/banana_right/audit_banana_right_task.py"
+      ]
+    ]
+  },
+  {
+    "group": "RoboLab",
+    "title": "方块原布局对照 · s82 / 1",
+    "status": "通过",
+    "detail": "263 个控制步，最高抬升 14.8 cm。原生成功 1，稳定窗口 0.73 s。资格检查要求目标向上支撑、撤手 ≥5 cm。结束原因 native_success。",
+    "media": "runs/audit-block/trial-0-s82/scene.mp4",
+    "links": [
+      [
+        "物理记录",
+        "runs/audit-block/trial-0-s82/result.json"
+      ],
+      [
+        "逐步动作和状态",
+        "runs/audit-block/trial-0-s82/steps.jsonl"
+      ],
+      [
+        "任务模块",
+        "runs/block/audit_block_task.py"
+      ]
+    ]
+  },
+  {
+    "group": "RoboLab",
+    "title": "罐位于碗前 · 原生探针 · s82 / 1",
+    "status": "未通过",
+    "detail": "201 个控制步，最高抬升 0.0 cm。原生成功 0，稳定窗口 0.00 s。资格检查要求目标向上支撑、撤手 ≥5 cm。结束原因 descend_stalled。",
+    "media": "runs/audit-front-retry/trial-0-s82/scene.mp4",
+    "links": [
+      [
+        "物理记录",
+        "runs/audit-front-retry/trial-0-s82/result.json"
+      ],
+      [
+        "逐步动作和状态",
+        "runs/audit-front-retry/trial-0-s82/steps.jsonl"
+      ],
+      [
+        "任务模块",
+        "runs/front/audit_front_task.py"
+      ]
+    ]
+  },
+  {
+    "group": "RoboLab",
+    "title": "香蕉左置 · 抓放探针 · s71 / 1",
+    "status": "未通过",
+    "detail": "160 个控制步，最高抬升 2.5 cm。原生成功 0，稳定窗口 0.00 s。按两物接触与速度检查。结束原因 no_lift。",
+    "media": "runs/cartesian-banana/trial-0-s71/scene.mp4",
+    "links": [
+      [
+        "物理记录",
+        "runs/cartesian-banana/trial-0-s71/result.json"
+      ],
+      [
+        "逐步动作和状态",
+        "runs/cartesian-banana/trial-0-s71/steps.jsonl"
+      ],
+      [
+        "任务模块",
+        "runs/banana_fixed/audit_banana_fixed_task.py"
+      ]
+    ]
+  },
+  {
+    "group": "RoboLab",
+    "title": "香蕉左置 · 抓放探针 · s71 / 2",
+    "status": "未通过",
+    "detail": "161 个控制步，最高抬升 2.4 cm。原生成功 0，稳定窗口 0.00 s。按两物接触与速度检查。结束原因 no_lift。",
+    "media": "runs/cartesian-banana/trial-1-s71/scene.mp4",
+    "links": [
+      [
+        "物理记录",
+        "runs/cartesian-banana/trial-1-s71/result.json"
+      ],
+      [
+        "逐步动作和状态",
+        "runs/cartesian-banana/trial-1-s71/steps.jsonl"
+      ],
+      [
+        "任务模块",
+        "runs/banana_fixed/audit_banana_fixed_task.py"
+      ]
+    ]
+  },
+  {
+    "group": "RoboLab",
+    "title": "香蕉左置 · 抓放探针 · s71 / 3",
+    "status": "未通过",
+    "detail": "161 个控制步，最高抬升 2.4 cm。原生成功 0，稳定窗口 0.00 s。按两物接触与速度检查。结束原因 no_lift。",
+    "media": "runs/cartesian-banana/trial-2-s71/scene.mp4",
+    "links": [
+      [
+        "物理记录",
+        "runs/cartesian-banana/trial-2-s71/result.json"
+      ],
+      [
+        "逐步动作和状态",
+        "runs/cartesian-banana/trial-2-s71/steps.jsonl"
+      ],
+      [
+        "任务模块",
+        "runs/banana_fixed/audit_banana_fixed_task.py"
+      ]
+    ]
+  },
+  {
+    "group": "RoboLab",
+    "title": "方块反馈布局 · 抓放探针 · s82 / 1",
+    "status": "部分通过",
+    "detail": "267 个控制步，最高抬升 14.8 cm。原生成功 1，稳定窗口 1.60 s。按两物接触与速度检查。结束原因 native_success。",
+    "media": "runs/cartesian-feedback/trial-0-s82/scene.mp4",
+    "links": [
+      [
+        "物理记录",
+        "runs/cartesian-feedback/trial-0-s82/result.json"
+      ],
+      [
+        "逐步动作和状态",
+        "runs/cartesian-feedback/trial-0-s82/steps.jsonl"
+      ],
+      [
+        "任务模块",
+        "runs/feedback/audit_feedback_task.py"
+      ]
+    ]
+  },
+  {
+    "group": "RoboLab",
+    "title": "方块反馈布局 · 抓放探针 · s82 / 2",
+    "status": "部分通过",
+    "detail": "278 个控制步，最高抬升 14.8 cm。原生成功 1，稳定窗口 1.87 s。按两物接触与速度检查。结束原因 native_success。",
+    "media": "runs/cartesian-feedback/trial-1-s82/scene.mp4",
+    "links": [
+      [
+        "物理记录",
+        "runs/cartesian-feedback/trial-1-s82/result.json"
+      ],
+      [
+        "逐步动作和状态",
+        "runs/cartesian-feedback/trial-1-s82/steps.jsonl"
+      ],
+      [
+        "任务模块",
+        "runs/feedback/audit_feedback_task.py"
+      ]
+    ]
+  },
+  {
+    "group": "RoboLab",
+    "title": "方块反馈布局 · 抓放探针 · s82 / 3",
+    "status": "部分通过",
+    "detail": "266 个控制步，最高抬升 14.8 cm。原生成功 1，稳定窗口 1.53 s。按两物接触与速度检查。结束原因 native_success。",
+    "media": "runs/cartesian-feedback/trial-2-s82/scene.mp4",
+    "links": [
+      [
+        "物理记录",
+        "runs/cartesian-feedback/trial-2-s82/result.json"
+      ],
+      [
+        "逐步动作和状态",
+        "runs/cartesian-feedback/trial-2-s82/steps.jsonl"
+      ],
+      [
+        "任务模块",
+        "runs/feedback/audit_feedback_task.py"
+      ]
+    ]
+  },
+  {
+    "group": "RoboLab",
+    "title": "中文请求 · 香蕉在碗左侧 · s19 / 1",
+    "status": "通过",
+    "detail": "284 个控制步，最高抬升 13.8 cm。原生成功 1，稳定窗口 0.67 s。资格检查要求目标向上支撑、撤手 ≥5 cm。结束原因 native_success。",
+    "media": "runs/chinese-native-v2/trial-0-s19/scene.mp4",
+    "links": [
+      [
+        "物理记录",
+        "runs/chinese-native-v2/trial-0-s19/result.json"
+      ],
+      [
+        "逐步动作和状态",
+        "runs/chinese-native-v2/trial-0-s19/steps.jsonl"
+      ],
+      [
+        "任务模块",
+        "runs/cn-fixed/audit_cn_fixed_task.py"
+      ]
+    ]
+  },
+  {
+    "group": "RoboLab",
+    "title": "香蕉近侧 · 资格复验 · s87 / 1",
+    "status": "通过",
+    "detail": "248 个控制步，最高抬升 17.8 cm。原生成功 1，稳定窗口 0.73 s。资格检查要求目标向上支撑、撤手 ≥5 cm。结束原因 native_success。",
+    "media": "runs/confirmed-banana/trial-0-s87/scene.mp4",
+    "links": [
+      [
+        "物理记录",
+        "runs/confirmed-banana/trial-0-s87/result.json"
+      ],
+      [
+        "逐步动作和状态",
+        "runs/confirmed-banana/trial-0-s87/steps.jsonl"
+      ],
+      [
+        "任务模块",
+        "runs/banana_0_1/audit_banana_0_1_task.py"
+      ]
+    ]
+  },
+  {
+    "group": "RoboLab",
+    "title": "香蕉近侧 · 资格复验 · s87 / 2",
+    "status": "通过",
+    "detail": "248 个控制步，最高抬升 17.7 cm。原生成功 1，稳定窗口 0.73 s。资格检查要求目标向上支撑、撤手 ≥5 cm。结束原因 native_success。",
+    "media": "runs/confirmed-banana/trial-1-s87/scene.mp4",
+    "links": [
+      [
+        "物理记录",
+        "runs/confirmed-banana/trial-1-s87/result.json"
+      ],
+      [
+        "逐步动作和状态",
+        "runs/confirmed-banana/trial-1-s87/steps.jsonl"
+      ],
+      [
+        "任务模块",
+        "runs/banana_0_1/audit_banana_0_1_task.py"
+      ]
+    ]
+  },
+  {
+    "group": "RoboLab",
+    "title": "香蕉近侧 · 资格复验 · s87 / 3",
+    "status": "通过",
+    "detail": "250 个控制步，最高抬升 16.6 cm。原生成功 1，稳定窗口 0.80 s。资格检查要求目标向上支撑、撤手 ≥5 cm。结束原因 native_success。",
+    "media": "runs/confirmed-banana/trial-2-s87/scene.mp4",
+    "links": [
+      [
+        "物理记录",
+        "runs/confirmed-banana/trial-2-s87/result.json"
+      ],
+      [
+        "逐步动作和状态",
+        "runs/confirmed-banana/trial-2-s87/steps.jsonl"
+      ],
+      [
+        "任务模块",
+        "runs/banana_0_1/audit_banana_0_1_task.py"
+      ]
+    ]
+  },
+  {
+    "group": "RoboLab",
+    "title": "失败反馈生成的方块布局 · 资格复验 · s82 / 1",
+    "status": "通过",
+    "detail": "267 个控制步，最高抬升 14.8 cm。原生成功 1，稳定窗口 0.80 s。资格检查要求目标向上支撑、撤手 ≥5 cm。结束原因 native_success。",
+    "media": "runs/confirmed-block/trial-0-s82/scene.mp4",
+    "links": [
+      [
+        "物理记录",
+        "runs/confirmed-block/trial-0-s82/result.json"
+      ],
+      [
+        "逐步动作和状态",
+        "runs/confirmed-block/trial-0-s82/steps.jsonl"
+      ],
+      [
+        "任务模块",
+        "runs/feedback/audit_feedback_task.py"
+      ]
+    ]
+  },
+  {
+    "group": "RoboLab",
+    "title": "失败反馈生成的方块布局 · 资格复验 · s82 / 2",
+    "status": "通过",
+    "detail": "278 个控制步，最高抬升 14.8 cm。原生成功 1，稳定窗口 1.53 s。资格检查要求目标向上支撑、撤手 ≥5 cm。结束原因 native_success。",
+    "media": "runs/confirmed-block/trial-1-s82/scene.mp4",
+    "links": [
+      [
+        "物理记录",
+        "runs/confirmed-block/trial-1-s82/result.json"
+      ],
+      [
+        "逐步动作和状态",
+        "runs/confirmed-block/trial-1-s82/steps.jsonl"
+      ],
+      [
+        "任务模块",
+        "runs/feedback/audit_feedback_task.py"
+      ]
+    ]
+  },
+  {
+    "group": "RoboLab",
+    "title": "失败反馈生成的方块布局 · 资格复验 · s82 / 3",
+    "status": "通过",
+    "detail": "266 个控制步，最高抬升 14.8 cm。原生成功 1，稳定窗口 0.73 s。资格检查要求目标向上支撑、撤手 ≥5 cm。结束原因 native_success。",
+    "media": "runs/confirmed-block/trial-2-s82/scene.mp4",
+    "links": [
+      [
+        "物理记录",
+        "runs/confirmed-block/trial-2-s82/result.json"
+      ],
+      [
+        "逐步动作和状态",
+        "runs/confirmed-block/trial-2-s82/steps.jsonl"
+      ],
+      [
+        "任务模块",
+        "runs/feedback/audit_feedback_task.py"
+      ]
+    ]
+  },
+  {
+    "group": "RoboLab",
+    "title": "近距香蕉 · 横向 −3 cm · s87 / 1",
+    "status": "部分通过",
+    "detail": "274 个控制步，最高抬升 18.3 cm。原生成功 1，稳定窗口 0.00 s。按两物接触与速度检查。结束原因 native_success。",
+    "media": "runs/grid-banana_0_0/trial-0-s87/scene.mp4",
+    "links": [
+      [
+        "物理记录",
+        "runs/grid-banana_0_0/trial-0-s87/result.json"
+      ],
+      [
+        "逐步动作和状态",
+        "runs/grid-banana_0_0/trial-0-s87/steps.jsonl"
+      ],
+      [
+        "任务模块",
+        "runs/banana_0_0/audit_banana_0_0_task.py"
+      ]
+    ]
+  },
+  {
+    "group": "RoboLab",
+    "title": "近距香蕉 · 横向 +3 cm · s87 / 1",
+    "status": "部分通过",
+    "detail": "248 个控制步，最高抬升 17.8 cm。原生成功 1，稳定窗口 1.53 s。按两物接触与速度检查。结束原因 native_success。",
+    "media": "runs/grid-banana_0_1/trial-0-s87/scene.mp4",
+    "links": [
+      [
+        "物理记录",
+        "runs/grid-banana_0_1/trial-0-s87/result.json"
+      ],
+      [
+        "逐步动作和状态",
+        "runs/grid-banana_0_1/trial-0-s87/steps.jsonl"
+      ],
+      [
+        "任务模块",
+        "runs/banana_0_1/audit_banana_0_1_task.py"
+      ]
+    ]
+  },
+  {
+    "group": "RoboLab",
+    "title": "中距香蕉 · 横向 −3 cm · s87 / 1",
+    "status": "未通过",
+    "detail": "312 个控制步，最高抬升 19.7 cm。原生成功 0，稳定窗口 0.00 s。按两物接触与速度检查。结束原因 placement_failed。",
+    "media": "runs/grid-banana_1_0/trial-0-s87/scene.mp4",
+    "links": [
+      [
+        "物理记录",
+        "runs/grid-banana_1_0/trial-0-s87/result.json"
+      ],
+      [
+        "逐步动作和状态",
+        "runs/grid-banana_1_0/trial-0-s87/steps.jsonl"
+      ],
+      [
+        "任务模块",
+        "runs/banana_1_0/audit_banana_1_0_task.py"
+      ]
+    ]
+  },
+  {
+    "group": "RoboLab",
+    "title": "中距香蕉 · 横向 +3 cm · s87 / 1",
+    "status": "未通过",
+    "detail": "300 个控制步，最高抬升 19.7 cm。原生成功 0，稳定窗口 0.00 s。按两物接触与速度检查。结束原因 placement_failed。",
+    "media": "runs/grid-banana_1_1/trial-0-s87/scene.mp4",
+    "links": [
+      [
+        "物理记录",
+        "runs/grid-banana_1_1/trial-0-s87/result.json"
+      ],
+      [
+        "逐步动作和状态",
+        "runs/grid-banana_1_1/trial-0-s87/steps.jsonl"
+      ],
+      [
+        "任务模块",
+        "runs/banana_1_1/audit_banana_1_1_task.py"
+      ]
+    ]
+  },
+  {
+    "group": "RoboLab",
+    "title": "远距香蕉 · 横向 −3 cm · s87 / 1",
+    "status": "通过",
+    "detail": "276 个控制步，最高抬升 15.5 cm。原生成功 1，稳定窗口 0.80 s。资格检查要求目标向上支撑、撤手 ≥5 cm。结束原因 native_success。",
+    "media": "runs/grid-banana_2_0/trial-0-s87/scene.mp4",
+    "links": [
+      [
+        "物理记录",
+        "runs/grid-banana_2_0/trial-0-s87/result.json"
+      ],
+      [
+        "逐步动作和状态",
+        "runs/grid-banana_2_0/trial-0-s87/steps.jsonl"
+      ],
+      [
+        "任务模块",
+        "runs/banana_2_0/audit_banana_2_0_task.py"
+      ]
+    ]
+  },
+  {
+    "group": "RoboLab",
+    "title": "远距香蕉 · 横向 +3 cm · s87 / 1",
+    "status": "通过",
+    "detail": "256 个控制步，最高抬升 15.1 cm。原生成功 1，稳定窗口 0.67 s。资格检查要求目标向上支撑、撤手 ≥5 cm。结束原因 native_success。",
+    "media": "runs/grid-banana_2_1/trial-0-s87/scene.mp4",
+    "links": [
+      [
+        "物理记录",
+        "runs/grid-banana_2_1/trial-0-s87/result.json"
+      ],
+      [
+        "逐步动作和状态",
+        "runs/grid-banana_2_1/trial-0-s87/steps.jsonl"
+      ],
+      [
+        "任务模块",
+        "runs/banana_2_1/audit_banana_2_1_task.py"
+      ]
+    ]
+  },
+  {
+    "group": "RoboLab",
+    "title": "香蕉左置 · 夹爪旋转 90° · s71 / 1",
+    "status": "未通过",
+    "detail": "157 个控制步，最高抬升 1.3 cm。原生成功 0，稳定窗口 0.00 s。按两物接触与速度检查。结束原因 no_lift。",
+    "media": "runs/yaw-banana/trial-0-s71/scene.mp4",
+    "links": [
+      [
+        "物理记录",
+        "runs/yaw-banana/trial-0-s71/result.json"
+      ],
+      [
+        "逐步动作和状态",
+        "runs/yaw-banana/trial-0-s71/steps.jsonl"
+      ],
+      [
+        "任务模块",
+        "runs/banana_fixed/audit_banana_fixed_task.py"
+      ]
+    ]
+  },
+  {
+    "group": "RoboLab",
+    "title": "原离散教师 · 香蕉左置 s71",
+    "status": "未通过",
+    "detail": "保留原任务模块的 40 s 时限，记录 599 帧、55 次决策。决策观测中香蕉最高抬升 14.5 cm，终止原因为 time_out。",
+    "media": "assets/teacher-episode_071.mp4",
+    "links": [
+      [
+        "教师记录",
+        "runs/native1/robolab/AuditBananaFixedTask/episode_071/summary.json"
+      ],
+      [
+        "动作与物体位置",
+        "runs/native1/robolab/AuditBananaFixedTask/episode_071/gpt_calls/calls.jsonl"
+      ]
+    ]
+  },
+  {
+    "group": "RoboLab",
+    "title": "原离散教师 · 香蕉左置 s72",
+    "status": "未通过",
+    "detail": "保留原任务模块的 40 s 时限，记录 599 帧、59 次决策。决策观测中香蕉最高抬升 3.4 cm，终止原因为 time_out。",
+    "media": "assets/teacher-episode_072.mp4",
+    "links": [
+      [
+        "教师记录",
+        "runs/native1/robolab/AuditBananaFixedTask/episode_072/summary.json"
+      ],
+      [
+        "动作与物体位置",
+        "runs/native1/robolab/AuditBananaFixedTask/episode_072/gpt_calls/calls.jsonl"
+      ]
+    ]
+  },
+  {
+    "group": "RoboLab",
+    "title": "原离散教师 · 香蕉左置 s73",
+    "status": "未通过",
+    "detail": "保留原任务模块的 40 s 时限，记录 599 帧、50 次决策。决策观测中香蕉最高抬升 14.5 cm，终止原因为 time_out。",
+    "media": "assets/teacher-episode_073.mp4",
+    "links": [
+      [
+        "教师记录",
+        "runs/native1/robolab/AuditBananaFixedTask/episode_073/summary.json"
+      ],
+      [
+        "动作与物体位置",
+        "runs/native1/robolab/AuditBananaFixedTask/episode_073/gpt_calls/calls.jsonl"
+      ]
+    ]
+  },
+  {
+    "group": "UniVTAC",
+    "title": "瓶入架 · 原始视频",
+    "status": "部分通过",
+    "detail": "来自 UniVTAC 5.1 源轨迹，逐帧解码为 524 帧。模型读取 8 个有时间标记的采样帧，可见抬起与搬运；放置内部的接触和释放需要传感器证据。",
+    "media": "assets/bottle-reference.mp4",
+    "links": [
+      [
+        "原始版本与阶段",
+        "review/bottle-source.json"
+      ],
+      [
+        "模型判读",
+        "review/video-answer.txt"
+      ],
+      [
+        "完整视频解码",
+        "review/ingest-video.json"
+      ]
+    ]
+  },
+  {
+    "group": "UniVTAC",
+    "title": "罐体规格 · 4 / 5 / 6 cm",
+    "status": "部分通过",
+    "detail": "三个原版源 episode 可回读头部 RGB 与左右触觉。图中三组样本各保留原始文件哈希和帧号。",
+    "media": "assets/can-reference.jpg",
+    "links": [
+      [
+        "源轨迹清单",
+        "review/can-source.json"
+      ]
+    ]
+  },
+  {
+    "group": "UniVTAC",
+    "title": "材料与形变 · CUDA",
+    "status": "通过",
+    "detail": "新编译的 Python 3.12 绑定调用 sm_120 后端。相同体网格、接触对和落高下，10 kPa 材料最大压缩约 6.11 mm，1 MPa 约 0.085 mm。各记录 80 次 advance/retrieve。",
+    "media": "assets/uipc-materials.png",
+    "links": [
+      [
+        "软材料",
+        "runs/uipc-materials/soft/result.json"
+      ],
+      [
+        "硬材料",
+        "runs/uipc-materials/firm/result.json"
+      ],
+      [
+        "编译入口",
+        "review/build_uipc.py"
+      ]
+    ]
+  },
+  {
+    "group": "UniVTAC",
+    "title": "瓶与架 · 6.0 初态",
+    "status": "部分通过",
+    "detail": "旧单位四元数在 6.0 接口中被读成绕 x 轴翻转 180°。同一组网格的最低点分别落在地面下 499 mm 和 140 mm。适配层调整排列后继续执行到机器人及传感器初始化。",
+    "media": "assets/uni-floor.png",
+    "links": [
+      [
+        "网格测量",
+        "review/uni-floor.json"
+      ],
+      [
+        "碰撞诊断",
+        "review/uni-native-13.log"
+      ],
+      [
+        "修正后日志",
+        "review/uni-native-14.log"
+      ]
+    ]
+  },
+  {
+    "group": "生成接口",
+    "title": "新几何 · 六棱柱",
+    "status": "通过",
+    "detail": "英文请求生成了紫色六棱柱的视觉网格、凸碰撞网格、材质和来源记录。RoboTwin 创建真实动态物体，SAPIEN 步进 180 次，最后 30 步均有桌面接触冲量。",
+    "media": "runs/mesh-runtime4/scene.mp4",
+    "links": [
+      [
+        "SAPIEN 测量",
+        "runs/mesh-runtime4/result.json"
+      ],
+      [
+        "网格来源",
+        "runs/new-mesh/objects/900_gen_hexagonal_pedestal_5695f4e5/generation_provenance.json"
+      ],
+      [
+        "碰撞 OBJ",
+        "runs/new-mesh/objects/900_gen_hexagonal_pedestal_5695f4e5/collision/textured0.obj"
+      ]
+    ]
+  },
+  {
+    "group": "生成接口",
+    "title": "新关节 · 抽屉滑轨",
+    "status": "通过",
+    "detail": "在本次诊断脚本中构造带限位和驱动的滑轨。160 个 PhysX 状态显示目标 120 mm、峰值 119.93 mm、闭合残差约 0.024 mm。视频以半速显示。后续机器人操作仍需任务绑定和教师。",
+    "media": "runs/drawer-joint/motion.mp4",
+    "links": [
+      [
+        "关节场景",
+        "runs/drawer-joint/drawer.usda"
+      ],
+      [
+        "位移曲线",
+        "assets/drawer-travel.png"
+      ],
+      [
+        "全部物理步",
+        "runs/drawer-joint/readback.json"
+      ]
+    ]
+  },
+  {
+    "group": "生成接口",
+    "title": "USD 对象与材质修改",
+    "status": "通过",
+    "detail": "移动、停用、灯光、加入有默认根节点的 USD 资产、质量、摩擦以及纹理替换均通过文件回读。缺失对象、无资产库和未知操作返回失败。物理合理性仍由下游仿真检查。",
+    "media": "assets/mutator.png",
+    "links": [
+      [
+        "修复前",
+        "runs/mutation-before/review.json"
+      ],
+      [
+        "修复后",
+        "runs/mutation-after/review.json"
+      ],
+      [
+        "资产与材质",
+        "runs/asset-edits-fixed/review.json"
+      ],
+      [
+        "修改后 USD",
+        "runs/asset-edits-fixed/changed.usda"
+      ]
+    ]
+  },
+  {
+    "group": "生成接口",
+    "title": "反馈请求 · 坐标有效性",
+    "status": "通过",
+    "detail": "NaN、越出工作区、缺少 y 的输入此前均能写入场景。修复后全部拒绝。既有诊断的 10 个方块坐标只移动质心约 3.6 mm，阶段强调仍需另行实现。",
+    "media": "assets/mutator.png",
+    "links": [
+      [
+        "反例修复前",
+        "runs/guard-before/review.json"
+      ],
+      [
+        "修复后",
+        "runs/guard-after/review.json"
+      ],
+      [
+        "实际数据需求",
+        "review/feedback-input.json"
+      ]
+    ]
+  },
+  {
+    "group": "生成接口",
+    "title": "图片绑定 · 碗与炉台",
+    "status": "部分通过",
+    "detail": "实际模型从输入中读出碗、炉具及其相对位置。单帧不能决定操作方向。复跑使用显式登记的炉台任务和原生初态，保留图片、模型回答、请求及实际物理回读。",
+    "media": "assets/bowl-scene.png",
+    "links": [
+      [
+        "模型回答",
+        "review/image-answer.txt"
+      ],
+      [
+        "输入收据",
+        "review/ingest-image.json"
+      ],
+      [
+        "绑定请求",
+        "runs/stove-east-r1/request.json"
+      ]
+    ]
+  },
+  {
+    "group": "生成接口",
+    "title": "x2env 原入口 · 文字",
+    "status": "未通过",
+    "detail": "首次终止码 model_timeout。600 秒复跑的终止码 model_timeout。原生入口没有交付场景。",
+    "media": "assets/diagnosis-canonical-text.png",
+    "links": [
+      [
+        "首次收据",
+        "review/x2-text.json"
+      ],
+      [
+        "复跑收据",
+        "review/managed-text.json"
+      ],
+      [
+        "部署检查",
+        "review/providers.json"
+      ]
+    ]
+  },
+  {
+    "group": "生成接口",
+    "title": "x2env 原入口 · 图片",
+    "status": "未通过",
+    "detail": "首次终止码 model_timeout。600 秒复跑的终止码 model_timeout。原生入口没有交付场景。",
+    "media": "runs/image-sequential/failure/partial/65e03080baaa11d2593f0f4c8c68bf8b994985ba3645e25847b553d1ca576be9.png",
+    "links": [
+      [
+        "首次收据",
+        "review/x2-image.json"
+      ],
+      [
+        "复跑收据",
+        "review/managed-image-separate.json"
+      ],
+      [
+        "部署检查",
+        "review/providers.json"
+      ]
+    ]
+  },
+  {
+    "group": "生成接口",
+    "title": "x2env 原入口 · 视频",
+    "status": "未通过",
+    "detail": "首次终止码 command_timeout。600 秒复跑的终止码 proposal_input_mismatch。原生入口没有交付场景。",
+    "media": "runs/managed-video/failure/partial/5ffbc676012b44560d6bfa8a1a7e34ca523d892494331619050589c54b318f3c.png",
+    "links": [
+      [
+        "首次收据",
+        "review/x2-video.json"
+      ],
+      [
+        "复跑收据",
+        "review/managed-video.json"
+      ],
+      [
+        "部署检查",
+        "review/providers.json"
+      ]
+    ]
+  },
+  {
+    "group": "生成接口",
+    "title": "x2env 查询、恢复与失败包",
+    "status": "通过",
+    "detail": "已终止的文字、视频请求可查询。再次恢复时状态和版本均保持一致，两份失败包在新目录重新导出。",
+    "media": "assets/diagnosis-controller.png",
+    "links": [
+      [
+        "状态与导出",
+        "review/controller.json"
+      ]
+    ]
+  },
+  {
+    "group": "生成接口",
+    "title": "SAPIEN 首次加载 · 三个启动故障",
+    "status": "未通过",
+    "detail": "依次遇到 open3d 缺失、C++ 运行库版本不符、导入时强制读取杂物目录。后续六棱柱与 teal 方块均进入实际仿真。",
+    "media": "assets/diagnosis-sapien-init.png",
+    "links": [
+      [
+        "依赖缺失",
+        "review/sapien-native.log"
+      ],
+      [
+        "运行库",
+        "review/sapien-native2.log"
+      ],
+      [
+        "杂物目录",
+        "review/sapien-native3.log"
+      ]
+    ]
+  },
+  {
+    "group": "RoboLab",
+    "title": "罐位于碗前 · 首次仿真中断",
+    "status": "未通过",
+    "detail": "首次请求交换了操作物和目标物，被角色校验拒绝。纠正角色后的首次启动遇到 PhysX 显存分配错误。随后单独复跑取得完整 201 步录像。",
+    "media": "assets/diagnosis-front-oom.png",
+    "links": [
+      [
+        "角色拒绝",
+        "review/probe-front.log"
+      ],
+      [
+        "显存错误",
+        "review/probe-front-correct.log"
+      ],
+      [
+        "复跑记录",
+        "review/probe-front-retry.log"
+      ]
+    ]
+  },
+  {
+    "group": "生成接口",
+    "title": "香蕉资产漏映射",
+    "status": "未通过",
+    "detail": "T2E_ASSET_UNAVAILABLE · no usable catalog candidate for banana_1 category=banana color=None material=None",
+    "media": "assets/diagnosis-banana.png",
+    "links": [
+      [
+        "失败收据",
+        "runs/banana/genenv/a_banana_to_the_left_of_a_bowl_c0490ee245/failure_report.json"
+      ]
+    ]
+  },
+  {
+    "group": "生成接口",
+    "title": "方块与盘子的布局",
+    "status": "未通过",
+    "detail": "T2E_SOLVER_EXHAUSTED · bounded solver exhausted",
+    "media": "assets/diagnosis-plate.png",
+    "links": [
+      [
+        "失败收据",
+        "runs/plate/genenv/a_block_to_the_left_of_a_plate_3204043e03/failure_report.json"
+      ]
+    ]
+  },
+  {
+    "group": "生成接口",
+    "title": "A block on top of a plate.",
+    "status": "未通过",
+    "detail": "T2E_SOLVER_EXHAUSTED · bounded solver exhausted",
+    "media": "assets/diagnosis-stack.png",
+    "links": [
+      [
+        "失败收据",
+        "runs/stack/genenv/a_block_on_top_of_a_plate_c99d8059d9/failure_report.json"
+      ]
+    ]
+  },
+  {
+    "group": "生成接口",
+    "title": "A block inside a bowl.",
+    "status": "未通过",
+    "detail": "T2E_SOLVER_EXHAUSTED · bounded solver exhausted",
+    "media": "assets/diagnosis-already_inside.png",
+    "links": [
+      [
+        "失败收据",
+        "runs/already_inside/genenv/a_block_inside_a_bowl_87c83e7d86/failure_report.json"
+      ]
+    ]
+  },
+  {
+    "group": "生成接口",
+    "title": "A drawer to the left of a bottle.",
+    "status": "未通过",
+    "detail": "T2E_ASSET_UNAVAILABLE · no usable catalog candidate for drawer_1 category=drawer color=None material=None",
+    "media": "assets/diagnosis-missing_asset.png",
+    "links": [
+      [
+        "失败收据",
+        "runs/missing_asset/genenv/a_drawer_to_the_left_of_a_bottle_81488ba899/failure_report.json"
+      ]
+    ]
+  },
+  {
+    "group": "生成接口",
+    "title": "A banana to the left of a bowl.",
+    "status": "未通过",
+    "detail": "ValueError: task binding names 'can_1', which is not in the scene (['banana_1', 'bowl_1'])",
+    "media": "assets/diagnosis-wrong_binding.png",
+    "links": [
+      [
+        "绑定日志",
+        "runs/wrong_binding/process.log"
+      ]
+    ]
+  },
+  {
+    "group": "生成接口",
+    "title": "在碗的左侧放一根香蕉。",
+    "status": "未通过",
+    "detail": "T2E_REQUEST_REJECTED · quantity term '一' is not bound to an object",
+    "media": "assets/diagnosis-cn.png",
+    "links": [
+      [
+        "失败收据",
+        "runs/cn/genenv/_failures/49b53fe45b7cadc8/failure_report.json"
+      ]
+    ]
+  },
+  {
+    "group": "生成接口",
+    "title": "A can in front of a bowl.",
+    "status": "部分通过",
+    "detail": "资产目录、布局求解及原生任务模块已生成。该案例完成静态检查。",
+    "media": "assets/diagnosis-front.png",
+    "links": [
+      [
+        "场景摘要",
+        "runs/front/example_summary.json"
+      ],
+      [
+        "场景",
+        "runs/front/audit_front.usda"
+      ]
+    ]
+  },
+  {
+    "group": "生成接口",
+    "title": "A banana to the left of a bowl.",
+    "status": "未通过",
+    "detail": "ValueError: task needs distinct objects and a supported goal",
+    "media": "assets/diagnosis-same.png",
+    "links": [
+      [
+        "绑定日志",
+        "runs/same/process.log"
+      ]
+    ]
+  },
+  {
+    "group": "生成接口",
+    "title": "颜色约束 · 修复前",
+    "status": "未通过",
+    "detail": "输入指定 teal。规则解析丢失了该颜色，编译器复用了已有方块。资产生成报告显示新增 0 个资产。",
+    "media": "assets/diagnosis-first-teal.png",
+    "links": [
+      [
+        "解析规格",
+        "runs/proxy/a_teal_cube_on_the_table_4ab15d0e7a/scene_spec.json"
+      ],
+      [
+        "生成报告",
+        "runs/proxy/a_teal_cube_on_the_table_4ab15d0e7a/asset_generation_report.json"
+      ]
+    ]
+  },
+  {
+    "group": "生成接口",
+    "title": "中文方位与数量词",
+    "status": "通过",
+    "detail": "原请求因量词“一根”被拒绝。修复解析、主客体顺序及香蕉目录后，同一句话生成了 banana_1 在 bowl_1 左侧的场景，原生臂完成一次抓放。",
+    "media": "runs/chinese-native-v2/trial-0-s19/scene.mp4",
+    "links": [
+      [
+        "原请求",
+        "runs/cn/genenv/_failures/49b53fe45b7cadc8/failure_report.json"
+      ],
+      [
+        "生成规格",
+        "runs/cn-fixed/genenv/scene_e028cec62e/resolved_scene.json"
+      ],
+      [
+        "实际回读",
+        "runs/chinese-native-v2/trial-0-s19/result.json"
+      ]
+    ]
+  },
+  {
+    "group": "生成接口",
+    "title": "teal · 解析与新网格复跑",
+    "status": "通过",
+    "detail": "修复后颜色保留为 teal。用仅含已生成六棱柱的目录重新提交，请求生成了带该材质的方块。SAPIEN 实跑 180 步，保留网格、材质与桌面接触。RoboLab 导入器遇到当前无法绑定的颜色会明确拒绝。",
+    "media": "runs/teal-runtime/scene.mp4",
+    "links": [
+      [
+        "新网格",
+        "runs/teal-proxy/objects/900_gen_block_75e996a2/generation_provenance.json"
+      ],
+      [
+        "物理回读",
+        "runs/teal-runtime/result.json"
+      ],
+      [
+        "RoboLab 颜色绑定日志",
+        "review/teal-robolab.log"
+      ]
+    ]
+  },
+  {
+    "group": "生成接口",
+    "title": "按实测距离生成移动提案",
+    "status": "通过",
+    "detail": "移动提案使用机器人基座和目标的实测平面坐标。这个例子中目标距离缩短 10 cm；缺少坐标时不生成移动动作。",
+    "media": "assets/mutator.png",
+    "links": [
+      [
+        "提案与距离",
+        "review/reach-proposal.json"
+      ]
+    ]
+  },
+  {
+    "group": "UniVTAC",
+    "title": "移动物体的空载探针",
+    "status": "未通过",
+    "detail": "6.0 头部和腕部相机启动，UIPC world 有效。共有 5 个采样状态，物理步与 UIPC 计数一致 5 次。本次停在任务完成前。移动道具进行空载校验时，UIPC 抛出负碰撞时间断言，未产生可用零点。",
+    "media": "runs/air-isolated-startup/sampled.mp4",
+    "links": [
+      [
+        "启动收据",
+        "runs/air-isolated-startup/startup.json"
+      ],
+      [
+        "传感器与物体记录",
+        "runs/air-isolated-startup/frames.jsonl"
+      ],
+      [
+        "原运行日志",
+        "review/air-isolated.log"
+      ]
+    ]
+  },
+  {
+    "group": "UniVTAC",
+    "title": "瓶入架 · 空载标定",
+    "status": "未通过",
+    "detail": "6.0 头部和腕部相机启动，UIPC world 有效。共有 5 个采样状态，物理步与 UIPC 计数一致 5 次。原生结果 error。",
+    "media": "runs/bottle-air-startup/sampled.mp4",
+    "links": [
+      [
+        "启动收据",
+        "runs/bottle-air-startup/startup.json"
+      ],
+      [
+        "传感器与物体记录",
+        "runs/bottle-air-startup/frames.jsonl"
+      ],
+      [
+        "原生结果",
+        "runs/bottle-air-startup/native-result.json"
+      ],
+      [
+        "原运行日志",
+        "review/bottle-air.log"
+      ]
+    ]
+  },
+  {
+    "group": "UniVTAC",
+    "title": "瓶入架 · 架远 / 瓶左",
+    "status": "未通过",
+    "detail": "6.0 头部和腕部相机启动，UIPC world 有效。共有 7 个采样状态，物理步与 UIPC 计数一致 7 次。原生结果 fail。",
+    "media": "runs/bottle-far-startup/sampled.mp4",
+    "links": [
+      [
+        "启动收据",
+        "runs/bottle-far-startup/startup.json"
+      ],
+      [
+        "请求与初态",
+        "runs/bottle-far-startup/pregrasp.json"
+      ],
+      [
+        "传感器与物体记录",
+        "runs/bottle-far-startup/frames.jsonl"
+      ],
+      [
+        "原生结果",
+        "runs/bottle-far-startup/native-result.json"
+      ],
+      [
+        "原运行日志",
+        "review/bottle-far.log"
+      ]
+    ]
+  },
+  {
+    "group": "UniVTAC",
+    "title": "瓶入架 · 架近 / 瓶右",
+    "status": "未通过",
+    "detail": "6.0 头部和腕部相机启动，UIPC world 有效。共有 7 个采样状态，物理步与 UIPC 计数一致 7 次。原生结果 fail。",
+    "media": "runs/bottle-near-startup/sampled.mp4",
+    "links": [
+      [
+        "启动收据",
+        "runs/bottle-near-startup/startup.json"
+      ],
+      [
+        "请求与初态",
+        "runs/bottle-near-startup/pregrasp.json"
+      ],
+      [
+        "传感器与物体记录",
+        "runs/bottle-near-startup/frames.jsonl"
+      ],
+      [
+        "原生结果",
+        "runs/bottle-near-startup/native-result.json"
+      ],
+      [
+        "原运行日志",
+        "review/bottle-near.log"
+      ]
+    ]
+  },
+  {
+    "group": "UniVTAC",
+    "title": "罐 · 初跑 / 4 cm",
+    "status": "未通过",
+    "detail": "6.0 头部和腕部相机启动，UIPC world 有效。共有 7 个采样状态，物理步与 UIPC 计数一致 7 次。原生结果 error。加载尺寸 4 cm。",
+    "media": "runs/can-4-startup/sampled.mp4",
+    "links": [
+      [
+        "启动收据",
+        "runs/can-4-startup/startup.json"
+      ],
+      [
+        "传感器与物体记录",
+        "runs/can-4-startup/frames.jsonl"
+      ],
+      [
+        "原生结果",
+        "runs/can-4-startup/native-result.json"
+      ],
+      [
+        "原运行日志",
+        "review/can-4.log"
+      ]
+    ]
+  },
+  {
+    "group": "UniVTAC",
+    "title": "罐 · 初跑 / 5 cm",
+    "status": "未通过",
+    "detail": "6.0 头部和腕部相机启动，UIPC world 有效。共有 7 个采样状态，物理步与 UIPC 计数一致 7 次。原生结果 error。加载尺寸 5 cm。",
+    "media": "runs/can-5-startup/sampled.mp4",
+    "links": [
+      [
+        "启动收据",
+        "runs/can-5-startup/startup.json"
+      ],
+      [
+        "传感器与物体记录",
+        "runs/can-5-startup/frames.jsonl"
+      ],
+      [
+        "原生结果",
+        "runs/can-5-startup/native-result.json"
+      ],
+      [
+        "原运行日志",
+        "review/can-5.log"
+      ]
+    ]
+  },
+  {
+    "group": "UniVTAC",
+    "title": "罐 · 初跑 / 6 cm",
+    "status": "未通过",
+    "detail": "6.0 头部和腕部相机启动，UIPC world 有效。共有 7 个采样状态，物理步与 UIPC 计数一致 7 次。原生结果 error。加载尺寸 6 cm。",
+    "media": "runs/can-6-startup/sampled.mp4",
+    "links": [
+      [
+        "启动收据",
+        "runs/can-6-startup/startup.json"
+      ],
+      [
+        "传感器与物体记录",
+        "runs/can-6-startup/frames.jsonl"
+      ],
+      [
+        "原生结果",
+        "runs/can-6-startup/native-result.json"
+      ],
+      [
+        "原运行日志",
+        "review/can-6.log"
+      ]
+    ]
+  },
+  {
+    "group": "UniVTAC",
+    "title": "罐 · 复跑 / 4 cm",
+    "status": "未通过",
+    "detail": "6.0 头部和腕部相机启动，UIPC world 有效。共有 86 个采样状态，物理步与 UIPC 计数一致 86 次。原生结果 fail。加载尺寸 4 cm。",
+    "media": "runs/can-v2-4-startup/sampled.mp4",
+    "links": [
+      [
+        "启动收据",
+        "runs/can-v2-4-startup/startup.json"
+      ],
+      [
+        "传感器与物体记录",
+        "runs/can-v2-4-startup/frames.jsonl"
+      ],
+      [
+        "原生结果",
+        "runs/can-v2-4-startup/native-result.json"
+      ],
+      [
+        "原运行日志",
+        "review/can-v2-4.log"
+      ],
+      [
+        "原版录像",
+        "runs/can-v2-4-startup/native-1_fail.mp4"
+      ]
+    ]
+  },
+  {
+    "group": "UniVTAC",
+    "title": "罐 · 复跑 / 5 cm",
+    "status": "未通过",
+    "detail": "6.0 头部和腕部相机启动，UIPC world 有效。共有 88 个采样状态，物理步与 UIPC 计数一致 88 次。原生结果 fail。加载尺寸 5 cm。",
+    "media": "runs/can-v2-5-startup/sampled.mp4",
+    "links": [
+      [
+        "启动收据",
+        "runs/can-v2-5-startup/startup.json"
+      ],
+      [
+        "传感器与物体记录",
+        "runs/can-v2-5-startup/frames.jsonl"
+      ],
+      [
+        "原生结果",
+        "runs/can-v2-5-startup/native-result.json"
+      ],
+      [
+        "原运行日志",
+        "review/can-v2-5.log"
+      ],
+      [
+        "原版录像",
+        "runs/can-v2-5-startup/native-1_fail.mp4"
+      ]
+    ]
+  },
+  {
+    "group": "UniVTAC",
+    "title": "罐 · 复跑 / 6 cm",
+    "status": "未通过",
+    "detail": "6.0 头部和腕部相机启动，UIPC world 有效。共有 95 个采样状态，物理步与 UIPC 计数一致 95 次。原生结果 fail。加载尺寸 6 cm。",
+    "media": "runs/can-v2-6-startup/sampled.mp4",
+    "links": [
+      [
+        "启动收据",
+        "runs/can-v2-6-startup/startup.json"
+      ],
+      [
+        "传感器与物体记录",
+        "runs/can-v2-6-startup/frames.jsonl"
+      ],
+      [
+        "原生结果",
+        "runs/can-v2-6-startup/native-result.json"
+      ],
+      [
+        "原运行日志",
+        "review/can-v2-6.log"
+      ],
+      [
+        "原版录像",
+        "runs/can-v2-6-startup/native-1_fail.mp4"
+      ]
+    ]
+  },
+  {
+    "group": "UniVTAC",
+    "title": "修正抓取角 · 架远",
+    "status": "未通过",
+    "detail": "6.0 头部和腕部相机启动，UIPC world 有效。共有 149 个采样状态，物理步与 UIPC 计数一致 149 次。原生结果 fail。",
+    "media": "runs/far-fixed-startup/sampled.mp4",
+    "links": [
+      [
+        "启动收据",
+        "runs/far-fixed-startup/startup.json"
+      ],
+      [
+        "请求与初态",
+        "runs/far-fixed-startup/pregrasp.json"
+      ],
+      [
+        "传感器与物体记录",
+        "runs/far-fixed-startup/frames.jsonl"
+      ],
+      [
+        "原生结果",
+        "runs/far-fixed-startup/native-result.json"
+      ],
+      [
+        "原运行日志",
+        "review/far-fixed.log"
+      ],
+      [
+        "瓶位置、轨迹与资格",
+        "review/bottle-qualification.json"
+      ],
+      [
+        "原版录像",
+        "runs/far-fixed-startup/native-1_fail.mp4"
+      ]
+    ]
+  },
+  {
+    "group": "UniVTAC",
+    "title": "修正抓取角 · 架近",
+    "status": "部分通过",
+    "detail": "6.0 头部和腕部相机启动，UIPC world 有效。共有 152 个采样状态，物理步与 UIPC 计数一致 152 次。原生结果 success。",
+    "media": "runs/near-fixed-startup/synchronized.mp4",
+    "links": [
+      [
+        "启动收据",
+        "runs/near-fixed-startup/startup.json"
+      ],
+      [
+        "请求与初态",
+        "runs/near-fixed-startup/pregrasp.json"
+      ],
+      [
+        "传感器与物体记录",
+        "runs/near-fixed-startup/frames.jsonl"
+      ],
+      [
+        "原生结果",
+        "runs/near-fixed-startup/native-result.json"
+      ],
+      [
+        "原运行日志",
+        "review/near-fixed.log"
+      ],
+      [
+        "瓶位置、轨迹与资格",
+        "review/bottle-qualification.json"
+      ],
+      [
+        "双相机、双触觉同步录像",
+        "runs/near-fixed-startup/synchronized.mp4"
+      ],
+      [
+        "原版录像",
+        "runs/near-fixed-startup/native-1_success.mp4"
+      ]
+    ]
+  },
+  {
+    "group": "UniVTAC",
+    "title": "视频绑定 · 近架第 2 次",
+    "status": "未通过",
+    "detail": "6.0 头部和腕部相机启动，UIPC world 有效。共有 151 个采样状态，物理步与 UIPC 计数一致 151 次。原生结果 fail。架子移位，瓶体结束时仍在低处。",
+    "media": "runs/near-video-r2-startup/sampled.mp4",
+    "links": [
+      [
+        "启动收据",
+        "runs/near-video-r2-startup/startup.json"
+      ],
+      [
+        "请求与初态",
+        "runs/near-video-r2-startup/pregrasp.json"
+      ],
+      [
+        "传感器与物体记录",
+        "runs/near-video-r2-startup/frames.jsonl"
+      ],
+      [
+        "视频与原生任务绑定",
+        "runs/binding-near-video-r2/request.json"
+      ],
+      [
+        "原生结果",
+        "runs/near-video-r2-startup/native-result.json"
+      ],
+      [
+        "原运行日志",
+        "review/near-video-r2.log"
+      ],
+      [
+        "瓶位置、轨迹与资格",
+        "review/bottle-qualification.json"
+      ],
+      [
+        "原版录像",
+        "runs/near-video-r2-startup/native-1_fail.mp4"
+      ]
+    ]
+  },
+  {
+    "group": "UniVTAC",
+    "title": "视频绑定 · 近架第 3 次",
+    "status": "部分通过",
+    "detail": "6.0 头部和腕部相机启动，UIPC world 有效。共有 152 个采样状态，物理步与 UIPC 计数一致 152 次。原生结果 success。",
+    "media": "runs/near-video-r3-startup/synchronized.mp4",
+    "links": [
+      [
+        "启动收据",
+        "runs/near-video-r3-startup/startup.json"
+      ],
+      [
+        "请求与初态",
+        "runs/near-video-r3-startup/pregrasp.json"
+      ],
+      [
+        "传感器与物体记录",
+        "runs/near-video-r3-startup/frames.jsonl"
+      ],
+      [
+        "视频与原生任务绑定",
+        "runs/binding-near-video-r3/request.json"
+      ],
+      [
+        "原生结果",
+        "runs/near-video-r3-startup/native-result.json"
+      ],
+      [
+        "原运行日志",
+        "review/near-video-r3.log"
+      ],
+      [
+        "瓶位置、轨迹与资格",
+        "review/bottle-qualification.json"
+      ],
+      [
+        "双相机、双触觉同步录像",
+        "runs/near-video-r3-startup/synchronized.mp4"
+      ],
+      [
+        "原版录像",
+        "runs/near-video-r3-startup/native-1_success.mp4"
+      ]
+    ]
+  },
+  {
+    "group": "UniVTAC",
+    "title": "触觉 pad · reset 诊断",
+    "status": "未通过",
+    "detail": "6.0 头部和腕部相机启动，UIPC world 有效。原生结果 error。",
+    "media": "runs/uni19-startup/head.png",
+    "links": [
+      [
+        "启动收据",
+        "runs/uni19-startup/startup.json"
+      ],
+      [
+        "原生结果",
+        "runs/uni19-startup/native-result.json"
+      ],
+      [
+        "原运行日志",
+        "review/uni-native-19.log"
+      ]
+    ]
+  },
+  {
+    "group": "UniVTAC",
+    "title": "UIPC 接触求解诊断",
+    "status": "未通过",
+    "detail": "6.0 头部和腕部相机启动，UIPC world 有效。本次停在任务完成前。",
+    "media": "runs/uni20-startup/head.png",
+    "links": [
+      [
+        "启动收据",
+        "runs/uni20-startup/startup.json"
+      ],
+      [
+        "原运行日志",
+        "review/uni-native-20.log"
+      ]
+    ]
+  },
+  {
+    "group": "UniVTAC",
+    "title": "预抓取与关节命令",
+    "status": "未通过",
+    "detail": "6.0 头部和腕部相机启动，UIPC world 有效。原生结果 error。",
+    "media": "runs/uni21-startup/head.png",
+    "links": [
+      [
+        "启动收据",
+        "runs/uni21-startup/startup.json"
+      ],
+      [
+        "原生结果",
+        "runs/uni21-startup/native-result.json"
+      ],
+      [
+        "原运行日志",
+        "review/uni-native-21.log"
+      ]
+    ]
+  },
+  {
+    "group": "UniVTAC",
+    "title": "传感器与动作采样",
+    "status": "未通过",
+    "detail": "6.0 头部和腕部相机启动，UIPC world 有效。共有 7 个采样状态，物理步与 UIPC 计数一致 7 次。原生结果 error。",
+    "media": "runs/uni22-startup/sampled.mp4",
+    "links": [
+      [
+        "启动收据",
+        "runs/uni22-startup/startup.json"
+      ],
+      [
+        "传感器与物体记录",
+        "runs/uni22-startup/frames.jsonl"
+      ],
+      [
+        "原生结果",
+        "runs/uni22-startup/native-result.json"
+      ],
+      [
+        "原运行日志",
+        "review/uni-native-22.log"
+      ]
+    ]
+  },
+  {
+    "group": "UniVTAC",
+    "title": "关节索引调试",
+    "status": "未通过",
+    "detail": "6.0 头部和腕部相机启动，UIPC world 有效。共有 7 个采样状态，物理步与 UIPC 计数一致 7 次。原生结果 error。",
+    "media": "runs/uni23-startup/sampled.mp4",
+    "links": [
+      [
+        "启动收据",
+        "runs/uni23-startup/startup.json"
+      ],
+      [
+        "传感器与物体记录",
+        "runs/uni23-startup/frames.jsonl"
+      ],
+      [
+        "原生结果",
+        "runs/uni23-startup/native-result.json"
+      ],
+      [
+        "原运行日志",
+        "review/uni-native-23.log"
+      ]
+    ]
+  },
+  {
+    "group": "UniVTAC",
+    "title": "关节目标调试",
+    "status": "未通过",
+    "detail": "6.0 头部和腕部相机启动，UIPC world 有效。共有 7 个采样状态，物理步与 UIPC 计数一致 7 次。原生结果 error。",
+    "media": "runs/uni24-startup/sampled.mp4",
+    "links": [
+      [
+        "启动收据",
+        "runs/uni24-startup/startup.json"
+      ],
+      [
+        "传感器与物体记录",
+        "runs/uni24-startup/frames.jsonl"
+      ],
+      [
+        "原生结果",
+        "runs/uni24-startup/native-result.json"
+      ],
+      [
+        "原运行日志",
+        "review/uni-native-24.log"
+      ]
+    ]
+  },
+  {
+    "group": "UniVTAC",
+    "title": "瓶入架 · 原始条件",
+    "status": "未通过",
+    "detail": "6.0 头部和腕部相机启动，UIPC world 有效。共有 178 个采样状态，物理步与 UIPC 计数一致 178 次。原生结果 fail。",
+    "media": "runs/uni25-startup/sampled.mp4",
+    "links": [
+      [
+        "启动收据",
+        "runs/uni25-startup/startup.json"
+      ],
+      [
+        "传感器与物体记录",
+        "runs/uni25-startup/frames.jsonl"
+      ],
+      [
+        "原生结果",
+        "runs/uni25-startup/native-result.json"
+      ],
+      [
+        "原运行日志",
+        "review/uni-native-25.log"
+      ],
+      [
+        "原版录像",
+        "runs/uni25-startup/native-1_fail.mp4"
+      ]
+    ]
+  },
+  {
+    "group": "UniVTAC",
+    "title": "6.0 迁移 · 启动 01",
+    "status": "未通过",
+    "detail": "ModuleNotFoundError: No module named 'carb'",
+    "media": "assets/diagnosis-uni-native-1.png",
+    "links": [
+      [
+        "原始启动日志",
+        "review/uni-native-1.log"
+      ]
+    ]
+  },
+  {
+    "group": "UniVTAC",
+    "title": "6.0 迁移 · 启动 02",
+    "status": "未通过",
+    "detail": "RuntimeError: get_memory_info: failed to acquire gpu::foundation::ISystemInfo!",
+    "media": "assets/diagnosis-uni-native-2.png",
+    "links": [
+      [
+        "原始启动日志",
+        "review/uni-native-2.log"
+      ]
+    ]
+  },
+  {
+    "group": "UniVTAC",
+    "title": "6.0 迁移 · 启动 03",
+    "status": "未通过",
+    "detail": "初始化未生成可评分的轨迹，见原始日志。",
+    "media": "assets/diagnosis-uni-native-3.png",
+    "links": [
+      [
+        "原始启动日志",
+        "review/uni-native-3.log"
+      ]
+    ]
+  },
+  {
+    "group": "UniVTAC",
+    "title": "6.0 迁移 · 启动 04",
+    "status": "未通过",
+    "detail": "RuntimeError: get_memory_info: failed to acquire gpu::foundation::ISystemInfo!",
+    "media": "assets/diagnosis-uni-native-4.png",
+    "links": [
+      [
+        "原始启动日志",
+        "review/uni-native-4.log"
+      ]
+    ]
+  },
+  {
+    "group": "UniVTAC",
+    "title": "6.0 迁移 · 启动 05",
+    "status": "未通过",
+    "detail": "RuntimeError: get_memory_info: failed to acquire gpu::foundation::ISystemInfo!",
+    "media": "assets/diagnosis-uni-native-5.png",
+    "links": [
+      [
+        "原始启动日志",
+        "review/uni-native-5.log"
+      ]
+    ]
+  },
+  {
+    "group": "UniVTAC",
+    "title": "6.0 迁移 · 启动 06",
+    "status": "未通过",
+    "detail": "RuntimeError: get_memory_info: failed to acquire gpu::foundation::ISystemInfo!",
+    "media": "assets/diagnosis-uni-native-6.png",
+    "links": [
+      [
+        "原始启动日志",
+        "review/uni-native-6.log"
+      ]
+    ]
+  },
+  {
+    "group": "UniVTAC",
+    "title": "6.0 迁移 · 启动 07",
+    "status": "未通过",
+    "detail": "RuntimeError: get_memory_info: failed to acquire gpu::foundation::ISystemInfo!",
+    "media": "assets/diagnosis-uni-native-7.png",
+    "links": [
+      [
+        "原始启动日志",
+        "review/uni-native-7.log"
+      ]
+    ]
+  },
+  {
+    "group": "UniVTAC",
+    "title": "6.0 迁移 · 启动 08",
+    "status": "未通过",
+    "detail": "RuntimeError: get_memory_info: failed to acquire gpu::foundation::ISystemInfo!",
+    "media": "assets/diagnosis-uni-native-8.png",
+    "links": [
+      [
+        "原始启动日志",
+        "review/uni-native-8.log"
+      ]
+    ]
+  },
+  {
+    "group": "UniVTAC",
+    "title": "6.0 迁移 · 启动 09",
+    "status": "未通过",
+    "detail": "RuntimeError: get_memory_info: failed to acquire gpu::foundation::ISystemInfo!",
+    "media": "assets/diagnosis-uni-native-9.png",
+    "links": [
+      [
+        "原始启动日志",
+        "review/uni-native-9.log"
+      ]
+    ]
+  },
+  {
+    "group": "UniVTAC",
+    "title": "6.0 迁移 · 启动 10",
+    "status": "未通过",
+    "detail": "RuntimeError: get_memory_info: failed to acquire gpu::foundation::ISystemInfo!",
+    "media": "assets/diagnosis-uni-native-10.png",
+    "links": [
+      [
+        "原始启动日志",
+        "review/uni-native-10.log"
+      ]
+    ]
+  },
+  {
+    "group": "UniVTAC",
+    "title": "6.0 迁移 · 启动 11",
+    "status": "未通过",
+    "detail": "AttributeError: 'SimulationContext' object has no attribute 'render_mode'",
+    "media": "assets/diagnosis-uni-native-11.png",
+    "links": [
+      [
+        "原始启动日志",
+        "review/uni-native-11.log"
+      ]
+    ]
+  },
+  {
+    "group": "UniVTAC",
+    "title": "6.0 迁移 · 启动 12",
+    "status": "未通过",
+    "detail": "Geometry(1) in Object[/World/envs/env_.*/shelf(1)] is too close (distance <= 0) to HalfPlane(0) in Object[ground(0)]",
+    "media": "assets/diagnosis-uni-native-12.png",
+    "links": [
+      [
+        "原始启动日志",
+        "review/uni-native-12.log"
+      ]
+    ]
+  },
+  {
+    "group": "UniVTAC",
+    "title": "6.0 迁移 · 启动 13",
+    "status": "未通过",
+    "detail": "Geometry(1) in Object[/World/envs/env_.*/shelf(1)] is too close (distance <= 0) to HalfPlane(0) in Object[ground(0)]",
+    "media": "assets/diagnosis-uni-native-13.png",
+    "links": [
+      [
+        "原始启动日志",
+        "review/uni-native-13.log"
+      ]
+    ]
+  },
+  {
+    "group": "UniVTAC",
+    "title": "6.0 迁移 · 启动 14",
+    "status": "未通过",
+    "detail": "UnboundLocalError: cannot access local variable 'pose' where it is not associated with a value",
+    "media": "assets/diagnosis-uni-native-14.png",
+    "links": [
+      [
+        "原始启动日志",
+        "review/uni-native-14.log"
+      ]
+    ]
+  },
+  {
+    "group": "UniVTAC",
+    "title": "6.0 迁移 · 启动 15",
+    "status": "未通过",
+    "detail": "TypeError: <class 'isaaclab_physx.assets.articulation.articulation.Articulation'>",
+    "media": "assets/diagnosis-uni-native-15.png",
+    "links": [
+      [
+        "原始启动日志",
+        "review/uni-native-15.log"
+      ]
+    ]
+  },
+  {
+    "group": "UniVTAC",
+    "title": "6.0 迁移 · 启动 16",
+    "status": "未通过",
+    "detail": "RuntimeError: Could not find prim with path '/World/envs/env_.*/Camera'.",
+    "media": "assets/diagnosis-uni-native-16.png",
+    "links": [
+      [
+        "原始启动日志",
+        "review/uni-native-16.log"
+      ]
+    ]
+  },
+  {
+    "group": "UniVTAC",
+    "title": "6.0 迁移 · 启动 17",
+    "status": "未通过",
+    "detail": "TypeError: No registered converter was able to produce a C++ rvalue of type pxrInternal_v0_25_11__pxrReserved__::GfVec3d from this Python object of type float",
+    "media": "assets/diagnosis-uni-native-17.png",
+    "links": [
+      [
+        "原始启动日志",
+        "review/uni-native-17.log"
+      ]
+    ]
+  },
+  {
+    "group": "UniVTAC",
+    "title": "6.0 迁移 · 启动 18",
+    "status": "未通过",
+    "detail": "RuntimeError: Need an Articulation or a RigidBody object for the Isaac X UIPC attachment.",
+    "media": "assets/diagnosis-uni-native-18.png",
+    "links": [
+      [
+        "原始启动日志",
+        "review/uni-native-18.log"
+      ]
+    ]
+  }
+]

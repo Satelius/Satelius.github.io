@@ -1,0 +1,4403 @@
+{
+  "schema_version": "robotwin.resolved_scene.v1",
+  "scene_id": "a_can_in_front_of_a_bowl_7df55e76b7",
+  "request": "A can in front of a bowl.",
+  "frame": {
+    "name": "robotwin_world",
+    "x_axis": "right",
+    "y_axis": "front",
+    "z_axis": "up",
+    "handedness": "right_handed"
+  },
+  "unit": "m",
+  "seed": 7,
+  "workspace": {
+    "support_surface": "table",
+    "table_height_m": 0.741,
+    "x_bounds_m": [
+      -0.35,
+      0.35
+    ],
+    "y_bounds_m": [
+      -0.2,
+      0.3
+    ],
+    "robot_keepout_x_m": [
+      -0.16,
+      0.16
+    ],
+    "robot_keepout_y_m": [
+      -0.2,
+      -0.08
+    ]
+  },
+  "source_scene_spec_sha256": "34f5ca3c5851991f09f6a48af174d1cdb9058c56a6e14aec03a7eea93c012831",
+  "asset_catalog_sha256": "dc46aabf122a83664c858dfa2bea6ecc471a9286b34b556ff35f8c5bc7965736",
+  "compiler_version": "scene_gen.stage5_solver.v3",
+  "objects": [
+    {
+      "object_id": "bowl_1",
+      "category": "bowl",
+      "asset_id": "bowl",
+      "model_id": 0,
+      "load_type": "rigid",
+      "stable_pose_id": "robolab_bowl_upright",
+      "stable_orientation_wxyz": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "dimensions_m": [
+        0.16144399344921112,
+        0.16111300885677338,
+        0.05496999993920326
+      ],
+      "interior_dimensions_m": [
+        0.1211,
+        0.1208,
+        0.044
+      ],
+      "interior_floor_z_offset_m": 0.0082,
+      "footprint_shape": "circle",
+      "support_margin_m": 0.005,
+      "support_spawn_clearance_m": 0.003,
+      "z_policy": "origin_on_table",
+      "mass_kg": 0.5,
+      "static_friction": 2.0,
+      "dynamic_friction": 2.0,
+      "mesh_scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "collision_available": true,
+      "source_files": [
+        "/runtime/TacHarness/inputs/datasets/vendor/robolab/assets/objects/ycb/bowl.usd"
+      ],
+      "grounding_score": 103.0,
+      "grounding_reasons": [
+        "exact category match",
+        "collision representation available",
+        "normalized dimensions available"
+      ],
+      "rejected_candidates": [
+        {
+          "asset_id": "blackandbrassbowl_large",
+          "model_id": 0,
+          "score": 103.0,
+          "reasons": [
+            "lower deterministic rank",
+            "exact category match",
+            "collision representation available",
+            "normalized dimensions available"
+          ]
+        },
+        {
+          "asset_id": "blackandbrassbowl_small",
+          "model_id": 0,
+          "score": 103.0,
+          "reasons": [
+            "lower deterministic rank",
+            "exact category match",
+            "collision representation available",
+            "normalized dimensions available"
+          ]
+        },
+        {
+          "asset_id": "serving_bowl",
+          "model_id": 0,
+          "score": 103.0,
+          "reasons": [
+            "lower deterministic rank",
+            "exact category match",
+            "collision representation available",
+            "normalized dimensions available"
+          ]
+        },
+        {
+          "asset_id": "wooden_bowl",
+          "model_id": 0,
+          "score": 103.0,
+          "reasons": [
+            "lower deterministic rank",
+            "exact category match",
+            "collision representation available",
+            "normalized dimensions available"
+          ]
+        }
+      ],
+      "pose": {
+        "position_m": [
+          -0.121535216,
+          0.044806649,
+          0.741
+        ],
+        "orientation_wxyz": [
+          0.916135768592,
+          0.0,
+          0.0,
+          -0.400868124831
+        ],
+        "yaw_rad": -0.824928487837
+      },
+      "is_static": false,
+      "support_relation": "on_table",
+      "support_target": "table",
+      "articulation_joint_names": [],
+      "articulation_joint_limits": [],
+      "articulation_qpos": [],
+      "asset_provenance": "robotwin_catalog"
+    },
+    {
+      "object_id": "can_1",
+      "category": "can",
+      "asset_id": "soup_can",
+      "model_id": 0,
+      "load_type": "rigid",
+      "stable_pose_id": "robolab_soup_can_upright",
+      "stable_orientation_wxyz": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "dimensions_m": [
+        0.0706573911011219,
+        0.06581921689212325,
+        0.08179608219506919
+      ],
+      "footprint_shape": "circle",
+      "support_margin_m": 0.005,
+      "support_spawn_clearance_m": 0.003,
+      "z_policy": "origin_on_table",
+      "mass_kg": 0.3499999940395355,
+      "static_friction": 2.0,
+      "dynamic_friction": 2.0,
+      "mesh_scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "collision_available": true,
+      "source_files": [
+        "/runtime/TacHarness/inputs/datasets/vendor/robolab/assets/objects/hot3d/soup_can.usd"
+      ],
+      "grounding_score": 103.0,
+      "grounding_reasons": [
+        "exact category match",
+        "collision representation available",
+        "normalized dimensions available"
+      ],
+      "rejected_candidates": [
+        {
+          "asset_id": "canned_mushrooms",
+          "model_id": 0,
+          "score": 103.0,
+          "reasons": [
+            "lower deterministic rank",
+            "exact category match",
+            "collision representation available",
+            "normalized dimensions available"
+          ]
+        },
+        {
+          "asset_id": "canned_peaches",
+          "model_id": 0,
+          "score": 103.0,
+          "reasons": [
+            "lower deterministic rank",
+            "exact category match",
+            "collision representation available",
+            "normalized dimensions available"
+          ]
+        },
+        {
+          "asset_id": "canned_tuna",
+          "model_id": 0,
+          "score": 103.0,
+          "reasons": [
+            "lower deterministic rank",
+            "exact category match",
+            "collision representation available",
+            "normalized dimensions available"
+          ]
+        },
+        {
+          "asset_id": "coffee_can",
+          "model_id": 0,
+          "score": 103.0,
+          "reasons": [
+            "lower deterministic rank",
+            "exact category match",
+            "collision representation available",
+            "normalized dimensions available"
+          ]
+        },
+        {
+          "asset_id": "corn_can",
+          "model_id": 0,
+          "score": 103.0,
+          "reasons": [
+            "lower deterministic rank",
+            "exact category match",
+            "collision representation available",
+            "normalized dimensions available"
+          ]
+        },
+        {
+          "asset_id": "green_beans_can",
+          "model_id": 0,
+          "score": 103.0,
+          "reasons": [
+            "lower deterministic rank",
+            "exact category match",
+            "collision representation available",
+            "normalized dimensions available"
+          ]
+        },
+        {
+          "asset_id": "pineapple_slices_can",
+          "model_id": 0,
+          "score": 103.0,
+          "reasons": [
+            "lower deterministic rank",
+            "exact category match",
+            "collision representation available",
+            "normalized dimensions available"
+          ]
+        },
+        {
+          "asset_id": "spam_can",
+          "model_id": 0,
+          "score": 103.0,
+          "reasons": [
+            "lower deterministic rank",
+            "exact category match",
+            "collision representation available",
+            "normalized dimensions available"
+          ]
+        },
+        {
+          "asset_id": "tomato_sauce_can",
+          "model_id": 0,
+          "score": 103.0,
+          "reasons": [
+            "lower deterministic rank",
+            "exact category match",
+            "collision representation available",
+            "normalized dimensions available"
+          ]
+        },
+        {
+          "asset_id": "tomato_soup_can",
+          "model_id": 0,
+          "score": 103.0,
+          "reasons": [
+            "lower deterministic rank",
+            "exact category match",
+            "collision representation available",
+            "normalized dimensions available"
+          ]
+        },
+        {
+          "asset_id": "tuna_can",
+          "model_id": 0,
+          "score": 103.0,
+          "reasons": [
+            "lower deterministic rank",
+            "exact category match",
+            "collision representation available",
+            "normalized dimensions available"
+          ]
+        }
+      ],
+      "pose": {
+        "position_m": [
+          -0.083538222,
+          0.17706434,
+          0.741
+        ],
+        "orientation_wxyz": [
+          0.777082416861,
+          0.0,
+          0.0,
+          -0.629398853991
+        ],
+        "yaw_rad": -1.361558750692
+      },
+      "is_static": false,
+      "support_relation": "on_table",
+      "support_target": "table",
+      "articulation_joint_names": [],
+      "articulation_joint_limits": [],
+      "articulation_qpos": [],
+      "asset_provenance": "robotwin_catalog"
+    }
+  ],
+  "relations": [
+    {
+      "relation": "on_table",
+      "source": "can_1",
+      "target": "table"
+    },
+    {
+      "relation": "on_table",
+      "source": "bowl_1",
+      "target": "table"
+    },
+    {
+      "relation": "front_of",
+      "source": "can_1",
+      "target": "bowl_1"
+    }
+  ],
+  "solver_trace": {
+    "algorithm": "bounded_rejection_backtracking_v1",
+    "seed": 7,
+    "max_attempts_per_object": 96,
+    "total_attempts": 300,
+    "attempts": [
+      {
+        "attempt": 1,
+        "object_id": "bowl_1",
+        "candidate_xy_m": [
+          -0.118322673,
+          0.097944145
+        ],
+        "yaw_rad": -1.106891383607,
+        "accepted": true,
+        "reasons": []
+      },
+      {
+        "attempt": 2,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          0.015579277,
+          0.051233147
+        ],
+        "yaw_rad": -2.686462041494,
+        "accepted": false,
+        "reasons": [
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 3,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          0.003228452,
+          -0.019059542
+        ],
+        "yaw_rad": -2.777174661613,
+        "accepted": false,
+        "reasons": [
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 4,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.186760509,
+          -0.007661407
+        ],
+        "yaw_rad": -0.41691646548,
+        "accepted": false,
+        "reasons": [
+          "three-dimensional overlap with bowl_1",
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 5,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          0.141912911,
+          -0.000574391
+        ],
+        "yaw_rad": -0.474259921754,
+        "accepted": false,
+        "reasons": [
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 6,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          0.055329056,
+          0.175890652
+        ],
+        "yaw_rad": -1.738940871181,
+        "accepted": false,
+        "reasons": [
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 7,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.044859352,
+          0.182004691
+        ],
+        "yaw_rad": 0.484452113894,
+        "accepted": false,
+        "reasons": [
+          "three-dimensional overlap with bowl_1",
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 8,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          0.155640116,
+          0.034938352
+        ],
+        "yaw_rad": -2.848905039163,
+        "accepted": false,
+        "reasons": [
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 9,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.165947265,
+          0.038980487
+        ],
+        "yaw_rad": -2.235211233352,
+        "accepted": false,
+        "reasons": [
+          "three-dimensional overlap with bowl_1",
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 10,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.13862247,
+          0.097477187
+        ],
+        "yaw_rad": 1.986280494835,
+        "accepted": false,
+        "reasons": [
+          "three-dimensional overlap with bowl_1",
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 11,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.055402535,
+          0.090225947
+        ],
+        "yaw_rad": 0.872819066926,
+        "accepted": false,
+        "reasons": [
+          "three-dimensional overlap with bowl_1",
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 12,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.191212709,
+          0.017022007
+        ],
+        "yaw_rad": -2.747077888585,
+        "accepted": false,
+        "reasons": [
+          "three-dimensional overlap with bowl_1",
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 13,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.031438029,
+          0.040193895
+        ],
+        "yaw_rad": 1.133486460911,
+        "accepted": false,
+        "reasons": [
+          "three-dimensional overlap with bowl_1",
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 14,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.020326444,
+          0.037113939
+        ],
+        "yaw_rad": 0.537601043646,
+        "accepted": false,
+        "reasons": [
+          "three-dimensional overlap with bowl_1",
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 15,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          0.086399559,
+          0.02519039
+        ],
+        "yaw_rad": 1.849640833037,
+        "accepted": false,
+        "reasons": [
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 16,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          0.010939838,
+          0.160347243
+        ],
+        "yaw_rad": 0.467617962803,
+        "accepted": false,
+        "reasons": [
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 17,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.092073347,
+          0.182844225
+        ],
+        "yaw_rad": 1.441647271406,
+        "accepted": false,
+        "reasons": [
+          "three-dimensional overlap with bowl_1",
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 18,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.035549497,
+          0.135074646
+        ],
+        "yaw_rad": -2.399763490377,
+        "accepted": false,
+        "reasons": [
+          "three-dimensional overlap with bowl_1",
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 19,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.00479201,
+          -0.018692951
+        ],
+        "yaw_rad": -2.186645658492,
+        "accepted": false,
+        "reasons": [
+          "three-dimensional overlap with bowl_1",
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 20,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          0.114871586,
+          0.095640753
+        ],
+        "yaw_rad": 1.056931398212,
+        "accepted": false,
+        "reasons": [
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 21,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.080867251,
+          0.121828514
+        ],
+        "yaw_rad": 2.359196670468,
+        "accepted": false,
+        "reasons": [
+          "three-dimensional overlap with bowl_1",
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 22,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          0.034688962,
+          0.070620024
+        ],
+        "yaw_rad": 0.592943425267,
+        "accepted": false,
+        "reasons": [
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 23,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          0.193071986,
+          0.074452362
+        ],
+        "yaw_rad": 2.136080563431,
+        "accepted": false,
+        "reasons": [
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 24,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.190748892,
+          0.123155719
+        ],
+        "yaw_rad": 1.03139872558,
+        "accepted": false,
+        "reasons": [
+          "three-dimensional overlap with bowl_1",
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 25,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          0.214092781,
+          0.148950103
+        ],
+        "yaw_rad": 0.92443785703,
+        "accepted": false,
+        "reasons": [
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 26,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.049587161,
+          0.116122171
+        ],
+        "yaw_rad": -1.353426187847,
+        "accepted": false,
+        "reasons": [
+          "three-dimensional overlap with bowl_1",
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 27,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.016631171,
+          0.008902342
+        ],
+        "yaw_rad": -2.999825595544,
+        "accepted": false,
+        "reasons": [
+          "three-dimensional overlap with bowl_1",
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 28,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.191493516,
+          0.137450352
+        ],
+        "yaw_rad": -2.40585807817,
+        "accepted": false,
+        "reasons": [
+          "three-dimensional overlap with bowl_1",
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 29,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.109580789,
+          0.056643522
+        ],
+        "yaw_rad": -2.328924070975,
+        "accepted": false,
+        "reasons": [
+          "three-dimensional overlap with bowl_1",
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 30,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.182103539,
+          0.069116918
+        ],
+        "yaw_rad": 2.333713090594,
+        "accepted": false,
+        "reasons": [
+          "three-dimensional overlap with bowl_1",
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 31,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          0.16645789,
+          0.148383606
+        ],
+        "yaw_rad": 0.310640110722,
+        "accepted": false,
+        "reasons": [
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 32,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.096205316,
+          0.061858142
+        ],
+        "yaw_rad": 2.286981872051,
+        "accepted": false,
+        "reasons": [
+          "three-dimensional overlap with bowl_1",
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 33,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          0.166809143,
+          0.178037228
+        ],
+        "yaw_rad": -0.887366938938,
+        "accepted": false,
+        "reasons": [
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 34,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.14058004,
+          0.022590312
+        ],
+        "yaw_rad": -2.193328635777,
+        "accepted": false,
+        "reasons": [
+          "three-dimensional overlap with bowl_1",
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 35,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.006528894,
+          0.099088542
+        ],
+        "yaw_rad": -1.675498800971,
+        "accepted": false,
+        "reasons": [
+          "three-dimensional overlap with bowl_1",
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 36,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.215313028,
+          0.062639898
+        ],
+        "yaw_rad": -1.490706955702,
+        "accepted": false,
+        "reasons": [
+          "three-dimensional overlap with bowl_1",
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 37,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          0.028804084,
+          0.177044869
+        ],
+        "yaw_rad": -0.821504029754,
+        "accepted": false,
+        "reasons": [
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 38,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          0.006726083,
+          0.105186107
+        ],
+        "yaw_rad": 1.196906947628,
+        "accepted": false,
+        "reasons": [
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 39,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.193647715,
+          0.165572293
+        ],
+        "yaw_rad": 1.107097769171,
+        "accepted": false,
+        "reasons": [
+          "three-dimensional overlap with bowl_1",
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 40,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          0.162606428,
+          0.143798698
+        ],
+        "yaw_rad": 1.759100190463,
+        "accepted": false,
+        "reasons": [
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 41,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.04386145,
+          -0.004914736
+        ],
+        "yaw_rad": -0.676203270963,
+        "accepted": false,
+        "reasons": [
+          "three-dimensional overlap with bowl_1",
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 42,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.190063584,
+          -0.012665826
+        ],
+        "yaw_rad": 0.843766226024,
+        "accepted": false,
+        "reasons": [
+          "three-dimensional overlap with bowl_1",
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 43,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.146621466,
+          0.045742566
+        ],
+        "yaw_rad": -1.829894874114,
+        "accepted": false,
+        "reasons": [
+          "three-dimensional overlap with bowl_1",
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 44,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.216989105,
+          0.00530765
+        ],
+        "yaw_rad": -2.81125039171,
+        "accepted": false,
+        "reasons": [
+          "three-dimensional overlap with bowl_1",
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 45,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.059217951,
+          -0.021628592
+        ],
+        "yaw_rad": -2.504073227228,
+        "accepted": false,
+        "reasons": [
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 46,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          0.049526562,
+          0.004726268
+        ],
+        "yaw_rad": 2.351999693517,
+        "accepted": false,
+        "reasons": [
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 47,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.066260526,
+          0.050906419
+        ],
+        "yaw_rad": -1.556610423968,
+        "accepted": false,
+        "reasons": [
+          "three-dimensional overlap with bowl_1",
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 48,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          0.151501708,
+          0.185613127
+        ],
+        "yaw_rad": -2.369752154164,
+        "accepted": false,
+        "reasons": [
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 49,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.007018682,
+          -0.008695547
+        ],
+        "yaw_rad": -0.213694530496,
+        "accepted": false,
+        "reasons": [
+          "three-dimensional overlap with bowl_1",
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 50,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.068324495,
+          0.029615447
+        ],
+        "yaw_rad": -2.499528921462,
+        "accepted": false,
+        "reasons": [
+          "three-dimensional overlap with bowl_1",
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 51,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.146996849,
+          -0.022143732
+        ],
+        "yaw_rad": 2.06625928,
+        "accepted": false,
+        "reasons": [
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 52,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          0.012268818,
+          0.004309055
+        ],
+        "yaw_rad": 2.833625925236,
+        "accepted": false,
+        "reasons": [
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 53,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.205349061,
+          0.086020502
+        ],
+        "yaw_rad": 0.271260351978,
+        "accepted": false,
+        "reasons": [
+          "three-dimensional overlap with bowl_1",
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 54,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          0.157748746,
+          0.122021581
+        ],
+        "yaw_rad": 3.006511977719,
+        "accepted": false,
+        "reasons": [
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 55,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.057876389,
+          0.008686802
+        ],
+        "yaw_rad": -1.500957482877,
+        "accepted": false,
+        "reasons": [
+          "three-dimensional overlap with bowl_1",
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 56,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          0.014150993,
+          0.139768195
+        ],
+        "yaw_rad": 1.708636270537,
+        "accepted": false,
+        "reasons": [
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 57,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.120249983,
+          0.146719723
+        ],
+        "yaw_rad": -1.070246400414,
+        "accepted": false,
+        "reasons": [
+          "three-dimensional overlap with bowl_1",
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 58,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          0.153104648,
+          0.145556151
+        ],
+        "yaw_rad": 3.046880236141,
+        "accepted": false,
+        "reasons": [
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 59,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          0.104148256,
+          0.02147285
+        ],
+        "yaw_rad": 2.000144872293,
+        "accepted": false,
+        "reasons": [
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 60,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.062711968,
+          -0.0208834
+        ],
+        "yaw_rad": 0.110827373004,
+        "accepted": false,
+        "reasons": [
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 61,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.095772231,
+          0.028419777
+        ],
+        "yaw_rad": -2.966058831772,
+        "accepted": false,
+        "reasons": [
+          "three-dimensional overlap with bowl_1",
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 62,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          0.198210073,
+          0.068697183
+        ],
+        "yaw_rad": 1.2096510354,
+        "accepted": false,
+        "reasons": [
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 63,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          0.211896746,
+          0.177452392
+        ],
+        "yaw_rad": 2.745885190785,
+        "accepted": false,
+        "reasons": [
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 64,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.121369888,
+          0.021495625
+        ],
+        "yaw_rad": -0.850517816214,
+        "accepted": false,
+        "reasons": [
+          "three-dimensional overlap with bowl_1",
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 65,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.128355405,
+          0.106572638
+        ],
+        "yaw_rad": -1.905651377762,
+        "accepted": false,
+        "reasons": [
+          "three-dimensional overlap with bowl_1",
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 66,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          0.147810564,
+          0.075603602
+        ],
+        "yaw_rad": 2.515211466935,
+        "accepted": false,
+        "reasons": [
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 67,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          0.130099556,
+          -0.008932469
+        ],
+        "yaw_rad": 0.9611893911,
+        "accepted": false,
+        "reasons": [
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 68,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          0.177917358,
+          0.140463853
+        ],
+        "yaw_rad": 1.008989397911,
+        "accepted": false,
+        "reasons": [
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 69,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.00953776,
+          0.01114553
+        ],
+        "yaw_rad": 1.571678861938,
+        "accepted": false,
+        "reasons": [
+          "three-dimensional overlap with bowl_1",
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 70,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.072717813,
+          0.144430628
+        ],
+        "yaw_rad": 1.816691491972,
+        "accepted": false,
+        "reasons": [
+          "three-dimensional overlap with bowl_1",
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 71,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.045224924,
+          0.058878951
+        ],
+        "yaw_rad": 2.963510148157,
+        "accepted": false,
+        "reasons": [
+          "three-dimensional overlap with bowl_1",
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 72,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          0.097603261,
+          0.009321125
+        ],
+        "yaw_rad": 2.807308386312,
+        "accepted": false,
+        "reasons": [
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 73,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.151463662,
+          0.166711539
+        ],
+        "yaw_rad": -2.343387050736,
+        "accepted": false,
+        "reasons": [
+          "three-dimensional overlap with bowl_1",
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 74,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.153624316,
+          0.14993227
+        ],
+        "yaw_rad": 1.925808750126,
+        "accepted": false,
+        "reasons": [
+          "three-dimensional overlap with bowl_1",
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 75,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          0.06828287,
+          0.047960164
+        ],
+        "yaw_rad": 3.017851246817,
+        "accepted": false,
+        "reasons": [
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 76,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.16021972,
+          -0.024039828
+        ],
+        "yaw_rad": 0.305740073424,
+        "accepted": false,
+        "reasons": [
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 77,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          0.064985865,
+          0.085693149
+        ],
+        "yaw_rad": 2.958690242916,
+        "accepted": false,
+        "reasons": [
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 78,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.028738671,
+          0.159620191
+        ],
+        "yaw_rad": 2.724545003965,
+        "accepted": false,
+        "reasons": [
+          "three-dimensional overlap with bowl_1",
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 79,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.125459864,
+          0.026847786
+        ],
+        "yaw_rad": 2.049293886065,
+        "accepted": false,
+        "reasons": [
+          "three-dimensional overlap with bowl_1",
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 80,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.11265281,
+          0.09851318
+        ],
+        "yaw_rad": -1.300828886039,
+        "accepted": false,
+        "reasons": [
+          "three-dimensional overlap with bowl_1",
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 81,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.035163193,
+          0.000983071
+        ],
+        "yaw_rad": -1.511955582748,
+        "accepted": false,
+        "reasons": [
+          "three-dimensional overlap with bowl_1",
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 82,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.063484167,
+          0.071038887
+        ],
+        "yaw_rad": 2.576213143935,
+        "accepted": false,
+        "reasons": [
+          "three-dimensional overlap with bowl_1",
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 83,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          0.17553789,
+          0.063000101
+        ],
+        "yaw_rad": 0.523695779865,
+        "accepted": false,
+        "reasons": [
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 84,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          0.000715939,
+          0.086816295
+        ],
+        "yaw_rad": 2.624618979641,
+        "accepted": false,
+        "reasons": [
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 85,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.208969097,
+          0.067175907
+        ],
+        "yaw_rad": 0.147696233183,
+        "accepted": false,
+        "reasons": [
+          "three-dimensional overlap with bowl_1",
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 86,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.215382984,
+          0.144076561
+        ],
+        "yaw_rad": -1.991091866652,
+        "accepted": false,
+        "reasons": [
+          "three-dimensional overlap with bowl_1",
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 87,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.011508859,
+          0.128232071
+        ],
+        "yaw_rad": -2.05870632367,
+        "accepted": false,
+        "reasons": [
+          "three-dimensional overlap with bowl_1",
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 88,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.075555206,
+          0.083929942
+        ],
+        "yaw_rad": 0.354846816599,
+        "accepted": false,
+        "reasons": [
+          "three-dimensional overlap with bowl_1",
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 89,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          0.123425646,
+          -0.004363794
+        ],
+        "yaw_rad": 0.34835157365,
+        "accepted": false,
+        "reasons": [
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 90,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.109198933,
+          0.032219923
+        ],
+        "yaw_rad": 0.378851780614,
+        "accepted": false,
+        "reasons": [
+          "three-dimensional overlap with bowl_1",
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 91,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          0.003349267,
+          0.093221248
+        ],
+        "yaw_rad": 1.710666935417,
+        "accepted": false,
+        "reasons": [
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 92,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          0.179094379,
+          0.067844896
+        ],
+        "yaw_rad": 1.633585093489,
+        "accepted": false,
+        "reasons": [
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 93,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          0.002411063,
+          0.082604754
+        ],
+        "yaw_rad": 0.707033549561,
+        "accepted": false,
+        "reasons": [
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 94,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.020690541,
+          0.087129101
+        ],
+        "yaw_rad": 1.210964603449,
+        "accepted": false,
+        "reasons": [
+          "three-dimensional overlap with bowl_1",
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 95,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          0.191691305,
+          0.122668642
+        ],
+        "yaw_rad": -0.138001883832,
+        "accepted": false,
+        "reasons": [
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 96,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          0.191986314,
+          0.028509289
+        ],
+        "yaw_rad": 2.365842206756,
+        "accepted": false,
+        "reasons": [
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 97,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          0.192458028,
+          0.15282142
+        ],
+        "yaw_rad": 0.373936274561,
+        "accepted": false,
+        "reasons": [
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 98,
+        "object_id": "bowl_1",
+        "candidate_xy_m": [
+          -0.128227397,
+          0.073118594
+        ],
+        "yaw_rad": -2.279951580854,
+        "accepted": true,
+        "reasons": []
+      },
+      {
+        "attempt": 99,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.112609667,
+          -0.011429328
+        ],
+        "yaw_rad": -2.685772066135,
+        "accepted": false,
+        "reasons": [
+          "three-dimensional overlap with bowl_1",
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 100,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          0.123279562,
+          0.165035432
+        ],
+        "yaw_rad": 1.064824893387,
+        "accepted": false,
+        "reasons": [
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 101,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          0.0938351,
+          0.114323866
+        ],
+        "yaw_rad": -2.171175896383,
+        "accepted": false,
+        "reasons": [
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 102,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          0.16621866,
+          0.180139108
+        ],
+        "yaw_rad": -2.243229114597,
+        "accepted": false,
+        "reasons": [
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 103,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          0.196468597,
+          0.058208578
+        ],
+        "yaw_rad": -1.76188162146,
+        "accepted": false,
+        "reasons": [
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 104,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          0.212692772,
+          0.15120326
+        ],
+        "yaw_rad": -0.080042911402,
+        "accepted": false,
+        "reasons": [
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 105,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.029731911,
+          0.083342304
+        ],
+        "yaw_rad": -2.127071478538,
+        "accepted": false,
+        "reasons": [
+          "three-dimensional overlap with bowl_1",
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 106,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.132101819,
+          0.041131664
+        ],
+        "yaw_rad": -1.010863078053,
+        "accepted": false,
+        "reasons": [
+          "three-dimensional overlap with bowl_1",
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 107,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.208631279,
+          0.091576524
+        ],
+        "yaw_rad": 1.395814863337,
+        "accepted": false,
+        "reasons": [
+          "three-dimensional overlap with bowl_1",
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 108,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.209239543,
+          0.043910086
+        ],
+        "yaw_rad": -0.374112779915,
+        "accepted": false,
+        "reasons": [
+          "three-dimensional overlap with bowl_1",
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 109,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          0.005324048,
+          -0.013320539
+        ],
+        "yaw_rad": 0.778656769839,
+        "accepted": false,
+        "reasons": [
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 110,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          0.125201698,
+          0.18102821
+        ],
+        "yaw_rad": 3.047867912302,
+        "accepted": false,
+        "reasons": [
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 111,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.101787488,
+          -0.018611362
+        ],
+        "yaw_rad": -2.483243046362,
+        "accepted": false,
+        "reasons": [
+          "three-dimensional overlap with bowl_1",
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 112,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.099667893,
+          0.00065792
+        ],
+        "yaw_rad": 1.752992553343,
+        "accepted": false,
+        "reasons": [
+          "three-dimensional overlap with bowl_1",
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 113,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          0.178627973,
+          0.148319168
+        ],
+        "yaw_rad": -0.488491385891,
+        "accepted": false,
+        "reasons": [
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 114,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.152237699,
+          0.169778482
+        ],
+        "yaw_rad": -1.516704291533,
+        "accepted": false,
+        "reasons": [
+          "three-dimensional overlap with bowl_1",
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 115,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          0.087017404,
+          -0.007929306
+        ],
+        "yaw_rad": 0.443560997992,
+        "accepted": false,
+        "reasons": [
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 116,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          0.081715242,
+          0.064004345
+        ],
+        "yaw_rad": -2.780142915848,
+        "accepted": false,
+        "reasons": [
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 117,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          0.19032302,
+          0.108794359
+        ],
+        "yaw_rad": -2.686601477592,
+        "accepted": false,
+        "reasons": [
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 118,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.180730996,
+          0.156297328
+        ],
+        "yaw_rad": 1.895188334787,
+        "accepted": false,
+        "reasons": [
+          "three-dimensional overlap with bowl_1",
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 119,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          0.15750992,
+          0.070099177
+        ],
+        "yaw_rad": -2.72299092134,
+        "accepted": false,
+        "reasons": [
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 120,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          0.023039421,
+          0.171384361
+        ],
+        "yaw_rad": -1.010639189651,
+        "accepted": false,
+        "reasons": [
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 121,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.160983467,
+          0.085764681
+        ],
+        "yaw_rad": -1.458580228881,
+        "accepted": false,
+        "reasons": [
+          "three-dimensional overlap with bowl_1",
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 122,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.169568669,
+          0.007488901
+        ],
+        "yaw_rad": -1.64345401693,
+        "accepted": false,
+        "reasons": [
+          "three-dimensional overlap with bowl_1",
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 123,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.129486495,
+          0.039732386
+        ],
+        "yaw_rad": -2.825047554639,
+        "accepted": false,
+        "reasons": [
+          "three-dimensional overlap with bowl_1",
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 124,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          0.112669156,
+          0.035013647
+        ],
+        "yaw_rad": -1.225187219025,
+        "accepted": false,
+        "reasons": [
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 125,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.139849681,
+          0.047230559
+        ],
+        "yaw_rad": 0.00055668935,
+        "accepted": false,
+        "reasons": [
+          "three-dimensional overlap with bowl_1",
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 126,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.108350354,
+          -0.023803548
+        ],
+        "yaw_rad": -3.027470484704,
+        "accepted": false,
+        "reasons": [
+          "three-dimensional overlap with bowl_1",
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 127,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          0.02216455,
+          0.013487549
+        ],
+        "yaw_rad": 1.464487240574,
+        "accepted": false,
+        "reasons": [
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 128,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          0.188713569,
+          -0.00432697
+        ],
+        "yaw_rad": -0.158583585228,
+        "accepted": false,
+        "reasons": [
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 129,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.029447189,
+          0.078929433
+        ],
+        "yaw_rad": 2.003834339959,
+        "accepted": false,
+        "reasons": [
+          "three-dimensional overlap with bowl_1",
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 130,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.046419971,
+          0.081432002
+        ],
+        "yaw_rad": 2.102441349478,
+        "accepted": false,
+        "reasons": [
+          "three-dimensional overlap with bowl_1",
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 131,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          0.209466412,
+          0.046310353
+        ],
+        "yaw_rad": 1.179616115236,
+        "accepted": false,
+        "reasons": [
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 132,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          0.089756197,
+          0.109123649
+        ],
+        "yaw_rad": 2.087817926413,
+        "accepted": false,
+        "reasons": [
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 133,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.066189914,
+          -0.015441412
+        ],
+        "yaw_rad": -0.598801956394,
+        "accepted": false,
+        "reasons": [
+          "three-dimensional overlap with bowl_1",
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 134,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.186383904,
+          0.131593837
+        ],
+        "yaw_rad": -2.325918451904,
+        "accepted": false,
+        "reasons": [
+          "three-dimensional overlap with bowl_1",
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 135,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.14621189,
+          -0.008995355
+        ],
+        "yaw_rad": -1.535648962465,
+        "accepted": false,
+        "reasons": [
+          "three-dimensional overlap with bowl_1",
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 136,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          0.160880401,
+          0.116527097
+        ],
+        "yaw_rad": 2.144256252561,
+        "accepted": false,
+        "reasons": [
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 137,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.11192619,
+          0.035677106
+        ],
+        "yaw_rad": -1.370153596596,
+        "accepted": false,
+        "reasons": [
+          "three-dimensional overlap with bowl_1",
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 138,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.148692616,
+          0.068396672
+        ],
+        "yaw_rad": -0.254764670312,
+        "accepted": false,
+        "reasons": [
+          "three-dimensional overlap with bowl_1",
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 139,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          0.200498839,
+          0.181226764
+        ],
+        "yaw_rad": -1.487587682815,
+        "accepted": false,
+        "reasons": [
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 140,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.110956421,
+          0.179736873
+        ],
+        "yaw_rad": 0.295770732623,
+        "accepted": false,
+        "reasons": [
+          "three-dimensional overlap with bowl_1",
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 141,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.062268507,
+          -0.026861451
+        ],
+        "yaw_rad": -1.196645725368,
+        "accepted": false,
+        "reasons": [
+          "three-dimensional overlap with bowl_1",
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 142,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.01100925,
+          0.080591997
+        ],
+        "yaw_rad": -0.743761966093,
+        "accepted": false,
+        "reasons": [
+          "three-dimensional overlap with bowl_1",
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 143,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          0.002056124,
+          -0.026030083
+        ],
+        "yaw_rad": -1.878797729998,
+        "accepted": false,
+        "reasons": [
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 144,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.178121191,
+          0.058477224
+        ],
+        "yaw_rad": -1.481771848344,
+        "accepted": false,
+        "reasons": [
+          "three-dimensional overlap with bowl_1",
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 145,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.207323865,
+          0.038072947
+        ],
+        "yaw_rad": -2.87979143723,
+        "accepted": false,
+        "reasons": [
+          "three-dimensional overlap with bowl_1",
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 146,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          0.037158617,
+          0.08625184
+        ],
+        "yaw_rad": -1.678807005416,
+        "accepted": false,
+        "reasons": [
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 147,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          0.068402435,
+          0.126261644
+        ],
+        "yaw_rad": 1.574193206436,
+        "accepted": false,
+        "reasons": [
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 148,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.047969825,
+          0.042761405
+        ],
+        "yaw_rad": 2.381897075911,
+        "accepted": false,
+        "reasons": [
+          "three-dimensional overlap with bowl_1",
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 149,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.152196364,
+          0.128009859
+        ],
+        "yaw_rad": 3.045642665301,
+        "accepted": false,
+        "reasons": [
+          "three-dimensional overlap with bowl_1",
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 150,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.198078454,
+          0.151812577
+        ],
+        "yaw_rad": 0.899874342086,
+        "accepted": false,
+        "reasons": [
+          "three-dimensional overlap with bowl_1",
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 151,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          0.055285161,
+          0.130086631
+        ],
+        "yaw_rad": 2.462646451717,
+        "accepted": false,
+        "reasons": [
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 152,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.156605704,
+          0.085088354
+        ],
+        "yaw_rad": 1.961729303828,
+        "accepted": false,
+        "reasons": [
+          "three-dimensional overlap with bowl_1",
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 153,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          0.145423467,
+          0.145256088
+        ],
+        "yaw_rad": 0.027464125025,
+        "accepted": false,
+        "reasons": [
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 154,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          0.036497895,
+          0.164136581
+        ],
+        "yaw_rad": 2.050888996351,
+        "accepted": false,
+        "reasons": [
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 155,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          0.083938493,
+          0.022158492
+        ],
+        "yaw_rad": 1.149165498397,
+        "accepted": false,
+        "reasons": [
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 156,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.159303883,
+          0.050166218
+        ],
+        "yaw_rad": -2.945805292644,
+        "accepted": false,
+        "reasons": [
+          "three-dimensional overlap with bowl_1",
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 157,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          0.145807112,
+          0.092535411
+        ],
+        "yaw_rad": -2.48238302409,
+        "accepted": false,
+        "reasons": [
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 158,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          0.054805103,
+          0.118694795
+        ],
+        "yaw_rad": 0.802784419001,
+        "accepted": false,
+        "reasons": [
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 159,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.215651374,
+          0.143761095
+        ],
+        "yaw_rad": -0.067265803576,
+        "accepted": false,
+        "reasons": [
+          "three-dimensional overlap with bowl_1",
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 160,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          0.001289974,
+          0.087539124
+        ],
+        "yaw_rad": 1.559897326471,
+        "accepted": false,
+        "reasons": [
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 161,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.188412596,
+          0.13071551
+        ],
+        "yaw_rad": 1.000908210638,
+        "accepted": false,
+        "reasons": [
+          "three-dimensional overlap with bowl_1",
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 162,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.184765632,
+          0.029787076
+        ],
+        "yaw_rad": -1.557013962138,
+        "accepted": false,
+        "reasons": [
+          "three-dimensional overlap with bowl_1",
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 163,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.127988885,
+          0.131366676
+        ],
+        "yaw_rad": 1.440954541431,
+        "accepted": false,
+        "reasons": [
+          "three-dimensional overlap with bowl_1",
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 164,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.002627324,
+          0.054846711
+        ],
+        "yaw_rad": 2.989131753376,
+        "accepted": false,
+        "reasons": [
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 165,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          0.079757517,
+          0.137179866
+        ],
+        "yaw_rad": -0.131883028712,
+        "accepted": false,
+        "reasons": [
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 166,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          0.06198494,
+          -0.010497417
+        ],
+        "yaw_rad": 0.73496941726,
+        "accepted": false,
+        "reasons": [
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 167,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.106834401,
+          0.132092463
+        ],
+        "yaw_rad": -2.21529360178,
+        "accepted": false,
+        "reasons": [
+          "three-dimensional overlap with bowl_1",
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 168,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          0.029420827,
+          -0.024419726
+        ],
+        "yaw_rad": -1.228883365111,
+        "accepted": false,
+        "reasons": [
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 169,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.100394422,
+          0.116839433
+        ],
+        "yaw_rad": -2.760448261307,
+        "accepted": false,
+        "reasons": [
+          "three-dimensional overlap with bowl_1",
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 170,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          0.076288888,
+          0.035205477
+        ],
+        "yaw_rad": 1.207535052552,
+        "accepted": false,
+        "reasons": [
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 171,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.01534271,
+          0.072790494
+        ],
+        "yaw_rad": 0.103896829864,
+        "accepted": false,
+        "reasons": [
+          "three-dimensional overlap with bowl_1",
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 172,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          0.170920878,
+          0.015585136
+        ],
+        "yaw_rad": -2.397017207805,
+        "accepted": false,
+        "reasons": [
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 173,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          0.189413251,
+          -0.023341273
+        ],
+        "yaw_rad": 3.004152604176,
+        "accepted": false,
+        "reasons": [
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 174,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          0.138893431,
+          0.180259792
+        ],
+        "yaw_rad": -0.257793922321,
+        "accepted": false,
+        "reasons": [
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 175,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.100444581,
+          0.017852709
+        ],
+        "yaw_rad": -0.31760892478,
+        "accepted": false,
+        "reasons": [
+          "three-dimensional overlap with bowl_1",
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 176,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.125604681,
+          0.097449816
+        ],
+        "yaw_rad": 2.799707431252,
+        "accepted": false,
+        "reasons": [
+          "three-dimensional overlap with bowl_1",
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 177,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          0.01044887,
+          0.17696828
+        ],
+        "yaw_rad": -2.251009709033,
+        "accepted": false,
+        "reasons": [
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 178,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          0.139032072,
+          0.081872873
+        ],
+        "yaw_rad": -2.308410408006,
+        "accepted": false,
+        "reasons": [
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 179,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          0.088285035,
+          0.02246753
+        ],
+        "yaw_rad": 2.430726637196,
+        "accepted": false,
+        "reasons": [
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 180,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.006017461,
+          -0.02177134
+        ],
+        "yaw_rad": 2.498858583178,
+        "accepted": false,
+        "reasons": [
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 181,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.00360539,
+          0.069453803
+        ],
+        "yaw_rad": -3.119033054749,
+        "accepted": false,
+        "reasons": [
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 182,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.15599802,
+          0.046579262
+        ],
+        "yaw_rad": -1.244378307562,
+        "accepted": false,
+        "reasons": [
+          "three-dimensional overlap with bowl_1",
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 183,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          0.147721777,
+          -0.026717421
+        ],
+        "yaw_rad": -1.155615722968,
+        "accepted": false,
+        "reasons": [
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 184,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          0.14723539,
+          -0.001379842
+        ],
+        "yaw_rad": 1.575408443497,
+        "accepted": false,
+        "reasons": [
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 185,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          0.092490739,
+          0.166007841
+        ],
+        "yaw_rad": 2.679143051436,
+        "accepted": false,
+        "reasons": [
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 186,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.055478752,
+          0.057061106
+        ],
+        "yaw_rad": -1.320518464218,
+        "accepted": false,
+        "reasons": [
+          "three-dimensional overlap with bowl_1",
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 187,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          0.03871879,
+          0.050166614
+        ],
+        "yaw_rad": 3.134005743683,
+        "accepted": false,
+        "reasons": [
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 188,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.097623268,
+          -0.016752293
+        ],
+        "yaw_rad": -0.452057895361,
+        "accepted": false,
+        "reasons": [
+          "three-dimensional overlap with bowl_1",
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 189,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          0.145309886,
+          0.034084607
+        ],
+        "yaw_rad": -2.502530768412,
+        "accepted": false,
+        "reasons": [
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 190,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.108838391,
+          0.029823443
+        ],
+        "yaw_rad": 2.736891986193,
+        "accepted": false,
+        "reasons": [
+          "three-dimensional overlap with bowl_1",
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 191,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.134661584,
+          0.052873851
+        ],
+        "yaw_rad": 0.068882483914,
+        "accepted": false,
+        "reasons": [
+          "three-dimensional overlap with bowl_1",
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 192,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          0.166841154,
+          0.146816323
+        ],
+        "yaw_rad": 2.866170889146,
+        "accepted": false,
+        "reasons": [
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 193,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          0.179500707,
+          0.174389321
+        ],
+        "yaw_rad": 0.822442591642,
+        "accepted": false,
+        "reasons": [
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 194,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          0.095334196,
+          -0.016493576
+        ],
+        "yaw_rad": 0.309309577394,
+        "accepted": false,
+        "reasons": [
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 195,
+        "object_id": "bowl_1",
+        "candidate_xy_m": [
+          -0.016652763,
+          0.110038939
+        ],
+        "yaw_rad": 1.459913615868,
+        "accepted": true,
+        "reasons": []
+      },
+      {
+        "attempt": 196,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.092824239,
+          -0.01660048
+        ],
+        "yaw_rad": 0.907861908726,
+        "accepted": false,
+        "reasons": [
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 197,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.161814263,
+          0.074042366
+        ],
+        "yaw_rad": 2.681519268307,
+        "accepted": false,
+        "reasons": [
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 198,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.08780357,
+          0.131196169
+        ],
+        "yaw_rad": -0.982295267146,
+        "accepted": false,
+        "reasons": [
+          "three-dimensional overlap with bowl_1",
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 199,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.104129988,
+          0.113411201
+        ],
+        "yaw_rad": 2.992657137484,
+        "accepted": false,
+        "reasons": [
+          "three-dimensional overlap with bowl_1",
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 200,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          0.024887982,
+          0.057375608
+        ],
+        "yaw_rad": -1.251382489868,
+        "accepted": false,
+        "reasons": [
+          "three-dimensional overlap with bowl_1",
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 201,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.146902045,
+          0.017431908
+        ],
+        "yaw_rad": -2.090211750754,
+        "accepted": false,
+        "reasons": [
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 202,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.001269638,
+          0.020034789
+        ],
+        "yaw_rad": 2.550721343339,
+        "accepted": false,
+        "reasons": [
+          "three-dimensional overlap with bowl_1",
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 203,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          0.215559954,
+          0.069282489
+        ],
+        "yaw_rad": 2.55260303148,
+        "accepted": false,
+        "reasons": [
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 204,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.133550928,
+          -0.007661087
+        ],
+        "yaw_rad": -2.264484715327,
+        "accepted": false,
+        "reasons": [
+          "three-dimensional overlap with bowl_1",
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 205,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.17753898,
+          0.024125927
+        ],
+        "yaw_rad": -0.99302455298,
+        "accepted": false,
+        "reasons": [
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 206,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          0.030226686,
+          0.162941821
+        ],
+        "yaw_rad": -1.51828417736,
+        "accepted": false,
+        "reasons": [
+          "three-dimensional overlap with bowl_1",
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 207,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.037868528,
+          0.061555516
+        ],
+        "yaw_rad": 1.568645011927,
+        "accepted": false,
+        "reasons": [
+          "three-dimensional overlap with bowl_1",
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 208,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.053462497,
+          0.045346213
+        ],
+        "yaw_rad": 0.151852919434,
+        "accepted": false,
+        "reasons": [
+          "three-dimensional overlap with bowl_1",
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 209,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.096598127,
+          0.180169196
+        ],
+        "yaw_rad": -2.751661202324,
+        "accepted": false,
+        "reasons": [
+          "three-dimensional overlap with bowl_1",
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 210,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          0.001474368,
+          0.107763592
+        ],
+        "yaw_rad": -2.350704231822,
+        "accepted": false,
+        "reasons": [
+          "three-dimensional overlap with bowl_1",
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 211,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.123323346,
+          0.030957073
+        ],
+        "yaw_rad": 2.2799250969,
+        "accepted": false,
+        "reasons": [
+          "three-dimensional overlap with bowl_1",
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 212,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.043523525,
+          0.068403908
+        ],
+        "yaw_rad": -1.580512331881,
+        "accepted": false,
+        "reasons": [
+          "three-dimensional overlap with bowl_1",
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 213,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          0.151391752,
+          0.159866083
+        ],
+        "yaw_rad": 2.852211602382,
+        "accepted": false,
+        "reasons": [
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 214,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.203090886,
+          0.124873398
+        ],
+        "yaw_rad": -3.00455317628,
+        "accepted": false,
+        "reasons": [
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 215,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.0116064,
+          0.098671529
+        ],
+        "yaw_rad": 2.486234556463,
+        "accepted": false,
+        "reasons": [
+          "three-dimensional overlap with bowl_1",
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 216,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.047099456,
+          0.1714182
+        ],
+        "yaw_rad": -3.140469924909,
+        "accepted": false,
+        "reasons": [
+          "three-dimensional overlap with bowl_1",
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 217,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          0.154335062,
+          0.181144973
+        ],
+        "yaw_rad": 2.045737317058,
+        "accepted": false,
+        "reasons": [
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 218,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.169744714,
+          0.005974492
+        ],
+        "yaw_rad": -1.58043923754,
+        "accepted": false,
+        "reasons": [
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 219,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          0.079053493,
+          0.174558794
+        ],
+        "yaw_rad": 0.140527253991,
+        "accepted": false,
+        "reasons": [
+          "three-dimensional overlap with bowl_1",
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 220,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          0.063975722,
+          0.136715189
+        ],
+        "yaw_rad": 1.393203909647,
+        "accepted": false,
+        "reasons": [
+          "three-dimensional overlap with bowl_1",
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 221,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          0.022360708,
+          -0.018620343
+        ],
+        "yaw_rad": -0.268134669546,
+        "accepted": false,
+        "reasons": [
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 222,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.116110002,
+          0.169938818
+        ],
+        "yaw_rad": 1.773734528862,
+        "accepted": false,
+        "reasons": [
+          "three-dimensional overlap with bowl_1",
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 223,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.085193971,
+          0.000317648
+        ],
+        "yaw_rad": 0.914239756187,
+        "accepted": false,
+        "reasons": [
+          "three-dimensional overlap with bowl_1",
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 224,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          0.059174975,
+          0.122532431
+        ],
+        "yaw_rad": -1.559524623595,
+        "accepted": false,
+        "reasons": [
+          "three-dimensional overlap with bowl_1",
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 225,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.186544945,
+          0.085233868
+        ],
+        "yaw_rad": -2.437042220164,
+        "accepted": false,
+        "reasons": [
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 226,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.048592668,
+          0.020796798
+        ],
+        "yaw_rad": 0.520819349453,
+        "accepted": false,
+        "reasons": [
+          "three-dimensional overlap with bowl_1",
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 227,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.212548149,
+          0.037489677
+        ],
+        "yaw_rad": 0.634984343918,
+        "accepted": false,
+        "reasons": [
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 228,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          0.199262916,
+          0.110965324
+        ],
+        "yaw_rad": -0.246988074317,
+        "accepted": false,
+        "reasons": [
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 229,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.010722433,
+          0.023192423
+        ],
+        "yaw_rad": 2.411323340504,
+        "accepted": false,
+        "reasons": [
+          "three-dimensional overlap with bowl_1",
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 230,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          0.199989847,
+          0.123832882
+        ],
+        "yaw_rad": -1.589279043098,
+        "accepted": false,
+        "reasons": [
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 231,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.207630728,
+          0.079638087
+        ],
+        "yaw_rad": -1.210155137756,
+        "accepted": false,
+        "reasons": [
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 232,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.034727571,
+          0.028008926
+        ],
+        "yaw_rad": 1.096185004537,
+        "accepted": false,
+        "reasons": [
+          "three-dimensional overlap with bowl_1",
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 233,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          0.184596661,
+          0.021482827
+        ],
+        "yaw_rad": 1.051522783939,
+        "accepted": false,
+        "reasons": [
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 234,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.070314896,
+          0.062984803
+        ],
+        "yaw_rad": -2.927352224038,
+        "accepted": false,
+        "reasons": [
+          "three-dimensional overlap with bowl_1",
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 235,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.131088019,
+          0.143625447
+        ],
+        "yaw_rad": 1.1471003,
+        "accepted": false,
+        "reasons": [
+          "three-dimensional overlap with bowl_1",
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 236,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          0.002118102,
+          0.016863486
+        ],
+        "yaw_rad": 1.502493212779,
+        "accepted": false,
+        "reasons": [
+          "three-dimensional overlap with bowl_1",
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 237,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.081749406,
+          0.148538813
+        ],
+        "yaw_rad": 2.952209420983,
+        "accepted": false,
+        "reasons": [
+          "three-dimensional overlap with bowl_1",
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 238,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.120944178,
+          0.135787827
+        ],
+        "yaw_rad": -1.691378111829,
+        "accepted": false,
+        "reasons": [
+          "three-dimensional overlap with bowl_1",
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 239,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          0.196217969,
+          0.079092886
+        ],
+        "yaw_rad": -1.288474900614,
+        "accepted": false,
+        "reasons": [
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 240,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.120127342,
+          0.062229224
+        ],
+        "yaw_rad": -1.96466902474,
+        "accepted": false,
+        "reasons": [
+          "three-dimensional overlap with bowl_1",
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 241,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          0.194843534,
+          0.004262046
+        ],
+        "yaw_rad": 1.03857442028,
+        "accepted": false,
+        "reasons": [
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 242,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.124631995,
+          0.18154733
+        ],
+        "yaw_rad": -0.669410712641,
+        "accepted": false,
+        "reasons": [
+          "three-dimensional overlap with bowl_1",
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 243,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.194582225,
+          -0.014210576
+        ],
+        "yaw_rad": -2.249939055799,
+        "accepted": false,
+        "reasons": [
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 244,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          0.172876637,
+          0.162156244
+        ],
+        "yaw_rad": -0.670279550442,
+        "accepted": false,
+        "reasons": [
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 245,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          0.21601788,
+          0.172439462
+        ],
+        "yaw_rad": 1.462246546652,
+        "accepted": false,
+        "reasons": [
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 246,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.136544564,
+          0.173357452
+        ],
+        "yaw_rad": -1.072899382257,
+        "accepted": false,
+        "reasons": [
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 247,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.203242765,
+          0.115217717
+        ],
+        "yaw_rad": 1.547601583582,
+        "accepted": false,
+        "reasons": [
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 248,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.054757309,
+          0.043952837
+        ],
+        "yaw_rad": -0.762656699769,
+        "accepted": false,
+        "reasons": [
+          "three-dimensional overlap with bowl_1",
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 249,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.215843978,
+          0.032838768
+        ],
+        "yaw_rad": -2.078094788117,
+        "accepted": false,
+        "reasons": [
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 250,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          0.197775787,
+          -0.000594455
+        ],
+        "yaw_rad": -0.933261242705,
+        "accepted": false,
+        "reasons": [
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 251,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.127040241,
+          0.049292734
+        ],
+        "yaw_rad": 2.917102081583,
+        "accepted": false,
+        "reasons": [
+          "three-dimensional overlap with bowl_1",
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 252,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          0.139809678,
+          0.065531945
+        ],
+        "yaw_rad": 2.020506627862,
+        "accepted": false,
+        "reasons": [
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 253,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.011521399,
+          0.052737868
+        ],
+        "yaw_rad": -2.8320996847,
+        "accepted": false,
+        "reasons": [
+          "three-dimensional overlap with bowl_1",
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 254,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.13328213,
+          0.050924715
+        ],
+        "yaw_rad": 2.635836568444,
+        "accepted": false,
+        "reasons": [
+          "three-dimensional overlap with bowl_1",
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 255,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.203942505,
+          0.060895466
+        ],
+        "yaw_rad": 2.494382877696,
+        "accepted": false,
+        "reasons": [
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 256,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          0.115782122,
+          -0.018384053
+        ],
+        "yaw_rad": 1.95925129006,
+        "accepted": false,
+        "reasons": [
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 257,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.189919383,
+          0.169972361
+        ],
+        "yaw_rad": -2.922596089255,
+        "accepted": false,
+        "reasons": [
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 258,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          0.107367178,
+          0.165362134
+        ],
+        "yaw_rad": -1.526713797569,
+        "accepted": false,
+        "reasons": [
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 259,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.098856598,
+          0.178028318
+        ],
+        "yaw_rad": -1.011155945278,
+        "accepted": false,
+        "reasons": [
+          "three-dimensional overlap with bowl_1",
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 260,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.103260142,
+          0.126399214
+        ],
+        "yaw_rad": 0.734997477704,
+        "accepted": false,
+        "reasons": [
+          "three-dimensional overlap with bowl_1",
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 261,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.097417,
+          -0.026282584
+        ],
+        "yaw_rad": -1.153067352288,
+        "accepted": false,
+        "reasons": [
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 262,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          0.180818757,
+          0.10869595
+        ],
+        "yaw_rad": 1.606311230675,
+        "accepted": false,
+        "reasons": [
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 263,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.206558596,
+          0.022999267
+        ],
+        "yaw_rad": 2.785022782916,
+        "accepted": false,
+        "reasons": [
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 264,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          0.198324078,
+          0.177218924
+        ],
+        "yaw_rad": -0.155891747152,
+        "accepted": false,
+        "reasons": [
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 265,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.108090686,
+          0.064994084
+        ],
+        "yaw_rad": -0.713048611657,
+        "accepted": false,
+        "reasons": [
+          "three-dimensional overlap with bowl_1",
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 266,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          0.185872541,
+          0.012091676
+        ],
+        "yaw_rad": -0.041005049196,
+        "accepted": false,
+        "reasons": [
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 267,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          0.103546912,
+          0.149127973
+        ],
+        "yaw_rad": 1.901092843983,
+        "accepted": false,
+        "reasons": [
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 268,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          0.046567726,
+          0.043118029
+        ],
+        "yaw_rad": 1.714111887638,
+        "accepted": false,
+        "reasons": [
+          "three-dimensional overlap with bowl_1",
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 269,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.05997841,
+          0.140452231
+        ],
+        "yaw_rad": -1.13380844368,
+        "accepted": false,
+        "reasons": [
+          "three-dimensional overlap with bowl_1",
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 270,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.131421403,
+          0.134163251
+        ],
+        "yaw_rad": -2.645127574824,
+        "accepted": false,
+        "reasons": [
+          "three-dimensional overlap with bowl_1",
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 271,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.188984556,
+          -0.019837434
+        ],
+        "yaw_rad": -1.587713726442,
+        "accepted": false,
+        "reasons": [
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 272,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.075652374,
+          0.182861557
+        ],
+        "yaw_rad": 0.330461890764,
+        "accepted": false,
+        "reasons": [
+          "three-dimensional overlap with bowl_1",
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 273,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          0.211803732,
+          0.029644238
+        ],
+        "yaw_rad": 2.409442138468,
+        "accepted": false,
+        "reasons": [
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 274,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.175225561,
+          0.079673432
+        ],
+        "yaw_rad": -2.613286112035,
+        "accepted": false,
+        "reasons": [
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 275,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.023027602,
+          0.023069955
+        ],
+        "yaw_rad": 1.318031139525,
+        "accepted": false,
+        "reasons": [
+          "three-dimensional overlap with bowl_1",
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 276,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          0.052235268,
+          0.11729072
+        ],
+        "yaw_rad": -0.52250572405,
+        "accepted": false,
+        "reasons": [
+          "three-dimensional overlap with bowl_1",
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 277,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          0.15065512,
+          0.115216723
+        ],
+        "yaw_rad": 1.558085723907,
+        "accepted": false,
+        "reasons": [
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 278,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          0.147999716,
+          0.035832099
+        ],
+        "yaw_rad": -2.380292155238,
+        "accepted": false,
+        "reasons": [
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 279,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.055153534,
+          0.130989468
+        ],
+        "yaw_rad": 0.420245865068,
+        "accepted": false,
+        "reasons": [
+          "three-dimensional overlap with bowl_1",
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 280,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.10966142,
+          0.025456785
+        ],
+        "yaw_rad": -1.890044401173,
+        "accepted": false,
+        "reasons": [
+          "three-dimensional overlap with bowl_1",
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 281,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          0.166798285,
+          0.096766234
+        ],
+        "yaw_rad": -2.178240861842,
+        "accepted": false,
+        "reasons": [
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 282,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.045124584,
+          0.185473054
+        ],
+        "yaw_rad": -1.091151034987,
+        "accepted": false,
+        "reasons": [
+          "three-dimensional overlap with bowl_1",
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 283,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.116629232,
+          0.14606254
+        ],
+        "yaw_rad": 0.046021273997,
+        "accepted": false,
+        "reasons": [
+          "three-dimensional overlap with bowl_1",
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 284,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          0.213163509,
+          -0.005172754
+        ],
+        "yaw_rad": 0.963379139307,
+        "accepted": false,
+        "reasons": [
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 285,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          0.138548263,
+          0.152940629
+        ],
+        "yaw_rad": -0.158570260402,
+        "accepted": false,
+        "reasons": [
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 286,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.199566045,
+          0.035809678
+        ],
+        "yaw_rad": 2.603598391482,
+        "accepted": false,
+        "reasons": [
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 287,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.13478136,
+          0.181300053
+        ],
+        "yaw_rad": -2.392532483468,
+        "accepted": false,
+        "reasons": [
+          "three-dimensional overlap with bowl_1",
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 288,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          0.186773175,
+          0.052635613
+        ],
+        "yaw_rad": 0.522721845272,
+        "accepted": false,
+        "reasons": [
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 289,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.022093785,
+          0.028585522
+        ],
+        "yaw_rad": 2.300445850416,
+        "accepted": false,
+        "reasons": [
+          "three-dimensional overlap with bowl_1",
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 290,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          0.19351528,
+          -0.004434335
+        ],
+        "yaw_rad": 1.745319816408,
+        "accepted": false,
+        "reasons": [
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 291,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          0.052079108,
+          0.019525075
+        ],
+        "yaw_rad": 0.604109830422,
+        "accepted": false,
+        "reasons": [
+          "three-dimensional overlap with bowl_1",
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 292,
+        "object_id": "bowl_1",
+        "candidate_xy_m": [
+          -0.121535216,
+          0.044806649
+        ],
+        "yaw_rad": -0.824928487837,
+        "accepted": true,
+        "reasons": []
+      },
+      {
+        "attempt": 293,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          0.043167716,
+          0.112478978
+        ],
+        "yaw_rad": -1.539922808233,
+        "accepted": false,
+        "reasons": [
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 294,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.212149485,
+          0.043000105
+        ],
+        "yaw_rad": -1.863330188699,
+        "accepted": false,
+        "reasons": [
+          "three-dimensional overlap with bowl_1",
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 295,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.136703947,
+          0.039775935
+        ],
+        "yaw_rad": 1.120415970884,
+        "accepted": false,
+        "reasons": [
+          "three-dimensional overlap with bowl_1",
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 296,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          0.128205409,
+          0.09029028
+        ],
+        "yaw_rad": -1.86354392844,
+        "accepted": false,
+        "reasons": [
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 297,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.173069771,
+          0.057574568
+        ],
+        "yaw_rad": -2.744048742612,
+        "accepted": false,
+        "reasons": [
+          "three-dimensional overlap with bowl_1",
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 298,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          0.060430126,
+          -0.007567257
+        ],
+        "yaw_rad": 0.31502389697,
+        "accepted": false,
+        "reasons": [
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 299,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          0.084841481,
+          0.060678521
+        ],
+        "yaw_rad": -2.113102334014,
+        "accepted": false,
+        "reasons": [
+          "front_of footprint inequality failed"
+        ]
+      },
+      {
+        "attempt": 300,
+        "object_id": "can_1",
+        "candidate_xy_m": [
+          -0.083538222,
+          0.17706434
+        ],
+        "yaw_rad": -1.361558750692,
+        "accepted": true,
+        "reasons": []
+      }
+    ],
+    "status": "pass"
+  }
+}

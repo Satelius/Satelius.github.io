@@ -1,0 +1,44 @@
+........................................................................ [  4%]
+........................................................................ [  8%]
+...............................................................sssssssss [ 13%]
+sssssss................................................................. [ 17%]
+........................................................................ [ 22%]
+........................................................................ [ 26%]
+........................................................................ [ 31%]
+........................................................................ [ 35%]
+........................................................................ [ 40%]
+........................................................................ [ 44%]
+........................................................................ [ 48%]
+........................................................................ [ 53%]
+........................................................................ [ 57%]
+........................................................................ [ 62%]
+........................................................................ [ 66%]
+........................................................................ [ 71%]
+........................................................................ [ 75%]
+........................................................................ [ 80%]
+........................................................................ [ 84%]
+........................................................................ [ 89%]
+........................................................................ [ 93%]
+........................................................................ [ 97%]
+.................................                                        [100%]
+=============================== warnings summary ===============================
+tests/demo/test_workbench_browser.py::test_browser_does_not_treat_an_empty_cache_as_authoritative_history
+  /workspace/TacHarness-genenv/outputs/genenv-audit-20261109/cpu/lib/python3.12/site-packages/_pytest/threadexception.py:54: PytestUnhandledThreadExceptionWarning: Exception in thread Thread-5 (publish_after_the_empty_page)
+  
+  Traceback (most recent call last):
+    File "/runtime/python/lib/python3.12/threading.py", line 1073, in _bootstrap_inner
+      self.run()
+    File "/runtime/python/lib/python3.12/threading.py", line 1010, in run
+      self._target(*self._args, **self._kwargs)
+    File "/workspace/TacHarness-genenv/thirdparty/robot-harness-gen-env/tests/demo/test_workbench_browser.py", line 394, in publish_after_the_empty_page
+      assert first_empty_page_returned.wait(timeout=5)
+  AssertionError: assert False
+   +  where False = wait(timeout=5)
+   +    where wait = <threading.Event at 0x7f7eabbc0d70: unset>.wait
+  
+  Enable tracemalloc to get traceback where the object was allocated.
+  See https://docs.pytest.org/en/stable/how-to/capture-warnings.html#resource-warnings for more info.
+    warnings.warn(pytest.PytestUnhandledThreadExceptionWarning(msg))
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+1601 passed, 16 skipped, 1 warning in 450.58s (0:07:30)

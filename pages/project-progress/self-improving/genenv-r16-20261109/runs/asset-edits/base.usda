@@ -1,0 +1,17 @@
+#usda 1.0
+
+def Cube "Body" (
+    prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsCollisionAPI", "MaterialBindingAPI"]
+)
+{
+    rel material:binding:physics = </Surface>
+}
+
+def Material "Surface"
+{
+    def Shader "Texture"
+    {
+        uniform token info:id = "UsdUVTexture"
+    }
+}
+

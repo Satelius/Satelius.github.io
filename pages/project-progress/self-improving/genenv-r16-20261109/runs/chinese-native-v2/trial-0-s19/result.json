@@ -1,0 +1,30 @@
+{
+  "rule": "upward-support-retreat-v2",
+  "task": "/workspace/summary-web/genenv-r16-20261109/runs/cn-fixed/audit_cn_fixed_task.py",
+  "task_sha256": "0fca5458ccf9221e1a971f8a86f6d7cfcbb4fc5619e5504aee0d11d055b92843",
+  "scene_sha256": "4381de1f101ae23651aeeb52a96c2c657a2e3c9ca89a4af396e32e3028c28883",
+  "seed": 19,
+  "grasp_yaw_deg": 0.0,
+  "grasp_height_m": 0.001,
+  "initial_base_xyz": {
+    "banana": [
+      0.6199072599411011,
+      0.15741750597953796,
+      0.02033500000834465
+    ],
+    "bowl": [
+      0.5327475070953369,
+      -0.10200829803943634,
+      0.029485000297427177
+    ]
+  },
+  "steps": 284,
+  "dt": 0.06666666666666667,
+  "native": true,
+  "peak_lift_m": 0.1381775625050068,
+  "grasp": true,
+  "lift": true,
+  "max_stable_s": 0.6666666666666666,
+  "qualified": true,
+  "reason": "native_success"
+}

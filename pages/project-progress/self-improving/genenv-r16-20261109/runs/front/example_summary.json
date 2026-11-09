@@ -1,0 +1,45 @@
+{
+  "prompt": "A can in front of a bowl.",
+  "seed": 7,
+  "genenv_scene": "/workspace/summary-web/genenv-r16-20261109/runs/front/genenv/a_can_in_front_of_a_bowl_7df55e76b7",
+  "genenv_static_validation": {
+    "workspace_bounds:bowl_1": "pass",
+    "table_support_height:bowl_1": "pass",
+    "real_asset_files:bowl_1": "pass",
+    "workspace_bounds:can_1": "pass",
+    "table_support_height:can_1": "pass",
+    "real_asset_files:can_1": "pass",
+    "no_overlap:bowl_1:can_1": "pass",
+    "relation:on_table:can_1": "pass",
+    "relation:on_table:bowl_1": "pass",
+    "relation:front_of:can_1:bowl_1": "pass",
+    "resolved_only_roundtrip": "pass",
+    "package_manifest": "pass",
+    "runtime_evidence": "not_run"
+  },
+  "usda": "/workspace/summary-web/genenv-r16-20261109/runs/front/audit_front.usda",
+  "task": "/workspace/summary-web/genenv-r16-20261109/runs/front/audit_front_task.py",
+  "scene_ir": "/workspace/summary-web/genenv-r16-20261109/runs/front/audit_front.scene_ir.json",
+  "objects": [
+    {
+      "prim": "bowl",
+      "translate": [
+        0.5448,
+        0.1215,
+        0.0295
+      ],
+      "yaw_rad": -2.3957
+    },
+    {
+      "prim": "soup_can",
+      "translate": [
+        0.6771,
+        0.0835,
+        0.0429
+      ],
+      "yaw_rad": -2.9324
+    }
+  ],
+  "assets_hashed": true,
+  "warnings": []
+}

@@ -1,0 +1,87 @@
+{
+  "diagnosis": "/runtime/TacHarness/outputs/genenv-evolve/genenv_block_left_of_bowl/uniform/round-0/diagnosis/diagnosis.json",
+  "dominant_failure": "place_fail",
+  "kind": "collect_targeted",
+  "num_demos": 10,
+  "phase_emphasis": "place",
+  "rationale": "dominant failure place_fail (0.70 of episodes); collect 10 demonstrations emphasising the place phase near the failing layouts; target layouts are the failing episodes' manipuland poses",
+  "reset_jitter_m": 0.03,
+  "round_index": 0,
+  "schema": "tacharness.cvpr_protocol.data_requirement/1",
+  "steps_per_demo": 444.44444444444446,
+  "success_rate": 0.0,
+  "target_layouts": [
+    {
+      "label": "place_fail",
+      "seed": 100,
+      "x": 0.5711482167243958,
+      "y": 0.16022098064422607,
+      "yaw": -2.8861542457318285
+    },
+    {
+      "label": "other",
+      "seed": 101,
+      "x": 0.6656696796417236,
+      "y": 0.20811550319194794,
+      "yaw": -2.8926245117992995
+    },
+    {
+      "label": "place_fail",
+      "seed": 102,
+      "x": 0.6454266905784607,
+      "y": 0.15084749460220337,
+      "yaw": -2.649293026565149
+    },
+    {
+      "label": "other",
+      "seed": 103,
+      "x": 0.5815277099609375,
+      "y": 0.10023649781942368,
+      "yaw": -2.9021385262260475
+    },
+    {
+      "label": "slip_drop",
+      "seed": 104,
+      "x": 0.6344255208969116,
+      "y": 0.09773987531661987,
+      "yaw": -2.667669189036118
+    },
+    {
+      "label": "place_fail",
+      "seed": 105,
+      "x": 0.6217311024665833,
+      "y": 0.11340320855379105,
+      "yaw": -2.835688519188667
+    },
+    {
+      "label": "place_fail",
+      "seed": 106,
+      "x": 0.6014033555984497,
+      "y": 0.20940370857715607,
+      "yaw": -2.832758369389976
+    },
+    {
+      "label": "place_fail",
+      "seed": 107,
+      "x": 0.6270016431808472,
+      "y": 0.1697317212820053,
+      "yaw": -2.7345131752124088
+    },
+    {
+      "label": "place_fail",
+      "seed": 108,
+      "x": 0.5956128239631653,
+      "y": 0.18181151151657104,
+      "yaw": -2.606003916094656
+    },
+    {
+      "label": "place_fail",
+      "seed": 109,
+      "x": 0.6168031096458435,
+      "y": 0.146974578499794,
+      "yaw": -2.8678019917616497
+    }
+  ],
+  "training_seed": 9173,
+  "training_steps": 4000
+}

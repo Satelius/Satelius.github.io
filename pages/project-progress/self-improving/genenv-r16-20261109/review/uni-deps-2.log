@@ -1,0 +1,15 @@
+Using CPython 3.12.16 interpreter at: /runtime/gujie/TacHarness/.venv-isaacsim60/bin/python
+Resolved 5 packages in 3.73s
+Downloading libigl (13.2MiB)
+Downloading wildmeshing (8.1MiB)
+Downloading gpytoolbox (12.4MiB)
+ Downloaded wildmeshing
+ Downloaded libigl
+ Downloaded gpytoolbox
+Prepared 4 packages in 28.16s
+Installed 5 packages in 90ms
+ + gpytoolbox==0.3.8
+ + libigl==2.6.3
+ + meshio==5.3.5
+ + rtree==1.4.1
+ + wildmeshing==2.0.0

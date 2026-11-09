@@ -1,0 +1,45 @@
+{
+ "prompt": "A banana to the right of a bowl.",
+ "seed": 7,
+ "genenv_scene": "/workspace/summary-web/genenv-r16-20261109/runs/banana_parent/genenv/a_banana_to_the_right_of_a_bowl_77bd9daaa1",
+ "genenv_static_validation": {
+  "workspace_bounds:banana_1": "pass",
+  "table_support_height:banana_1": "pass",
+  "real_asset_files:banana_1": "pass",
+  "workspace_bounds:bowl_1": "pass",
+  "table_support_height:bowl_1": "pass",
+  "real_asset_files:bowl_1": "pass",
+  "no_overlap:banana_1:bowl_1": "pass",
+  "relation:on_table:banana_1": "pass",
+  "relation:on_table:bowl_1": "pass",
+  "relation:right_of:banana_1:bowl_1": "pass",
+  "resolved_only_roundtrip": "pass",
+  "package_manifest": "pass",
+  "runtime_evidence": "not_run"
+ },
+ "usda": "/workspace/summary-web/genenv-r16-20261109/runs/banana_parent/audit_banana_parent.usda",
+ "task": "/workspace/summary-web/genenv-r16-20261109/runs/banana_parent/audit_banana_parent_task.py",
+ "scene_ir": "/workspace/summary-web/genenv-r16-20261109/runs/banana_parent/audit_banana_parent.scene_ir.json",
+ "objects": [
+  {
+   "prim": "banana",
+   "translate": [
+    0.593,
+    -0.0569,
+    0.0203
+   ],
+   "yaw_rad": -0.7496
+  },
+  {
+   "prim": "bowl",
+   "translate": [
+    0.5255,
+    0.1597,
+    0.0295
+   ],
+   "yaw_rad": 2.462
+  }
+ ],
+ "assets_hashed": true,
+ "warnings": []
+}

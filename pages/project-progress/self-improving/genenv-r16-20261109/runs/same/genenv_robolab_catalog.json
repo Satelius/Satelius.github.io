@@ -1,0 +1,2208 @@
+{
+  "schema_version": "robotwin.asset_catalog.v1",
+  "robotwin_root": "/runtime/TacHarness/inputs/datasets/vendor/robolab/assets",
+  "objects_root": "/runtime/TacHarness/inputs/datasets/vendor/robolab/assets/objects",
+  "source_commit": "robolab-object-catalog-acfc83ed799d",
+  "entries": [
+    {
+      "asset_id": "apple",
+      "semantic_name": "apple",
+      "category": "apple",
+      "aliases": [
+        "apple"
+      ],
+      "colors": [],
+      "materials": [],
+      "load_type": "rigid",
+      "asset_path": "/runtime/TacHarness/inputs/datasets/vendor/robolab/assets/objects/objaverse",
+      "models": [
+        {
+          "model_id": 0,
+          "model_path": "/runtime/TacHarness/inputs/datasets/vendor/robolab/assets/objects/objaverse/apple_02.usd",
+          "metadata_path": null,
+          "visual_path": "/runtime/TacHarness/inputs/datasets/vendor/robolab/assets/objects/objaverse/apple_02.usd",
+          "collision_path": "/runtime/TacHarness/inputs/datasets/vendor/robolab/assets/objects/objaverse/apple_02.usd",
+          "urdf_path": null,
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "dimensions_m": [
+            0.07017443720374146,
+            0.0754146361694102,
+            0.07328137962501582
+          ],
+          "mass_kg": null,
+          "static_friction": 10.0,
+          "dynamic_friction": 10.0,
+          "restitution": null,
+          "footprint_shape": "circle",
+          "stable_pose_id": "robolab_apple_upright",
+          "stable_orientation_wxyz": [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "z_policy": "origin_on_table",
+          "is_static": false,
+          "articulation_joints": [],
+          "articulation_closed_qpos": [],
+          "articulation_open_qpos": [],
+          "usable": true,
+          "missing": []
+        }
+      ],
+      "available": true,
+      "availability_reasons": [
+        "robolab_usd_rigid_body"
+      ],
+      "source_notes": [
+        "robolab class=",
+        "usd=assets/objects/objaverse/apple_02.usd"
+      ]
+    },
+    {
+      "asset_id": "apple_01",
+      "semantic_name": "apple",
+      "category": "apple",
+      "aliases": [
+        "apple"
+      ],
+      "colors": [],
+      "materials": [],
+      "load_type": "rigid",
+      "asset_path": "/runtime/TacHarness/inputs/datasets/vendor/robolab/assets/objects/objaverse",
+      "models": [
+        {
+          "model_id": 0,
+          "model_path": "/runtime/TacHarness/inputs/datasets/vendor/robolab/assets/objects/objaverse/apple_01.usd",
+          "metadata_path": null,
+          "visual_path": "/runtime/TacHarness/inputs/datasets/vendor/robolab/assets/objects/objaverse/apple_01.usd",
+          "collision_path": "/runtime/TacHarness/inputs/datasets/vendor/robolab/assets/objects/objaverse/apple_01.usd",
+          "urdf_path": null,
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "dimensions_m": [
+            0.06805419769762011,
+            0.06592432828416686,
+            0.06768400040975212
+          ],
+          "mass_kg": null,
+          "static_friction": 0.800000011920929,
+          "dynamic_friction": 0.800000011920929,
+          "restitution": null,
+          "footprint_shape": "circle",
+          "stable_pose_id": "robolab_apple_01_upright",
+          "stable_orientation_wxyz": [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "z_policy": "origin_on_table",
+          "is_static": false,
+          "articulation_joints": [],
+          "articulation_closed_qpos": [],
+          "articulation_open_qpos": [],
+          "usable": true,
+          "missing": []
+        }
+      ],
+      "available": true,
+      "availability_reasons": [
+        "robolab_usd_rigid_body"
+      ],
+      "source_notes": [
+        "robolab class=",
+        "usd=assets/objects/objaverse/apple_01.usd"
+      ]
+    },
+    {
+      "asset_id": "banana",
+      "semantic_name": "banana",
+      "category": "banana",
+      "aliases": [
+        "banana"
+      ],
+      "colors": [],
+      "materials": [],
+      "load_type": "rigid",
+      "asset_path": "/runtime/TacHarness/inputs/datasets/vendor/robolab/assets/objects/ycb",
+      "models": [
+        {
+          "model_id": 0,
+          "model_path": "/runtime/TacHarness/inputs/datasets/vendor/robolab/assets/objects/ycb/banana.usd",
+          "metadata_path": null,
+          "visual_path": "/runtime/TacHarness/inputs/datasets/vendor/robolab/assets/objects/ycb/banana.usd",
+          "collision_path": "/runtime/TacHarness/inputs/datasets/vendor/robolab/assets/objects/ycb/banana.usd",
+          "urdf_path": null,
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "dimensions_m": [
+            0.10888800024986267,
+            0.17841200530529022,
+            0.03666999936103821
+          ],
+          "mass_kg": 0.11999999731779099,
+          "static_friction": 2.0,
+          "dynamic_friction": 2.0,
+          "restitution": null,
+          "footprint_shape": "box",
+          "stable_pose_id": "robolab_banana_upright",
+          "stable_orientation_wxyz": [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "z_policy": "origin_on_table",
+          "is_static": false,
+          "articulation_joints": [],
+          "articulation_closed_qpos": [],
+          "articulation_open_qpos": [],
+          "usable": true,
+          "missing": []
+        }
+      ],
+      "available": true,
+      "availability_reasons": [
+        "robolab_usd_rigid_body"
+      ],
+      "source_notes": [
+        "robolab class=fruit",
+        "usd=assets/objects/ycb/banana.usd"
+      ]
+    },
+    {
+      "asset_id": "blue_block",
+      "semantic_name": "block",
+      "category": "block",
+      "aliases": [
+        "block",
+        "cube"
+      ],
+      "colors": [],
+      "materials": [],
+      "load_type": "rigid",
+      "asset_path": "/runtime/TacHarness/inputs/datasets/vendor/robolab/assets/objects/basic",
+      "models": [
+        {
+          "model_id": 0,
+          "model_path": "/runtime/TacHarness/inputs/datasets/vendor/robolab/assets/objects/basic/blue_block.usd",
+          "metadata_path": null,
+          "visual_path": "/runtime/TacHarness/inputs/datasets/vendor/robolab/assets/objects/basic/blue_block.usd",
+          "collision_path": "/runtime/TacHarness/inputs/datasets/vendor/robolab/assets/objects/basic/blue_block.usd",
+          "urdf_path": null,
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "dimensions_m": [
+            0.04700441956520081,
+            0.04700441956520081,
+            0.04700441956520081
+          ],
+          "mass_kg": null,
+          "static_friction": 0.800000011920929,
+          "dynamic_friction": 1.0,
+          "restitution": null,
+          "footprint_shape": "box",
+          "stable_pose_id": "robolab_blue_block_upright",
+          "stable_orientation_wxyz": [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "z_policy": "origin_on_table",
+          "is_static": false,
+          "articulation_joints": [],
+          "articulation_closed_qpos": [],
+          "articulation_open_qpos": [],
+          "usable": true,
+          "missing": []
+        }
+      ],
+      "available": true,
+      "availability_reasons": [
+        "robolab_usd_rigid_body"
+      ],
+      "source_notes": [
+        "robolab class=block",
+        "usd=assets/objects/basic/blue_block.usd"
+      ]
+    },
+    {
+      "asset_id": "frozen_vegetable_block",
+      "semantic_name": "block",
+      "category": "block",
+      "aliases": [
+        "block",
+        "cube"
+      ],
+      "colors": [],
+      "materials": [],
+      "load_type": "rigid",
+      "asset_path": "/runtime/TacHarness/inputs/datasets/vendor/robolab/assets/objects/hot3d",
+      "models": [
+        {
+          "model_id": 0,
+          "model_path": "/runtime/TacHarness/inputs/datasets/vendor/robolab/assets/objects/hot3d/frozen_vegetable_block.usd",
+          "metadata_path": null,
+          "visual_path": "/runtime/TacHarness/inputs/datasets/vendor/robolab/assets/objects/hot3d/frozen_vegetable_block.usd",
+          "collision_path": "/runtime/TacHarness/inputs/datasets/vendor/robolab/assets/objects/hot3d/frozen_vegetable_block.usd",
+          "urdf_path": null,
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "dimensions_m": [
+            0.0673080999404192,
+            0.0967000164091587,
+            0.020390607416629812
+          ],
+          "mass_kg": 1.0,
+          "static_friction": 2.0,
+          "dynamic_friction": 2.0,
+          "restitution": null,
+          "footprint_shape": "box",
+          "stable_pose_id": "robolab_frozen_vegetable_block_upright",
+          "stable_orientation_wxyz": [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "z_policy": "origin_on_table",
+          "is_static": false,
+          "articulation_joints": [],
+          "articulation_closed_qpos": [],
+          "articulation_open_qpos": [],
+          "usable": true,
+          "missing": []
+        }
+      ],
+      "available": true,
+      "availability_reasons": [
+        "robolab_usd_rigid_body"
+      ],
+      "source_notes": [
+        "robolab class=food",
+        "usd=assets/objects/hot3d/frozen_vegetable_block.usd"
+      ]
+    },
+    {
+      "asset_id": "green_block",
+      "semantic_name": "block",
+      "category": "block",
+      "aliases": [
+        "block",
+        "cube"
+      ],
+      "colors": [],
+      "materials": [],
+      "load_type": "rigid",
+      "asset_path": "/runtime/TacHarness/inputs/datasets/vendor/robolab/assets/objects/basic",
+      "models": [
+        {
+          "model_id": 0,
+          "model_path": "/runtime/TacHarness/inputs/datasets/vendor/robolab/assets/objects/basic/green_block.usd",
+          "metadata_path": null,
+          "visual_path": "/runtime/TacHarness/inputs/datasets/vendor/robolab/assets/objects/basic/green_block.usd",
+          "collision_path": "/runtime/TacHarness/inputs/datasets/vendor/robolab/assets/objects/basic/green_block.usd",
+          "urdf_path": null,
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "dimensions_m": [
+            0.04700441956520081,
+            0.04700441956520081,
+            0.04700441956520081
+          ],
+          "mass_kg": null,
+          "static_friction": 0.800000011920929,
+          "dynamic_friction": 1.0,
+          "restitution": null,
+          "footprint_shape": "box",
+          "stable_pose_id": "robolab_green_block_upright",
+          "stable_orientation_wxyz": [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "z_policy": "origin_on_table",
+          "is_static": false,
+          "articulation_joints": [],
+          "articulation_closed_qpos": [],
+          "articulation_open_qpos": [],
+          "usable": true,
+          "missing": []
+        }
+      ],
+      "available": true,
+      "availability_reasons": [
+        "robolab_usd_rigid_body"
+      ],
+      "source_notes": [
+        "robolab class=block",
+        "usd=assets/objects/basic/green_block.usd"
+      ]
+    },
+    {
+      "asset_id": "red_block",
+      "semantic_name": "block",
+      "category": "block",
+      "aliases": [
+        "block",
+        "cube"
+      ],
+      "colors": [],
+      "materials": [],
+      "load_type": "rigid",
+      "asset_path": "/runtime/TacHarness/inputs/datasets/vendor/robolab/assets/objects/basic",
+      "models": [
+        {
+          "model_id": 0,
+          "model_path": "/runtime/TacHarness/inputs/datasets/vendor/robolab/assets/objects/basic/red_block.usd",
+          "metadata_path": null,
+          "visual_path": "/runtime/TacHarness/inputs/datasets/vendor/robolab/assets/objects/basic/red_block.usd",
+          "collision_path": "/runtime/TacHarness/inputs/datasets/vendor/robolab/assets/objects/basic/red_block.usd",
+          "urdf_path": null,
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "dimensions_m": [
+            0.04700441956520081,
+            0.04700441956520081,
+            0.04700441956520081
+          ],
+          "mass_kg": null,
+          "static_friction": 0.800000011920929,
+          "dynamic_friction": 1.0,
+          "restitution": null,
+          "footprint_shape": "box",
+          "stable_pose_id": "robolab_red_block_upright",
+          "stable_orientation_wxyz": [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "z_policy": "origin_on_table",
+          "is_static": false,
+          "articulation_joints": [],
+          "articulation_closed_qpos": [],
+          "articulation_open_qpos": [],
+          "usable": true,
+          "missing": []
+        }
+      ],
+      "available": true,
+      "availability_reasons": [
+        "robolab_usd_rigid_body"
+      ],
+      "source_notes": [
+        "robolab class=block",
+        "usd=assets/objects/basic/red_block.usd"
+      ]
+    },
+    {
+      "asset_id": "wood_block",
+      "semantic_name": "block",
+      "category": "block",
+      "aliases": [
+        "block",
+        "cube"
+      ],
+      "colors": [],
+      "materials": [],
+      "load_type": "rigid",
+      "asset_path": "/runtime/TacHarness/inputs/datasets/vendor/robolab/assets/objects/ycb",
+      "models": [
+        {
+          "model_id": 0,
+          "model_path": "/runtime/TacHarness/inputs/datasets/vendor/robolab/assets/objects/ycb/wood_block.usd",
+          "metadata_path": null,
+          "visual_path": "/runtime/TacHarness/inputs/datasets/vendor/robolab/assets/objects/ycb/wood_block.usd",
+          "collision_path": "/runtime/TacHarness/inputs/datasets/vendor/robolab/assets/objects/ycb/wood_block.usd",
+          "urdf_path": null,
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "dimensions_m": [
+            0.10395099967718124,
+            0.10354799777269363,
+            0.2058899998664856
+          ],
+          "mass_kg": 2.5,
+          "static_friction": 2.0,
+          "dynamic_friction": 2.0,
+          "restitution": null,
+          "footprint_shape": "box",
+          "stable_pose_id": "robolab_wood_block_upright",
+          "stable_orientation_wxyz": [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "z_policy": "origin_on_table",
+          "is_static": false,
+          "articulation_joints": [],
+          "articulation_closed_qpos": [],
+          "articulation_open_qpos": [],
+          "usable": true,
+          "missing": []
+        }
+      ],
+      "available": true,
+      "availability_reasons": [
+        "robolab_usd_rigid_body"
+      ],
+      "source_notes": [
+        "robolab class=block",
+        "usd=assets/objects/ycb/wood_block.usd"
+      ]
+    },
+    {
+      "asset_id": "yellow_block",
+      "semantic_name": "block",
+      "category": "block",
+      "aliases": [
+        "block",
+        "cube"
+      ],
+      "colors": [],
+      "materials": [],
+      "load_type": "rigid",
+      "asset_path": "/runtime/TacHarness/inputs/datasets/vendor/robolab/assets/objects/basic",
+      "models": [
+        {
+          "model_id": 0,
+          "model_path": "/runtime/TacHarness/inputs/datasets/vendor/robolab/assets/objects/basic/yellow_block.usd",
+          "metadata_path": null,
+          "visual_path": "/runtime/TacHarness/inputs/datasets/vendor/robolab/assets/objects/basic/yellow_block.usd",
+          "collision_path": "/runtime/TacHarness/inputs/datasets/vendor/robolab/assets/objects/basic/yellow_block.usd",
+          "urdf_path": null,
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "dimensions_m": [
+            0.04700441956520081,
+            0.04700441956520081,
+            0.04700441956520081
+          ],
+          "mass_kg": null,
+          "static_friction": 0.800000011920929,
+          "dynamic_friction": 1.0,
+          "restitution": null,
+          "footprint_shape": "box",
+          "stable_pose_id": "robolab_yellow_block_upright",
+          "stable_orientation_wxyz": [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "z_policy": "origin_on_table",
+          "is_static": false,
+          "articulation_joints": [],
+          "articulation_closed_qpos": [],
+          "articulation_open_qpos": [],
+          "usable": true,
+          "missing": []
+        }
+      ],
+      "available": true,
+      "availability_reasons": [
+        "robolab_usd_rigid_body"
+      ],
+      "source_notes": [
+        "robolab class=block",
+        "usd=assets/objects/basic/yellow_block.usd"
+      ]
+    },
+    {
+      "asset_id": "bbq_sauce_bottle",
+      "semantic_name": "bottle",
+      "category": "bottle",
+      "aliases": [
+        "bottle"
+      ],
+      "colors": [],
+      "materials": [],
+      "load_type": "rigid",
+      "asset_path": "/runtime/TacHarness/inputs/datasets/vendor/robolab/assets/objects/hope",
+      "models": [
+        {
+          "model_id": 0,
+          "model_path": "/runtime/TacHarness/inputs/datasets/vendor/robolab/assets/objects/hope/bbq_sauce_bottle.usd",
+          "metadata_path": null,
+          "visual_path": "/runtime/TacHarness/inputs/datasets/vendor/robolab/assets/objects/hope/bbq_sauce_bottle.usd",
+          "collision_path": "/runtime/TacHarness/inputs/datasets/vendor/robolab/assets/objects/hope/bbq_sauce_bottle.usd",
+          "urdf_path": null,
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "dimensions_m": [
+            0.04347919672727585,
+            0.06463219970464706,
+            0.1483289897441864
+          ],
+          "mass_kg": 0.4000000059604645,
+          "static_friction": 2.0,
+          "dynamic_friction": 2.0,
+          "restitution": null,
+          "footprint_shape": "circle",
+          "stable_pose_id": "robolab_bbq_sauce_bottle_upright",
+          "stable_orientation_wxyz": [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "z_policy": "origin_on_table",
+          "is_static": false,
+          "articulation_joints": [],
+          "articulation_closed_qpos": [],
+          "articulation_open_qpos": [],
+          "usable": true,
+          "missing": []
+        }
+      ],
+      "available": true,
+      "availability_reasons": [
+        "robolab_usd_rigid_body"
+      ],
+      "source_notes": [
+        "robolab class=condiment",
+        "usd=assets/objects/hope/bbq_sauce_bottle.usd"
+      ]
+    },
+    {
+      "asset_id": "ketchup_bottle",
+      "semantic_name": "bottle",
+      "category": "bottle",
+      "aliases": [
+        "bottle"
+      ],
+      "colors": [],
+      "materials": [],
+      "load_type": "rigid",
+      "asset_path": "/runtime/TacHarness/inputs/datasets/vendor/robolab/assets/objects/hope",
+      "models": [
+        {
+          "model_id": 0,
+          "model_path": "/runtime/TacHarness/inputs/datasets/vendor/robolab/assets/objects/hope/ketchup_bottle.usd",
+          "metadata_path": null,
+          "visual_path": "/runtime/TacHarness/inputs/datasets/vendor/robolab/assets/objects/hope/ketchup_bottle.usd",
+          "collision_path": "/runtime/TacHarness/inputs/datasets/vendor/robolab/assets/objects/hope/ketchup_bottle.usd",
+          "urdf_path": null,
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "dimensions_m": [
+            0.04336819797754288,
+            0.06451380252838135,
+            0.14860780537128448
+          ],
+          "mass_kg": 0.5,
+          "static_friction": 2.0,
+          "dynamic_friction": 2.0,
+          "restitution": null,
+          "footprint_shape": "circle",
+          "stable_pose_id": "robolab_ketchup_bottle_upright",
+          "stable_orientation_wxyz": [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "z_policy": "origin_on_table",
+          "is_static": false,
+          "articulation_joints": [],
+          "articulation_closed_qpos": [],
+          "articulation_open_qpos": [],
+          "usable": true,
+          "missing": []
+        }
+      ],
+      "available": true,
+      "availability_reasons": [
+        "robolab_usd_rigid_body"
+      ],
+      "source_notes": [
+        "robolab class=container",
+        "usd=assets/objects/hope/ketchup_bottle.usd"
+      ]
+    },
+    {
+      "asset_id": "mayonnaise_bottle",
+      "semantic_name": "bottle",
+      "category": "bottle",
+      "aliases": [
+        "bottle"
+      ],
+      "colors": [],
+      "materials": [],
+      "load_type": "rigid",
+      "asset_path": "/runtime/TacHarness/inputs/datasets/vendor/robolab/assets/objects/hope",
+      "models": [
+        {
+          "model_id": 0,
+          "model_path": "/runtime/TacHarness/inputs/datasets/vendor/robolab/assets/objects/hope/mayonnaise_bottle.usd",
+          "metadata_path": null,
+          "visual_path": "/runtime/TacHarness/inputs/datasets/vendor/robolab/assets/objects/hope/mayonnaise_bottle.usd",
+          "collision_path": "/runtime/TacHarness/inputs/datasets/vendor/robolab/assets/objects/hope/mayonnaise_bottle.usd",
+          "urdf_path": null,
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "dimensions_m": [
+            0.04103099927306175,
+            0.06454139947891235,
+            0.14790239930152893
+          ],
+          "mass_kg": 0.5,
+          "static_friction": 2.0,
+          "dynamic_friction": 2.0,
+          "restitution": null,
+          "footprint_shape": "circle",
+          "stable_pose_id": "robolab_mayonnaise_bottle_upright",
+          "stable_orientation_wxyz": [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "z_policy": "origin_on_table",
+          "is_static": false,
+          "articulation_joints": [],
+          "articulation_closed_qpos": [],
+          "articulation_open_qpos": [],
+          "usable": true,
+          "missing": []
+        }
+      ],
+      "available": true,
+      "availability_reasons": [
+        "robolab_usd_rigid_body"
+      ],
+      "source_notes": [
+        "robolab class=condiment",
+        "usd=assets/objects/hope/mayonnaise_bottle.usd"
+      ]
+    },
+    {
+      "asset_id": "mustard_bottle",
+      "semantic_name": "bottle",
+      "category": "bottle",
+      "aliases": [
+        "bottle"
+      ],
+      "colors": [],
+      "materials": [],
+      "load_type": "rigid",
+      "asset_path": "/runtime/TacHarness/inputs/datasets/vendor/robolab/assets/objects/hope",
+      "models": [
+        {
+          "model_id": 0,
+          "model_path": "/runtime/TacHarness/inputs/datasets/vendor/robolab/assets/objects/hope/mustard_bottle.usd",
+          "metadata_path": null,
+          "visual_path": "/runtime/TacHarness/inputs/datasets/vendor/robolab/assets/objects/hope/mustard_bottle.usd",
+          "collision_path": "/runtime/TacHarness/inputs/datasets/vendor/robolab/assets/objects/hope/mustard_bottle.usd",
+          "urdf_path": null,
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "dimensions_m": [
+            0.04857419803738594,
+            0.06513319909572601,
+            0.1600504070520401
+          ],
+          "mass_kg": 0.30000001192092896,
+          "static_friction": 2.0,
+          "dynamic_friction": 2.0,
+          "restitution": null,
+          "footprint_shape": "circle",
+          "stable_pose_id": "robolab_mustard_bottle_upright",
+          "stable_orientation_wxyz": [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "z_policy": "origin_on_table",
+          "is_static": false,
+          "articulation_joints": [],
+          "articulation_closed_qpos": [],
+          "articulation_open_qpos": [],
+          "usable": true,
+          "missing": []
+        }
+      ],
+      "available": true,
+      "availability_reasons": [
+        "robolab_usd_rigid_body"
+      ],
+      "source_notes": [
+        "robolab class=condiment",
+        "usd=assets/objects/hope/mustard_bottle.usd"
+      ]
+    },
+    {
+      "asset_id": "blackandbrassbowl_large",
+      "semantic_name": "bowl",
+      "category": "bowl",
+      "aliases": [
+        "bowl"
+      ],
+      "colors": [],
+      "materials": [],
+      "load_type": "rigid",
+      "asset_path": "/runtime/TacHarness/inputs/datasets/vendor/robolab/assets/objects/vomp/blackandbrassbowl_large",
+      "models": [
+        {
+          "model_id": 0,
+          "model_path": "/runtime/TacHarness/inputs/datasets/vendor/robolab/assets/objects/vomp/blackandbrassbowl_large/blackandbrassbowl_large.usd",
+          "metadata_path": null,
+          "visual_path": "/runtime/TacHarness/inputs/datasets/vendor/robolab/assets/objects/vomp/blackandbrassbowl_large/blackandbrassbowl_large.usd",
+          "collision_path": "/runtime/TacHarness/inputs/datasets/vendor/robolab/assets/objects/vomp/blackandbrassbowl_large/blackandbrassbowl_large.usd",
+          "urdf_path": null,
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "dimensions_m": [
+            0.30166055262088776,
+            0.30166056752204895,
+            0.1521650857393979
+          ],
+          "mass_kg": null,
+          "static_friction": 2.0,
+          "dynamic_friction": 2.0,
+          "restitution": null,
+          "footprint_shape": "circle",
+          "stable_pose_id": "robolab_blackandbrassbowl_large_upright",
+          "stable_orientation_wxyz": [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "z_policy": "origin_on_table",
+          "is_static": false,
+          "articulation_joints": [],
+          "articulation_closed_qpos": [],
+          "articulation_open_qpos": [],
+          "usable": true,
+          "missing": [],
+          "interior_dimensions_m": [
+            0.2262,
+            0.2262,
+            0.1217
+          ],
+          "interior_floor_z_offset_m": 0.0228
+        }
+      ],
+      "available": true,
+      "availability_reasons": [
+        "robolab_usd_rigid_body"
+      ],
+      "source_notes": [
+        "robolab class=dishware",
+        "usd=assets/objects/vomp/blackandbrassbowl_large/blackandbrassbowl_large.usd"
+      ]
+    },
+    {
+      "asset_id": "blackandbrassbowl_small",
+      "semantic_name": "bowl",
+      "category": "bowl",
+      "aliases": [
+        "bowl"
+      ],
+      "colors": [],
+      "materials": [],
+      "load_type": "rigid",
+      "asset_path": "/runtime/TacHarness/inputs/datasets/vendor/robolab/assets/objects/vomp/blackandbrassbowl_small",
+      "models": [
+        {
+          "model_id": 0,
+          "model_path": "/runtime/TacHarness/inputs/datasets/vendor/robolab/assets/objects/vomp/blackandbrassbowl_small/blackandbrassbowl_small.usd",
+          "metadata_path": null,
+          "visual_path": "/runtime/TacHarness/inputs/datasets/vendor/robolab/assets/objects/vomp/blackandbrassbowl_small/blackandbrassbowl_small.usd",
+          "collision_path": "/runtime/TacHarness/inputs/datasets/vendor/robolab/assets/objects/vomp/blackandbrassbowl_small/blackandbrassbowl_small.usd",
+          "urdf_path": null,
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "dimensions_m": [
+            0.18033016473054886,
+            0.18033017963171005,
+            0.10128233027353417
+          ],
+          "mass_kg": null,
+          "static_friction": 2.0,
+          "dynamic_friction": 2.0,
+          "restitution": null,
+          "footprint_shape": "circle",
+          "stable_pose_id": "robolab_blackandbrassbowl_small_upright",
+          "stable_orientation_wxyz": [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "z_policy": "origin_on_table",
+          "is_static": false,
+          "articulation_joints": [],
+          "articulation_closed_qpos": [],
+          "articulation_open_qpos": [],
+          "usable": true,
+          "missing": [],
+          "interior_dimensions_m": [
+            0.1352,
+            0.1352,
+            0.081
+          ],
+          "interior_floor_z_offset_m": 0.0152
+        }
+      ],
+      "available": true,
+      "availability_reasons": [
+        "robolab_usd_rigid_body"
+      ],
+      "source_notes": [
+        "robolab class=dishware",
+        "usd=assets/objects/vomp/blackandbrassbowl_small/blackandbrassbowl_small.usd"
+      ]
+    },
+    {
+      "asset_id": "bowl",
+      "semantic_name": "bowl",
+      "category": "bowl",
+      "aliases": [
+        "bowl"
+      ],
+      "colors": [],
+      "materials": [],
+      "load_type": "rigid",
+      "asset_path": "/runtime/TacHarness/inputs/datasets/vendor/robolab/assets/objects/ycb",
+      "models": [
+        {
+          "model_id": 0,
+          "model_path": "/runtime/TacHarness/inputs/datasets/vendor/robolab/assets/objects/ycb/bowl.usd",
+          "metadata_path": null,
+          "visual_path": "/runtime/TacHarness/inputs/datasets/vendor/robolab/assets/objects/ycb/bowl.usd",
+          "collision_path": "/runtime/TacHarness/inputs/datasets/vendor/robolab/assets/objects/ycb/bowl.usd",
+          "urdf_path": null,
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "dimensions_m": [
+            0.16144399344921112,
+            0.16111300885677338,
+            0.05496999993920326
+          ],
+          "mass_kg": 0.5,
+          "static_friction": 2.0,
+          "dynamic_friction": 2.0,
+          "restitution": null,
+          "footprint_shape": "circle",
+          "stable_pose_id": "robolab_bowl_upright",
+          "stable_orientation_wxyz": [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "z_policy": "origin_on_table",
+          "is_static": false,
+          "articulation_joints": [],
+          "articulation_closed_qpos": [],
+          "articulation_open_qpos": [],
+          "usable": true,
+          "missing": [],
+          "interior_dimensions_m": [
+            0.1211,
+            0.1208,
+            0.044
+          ],
+          "interior_floor_z_offset_m": 0.0082
+        }
+      ],
+      "available": true,
+      "availability_reasons": [
+        "robolab_usd_rigid_body"
+      ],
+      "source_notes": [
+        "robolab class=kitchenware",
+        "usd=assets/objects/ycb/bowl.usd"
+      ]
+    },
+    {
+      "asset_id": "serving_bowl",
+      "semantic_name": "bowl",
+      "category": "bowl",
+      "aliases": [
+        "bowl"
+      ],
+      "colors": [],
+      "materials": [],
+      "load_type": "rigid",
+      "asset_path": "/runtime/TacHarness/inputs/datasets/vendor/robolab/assets/objects/vomp/serving_bowl",
+      "models": [
+        {
+          "model_id": 0,
+          "model_path": "/runtime/TacHarness/inputs/datasets/vendor/robolab/assets/objects/vomp/serving_bowl/serving_bowl.usd",
+          "metadata_path": null,
+          "visual_path": "/runtime/TacHarness/inputs/datasets/vendor/robolab/assets/objects/vomp/serving_bowl/serving_bowl.usd",
+          "collision_path": "/runtime/TacHarness/inputs/datasets/vendor/robolab/assets/objects/vomp/serving_bowl/serving_bowl.usd",
+          "urdf_path": null,
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "dimensions_m": [
+            0.15968337655067444,
+            0.15968333929777145,
+            0.05203049196279608
+          ],
+          "mass_kg": null,
+          "static_friction": 2.0,
+          "dynamic_friction": 2.0,
+          "restitution": null,
+          "footprint_shape": "circle",
+          "stable_pose_id": "robolab_serving_bowl_upright",
+          "stable_orientation_wxyz": [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "z_policy": "origin_on_table",
+          "is_static": false,
+          "articulation_joints": [],
+          "articulation_closed_qpos": [],
+          "articulation_open_qpos": [],
+          "usable": true,
+          "missing": [],
+          "interior_dimensions_m": [
+            0.1198,
+            0.1198,
+            0.0416
+          ],
+          "interior_floor_z_offset_m": 0.0078
+        }
+      ],
+      "available": true,
+      "availability_reasons": [
+        "robolab_usd_rigid_body"
+      ],
+      "source_notes": [
+        "robolab class=dishware",
+        "usd=assets/objects/vomp/serving_bowl/serving_bowl.usd"
+      ]
+    },
+    {
+      "asset_id": "wooden_bowl",
+      "semantic_name": "bowl",
+      "category": "bowl",
+      "aliases": [
+        "bowl"
+      ],
+      "colors": [],
+      "materials": [],
+      "load_type": "rigid",
+      "asset_path": "/runtime/TacHarness/inputs/datasets/vendor/robolab/assets/objects/hot3d",
+      "models": [
+        {
+          "model_id": 0,
+          "model_path": "/runtime/TacHarness/inputs/datasets/vendor/robolab/assets/objects/hot3d/wooden_bowl.usd",
+          "metadata_path": null,
+          "visual_path": "/runtime/TacHarness/inputs/datasets/vendor/robolab/assets/objects/hot3d/wooden_bowl.usd",
+          "collision_path": "/runtime/TacHarness/inputs/datasets/vendor/robolab/assets/objects/hot3d/wooden_bowl.usd",
+          "urdf_path": null,
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "dimensions_m": [
+            0.2800358980894089,
+            0.280058890581131,
+            0.12999018004484247
+          ],
+          "mass_kg": 0.5,
+          "static_friction": 2.0,
+          "dynamic_friction": 2.0,
+          "restitution": null,
+          "footprint_shape": "circle",
+          "stable_pose_id": "robolab_wooden_bowl_upright",
+          "stable_orientation_wxyz": [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "z_policy": "origin_on_table",
+          "is_static": false,
+          "articulation_joints": [],
+          "articulation_closed_qpos": [],
+          "articulation_open_qpos": [],
+          "usable": true,
+          "missing": [],
+          "interior_dimensions_m": [
+            0.21,
+            0.21,
+            0.104
+          ],
+          "interior_floor_z_offset_m": 0.0195
+        }
+      ],
+      "available": true,
+      "availability_reasons": [
+        "robolab_usd_rigid_body"
+      ],
+      "source_notes": [
+        "robolab class=kitchenware",
+        "usd=assets/objects/hot3d/wooden_bowl.usd"
+      ]
+    },
+    {
+      "asset_id": "canned_mushrooms",
+      "semantic_name": "can",
+      "category": "can",
+      "aliases": [
+        "can",
+        "soda can",
+        "cola can"
+      ],
+      "colors": [],
+      "materials": [],
+      "load_type": "rigid",
+      "asset_path": "/runtime/TacHarness/inputs/datasets/vendor/robolab/assets/objects/hope",
+      "models": [
+        {
+          "model_id": 0,
+          "model_path": "/runtime/TacHarness/inputs/datasets/vendor/robolab/assets/objects/hope/canned_mushrooms.usd",
+          "metadata_path": null,
+          "visual_path": "/runtime/TacHarness/inputs/datasets/vendor/robolab/assets/objects/hope/canned_mushrooms.usd",
+          "collision_path": "/runtime/TacHarness/inputs/datasets/vendor/robolab/assets/objects/hope/canned_mushrooms.usd",
+          "urdf_path": null,
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "dimensions_m": [
+            0.0707985982298851,
+            0.06586979329586029,
+            0.033321600407361984
+          ],
+          "mass_kg": 0.4000000059604645,
+          "static_friction": 2.0,
+          "dynamic_friction": 2.0,
+          "restitution": null,
+          "footprint_shape": "circle",
+          "stable_pose_id": "robolab_canned_mushrooms_upright",
+          "stable_orientation_wxyz": [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "z_policy": "origin_on_table",
+          "is_static": false,
+          "articulation_joints": [],
+          "articulation_closed_qpos": [],
+          "articulation_open_qpos": [],
+          "usable": true,
+          "missing": []
+        }
+      ],
+      "available": true,
+      "availability_reasons": [
+        "robolab_usd_rigid_body"
+      ],
+      "source_notes": [
+        "robolab class=vegetable",
+        "usd=assets/objects/hope/canned_mushrooms.usd"
+      ]
+    },
+    {
+      "asset_id": "canned_peaches",
+      "semantic_name": "can",
+      "category": "can",
+      "aliases": [
+        "can",
+        "soda can",
+        "cola can"
+      ],
+      "colors": [],
+      "materials": [],
+      "load_type": "rigid",
+      "asset_path": "/runtime/TacHarness/inputs/datasets/vendor/robolab/assets/objects/hope",
+      "models": [
+        {
+          "model_id": 0,
+          "model_path": "/runtime/TacHarness/inputs/datasets/vendor/robolab/assets/objects/hope/canned_peaches.usd",
+          "metadata_path": null,
+          "visual_path": "/runtime/TacHarness/inputs/datasets/vendor/robolab/assets/objects/hope/canned_peaches.usd",
+          "collision_path": "/runtime/TacHarness/inputs/datasets/vendor/robolab/assets/objects/hope/canned_peaches.usd",
+          "urdf_path": null,
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "dimensions_m": [
+            0.07096219807863235,
+            0.0659262016415596,
+            0.057780999690294266
+          ],
+          "mass_kg": 0.3499999940395355,
+          "static_friction": 2.0,
+          "dynamic_friction": 2.0,
+          "restitution": null,
+          "footprint_shape": "circle",
+          "stable_pose_id": "robolab_canned_peaches_upright",
+          "stable_orientation_wxyz": [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "z_policy": "origin_on_table",
+          "is_static": false,
+          "articulation_joints": [],
+          "articulation_closed_qpos": [],
+          "articulation_open_qpos": [],
+          "usable": true,
+          "missing": []
+        }
+      ],
+      "available": true,
+      "availability_reasons": [
+        "robolab_usd_rigid_body"
+      ],
+      "source_notes": [
+        "robolab class=fruit",
+        "usd=assets/objects/hope/canned_peaches.usd"
+      ]
+    },
+    {
+      "asset_id": "canned_tuna",
+      "semantic_name": "can",
+      "category": "can",
+      "aliases": [
+        "can",
+        "soda can",
+        "cola can"
+      ],
+      "colors": [],
+      "materials": [],
+      "load_type": "rigid",
+      "asset_path": "/runtime/TacHarness/inputs/datasets/vendor/robolab/assets/objects/hope",
+      "models": [
+        {
+          "model_id": 0,
+          "model_path": "/runtime/TacHarness/inputs/datasets/vendor/robolab/assets/objects/hope/canned_tuna.usd",
+          "metadata_path": null,
+          "visual_path": "/runtime/TacHarness/inputs/datasets/vendor/robolab/assets/objects/hope/canned_tuna.usd",
+          "collision_path": "/runtime/TacHarness/inputs/datasets/vendor/robolab/assets/objects/hope/canned_tuna.usd",
+          "urdf_path": null,
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "dimensions_m": [
+            0.07080639898777008,
+            0.06583680212497711,
+            0.03257080167531967
+          ],
+          "mass_kg": 0.18000000715255737,
+          "static_friction": 2.0,
+          "dynamic_friction": 2.0,
+          "restitution": null,
+          "footprint_shape": "circle",
+          "stable_pose_id": "robolab_canned_tuna_upright",
+          "stable_orientation_wxyz": [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "z_policy": "origin_on_table",
+          "is_static": false,
+          "articulation_joints": [],
+          "articulation_closed_qpos": [],
+          "articulation_open_qpos": [],
+          "usable": true,
+          "missing": []
+        }
+      ],
+      "available": true,
+      "availability_reasons": [
+        "robolab_usd_rigid_body"
+      ],
+      "source_notes": [
+        "robolab class=food",
+        "usd=assets/objects/hope/canned_tuna.usd"
+      ]
+    },
+    {
+      "asset_id": "coffee_can",
+      "semantic_name": "can",
+      "category": "can",
+      "aliases": [
+        "can",
+        "soda can",
+        "cola can"
+      ],
+      "colors": [],
+      "materials": [],
+      "load_type": "rigid",
+      "asset_path": "/runtime/TacHarness/inputs/datasets/vendor/robolab/assets/objects/ycb",
+      "models": [
+        {
+          "model_id": 0,
+          "model_path": "/runtime/TacHarness/inputs/datasets/vendor/robolab/assets/objects/ycb/coffee_can.usd",
+          "metadata_path": null,
+          "visual_path": "/runtime/TacHarness/inputs/datasets/vendor/robolab/assets/objects/ycb/coffee_can.usd",
+          "collision_path": "/runtime/TacHarness/inputs/datasets/vendor/robolab/assets/objects/ycb/coffee_can.usd",
+          "urdf_path": null,
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "dimensions_m": [
+            0.10228899866342545,
+            0.10244599729776382,
+            0.1401439905166626
+          ],
+          "mass_kg": 0.296999990940094,
+          "static_friction": 2.0,
+          "dynamic_friction": 2.0,
+          "restitution": null,
+          "footprint_shape": "circle",
+          "stable_pose_id": "robolab_coffee_can_upright",
+          "stable_orientation_wxyz": [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "z_policy": "origin_on_table",
+          "is_static": false,
+          "articulation_joints": [],
+          "articulation_closed_qpos": [],
+          "articulation_open_qpos": [],
+          "usable": true,
+          "missing": []
+        }
+      ],
+      "available": true,
+      "availability_reasons": [
+        "robolab_usd_rigid_body"
+      ],
+      "source_notes": [
+        "robolab class=food",
+        "usd=assets/objects/ycb/coffee_can.usd"
+      ]
+    },
+    {
+      "asset_id": "corn_can",
+      "semantic_name": "can",
+      "category": "can",
+      "aliases": [
+        "can",
+        "soda can",
+        "cola can"
+      ],
+      "colors": [],
+      "materials": [],
+      "load_type": "rigid",
+      "asset_path": "/runtime/TacHarness/inputs/datasets/vendor/robolab/assets/objects/hope",
+      "models": [
+        {
+          "model_id": 0,
+          "model_path": "/runtime/TacHarness/inputs/datasets/vendor/robolab/assets/objects/hope/corn_can.usd",
+          "metadata_path": null,
+          "visual_path": "/runtime/TacHarness/inputs/datasets/vendor/robolab/assets/objects/hope/corn_can.usd",
+          "collision_path": "/runtime/TacHarness/inputs/datasets/vendor/robolab/assets/objects/hope/corn_can.usd",
+          "urdf_path": null,
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "dimensions_m": [
+            0.07090840488672256,
+            0.06610199809074402,
+            0.05803919956088066
+          ],
+          "mass_kg": 0.3499999940395355,
+          "static_friction": 2.0,
+          "dynamic_friction": 2.0,
+          "restitution": null,
+          "footprint_shape": "circle",
+          "stable_pose_id": "robolab_corn_can_upright",
+          "stable_orientation_wxyz": [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "z_policy": "origin_on_table",
+          "is_static": false,
+          "articulation_joints": [],
+          "articulation_closed_qpos": [],
+          "articulation_open_qpos": [],
+          "usable": true,
+          "missing": []
+        }
+      ],
+      "available": true,
+      "availability_reasons": [
+        "robolab_usd_rigid_body"
+      ],
+      "source_notes": [
+        "robolab class=food",
+        "usd=assets/objects/hope/corn_can.usd"
+      ]
+    },
+    {
+      "asset_id": "green_beans_can",
+      "semantic_name": "can",
+      "category": "can",
+      "aliases": [
+        "can",
+        "soda can",
+        "cola can"
+      ],
+      "colors": [],
+      "materials": [],
+      "load_type": "rigid",
+      "asset_path": "/runtime/TacHarness/inputs/datasets/vendor/robolab/assets/objects/hope",
+      "models": [
+        {
+          "model_id": 0,
+          "model_path": "/runtime/TacHarness/inputs/datasets/vendor/robolab/assets/objects/hope/green_beans_can.usd",
+          "metadata_path": null,
+          "visual_path": "/runtime/TacHarness/inputs/datasets/vendor/robolab/assets/objects/hope/green_beans_can.usd",
+          "collision_path": "/runtime/TacHarness/inputs/datasets/vendor/robolab/assets/objects/hope/green_beans_can.usd",
+          "urdf_path": null,
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "dimensions_m": [
+            0.07060800492763519,
+            0.06573179364204407,
+            0.0575874000787735
+          ],
+          "mass_kg": 0.4000000059604645,
+          "static_friction": 2.0,
+          "dynamic_friction": 2.0,
+          "restitution": null,
+          "footprint_shape": "circle",
+          "stable_pose_id": "robolab_green_beans_can_upright",
+          "stable_orientation_wxyz": [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "z_policy": "origin_on_table",
+          "is_static": false,
+          "articulation_joints": [],
+          "articulation_closed_qpos": [],
+          "articulation_open_qpos": [],
+          "usable": true,
+          "missing": []
+        }
+      ],
+      "available": true,
+      "availability_reasons": [
+        "robolab_usd_rigid_body"
+      ],
+      "source_notes": [
+        "robolab class=food",
+        "usd=assets/objects/hope/green_beans_can.usd"
+      ]
+    },
+    {
+      "asset_id": "pineapple_slices_can",
+      "semantic_name": "can",
+      "category": "can",
+      "aliases": [
+        "can",
+        "soda can",
+        "cola can"
+      ],
+      "colors": [],
+      "materials": [],
+      "load_type": "rigid",
+      "asset_path": "/runtime/TacHarness/inputs/datasets/vendor/robolab/assets/objects/hope",
+      "models": [
+        {
+          "model_id": 0,
+          "model_path": "/runtime/TacHarness/inputs/datasets/vendor/robolab/assets/objects/hope/pineapple_slices_can.usd",
+          "metadata_path": null,
+          "visual_path": "/runtime/TacHarness/inputs/datasets/vendor/robolab/assets/objects/hope/pineapple_slices_can.usd",
+          "collision_path": "/runtime/TacHarness/inputs/datasets/vendor/robolab/assets/objects/hope/pineapple_slices_can.usd",
+          "urdf_path": null,
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "dimensions_m": [
+            0.06959940493106842,
+            0.06567500531673431,
+            0.057622600346803665
+          ],
+          "mass_kg": 0.5,
+          "static_friction": 2.0,
+          "dynamic_friction": 2.0,
+          "restitution": null,
+          "footprint_shape": "circle",
+          "stable_pose_id": "robolab_pineapple_slices_can_upright",
+          "stable_orientation_wxyz": [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "z_policy": "origin_on_table",
+          "is_static": false,
+          "articulation_joints": [],
+          "articulation_closed_qpos": [],
+          "articulation_open_qpos": [],
+          "usable": true,
+          "missing": []
+        }
+      ],
+      "available": true,
+      "availability_reasons": [
+        "robolab_usd_rigid_body"
+      ],
+      "source_notes": [
+        "robolab class=food",
+        "usd=assets/objects/hope/pineapple_slices_can.usd"
+      ]
+    },
+    {
+      "asset_id": "soup_can",
+      "semantic_name": "can",
+      "category": "can",
+      "aliases": [
+        "can",
+        "soda can",
+        "cola can"
+      ],
+      "colors": [],
+      "materials": [],
+      "load_type": "rigid",
+      "asset_path": "/runtime/TacHarness/inputs/datasets/vendor/robolab/assets/objects/hot3d",
+      "models": [
+        {
+          "model_id": 0,
+          "model_path": "/runtime/TacHarness/inputs/datasets/vendor/robolab/assets/objects/hot3d/soup_can.usd",
+          "metadata_path": null,
+          "visual_path": "/runtime/TacHarness/inputs/datasets/vendor/robolab/assets/objects/hot3d/soup_can.usd",
+          "collision_path": "/runtime/TacHarness/inputs/datasets/vendor/robolab/assets/objects/hot3d/soup_can.usd",
+          "urdf_path": null,
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "dimensions_m": [
+            0.0706573911011219,
+            0.06581921689212325,
+            0.08179608219506919
+          ],
+          "mass_kg": 0.3499999940395355,
+          "static_friction": 2.0,
+          "dynamic_friction": 2.0,
+          "restitution": null,
+          "footprint_shape": "circle",
+          "stable_pose_id": "robolab_soup_can_upright",
+          "stable_orientation_wxyz": [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "z_policy": "origin_on_table",
+          "is_static": false,
+          "articulation_joints": [],
+          "articulation_closed_qpos": [],
+          "articulation_open_qpos": [],
+          "usable": true,
+          "missing": []
+        }
+      ],
+      "available": true,
+      "availability_reasons": [
+        "robolab_usd_rigid_body"
+      ],
+      "source_notes": [
+        "robolab class=container",
+        "usd=assets/objects/hot3d/soup_can.usd"
+      ]
+    },
+    {
+      "asset_id": "spam_can",
+      "semantic_name": "can",
+      "category": "can",
+      "aliases": [
+        "can",
+        "soda can",
+        "cola can"
+      ],
+      "colors": [],
+      "materials": [],
+      "load_type": "rigid",
+      "asset_path": "/runtime/TacHarness/inputs/datasets/vendor/robolab/assets/objects/ycb",
+      "models": [
+        {
+          "model_id": 0,
+          "model_path": "/runtime/TacHarness/inputs/datasets/vendor/robolab/assets/objects/ycb/spam_can.usd",
+          "metadata_path": null,
+          "visual_path": "/runtime/TacHarness/inputs/datasets/vendor/robolab/assets/objects/ycb/spam_can.usd",
+          "collision_path": "/runtime/TacHarness/inputs/datasets/vendor/robolab/assets/objects/ycb/spam_can.usd",
+          "urdf_path": null,
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "dimensions_m": [
+            0.10212299972772598,
+            0.06032199785113335,
+            0.08363699913024902
+          ],
+          "mass_kg": 0.3499999940395355,
+          "static_friction": 2.0,
+          "dynamic_friction": 2.0,
+          "restitution": null,
+          "footprint_shape": "circle",
+          "stable_pose_id": "robolab_spam_can_upright",
+          "stable_orientation_wxyz": [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "z_policy": "origin_on_table",
+          "is_static": false,
+          "articulation_joints": [],
+          "articulation_closed_qpos": [],
+          "articulation_open_qpos": [],
+          "usable": true,
+          "missing": []
+        }
+      ],
+      "available": true,
+      "availability_reasons": [
+        "robolab_usd_rigid_body"
+      ],
+      "source_notes": [
+        "robolab class=food",
+        "usd=assets/objects/ycb/spam_can.usd"
+      ]
+    },
+    {
+      "asset_id": "tomato_sauce_can",
+      "semantic_name": "can",
+      "category": "can",
+      "aliases": [
+        "can",
+        "soda can",
+        "cola can"
+      ],
+      "colors": [],
+      "materials": [],
+      "load_type": "rigid",
+      "asset_path": "/runtime/TacHarness/inputs/datasets/vendor/robolab/assets/objects/hope",
+      "models": [
+        {
+          "model_id": 0,
+          "model_path": "/runtime/TacHarness/inputs/datasets/vendor/robolab/assets/objects/hope/tomato_sauce_can.usd",
+          "metadata_path": null,
+          "visual_path": "/runtime/TacHarness/inputs/datasets/vendor/robolab/assets/objects/hope/tomato_sauce_can.usd",
+          "collision_path": "/runtime/TacHarness/inputs/datasets/vendor/robolab/assets/objects/hope/tomato_sauce_can.usd",
+          "urdf_path": null,
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "dimensions_m": [
+            0.070198193192482,
+            0.06646980345249176,
+            0.08284680545330048
+          ],
+          "mass_kg": 0.4000000059604645,
+          "static_friction": 2.0,
+          "dynamic_friction": 2.0,
+          "restitution": null,
+          "footprint_shape": "circle",
+          "stable_pose_id": "robolab_tomato_sauce_can_upright",
+          "stable_orientation_wxyz": [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "z_policy": "origin_on_table",
+          "is_static": false,
+          "articulation_joints": [],
+          "articulation_closed_qpos": [],
+          "articulation_open_qpos": [],
+          "usable": true,
+          "missing": []
+        }
+      ],
+      "available": true,
+      "availability_reasons": [
+        "robolab_usd_rigid_body"
+      ],
+      "source_notes": [
+        "robolab class=food",
+        "usd=assets/objects/hope/tomato_sauce_can.usd"
+      ]
+    },
+    {
+      "asset_id": "tomato_soup_can",
+      "semantic_name": "can",
+      "category": "can",
+      "aliases": [
+        "can",
+        "soda can",
+        "cola can"
+      ],
+      "colors": [],
+      "materials": [],
+      "load_type": "rigid",
+      "asset_path": "/runtime/TacHarness/inputs/datasets/vendor/robolab/assets/objects/ycb",
+      "models": [
+        {
+          "model_id": 0,
+          "model_path": "/runtime/TacHarness/inputs/datasets/vendor/robolab/assets/objects/ycb/tomato_soup_can.usd",
+          "metadata_path": null,
+          "visual_path": "/runtime/TacHarness/inputs/datasets/vendor/robolab/assets/objects/ycb/tomato_soup_can.usd",
+          "collision_path": "/runtime/TacHarness/inputs/datasets/vendor/robolab/assets/objects/ycb/tomato_soup_can.usd",
+          "urdf_path": null,
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "dimensions_m": [
+            0.06785399466753006,
+            0.0677499994635582,
+            0.10203700512647629
+          ],
+          "mass_kg": 0.44999998807907104,
+          "static_friction": 2.0,
+          "dynamic_friction": 2.0,
+          "restitution": null,
+          "footprint_shape": "circle",
+          "stable_pose_id": "robolab_tomato_soup_can_upright",
+          "stable_orientation_wxyz": [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "z_policy": "origin_on_table",
+          "is_static": false,
+          "articulation_joints": [],
+          "articulation_closed_qpos": [],
+          "articulation_open_qpos": [],
+          "usable": true,
+          "missing": []
+        }
+      ],
+      "available": true,
+      "availability_reasons": [
+        "robolab_usd_rigid_body"
+      ],
+      "source_notes": [
+        "robolab class=food",
+        "usd=assets/objects/ycb/tomato_soup_can.usd"
+      ]
+    },
+    {
+      "asset_id": "tuna_can",
+      "semantic_name": "can",
+      "category": "can",
+      "aliases": [
+        "can",
+        "soda can",
+        "cola can"
+      ],
+      "colors": [],
+      "materials": [],
+      "load_type": "rigid",
+      "asset_path": "/runtime/TacHarness/inputs/datasets/vendor/robolab/assets/objects/ycb",
+      "models": [
+        {
+          "model_id": 0,
+          "model_path": "/runtime/TacHarness/inputs/datasets/vendor/robolab/assets/objects/ycb/tuna_can.usd",
+          "metadata_path": null,
+          "visual_path": "/runtime/TacHarness/inputs/datasets/vendor/robolab/assets/objects/ycb/tuna_can.usd",
+          "collision_path": "/runtime/TacHarness/inputs/datasets/vendor/robolab/assets/objects/ycb/tuna_can.usd",
+          "urdf_path": null,
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "dimensions_m": [
+            0.0855100005865097,
+            0.08561399579048157,
+            0.033511001616716385
+          ],
+          "mass_kg": 0.20000000298023224,
+          "static_friction": 2.0,
+          "dynamic_friction": 2.0,
+          "restitution": null,
+          "footprint_shape": "circle",
+          "stable_pose_id": "robolab_tuna_can_upright",
+          "stable_orientation_wxyz": [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "z_policy": "origin_on_table",
+          "is_static": false,
+          "articulation_joints": [],
+          "articulation_closed_qpos": [],
+          "articulation_open_qpos": [],
+          "usable": true,
+          "missing": []
+        }
+      ],
+      "available": true,
+      "availability_reasons": [
+        "robolab_usd_rigid_body"
+      ],
+      "source_notes": [
+        "robolab class=food",
+        "usd=assets/objects/ycb/tuna_can.usd"
+      ]
+    },
+    {
+      "asset_id": "gregorys_coffee_cup",
+      "semantic_name": "cup",
+      "category": "cup",
+      "aliases": [
+        "cup"
+      ],
+      "colors": [],
+      "materials": [],
+      "load_type": "rigid",
+      "asset_path": "/runtime/TacHarness/inputs/datasets/vendor/robolab/assets/objects/objaverse",
+      "models": [
+        {
+          "model_id": 0,
+          "model_path": "/runtime/TacHarness/inputs/datasets/vendor/robolab/assets/objects/objaverse/gregorys_coffee_cup.usd",
+          "metadata_path": null,
+          "visual_path": "/runtime/TacHarness/inputs/datasets/vendor/robolab/assets/objects/objaverse/gregorys_coffee_cup.usd",
+          "collision_path": "/runtime/TacHarness/inputs/datasets/vendor/robolab/assets/objects/objaverse/gregorys_coffee_cup.usd",
+          "urdf_path": null,
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "dimensions_m": [
+            0.07010170302552687,
+            0.07009460888074415,
+            0.10999999940395355
+          ],
+          "mass_kg": null,
+          "static_friction": null,
+          "dynamic_friction": null,
+          "restitution": null,
+          "footprint_shape": "circle",
+          "stable_pose_id": "robolab_gregorys_coffee_cup_upright",
+          "stable_orientation_wxyz": [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "z_policy": "origin_on_table",
+          "is_static": false,
+          "articulation_joints": [],
+          "articulation_closed_qpos": [],
+          "articulation_open_qpos": [],
+          "usable": true,
+          "missing": []
+        }
+      ],
+      "available": true,
+      "availability_reasons": [
+        "robolab_usd_rigid_body"
+      ],
+      "source_notes": [
+        "robolab class=",
+        "usd=assets/objects/objaverse/gregorys_coffee_cup.usd"
+      ]
+    },
+    {
+      "asset_id": "yogurt_cup",
+      "semantic_name": "cup",
+      "category": "cup",
+      "aliases": [
+        "cup"
+      ],
+      "colors": [],
+      "materials": [],
+      "load_type": "rigid",
+      "asset_path": "/runtime/TacHarness/inputs/datasets/vendor/robolab/assets/objects/hope",
+      "models": [
+        {
+          "model_id": 0,
+          "model_path": "/runtime/TacHarness/inputs/datasets/vendor/robolab/assets/objects/hope/yogurt_cup.usd",
+          "metadata_path": null,
+          "visual_path": "/runtime/TacHarness/inputs/datasets/vendor/robolab/assets/objects/hope/yogurt_cup.usd",
+          "collision_path": "/runtime/TacHarness/inputs/datasets/vendor/robolab/assets/objects/hope/yogurt_cup.usd",
+          "urdf_path": null,
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "dimensions_m": [
+            0.06796199828386307,
+            0.06791539490222931,
+            0.053676996380090714
+          ],
+          "mass_kg": 0.20000000298023224,
+          "static_friction": 2.0,
+          "dynamic_friction": 2.0,
+          "restitution": null,
+          "footprint_shape": "circle",
+          "stable_pose_id": "robolab_yogurt_cup_upright",
+          "stable_orientation_wxyz": [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "z_policy": "origin_on_table",
+          "is_static": false,
+          "articulation_joints": [],
+          "articulation_closed_qpos": [],
+          "articulation_open_qpos": [],
+          "usable": true,
+          "missing": []
+        }
+      ],
+      "available": true,
+      "availability_reasons": [
+        "robolab_usd_rigid_body"
+      ],
+      "source_notes": [
+        "robolab class=food",
+        "usd=assets/objects/hope/yogurt_cup.usd"
+      ]
+    },
+    {
+      "asset_id": "ceramic_mug",
+      "semantic_name": "mug",
+      "category": "mug",
+      "aliases": [
+        "mug",
+        "coffee mug"
+      ],
+      "colors": [],
+      "materials": [],
+      "load_type": "rigid",
+      "asset_path": "/runtime/TacHarness/inputs/datasets/vendor/robolab/assets/objects/hot3d",
+      "models": [
+        {
+          "model_id": 0,
+          "model_path": "/runtime/TacHarness/inputs/datasets/vendor/robolab/assets/objects/hot3d/ceramic_mug.usd",
+          "metadata_path": null,
+          "visual_path": "/runtime/TacHarness/inputs/datasets/vendor/robolab/assets/objects/hot3d/ceramic_mug.usd",
+          "collision_path": "/runtime/TacHarness/inputs/datasets/vendor/robolab/assets/objects/hot3d/ceramic_mug.usd",
+          "urdf_path": null,
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "dimensions_m": [
+            0.09695964679121971,
+            0.1272139810025692,
+            0.08409243822097781
+          ],
+          "mass_kg": 0.5,
+          "static_friction": 2.0,
+          "dynamic_friction": 2.0,
+          "restitution": null,
+          "footprint_shape": "circle",
+          "stable_pose_id": "robolab_ceramic_mug_upright",
+          "stable_orientation_wxyz": [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "z_policy": "origin_on_table",
+          "is_static": false,
+          "articulation_joints": [],
+          "articulation_closed_qpos": [],
+          "articulation_open_qpos": [],
+          "usable": true,
+          "missing": []
+        }
+      ],
+      "available": true,
+      "availability_reasons": [
+        "robolab_usd_rigid_body"
+      ],
+      "source_notes": [
+        "robolab class=kitchenware",
+        "usd=assets/objects/hot3d/ceramic_mug.usd"
+      ]
+    },
+    {
+      "asset_id": "mug",
+      "semantic_name": "mug",
+      "category": "mug",
+      "aliases": [
+        "mug",
+        "coffee mug"
+      ],
+      "colors": [],
+      "materials": [],
+      "load_type": "rigid",
+      "asset_path": "/runtime/TacHarness/inputs/datasets/vendor/robolab/assets/objects/hot3d",
+      "models": [
+        {
+          "model_id": 0,
+          "model_path": "/runtime/TacHarness/inputs/datasets/vendor/robolab/assets/objects/hot3d/mug.usd",
+          "metadata_path": null,
+          "visual_path": "/runtime/TacHarness/inputs/datasets/vendor/robolab/assets/objects/hot3d/mug.usd",
+          "collision_path": "/runtime/TacHarness/inputs/datasets/vendor/robolab/assets/objects/hot3d/mug.usd",
+          "urdf_path": null,
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "dimensions_m": [
+            0.11613485589623451,
+            0.09081174805760386,
+            0.09155625106359369
+          ],
+          "mass_kg": 0.25,
+          "static_friction": 2.0,
+          "dynamic_friction": 2.0,
+          "restitution": null,
+          "footprint_shape": "circle",
+          "stable_pose_id": "robolab_mug_upright",
+          "stable_orientation_wxyz": [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "z_policy": "origin_on_table",
+          "is_static": false,
+          "articulation_joints": [],
+          "articulation_closed_qpos": [],
+          "articulation_open_qpos": [],
+          "usable": true,
+          "missing": []
+        }
+      ],
+      "available": true,
+      "availability_reasons": [
+        "robolab_usd_rigid_body"
+      ],
+      "source_notes": [
+        "robolab class=kitchenware",
+        "usd=assets/objects/hot3d/mug.usd"
+      ]
+    },
+    {
+      "asset_id": "plate_large",
+      "semantic_name": "plate",
+      "category": "plate",
+      "aliases": [
+        "plate",
+        "dish"
+      ],
+      "colors": [],
+      "materials": [],
+      "load_type": "rigid",
+      "asset_path": "/runtime/TacHarness/inputs/datasets/vendor/robolab/assets/objects/vomp/plate_large",
+      "models": [
+        {
+          "model_id": 0,
+          "model_path": "/runtime/TacHarness/inputs/datasets/vendor/robolab/assets/objects/vomp/plate_large/plate_large.usd",
+          "metadata_path": null,
+          "visual_path": "/runtime/TacHarness/inputs/datasets/vendor/robolab/assets/objects/vomp/plate_large/plate_large.usd",
+          "collision_path": "/runtime/TacHarness/inputs/datasets/vendor/robolab/assets/objects/vomp/plate_large/plate_large.usd",
+          "urdf_path": null,
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "dimensions_m": [
+            0.3308236300945282,
+            0.33082374930381775,
+            0.02581329201348126
+          ],
+          "mass_kg": null,
+          "static_friction": 2.0,
+          "dynamic_friction": 2.0,
+          "restitution": null,
+          "footprint_shape": "circle",
+          "stable_pose_id": "robolab_plate_large_upright",
+          "stable_orientation_wxyz": [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "z_policy": "origin_on_table",
+          "is_static": false,
+          "articulation_joints": [],
+          "articulation_closed_qpos": [],
+          "articulation_open_qpos": [],
+          "usable": true,
+          "missing": [],
+          "support_surface_shape": "circle",
+          "support_surface_dimensions_m": [
+            0.1985,
+            0.1985
+          ],
+          "support_surface_z_offset_m": 0.0258
+        }
+      ],
+      "available": true,
+      "availability_reasons": [
+        "robolab_usd_rigid_body"
+      ],
+      "source_notes": [
+        "robolab class=dishware",
+        "usd=assets/objects/vomp/plate_large/plate_large.usd"
+      ]
+    },
+    {
+      "asset_id": "plate_small",
+      "semantic_name": "plate",
+      "category": "plate",
+      "aliases": [
+        "plate",
+        "dish"
+      ],
+      "colors": [],
+      "materials": [],
+      "load_type": "rigid",
+      "asset_path": "/runtime/TacHarness/inputs/datasets/vendor/robolab/assets/objects/vomp/plate_small",
+      "models": [
+        {
+          "model_id": 0,
+          "model_path": "/runtime/TacHarness/inputs/datasets/vendor/robolab/assets/objects/vomp/plate_small/plate_small.usd",
+          "metadata_path": null,
+          "visual_path": "/runtime/TacHarness/inputs/datasets/vendor/robolab/assets/objects/vomp/plate_small/plate_small.usd",
+          "collision_path": "/runtime/TacHarness/inputs/datasets/vendor/robolab/assets/objects/vomp/plate_small/plate_small.usd",
+          "urdf_path": null,
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "dimensions_m": [
+            0.29762938618659973,
+            0.2976294159889221,
+            0.02115129895537393
+          ],
+          "mass_kg": null,
+          "static_friction": 2.0,
+          "dynamic_friction": 2.0,
+          "restitution": null,
+          "footprint_shape": "circle",
+          "stable_pose_id": "robolab_plate_small_upright",
+          "stable_orientation_wxyz": [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "z_policy": "origin_on_table",
+          "is_static": false,
+          "articulation_joints": [],
+          "articulation_closed_qpos": [],
+          "articulation_open_qpos": [],
+          "usable": true,
+          "missing": [],
+          "support_surface_shape": "circle",
+          "support_surface_dimensions_m": [
+            0.1786,
+            0.1786
+          ],
+          "support_surface_z_offset_m": 0.0212
+        }
+      ],
+      "available": true,
+      "availability_reasons": [
+        "robolab_usd_rigid_body"
+      ],
+      "source_notes": [
+        "robolab class=dishware",
+        "usd=assets/objects/vomp/plate_small/plate_small.usd"
+      ]
+    }
+  ]
+}

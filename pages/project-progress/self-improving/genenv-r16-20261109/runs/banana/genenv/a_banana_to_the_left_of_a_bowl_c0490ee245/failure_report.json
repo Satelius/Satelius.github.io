@@ -1,0 +1,14 @@
+{
+  "schema_version": "robotwin.scene_generation_failure.v1",
+  "status": "fail",
+  "stage": "solve",
+  "code": "T2E_ASSET_UNAVAILABLE",
+  "blocker": "no usable catalog candidate for banana_1 category=banana color=None material=None",
+  "error_type": "CompileFailure",
+  "request": "A banana to the left of a bowl.",
+  "seed": 7,
+  "details": {
+    "scene_id": "a_banana_to_the_left_of_a_bowl_c0490ee245",
+    "error": "no usable catalog candidate for banana_1 category=banana color=None material=None"
+  }
+}

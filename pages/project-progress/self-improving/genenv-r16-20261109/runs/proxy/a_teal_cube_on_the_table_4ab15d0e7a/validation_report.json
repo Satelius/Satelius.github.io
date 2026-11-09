@@ -1,0 +1,109 @@
+{
+  "schema_version": "robotwin.scene_validation.v1",
+  "scene_id": "a_teal_cube_on_the_table_4ab15d0e7a",
+  "resolved_scene_sha256": "a61c02728cfba1b493cdd4b4667ff289adc1a42edc268991d3479f00cfac974d",
+  "status": "incomplete",
+  "fail_count": 0,
+  "not_run_count": 1,
+  "checks": [
+    {
+      "name": "workspace_bounds:block_1",
+      "status": "pass",
+      "evidence": {
+        "aabb": [
+          0.17980238191539236,
+          0.23315934008460762,
+          -0.03136798108460763,
+          0.021988977084607633
+        ]
+      }
+    },
+    {
+      "name": "table_support_height:block_1",
+      "status": "pass",
+      "evidence": {
+        "bottom_z_m": 0.741,
+        "table_height_m": 0.741,
+        "support_relation": "on_table"
+      }
+    },
+    {
+      "name": "real_asset_files:block_1",
+      "status": "pass",
+      "evidence": {
+        "paths": [
+          "/runtime/TacHarness/inputs/datasets/vendor/robolab/assets/objects/basic/blue_block.usd"
+        ],
+        "exists": [
+          true
+        ]
+      }
+    },
+    {
+      "name": "relation:on_table:block_1",
+      "status": "pass",
+      "evidence": {
+        "target": "table"
+      }
+    },
+    {
+      "name": "resolved_only_roundtrip",
+      "status": "pass",
+      "evidence": {
+        "before": "a61c02728cfba1b493cdd4b4667ff289adc1a42edc268991d3479f00cfac974d",
+        "after": "a61c02728cfba1b493cdd4b4667ff289adc1a42edc268991d3479f00cfac974d"
+      }
+    },
+    {
+      "name": "package_manifest",
+      "status": "pass",
+      "evidence": {
+        "schema_version": "robotwin.generated_scene_package_verification.v1",
+        "status": "pass",
+        "checks": [
+          {
+            "path": "request.txt",
+            "exists": true,
+            "expected_sha256": "2e82327fadc289d3278fbaa4d234fbc35f7aa8754472ed2caf1662f8db1415b9",
+            "actual_sha256": "2e82327fadc289d3278fbaa4d234fbc35f7aa8754472ed2caf1662f8db1415b9",
+            "pass": true
+          },
+          {
+            "path": "scene_spec.json",
+            "exists": true,
+            "expected_sha256": "d55a7fc2c32f0cdeb1b2e9c857a8db74a47db702715591443e21017ff226546c",
+            "actual_sha256": "d55a7fc2c32f0cdeb1b2e9c857a8db74a47db702715591443e21017ff226546c",
+            "pass": true
+          },
+          {
+            "path": "resolved_scene.json",
+            "exists": true,
+            "expected_sha256": "db4e823330e7d4461da2445def5567e71a813f88510c8b510258606041a91c1e",
+            "actual_sha256": "db4e823330e7d4461da2445def5567e71a813f88510c8b510258606041a91c1e",
+            "pass": true
+          },
+          {
+            "path": "generated_scene.py",
+            "exists": true,
+            "expected_sha256": "a08fe7f2fe57a95779f05918d42f5894056000066148918a6840364fa82afcb7",
+            "actual_sha256": "a08fe7f2fe57a95779f05918d42f5894056000066148918a6840364fa82afcb7",
+            "pass": true
+          },
+          {
+            "path": "resolved_scene.json#canonical_digest",
+            "expected_sha256": "a61c02728cfba1b493cdd4b4667ff289adc1a42edc268991d3479f00cfac974d",
+            "actual_sha256": "a61c02728cfba1b493cdd4b4667ff289adc1a42edc268991d3479f00cfac974d",
+            "pass": true
+          }
+        ]
+      }
+    },
+    {
+      "name": "runtime_evidence",
+      "status": "not_run",
+      "evidence": {
+        "required": false
+      }
+    }
+  ]
+}

@@ -1,0 +1,1088 @@
+The '--headless' CLI argument is deprecated. Omit '--viz' for default headless. If config visualizers are enabled and you want to force headless, use '--viz none'.
+Loading user config located at: '/runtime/gujie/TacHarness/.venv-isaacsim60/lib/python3.12/site-packages/isaacsim/kit/data/Kit/IsaacLab/3.0/user.config.json'
+2026-11-09T06:34:58Z [Info] [carb] Logging to file: /runtime/gujie/TacHarness/.venv-isaacsim60/lib/python3.12/site-packages/isaacsim/kit/logs/Kit/IsaacLab/3.0/kit_20261109_143458.log
+2026-11-09T06:34:58Z [6ms] [Warning] [omni.ext.plugin] [ext: isaaclab_visualizers] Extensions config 'extension.toml' doesn't exist '/runtime/gujie/TacHarness/thirdparty/IsaacLab60/source/isaaclab_visualizers' or '/runtime/gujie/TacHarness/thirdparty/IsaacLab60/source/isaaclab_visualizers/config'
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1794206098.703305  224657 descriptor_database.cc:633] File already exists in database: grpc/health/v1/health.proto
+W0000 00:00:1794206098.703338  224657 message.cc:301] Protobuf GeneratedMessageFactory: File is already registered: grpc/health/v1/health.proto
+2026-11-09T06:34:59Z [609ms] [Warning] [omni.platforminfo.plugin] failed to open the default display.  Can't verify X Server version.
+
+|---------------------------------------------------------------------------------------------|
+| Driver Version: 595.71.05     | Graphics API: Vulkan
+|=============================================================================================|
+| GPU | Name                             | Active | LDA | GPU Memory | Vendor-ID | LUID       |
+|     |                                  |        |     |            | Device-ID | UUID       |
+|     |                                  |        |     |            | Bus-ID    |            |
+|---------------------------------------------------------------------------------------------|
+| 0   | NVIDIA GeForce RTX 5090          | Yes: 0 |     | 32853   MB | 10de      | 0          |
+|     |                                  |        |     |            | 2b85      | db99bb5e.. |
+|     |                                  |        |     |            | 49        |            |
+|=============================================================================================|
+| OS: 22.04.5 LTS (Jammy Jellyfish) ubuntu, Version: 22.04.5, Kernel: 5.15.0-119-generic
+| Processor: Intel(R) Xeon(R) Platinum 8470Q
+| Bare Metal Cores: 104 | Bare Metal Logical Cores: 208
+| Core Usage Quota: 25
+|---------------------------------------------------------------------------------------------|
+| Total Memory (MB): 92160 | Free Memory: 17805
+| Total Page/Swap (MB): 0 | Free Page/Swap: 0
+|---------------------------------------------------------------------------------------------|
+2026-11-09T06:35:01Z [2,461ms] [Warning] [carb.windowing-glfw.plugin] GLFW initialization failed.
+2026-11-09T06:35:01Z [2,461ms] [Warning] [carb] Failed to startup plugin carb.windowing-glfw.plugin (interfaces: [carb::windowing::IGLContext v1.0],[carb::windowing::IWindowing v1.5]) (impl: carb.windowing-glfw.plugin)
+2026-11-09T06:35:01Z [2,538ms] [Warning] [carb.windowing-glfw.plugin] GLFW initialization failed.
+2026-11-09T06:35:01Z [2,538ms] [Warning] [carb] Failed to startup plugin carb.windowing-glfw.plugin (interfaces: [carb::windowing::IGLContext v1.0],[carb::windowing::IWindowing v1.5]) (impl: carb.windowing-glfw.plugin)
+2026-11-09T06:35:01Z [2,540ms] [Warning] [carb.windowing-glfw.plugin] GLFW initialization failed.
+2026-11-09T06:35:01Z [2,540ms] [Warning] [carb] Failed to startup plugin carb.windowing-glfw.plugin (interfaces: [carb::windowing::IGLContext v1.0],[carb::windowing::IWindowing v1.5]) (impl: carb.windowing-glfw.plugin)
+2026-11-09T06:35:01Z [2,908ms] [Warning] [isaacsim.core.simulation_manager.plugin] USD stage is not available; stage-opened subscription is deferred
+2026-11-09T06:35:01Z [2,908ms] [Warning] [isaacsim.core.simulation_manager.plugin] USD stage is not available; stage-opened subscription is deferred
+2026-11-09T06:35:01Z [2,944ms] [Warning] [omni.log] Source: omni.hydra was already registered.
+2026-11-09T06:35:02Z [3,566ms] [Warning] [pxr.Semantics] pxr.Semantics is deprecated - please use Semantics instead
+2026-11-09T06:35:02Z [3,655ms] [Warning] [omni.replicator.core.scripts.extension] No material configuration file, adding configuration to material settings directly.
+2026-11-09T06:35:04Z [5,631ms] [Warning] [rtx.hydra] RenderDelegate : Warning /rtx/hydra/readTransformsFromFabricInRenderDelegate and geometry streaming are enabled together but this can cause issues with dynamic objects not streaming correctly due to problems in the transform update.
+[ISAACLAB] AppLauncher initialization complete
+2026-11-09T06:35:08Z [9,720ms] [Warning] [tacex_uipc.envs.direct_uipc_rl_env] Seed not set for the environment. The environment creation may not be deterministic.
+2026-11-09T06:35:08Z [9,724ms] [Warning] [isaaclab_physx.physics.physx_manager] CCD disabled when GPU dynamics is enabled.
+2026-11-09T06:35:08Z [9,729ms] [Warning] [isaaclab_physx.physics.physx_manager] TGS solver with enable_external_forces_every_iteration=False may cause noisy velocities.
+[INFO]: Base environment:
+	Environment device    : cuda:0
+	Environment seed      : None
+	Physics step-size     : 0.008333333333333333
+	Rendering step-size   : 0.008333333333333333
+	Environment step-size : 0.008333333333333333
+[INFO]: Registered backend 'physx' for factory Articulation.
+[INFO]: Registered backend 'physx' for factory RigidObject.
+2026-11-09T06:35:08Z [10,047ms] [Warning] [isaaclab.sim.utils.prims] Could not perform 'modify_mass_properties' on any prims under: '/World/envs/env_0/shelf'. This might be because of the following reasons:
+	(1) The desired attribute does not exist on any of the prims.
+	(2) The desired attribute exists on an instanced prim.
+		Discovered list of instanced prim paths: []
+Initializing uipc objects /World/envs/env_.*/shelf...
+2026-11-09T06:35:08Z [10,147ms] [Warning] [omni.usd] Encountered USD Warnings but USD Diagnostics are currently muted. To view USD Warnings, please set the '/persistent/app/usd/muteUsdDiagnostics' setting to false in Preferences page.
+USD mesh that is used for creating the UIPC Mesh:  /World/envs/env_0/shelf/mesh
+Using precomputed mesh data; num_tet_points=73
+obj id of /World/envs/env_.*/shelf: 1 
+2026-11-09T06:35:17Z [18,557ms] [Warning] [isaaclab.sim.utils.prims] Could not perform 'modify_mass_properties' on any prims under: '/World/envs/env_0/prism'. This might be because of the following reasons:
+	(1) The desired attribute does not exist on any of the prims.
+	(2) The desired attribute exists on an instanced prim.
+		Discovered list of instanced prim paths: []
+Initializing uipc objects /World/envs/env_.*/prism...
+2026-11-09T06:35:17Z [18,563ms] [Warning] [omni.fabric.plugin] Warning: attribute primvars:st:indices not found for path /World/envs/env_0/shelf/mesh
+
+USD mesh that is used for creating the UIPC Mesh:  /World/envs/env_0/prism/mesh
+Using precomputed mesh data; num_tet_points=67568
+obj id of /World/envs/env_.*/prism: 2 
+Initializing uipc objects /World/envs/env_.*/Robot/gelpad_left...
+USD mesh that is used for creating the UIPC Mesh:  /World/envs/env_0/Robot/gelpad_left/mesh
+isaac_rigid_prim  /World/envs/env_.*/Robot/.*gelsight_mini_case_left
+Creating Uipc x Isaac attachments for /World/envs/env_.*/Robot/.*gelsight_mini_case_left
+obj id of /World/envs/env_.*/Robot/gelpad_left: 3 
+Initializing uipc objects /World/envs/env_.*/Robot/gelpad_right...
+USD mesh that is used for creating the UIPC Mesh:  /World/envs/env_0/Robot/gelpad_right/mesh
+isaac_rigid_prim  /World/envs/env_.*/Robot/.*gelsight_mini_case_right
+Creating Uipc x Isaac attachments for /World/envs/env_.*/Robot/.*gelsight_mini_case_right
+obj id of /World/envs/env_.*/Robot/gelpad_right: 4 
+[INFO]: Time taken for scene creation Last: 10.281799 s, Mean: 10.281799 s, Std: 0.000000 s, N: 1
+[INFO]: Scene manager:  <class UipcInteractiveScene>
+	Number of environments: 1
+	Environment spacing   : 1.5
+	Source prim name      : /World/envs/env_0
+	Global prim paths     : []
+	Replicate physics     : True
+[INFO]: Starting the simulation. This may take a few seconds. Please wait...
+2026-11-09T06:35:19Z [20,912ms] [Warning] [omni.physx.plugin] The rigid body at /World/envs/env_0/Robot/WristCamera has a possibly invalid inertia tensor of {1.0, 1.0, 1.0} and a negative mass, small sphere approximated inertia was used. Either specify correct values in the mass properties, or add collider(s) to any shape(s) that you wish to automatically compute mass properties for.
+2026-11-09T06:35:19Z [21,337ms] [Warning] [omni.physx.plugin] The rigid body at /World/envs/env_0/Robot/WristCamera has a possibly invalid inertia tensor of {1.0, 1.0, 1.0} and a negative mass, small sphere approximated inertia was used. Either specify correct values in the mass properties, or add collider(s) to any shape(s) that you wish to automatically compute mass properties for.
+[INFO]: Simulation parameters for joints in /World/envs/env_.*/Robot:
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                     Simulation Joint Information (Prim path: /World/envs/env_.*/Robot)                                                    |
++-------+---------------------+-----------+---------+----------+-----------------+------------------+------------------+------------------+-----------------+---------------+
+| Index | Name                | Stiffness | Damping | Armature | Static Friction | Dynamic Friction | Viscous Friction | Position Limits  | Velocity Limits | Effort Limits |
++-------+---------------------+-----------+---------+----------+-----------------+------------------+------------------+------------------+-----------------+---------------+
+|   0   | panda_joint1        |   80.000  |  4.000  |  0.000   |      0.000      |      0.000       |      0.000       | [-2.897, 2.897]  |      2.175      |     87.000    |
+|   1   | panda_joint2        |   80.000  |  4.000  |  0.000   |      0.000      |      0.000       |      0.000       | [-1.763, 1.763]  |      2.175      |     87.000    |
+|   2   | panda_joint3        |   80.000  |  4.000  |  0.000   |      0.000      |      0.000       |      0.000       | [-2.897, 2.897]  |      2.175      |     87.000    |
+|   3   | panda_joint4        |   80.000  |  4.000  |  0.000   |      0.000      |      0.000       |      0.000       | [-3.072, -0.070] |      2.175      |     87.000    |
+|   4   | panda_joint5        |   80.000  |  4.000  |  0.000   |      0.000      |      0.000       |      0.000       | [-2.897, 2.897]  |      2.610      |     12.000    |
+|   5   | panda_joint6        |   80.000  |  4.000  |  0.000   |      0.000      |      0.000       |      0.000       | [-0.018, 3.753]  |      2.610      |     12.000    |
+|   6   | panda_joint7        |   80.000  |  4.000  |  0.000   |      0.000      |      0.000       |      0.000       | [-2.897, 2.897]  |      2.610      |     12.000    |
+|   7   | panda_finger_joint1 |  2.0e+03  | 100.000 |  0.000   |      0.000      |      0.000       |      0.000       |  [0.000, 0.040]  |      0.200      |    200.000    |
+|   8   | panda_finger_joint2 |  2.0e+03  | 100.000 |  0.000   |      0.000      |      0.000       |      0.000       |  [0.000, 0.040]  |      0.200      |    200.000    |
++-------+---------------------+-----------+---------+----------+-----------------+------------------+------------------+------------------+-----------------+---------------+
+Initializing GelSight Sensor `/World/envs/env_.*/Robot/gelsight_mini_case_left`...
+[INFO]: Registered backend 'physx' for factory Renderer.
+[INFO]: Created new renderer for simulation: IsaacRtxRenderer
+[INFO]: Using renderer: IsaacRtxRenderer
+[INFO]: Registered backend 'physx' for factory FrameView.
+Initializing GelSight Sensor `/World/envs/env_.*/Robot/gelsight_mini_case_right`...
+[INFO]: Using renderer: IsaacRtxRenderer
+2026-11-09T06:35:22Z [24,115ms] [Warning] [omni.rtx] DLSS increasing input dimensions: Render resolution of (213, 160) is below minimal input resolution of 300.
+[INFO]: Time taken for simulation start Last: 3.761057 s, Mean: 3.761057 s, Std: 0.000000 s, N: 1
+[INFO]: Completed setting up the environment...
+/workspace/TacHarness-genenv/outputs/genenv-audit-20261109/uni60/curobo/src/curobo/opt/opt_base.py:298: UserWarning: Sparse invariant checks are implicitly disabled. Memory errors (e.g. SEGFAULT) will occur when operating on a sparse tensor which violates the invariants, but checks incur performance overhead. To silence this warning, explicitly opt in or out. See `torch.sparse.check_sparse_tensor_invariants.__doc__` for guidance.  (Triggered internally at /pytorch/aten/src/ATen/Context.cpp:760.)
+  self.problem_kernel_ = torch.sparse_coo_tensor(
+[INFO]: Using renderer: IsaacRtxRenderer
+[INFO]: Using renderer: IsaacRtxRenderer
+2026-11-09T06:35:28Z [30,036ms] [Warning] [omni.kit.material.library.material_extensions] Could not initialize context menu integration: No module named 'omni.kit.context_menu'
+[INFO]: RTX streaming completed in 0.04 s.
+[2026-11-09 14:35:28] Task Name: put_bottle_in_shelf
+[2026-11-09 14:35:28] Config Name: demo
+[2026-11-09 14:35:28] Task Config:
+env_settings:
+  frequencies:
+    physical: 120
+    collect: 120
+    save: 60
+    video: 60
+    eval: 60
+    render: 60
+  random_texture: false
+  sensor_type: gsmini
+  optical_backend: taxim
+collect_settings:
+  save_root_dir: /workspace/TacHarness-genenv/outputs/genenv-audit-20261109/uni60/far-fixed
+  use_seed: true
+  episode_num: 1
+replay_settings:
+  save_root_dir: eval_result
+  force_action: false
+  max_episodes: 10
+observation_settings:
+  camera:
+  - rgb
+  tactile:
+  - rgb
+  - rgb_marker
+  - marker
+  - depth
+  - press_depth
+  - pose
+  embodiment:
+  - joint
+  - ee
+  actor: true
+task_overrides:
+  condition:
+  - 0.04
+  - -0.025
+  - 0.118
+  - 7.0
+--------------------
+
+[2026-11-09 14:35:28] Timing Plan: TimingPlan(mode='collect', physical_hz=120, control_hz=120, collect_hz=120, save_hz=60, eval_hz=60, video_hz=60, render_hz=60, decimation=1, action_stride=1, save_period_collect_steps=2, video_period_physics_steps=2, render_period_physics_steps=2, video_period_control_steps=2, render_period_control_steps=2)
+[2026-11-09 14:35:28] Env Config: 
+TaskCfg(viewer=ViewerCfg(eye=(0.6, 0.15, 0.05), lookat=(-3.0, -4.5, -0.6), cam_prim_path='/OmniverseKit_Persp', resolution=(1280, 720), origin_type='world', env_index=0, asset_name=None, body_name=None), sim=SimulationCfg(device='cuda:0', dt=0.008333333333333333, gravity=(0.0, 0.0, -9.81), physics_prim_path='/physicsScene', physics_material=RigidBodyMaterialCfg(func='isaaclab.sim.spawners.materials.physics_materials:spawn_rigid_body_material', static_friction=1, dynamic_friction=1, restitution=0.0, compliant_contact_stiffness=None, compliant_contact_damping=None, friction_combine_mode='multiply', restitution_combine_mode='multiply'), use_fabric=True, render_interval=1, enable_scene_query_support=False, use_newton_actuators=False, physics=PhysxCfg(class_type='isaaclab_physx.physics.physx_manager:PhysxManager', solver_type=1, solve_articulation_contact_last=False, min_position_iteration_count=1, max_position_iteration_count=255, min_velocity_iteration_count=0, max_velocity_iteration_count=255, enable_scene_query_support=False, enable_ccd=True, enable_stabilization=False, enable_external_forces_every_iteration=False, enable_enhanced_determinism=False, bounce_threshold_velocity=0.5, friction_offset_threshold=0.04, friction_correlation_distance=0.025, gpu_max_rigid_contact_count=8388608, gpu_max_rigid_patch_count=163840, gpu_found_lost_pairs_capacity=2097152, gpu_found_lost_aggregate_pairs_capacity=33554432, gpu_total_aggregate_pairs_capacity=2097152, gpu_collision_stack_size=67108864, gpu_heap_capacity=67108864, gpu_temp_buffer_capacity=16777216, gpu_max_num_partitions=8, gpu_max_soft_body_contacts=1048576, gpu_max_particle_contacts=1048576), render=RenderCfg(enable_translucency=None, enable_reflections=None, enable_global_illumination=None, antialiasing_mode=None, enable_dlssg=None, enable_dl_denoiser=None, dlss_mode=None, enable_direct_lighting=None, samples_per_pixel=None, enable_shadows=None, enable_ambient_occlusion=None, dome_light_upper_lower_strategy=None, max_bounces=None, split_glass=None, split_clearcoat=None, split_rough_reflection=None, ambient_light_intensity=None, ambient_occlusion_denoiser_mode=None, view_tile_limit=None, carb_settings=None, rendering_mode='quality'), create_stage_in_memory=False, logging_level='WARNING', save_logs_to_file=True, log_dir=None, visualizer_cfgs=[]), ui_window_class_type=<class 'isaaclab.envs.ui.base_env_window.BaseEnvWindow'>, seed=None, decimation=1, is_finite_horizon=False, episode_length_s=0, scene=InteractiveSceneCfg(num_envs=1, env_spacing=1.5, lazy_sensor_update=True, replicate_physics=True, filter_collisions=True, clone_in_fabric=False), events=None, observation_space=0, num_observations=None, state_space=0, num_states=None, observation_noise_model=None, action_space=0, num_actions=None, action_noise_model=None, rerender_on_reset=False, num_rerenders_on_reset=0, wait_for_textures=True, xr=None, log_dir=None, video_recorder=VideoRecorderCfg(class_type=<class 'isaaclab.envs.utils.video_recorder.VideoRecorder'>, env_render_mode=None, eye=(7.5, 7.5, 7.5), lookat=(0.0, 0.0, 0.0), backend_source='visualizer', window_width=1280, window_height=720), video_panels=None, use_adaptive_grasp=True, reset_time_limit=120.0, cameras=[CameraCfg(class_type='isaaclab.sensors.camera.tiled_camera:TiledCamera', prim_path='/World/envs/env_.*/Camera', update_period=0.008333333333333333, debug_vis=False, offset=CameraCfg.OffsetCfg(pos=(0.554, 1.0, 0.15), rot=(0, 0.707, 0.707, 0), convention='opengl'), spawn=PinholeCameraCfg(func='isaaclab.sim.spawners.sensors.sensors:spawn_camera', visible=True, semantic_tags=None, copy_from_source=True, spawn_path=None, projection_type='pinhole', clipping_range=(0.01, 100.0), focal_length=1.94, focus_distance=1.0, f_stop=0.0, horizontal_aperture=2.688, vertical_aperture=None, horizontal_aperture_offset=0.0, vertical_aperture_offset=0.0, lock_camera=True), depth_clipping_behavior='none', data_types=['rgb', 'depth'], width=480, height=270, update_latest_camera_pose=False, semantic_filter='*:*', colorize_semantic_segmentation=True, colorize_instance_id_segmentation=True, colorize_instance_segmentation=True, semantic_segmentation_mapping={}, renderer_cfg=IsaacRtxRendererCfg(renderer_type='isaac_rtx', semantic_filter='*:*', colorize_semantic_segmentation=True, colorize_instance_id_segmentation=True, colorize_instance_segmentation=True, semantic_segmentation_mapping={}, depth_clipping_behavior='none'), isp_cfg=None, name='head'), CameraCfg(class_type='isaaclab.sensors.camera.tiled_camera:TiledCamera', prim_path='/World/envs/env_.*/Robot/WristCamera/Camera', update_period=0.008333333333333333, debug_vis=False, offset=CameraCfg.OffsetCfg(pos=(0.0, 0.0, 0.0), rot=(0.0, 0.0, 0.0, 1.0), convention='ros'), spawn=None, depth_clipping_behavior='none', data_types=['rgb', 'depth'], width=480, height=270, update_latest_camera_pose=False, semantic_filter='*:*', colorize_semantic_segmentation=True, colorize_instance_id_segmentation=True, colorize_instance_segmentation=True, semantic_segmentation_mapping={}, renderer_cfg=IsaacRtxRendererCfg(renderer_type='isaac_rtx', semantic_filter='*:*', colorize_semantic_segmentation=True, colorize_instance_id_segmentation=True, colorize_instance_segmentation=True, semantic_segmentation_mapping={}, depth_clipping_behavior='none'), isp_cfg=None, name='wrist')], camera_names=None, robot=RobotCfg(robot=ArticulationCfg(class_type='isaaclab.assets.articulation.articulation:Articulation', prim_path='/World/envs/env_.*/Robot', spawn=UsdFileCfg(func='isaaclab.sim.spawners.from_files.from_files:spawn_from_usd', visible=True, semantic_tags=None, copy_from_source=True, spawn_path=None, mass_props=None, deformable_props=None, rigid_props=RigidBodyPropertiesCfg(rigid_body_enabled=None, kinematic_enabled=None, disable_gravity=True, linear_damping=None, angular_damping=None, max_linear_velocity=None, max_angular_velocity=None, max_depenetration_velocity=5.0, max_contact_impulse=None, enable_gyroscopic_forces=None, retain_accelerations=None, solver_position_iteration_count=None, solver_velocity_iteration_count=None, sleep_threshold=None, stabilization_threshold=None), collision_props=None, activate_contact_sensors=False, scale=None, articulation_props=ArticulationRootPropertiesCfg(articulation_enabled=None, fix_root_link=None, enabled_self_collisions=True, solver_position_iteration_count=8, solver_velocity_iteration_count=0, sleep_threshold=None, stabilization_threshold=None), fixed_tendons_props=None, spatial_tendons_props=None, joint_drive_props=None, visual_material_path='material', visual_material=None, physics_material_path='material', physics_material=None, usd_path='/runtime/UniVTAC/third_party/TacEx/source/tacex_assets/tacex_assets/data/Robots/Franka/GelSight_Mini/Gripper/uipc_gelpads_high_res_wrist.usd', variants=None), init_state=ArticulationCfg.InitialStateCfg(pos=(0.0, 0.0, 0.0), rot=(0.0, 0.0, 0.0, 1.0), lin_vel=(0.0, 0.0, 0.0), ang_vel=(0.0, 0.0, 0.0), joint_pos={'panda_joint1': 0.0, 'panda_joint2': 0.0, 'panda_joint3': 0.0, 'panda_joint4': -2.46, 'panda_joint5': 0.0, 'panda_joint6': 2.5, 'panda_joint7': 0.741, 'panda_finger.*': 0.02}, joint_vel={'.*': 0.0}), collision_group=0, debug_vis=False, disable_shape_checks=None, articulation_root_prim_path=None, soft_joint_pos_limit_factor=1.0, actuators={'panda_shoulder': ImplicitActuatorCfg(class_type='isaaclab.actuators.actuator_pd:ImplicitActuator', joint_names_expr=['panda_joint[1-4]'], effort_limit=None, velocity_limit=None, effort_limit_sim=87.0, velocity_limit_sim=2.175, stiffness=80.0, damping=4.0, armature=None, friction=None, dynamic_friction=None, viscous_friction=None), 'panda_forearm': ImplicitActuatorCfg(class_type='isaaclab.actuators.actuator_pd:ImplicitActuator', joint_names_expr=['panda_joint[5-7]'], effort_limit=None, velocity_limit=None, effort_limit_sim=12.0, velocity_limit_sim=2.61, stiffness=80.0, damping=4.0, armature=None, friction=None, dynamic_friction=None, viscous_friction=None), 'panda_hand': ImplicitActuatorCfg(class_type='isaaclab.actuators.actuator_pd:ImplicitActuator', joint_names_expr=['panda_finger_joint.*'], effort_limit=None, velocity_limit=None, effort_limit_sim=200.0, velocity_limit_sim=0.2, stiffness=2000.0, damping=100.0, armature=None, friction=None, dynamic_friction=None, viscous_friction=None)}, actuator_value_resolution_debug_print=False), tactiles=[TactileCfg(name='left_tactile', gelpad_cfg=UipcDeformableObjectCfg(class_type=<class 'tacex_uipc.objects.deformable.uipc_deformable_object.UipcDeformableObject'>, prim_path='/World/envs/env_.*/Robot/gelpad_left', spawn=None, init_state=AssetBaseCfg.InitialStateCfg(pos=(0.0, 0.0, 0.0), rot=(0.0, 0.0, 0.0, 1.0)), collision_group=0, debug_vis=False, disable_shape_checks=None, mesh_cfg=None, mass_density=10000.0, constraint_cfg=UipcIsaacAttachmentsCfg(constraint_strength_ratio=10000.0, constraint_type=None, debug_vis=False, body_name='gelsight_mini_case_left', compute_attachment_data=True, attachment_points_radius=0.0005, isaaclab_rigid_body_prim_path='/World/envs/env_.*/Robot', attachment_point_indices=[0, 1, 3, 4, 5, 8, 9, 13, 14, 21, 24, 40, 41, 43, 44, 45, 51, 52, 53, 54, 58, 59, 60, 61, 67, 68, 69, 70, 71, 72, 73, 74, 77, 78, 79, 80, 82, 84, 85, 86, 87, 96, 99, 100, 101, 103, 104, 106, 107, 108, 110, 111, 112, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 161, 162, 163, 165]), usd_mesh_prim_name=None, constitution_cfg=UipcDeformableObjectCfg.StableNeoHookeanCfg(youngs_modulus=0.1, poisson_rate=0.49), debug_deformation_vis=False), gelpad_attachment_cfg=UipcIsaacAttachmentsCfg(constraint_strength_ratio=10000.0, constraint_type=None, debug_vis=False, body_name='gelsight_mini_case_left', compute_attachment_data=True, attachment_points_radius=0.0005, isaaclab_rigid_body_prim_path='/World/envs/env_.*/Robot', attachment_point_indices=[0, 1, 3, 4, 5, 8, 9, 13, 14, 21, 24, 40, 41, 43, 44, 45, 51, 52, 53, 54, 58, 59, 60, 61, 67, 68, 69, 70, 71, 72, 73, 74, 77, 78, 79, 80, 82, 84, 85, 86, 87, 96, 99, 100, 101, 103, 104, 106, 107, 108, 110, 111, 112, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 161, 162, 163, 165]), sensor_cfg=GeneralGelSightMiniCfg(class_type=<class 'tacex.gelsight_sensor.GelSightSensor'>, prim_path='/World/envs/env_.*/Robot/gelsight_mini_case_left', update_period=0.008333333333333333, debug_vis=False, case_dimensions=GelSightSensorCfg.Dimensions(width=0.032, length=0.028, height=0.024), gelpad_dimensions=GelSightSensorCfg.Dimensions(width=0.02075, length=0.02525, height=0.004), max_indentation_depth=0.002, sensor_camera_cfg=GelSightSensorCfg.SensorCameraCfg(prim_name='Camera', update_period=0.008333333333333333, resolution=(320, 240), data_types=['depth', 'rgb'], clipping_range=(0.024, 0.034), update_latest_camera_pose=True, camera_pos_offset=(0.0, -0.0001, 0.0), camera_rot_offset=(0.0, 1.0, 0.0, 0.0), focal_length=1.05, focus_distance=0.028, horizontal_aperture=None, vertical_aperture=None, fov_width=0.021462500000000002, fov_height=0.0176375), data_types=['camera_depth', 'tactile_rgb', 'marker_rgb', 'marker_motion'], optical_sim_cfg=TaximSimulatorCfg(simulation_approach_class=<class 'tacex.simulation_approaches.gpu_taxim.taxim_sim.TaximSimulator'>, device='cuda', calib_folder_path='/runtime/UniVTAC/third_party/TacEx/source/tacex_assets/tacex_assets/data/Sensors/GelSight_Mini/calibs/640x480', with_shadow=False, tactile_img_res=(320, 240), gelpad_height=0.004, gelpad_to_camera_min_distance=0.024, taxim_parameters=None), marker_motion_sim_cfg=ManiSkillSimulatorCfg(simulation_approach_class=<class 'tacex.simulation_approaches.fem_based.mani_skill_sim.ManiSkillSimulator'>, device='cuda', sensor_type='gsmini', calib_folder_path='', marker_shape=(9, 7), marker_interval=(2.40625, 2.45833), marker_rotation_range=0.0, marker_translation_range=(0.0, 0.0), marker_pos_shift_range=(0.0, 0.0), marker_random_noise=0.0, marker_lose_tracking_probability=0.0, normalize=False, camera_to_surface=0.0283, real_size=(0.0266, 0.0209), tactile_img_res=(320, 240), sub_marker_num=0, marker_radius=6, marker_params=ManiSkillSimulatorCfg.MarkerParams(num_markers=63, x0=0, y0=0, dx=0, dy=0), init_marker_pos=([[]], [[]])), compute_indentation_depth_class='optical_sim', device='cuda')), TactileCfg(name='right_tactile', gelpad_cfg=UipcDeformableObjectCfg(class_type=<class 'tacex_uipc.objects.deformable.uipc_deformable_object.UipcDeformableObject'>, prim_path='/World/envs/env_.*/Robot/gelpad_right', spawn=None, init_state=AssetBaseCfg.InitialStateCfg(pos=(0.0, 0.0, 0.0), rot=(0.0, 0.0, 0.0, 1.0)), collision_group=0, debug_vis=False, disable_shape_checks=None, mesh_cfg=None, mass_density=10000.0, constraint_cfg=UipcIsaacAttachmentsCfg(constraint_strength_ratio=10000.0, constraint_type=None, debug_vis=False, body_name='gelsight_mini_case_right', compute_attachment_data=True, attachment_points_radius=0.0005, isaaclab_rigid_body_prim_path='/World/envs/env_.*/Robot', attachment_point_indices=[0, 1, 3, 4, 5, 8, 9, 13, 14, 21, 24, 40, 41, 43, 44, 45, 51, 52, 53, 54, 58, 59, 60, 61, 67, 68, 69, 70, 71, 72, 73, 74, 77, 78, 79, 80, 82, 84, 85, 86, 87, 96, 99, 100, 101, 103, 104, 106, 107, 108, 110, 111, 112, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 161, 162, 163, 165]), usd_mesh_prim_name=None, constitution_cfg=UipcDeformableObjectCfg.StableNeoHookeanCfg(youngs_modulus=0.1, poisson_rate=0.49), debug_deformation_vis=False), gelpad_attachment_cfg=UipcIsaacAttachmentsCfg(constraint_strength_ratio=10000.0, constraint_type=None, debug_vis=False, body_name='gelsight_mini_case_right', compute_attachment_data=True, attachment_points_radius=0.0005, isaaclab_rigid_body_prim_path='/World/envs/env_.*/Robot', attachment_point_indices=[0, 1, 3, 4, 5, 8, 9, 13, 14, 21, 24, 40, 41, 43, 44, 45, 51, 52, 53, 54, 58, 59, 60, 61, 67, 68, 69, 70, 71, 72, 73, 74, 77, 78, 79, 80, 82, 84, 85, 86, 87, 96, 99, 100, 101, 103, 104, 106, 107, 108, 110, 111, 112, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 161, 162, 163, 165]), sensor_cfg=GeneralGelSightMiniCfg(class_type=<class 'tacex.gelsight_sensor.GelSightSensor'>, prim_path='/World/envs/env_.*/Robot/gelsight_mini_case_right', update_period=0.008333333333333333, debug_vis=False, case_dimensions=GelSightSensorCfg.Dimensions(width=0.032, length=0.028, height=0.024), gelpad_dimensions=GelSightSensorCfg.Dimensions(width=0.02075, length=0.02525, height=0.004), max_indentation_depth=0.002, sensor_camera_cfg=GelSightSensorCfg.SensorCameraCfg(prim_name='Camera', update_period=0.008333333333333333, resolution=(320, 240), data_types=['depth', 'rgb'], clipping_range=(0.024, 0.034), update_latest_camera_pose=True, camera_pos_offset=(0.0, -0.0001, 0.0), camera_rot_offset=(0.0, 1.0, 0.0, 0.0), focal_length=1.05, focus_distance=0.028, horizontal_aperture=None, vertical_aperture=None, fov_width=0.021462500000000002, fov_height=0.0176375), data_types=['camera_depth', 'tactile_rgb', 'marker_rgb', 'marker_motion'], optical_sim_cfg=TaximSimulatorCfg(simulation_approach_class=<class 'tacex.simulation_approaches.gpu_taxim.taxim_sim.TaximSimulator'>, device='cuda', calib_folder_path='/runtime/UniVTAC/third_party/TacEx/source/tacex_assets/tacex_assets/data/Sensors/GelSight_Mini/calibs/640x480', with_shadow=False, tactile_img_res=(320, 240), gelpad_height=0.004, gelpad_to_camera_min_distance=0.024, taxim_parameters=None), marker_motion_sim_cfg=ManiSkillSimulatorCfg(simulation_approach_class=<class 'tacex.simulation_approaches.fem_based.mani_skill_sim.ManiSkillSimulator'>, device='cuda', sensor_type='gsmini', calib_folder_path='', marker_shape=(9, 7), marker_interval=(2.40625, 2.45833), marker_rotation_range=0.0, marker_translation_range=(0.0, 0.0), marker_pos_shift_range=(0.0, 0.0), marker_random_noise=0.0, marker_lose_tracking_probability=0.0, normalize=False, camera_to_surface=0.0283, real_size=(0.0266, 0.0209), tactile_img_res=(320, 240), sub_marker_num=0, marker_radius=6, marker_params=ManiSkillSimulatorCfg.MarkerParams(num_markers=63, x0=0, y0=0, dx=0, dy=0), init_marker_pos=([[]], [[]])), compute_indentation_depth_class='optical_sim', device='cuda'))], arm_stiffness=80.0, arm_damping=4.0, gripper_offset=0.131, gripper_max_qpos=0.039, tactile_far_plane=34.0, adaptive_grasp_depth_threshold=0.5, contact_threshold=(0.1, 0.5)), arm_stiffness=80.0, arm_damping=4.0, tactile_sensor_type='gsmini', tactile_optical_backend='taxim', tactile_data_types=['camera_depth', 'tactile_rgb', 'marker_rgb', 'marker_motion'], planner_time_dilation_factor=1.0, planner_use_cuda_graph=True, planner_interpolation_steps=5000, gaussian_noise_cfg=GaussianNoiseCfg(func='isaaclab.utils.noise.noise_model:gaussian_noise', operation='add', mean=0.0, std=0.002), random_texture=False, keep_contact=False, max_save_frames=1000, logger_level='error', debug_vis=False, step_lim=300, save_dir=PosixPath('/workspace/TacHarness-genenv/outputs/genenv-audit-20261109/uni60/far-fixed/put_bottle_in_shelf/demo'), obs_data_type={'camera': ['rgb'], 'tactile': ['rgb', 'rgb_marker', 'marker', 'depth', 'press_depth', 'pose'], 'embodiment': ['joint', 'ee'], 'actor': True}, save_frequency=2, video_frequency=2, render_frequency=2, video_size=(960, 320), uipc_sim=UipcSimCfg(device='cuda', update_render_meshes=False, debug_vis=False, dt=0.008333333333333333, sanity_check_enable=True, sanity_check_mode='quiet', workspace='/workspace/TacHarness-genenv/outputs/genenv-audit-20261109/uni60/far-fixed/put_bottle_in_shelf/demo/scene', logger_level='Error', gravity=(0.0, 0.0, -9.8), ground_height=0.001, ground_normal=(0.0, 0.0, 1.0), newton=UipcSimCfg.Newton(max_iter=1024, min_iter=1, use_adaptive_tol=False, velocity_tol=0.05, ccd_tol=1.0, transrate_tol=0.1), linear_system=UipcSimCfg.LinearSystem(solver='linear_pcg', tol_rate=0.001), line_search=UipcSimCfg.LineSearch(max_iter=8, report_energy=False), contact=UipcSimCfg.Contact(enable=True, enable_friction=True, default_friction_ratio=1, default_contact_resistance=10.0, constitution='ipc', d_hat=0.0005, eps_velocity=0.1), collision_detection_method='linear_bvh', diff_sim=False), light=AssetBaseCfg(class_type=None, prim_path='/World/light', spawn=DomeLightCfg(func='isaaclab.sim.spawners.lights.lights:spawn_light', visible=True, semantic_tags=None, copy_from_source=True, spawn_path=None, prim_type='DomeLight', color=(0.75, 0.75, 0.75), enable_color_temperature=False, color_temperature=6500.0, normalize=False, exposure=0.0, intensity=3000.0, texture_file='/workspace/TacHarness-genenv/outputs/genenv-audit-20261109/uni60/work/assets/scene/base0.exr', texture_format='automatic', visible_in_primary_ray=True), init_state=AssetBaseCfg.InitialStateCfg(pos=(0.0, 0.0, 0.0), rot=(0.0, 0.0, 0.0, 1.0)), collision_group=0, debug_vis=False, disable_shape_checks=None), plate=RigidObjectCfg(class_type='isaaclab.assets.rigid_object.rigid_object:RigidObject', prim_path='/World/envs/env_.*/ground_plate', spawn=UsdFileCfg(func='isaaclab.sim.spawners.from_files.from_files:spawn_from_usd', visible=True, semantic_tags=None, copy_from_source=True, spawn_path=None, mass_props=None, deformable_props=None, rigid_props=RigidBodyPropertiesCfg(rigid_body_enabled=None, kinematic_enabled=True, disable_gravity=None, linear_damping=None, angular_damping=None, max_linear_velocity=1000.0, max_angular_velocity=1000.0, max_depenetration_velocity=5.0, max_contact_impulse=None, enable_gyroscopic_forces=None, retain_accelerations=None, solver_position_iteration_count=16, solver_velocity_iteration_count=1, sleep_threshold=None, stabilization_threshold=None), collision_props=None, activate_contact_sensors=False, scale=None, articulation_props=None, fixed_tendons_props=None, spatial_tendons_props=None, joint_drive_props=None, visual_material_path='material', visual_material=None, physics_material_path='material', physics_material=None, usd_path='/workspace/TacHarness-genenv/outputs/genenv-audit-20261109/uni60/work/assets/scene/plate.usda', variants=None), init_state=RigidObjectCfg.InitialStateCfg(pos=(0.5, 0, 0), rot=(0.0, 0.0, 0.0, 1.0), lin_vel=(0.0, 0.0, 0.0), ang_vel=(0.0, 0.0, 0.0)), collision_group=0, debug_vis=False, disable_shape_checks=None), adaptive_grasp_depth_threshold=0.5, condition=[0.04, -0.025, 0.118, 7.0])
+--------------------
+
+[2026-11-09 14:35:28] Init cost 23.61 seconds, devices: None
+[2026-11-09 14:35:28] Starting from seed 1.
+Setting seed: 1
+Step     1(   N/A%), save False, FPS   0.07, Running   14.72s, Atom ID:  0, Tag:                     
+2026-11-09T06:35:43Z [44,963ms] [Warning] [omni.ujitso] [2026-11-09|14:35:43][][8589934822]: (Ensure normals are vertex or face varying) Invalid normal primvar data: buffer size 0 does not match expected size 169 with interpolation mode 3
+2026-11-09T06:35:43Z [44,963ms] [Warning] [omni.ujitso] [2026-11-09|14:35:43][][8589934833]: (Ensure normals are vertex or face varying) Invalid normal primvar data: buffer size 0 does not match expected size 169 with interpolation mode 3
+2026-11-09T06:35:43Z [44,963ms] [Warning] [omni.ujitso] [2026-11-09|14:35:43][][12884901961]: (Ensure normals are vertex or face varying) Invalid normal primvar data: buffer size 0 does not match expected size 69 with interpolation mode 3
+2026-11-09T06:35:43Z [44,978ms] [Warning] [omni.ujitso] [2026-11-09|14:35:43][][8589934624]: (Ensure normals are vertex or face varying) Invalid normal primvar data: buffer size 0 does not match expected size 7055 with interpolation mode 3
+[INFO]: RTX streaming completed in 0.15 s.
+Step     2(   N/A%), save False, FPS   0.13, Running   15.19s, Atom ID:  0, Tag:                     
+Step     3(   N/A%), save False, FPS   0.20, Running   15.24s, Atom ID:  0, Tag:                     
+Step     4(   N/A%), save False, FPS   0.26, Running   15.32s, Atom ID:  0, Tag:                     
+Step     5(   N/A%), save False, FPS   0.33, Running   15.37s, Atom ID:  0, Tag:                     
+Step     6(   N/A%), save False, FPS   0.39, Running   15.53s, Atom ID:  0, Tag:                     
+Step     7(   N/A%), save False, FPS   0.45, Running   15.55s, Atom ID:  0, Tag:                     
+Step     8(   N/A%), save False, FPS   0.51, Running   15.62s, Atom ID:  0, Tag:                     
+Step     9(   N/A%), save False, FPS   0.58, Running   15.63s, Atom ID:  0, Tag:                     
+Step    10(   N/A%), save False, FPS   0.64, Running   15.72s, Atom ID:  0, Tag:                     
+Step    11(   N/A%), save False, FPS   0.70, Running   15.74s, Atom ID:  0, Tag:                     
+Step    12(   N/A%), save False, FPS   0.76, Running   15.84s, Atom ID:  0, Tag:                     
+Step    13(   N/A%), save False, FPS   0.82, Running   15.86s, Atom ID:  0, Tag:                     
+Step    14(   N/A%), save False, FPS   0.88, Running   15.93s, Atom ID:  0, Tag:                     
+Step    15(   N/A%), save False, FPS   0.94, Running   15.94s, Atom ID:  0, Tag:                     
+Step    16(   N/A%), save False, FPS   1.00, Running   16.01s, Atom ID:  0, Tag:                     
+Step    17(   N/A%), save False, FPS   1.06, Running   16.03s, Atom ID:  0, Tag:                     
+Step    18(   N/A%), save False, FPS   1.12, Running   16.13s, Atom ID:  0, Tag:                     
+Step    19(   N/A%), save False, FPS   1.18, Running   16.15s, Atom ID:  0, Tag:                     
+Step    20(   N/A%), save False, FPS   1.23, Running   16.23s, Atom ID:  0, Tag:                     
+Step    21(   N/A%), save False, FPS  13.08, Running   16.25s, Atom ID:  0, Tag:                     
+Step    22(   N/A%), save False, FPS  17.77, Running   16.32s, Atom ID:  0, Tag:                     
+Step    23(   N/A%), save False, FPS  18.18, Running   16.34s, Atom ID:  0, Tag:                     
+Step    24(   N/A%), save False, FPS  17.93, Running   16.44s, Atom ID:  0, Tag:                     
+Step    25(   N/A%), save False, FPS  18.32, Running   16.46s, Atom ID:  0, Tag:                     
+Step    26(   N/A%), save False, FPS  19.07, Running   16.58s, Atom ID:  0, Tag:                     
+Step    27(   N/A%), save False, FPS  19.01, Running   16.60s, Atom ID:  0, Tag:                     
+Step    28(   N/A%), save False, FPS  18.94, Running   16.67s, Atom ID:  0, Tag:                     
+Step    29(   N/A%), save False, FPS  18.88, Running   16.69s, Atom ID:  0, Tag:                     
+Step    30(   N/A%), save False, FPS  18.55, Running   16.80s, Atom ID:  0, Tag:                     
+Step    31(   N/A%), save False, FPS  17.77, Running   16.87s, Atom ID:  0, Tag:                     
+Step    32(   N/A%), save False, FPS  17.49, Running   16.98s, Atom ID:  0, Tag:                     
+/workspace/TacHarness-genenv/outputs/genenv-audit-20261109/uni60/overlay/tacex/simulation_approaches/fem_based/sim/tactile_sensor_sapienipc_modified.py:453: RuntimeWarning: Inset FEM marker grid by 0.10% to fit the gel surface.
+  warnings.warn(
+Step    33(   N/A%), save False, FPS  14.62, Running   17.22s, Atom ID:  1, Tag: delay               
+Step    34(   N/A%), save False, FPS  14.57, Running   17.30s, Atom ID:  1, Tag: delay               
+Step    35(   N/A%), save False, FPS  14.55, Running   17.32s, Atom ID:  1, Tag: delay               
+Step    36(   N/A%), save False, FPS  14.12, Running   17.43s, Atom ID:  1, Tag: delay               
+Step    37(   N/A%), save False, FPS  14.12, Running   17.45s, Atom ID:  1, Tag: delay               
+Step    38(   N/A%), save False, FPS  14.38, Running   17.52s, Atom ID:  1, Tag: delay               
+Step    39(   N/A%), save False, FPS  14.36, Running   17.55s, Atom ID:  1, Tag: delay               
+Step    40(   N/A%), save False, FPS  14.35, Running   17.62s, Atom ID:  1, Tag: delay               
+Step    41(   N/A%), save False, FPS  14.35, Running   17.64s, Atom ID:  1, Tag: delay               
+Step    42(   N/A%), save False, FPS  13.97, Running   17.75s, Atom ID:  1, Tag: delay               
+Step    43(   N/A%), save False, FPS  12.46, Running   17.94s, Atom ID:  2, Tag: move                
+Step    44(   N/A%), save False, FPS  12.69, Running   18.02s, Atom ID:  2, Tag: move                
+Step    45(   N/A%), save False, FPS  12.68, Running   18.04s, Atom ID:  2, Tag: move                
+Step    46(   N/A%), save False, FPS  13.08, Running   18.11s, Atom ID:  2, Tag: move                
+Step    47(   N/A%), save False, FPS  13.08, Running   18.13s, Atom ID:  2, Tag: move                
+Step    48(   N/A%), save False, FPS  12.77, Running   18.24s, Atom ID:  2, Tag: move                
+Step    49(   N/A%), save False, FPS  12.76, Running   18.26s, Atom ID:  2, Tag: move                
+Step    50(   N/A%), save False, FPS  13.01, Running   18.33s, Atom ID:  2, Tag: move                
+Step    51(   N/A%), save False, FPS  13.44, Running   18.35s, Atom ID:  2, Tag: move                
+Step    52(   N/A%), save False, FPS  13.84, Running   18.43s, Atom ID:  2, Tag: move                
+Step    53(   N/A%), save False, FPS  16.25, Running   18.45s, Atom ID:  2, Tag: move                
+Step    54(   N/A%), save False, FPS  15.74, Running   18.57s, Atom ID:  2, Tag: move                
+Step    55(   N/A%), save False, FPS  15.64, Running   18.60s, Atom ID:  2, Tag: move                
+Step    56(   N/A%), save False, FPS  16.00, Running   18.68s, Atom ID:  2, Tag: move                
+Step    57(   N/A%), save False, FPS  15.89, Running   18.71s, Atom ID:  2, Tag: move                
+Step    58(   N/A%), save False, FPS  15.62, Running   18.80s, Atom ID:  2, Tag: move                
+Step    59(   N/A%), save False, FPS  14.85, Running   18.89s, Atom ID:  2, Tag: move                
+Step    60(   N/A%), save False, FPS  13.87, Running   19.06s, Atom ID:  2, Tag: move                
+Step    61(   N/A%), save False, FPS  13.30, Running   19.14s, Atom ID:  2, Tag: move                
+Step    62(   N/A%), save False, FPS  13.09, Running   19.28s, Atom ID:  2, Tag: move                
+Step    63(   N/A%), save False, FPS  14.11, Running   19.36s, Atom ID:  2, Tag: move                
+Step    64(   N/A%), save False, FPS  14.02, Running   19.44s, Atom ID:  2, Tag: move                
+Step    65(   N/A%), save False, FPS  13.94, Running   19.47s, Atom ID:  2, Tag: move                
+Step    66(   N/A%), save False, FPS  13.53, Running   19.59s, Atom ID:  2, Tag: move                
+Step    67(   N/A%), save False, FPS  13.46, Running   19.62s, Atom ID:  2, Tag: move                
+Step    68(   N/A%), save False, FPS  13.70, Running   19.70s, Atom ID:  2, Tag: move                
+Step    69(   N/A%), save False, FPS  13.69, Running   19.72s, Atom ID:  2, Tag: move                
+Step    70(   N/A%), save False, FPS  13.60, Running   19.80s, Atom ID:  2, Tag: move                
+Step    71(   N/A%), save False, FPS  13.60, Running   19.82s, Atom ID:  2, Tag: move                
+Step    72(   N/A%), save False, FPS  13.27, Running   19.93s, Atom ID:  2, Tag: move                
+Step    73(   N/A%), save False, FPS  13.33, Running   19.96s, Atom ID:  2, Tag: move                
+Step    74(   N/A%), save False, FPS  13.68, Running   20.03s, Atom ID:  2, Tag: move                
+Step    75(   N/A%), save False, FPS  13.71, Running   20.06s, Atom ID:  2, Tag: move                
+Step    76(   N/A%), save False, FPS  13.73, Running   20.13s, Atom ID:  2, Tag: move                
+Step    77(   N/A%), save False, FPS  13.81, Running   20.16s, Atom ID:  2, Tag: move                
+Step    78(   N/A%), save False, FPS  13.68, Running   20.27s, Atom ID:  2, Tag: move                
+Step    79(   N/A%), save False, FPS  14.34, Running   20.29s, Atom ID:  3, Tag: delay               
+Step    80(   N/A%), save False, FPS  15.37, Running   20.36s, Atom ID:  3, Tag: delay               
+Step    81(   N/A%), save False, FPS  16.02, Running   20.39s, Atom ID:  3, Tag: delay               
+Step    82(   N/A%), save False, FPS  16.81, Running   20.47s, Atom ID:  3, Tag: delay               
+Step    83(   N/A%), save False, FPS  17.65, Running   20.49s, Atom ID:  3, Tag: delay               
+Step    84(   N/A%), save False, FPS  17.25, Running   20.60s, Atom ID:  3, Tag: delay               
+Step    85(   N/A%), save False, FPS  17.35, Running   20.62s, Atom ID:  3, Tag: delay               
+Step    86(   N/A%), save False, FPS  17.97, Running   20.70s, Atom ID:  3, Tag: delay               
+Step    87(   N/A%), save False, FPS  18.10, Running   20.72s, Atom ID:  3, Tag: delay               
+Step    88(   N/A%), save False, FPS  18.23, Running   20.80s, Atom ID:  3, Tag: delay               
+Step    89(   N/A%), save False, FPS  14.32, Running   21.12s, Atom ID:  4, Tag: move                
+Step    90(   N/A%), save False, FPS  14.02, Running   21.23s, Atom ID:  5, Tag: delay               
+Step    91(   N/A%), save False, FPS  14.02, Running   21.25s, Atom ID:  5, Tag: delay               
+Step    92(   N/A%), save False, FPS  14.37, Running   21.33s, Atom ID:  5, Tag: delay               
+Step    93(   N/A%), save False, FPS  14.37, Running   21.35s, Atom ID:  5, Tag: delay               
+Step    94(   N/A%), save False, FPS  14.39, Running   21.42s, Atom ID:  5, Tag: delay               
+Step    95(   N/A%), save False, FPS  14.43, Running   21.44s, Atom ID:  5, Tag: delay               
+Step    96(   N/A%), save False, FPS  14.12, Running   21.55s, Atom ID:  5, Tag: delay               
+Step    97(   N/A%), save False, FPS  14.12, Running   21.57s, Atom ID:  5, Tag: delay               
+Step    98(   N/A%), save False, FPS  14.50, Running   21.64s, Atom ID:  5, Tag: delay               
+Step    99(   N/A%), save False, FPS  14.50, Running   21.67s, Atom ID:  5, Tag: delay               
+Step   100(   N/A%), save True, FPS  10.01, Running   22.36s, Atom ID:  1, Tag: move                
+Step   101(   N/A%), save True, FPS  10.04, Running   22.38s, Atom ID:  1, Tag: move                
+Step   102(   N/A%), save True, FPS   9.23, Running   22.63s, Atom ID:  1, Tag: move                
+Step   103(   N/A%), save True, FPS   9.25, Running   22.65s, Atom ID:  1, Tag: move                
+Step   104(   N/A%), save True, FPS   8.81, Running   22.87s, Atom ID:  1, Tag: move                
+Step   105(   N/A%), save True, FPS   8.81, Running   22.89s, Atom ID:  1, Tag: move                
+Step   106(   N/A%), save True, FPS   8.31, Running   23.11s, Atom ID:  1, Tag: move                
+Step   107(   N/A%), save True, FPS   8.30, Running   23.13s, Atom ID:  1, Tag: move                
+Step   108(   N/A%), save True, FPS   7.75, Running   23.38s, Atom ID:  1, Tag: move                
+Step   109(   N/A%), save True, FPS   8.74, Running   23.41s, Atom ID:  1, Tag: move                
+Step   110(   N/A%), save True, FPS   8.33, Running   23.63s, Atom ID:  1, Tag: move                
+Step   111(   N/A%), save True, FPS   8.30, Running   23.66s, Atom ID:  1, Tag: move                
+Step   112(   N/A%), save True, FPS   7.83, Running   23.88s, Atom ID:  1, Tag: move                
+Step   113(   N/A%), save True, FPS   7.80, Running   23.91s, Atom ID:  1, Tag: move                
+Step   114(   N/A%), save True, FPS   7.28, Running   24.17s, Atom ID:  1, Tag: move                
+Step   115(   N/A%), save True, FPS   7.26, Running   24.20s, Atom ID:  1, Tag: move                
+Step   116(   N/A%), save True, FPS   6.96, Running   24.42s, Atom ID:  1, Tag: move                
+Step   117(   N/A%), save True, FPS   6.94, Running   24.45s, Atom ID:  1, Tag: move                
+Step   118(   N/A%), save True, FPS   6.60, Running   24.67s, Atom ID:  1, Tag: move                
+Step   119(   N/A%), save True, FPS   6.58, Running   24.70s, Atom ID:  1, Tag: move                
+Step   120(   N/A%), save True, FPS   7.70, Running   24.96s, Atom ID:  1, Tag: move                
+Step   121(   N/A%), save True, FPS   7.68, Running   24.99s, Atom ID:  1, Tag: move                
+Step   122(   N/A%), save True, FPS   7.75, Running   25.21s, Atom ID:  1, Tag: move                
+Step   123(   N/A%), save True, FPS   7.73, Running   25.24s, Atom ID:  1, Tag: move                
+Step   124(   N/A%), save True, FPS   7.69, Running   25.47s, Atom ID:  1, Tag: move                
+Step   125(   N/A%), save True, FPS   7.67, Running   25.50s, Atom ID:  1, Tag: move                
+Step   126(   N/A%), save True, FPS   7.55, Running   25.76s, Atom ID:  1, Tag: move                
+Step   127(   N/A%), save True, FPS   7.53, Running   25.79s, Atom ID:  1, Tag: move                
+Step   128(   N/A%), save True, FPS   7.60, Running   26.01s, Atom ID:  1, Tag: move                
+Step   129(   N/A%), save True, FPS   7.59, Running   26.04s, Atom ID:  1, Tag: move                
+Step   130(   N/A%), save True, FPS   7.59, Running   26.26s, Atom ID:  1, Tag: move                
+Step   131(   N/A%), save True, FPS   7.59, Running   26.29s, Atom ID:  1, Tag: move                
+Step   132(   N/A%), save True, FPS   7.49, Running   26.55s, Atom ID:  1, Tag: move                
+Step   133(   N/A%), save True, FPS   7.49, Running   26.58s, Atom ID:  1, Tag: move                
+Step   134(   N/A%), save True, FPS   7.59, Running   26.80s, Atom ID:  1, Tag: move                
+Step   135(   N/A%), save True, FPS   7.59, Running   26.83s, Atom ID:  1, Tag: move                
+Step   136(   N/A%), save True, FPS   7.60, Running   27.05s, Atom ID:  1, Tag: move                
+Step   137(   N/A%), save True, FPS   7.61, Running   27.08s, Atom ID:  1, Tag: move                
+Step   138(   N/A%), save True, FPS   7.52, Running   27.33s, Atom ID:  1, Tag: move                
+Step   139(   N/A%), save True, FPS   7.52, Running   27.36s, Atom ID:  1, Tag: move                
+Step   140(   N/A%), save True, FPS   7.62, Running   27.58s, Atom ID:  1, Tag: move                
+Step   141(   N/A%), save True, FPS   7.63, Running   27.61s, Atom ID:  1, Tag: move                
+Step   142(   N/A%), save True, FPS   7.64, Running   27.83s, Atom ID:  1, Tag: move                
+Step   143(   N/A%), save True, FPS   7.65, Running   27.86s, Atom ID:  1, Tag: move                
+Step   144(   N/A%), save True, FPS   7.59, Running   28.11s, Atom ID:  1, Tag: move                
+Step   145(   N/A%), save True, FPS   7.61, Running   28.13s, Atom ID:  1, Tag: move                
+Step   146(   N/A%), save True, FPS   7.75, Running   28.34s, Atom ID:  1, Tag: move                
+Step   147(   N/A%), save True, FPS   7.77, Running   28.36s, Atom ID:  1, Tag: move                
+Step   148(   N/A%), save True, FPS   7.80, Running   28.58s, Atom ID:  1, Tag: move                
+Step   149(   N/A%), save True, FPS   7.83, Running   28.60s, Atom ID:  1, Tag: move                
+Step   150(   N/A%), save True, FPS   7.76, Running   28.84s, Atom ID:  1, Tag: move                
+Step   151(   N/A%), save True, FPS   7.78, Running   28.86s, Atom ID:  1, Tag: move                
+Step   152(   N/A%), save True, FPS   7.91, Running   29.08s, Atom ID:  2, Tag: delay               
+Step   153(   N/A%), save True, FPS   7.94, Running   29.10s, Atom ID:  2, Tag: delay               
+Step   154(   N/A%), save True, FPS   7.96, Running   29.32s, Atom ID:  2, Tag: delay               
+Step   155(   N/A%), save True, FPS   7.98, Running   29.34s, Atom ID:  2, Tag: delay               
+Step   156(   N/A%), save True, FPS   7.91, Running   29.58s, Atom ID:  2, Tag: delay               
+Step   157(   N/A%), save True, FPS   7.93, Running   29.60s, Atom ID:  2, Tag: delay               
+Step   158(   N/A%), save True, FPS   8.04, Running   29.82s, Atom ID:  2, Tag: delay               
+Step   159(   N/A%), save True, FPS   8.07, Running   29.84s, Atom ID:  2, Tag: delay               
+Step   160(   N/A%), save True, FPS   8.09, Running   30.06s, Atom ID:  2, Tag: delay               
+Step   161(   N/A%), save True, FPS   8.11, Running   30.08s, Atom ID:  2, Tag: delay               
+Step   162(   N/A%), save True, FPS   7.33, Running   30.56s, Atom ID:  3, Tag: move                
+Step   163(   N/A%), save True, FPS   7.34, Running   30.58s, Atom ID:  3, Tag: move                
+Step   164(   N/A%), save True, FPS   7.42, Running   30.80s, Atom ID:  3, Tag: move                
+Step   165(   N/A%), save True, FPS   7.42, Running   30.82s, Atom ID:  3, Tag: move                
+Step   166(   N/A%), save True, FPS   7.40, Running   31.04s, Atom ID:  3, Tag: move                
+Step   167(   N/A%), save True, FPS   7.40, Running   31.07s, Atom ID:  3, Tag: move                
+Step   168(   N/A%), save True, FPS   7.29, Running   31.32s, Atom ID:  3, Tag: move                
+Step   169(   N/A%), save True, FPS   7.28, Running   31.34s, Atom ID:  3, Tag: move                
+Step   170(   N/A%), save True, FPS   7.34, Running   31.57s, Atom ID:  3, Tag: move                
+Step   171(   N/A%), save True, FPS   7.33, Running   31.59s, Atom ID:  3, Tag: move                
+Step   172(   N/A%), save True, FPS   7.33, Running   31.81s, Atom ID:  3, Tag: move                
+Step   173(   N/A%), save True, FPS   7.30, Running   31.84s, Atom ID:  3, Tag: move                
+Step   174(   N/A%), save True, FPS   6.86, Running   32.23s, Atom ID:  3, Tag: move                
+Step   175(   N/A%), save True, FPS   6.84, Running   32.26s, Atom ID:  3, Tag: move                
+Step   176(   N/A%), save True, FPS   6.88, Running   32.49s, Atom ID:  3, Tag: move                
+Step   177(   N/A%), save True, FPS   6.86, Running   32.52s, Atom ID:  3, Tag: move                
+Step   178(   N/A%), save True, FPS   6.84, Running   32.74s, Atom ID:  3, Tag: move                
+Step   179(   N/A%), save True, FPS   6.83, Running   32.77s, Atom ID:  3, Tag: move                
+Step   180(   N/A%), save True, FPS   6.73, Running   33.03s, Atom ID:  3, Tag: move                
+Step   181(   N/A%), save True, FPS   6.71, Running   33.06s, Atom ID:  3, Tag: move                
+Step   182(   N/A%), save True, FPS   7.34, Running   33.28s, Atom ID:  3, Tag: move                
+Step   183(   N/A%), save True, FPS   7.32, Running   33.31s, Atom ID:  3, Tag: move                
+Step   184(   N/A%), save True, FPS   7.32, Running   33.53s, Atom ID:  3, Tag: move                
+Step   185(   N/A%), save True, FPS   7.30, Running   33.56s, Atom ID:  3, Tag: move                
+Step   186(   N/A%), save True, FPS   7.20, Running   33.82s, Atom ID:  3, Tag: move                
+Step   187(   N/A%), save True, FPS   7.18, Running   33.85s, Atom ID:  3, Tag: move                
+Step   188(   N/A%), save True, FPS   7.26, Running   34.08s, Atom ID:  3, Tag: move                
+Step   189(   N/A%), save True, FPS   7.24, Running   34.10s, Atom ID:  3, Tag: move                
+Step   190(   N/A%), save True, FPS   7.25, Running   34.33s, Atom ID:  3, Tag: move                
+Step   191(   N/A%), save True, FPS   7.22, Running   34.36s, Atom ID:  3, Tag: move                
+Step   192(   N/A%), save True, FPS   7.10, Running   34.62s, Atom ID:  3, Tag: move                
+Step   193(   N/A%), save True, FPS   7.10, Running   34.65s, Atom ID:  3, Tag: move                
+Step   194(   N/A%), save True, FPS   7.55, Running   34.88s, Atom ID:  3, Tag: move                
+Step   195(   N/A%), save True, FPS   7.55, Running   34.91s, Atom ID:  3, Tag: move                
+Step   196(   N/A%), save True, FPS   7.55, Running   35.14s, Atom ID:  3, Tag: move                
+Step   197(   N/A%), save True, FPS   7.55, Running   35.17s, Atom ID:  3, Tag: move                
+Step   198(   N/A%), save True, FPS   7.45, Running   35.43s, Atom ID:  3, Tag: move                
+Step   199(   N/A%), save True, FPS   7.43, Running   35.46s, Atom ID:  3, Tag: move                
+Step   200(   N/A%), save True, FPS   7.49, Running   35.70s, Atom ID:  3, Tag: move                
+Step   201(   N/A%), save True, FPS   7.48, Running   35.73s, Atom ID:  3, Tag: move                
+Step   202(   N/A%), save True, FPS   7.35, Running   36.00s, Atom ID:  3, Tag: move                
+Step   203(   N/A%), save True, FPS   7.35, Running   36.04s, Atom ID:  3, Tag: move                
+Step   204(   N/A%), save True, FPS   7.00, Running   36.39s, Atom ID:  3, Tag: move                
+Step   205(   N/A%), save True, FPS   7.01, Running   36.42s, Atom ID:  3, Tag: move                
+Step   206(   N/A%), save True, FPS   7.08, Running   36.64s, Atom ID:  3, Tag: move                
+Step   207(   N/A%), save True, FPS   7.10, Running   36.67s, Atom ID:  3, Tag: move                
+Step   208(   N/A%), save True, FPS   7.06, Running   36.91s, Atom ID:  3, Tag: move                
+Step   209(   N/A%), save True, FPS   7.07, Running   36.93s, Atom ID:  3, Tag: move                
+Step   210(   N/A%), save True, FPS   7.00, Running   37.19s, Atom ID:  3, Tag: move                
+Step   211(   N/A%), save True, FPS   7.02, Running   37.21s, Atom ID:  3, Tag: move                
+Step   212(   N/A%), save True, FPS   7.12, Running   37.43s, Atom ID:  3, Tag: move                
+Step   213(   N/A%), save True, FPS   7.13, Running   37.46s, Atom ID:  3, Tag: move                
+Step   214(   N/A%), save True, FPS   7.16, Running   37.68s, Atom ID:  3, Tag: move                
+Step   215(   N/A%), save True, FPS   7.17, Running   37.70s, Atom ID:  3, Tag: move                
+Step   216(   N/A%), save True, FPS   7.10, Running   37.95s, Atom ID:  3, Tag: move                
+Step   217(   N/A%), save True, FPS   7.12, Running   37.98s, Atom ID:  3, Tag: move                
+Step   218(   N/A%), save True, FPS   7.23, Running   38.19s, Atom ID:  3, Tag: move                
+Step   219(   N/A%), save True, FPS   7.26, Running   38.22s, Atom ID:  3, Tag: move                
+Step   220(   N/A%), save True, FPS   7.30, Running   38.44s, Atom ID:  3, Tag: move                
+Step   221(   N/A%), save True, FPS   7.33, Running   38.46s, Atom ID:  3, Tag: move                
+Step   222(   N/A%), save True, FPS   7.38, Running   38.71s, Atom ID:  3, Tag: move                
+Step   223(   N/A%), save True, FPS   7.41, Running   38.74s, Atom ID:  3, Tag: move                
+Step   224(   N/A%), save True, FPS   7.81, Running   38.95s, Atom ID:  3, Tag: move                
+Step   225(   N/A%), save True, FPS   7.82, Running   38.97s, Atom ID:  3, Tag: move                
+Step   226(   N/A%), save True, FPS   7.85, Running   39.19s, Atom ID:  3, Tag: move                
+Step   227(   N/A%), save True, FPS   7.85, Running   39.21s, Atom ID:  3, Tag: move                
+Step   228(   N/A%), save True, FPS   7.82, Running   39.47s, Atom ID:  3, Tag: move                
+Step   229(   N/A%), save True, FPS   7.83, Running   39.49s, Atom ID:  3, Tag: move                
+Step   230(   N/A%), save True, FPS   7.95, Running   39.70s, Atom ID:  3, Tag: move                
+Step   231(   N/A%), save True, FPS   7.95, Running   39.73s, Atom ID:  3, Tag: move                
+Step   232(   N/A%), save True, FPS   7.97, Running   39.94s, Atom ID:  3, Tag: move                
+Step   233(   N/A%), save True, FPS   7.97, Running   39.97s, Atom ID:  3, Tag: move                
+Step   234(   N/A%), save True, FPS   7.87, Running   40.22s, Atom ID:  3, Tag: move                
+Step   235(   N/A%), save True, FPS   7.87, Running   40.24s, Atom ID:  3, Tag: move                
+Step   236(   N/A%), save True, FPS   7.94, Running   40.47s, Atom ID:  3, Tag: move                
+Step   237(   N/A%), save True, FPS   7.94, Running   40.50s, Atom ID:  3, Tag: move                
+Step   238(   N/A%), save True, FPS   7.92, Running   40.72s, Atom ID:  3, Tag: move                
+Step   239(   N/A%), save True, FPS   7.90, Running   40.75s, Atom ID:  3, Tag: move                
+Step   240(   N/A%), save True, FPS   7.80, Running   41.00s, Atom ID:  3, Tag: move                
+Step   241(   N/A%), save True, FPS   7.80, Running   41.02s, Atom ID:  3, Tag: move                
+Step   242(   N/A%), save True, FPS   7.88, Running   41.25s, Atom ID:  3, Tag: move                
+Step   243(   N/A%), save True, FPS   7.88, Running   41.27s, Atom ID:  3, Tag: move                
+Step   244(   N/A%), save True, FPS   7.58, Running   41.59s, Atom ID:  3, Tag: move                
+Step   245(   N/A%), save True, FPS   7.58, Running   41.61s, Atom ID:  3, Tag: move                
+Step   246(   N/A%), save True, FPS   7.49, Running   41.86s, Atom ID:  3, Tag: move                
+Step   247(   N/A%), save True, FPS   7.49, Running   41.88s, Atom ID:  3, Tag: move                
+Step   248(   N/A%), save True, FPS   7.59, Running   42.10s, Atom ID:  3, Tag: move                
+Step   249(   N/A%), save True, FPS   7.59, Running   42.12s, Atom ID:  3, Tag: move                
+Step   250(   N/A%), save True, FPS   7.59, Running   42.34s, Atom ID:  3, Tag: move                
+Step   251(   N/A%), save True, FPS   7.59, Running   42.36s, Atom ID:  3, Tag: move                
+Step   252(   N/A%), save True, FPS   7.50, Running   42.61s, Atom ID:  3, Tag: move                
+Step   253(   N/A%), save True, FPS   7.50, Running   42.63s, Atom ID:  3, Tag: move                
+Step   254(   N/A%), save True, FPS   7.60, Running   42.85s, Atom ID:  3, Tag: move                
+Step   255(   N/A%), save True, FPS   7.60, Running   42.87s, Atom ID:  3, Tag: move                
+Step   256(   N/A%), save True, FPS   7.65, Running   43.09s, Atom ID:  3, Tag: move                
+Step   257(   N/A%), save True, FPS   7.66, Running   43.11s, Atom ID:  3, Tag: move                
+Step   258(   N/A%), save True, FPS   7.59, Running   43.36s, Atom ID:  3, Tag: move                
+Step   259(   N/A%), save True, FPS   7.61, Running   43.38s, Atom ID:  3, Tag: move                
+Step   260(   N/A%), save True, FPS   7.71, Running   43.60s, Atom ID:  3, Tag: move                
+Step   261(   N/A%), save True, FPS   7.71, Running   43.62s, Atom ID:  3, Tag: move                
+Step   262(   N/A%), save True, FPS   7.73, Running   43.84s, Atom ID:  3, Tag: move                
+Step   263(   N/A%), save True, FPS   7.73, Running   43.86s, Atom ID:  3, Tag: move                
+Step   264(   N/A%), save True, FPS   7.89, Running   44.13s, Atom ID:  3, Tag: move                
+Step   265(   N/A%), save True, FPS   7.89, Running   44.15s, Atom ID:  3, Tag: move                
+Step   266(   N/A%), save True, FPS   7.90, Running   44.39s, Atom ID:  3, Tag: move                
+Step   267(   N/A%), save True, FPS   7.87, Running   44.42s, Atom ID:  3, Tag: move                
+Step   268(   N/A%), save True, FPS   7.78, Running   44.67s, Atom ID:  4, Tag: delay               
+Step   269(   N/A%), save True, FPS   7.74, Running   44.71s, Atom ID:  4, Tag: delay               
+Step   270(   N/A%), save True, FPS   7.62, Running   44.96s, Atom ID:  4, Tag: delay               
+Step   271(   N/A%), save True, FPS   7.59, Running   45.00s, Atom ID:  4, Tag: delay               
+Step   272(   N/A%), save True, FPS   7.68, Running   45.22s, Atom ID:  4, Tag: delay               
+Step   273(   N/A%), save True, FPS   7.68, Running   45.24s, Atom ID:  4, Tag: delay               
+Step   274(   N/A%), save True, FPS   7.67, Running   45.46s, Atom ID:  4, Tag: delay               
+Step   275(   N/A%), save True, FPS   7.67, Running   45.48s, Atom ID:  4, Tag: delay               
+Step   276(   N/A%), save True, FPS   7.54, Running   45.74s, Atom ID:  4, Tag: delay               
+Step   277(   N/A%), save True, FPS   7.53, Running   45.76s, Atom ID:  4, Tag: delay               
+Step   278(   N/A%), save True, FPS   6.76, Running   46.31s, Atom ID:  5, Tag: move                
+Step   279(   N/A%), save True, FPS   6.62, Running   46.40s, Atom ID:  5, Tag: move                
+Step   280(   N/A%), save True, FPS   6.44, Running   46.70s, Atom ID:  5, Tag: move                
+Step   281(   N/A%), save True, FPS   6.33, Running   46.78s, Atom ID:  5, Tag: move                
+Step   282(   N/A%), save True, FPS   6.15, Running   47.09s, Atom ID:  5, Tag: move                
+Step   283(   N/A%), save True, FPS   6.05, Running   47.16s, Atom ID:  5, Tag: move                
+Step   284(   N/A%), save True, FPS   6.04, Running   47.44s, Atom ID:  5, Tag: move                
+Step   285(   N/A%), save True, FPS   5.95, Running   47.51s, Atom ID:  5, Tag: move                
+Step   286(   N/A%), save True, FPS   5.89, Running   47.79s, Atom ID:  5, Tag: move                
+Step   287(   N/A%), save True, FPS   5.81, Running   47.87s, Atom ID:  5, Tag: move                
+Step   288(   N/A%), save True, FPS   5.71, Running   48.17s, Atom ID:  5, Tag: move                
+Step   289(   N/A%), save True, FPS   5.64, Running   48.25s, Atom ID:  5, Tag: move                
+Step   290(   N/A%), save True, FPS   5.61, Running   48.53s, Atom ID:  5, Tag: move                
+Step   291(   N/A%), save True, FPS   5.54, Running   48.60s, Atom ID:  5, Tag: move                
+Step   292(   N/A%), save True, FPS   5.45, Running   48.88s, Atom ID:  5, Tag: move                
+Step   293(   N/A%), save True, FPS   5.37, Running   48.96s, Atom ID:  5, Tag: move                
+Step   294(   N/A%), save True, FPS   5.16, Running   49.33s, Atom ID:  5, Tag: move                
+Step   295(   N/A%), save True, FPS   5.09, Running   49.41s, Atom ID:  5, Tag: move                
+Step   296(   N/A%), save True, FPS   5.00, Running   49.74s, Atom ID:  5, Tag: move                
+Step   297(   N/A%), save True, FPS   4.93, Running   49.82s, Atom ID:  5, Tag: move                
+Step   298(   N/A%), save True, FPS   5.23, Running   50.14s, Atom ID:  5, Tag: move                
+Step   299(   N/A%), save True, FPS   5.24, Running   50.22s, Atom ID:  5, Tag: move                
+Step   300(   N/A%), save True, FPS   5.10, Running   50.62s, Atom ID:  5, Tag: move                
+Step   301(   N/A%), save True, FPS   5.04, Running   50.74s, Atom ID:  5, Tag: move                
+Step   302(   N/A%), save True, FPS   5.03, Running   51.07s, Atom ID:  5, Tag: move                
+Step   303(   N/A%), save True, FPS   5.00, Running   51.17s, Atom ID:  5, Tag: move                
+Step   304(   N/A%), save True, FPS   4.97, Running   51.46s, Atom ID:  5, Tag: move                
+Step   305(   N/A%), save True, FPS   4.97, Running   51.54s, Atom ID:  5, Tag: move                
+Step   306(   N/A%), save True, FPS   4.91, Running   51.86s, Atom ID:  5, Tag: move                
+Step   307(   N/A%), save True, FPS   4.91, Running   51.94s, Atom ID:  5, Tag: move                
+Step   308(   N/A%), save True, FPS   4.89, Running   52.27s, Atom ID:  5, Tag: move                
+Step   309(   N/A%), save True, FPS   4.86, Running   52.37s, Atom ID:  5, Tag: move                
+Step   310(   N/A%), save True, FPS   4.83, Running   52.67s, Atom ID:  5, Tag: move                
+Step   311(   N/A%), save True, FPS   4.80, Running   52.77s, Atom ID:  5, Tag: move                
+Step   312(   N/A%), save True, FPS   4.68, Running   53.15s, Atom ID:  5, Tag: move                
+Step   313(   N/A%), save True, FPS   4.36, Running   53.55s, Atom ID:  5, Tag: move                
+Step   314(   N/A%), save True, FPS   4.28, Running   54.00s, Atom ID:  5, Tag: move                
+Step   315(   N/A%), save True, FPS   4.29, Running   54.08s, Atom ID:  5, Tag: move                
+Step   316(   N/A%), save True, FPS   4.06, Running   54.67s, Atom ID:  5, Tag: move                
+Step   317(   N/A%), save True, FPS   4.06, Running   54.75s, Atom ID:  5, Tag: move                
+Step   318(   N/A%), save True, FPS   4.05, Running   55.08s, Atom ID:  5, Tag: move                
+Step   319(   N/A%), save True, FPS   4.04, Running   55.16s, Atom ID:  5, Tag: move                
+Step   320(   N/A%), save True, FPS   3.60, Running   56.17s, Atom ID:  5, Tag: move                
+Step   321(   N/A%), save True, FPS   3.34, Running   56.73s, Atom ID:  5, Tag: move                
+Step   322(   N/A%), save True, FPS   2.88, Running   58.01s, Atom ID:  5, Tag: move                
+Step   323(   N/A%), save True, FPS   2.77, Running   58.38s, Atom ID:  5, Tag: move                
+Step   324(   N/A%), save True, FPS   2.57, Running   59.23s, Atom ID:  5, Tag: move                
+Step   325(   N/A%), save True, FPS   2.57, Running   59.32s, Atom ID:  5, Tag: move                
+Step   326(   N/A%), save True, FPS   2.57, Running   59.65s, Atom ID:  5, Tag: move                
+Step   327(   N/A%), save True, FPS   2.55, Running   59.78s, Atom ID:  5, Tag: move                
+Step   328(   N/A%), save True, FPS   2.52, Running   60.20s, Atom ID:  5, Tag: move                
+Step   329(   N/A%), save True, FPS   2.51, Running   60.33s, Atom ID:  5, Tag: move                
+Step   330(   N/A%), save True, FPS   2.45, Running   60.84s, Atom ID:  5, Tag: move                
+Step   331(   N/A%), save True, FPS   2.44, Running   60.96s, Atom ID:  5, Tag: move                
+Step   332(   N/A%), save True, FPS   2.42, Running   61.40s, Atom ID:  5, Tag: move                
+Step   333(   N/A%), save True, FPS   2.51, Running   61.53s, Atom ID:  5, Tag: move                
+Step   334(   N/A%), save True, FPS   2.51, Running   61.98s, Atom ID:  5, Tag: move                
+Step   335(   N/A%), save True, FPS   2.49, Running   62.10s, Atom ID:  5, Tag: move                
+Step   336(   N/A%), save True, FPS   2.53, Running   62.58s, Atom ID:  5, Tag: move                
+Step   337(   N/A%), save True, FPS   2.53, Running   62.66s, Atom ID:  5, Tag: move                
+Step   338(   N/A%), save True, FPS   2.50, Running   63.08s, Atom ID:  5, Tag: move                
+Step   339(   N/A%), save True, FPS   2.49, Running   63.20s, Atom ID:  5, Tag: move                
+Step   340(   N/A%), save True, FPS   2.68, Running   63.63s, Atom ID:  5, Tag: move                
+Step   341(   N/A%), save True, FPS   2.86, Running   63.74s, Atom ID:  5, Tag: move                
+Step   342(   N/A%), save True, FPS   3.19, Running   64.28s, Atom ID:  5, Tag: move                
+Step   343(   N/A%), save True, FPS   3.32, Running   64.40s, Atom ID:  5, Tag: move                
+Step   344(   N/A%), save True, FPS   3.56, Running   64.84s, Atom ID:  5, Tag: move                
+Step   345(   N/A%), save True, FPS   3.55, Running   64.96s, Atom ID:  5, Tag: move                
+Step   346(   N/A%), save True, FPS   3.49, Running   65.38s, Atom ID:  5, Tag: move                
+Step   347(   N/A%), save True, FPS   3.48, Running   65.53s, Atom ID:  5, Tag: move                
+Step   348(   N/A%), save True, FPS   3.40, Running   66.08s, Atom ID:  5, Tag: move                
+Step   349(   N/A%), save True, FPS   3.39, Running   66.23s, Atom ID:  5, Tag: move                
+Step   350(   N/A%), save True, FPS   3.39, Running   66.75s, Atom ID:  5, Tag: move                
+Step   351(   N/A%), save True, FPS   3.37, Running   66.89s, Atom ID:  5, Tag: move                
+Step   352(   N/A%), save True, FPS   3.30, Running   67.46s, Atom ID:  5, Tag: move                
+Step   353(   N/A%), save True, FPS   3.28, Running   67.63s, Atom ID:  5, Tag: move                
+Step   354(   N/A%), save True, FPS   3.22, Running   68.19s, Atom ID:  5, Tag: move                
+Step   355(   N/A%), save True, FPS   3.21, Running   68.33s, Atom ID:  5, Tag: move                
+Step   356(   N/A%), save True, FPS   3.22, Running   68.79s, Atom ID:  5, Tag: move                
+Step   357(   N/A%), save True, FPS   3.19, Running   68.93s, Atom ID:  5, Tag: move                
+Step   358(   N/A%), save True, FPS   3.16, Running   69.40s, Atom ID:  5, Tag: move                
+Step   359(   N/A%), save True, FPS   3.16, Running   69.53s, Atom ID:  5, Tag: move                
+Step   360(   N/A%), save True, FPS   3.14, Running   70.00s, Atom ID:  5, Tag: move                
+Step   361(   N/A%), save True, FPS   3.14, Running   70.12s, Atom ID:  5, Tag: move                
+Step   362(   N/A%), save True, FPS   3.20, Running   70.53s, Atom ID:  5, Tag: move                
+Step   363(   N/A%), save True, FPS   3.21, Running   70.64s, Atom ID:  5, Tag: move                
+Step   364(   N/A%), save True, FPS   3.22, Running   71.05s, Atom ID:  5, Tag: move                
+Step   365(   N/A%), save True, FPS   3.22, Running   71.17s, Atom ID:  5, Tag: move                
+Step   366(   N/A%), save True, FPS   3.20, Running   71.64s, Atom ID:  5, Tag: move                
+Step   367(   N/A%), save True, FPS   3.21, Running   71.76s, Atom ID:  5, Tag: move                
+Step   368(   N/A%), save True, FPS   3.27, Running   72.20s, Atom ID:  5, Tag: move                
+Step   369(   N/A%), save True, FPS   3.28, Running   72.32s, Atom ID:  5, Tag: move                
+Step   370(   N/A%), save True, FPS   3.33, Running   72.76s, Atom ID:  5, Tag: move                
+Step   371(   N/A%), save True, FPS   3.34, Running   72.88s, Atom ID:  5, Tag: move                
+Step   372(   N/A%), save True, FPS   3.40, Running   73.34s, Atom ID:  5, Tag: move                
+Step   373(   N/A%), save True, FPS   3.44, Running   73.45s, Atom ID:  5, Tag: move                
+Step   374(   N/A%), save True, FPS   3.52, Running   73.87s, Atom ID:  5, Tag: move                
+Step   375(   N/A%), save True, FPS   3.54, Running   73.98s, Atom ID:  5, Tag: move                
+Step   376(   N/A%), save True, FPS   3.55, Running   74.42s, Atom ID:  5, Tag: move                
+Step   377(   N/A%), save True, FPS   3.58, Running   74.52s, Atom ID:  5, Tag: move                
+Step   378(   N/A%), save True, FPS   3.50, Running   75.12s, Atom ID:  5, Tag: move                
+Step   379(   N/A%), save True, FPS   3.50, Running   75.25s, Atom ID:  5, Tag: move                
+Step   380(   N/A%), save True, FPS   3.51, Running   75.71s, Atom ID:  5, Tag: move                
+Step   381(   N/A%), save True, FPS   3.50, Running   75.83s, Atom ID:  5, Tag: move                
+Step   382(   N/A%), save True, FPS   3.48, Running   76.27s, Atom ID:  5, Tag: move                
+Step   383(   N/A%), save True, FPS   3.47, Running   76.40s, Atom ID:  5, Tag: move                
+Step   384(   N/A%), save True, FPS   3.43, Running   76.88s, Atom ID:  5, Tag: move                
+Step   385(   N/A%), save True, FPS   3.42, Running   77.02s, Atom ID:  5, Tag: move                
+Step   386(   N/A%), save True, FPS   3.44, Running   77.46s, Atom ID:  5, Tag: move                
+Step   387(   N/A%), save True, FPS   3.43, Running   77.60s, Atom ID:  5, Tag: move                
+Step   388(   N/A%), save True, FPS   3.41, Running   78.06s, Atom ID:  5, Tag: move                
+Step   389(   N/A%), save True, FPS   3.41, Running   78.19s, Atom ID:  5, Tag: move                
+Step   390(   N/A%), save True, FPS   3.36, Running   78.70s, Atom ID:  5, Tag: move                
+Step   391(   N/A%), save True, FPS   3.36, Running   78.82s, Atom ID:  5, Tag: move                
+Step   392(   N/A%), save True, FPS   3.37, Running   79.27s, Atom ID:  5, Tag: move                
+Step   393(   N/A%), save True, FPS   3.37, Running   79.39s, Atom ID:  5, Tag: move                
+Step   394(   N/A%), save True, FPS   3.35, Running   79.84s, Atom ID:  5, Tag: move                
+Step   395(   N/A%), save True, FPS   3.34, Running   79.97s, Atom ID:  5, Tag: move                
+Step   396(   N/A%), save True, FPS   3.30, Running   80.48s, Atom ID:  5, Tag: move                
+Step   397(   N/A%), save True, FPS   3.30, Running   80.58s, Atom ID:  5, Tag: move                
+Step   398(   N/A%), save True, FPS   3.39, Running   81.02s, Atom ID:  5, Tag: move                
+Step   399(   N/A%), save True, FPS   3.40, Running   81.14s, Atom ID:  5, Tag: move                
+Step   400(   N/A%), save True, FPS   3.41, Running   81.57s, Atom ID:  5, Tag: move                
+Step   401(   N/A%), save True, FPS   3.41, Running   81.69s, Atom ID:  5, Tag: move                
+Step   402(   N/A%), save True, FPS   3.38, Running   82.19s, Atom ID:  5, Tag: move                
+Step   403(   N/A%), save True, FPS   3.39, Running   82.31s, Atom ID:  5, Tag: move                
+Step   404(   N/A%), save True, FPS   3.41, Running   82.74s, Atom ID:  5, Tag: move                
+Step   405(   N/A%), save True, FPS   3.42, Running   82.86s, Atom ID:  5, Tag: move                
+Step   406(   N/A%), save True, FPS   3.43, Running   83.30s, Atom ID:  5, Tag: move                
+Step   407(   N/A%), save True, FPS   3.44, Running   83.42s, Atom ID:  5, Tag: move                
+Step   408(   N/A%), save True, FPS   3.42, Running   83.90s, Atom ID:  5, Tag: move                
+Step   409(   N/A%), save True, FPS   3.43, Running   84.02s, Atom ID:  5, Tag: move                
+Step   410(   N/A%), save True, FPS   3.49, Running   84.43s, Atom ID:  5, Tag: move                
+Step   411(   N/A%), save True, FPS   3.50, Running   84.53s, Atom ID:  5, Tag: move                
+Step   412(   N/A%), save True, FPS   3.51, Running   84.97s, Atom ID:  5, Tag: move                
+Step   413(   N/A%), save True, FPS   3.50, Running   85.10s, Atom ID:  5, Tag: move                
+Step   414(   N/A%), save True, FPS   3.48, Running   85.59s, Atom ID:  5, Tag: move                
+Step   415(   N/A%), save True, FPS   3.49, Running   85.70s, Atom ID:  5, Tag: move                
+Step   416(   N/A%), save True, FPS   3.54, Running   86.12s, Atom ID:  5, Tag: move                
+Step   417(   N/A%), save True, FPS   3.54, Running   86.24s, Atom ID:  5, Tag: move                
+Step   418(   N/A%), save True, FPS   3.52, Running   86.69s, Atom ID:  5, Tag: move                
+Step   419(   N/A%), save True, FPS   3.52, Running   86.82s, Atom ID:  5, Tag: move                
+Step   420(   N/A%), save True, FPS   3.50, Running   87.29s, Atom ID:  5, Tag: move                
+Step   421(   N/A%), save True, FPS   3.49, Running   87.41s, Atom ID:  5, Tag: move                
+Step   422(   N/A%), save True, FPS   3.49, Running   87.92s, Atom ID:  5, Tag: move                
+Step   423(   N/A%), save True, FPS   3.49, Running   88.03s, Atom ID:  5, Tag: move                
+Step   424(   N/A%), save True, FPS   3.50, Running   88.46s, Atom ID:  5, Tag: move                
+Step   425(   N/A%), save True, FPS   3.49, Running   88.58s, Atom ID:  5, Tag: move                
+Step   426(   N/A%), save True, FPS   3.46, Running   89.08s, Atom ID:  5, Tag: move                
+Step   427(   N/A%), save True, FPS   3.43, Running   89.25s, Atom ID:  5, Tag: move                
+Step   428(   N/A%), save True, FPS   3.41, Running   89.78s, Atom ID:  5, Tag: move                
+Step   429(   N/A%), save True, FPS   3.37, Running   89.95s, Atom ID:  5, Tag: move                
+Step   430(   N/A%), save True, FPS   3.23, Running   90.62s, Atom ID:  5, Tag: move                
+Step   431(   N/A%), save True, FPS   3.19, Running   90.80s, Atom ID:  5, Tag: move                
+Step   432(   N/A%), save True, FPS   3.05, Running   91.54s, Atom ID:  5, Tag: move                
+Step   433(   N/A%), save True, FPS   3.02, Running   91.72s, Atom ID:  5, Tag: move                
+Step   434(   N/A%), save True, FPS   2.95, Running   92.37s, Atom ID:  5, Tag: move                
+Step   435(   N/A%), save True, FPS   2.92, Running   92.55s, Atom ID:  5, Tag: move                
+Step   436(   N/A%), save True, FPS   2.83, Running   93.19s, Atom ID:  5, Tag: move                
+Step   437(   N/A%), save True, FPS   2.80, Running   93.38s, Atom ID:  5, Tag: move                
+Step   438(   N/A%), save True, FPS   2.70, Running   94.09s, Atom ID:  5, Tag: move                
+Step   439(   N/A%), save True, FPS   2.68, Running   94.28s, Atom ID:  5, Tag: move                
+2026-11-09T06:37:03Z [124,476ms] [Warning] [omni.ujitso] [2026-11-09|14:37:03][][8589934835]: (Ensure normals are vertex or face varying) Invalid normal primvar data: buffer size 0 does not match expected size 69 with interpolation mode 3
+2026-11-09T06:37:03Z [124,477ms] [Warning] [omni.ujitso] [2026-11-09|14:37:03][][8589934809]: (Ensure normals are vertex or face varying) Invalid normal primvar data: buffer size 0 does not match expected size 169 with interpolation mode 3
+2026-11-09T06:37:03Z [124,478ms] [Warning] [omni.ujitso] [2026-11-09|14:37:03][][8589934821]: (Ensure normals are vertex or face varying) Invalid normal primvar data: buffer size 0 does not match expected size 169 with interpolation mode 3
+2026-11-09T06:37:03Z [124,497ms] [Warning] [omni.ujitso] [2026-11-09|14:37:03][][8589934824]: (Ensure normals are vertex or face varying) Invalid normal primvar data: buffer size 0 does not match expected size 7055 with interpolation mode 3
+Step   440(   N/A%), save True, FPS   2.58, Running   95.03s, Atom ID:  5, Tag: move                
+Step   441(   N/A%), save True, FPS   2.57, Running   95.21s, Atom ID:  5, Tag: move                
+Step   442(   N/A%), save True, FPS   2.50, Running   95.91s, Atom ID:  5, Tag: move                
+Step   443(   N/A%), save True, FPS   2.47, Running   96.12s, Atom ID:  5, Tag: move                
+Step   444(   N/A%), save True, FPS   2.31, Running   97.12s, Atom ID:  5, Tag: move                
+Step   445(   N/A%), save True, FPS   2.27, Running   97.39s, Atom ID:  5, Tag: move                
+Step   446(   N/A%), save True, FPS   2.20, Running   98.17s, Atom ID:  5, Tag: move                
+Step   447(   N/A%), save True, FPS   2.18, Running   98.42s, Atom ID:  5, Tag: move                
+Step   448(   N/A%), save True, FPS   2.09, Running   99.35s, Atom ID:  5, Tag: move                
+Step   449(   N/A%), save True, FPS   2.07, Running   99.61s, Atom ID:  5, Tag: move                
+Step   450(   N/A%), save True, FPS   1.99, Running  100.70s, Atom ID:  5, Tag: move                
+Step   451(   N/A%), save True, FPS   1.94, Running  101.10s, Atom ID:  5, Tag: move                
+Step   452(   N/A%), save True, FPS   1.92, Running  101.93s, Atom ID:  6, Tag: delay               
+Step   453(   N/A%), save True, FPS   1.94, Running  102.03s, Atom ID:  6, Tag: delay               
+Step   454(   N/A%), save True, FPS   1.89, Running  102.93s, Atom ID:  6, Tag: delay               
+Step   455(   N/A%), save True, FPS   1.91, Running  103.02s, Atom ID:  6, Tag: delay               
+Step   456(   N/A%), save True, FPS   1.85, Running  103.99s, Atom ID:  6, Tag: delay               
+Step   457(   N/A%), save True, FPS   1.87, Running  104.09s, Atom ID:  6, Tag: delay               
+Step   458(   N/A%), save True, FPS   1.87, Running  104.80s, Atom ID:  6, Tag: delay               
+Step   459(   N/A%), save True, FPS   1.89, Running  104.88s, Atom ID:  6, Tag: delay               
+Step   460(   N/A%), save True, FPS   1.87, Running  105.72s, Atom ID:  6, Tag: delay               
+Step   461(   N/A%), save True, FPS   1.88, Running  105.82s, Atom ID:  6, Tag: delay               
+Step   462(   N/A%), save True, FPS   1.78, Running  107.16s, Atom ID:  7, Tag: move                
+Step   463(   N/A%), save True, FPS   1.80, Running  107.26s, Atom ID:  7, Tag: move                
+Step   464(   N/A%), save True, FPS   1.85, Running  107.92s, Atom ID:  7, Tag: move                
+Step   465(   N/A%), save True, FPS   1.88, Running  108.01s, Atom ID:  7, Tag: move                
+Step   466(   N/A%), save True, FPS   1.88, Running  108.80s, Atom ID:  7, Tag: move                
+Step   467(   N/A%), save True, FPS   1.91, Running  108.91s, Atom ID:  7, Tag: move                
+[INFO]: RTX streaming completed in 0.17 s.
+Step   468(   N/A%), save True, FPS   1.77, Running  110.62s, Atom ID:  7, Tag: move                
+Step   469(   N/A%), save True, FPS   1.81, Running  110.67s, Atom ID:  7, Tag: move                
+Step   470(   N/A%), save True, FPS   1.92, Running  111.11s, Atom ID:  7, Tag: move                
+Step   471(   N/A%), save True, FPS   1.99, Running  111.17s, Atom ID:  7, Tag: move                
+Step   472(   N/A%), save True, FPS   2.00, Running  111.95s, Atom ID:  7, Tag: move                
+Step   473(   N/A%), save True, FPS   2.00, Running  112.05s, Atom ID:  7, Tag: move                
+Step   474(   N/A%), save True, FPS   2.03, Running  112.80s, Atom ID:  7, Tag: move                
+Step   475(   N/A%), save True, FPS   2.03, Running  112.89s, Atom ID:  7, Tag: move                
+Step   476(   N/A%), save True, FPS   2.07, Running  113.64s, Atom ID:  7, Tag: move                
+Step   477(   N/A%), save True, FPS   2.07, Running  113.73s, Atom ID:  7, Tag: move                
+Step   478(   N/A%), save True, FPS   2.07, Running  114.46s, Atom ID:  7, Tag: move                
+Step   479(   N/A%), save True, FPS   2.07, Running  114.55s, Atom ID:  7, Tag: move                
+Step   480(   N/A%), save True, FPS   2.08, Running  115.32s, Atom ID:  7, Tag: move                
+Step   481(   N/A%), save True, FPS   2.08, Running  115.41s, Atom ID:  7, Tag: move                
+Step   482(   N/A%), save True, FPS   2.24, Running  116.10s, Atom ID:  7, Tag: move                
+Step   483(   N/A%), save True, FPS   2.24, Running  116.17s, Atom ID:  7, Tag: move                
+Step   484(   N/A%), save True, FPS   2.28, Running  116.69s, Atom ID:  7, Tag: move                
+Step   485(   N/A%), save True, FPS   2.29, Running  116.75s, Atom ID:  7, Tag: move                
+Step   486(   N/A%), save True, FPS   2.29, Running  117.54s, Atom ID:  7, Tag: move                
+Step   487(   N/A%), save True, FPS   2.29, Running  117.63s, Atom ID:  7, Tag: move                
+Step   488(   N/A%), save True, FPS   2.62, Running  118.27s, Atom ID:  7, Tag: move                
+Step   489(   N/A%), save True, FPS   2.61, Running  118.33s, Atom ID:  7, Tag: move                
+Step   490(   N/A%), save True, FPS   2.57, Running  118.90s, Atom ID:  7, Tag: move                
+Step   491(   N/A%), save True, FPS   2.57, Running  118.97s, Atom ID:  7, Tag: move                
+Step   492(   N/A%), save True, FPS   2.59, Running  119.68s, Atom ID:  7, Tag: move                
+Step   493(   N/A%), save True, FPS   2.60, Running  119.75s, Atom ID:  7, Tag: move                
+Step   494(   N/A%), save True, FPS   2.66, Running  120.31s, Atom ID:  7, Tag: move                
+Step   495(   N/A%), save True, FPS   2.67, Running  120.40s, Atom ID:  7, Tag: move                
+Step   496(   N/A%), save True, FPS   2.75, Running  120.92s, Atom ID:  7, Tag: move                
+Step   497(   N/A%), save True, FPS   2.76, Running  120.99s, Atom ID:  7, Tag: move                
+Step   498(   N/A%), save True, FPS   2.79, Running  121.62s, Atom ID:  7, Tag: move                
+Step   499(   N/A%), save True, FPS   2.80, Running  121.69s, Atom ID:  7, Tag: move                
+Step   500(   N/A%), save True, FPS   2.90, Running  122.23s, Atom ID:  7, Tag: move                
+Step   501(   N/A%), save True, FPS   2.91, Running  122.29s, Atom ID:  7, Tag: move                
+Step   502(   N/A%), save True, FPS   2.96, Running  122.85s, Atom ID:  7, Tag: move                
+Step   503(   N/A%), save True, FPS   2.97, Running  122.91s, Atom ID:  7, Tag: move                
+Step   504(   N/A%), save True, FPS   2.92, Running  123.53s, Atom ID:  7, Tag: move                
+Step   505(   N/A%), save True, FPS   2.92, Running  123.60s, Atom ID:  7, Tag: move                
+Step   506(   N/A%), save True, FPS   3.04, Running  124.13s, Atom ID:  7, Tag: move                
+Step   507(   N/A%), save True, FPS   3.05, Running  124.19s, Atom ID:  7, Tag: move                
+Step   508(   N/A%), save True, FPS   3.08, Running  124.75s, Atom ID:  7, Tag: move                
+Step   509(   N/A%), save True, FPS   3.08, Running  124.82s, Atom ID:  7, Tag: move                
+Step   510(   N/A%), save True, FPS   3.06, Running  125.43s, Atom ID:  7, Tag: move                
+Step   511(   N/A%), save True, FPS   3.06, Running  125.51s, Atom ID:  7, Tag: move                
+Step   512(   N/A%), save True, FPS   3.13, Running  126.06s, Atom ID:  7, Tag: move                
+Step   513(   N/A%), save True, FPS   3.13, Running  126.13s, Atom ID:  7, Tag: move                
+Step   514(   N/A%), save True, FPS   3.15, Running  126.66s, Atom ID:  7, Tag: move                
+Step   515(   N/A%), save True, FPS   3.15, Running  126.74s, Atom ID:  7, Tag: move                
+Step   516(   N/A%), save True, FPS   3.11, Running  127.36s, Atom ID:  7, Tag: move                
+Step   517(   N/A%), save True, FPS   3.11, Running  127.42s, Atom ID:  7, Tag: move                
+Step   518(   N/A%), save True, FPS   3.15, Running  127.97s, Atom ID:  7, Tag: move                
+Step   519(   N/A%), save True, FPS   3.15, Running  128.04s, Atom ID:  7, Tag: move                
+Step   520(   N/A%), save True, FPS   3.14, Running  128.59s, Atom ID:  7, Tag: move                
+Step   521(   N/A%), save True, FPS   3.14, Running  128.66s, Atom ID:  7, Tag: move                
+Step   522(   N/A%), save True, FPS   3.10, Running  129.29s, Atom ID:  7, Tag: move                
+Step   523(   N/A%), save True, FPS   3.09, Running  129.38s, Atom ID:  7, Tag: move                
+Step   524(   N/A%), save True, FPS   3.11, Running  129.97s, Atom ID:  7, Tag: move                
+Step   525(   N/A%), save True, FPS   3.09, Running  130.08s, Atom ID:  7, Tag: move                
+Step   526(   N/A%), save True, FPS   3.06, Running  130.66s, Atom ID:  7, Tag: move                
+Step   527(   N/A%), save True, FPS   3.04, Running  130.77s, Atom ID:  7, Tag: move                
+Step   528(   N/A%), save True, FPS   2.99, Running  131.43s, Atom ID:  7, Tag: move                
+Step   529(   N/A%), save True, FPS   2.98, Running  131.53s, Atom ID:  7, Tag: move                
+Step   530(   N/A%), save True, FPS   2.99, Running  132.11s, Atom ID:  7, Tag: move                
+Step   531(   N/A%), save True, FPS   2.99, Running  132.21s, Atom ID:  7, Tag: move                
+Step   532(   N/A%), save True, FPS   2.97, Running  132.79s, Atom ID:  7, Tag: move                
+Step   533(   N/A%), save True, FPS   2.96, Running  132.88s, Atom ID:  7, Tag: move                
+Step   534(   N/A%), save True, FPS   2.90, Running  133.56s, Atom ID:  7, Tag: move                
+Step   535(   N/A%), save True, FPS   2.89, Running  133.66s, Atom ID:  7, Tag: move                
+Step   536(   N/A%), save True, FPS   2.91, Running  134.23s, Atom ID:  7, Tag: move                
+Step   537(   N/A%), save True, FPS   2.90, Running  134.33s, Atom ID:  7, Tag: move                
+Step   538(   N/A%), save True, FPS   2.88, Running  134.91s, Atom ID:  7, Tag: move                
+Step   539(   N/A%), save True, FPS   2.87, Running  135.01s, Atom ID:  7, Tag: move                
+Step   540(   N/A%), save True, FPS   2.83, Running  135.65s, Atom ID:  7, Tag: move                
+Step   541(   N/A%), save True, FPS   2.82, Running  135.75s, Atom ID:  7, Tag: move                
+Step   542(   N/A%), save True, FPS   2.84, Running  136.34s, Atom ID:  7, Tag: move                
+Step   543(   N/A%), save True, FPS   2.83, Running  136.44s, Atom ID:  7, Tag: move                
+Step   544(   N/A%), save True, FPS   2.84, Running  137.02s, Atom ID:  7, Tag: move                
+Step   545(   N/A%), save True, FPS   2.84, Running  137.12s, Atom ID:  7, Tag: move                
+Step   546(   N/A%), save True, FPS   2.81, Running  137.78s, Atom ID:  7, Tag: move                
+Step   547(   N/A%), save True, FPS   2.81, Running  137.88s, Atom ID:  7, Tag: move                
+Step   548(   N/A%), save True, FPS   2.83, Running  138.50s, Atom ID:  7, Tag: move                
+Step   549(   N/A%), save True, FPS   2.83, Running  138.60s, Atom ID:  7, Tag: move                
+Step   550(   N/A%), save True, FPS   2.83, Running  139.18s, Atom ID:  7, Tag: move                
+Step   551(   N/A%), save True, FPS   2.82, Running  139.31s, Atom ID:  7, Tag: move                
+Step   552(   N/A%), save True, FPS   2.74, Running  140.08s, Atom ID:  7, Tag: move                
+Step   553(   N/A%), save True, FPS   2.73, Running  140.20s, Atom ID:  7, Tag: move                
+Step   554(   N/A%), save True, FPS   2.76, Running  140.80s, Atom ID:  7, Tag: move                
+Step   555(   N/A%), save True, FPS   2.76, Running  140.91s, Atom ID:  7, Tag: move                
+Step   556(   N/A%), save True, FPS   2.74, Running  141.54s, Atom ID:  7, Tag: move                
+Step   557(   N/A%), save True, FPS   2.71, Running  141.70s, Atom ID:  7, Tag: move                
+Step   558(   N/A%), save True, FPS   2.67, Running  142.40s, Atom ID:  7, Tag: move                
+Step   559(   N/A%), save True, FPS   2.66, Running  142.52s, Atom ID:  7, Tag: move                
+Step   560(   N/A%), save True, FPS   2.68, Running  143.12s, Atom ID:  7, Tag: move                
+Step   561(   N/A%), save True, FPS   2.66, Running  143.27s, Atom ID:  7, Tag: move                
+Step   562(   N/A%), save True, FPS   2.65, Running  143.89s, Atom ID:  7, Tag: move                
+Step   563(   N/A%), save True, FPS   2.64, Running  144.02s, Atom ID:  7, Tag: move                
+Step   564(   N/A%), save True, FPS   2.60, Running  144.72s, Atom ID:  7, Tag: move                
+Step   565(   N/A%), save True, FPS   2.58, Running  144.87s, Atom ID:  7, Tag: move                
+Step   566(   N/A%), save True, FPS   2.59, Running  145.50s, Atom ID:  7, Tag: move                
+Step   567(   N/A%), save True, FPS   2.58, Running  145.64s, Atom ID:  7, Tag: move                
+Step   568(   N/A%), save True, FPS   2.57, Running  146.28s, Atom ID:  7, Tag: move                
+Step   569(   N/A%), save True, FPS   2.54, Running  146.46s, Atom ID:  7, Tag: move                
+Step   570(   N/A%), save True, FPS   2.50, Running  147.18s, Atom ID:  7, Tag: move                
+Step   571(   N/A%), save True, FPS   2.49, Running  147.36s, Atom ID:  7, Tag: move                
+Step   572(   N/A%), save True, FPS   2.52, Running  148.03s, Atom ID:  7, Tag: move                
+Step   573(   N/A%), save True, FPS   2.49, Running  148.22s, Atom ID:  7, Tag: move                
+Step   574(   N/A%), save True, FPS   2.47, Running  148.88s, Atom ID:  7, Tag: move                
+Step   575(   N/A%), save True, FPS   2.46, Running  149.03s, Atom ID:  7, Tag: move                
+Step   576(   N/A%), save True, FPS   2.44, Running  149.73s, Atom ID:  7, Tag: move                
+Step   577(   N/A%), save True, FPS   2.44, Running  149.89s, Atom ID:  7, Tag: move                
+Step   578(   N/A%), save True, FPS   2.48, Running  150.48s, Atom ID:  7, Tag: move                
+Step   579(   N/A%), save True, FPS   2.39, Running  150.90s, Atom ID:  7, Tag: move                
+Step   580(   N/A%), save True, FPS   2.37, Running  151.55s, Atom ID:  7, Tag: move                
+Step   581(   N/A%), save True, FPS   2.35, Running  151.76s, Atom ID:  7, Tag: move                
+Step   582(   N/A%), save True, FPS   2.31, Running  152.56s, Atom ID:  7, Tag: move                
+Step   583(   N/A%), save True, FPS   2.31, Running  152.69s, Atom ID:  7, Tag: move                
+Step   584(   N/A%), save True, FPS   2.29, Running  153.46s, Atom ID:  7, Tag: move                
+Step   585(   N/A%), save True, FPS   2.26, Running  153.71s, Atom ID:  7, Tag: move                
+Step   586(   N/A%), save True, FPS   2.23, Running  154.48s, Atom ID:  7, Tag: move                
+Step   587(   N/A%), save True, FPS   2.23, Running  154.61s, Atom ID:  7, Tag: move                
+Step   588(   N/A%), save True, FPS   2.22, Running  155.28s, Atom ID:  7, Tag: move                
+Step   589(   N/A%), save True, FPS   2.23, Running  155.42s, Atom ID:  7, Tag: move                
+Step   590(   N/A%), save True, FPS   2.25, Running  156.05s, Atom ID:  7, Tag: move                
+Step   591(   N/A%), save True, FPS   2.27, Running  156.18s, Atom ID:  7, Tag: move                
+Step   592(   N/A%), save True, FPS   2.28, Running  156.79s, Atom ID:  7, Tag: move                
+Step   593(   N/A%), save True, FPS   2.31, Running  156.90s, Atom ID:  7, Tag: move                
+Step   594(   N/A%), save True, FPS   2.31, Running  157.55s, Atom ID:  7, Tag: move                
+Step   595(   N/A%), save True, FPS   2.33, Running  157.61s, Atom ID:  7, Tag: move                
+Step   596(   N/A%), save True, FPS   2.37, Running  158.16s, Atom ID:  7, Tag: move                
+Step   597(   N/A%), save True, FPS   2.40, Running  158.23s, Atom ID:  7, Tag: move                
+Step   598(   N/A%), save True, FPS   2.40, Running  158.80s, Atom ID:  7, Tag: move                
+Step   599(   N/A%), save True, FPS   2.51, Running  158.87s, Atom ID:  7, Tag: move                
+Step   600(   N/A%), save True, FPS   2.51, Running  159.52s, Atom ID:  7, Tag: move                
+Step   601(   N/A%), save True, FPS   2.56, Running  159.58s, Atom ID:  7, Tag: move                
+Step   602(   N/A%), save True, FPS   2.64, Running  160.12s, Atom ID:  7, Tag: move                
+Step   603(   N/A%), save True, FPS   2.66, Running  160.20s, Atom ID:  7, Tag: move                
+Step   604(   N/A%), save True, FPS   2.75, Running  160.73s, Atom ID:  7, Tag: move                
+Step   605(   N/A%), save True, FPS   2.82, Running  160.80s, Atom ID:  7, Tag: move                
+Step   606(   N/A%), save True, FPS   2.87, Running  161.44s, Atom ID:  7, Tag: move                
+Step   607(   N/A%), save True, FPS   2.89, Running  161.52s, Atom ID:  7, Tag: move                
+Step   608(   N/A%), save True, FPS   2.94, Running  162.08s, Atom ID:  7, Tag: move                
+Step   609(   N/A%), save True, FPS   2.97, Running  162.15s, Atom ID:  7, Tag: move                
+Step   610(   N/A%), save True, FPS   3.01, Running  162.69s, Atom ID:  7, Tag: move                
+Step   611(   N/A%), save True, FPS   3.04, Running  162.77s, Atom ID:  7, Tag: move                
+Step   612(   N/A%), save True, FPS   3.03, Running  163.39s, Atom ID:  7, Tag: move                
+Step   613(   N/A%), save True, FPS   3.03, Running  163.49s, Atom ID:  7, Tag: move                
+Step   614(   N/A%), save True, FPS   3.08, Running  164.04s, Atom ID:  7, Tag: move                
+Step   615(   N/A%), save True, FPS   3.08, Running  164.11s, Atom ID:  7, Tag: move                
+Step   616(   N/A%), save True, FPS   3.08, Running  164.66s, Atom ID:  7, Tag: move                
+Step   617(   N/A%), save True, FPS   3.08, Running  164.73s, Atom ID:  7, Tag: move                
+Step   618(   N/A%), save True, FPS   3.06, Running  165.34s, Atom ID:  7, Tag: move                
+Step   619(   N/A%), save True, FPS   3.06, Running  165.41s, Atom ID:  7, Tag: move                
+Step   620(   N/A%), save True, FPS   3.11, Running  165.95s, Atom ID:  7, Tag: move                
+Step   621(   N/A%), save True, FPS   3.10, Running  166.03s, Atom ID:  7, Tag: move                
+Step   622(   N/A%), save True, FPS   3.10, Running  166.58s, Atom ID:  7, Tag: move                
+Step   623(   N/A%), save True, FPS   3.10, Running  166.65s, Atom ID:  7, Tag: move                
+Step   624(   N/A%), save True, FPS   3.04, Running  167.30s, Atom ID:  7, Tag: move                
+Step   625(   N/A%), save True, FPS   3.05, Running  167.37s, Atom ID:  7, Tag: move                
+Step   626(   N/A%), save True, FPS   3.09, Running  167.91s, Atom ID:  7, Tag: move                
+Step   627(   N/A%), save True, FPS   3.10, Running  167.98s, Atom ID:  7, Tag: move                
+Step   628(   N/A%), save True, FPS   3.10, Running  168.53s, Atom ID:  7, Tag: move                
+Step   629(   N/A%), save True, FPS   3.10, Running  168.60s, Atom ID:  7, Tag: move                
+Step   630(   N/A%), save True, FPS   3.07, Running  169.21s, Atom ID:  7, Tag: move                
+Step   631(   N/A%), save True, FPS   3.07, Running  169.28s, Atom ID:  7, Tag: move                
+Step   632(   N/A%), save True, FPS   3.10, Running  169.83s, Atom ID:  7, Tag: move                
+Step   633(   N/A%), save True, FPS   3.12, Running  169.90s, Atom ID:  7, Tag: move                
+Step   634(   N/A%), save True, FPS   3.12, Running  170.44s, Atom ID:  7, Tag: move                
+Step   635(   N/A%), save True, FPS   3.12, Running  170.51s, Atom ID:  7, Tag: move                
+Step   636(   N/A%), save True, FPS   3.05, Running  171.21s, Atom ID:  7, Tag: move                
+Step   637(   N/A%), save True, FPS   3.05, Running  171.28s, Atom ID:  7, Tag: move                
+Step   638(   N/A%), save True, FPS   3.15, Running  171.68s, Atom ID:  7, Tag: move                
+Step   639(   N/A%), save True, FPS   3.16, Running  171.73s, Atom ID:  7, Tag: move                
+Step   640(   N/A%), save True, FPS   3.26, Running  172.09s, Atom ID:  7, Tag: move                
+Step   641(   N/A%), save True, FPS   3.27, Running  172.14s, Atom ID:  7, Tag: move                
+Step   642(   N/A%), save True, FPS   3.36, Running  172.54s, Atom ID:  7, Tag: move                
+Step   643(   N/A%), save True, FPS   3.36, Running  172.60s, Atom ID:  7, Tag: move                
+Step   644(   N/A%), save True, FPS   3.53, Running  172.96s, Atom ID:  7, Tag: move                
+Step   645(   N/A%), save True, FPS   3.55, Running  173.01s, Atom ID:  7, Tag: move                
+Step   646(   N/A%), save True, FPS   3.44, Running  173.72s, Atom ID:  7, Tag: move                
+Step   647(   N/A%), save True, FPS   3.46, Running  173.75s, Atom ID:  7, Tag: move                
+Step   648(   N/A%), save True, FPS   3.55, Running  174.17s, Atom ID:  7, Tag: move                
+Step   649(   N/A%), save True, FPS   3.56, Running  174.21s, Atom ID:  7, Tag: move                
+Step   650(   N/A%), save True, FPS   3.75, Running  174.55s, Atom ID:  7, Tag: move                
+Step   651(   N/A%), save True, FPS   3.77, Running  174.60s, Atom ID:  7, Tag: move                
+Step   652(   N/A%), save True, FPS   3.91, Running  174.95s, Atom ID:  7, Tag: move                
+Step   653(   N/A%), save True, FPS   3.93, Running  174.99s, Atom ID:  7, Tag: move                
+Step   654(   N/A%), save True, FPS   4.04, Running  175.40s, Atom ID:  7, Tag: move                
+Step   655(   N/A%), save True, FPS   4.05, Running  175.45s, Atom ID:  7, Tag: move                
+Step   656(   N/A%), save True, FPS   4.34, Running  175.82s, Atom ID:  7, Tag: move                
+Step   657(   N/A%), save True, FPS   4.36, Running  175.87s, Atom ID:  7, Tag: move                
+Step   658(   N/A%), save True, FPS   4.41, Running  176.22s, Atom ID:  7, Tag: move                
+Step   659(   N/A%), save True, FPS   4.41, Running  176.26s, Atom ID:  7, Tag: move                
+Step   660(   N/A%), save True, FPS   4.36, Running  176.68s, Atom ID:  7, Tag: move                
+Step   661(   N/A%), save True, FPS   4.36, Running  176.73s, Atom ID:  7, Tag: move                
+Step   662(   N/A%), save True, FPS   4.41, Running  177.07s, Atom ID:  7, Tag: move                
+Step   663(   N/A%), save True, FPS   4.42, Running  177.12s, Atom ID:  7, Tag: move                
+Step   664(   N/A%), save True, FPS   4.43, Running  177.48s, Atom ID:  7, Tag: move                
+Step   665(   N/A%), save True, FPS   4.43, Running  177.52s, Atom ID:  7, Tag: move                
+Step   666(   N/A%), save True, FPS   4.74, Running  177.94s, Atom ID:  7, Tag: move                
+Step   667(   N/A%), save True, FPS   4.73, Running  177.98s, Atom ID:  7, Tag: move                
+Step   668(   N/A%), save True, FPS   4.78, Running  178.35s, Atom ID:  7, Tag: move                
+Step   669(   N/A%), save True, FPS   4.78, Running  178.40s, Atom ID:  7, Tag: move                
+Step   670(   N/A%), save True, FPS   4.77, Running  178.74s, Atom ID:  7, Tag: move                
+Step   671(   N/A%), save True, FPS   4.80, Running  178.76s, Atom ID:  7, Tag: move                
+Step   672(   N/A%), save True, FPS   4.69, Running  179.21s, Atom ID:  7, Tag: move                
+Step   673(   N/A%), save True, FPS   4.69, Running  179.25s, Atom ID:  7, Tag: move                
+Step   674(   N/A%), save True, FPS   4.74, Running  179.61s, Atom ID:  7, Tag: move                
+Step   675(   N/A%), save True, FPS   4.74, Running  179.66s, Atom ID:  7, Tag: move                
+Step   676(   N/A%), save True, FPS   4.77, Running  180.01s, Atom ID:  7, Tag: move                
+Step   677(   N/A%), save True, FPS   4.77, Running  180.05s, Atom ID:  7, Tag: move                
+Step   678(   N/A%), save True, FPS   4.71, Running  180.47s, Atom ID:  7, Tag: move                
+Step   679(   N/A%), save True, FPS   4.71, Running  180.51s, Atom ID:  7, Tag: move                
+Step   680(   N/A%), save True, FPS   4.77, Running  180.87s, Atom ID:  7, Tag: move                
+Step   681(   N/A%), save True, FPS   4.77, Running  180.92s, Atom ID:  7, Tag: move                
+Step   682(   N/A%), save True, FPS   4.76, Running  181.27s, Atom ID:  7, Tag: move                
+Step   683(   N/A%), save True, FPS   4.77, Running  181.31s, Atom ID:  7, Tag: move                
+Step   684(   N/A%), save True, FPS   4.70, Running  181.73s, Atom ID:  7, Tag: move                
+Step   685(   N/A%), save True, FPS   4.70, Running  181.78s, Atom ID:  7, Tag: move                
+Step   686(   N/A%), save True, FPS   4.75, Running  182.14s, Atom ID:  7, Tag: move                
+Step   687(   N/A%), save True, FPS   4.75, Running  182.19s, Atom ID:  7, Tag: move                
+Step   688(   N/A%), save True, FPS   4.77, Running  182.55s, Atom ID:  7, Tag: move                
+Step   689(   N/A%), save True, FPS   4.77, Running  182.59s, Atom ID:  7, Tag: move                
+Step   690(   N/A%), save True, FPS   4.66, Running  183.03s, Atom ID:  7, Tag: move                
+Step   691(   N/A%), save True, FPS   4.64, Running  183.07s, Atom ID:  7, Tag: move                
+Step   692(   N/A%), save True, FPS   4.73, Running  183.43s, Atom ID:  7, Tag: move                
+Step   693(   N/A%), save True, FPS   4.73, Running  183.48s, Atom ID:  7, Tag: move                
+Step   694(   N/A%), save True, FPS   4.74, Running  183.83s, Atom ID:  7, Tag: move                
+Step   695(   N/A%), save True, FPS   4.75, Running  183.88s, Atom ID:  7, Tag: move                
+Step   696(   N/A%), save True, FPS   4.68, Running  184.29s, Atom ID:  7, Tag: move                
+Step   697(   N/A%), save True, FPS   4.68, Running  184.33s, Atom ID:  7, Tag: move                
+Step   698(   N/A%), save True, FPS   4.73, Running  184.69s, Atom ID:  7, Tag: move                
+Step   699(   N/A%), save True, FPS   4.73, Running  184.74s, Atom ID:  7, Tag: move                
+Step   700(   N/A%), save True, FPS   4.74, Running  185.09s, Atom ID:  7, Tag: move                
+Step   701(   N/A%), save True, FPS   4.75, Running  185.13s, Atom ID:  7, Tag: move                
+Step   702(   N/A%), save True, FPS   4.70, Running  185.53s, Atom ID:  7, Tag: move                
+Step   703(   N/A%), save True, FPS   4.70, Running  185.57s, Atom ID:  7, Tag: move                
+Step   704(   N/A%), save True, FPS   4.77, Running  185.93s, Atom ID:  7, Tag: move                
+Step   705(   N/A%), save True, FPS   4.77, Running  185.97s, Atom ID:  7, Tag: move                
+Step   706(   N/A%), save True, FPS   4.78, Running  186.32s, Atom ID:  7, Tag: move                
+Step   707(   N/A%), save True, FPS   4.78, Running  186.37s, Atom ID:  7, Tag: move                
+Step   708(   N/A%), save True, FPS   4.74, Running  186.77s, Atom ID:  7, Tag: move                
+Step   709(   N/A%), save True, FPS   4.74, Running  186.82s, Atom ID:  7, Tag: move                
+Step   710(   N/A%), save True, FPS   4.83, Running  187.17s, Atom ID:  7, Tag: move                
+Step   711(   N/A%), save True, FPS   4.83, Running  187.22s, Atom ID:  7, Tag: move                
+Step   712(   N/A%), save True, FPS   4.83, Running  187.57s, Atom ID:  7, Tag: move                
+Step   713(   N/A%), save True, FPS   4.83, Running  187.61s, Atom ID:  7, Tag: move                
+Step   714(   N/A%), save True, FPS   4.78, Running  188.02s, Atom ID:  7, Tag: move                
+Step   715(   N/A%), save True, FPS   4.78, Running  188.06s, Atom ID:  7, Tag: move                
+Step   716(   N/A%), save True, FPS   4.85, Running  188.41s, Atom ID:  7, Tag: move                
+Step   717(   N/A%), save True, FPS   4.84, Running  188.46s, Atom ID:  7, Tag: move                
+Step   718(   N/A%), save True, FPS   4.84, Running  188.82s, Atom ID:  7, Tag: move                
+Step   719(   N/A%), save True, FPS   4.84, Running  188.87s, Atom ID:  7, Tag: move                
+Step   720(   N/A%), save True, FPS   4.76, Running  189.29s, Atom ID:  7, Tag: move                
+Step   721(   N/A%), save True, FPS   4.75, Running  189.34s, Atom ID:  7, Tag: move                
+Step   722(   N/A%), save True, FPS   4.81, Running  189.69s, Atom ID:  7, Tag: move                
+Step   723(   N/A%), save True, FPS   4.81, Running  189.73s, Atom ID:  7, Tag: move                
+Step   724(   N/A%), save True, FPS   4.83, Running  190.07s, Atom ID:  7, Tag: move                
+Step   725(   N/A%), save True, FPS   4.83, Running  190.11s, Atom ID:  7, Tag: move                
+Step   726(   N/A%), save True, FPS   4.75, Running  190.54s, Atom ID:  7, Tag: move                
+Step   727(   N/A%), save True, FPS   4.74, Running  190.59s, Atom ID:  7, Tag: move                
+Step   728(   N/A%), save True, FPS   4.79, Running  190.95s, Atom ID:  7, Tag: move                
+Step   729(   N/A%), save True, FPS   4.79, Running  190.99s, Atom ID:  7, Tag: move                
+Step   730(   N/A%), save True, FPS   4.77, Running  191.36s, Atom ID:  7, Tag: move                
+Step   731(   N/A%), save True, FPS   4.77, Running  191.41s, Atom ID:  7, Tag: move                
+Step   732(   N/A%), save True, FPS   4.68, Running  191.84s, Atom ID:  7, Tag: move                
+Step   733(   N/A%), save True, FPS   4.68, Running  191.88s, Atom ID:  7, Tag: move                
+Step   734(   N/A%), save True, FPS   4.74, Running  192.23s, Atom ID:  7, Tag: move                
+Step   735(   N/A%), save True, FPS   4.73, Running  192.29s, Atom ID:  7, Tag: move                
+Step   736(   N/A%), save True, FPS   4.71, Running  192.66s, Atom ID:  7, Tag: move                
+Step   737(   N/A%), save True, FPS   4.72, Running  192.70s, Atom ID:  7, Tag: move                
+Step   738(   N/A%), save True, FPS   4.65, Running  193.13s, Atom ID:  7, Tag: move                
+Step   739(   N/A%), save True, FPS   4.64, Running  193.17s, Atom ID:  7, Tag: move                
+Step   740(   N/A%), save True, FPS   4.71, Running  193.54s, Atom ID:  7, Tag: move                
+Step   741(   N/A%), save True, FPS   4.72, Running  193.57s, Atom ID:  7, Tag: move                
+Step   742(   N/A%), save True, FPS   4.71, Running  193.93s, Atom ID:  7, Tag: move                
+Step   743(   N/A%), save True, FPS   4.72, Running  193.97s, Atom ID:  7, Tag: move                
+Step   744(   N/A%), save True, FPS   4.63, Running  194.39s, Atom ID:  7, Tag: move                
+Step   745(   N/A%), save True, FPS   4.62, Running  194.44s, Atom ID:  7, Tag: move                
+Step   746(   N/A%), save True, FPS   4.69, Running  194.80s, Atom ID:  7, Tag: move                
+Step   747(   N/A%), save True, FPS   4.71, Running  194.83s, Atom ID:  7, Tag: move                
+Step   748(   N/A%), save True, FPS   4.71, Running  195.20s, Atom ID:  7, Tag: move                
+Step   749(   N/A%), save True, FPS   4.71, Running  195.24s, Atom ID:  7, Tag: move                
+Step   750(   N/A%), save True, FPS   4.66, Running  195.66s, Atom ID:  7, Tag: move                
+Step   751(   N/A%), save True, FPS   4.66, Running  195.70s, Atom ID:  7, Tag: move                
+Step   752(   N/A%), save True, FPS   4.74, Running  196.06s, Atom ID:  7, Tag: move                
+Step   753(   N/A%), save True, FPS   4.75, Running  196.10s, Atom ID:  7, Tag: move                
+Step   754(   N/A%), save True, FPS   4.74, Running  196.45s, Atom ID:  7, Tag: move                
+Step   755(   N/A%), save True, FPS   4.75, Running  196.50s, Atom ID:  7, Tag: move                
+Step   756(   N/A%), save True, FPS   4.71, Running  196.90s, Atom ID:  7, Tag: move                
+Step   757(   N/A%), save True, FPS   4.71, Running  196.95s, Atom ID:  7, Tag: move                
+Step   758(   N/A%), save True, FPS   4.78, Running  197.31s, Atom ID:  7, Tag: move                
+Step   759(   N/A%), save True, FPS   4.78, Running  197.35s, Atom ID:  7, Tag: move                
+Step   760(   N/A%), save True, FPS   4.79, Running  197.72s, Atom ID:  7, Tag: move                
+Step   761(   N/A%), save True, FPS   4.78, Running  197.76s, Atom ID:  7, Tag: move                
+Step   762(   N/A%), save True, FPS   4.71, Running  198.17s, Atom ID:  7, Tag: move                
+Step   763(   N/A%), save True, FPS   4.71, Running  198.22s, Atom ID:  7, Tag: move                
+Step   764(   N/A%), save True, FPS   4.77, Running  198.58s, Atom ID:  7, Tag: move                
+Step   765(   N/A%), save True, FPS   4.77, Running  198.62s, Atom ID:  7, Tag: move                
+Step   766(   N/A%), save True, FPS   4.78, Running  198.98s, Atom ID:  7, Tag: move                
+Step   767(   N/A%), save True, FPS   4.76, Running  199.03s, Atom ID:  7, Tag: move                
+Step   768(   N/A%), save True, FPS   4.71, Running  199.44s, Atom ID:  7, Tag: move                
+Step   769(   N/A%), save True, FPS   4.70, Running  199.50s, Atom ID:  7, Tag: move                
+Step   770(   N/A%), save True, FPS   4.76, Running  199.86s, Atom ID:  7, Tag: move                
+Step   771(   N/A%), save True, FPS   4.76, Running  199.90s, Atom ID:  7, Tag: move                
+Step   772(   N/A%), save True, FPS   4.76, Running  200.26s, Atom ID:  7, Tag: move                
+Step   773(   N/A%), save True, FPS   4.75, Running  200.31s, Atom ID:  7, Tag: move                
+Step   774(   N/A%), save True, FPS   4.68, Running  200.72s, Atom ID:  7, Tag: move                
+Step   775(   N/A%), save True, FPS   4.68, Running  200.77s, Atom ID:  7, Tag: move                
+Step   776(   N/A%), save True, FPS   4.73, Running  201.13s, Atom ID:  7, Tag: move                
+Step   777(   N/A%), save True, FPS   4.73, Running  201.17s, Atom ID:  7, Tag: move                
+Step   778(   N/A%), save True, FPS   4.75, Running  201.53s, Atom ID:  7, Tag: move                
+Step   779(   N/A%), save True, FPS   4.75, Running  201.57s, Atom ID:  7, Tag: move                
+Step   780(   N/A%), save True, FPS   4.69, Running  201.98s, Atom ID:  7, Tag: move                
+Step   781(   N/A%), save True, FPS   4.70, Running  202.02s, Atom ID:  7, Tag: move                
+Step   782(   N/A%), save True, FPS   4.75, Running  202.38s, Atom ID:  7, Tag: move                
+Step   783(   N/A%), save True, FPS   4.76, Running  202.42s, Atom ID:  7, Tag: move                
+Step   784(   N/A%), save True, FPS   4.76, Running  202.78s, Atom ID:  7, Tag: move                
+Step   785(   N/A%), save True, FPS   4.78, Running  202.81s, Atom ID:  7, Tag: move                
+Step   786(   N/A%), save True, FPS   4.69, Running  203.25s, Atom ID:  7, Tag: move                
+Step   787(   N/A%), save True, FPS   4.70, Running  203.29s, Atom ID:  7, Tag: move                
+Step   788(   N/A%), save True, FPS   4.74, Running  203.66s, Atom ID:  7, Tag: move                
+Step   789(   N/A%), save True, FPS   4.75, Running  203.71s, Atom ID:  7, Tag: move                
+Step   790(   N/A%), save True, FPS   4.75, Running  204.07s, Atom ID:  7, Tag: move                
+Step   791(   N/A%), save True, FPS   4.75, Running  204.11s, Atom ID:  7, Tag: move                
+Step   792(   N/A%), save True, FPS   4.71, Running  204.51s, Atom ID:  7, Tag: move                
+Step   793(   N/A%), save True, FPS   4.71, Running  204.55s, Atom ID:  7, Tag: move                
+Step   794(   N/A%), save True, FPS   4.77, Running  204.92s, Atom ID:  7, Tag: move                
+Step   795(   N/A%), save True, FPS   4.79, Running  204.94s, Atom ID:  7, Tag: move                
+Step   796(   N/A%), save True, FPS   4.80, Running  205.30s, Atom ID:  7, Tag: move                
+Step   797(   N/A%), save True, FPS   4.79, Running  205.35s, Atom ID:  7, Tag: move                
+Step   798(   N/A%), save True, FPS   4.70, Running  205.78s, Atom ID:  7, Tag: move                
+Step   799(   N/A%), save True, FPS   4.70, Running  205.82s, Atom ID:  7, Tag: move                
+Step   800(   N/A%), save True, FPS   4.76, Running  206.18s, Atom ID:  7, Tag: move                
+Step   801(   N/A%), save True, FPS   4.76, Running  206.22s, Atom ID:  7, Tag: move                
+Step   802(   N/A%), save True, FPS   4.77, Running  206.57s, Atom ID:  7, Tag: move                
+Step   803(   N/A%), save True, FPS   4.76, Running  206.62s, Atom ID:  7, Tag: move                
+Step   804(   N/A%), save True, FPS   4.69, Running  207.05s, Atom ID:  7, Tag: move                
+Step   805(   N/A%), save True, FPS   4.66, Running  207.10s, Atom ID:  7, Tag: move                
+Step   806(   N/A%), save True, FPS   4.76, Running  207.45s, Atom ID:  7, Tag: move                
+Step   807(   N/A%), save True, FPS   4.75, Running  207.50s, Atom ID:  7, Tag: move                
+Step   808(   N/A%), save True, FPS   4.74, Running  207.88s, Atom ID:  7, Tag: move                
+Step   809(   N/A%), save True, FPS   4.75, Running  207.92s, Atom ID:  7, Tag: move                
+Step   810(   N/A%), save True, FPS   4.64, Running  208.37s, Atom ID:  7, Tag: move                
+Step   811(   N/A%), save True, FPS   4.64, Running  208.42s, Atom ID:  7, Tag: move                
+Step   812(   N/A%), save True, FPS   4.67, Running  208.79s, Atom ID:  7, Tag: move                
+Step   813(   N/A%), save True, FPS   4.67, Running  208.84s, Atom ID:  7, Tag: move                
+Step   814(   N/A%), save True, FPS   4.64, Running  209.22s, Atom ID:  7, Tag: move                
+Step   815(   N/A%), save True, FPS   4.62, Running  209.27s, Atom ID:  7, Tag: move                
+Step   816(   N/A%), save True, FPS   4.53, Running  209.71s, Atom ID:  7, Tag: move                
+Step   817(   N/A%), save True, FPS   4.53, Running  209.76s, Atom ID:  7, Tag: move                
+Step   818(   N/A%), save True, FPS   4.57, Running  210.16s, Atom ID:  7, Tag: move                
+Step   819(   N/A%), save True, FPS   4.56, Running  210.21s, Atom ID:  7, Tag: move                
+Step   820(   N/A%), save True, FPS   4.47, Running  210.65s, Atom ID:  7, Tag: move                
+Step   821(   N/A%), save True, FPS   4.47, Running  210.69s, Atom ID:  7, Tag: move                
+Step   822(   N/A%), save True, FPS   4.34, Running  211.17s, Atom ID:  7, Tag: move                
+Step   823(   N/A%), save True, FPS   4.35, Running  211.22s, Atom ID:  7, Tag: move                
+Step   824(   N/A%), save True, FPS   4.36, Running  211.63s, Atom ID:  7, Tag: move                
+Step   825(   N/A%), save True, FPS   4.38, Running  211.67s, Atom ID:  7, Tag: move                
+Step   826(   N/A%), save True, FPS   4.31, Running  212.09s, Atom ID:  7, Tag: move                
+Step   827(   N/A%), save True, FPS   4.32, Running  212.13s, Atom ID:  8, Tag: delay               
+Step   828(   N/A%), save True, FPS   4.26, Running  212.57s, Atom ID:  8, Tag: delay               
+Step   829(   N/A%), save True, FPS   4.26, Running  212.62s, Atom ID:  8, Tag: delay               
+Step   830(   N/A%), save True, FPS   4.34, Running  212.99s, Atom ID:  8, Tag: delay               
+Step   831(   N/A%), save True, FPS   4.33, Running  213.04s, Atom ID:  8, Tag: delay               
+Step   832(   N/A%), save True, FPS   4.32, Running  213.42s, Atom ID:  8, Tag: delay               
+Step   833(   N/A%), save True, FPS   4.34, Running  213.45s, Atom ID:  8, Tag: delay               
+Step   834(   N/A%), save True, FPS   4.20, Running  213.98s, Atom ID:  8, Tag: delay               
+Step   835(   N/A%), save True, FPS   4.19, Running  214.04s, Atom ID:  8, Tag: delay               
+Step   836(   N/A%), save True, FPS   4.21, Running  214.45s, Atom ID:  8, Tag: delay               
+Step   837(   N/A%), save True, FPS   3.93, Running  214.85s, Atom ID:  9, Tag: move                
+Step   838(   N/A%), save True, FPS   3.84, Running  215.37s, Atom ID:  9, Tag: move                
+Step   839(   N/A%), save True, FPS   3.76, Running  215.52s, Atom ID:  9, Tag: move                
+Step   840(   N/A%), save True, FPS   3.64, Running  216.15s, Atom ID:  9, Tag: move                
+Step   841(   N/A%), save True, FPS   3.59, Running  216.27s, Atom ID:  9, Tag: move                
+Step   842(   N/A%), save True, FPS   3.46, Running  216.95s, Atom ID:  9, Tag: move                
+Step   843(   N/A%), save True, FPS   3.36, Running  217.16s, Atom ID:  9, Tag: move                
+Step   844(   N/A%), save True, FPS   3.24, Running  217.81s, Atom ID:  9, Tag: move                
+Step   845(   N/A%), save True, FPS   3.16, Running  218.01s, Atom ID:  9, Tag: move                
+Step   846(   N/A%), save True, FPS   2.99, Running  218.77s, Atom ID:  9, Tag: move                
+Step   847(   N/A%), save True, FPS   2.94, Running  218.94s, Atom ID:  9, Tag: move                
+Step   848(   N/A%), save True, FPS   2.84, Running  219.62s, Atom ID:  9, Tag: move                
+Step   849(   N/A%), save True, FPS   2.78, Running  219.80s, Atom ID:  9, Tag: move                
+Step   850(   N/A%), save True, FPS   2.67, Running  220.48s, Atom ID:  9, Tag: move                
+Step   851(   N/A%), save True, FPS   2.63, Running  220.64s, Atom ID:  9, Tag: move                
+Step   852(   N/A%), save True, FPS   2.50, Running  221.43s, Atom ID:  9, Tag: move                
+Step   853(   N/A%), save True, FPS   2.45, Running  221.62s, Atom ID:  9, Tag: move                
+Step   854(   N/A%), save True, FPS   2.40, Running  222.31s, Atom ID:  9, Tag: move                
+Step   855(   N/A%), save True, FPS   2.37, Running  222.48s, Atom ID:  9, Tag: move                
+Step   856(   N/A%), save True, FPS   2.29, Running  223.18s, Atom ID:  9, Tag: move                
+Step   857(   N/A%), save True, FPS   2.35, Running  223.35s, Atom ID:  9, Tag: move                
+Step   858(   N/A%), save True, FPS   2.30, Running  224.08s, Atom ID:  9, Tag: move                
+Step   859(   N/A%), save True, FPS   2.29, Running  224.26s, Atom ID:  9, Tag: move                
+Step   860(   N/A%), save True, FPS   2.27, Running  224.96s, Atom ID:  9, Tag: move                
+Step   861(   N/A%), save True, FPS   2.25, Running  225.16s, Atom ID:  9, Tag: move                
+Step   862(   N/A%), save True, FPS   2.24, Running  225.87s, Atom ID:  9, Tag: move                
+Step   863(   N/A%), save True, FPS   2.25, Running  226.06s, Atom ID:  9, Tag: move                
+Step   864(   N/A%), save True, FPS   2.21, Running  226.85s, Atom ID:  9, Tag: move                
+Step   865(   N/A%), save True, FPS   2.22, Running  227.02s, Atom ID:  9, Tag: move                
+Step   866(   N/A%), save True, FPS   2.21, Running  227.83s, Atom ID:  9, Tag: move                
+Step   867(   N/A%), save True, FPS   2.23, Running  227.91s, Atom ID: 10, Tag: delay               
+Step   868(   N/A%), save True, FPS   2.24, Running  228.53s, Atom ID: 10, Tag: delay               
+Step   869(   N/A%), save True, FPS   2.27, Running  228.60s, Atom ID: 10, Tag: delay               
+Step   870(   N/A%), save True, FPS   2.27, Running  229.28s, Atom ID: 10, Tag: delay               
+Step   871(   N/A%), save True, FPS   2.30, Running  229.35s, Atom ID: 10, Tag: delay               
+Step   872(   N/A%), save True, FPS   2.34, Running  229.99s, Atom ID: 10, Tag: delay               
+Step   873(   N/A%), save True, FPS   2.37, Running  230.06s, Atom ID: 10, Tag: delay               
+Step   874(   N/A%), save True, FPS   2.40, Running  230.64s, Atom ID: 10, Tag: delay               
+Step   875(   N/A%), save True, FPS   2.43, Running  230.71s, Atom ID: 10, Tag: delay               
+Step   876(   N/A%), save True, FPS   2.44, Running  231.39s, Atom ID: 10, Tag: delay               
+Step   877(   N/A%), save False, FPS   2.40, Running  231.69s, Atom ID: 11, Tag: delay               
+Step   878(   N/A%), save False, FPS   2.57, Running  231.88s, Atom ID: 11, Tag: delay               
+Step   879(   N/A%), save False, FPS   2.59, Running  231.97s, Atom ID: 11, Tag: delay               
+Step   880(   N/A%), save False, FPS   2.77, Running  232.18s, Atom ID: 11, Tag: delay               
+Step   881(   N/A%), save False, FPS   2.83, Running  232.24s, Atom ID: 11, Tag: delay               
+Step   882(   N/A%), save False, FPS   3.02, Running  232.50s, Atom ID: 11, Tag: delay               
+Step   883(   N/A%), save False, FPS   3.08, Running  232.56s, Atom ID: 11, Tag: delay               
+Step   884(   N/A%), save False, FPS   3.38, Running  232.77s, Atom ID: 11, Tag: delay               
+Step   885(   N/A%), save False, FPS   3.43, Running  232.85s, Atom ID: 11, Tag: delay               
+Step   886(   N/A%), save False, FPS   3.90, Running  232.96s, Atom ID: 11, Tag: delay               
+Step   887(   N/A%), save False, FPS   3.93, Running  233.00s, Atom ID: 11, Tag: delay               
+Step   888(   N/A%), save False, FPS   4.31, Running  233.18s, Atom ID: 11, Tag: delay               
+Step   889(   N/A%), save False, FPS   4.33, Running  233.22s, Atom ID: 11, Tag: delay               
+Step   890(   N/A%), save False, FPS   4.82, Running  233.43s, Atom ID: 11, Tag: delay               
+Step   891(   N/A%), save False, FPS   4.82, Running  233.50s, Atom ID: 11, Tag: delay               
+Step   892(   N/A%), save False, FPS   5.44, Running  233.67s, Atom ID: 11, Tag: delay               
+Step   893(   N/A%), save False, FPS   5.44, Running  233.74s, Atom ID: 11, Tag: delay               
+Step   894(   N/A%), save False, FPS   5.94, Running  234.01s, Atom ID: 11, Tag: delay               
+Step   895(   N/A%), save False, FPS   5.88, Running  234.11s, Atom ID: 11, Tag: delay               
+Step   896(   N/A%), save False, FPS   6.86, Running  234.31s, Atom ID: 11, Tag: delay               
+[2026-11-09 14:39:23] [0  ] Seed 1 failed in 234.46 s.
+Plan True, Check False
+[2026-11-09 14:39:23] Complete collection, success rate: 0/2 (0.00%)
+2026-11-09T06:39:23Z [265,334ms] [Warning] [omni.physx.plugin] The rigid body at /World/envs/env_0/Robot/WristCamera has a possibly invalid inertia tensor of {1.0, 1.0, 1.0} and a negative mass, small sphere approximated inertia was used. Either specify correct values in the mass properties, or add collider(s) to any shape(s) that you wish to automatically compute mass properties for.
+[INFO]: SimulationContext cleared

@@ -1,0 +1,22 @@
+{
+  "schema_version": "x2env.input_bundle.v1",
+  "request_sha256": "6a5f163962d2764f117e813397e56c731031c96f80708400393ee3c027df357f",
+  "text": {
+    "sha256": "c0490ee2459d96031593eeeaf8d150f3ed8eaad7c7579cb0f6dcb223e7c378b8",
+    "size_bytes": 31,
+    "media_type": "text/plain"
+  },
+  "images": [],
+  "video": null,
+  "modality": "text",
+  "seed": 7,
+  "override_policy": "explicit_text_over_media_with_provenance",
+  "resource_limits": {
+    "source_bytes": 67108864,
+    "decoded_pixels": 16000000,
+    "video_frames": 600,
+    "video_seconds": 60,
+    "decoded_bytes": 1073741824,
+    "decoder_seconds": 60
+  }
+}

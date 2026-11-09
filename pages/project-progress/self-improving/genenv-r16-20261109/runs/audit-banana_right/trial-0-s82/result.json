@@ -1,0 +1,30 @@
+{
+  "rule": "upward-support-retreat-v2",
+  "task": "/workspace/summary-web/genenv-r16-20261109/runs/banana_right/audit_banana_right_task.py",
+  "task_sha256": "a052399f13d44a3574a3fc033f03587271258c45b2a46e241fd442f2acd9c244",
+  "scene_sha256": "68142652fcbda3540354c1945a0cc3843f8e567b6de698df79fc4482dd09ec96",
+  "seed": 82,
+  "grasp_yaw_deg": 0.0,
+  "grasp_height_m": 0.001,
+  "initial_base_xyz": {
+    "banana": [
+      0.6262454390525818,
+      -0.12065090239048004,
+      0.02033500000834465
+    ],
+    "blackandbrassbowl_small": [
+      0.5342986583709717,
+      0.11444222182035446,
+      0.05264100059866905
+    ]
+  },
+  "steps": 189,
+  "dt": 0.06666666666666667,
+  "native": false,
+  "peak_lift_m": 0.0014305058866739273,
+  "grasp": false,
+  "lift": false,
+  "max_stable_s": 0.0,
+  "qualified": false,
+  "reason": "descend_stalled"
+}

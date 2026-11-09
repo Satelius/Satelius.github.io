@@ -1,0 +1,524 @@
+{
+  "schema": "tacharness.review.development_instances.v1",
+  "split": "development",
+  "instances": [
+    {
+      "instance": "stove-origin",
+      "task": "libero_goal:1",
+      "backend": "Tabero / Sim 6.2",
+      "teacher": "replay_demos_with_camera.py",
+      "teacher_sha256": "2a08ffdb602f25737163018cffc5acec2e7aef651cffcdf12e8b2ec359424ca4",
+      "teacher_access": "source demonstration replay",
+      "lineage": [
+        "f76a213dd28962164fba6ee51fe824a9d4012fe334f98162b660193bbed7cb43",
+        4
+      ],
+      "requested_pose_wxyz": {
+        "akita_black_bowl_1": {
+          "original": [
+            -0.08571311086416245,
+            -0.0015844247536733747,
+            0.8981584906578064,
+            0.7071067690849304,
+            -1.0724536878115032e-05,
+            -1.4310617189039476e-06,
+            0.7071067690849304
+          ],
+          "requested": [
+            -0.08571311086416245,
+            -0.0015844247536733747,
+            0.8981584906578064,
+            0.7071067690849304,
+            -1.0724536878115032e-05,
+            -1.4310617189039476e-06,
+            0.7071067690849304
+          ]
+        },
+        "flat_stove_1": {
+          "original": [
+            -0.4043894112110138,
+            0.20236548781394958,
+            0.9049999713897705,
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "requested": [
+            -0.4043894112110138,
+            0.20236548781394958,
+            0.9049999713897705,
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "observed_resets": [
+        "runs/stove-origin/teacher.reset.json",
+        "runs/stove-origin-r1/teacher.reset.json",
+        "runs/stove-origin-r2/teacher.reset.json"
+      ],
+      "native_success": 3,
+      "qualified": 3,
+      "attempts": 3,
+      "rule": "native + grasp/release + stable support for ten consecutive 50 ms frames",
+      "measurements": [
+        "runs/stove-origin/review.json",
+        "runs/stove-origin-r1/review.json",
+        "runs/stove-origin-r2/review.json"
+      ],
+      "media": [
+        "runs/stove-origin/teacher.mp4",
+        "runs/stove-origin-r1/teacher.mp4",
+        "runs/stove-origin-r2/teacher.mp4"
+      ],
+      "eligible_development_condition": true
+    },
+    {
+      "instance": "stove-east",
+      "task": "libero_goal:1",
+      "backend": "Tabero / Sim 6.2",
+      "teacher": "replay_demos_with_camera.py",
+      "teacher_sha256": "2a08ffdb602f25737163018cffc5acec2e7aef651cffcdf12e8b2ec359424ca4",
+      "teacher_access": "source demonstration replay",
+      "lineage": [
+        "f76a213dd28962164fba6ee51fe824a9d4012fe334f98162b660193bbed7cb43",
+        4
+      ],
+      "requested_pose_wxyz": {
+        "akita_black_bowl_1": {
+          "original": [
+            -0.08571311086416245,
+            -0.0015844247536733747,
+            0.8981584906578064,
+            0.7071067690849304,
+            -1.0724536878115032e-05,
+            -1.4310617189039476e-06,
+            0.7071067690849304
+          ],
+          "requested": [
+            -0.05571310967206955,
+            -0.0015844247536733747,
+            0.8981584906578064,
+            0.6087614297866821,
+            -1.0445995940244757e-05,
+            -2.8186516374262283e-06,
+            0.7933533191680908
+          ]
+        },
+        "flat_stove_1": {
+          "original": [
+            -0.4043894112110138,
+            0.20236548781394958,
+            0.9049999713897705,
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "requested": [
+            -0.4043894112110138,
+            0.1723654866218567,
+            0.9049999713897705,
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "observed_resets": [
+        "runs/stove-east/teacher.reset.json",
+        "runs/stove-east-r1/teacher.reset.json",
+        "runs/stove-east-r2/teacher.reset.json"
+      ],
+      "native_success": 3,
+      "qualified": 3,
+      "attempts": 3,
+      "rule": "native + grasp/release + stable support for ten consecutive 50 ms frames",
+      "measurements": [
+        "runs/stove-east/review.json",
+        "runs/stove-east-r1/review.json",
+        "runs/stove-east-r2/review.json"
+      ],
+      "media": [
+        "runs/stove-east/teacher.mp4",
+        "runs/stove-east-r1/teacher.mp4",
+        "runs/stove-east-r2/teacher.mp4"
+      ],
+      "eligible_development_condition": true
+    },
+    {
+      "instance": "stove-west",
+      "task": "libero_goal:1",
+      "backend": "Tabero / Sim 6.2",
+      "teacher": "replay_demos_with_camera.py",
+      "teacher_sha256": "2a08ffdb602f25737163018cffc5acec2e7aef651cffcdf12e8b2ec359424ca4",
+      "teacher_access": "source demonstration replay",
+      "lineage": [
+        "f76a213dd28962164fba6ee51fe824a9d4012fe334f98162b660193bbed7cb43",
+        4
+      ],
+      "requested_pose_wxyz": {
+        "akita_black_bowl_1": {
+          "original": [
+            -0.08571311086416245,
+            -0.0015844247536733747,
+            0.8981584906578064,
+            0.7071067690849304,
+            -1.0724536878115032e-05,
+            -1.4310617189039476e-06,
+            0.7071067690849304
+          ],
+          "requested": [
+            -0.11571311205625534,
+            -0.0015844247536733747,
+            0.8981584906578064,
+            0.7933533191680908,
+            -1.0819578164955601e-05,
+            -1.8985826244488635e-08,
+            0.6087614297866821
+          ]
+        },
+        "flat_stove_1": {
+          "original": [
+            -0.4043894112110138,
+            0.20236548781394958,
+            0.9049999713897705,
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "requested": [
+            -0.4043894112110138,
+            0.23236548900604248,
+            0.9049999713897705,
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "observed_resets": [
+        "runs/stove-west/teacher.reset.json",
+        "runs/stove-west-r1/teacher.reset.json",
+        "runs/stove-west-r2/teacher.reset.json"
+      ],
+      "native_success": 3,
+      "qualified": 3,
+      "attempts": 3,
+      "rule": "native + grasp/release + stable support for ten consecutive 50 ms frames",
+      "measurements": [
+        "runs/stove-west/review.json",
+        "runs/stove-west-r1/review.json",
+        "runs/stove-west-r2/review.json"
+      ],
+      "media": [
+        "runs/stove-west/teacher.mp4",
+        "runs/stove-west-r1/teacher.mp4",
+        "runs/stove-west-r2/teacher.mp4"
+      ],
+      "eligible_development_condition": true
+    },
+    {
+      "instance": "drawer-east-v2",
+      "task": "libero_10:3",
+      "backend": "Tabero / Sim 6.2",
+      "teacher": "replay_demos_with_camera.py",
+      "teacher_sha256": "2a08ffdb602f25737163018cffc5acec2e7aef651cffcdf12e8b2ec359424ca4",
+      "teacher_access": "source demonstration replay",
+      "lineage": [
+        "cfe14d9257372c6b83084c19bae5c744464d15597f95077c95f3d36ea5f737b2",
+        4
+      ],
+      "requested_pose_wxyz": {
+        "akita_black_bowl_1": {
+          "original": [
+            0.05259236320853233,
+            -0.029543180018663406,
+            0.8981584906578064,
+            0.7071067690849304,
+            -1.0724536878115032e-05,
+            -1.4310617189039476e-06,
+            0.7071067690849304
+          ],
+          "requested": [
+            0.08259236067533493,
+            -0.029543180018663406,
+            0.8981584906578064,
+            0.6087614297866821,
+            -1.0445995940244757e-05,
+            -2.8186516374262283e-06,
+            0.7933533191680908
+          ]
+        },
+        "white_cabinet_1": {
+          "original": [
+            -0.009595631621778011,
+            0.30665239691734314,
+            0.9049999713897705,
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "requested": [
+            -0.009595631621778011,
+            0.30665239691734314,
+            0.9049999713897705,
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "observed_resets": [
+        "runs/drawer-east-v2-r1/teacher.reset.json",
+        "runs/drawer-east-v2-r2/teacher.reset.json",
+        "runs/drawer-east-v2-r3/teacher.reset.json"
+      ],
+      "native_success": 3,
+      "qualified": 0,
+      "attempts": 3,
+      "rule": "native + grasp/release + stable support for ten consecutive 50 ms frames",
+      "measurements": [
+        "runs/drawer-east-v2-r1/review.json",
+        "runs/drawer-east-v2-r2/review.json",
+        "runs/drawer-east-v2-r3/review.json"
+      ],
+      "media": [
+        "runs/drawer-east-v2-r1/teacher.mp4",
+        "runs/drawer-east-v2-r2/teacher.mp4",
+        "runs/drawer-east-v2-r3/teacher.mp4"
+      ],
+      "eligible_development_condition": false
+    },
+    {
+      "instance": "confirmed-banana",
+      "task": "bafbcee7e1ca2400261d64540ead2ebff57d21eb30147ce0f23f8ec997aedb7c",
+      "backend": "RoboLab / Sim 6.2",
+      "teacher": "Cartesian IK",
+      "teacher_sha256": "21adb594b6beea8b800e40d5e5bed0d6d5dbfacfeb0c52c6156ab4381a4be713",
+      "teacher_access": "privileged object and gripper state",
+      "scene_sha256": "f3eee3d4cb7b0dbc9eb235b1d6bc0fa06658161e98b43871bb3934dbd98d0e65",
+      "requested_task": "runs/banana_0_1/audit_banana_0_1_task.py",
+      "seed": 87,
+      "observed_resets": [
+        {
+          "banana": [
+            0.47972699999809265,
+            -0.08580700308084488,
+            0.02033500000834465
+          ],
+          "bowl": [
+            0.5611010193824768,
+            0.1526149958372116,
+            0.029485000297427177
+          ]
+        },
+        {
+          "banana": [
+            0.47972699999809265,
+            -0.08580700308084488,
+            0.02033500000834465
+          ],
+          "bowl": [
+            0.5611010193824768,
+            0.1526149958372116,
+            0.029485000297427177
+          ]
+        },
+        {
+          "banana": [
+            0.47972699999809265,
+            -0.08580700308084488,
+            0.02033500000834465
+          ],
+          "bowl": [
+            0.5611010193824768,
+            0.1526149958372116,
+            0.029485000297427177
+          ]
+        }
+      ],
+      "native_success": 3,
+      "qualified": 3,
+      "attempts": 3,
+      "rule": "upward-support-retreat-v2",
+      "measurements": [
+        "runs/confirmed-banana/trial-0-s87/result.json",
+        "runs/confirmed-banana/trial-1-s87/result.json",
+        "runs/confirmed-banana/trial-2-s87/result.json"
+      ],
+      "media": [
+        "runs/confirmed-banana/trial-0-s87/scene.mp4",
+        "runs/confirmed-banana/trial-1-s87/scene.mp4",
+        "runs/confirmed-banana/trial-2-s87/scene.mp4"
+      ],
+      "eligible_development_condition": true
+    },
+    {
+      "instance": "confirmed-block",
+      "task": "4c3016a6e2dd1514741d632405d5ee67d16a29fec1bae20bcc282edefbe60140",
+      "backend": "RoboLab / Sim 6.2",
+      "teacher": "Cartesian IK",
+      "teacher_sha256": "21adb594b6beea8b800e40d5e5bed0d6d5dbfacfeb0c52c6156ab4381a4be713",
+      "teacher_access": "privileged object and gripper state",
+      "scene_sha256": "f19a83755faa28ba74af6d94530ac10b3921bd8cfca9213c6938e652552c79a2",
+      "requested_task": "runs/feedback/audit_feedback_task.py",
+      "seed": 82,
+      "observed_resets": [
+        {
+          "blue_block": [
+            0.6272478699684143,
+            0.13801518082618713,
+            0.025502000004053116
+          ],
+          "bowl": [
+            0.5669292211532593,
+            -0.03251355141401291,
+            0.029485000297427177
+          ]
+        },
+        {
+          "blue_block": [
+            0.6272478699684143,
+            0.13801518082618713,
+            0.025502000004053116
+          ],
+          "bowl": [
+            0.5669292211532593,
+            -0.03251355141401291,
+            0.029485000297427177
+          ]
+        },
+        {
+          "blue_block": [
+            0.6272478699684143,
+            0.13801518082618713,
+            0.025502000004053116
+          ],
+          "bowl": [
+            0.5669292211532593,
+            -0.03251355141401291,
+            0.029485000297427177
+          ]
+        }
+      ],
+      "native_success": 3,
+      "qualified": 3,
+      "attempts": 3,
+      "rule": "upward-support-retreat-v2",
+      "measurements": [
+        "runs/confirmed-block/trial-0-s82/result.json",
+        "runs/confirmed-block/trial-1-s82/result.json",
+        "runs/confirmed-block/trial-2-s82/result.json"
+      ],
+      "media": [
+        "runs/confirmed-block/trial-0-s82/scene.mp4",
+        "runs/confirmed-block/trial-1-s82/scene.mp4",
+        "runs/confirmed-block/trial-2-s82/scene.mp4"
+      ],
+      "eligible_development_condition": true
+    },
+    {
+      "instance": "near-bottle",
+      "task": "put_bottle_in_shelf",
+      "backend": "UniVTAC / Sim 6.0.0.1",
+      "teacher": "native pre-grasp",
+      "teacher_sha256": "7aa72d51e5f6442c82c69f199691b065ab0b081969dc4134efd78ea40898fda4",
+      "teacher_access": "privileged bottle and shelf poses",
+      "requested": [
+        -0.04,
+        0.025,
+        0.114,
+        -7.0
+      ],
+      "seed": 1,
+      "observed_resets": [
+        [
+          0.5000023504731866,
+          0.02500211029346386,
+          0.001492921605185876,
+          0.9999999999940112,
+          3.132996260564954e-06,
+          1.4698514773092697e-06,
+          3.576367273339264e-08
+        ],
+        [
+          0.5000023504464589,
+          0.025002110278292262,
+          0.001492921605185875,
+          0.9999999999940113,
+          3.132996260563445e-06,
+          1.4698514775313143e-06,
+          3.5761179928479175e-08
+        ],
+        [
+          0.5000023504241982,
+          0.025002110265444397,
+          0.0014929216051858749,
+          0.9999999999940115,
+          3.1329962605715604e-06,
+          1.4698514773092697e-06,
+          3.5759292494977364e-08
+        ]
+      ],
+      "native_success": 2,
+      "qualified": null,
+      "attempts": 3,
+      "rule": "support pair and empty tactile calibration unverified",
+      "measurements": [
+        "review/bottle-qualification.json"
+      ],
+      "media": [
+        "runs/near-fixed-startup/sampled.mp4",
+        "runs/near-video-r2-startup/sampled.mp4",
+        "runs/near-video-r3-startup/sampled.mp4"
+      ],
+      "eligible_development_condition": false
+    },
+    {
+      "instance": "far-bottle",
+      "task": "put_bottle_in_shelf",
+      "backend": "UniVTAC / Sim 6.0.0.1",
+      "teacher": "native pre-grasp",
+      "teacher_sha256": "7aa72d51e5f6442c82c69f199691b065ab0b081969dc4134efd78ea40898fda4",
+      "teacher_access": "privileged bottle and shelf poses",
+      "requested": [
+        0.04,
+        -0.025,
+        0.118,
+        7.0
+      ],
+      "seed": 1,
+      "observed_resets": [
+        [
+          0.5000023503966211,
+          -0.024997889761636354,
+          0.001492921605185877,
+          0.9999999999940115,
+          3.13299626057891e-06,
+          1.4698514776423366e-06,
+          3.5752400989128485e-08
+        ]
+      ],
+      "native_success": 0,
+      "qualified": null,
+      "attempts": 1,
+      "rule": "support pair and empty tactile calibration unverified",
+      "measurements": [
+        "review/bottle-qualification.json"
+      ],
+      "media": [
+        "runs/far-fixed-startup/sampled.mp4"
+      ],
+      "eligible_development_condition": false
+    }
+  ]
+}

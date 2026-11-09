@@ -1,0 +1,15 @@
+Traceback (most recent call last):
+  File "/workspace/summary-web/genenv-r16-20261109/review/sapien_probe.py", line 15, in <module>
+    actors=load_resolved_scene(holder,resolved,asset_roots={item['object_id']:site/'runs/new-mesh/objects'/item['asset_id']})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/TacHarness-genenv/thirdparty/robot-harness-gen-env/scene_gen/envs/generated_scene.py", line 201, in load_resolved_scene
+    from envs.utils import create_actor, create_sapien_urdf_obj
+  File "/workspace/TacHarness-genenv/outputs/genenv-audit-20261109/RoboTwin/envs/__init__.py", line 1, in <module>
+    from .utils import *
+  File "/workspace/TacHarness-genenv/outputs/genenv-audit-20261109/RoboTwin/envs/utils/__init__.py", line 4, in <module>
+    from .save_file import *
+  File "/workspace/TacHarness-genenv/outputs/genenv-audit-20261109/RoboTwin/envs/utils/save_file.py", line 8, in <module>
+    import open3d as o3d
+  File "/workspace/TacHarness-genenv/outputs/genenv-audit-20261109/cpu/lib/python3.12/site-packages/open3d/__init__.py", line 79, in <module>
+    from open3d.pybind import (
+ImportError: /runtime/python/bin/../lib/libstdc++.so.6: version `GLIBCXX_3.4.30' not found (required by /workspace/TacHarness-genenv/outputs/genenv-audit-20261109/cpu/lib/python3.12/site-packages/open3d/libOpen3D.so.0.20)

@@ -1,0 +1,49 @@
+{
+  "source": "/runtime/TacHarness/inputs/datasets/vendor/tabero/Isaaclab_Libero/assembled_hdf5/libero_10_task3_KITCHEN_SCENE4_put_the_black_bowl_in_the_bottom_drawer_of_the_cabinet_and_close_it_demo.hdf5",
+  "source_sha256": "cfe14d9257372c6b83084c19bae5c744464d15597f95077c95f3d36ea5f737b2",
+  "source_demo": 4,
+  "derived_sha256": "161671536f568919cad8c7dc67f40c318f1fd0eac7e1924b10f2855f5b4d7fad",
+  "changes_wxyz": {
+    "akita_black_bowl_1": {
+      "original": [
+        0.05259236320853233,
+        -0.029543180018663406,
+        0.8981584906578064,
+        0.7071067690849304,
+        -1.0724536878115032e-05,
+        -1.4310617189039476e-06,
+        0.7071067690849304
+      ],
+      "requested": [
+        0.08259236067533493,
+        -0.029543180018663406,
+        0.8981584906578064,
+        0.6087614297866821,
+        -1.0445995940244757e-05,
+        -2.8186516374262283e-06,
+        0.7933533191680908
+      ]
+    },
+    "white_cabinet_1": {
+      "original": [
+        -0.009595631621778011,
+        0.30665239691734314,
+        0.9049999713897705,
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "requested": [
+        -0.009595631621778011,
+        0.30665239691734314,
+        0.9049999713897705,
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    }
+  },
+  "task": "libero_10:3"
+}

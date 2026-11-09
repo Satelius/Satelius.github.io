@@ -1,0 +1,46 @@
+Using Python 3.12.3 environment at: TacHarness-genenv/outputs/genenv-audit-20261109/cpu
+Resolved 64 packages in 20.42s
+Downloading open3d (382.2MiB)
+Downloading plotly (9.2MiB)
+Downloading dash (8.8MiB)
+ Downloaded dash
+ Downloaded plotly
+ Downloaded open3d
+Prepared 13 packages in 4m 34s
+Installed 36 packages in 407ms
+ + asttokens==3.0.2
+ + cloudpickle==3.1.2
+ + comm==0.2.3
+ + configargparse==1.9.0
+ + dash==4.5.0
+ + executing==2.3.0
+ + farama-notifications==0.0.6
+ + fastjsonschema==2.22.3
+ + gymnasium==1.4.0
+ + h5py==3.16.0
+ + importlib-metadata==10.1.0
+ + ipython==9.18.1
+ + ipython-pygments-lexers==1.1.1
+ + ipywidgets==8.1.9
+ + janus==2.0.0
+ + jedi==0.20.1
+ + jupyter-core==5.9.1
+ + jupyterlab-widgets==3.0.17
+ + matplotlib-inline==0.2.2
+ + narwhals==2.28.0
+ + nbformat==5.11.1
+ + nest-asyncio==1.6.0
+ + open3d==0.20.0
+ + parso==0.8.7
+ + pexpect==4.9.0
+ + platformdirs==4.14.5
+ + plotly==7.1.0
+ + prompt-toolkit==3.0.53
+ + ptyprocess==0.7.0
+ + pure-eval==0.2.4
+ + retrying==1.4.2
+ + stack-data==0.6.3
+ + traitlets==5.16.1
+ + wcwidth==0.9.4
+ + widgetsnbextension==4.0.16
+ + zipp==4.1.2

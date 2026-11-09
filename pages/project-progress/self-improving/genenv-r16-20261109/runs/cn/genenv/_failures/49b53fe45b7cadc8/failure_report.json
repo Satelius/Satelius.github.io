@@ -1,0 +1,13 @@
+{
+  "schema_version": "robotwin.scene_generation_failure.v1",
+  "status": "fail",
+  "stage": "scene_spec_validation",
+  "code": "T2E_REQUEST_REJECTED",
+  "blocker": "request rejected before grounding",
+  "error_type": "CompileFailure",
+  "request": "在碗的左侧放一根香蕉。",
+  "seed": 7,
+  "details": {
+    "error": "quantity term '一' is not bound to an object"
+  }
+}

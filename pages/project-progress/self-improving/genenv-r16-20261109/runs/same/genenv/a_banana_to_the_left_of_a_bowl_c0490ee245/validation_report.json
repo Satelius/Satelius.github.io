@@ -1,0 +1,191 @@
+{
+  "schema_version": "robotwin.scene_validation.v1",
+  "scene_id": "a_banana_to_the_left_of_a_bowl_c0490ee245",
+  "resolved_scene_sha256": "21ff12f21eec1504158b34c21c93ef57eb1fd5b0bd04288133e15e5aceea9647",
+  "status": "incomplete",
+  "fail_count": 0,
+  "not_run_count": 1,
+  "checks": [
+    {
+      "name": "workspace_bounds:banana_1",
+      "status": "pass",
+      "evidence": {
+        "aabb": [
+          -0.20599386704434106,
+          0.00228339904434105,
+          0.006910081995449124,
+          0.1841192720045509
+        ]
+      }
+    },
+    {
+      "name": "table_support_height:banana_1",
+      "status": "pass",
+      "evidence": {
+        "bottom_z_m": 0.741,
+        "table_height_m": 0.741,
+        "support_relation": "on_table"
+      }
+    },
+    {
+      "name": "real_asset_files:banana_1",
+      "status": "pass",
+      "evidence": {
+        "paths": [
+          "/runtime/TacHarness/inputs/datasets/vendor/robolab/assets/objects/ycb/banana.usd"
+        ],
+        "exists": [
+          true
+        ]
+      }
+    },
+    {
+      "name": "workspace_bounds:bowl_1",
+      "status": "pass",
+      "evidence": {
+        "aabb": [
+          0.03020942857161331,
+          0.19132243742838667,
+          -0.04528155742838669,
+          0.11583145142838669
+        ]
+      }
+    },
+    {
+      "name": "table_support_height:bowl_1",
+      "status": "pass",
+      "evidence": {
+        "bottom_z_m": 0.741,
+        "table_height_m": 0.741,
+        "support_relation": "on_table"
+      }
+    },
+    {
+      "name": "real_asset_files:bowl_1",
+      "status": "pass",
+      "evidence": {
+        "paths": [
+          "/runtime/TacHarness/inputs/datasets/vendor/robolab/assets/objects/ycb/bowl.usd"
+        ],
+        "exists": [
+          true
+        ]
+      }
+    },
+    {
+      "name": "no_overlap:banana_1:bowl_1",
+      "status": "pass",
+      "evidence": {
+        "first_aabb_3d": [
+          -0.20599386704434106,
+          0.00228339904434105,
+          0.006910081995449124,
+          0.1841192720045509,
+          0.741,
+          0.7776699993610382
+        ],
+        "second_aabb_3d": [
+          0.03020942857161331,
+          0.19132243742838667,
+          -0.04528155742838669,
+          0.11583145142838669,
+          0.741,
+          0.7959699999392033
+        ],
+        "expected_support_pair": false
+      }
+    },
+    {
+      "name": "relation:on_table:banana_1",
+      "status": "pass",
+      "evidence": {
+        "target": "table"
+      }
+    },
+    {
+      "name": "relation:on_table:bowl_1",
+      "status": "pass",
+      "evidence": {
+        "target": "table"
+      }
+    },
+    {
+      "name": "relation:left_of:banana_1:bowl_1",
+      "status": "pass",
+      "evidence": {
+        "center_distance_m": 0.22099001273115215,
+        "source_aabb": [
+          -0.20599386704434106,
+          0.00228339904434105,
+          0.006910081995449124,
+          0.1841192720045509
+        ],
+        "target_aabb": [
+          0.03020942857161331,
+          0.19132243742838667,
+          -0.04528155742838669,
+          0.11583145142838669
+        ]
+      }
+    },
+    {
+      "name": "resolved_only_roundtrip",
+      "status": "pass",
+      "evidence": {
+        "before": "21ff12f21eec1504158b34c21c93ef57eb1fd5b0bd04288133e15e5aceea9647",
+        "after": "21ff12f21eec1504158b34c21c93ef57eb1fd5b0bd04288133e15e5aceea9647"
+      }
+    },
+    {
+      "name": "package_manifest",
+      "status": "pass",
+      "evidence": {
+        "schema_version": "robotwin.generated_scene_package_verification.v1",
+        "status": "pass",
+        "checks": [
+          {
+            "path": "request.txt",
+            "exists": true,
+            "expected_sha256": "4e2b3ba312203179b6da033629ed6e84044de5b67a10ca0253bc5b4b34b4191d",
+            "actual_sha256": "4e2b3ba312203179b6da033629ed6e84044de5b67a10ca0253bc5b4b34b4191d",
+            "pass": true
+          },
+          {
+            "path": "scene_spec.json",
+            "exists": true,
+            "expected_sha256": "3fd75e0e705c6484a932300ceab6838d68005ce56999d192cb276e73923975bd",
+            "actual_sha256": "3fd75e0e705c6484a932300ceab6838d68005ce56999d192cb276e73923975bd",
+            "pass": true
+          },
+          {
+            "path": "resolved_scene.json",
+            "exists": true,
+            "expected_sha256": "ea2cc4e34489cfb19c6d7a92942158b60ff5e18b1ebd1dfb256cf34e77e5da73",
+            "actual_sha256": "ea2cc4e34489cfb19c6d7a92942158b60ff5e18b1ebd1dfb256cf34e77e5da73",
+            "pass": true
+          },
+          {
+            "path": "generated_scene.py",
+            "exists": true,
+            "expected_sha256": "a981d3bd50bfbb26486e7101b675f25b50fd294a90549e7a4b21ed1806b70eba",
+            "actual_sha256": "a981d3bd50bfbb26486e7101b675f25b50fd294a90549e7a4b21ed1806b70eba",
+            "pass": true
+          },
+          {
+            "path": "resolved_scene.json#canonical_digest",
+            "expected_sha256": "21ff12f21eec1504158b34c21c93ef57eb1fd5b0bd04288133e15e5aceea9647",
+            "actual_sha256": "21ff12f21eec1504158b34c21c93ef57eb1fd5b0bd04288133e15e5aceea9647",
+            "pass": true
+          }
+        ]
+      }
+    },
+    {
+      "name": "runtime_evidence",
+      "status": "not_run",
+      "evidence": {
+        "required": false
+      }
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+[
+  {
+    "case": "nan",
+    "result": "rejected",
+    "error": "target layout coordinates must be finite"
+  },
+  {
+    "case": "outside",
+    "result": "rejected",
+    "error": "target layout for blue_block is outside the RoboLab workspace"
+  },
+  {
+    "case": "partial",
+    "result": "rejected",
+    "error": "target layout requires both x and y"
+  }
+]
