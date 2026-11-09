@@ -9,6 +9,7 @@
   const lockButton = document.querySelector("#lockButton");
   const redirect = new URLSearchParams(window.location.search).get("redirect");
   const redirectTargets = {
+    "rsi-research": "./self-improving/rsi-research/",
     "arena-online-frame-inspector-2026-10-26": "./self-improving/arena-online-frame-inspector-2026-10-26/",
     "tactile-eta-reproduction": "./self-improving/tactile-eta-paper-companion/overview/",
     "tactile-eta-online": "./self-improving/tactile-eta-paper-companion/online/",
@@ -30,7 +31,7 @@
     gateShell.hidden = true;
     projectContent.hidden = false;
     if (redirect && redirectTargets[redirect]) {
-      window.location.replace(redirectTargets[redirect]);
+      window.location.replace(redirectTargets[redirect] + window.location.hash);
       return;
     }
     document.querySelector("#projects-title").focus?.();
